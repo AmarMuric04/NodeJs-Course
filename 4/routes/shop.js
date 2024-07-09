@@ -14,6 +14,7 @@ router.get("/", (req, res, next) => {
   res.render("shop", {
     products: adminData.products,
     docTitle: "Shop",
+    path: "/",
   });
 });
 
