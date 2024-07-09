@@ -16,7 +16,6 @@ router.get("/add-product", (req, res) => {
     formsCSS: true,
     productCSS: true,
     activeAddProduct: true,
-    activeShop: false,
   });
 });
 
