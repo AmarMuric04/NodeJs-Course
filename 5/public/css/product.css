@@ -2,21 +2,18 @@
   width: 20rem;
   max-width: 90%;
   margin: auto;
+  display: block;
 }
 
 .product-item {
   width: 20rem;
   max-width: 95%;
-  border-radius: 10px;
-  background-color: white;
+  margin: 1rem;
 }
 
 .product__title {
   font-size: 1.2rem;
   text-align: center;
-  background-color: #00695c;
-  color: white;
-  padding: 0.5rem 0rem;
 }
 
 .product__price {

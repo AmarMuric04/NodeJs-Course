@@ -1,6 +1,6 @@
 exports.getCheckout = (req, res) => {
   res.render("shop/checkout", {
-    docTitle: "Checkout Page",
+    pageTitle: "Checkout Page",
     path: "/checkout",
     activeCheckout: true,
   });
@@ -8,7 +8,7 @@ exports.getCheckout = (req, res) => {
 
 exports.getCart = (req, res) => {
   res.render("shop/cart", {
-    docTitle: "Cart Page",
+    pageTitle: "Cart Page",
     path: "/cart",
     activeCart: true,
   });
@@ -16,7 +16,7 @@ exports.getCart = (req, res) => {
 
 exports.getOrders = (req, res) => {
   res.render("shop/orders", {
-    docTitle: "Order Page",
+    pageTitle: "Order Page",
     path: "/orders",
     activeCart: true,
   });

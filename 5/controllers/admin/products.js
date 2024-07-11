@@ -2,7 +2,7 @@ const Product = require("../../models/product");
 
 exports.getAddProduct = (req, res) => {
   res.render("admin/add-product", {
-    docTitle: "Products",
+    pageTitle: "Products",
     path: "/admin/add-product",
     formsCSS: true,
     productCSS: true,
@@ -20,10 +20,10 @@ exports.postAddProduct = (req, res) => {
 
 exports.getAdminProducts = (req, res) => {
   Product.fetchAll((products) => {
-    res.render("admin/product-list", {
+    res.render("admin/products", {
       products,
-      docTitle: "Admin Products",
-      path: "/admin/product-list",
+      pageTitle: "Admin Products",
+      path: "/admin/products",
       productCSS: true,
       activeAdminProductList: true,
     });
