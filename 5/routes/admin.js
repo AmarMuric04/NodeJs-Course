@@ -6,7 +6,13 @@ const router = express.Router();
 
 router.get("/add-product", adminProductsController.getAddProduct);
 
-// router.get("/edit-product", adminProductsController.getEditProduct);
+router.post("/add-product", adminProductsController.postAddProduct);
+
+router.post("/delete-product", adminProductsController.postDeleteProduct);
+
+router.get("/edit-product/:productId", adminProductsController.getEditProduct);
+
+router.post("/edit-product", adminProductsController.postEditProduct);
 
 router.get("/products", adminProductsController.getAdminProducts);
 
