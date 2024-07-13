@@ -20,6 +20,8 @@ router.get("/products/:productId", productsController.getProductDetails);
 
 router.post("/cart-delete-item", orderController.postRemoveProduct);
 
+router.post("/create-order", orderController.postOrder);
+
 router.get("/", indexController.getIndex);
 
 module.exports = router;

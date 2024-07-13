@@ -10,6 +10,10 @@ const errorController = require("./controllers/404");
 const sequelize = require("./utils/database");
 const Product = require("./models/product");
 const User = require("./models/user");
+const Cart = require("./models/cart");
+const CartItem = require("./models/cartItem");
+const Order = require("./models/order");
+const OrderItem = require("./models/orderItem");
 
 const app = express();
 
@@ -35,6 +39,13 @@ app.use(errorController.getPageNotFound);
 
 Product.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 User.hasMany(Product);
+User.hasOne(Cart);
+Cart.belongsTo(User);
+Cart.belongsToMany(Product, { through: CartItem });
+Product.belongsToMany(Cart, { through: CartItem });
+Order.belongsTo(User);
+User.hasMany(Order);
+Order.belongsToMany(Product, { through: OrderItem });
 
 sequelize
   .sync()
@@ -51,6 +62,14 @@ sequelize
     return user;
   })
   .then((user) => {
+    return user.getCart().then((cart) => {
+      if (!cart) {
+        return user.createCart();
+      }
+      return cart;
+    });
+  })
+  .then(() => {
     app.listen(3000);
   })
   .catch((err) => console.log(err));
