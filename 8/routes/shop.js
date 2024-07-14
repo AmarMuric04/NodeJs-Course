@@ -8,9 +8,9 @@ const router = express.Router();
 
 // router.get("/checkout", orderController.getCheckout);
 
-// router.get("/cart", orderController.getCart);
+router.get("/cart", orderController.getCart);
 
-// router.post("/cart", orderController.postCart);
+router.post("/cart", orderController.postCart);
 
 // router.get("/orders", orderController.getOrders);
 

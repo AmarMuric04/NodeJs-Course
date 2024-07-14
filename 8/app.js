@@ -21,11 +21,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use((req, res, next) => {
   User.findById("66931c71e61ba18f1a50f7d3")
     .then((user) => {
-      req.user = user;
+      req.user = new User(user.name, user.email, user.cart, user._id);
       next();
     })
     .catch((err) => console.log(err));
-  next();
 });
 
 app.use("/admin", adminRoutes);
@@ -33,4 +32,6 @@ app.use(userRoutes);
 
 app.use(errorController.getPageNotFound);
 
-mongoConnect(() => app.listen(3000));
+mongoConnect(() => {
+  app.listen(3000);
+});
