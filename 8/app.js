@@ -8,6 +8,7 @@ const userRoutes = require("./routes/shop");
 
 const errorController = require("./controllers/404");
 const mongoConnect = require("./utils/database").mongoConnect;
+const User = require("./models/user");
 
 const app = express();
 
@@ -18,12 +19,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use((req, res, next) => {
-  // User.findByPk(1)
-  //   .then((user) => {
-  //     req.user = user;
-  //     next();
-  //   })
-  //   .catch((err) => console.log(err));
+  User.findById("66931c71e61ba18f1a50f7d3")
+    .then((user) => {
+      req.user = user;
+      next();
+    })
+    .catch((err) => console.log(err));
   next();
 });
 
@@ -32,6 +33,4 @@ app.use(userRoutes);
 
 app.use(errorController.getPageNotFound);
 
-mongoConnect(() => {
-  app.listen(3000);
-});
+mongoConnect(() => app.listen(3000));

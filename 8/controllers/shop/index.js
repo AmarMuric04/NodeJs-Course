@@ -3,7 +3,6 @@ const Product = require("../../models/product");
 exports.getIndex = (req, res) => {
   Product.fetchAll()
     .then((products) => {
-      console.log(products);
       res.render("shop/index", {
         products,
         pageTitle: "Home Page",

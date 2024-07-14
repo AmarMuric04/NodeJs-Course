@@ -34,3 +34,15 @@
 .product__description {
   text-align: center;
 }
+
+.product__detail {
+  width: 40rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  height: 40rem;
+  margin-top: 5rem;
+}
+
+.product__detail button {
+  width: 50%;
+}

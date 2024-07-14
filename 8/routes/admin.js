@@ -8,14 +8,14 @@ router.get("/add-product", adminProductsController.getAddProduct);
 
 router.post("/add-product", adminProductsController.postAddProduct);
 
-// router.post("/delete-product", adminProductsController.postDeleteProduct);
+router.post("/delete-product", adminProductsController.postDeleteProduct);
 
-// router.get("/edit-product/:productId", adminProductsController.getEditProduct);
+router.get("/edit-product/:productId", adminProductsController.getEditProduct);
 
-// router.post("/edit-product", adminProductsController.postEditProduct);
+router.post("/edit-product", adminProductsController.postEditProduct);
 
-// router.get("/products", adminProductsController.getAdminProducts);
+router.get("/products", adminProductsController.getAdminProducts);
 
-// router.post("/product", adminProductsController.postAddProduct);
+router.post("/product", adminProductsController.postAddProduct);
 
 module.exports = router;

@@ -1,19 +1,39 @@
+const { ObjectId } = require("mongodb");
 const getDb = require("../utils/database").getDb;
 
 class Product {
-  constructor(title, price, imageUrl, description) {
+  constructor(title, price, imageUrl, description, id) {
     this.title = title;
     this.price = price;
     this.imageUrl = imageUrl;
     this.description = description;
+    this._id = id;
   }
 
   save() {
     const db = getDb();
+    let dbOp;
+
+    if (this._id) {
+      dbOp = db
+        .collection("products")
+        .updateOne({ _id: this._id }, { $set: this });
+    } else {
+      dbOp = db.collection("products").insertOne(this);
+    }
+
+    return dbOp
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err));
+  }
+
+  static deleteById(id) {
+    const db = getDb();
+
     return db
       .collection("products")
-      .insertOne(this)
-      .then((result) => console.log(result))
+      .deleteOne({ _id: ObjectId.createFromHexString(id) })
+      .then(() => console.log("Item deleted"))
       .catch((err) => console.log(err));
   }
 
@@ -23,9 +43,19 @@ class Product {
       .collection("products")
       .find()
       .toArray()
-      .then((products) => {
-        console.log(products);
-        return products;
+      .then((products) => products)
+      .catch((err) => console.log(err));
+  }
+
+  static fetchById(id) {
+    const db = getDb();
+    return db
+      .collection("products")
+      .find({ _id: ObjectId.createFromHexString(id) })
+      .next()
+      .then((product) => {
+        console.log(product);
+        return product;
       })
       .catch((err) => console.log(err));
   }
