@@ -54,10 +54,7 @@ class Product {
       .collection("products")
       .find({ _id: ObjectId.createFromHexString(id) })
       .next()
-      .then((product) => {
-        console.log(product);
-        return product;
-      })
+      .then((product) => product)
       .catch((err) => console.log(err));
   }
 }

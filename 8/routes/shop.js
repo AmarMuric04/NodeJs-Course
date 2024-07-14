@@ -12,15 +12,15 @@ router.get("/cart", orderController.getCart);
 
 router.post("/cart", orderController.postCart);
 
-// router.get("/orders", orderController.getOrders);
+router.get("/orders", orderController.getOrders);
 
 router.get("/products", productsController.getProductList);
 
 router.get("/products/:productId", productsController.getProductDetails);
 
-// router.post("/cart-delete-item", orderController.postRemoveProduct);
+router.post("/cart-delete-item", orderController.postRemoveProduct);
 
-// router.post("/create-order", orderController.postOrder);
+router.post("/create-order", orderController.postOrder);
 
 router.get("/", indexController.getIndex);
 

@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const startServer = require("./utils/server");
 
 const path = require("path");
 
@@ -7,7 +8,6 @@ const adminRoutes = require("./routes/admin");
 const userRoutes = require("./routes/shop");
 
 const errorController = require("./controllers/404");
-const mongoConnect = require("./utils/database").mongoConnect;
 const User = require("./models/user");
 
 const app = express();
@@ -30,8 +30,4 @@ app.use((req, res, next) => {
 app.use("/admin", adminRoutes);
 app.use(userRoutes);
 
-app.use(errorController.getPageNotFound);
-
-mongoConnect(() => {
-  app.listen(3000);
-});
+startServer();

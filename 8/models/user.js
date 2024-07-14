@@ -45,6 +45,30 @@ class User {
       .catch((err) => console.log(err));
   }
 
+  removeFromCart(product) {
+    const productIndex = this.cart.items.findIndex(
+      (prod) => prod.productId.toString() === product._id.toString()
+    );
+    const updatedItems = [...this.cart.items];
+
+    if (updatedItems[productIndex].quantity > 1) {
+      updatedItems[productIndex].quantity--;
+    } else updatedItems.splice(productIndex, 1);
+
+    const updatedCart = { items: updatedItems };
+
+    const db = getDb();
+    return db
+      .collection("users")
+      .updateOne(
+        {
+          _id: this._id,
+        },
+        { $set: { cart: updatedCart } }
+      )
+      .catch((err) => console.log(err));
+  }
+
   getCart() {
     const db = getDb();
 
@@ -65,6 +89,38 @@ class User {
             ).quantity,
           };
         });
+      })
+      .catch((err) => console.log(err));
+  }
+
+  getOrders() {
+    const db = getDb();
+    return db.collection("orders").find({ "user._id": this._id }).toArray();
+  }
+
+  addOrder() {
+    const db = getDb();
+    return this.getCart()
+      .then((products) => {
+        const order = {
+          items: products,
+          user: {
+            _id: this._id,
+            username: this.username,
+            email: this.email,
+          },
+        };
+
+        return db.collection("orders").insertOne(order);
+      })
+      .then(() => {
+        this.cart = { items: [] };
+        return db.collection("users").updateOne(
+          {
+            _id: this._id,
+          },
+          { $set: { cart: { items: [] } } }
+        );
       })
       .catch((err) => console.log(err));
   }
