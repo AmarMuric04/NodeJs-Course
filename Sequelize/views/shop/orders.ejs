@@ -5,7 +5,7 @@
     <%- include('../includes/navigation.ejs') %>
     <main>
         <% if (orders.length > 0) { %> 
-            <ul>
+            <ul class="orders-content-list">
                 <% orders.forEach((order) => { %>
                     <li>
                         <h1># <%= order.id %></h1>

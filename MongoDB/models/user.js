@@ -2,8 +2,8 @@ const { ObjectId } = require("mongodb");
 const { getDb } = require("../utils/database");
 
 class User {
-  constructor(username, email, cart, id) {
-    this.username = username;
+  constructor(name, email, cart, id) {
+    this.name = name;
     this.email = email;
     this.cart = cart;
     this._id = id;
@@ -106,7 +106,7 @@ class User {
           items: products,
           user: {
             _id: this._id,
-            username: this.username,
+            name: this.name,
             email: this.email,
           },
         };

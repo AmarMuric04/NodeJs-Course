@@ -41,7 +41,6 @@ form {
   width: 100%;
   height: 5rem;
   background-color: #00bb77;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='130' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000' fill-opacity='0.1' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
@@ -210,6 +209,7 @@ form {
   cursor: pointer;
   width: 100%;
   transition: all 0.2s;
+  max-width: 15rem;
 }
 
 .card__actions a {
