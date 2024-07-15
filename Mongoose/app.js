@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const startServer = require("./utils/server");
+const User = require("./models/user");
 
 const path = require("path");
 
@@ -8,7 +9,6 @@ const adminRoutes = require("./routes/admin");
 const userRoutes = require("./routes/shop");
 
 const errorController = require("./controllers/404");
-const User = require("./models/user");
 
 const app = express();
 
@@ -19,9 +19,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use((req, res, next) => {
-  User.findById("66931c71e61ba18f1a50f7d3")
+  User.findById("66946f58fdf6fc252309e567")
     .then((user) => {
-      req.user = new User(user.username, user.email, user.cart, user._id);
+      req.user = user;
       next();
     })
     .catch((err) => console.log(err));
@@ -30,4 +30,6 @@ app.use((req, res, next) => {
 app.use("/admin", adminRoutes);
 app.use(userRoutes);
 
-startServer();
+app.use(errorController.getPageNotFound);
+
+startServer(app);

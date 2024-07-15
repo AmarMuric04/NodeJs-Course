@@ -1,8 +1,7 @@
-const { getDb } = require("../../utils/database");
-const { ObjectId } = require("mongodb");
 const Product = require("../../models/product");
 
 exports.getAddProduct = (req, res) => {
+  console.log("...");
   res.render("admin/edit-product", {
     pageTitle: "Products",
     path: "/admin/add-product",
@@ -15,14 +14,13 @@ exports.getAddProduct = (req, res) => {
 
 exports.postAddProduct = (req, res) => {
   const { title, imageUrl, description, price } = req.body;
-  const product = new Product(
+  const product = new Product({
     title,
-    price,
     imageUrl,
     description,
-    null,
-    req.user._id
-  );
+    price,
+    userId: req.user,
+  });
 
   product
     .save()
@@ -36,7 +34,8 @@ exports.postAddProduct = (req, res) => {
 exports.getEditProduct = (req, res) => {
   const editMode = req.query.edit;
   const { productId } = req.params;
-  Product.fetchById(productId)
+
+  Product.findById(productId)
     .then((product) => {
       if (!product) return res.redirect("/");
 
@@ -55,15 +54,15 @@ exports.getEditProduct = (req, res) => {
 
 exports.postEditProduct = (req, res) => {
   const { productId, title, imageUrl, description, price } = req.body;
-  const product = new Product(
-    title,
-    price,
-    imageUrl,
-    description,
-    ObjectId.createFromHexString(productId)
-  );
-  product
-    .save()
+
+  Product.findById(productId)
+    .then((product) => {
+      product.title = title;
+      product.price = price;
+      product.imageUrl = imageUrl;
+      product.description = description;
+      return product.save();
+    })
     .then(() => {
       console.log(title + " updated!");
       res.redirect("/admin/products");
@@ -72,7 +71,8 @@ exports.postEditProduct = (req, res) => {
 };
 
 exports.getAdminProducts = (req, res) => {
-  Product.fetchAll()
+  Product.find()
+    // .populate("userId")
     .then((products) => {
       res.render("admin/products", {
         products,
@@ -88,7 +88,7 @@ exports.getAdminProducts = (req, res) => {
 exports.postDeleteProduct = (req, res) => {
   const { productId } = req.body;
 
-  Product.deleteById(productId)
+  Product.findByIdAndDelete({ _id: productId })
     .then(() => {
       res.redirect("/admin/products");
     })
