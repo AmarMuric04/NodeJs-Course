@@ -47,6 +47,7 @@ exports.getIndex = (req, res, next) => {
 };
 
 exports.getCart = (req, res, next) => {
+  console.log(req.session);
   req.user
     .populate("cart.items.productId")
     .execPopulate()
@@ -111,6 +112,7 @@ exports.postOrder = (req, res, next) => {
 };
 
 exports.getOrders = (req, res, next) => {
+  console.log(req.user);
   Order.find({ "user.userId": req.user._id })
     .then((orders) => {
       res.render("shop/orders", {
