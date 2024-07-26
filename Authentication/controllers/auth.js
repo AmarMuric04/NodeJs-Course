@@ -3,6 +3,7 @@ const crypto = require("crypto");
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const sendMail = require("../util/email-sender");
+const { check } = require("express-validator/check");
 
 exports.getLogin = (req, res, next) => {
   res.render("auth/login", {
@@ -51,6 +52,15 @@ exports.postLogin = (req, res, next) => {
 exports.postSignup = async (req, res, next) => {
   try {
     const { email, password, confirmPassword } = req.body;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).render("auth/signup", {
+        path: "/signup",
+        pageTitle: "Signup",
+        isAuthenticated: false,
+        errorMessage: errors.array(),
+      });
+    }
     const user = await User.findOne({ email: email });
     if (user) {
       req.flash("error", "User with the same email already exits.");
