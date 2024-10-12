@@ -19,24 +19,40 @@ router.post(
   "/add-product",
   [
     isAuth,
-    body("title", "Invalid title").isAlphanumeric().isLength({ min: 3 }).trim(),
-    body("imageUrl").isURL(),
-    body("price").isFloat(),
-    body("description").isLength({ min: 5, max: 400 }).trim(),
+    body("title", "Invalid title").isLength({ min: 3 }).trim(),
+    body("imageUrl", "Invalid URL").isURL(),
+    body("price", "Invalid pricing").isFloat(),
+    body("description", "Invalid description")
+      .isLength({ min: 5, max: 400 })
+      .trim(),
   ],
   adminController.postAddProduct
 );
 
-router.get("/edit-product/:productId", isAuth, adminController.getEditProduct);
+router.get(
+  "/edit-product/:productId",
+  [
+    isAuth,
+    body("title", "Invalid title").isLength({ min: 3 }).trim(),
+    body("imageUrl", "Invalid URL").isURL(),
+    body("price", "Invalid pricing").isFloat(),
+    body("description", "Invalid description")
+      .isLength({ min: 5, max: 400 })
+      .trim(),
+  ],
+  adminController.getEditProduct
+);
 
 router.post(
   "/edit-product",
   [
     isAuth,
-    body("title", "Invalid title").isAlphanumeric().isLength({ min: 3 }).trim(),
-    body("imageUrl").isURL(),
-    body("price").isFloat(),
-    body("description").isLength({ min: 5, max: 400 }).trim(),
+    body("title", "Invalid title").isLength({ min: 3 }).trim(),
+    body("imageUrl", "Invalid URL").isURL(),
+    body("price", "Invalid pricing").isFloat(),
+    body("description", "Invalid description")
+      .isLength({ min: 5, max: 400 })
+      .trim(),
   ],
   isAuth,
   adminController.postEditProduct

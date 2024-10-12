@@ -10,6 +10,13 @@ exports.getAddProduct = (req, res, next) => {
     editing: false,
     isAuthenticated: req.session.isLoggedIn,
     errorMessage: "",
+    product: {
+      title: "",
+      imageUrl: "",
+      price: "",
+      description: "",
+    },
+    validationErrors: [],
   });
 };
 
@@ -35,13 +42,13 @@ exports.postAddProduct = (req, res, next) => {
       isAuthenticated: req.session.isLoggedIn,
       editing: false,
       errorMessage: errors.array()[0].msg,
-      oldInput: {
+      product: {
         title,
         imageUrl,
         price,
         description,
       },
-      validationErrors: [],
+      validationErrors: errors.array(),
     });
   }
 
@@ -74,7 +81,9 @@ exports.getEditProduct = (req, res, next) => {
         path: "/admin/edit-product",
         editing: editMode,
         product: product,
-        isAuthenticated: req.session.isLoggedIn,
+        hasError: false,
+        errorMessage: null,
+        validationErrors: [],
       });
     })
     .catch((err) => console.log(err));
@@ -86,6 +95,28 @@ exports.postEditProduct = (req, res, next) => {
   const updatedPrice = req.body.price;
   const updatedImageUrl = req.body.imageUrl;
   const updatedDesc = req.body.description;
+
+  const errors = validationResult(req);
+
+  console.log(errors.array()[0]);
+
+  if (!errors.isEmpty()) {
+    return res.status(422).render("admin/edit-product", {
+      path: "/admin/edit-product",
+      pageTitle: "Edit a product",
+      editing: true,
+      hasError: true,
+      product: {
+        title: updatedTitle,
+        imageUrl: updatedImageUrl,
+        description: updatedDesc,
+        price: updatedPrice,
+        _id: prodId,
+      },
+      errorMessage: errors.array()[0].msg,
+      validationErrors: errors.array(),
+    });
+  }
 
   Product.findById(prodId)
     .then((product) => {
