@@ -37,7 +37,8 @@ router.post(
             );
           }
         });
-      }).normalizeEmail,
+      })
+      .normalizeEmail(),
     body("password", "Invalid password input.")
       .isLength({ min: 5, max: 25 })
       .isAlphanumeric()
