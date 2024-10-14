@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
-const csurf = require("csurf");
+const csrf = require("csurf");
 const flash = require("connect-flash");
 const multer = require("multer");
 
@@ -20,9 +20,7 @@ const store = new MongoDBStore({
   uri: MONGODB_URI,
   collection: "sessions",
 });
-
-const csrfProtection = csurf();
-app.use(flash());
+const csrfProtection = csrf();
 
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -42,7 +40,6 @@ app.use(
     store: store,
   })
 );
-
 app.use(csrfProtection);
 app.use(flash());
 
@@ -86,8 +83,10 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(3000))
+  .connect(MONGODB_URI)
+  .then((result) => {
+    app.listen(3000);
+  })
   .catch((err) => {
     console.log(err);
   });
