@@ -5,6 +5,8 @@ const Product = require("../models/product");
 
 const { formatCurrency } = require("../util/money");
 
+const ITEMS_PER_PAGE = 2;
+
 exports.getAddProduct = (req, res, next) => {
   res.render("admin/edit-product", {
     pageTitle: "Add Product",
@@ -158,11 +160,16 @@ exports.postEditProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
+  const page = +req.query.page || 1;
   Product.find({ userId: req.user._id })
-    // .select('title price -_id')
-    // .populate('userId', 'name')
+    .countDocuments()
+    .then((numProducts) => {
+      totalItems = numProducts;
+      return Product.find({ userId: req.user._id })
+        .skip((page - 1) * ITEMS_PER_PAGE)
+        .limit(ITEMS_PER_PAGE);
+    })
     .then((products) => {
-      // console.log(products);
       const updatedPrices = products.map((e) => {
         return {
           ...e._doc,
@@ -170,11 +177,16 @@ exports.getProducts = (req, res, next) => {
         };
       });
 
-      console.log(updatedPrices);
       res.render("admin/products", {
         prods: updatedPrices,
-        pageTitle: "Admin Products",
+        pageTitle: "Admin products",
         path: "/admin/products",
+        currentPage: page,
+        hasNextPage: ITEMS_PER_PAGE * page < totalItems,
+        hasPrevPage: page > 1,
+        nextPage: page + 1,
+        prevPage: page - 1,
+        lastPage: Math.ceil(totalItems / ITEMS_PER_PAGE),
       });
     })
     .catch((err) => {
