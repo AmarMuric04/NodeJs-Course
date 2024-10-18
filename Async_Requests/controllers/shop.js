@@ -5,6 +5,9 @@ const path = require("path");
 const PDFDocument = require("pdfkit");
 
 const { formatCurrency } = require("../util/money");
+const stripe = require("stripe")(
+  "sk_test_51QBHqvFwuMTIpHfk8mu25N3lxYzNQUl1u0CP5Wiwyfr8YQLbQCMf5UEebMtp4FnFN7lo8fTNYRdRNGIZKB4RtSZv00wJ6VtGvp"
+);
 
 const ITEMS_PER_PAGE = 1;
 
@@ -150,21 +153,45 @@ exports.postCartDeleteProduct = (req, res, next) => {
 };
 
 exports.getCheckout = (req, res, next) => {
+  let products;
+  let total = 0;
   req.user
     .populate("cart.items.productId")
     .execPopulate()
     .then((user) => {
-      const products = user.cart.items;
+      products = user.cart.items;
+      total = 0;
+      products.forEach((p) => (total += p.quantity * p.productId.price));
+
       console.log(products);
+      return stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        mode: "payment", // Add the mode here
+        line_items: products.map((p) => {
+          return {
+            price_data: {
+              currency: "usd",
+              unit_amount: p.productId.price * 100, // Stripe expects the amount in cents
+              product_data: {
+                name: p.productId.title,
+                description: p.productId.description,
+              },
+            },
+            quantity: p.quantity,
+          };
+        }),
+        success_url:
+          req.protocol + "://" + req.get("host") + "/checkout/success",
+        cancel_url: req.protocol + "://" + req.get("host") + "/checkout/cancel",
+      });
+    })
+    .then((session) => {
       res.render("shop/checkout", {
         path: "/checkout",
         pageTitle: "Checkout",
         products: products,
-        totalSum: products.reduce(
-          (current, product) =>
-            current + product.quantity * product.productId.price,
-          0
-        ),
+        totalSum: total,
+        sessionId: session.id,
       });
     })
     .catch((err) => {
@@ -174,7 +201,7 @@ exports.getCheckout = (req, res, next) => {
     });
 };
 
-exports.postOrder = (req, res, next) => {
+exports.getCheckoutSuccess = (req, res, next) => {
   req.user
     .populate("cart.items.productId")
     .execPopulate()
