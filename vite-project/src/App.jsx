@@ -4,6 +4,10 @@ import what from "./assets/what.svg";
 import time from "./assets/time.svg";
 import light from "./assets/light.svg";
 import stats from "./assets/stats.svg";
+import trophy from "./assets/trophy.svg";
+import tup from "./assets/tup.svg";
+import creativ from "./assets/creativ.svg";
+import bank from "./assets/bank.svg";
 
 function App() {
   return (
@@ -207,7 +211,7 @@ function App() {
             <img className="w-20 h-20" src={what} />
             <div className="flex flex-col">
               <h1 className="font-bold text-2xl text-black">What to expect?</h1>
-              <p>SOLVEIT brigs experts together.</p>
+              <p className="text-gray-700">SOLVEIT brigs experts together.</p>
             </div>
           </li>
           <li className="flex items-center w-1/5 font-thin text-gray-500 gap-2">
@@ -312,23 +316,64 @@ function App() {
           </ul>
         </div>
         <div className="flex gap-8 w-full mt-10">
-          <div className="w-1/3 h-[30rem]">
+          <div className="w-1/3 h-[30rem] relative group overflow-hidden">
             <img
-              className="w-full h-full object-cover"
+              className="w-full h-full transition-all duration-500 object-cover group-hover:scale-125"
               src="https://images.unsplash.com/photo-1539627831859-a911cf04d3cd?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cnViaWtzJTIwY3ViZXxlbnwwfHwwfHx8MA%3D%3D"
-            />
+            />{" "}
+            <div className="absolute top-0 left-0 w-full h-full bg-purple-900 opacity-0 hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center text-center text-white p-4 hover-target">
+              <h1 className="font-bold text-2xl">Rubik{"'"}s Cube</h1>
+              <h1 className="font-bold text-xl">
+                {"("}The Ultimate Puzzle{")"}
+              </h1>
+              <p className="mt-8">
+                Join the conversation on the evolution of the Rubik's Cube,
+                exploring how this iconic puzzle continues to challenge and
+                inspire minds. Discover its impact on problem-solving
+                techniques, speedcubing culture, and its role in education and
+                beyond. Unravel the endless possibilities and see how this
+                timeless puzzle will shape the future of creativity and logic.
+              </p>
+            </div>
           </div>
-          <div className="w-1/3 h-[30rem]">
+          <div className="w-1/3 h-[30rem] relative group overflow-hidden">
             <img
-              className="w-full h-full object-cover"
+              className="w-full h-full transition-all duration-500 object-cover group-hover:scale-125"
               src="https://media.istockphoto.com/id/139707843/photo/sudoku.jpg?s=612x612&w=0&k=20&c=O2yRZFTcFELntjnt_1fNYS6JA5GIUxGBAhhqlWLjG6c="
-            />
+            />{" "}
+            <div className="absolute top-0 left-0 w-full h-full bg-purple-900 opacity-0 hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center text-center text-white p-4 hover-target">
+              <h1 className="font-bold text-2xl">Sudoku</h1>
+              <h1 className="font-bold text-xl">
+                {"("}The Ultimate Logic Challenge{")"}
+              </h1>
+              <p className="mt-8">
+                Join the conversation on the evolution of Sudoku, exploring how
+                this timeless puzzle continues to challenge logical thinking and
+                sharpen problem-solving skills. Discover its influence on
+                education, cognitive development, and its growing community of
+                solvers worldwide. Dive into strategies, variations, and its
+                potential role in shaping future puzzle innovations.
+              </p>
+            </div>
           </div>
-          <div className="w-1/3 h-[30rem]">
+          <div className="w-1/3 h-[30rem] relative group overflow-hidden">
             <img
-              className="w-full h-full object-cover"
+              className="w-full h-full transition-all duration-500 object-cover group-hover:scale-125"
               src="https://wallpaper.forfun.com/fetch/4e/4e8539373299f8b60315f64a65a0e3d0.jpeg"
-            />
+            />{" "}
+            <div className="absolute top-0 left-0 w-full h-full bg-purple-900 opacity-0 hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center text-center text-white p-4 hover-target">
+              <h1 className="font-bold text-2xl">Other Puzzles</h1>
+              <h1 className="font-bold text-xl">
+                {"("}Unleash Your Inner Solver{")"}
+              </h1>
+              <p className="mt-8">
+                Be part of the discussion on the fascinating world of puzzles
+                beyond the classics. From crosswords and logic puzzles to modern
+                brainteasers, explore how these challenges push the boundaries
+                of creativity, logic, and ingenuity. Discover tips, tricks, and
+                the ever-expanding universe of puzzles waiting to be solved.
+              </p>
+            </div>
           </div>
         </div>
         <ul className="flex justify-between px-20 py-16">
@@ -355,6 +400,300 @@ function App() {
             <div className="h-[0.7rem] w-[0.7rem] rounded-full bg-lime-400 mt-4"></div>
           </li>
         </ul>
+      </section>
+      <section className="px-[25rem] py-40">
+        <p className="text-[0.7rem] tracking-[0.2rem] py-8">FEATURES</p>
+        <h1 className="text-white text-[3rem] leading-[3rem] font-bold">
+          Why you <span className="text-[#ffd100]">should visit</span> SolveIt
+          <span className="text-pink-600">.</span>
+        </h1>
+        <div className="w-full mt-10 flex gap-5">
+          <div className="bg-[#ffd100] w-1/3 p-8 hover:-translate-y-7 transition-all">
+            <div className="w-16 h-16 bg-[#ffa100] flex items-center justify-center">
+              <img className="w-4/5 h-4/5" src={trophy} />
+            </div>
+            <h1 className="text-[1.5rem] py-4">Inspiration</h1>
+            <div className="h-[0.2rem] w-20 bg-[#ffa100] mb-4"></div>
+            <p className="text-lg text-gray-700">
+              Our speakers will inspire you with mind-blowing ideas supported by
+              real-world-examples and stories.
+            </p>
+          </div>
+          <div className="bg-pink-600 w-1/3 p-8 hover:-translate-y-7 transition-all">
+            <div className="w-16 h-16 bg-pink-700 flex items-center justify-center">
+              <img className="w-4/5 h-4/5" src={tup} />
+            </div>
+            <h1 className="text-[1.5rem] py-4">Community</h1>
+            <div className="h-[0.2rem] w-20 bg-pink-700 mb-4"></div>
+            <p className="text-lg text-gray-700">
+              Become a part of the warm, respectful and intelligent community of
+              entrepreneurs and innovators.
+            </p>
+          </div>
+          <div className="bg-cyan-400 w-1/3 p-8 hover:-translate-y-7 transition-all">
+            <div className="w-16 h-16 bg-cyan-500 flex items-center justify-center">
+              <img className="w-4/5 h-4/5" src={creativ} />
+            </div>
+            <h1 className="text-[1.5rem] py-4">Challenge</h1>
+            <div className="h-[0.2rem] w-20 bg-cyan-500 mb-4"></div>
+            <p className="text-lg text-gray-700">
+              Experience unexpected emotions, learn more about alternative
+              perspectives, and discover ideas.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="polygon bg-purple-200 w-full px-[25rem] py-40">
+        <p className="text-[0.7rem] tracking-[0.2rem] py-8 text-center">
+          SUBSCRIPTION OPTIONS
+        </p>
+        <h1 className="text-[3rem] leading-[3rem] font-bold text-center">
+          Choose your suitable{" "}
+          <span className="text-pink-600">registration</span> package
+          <span className="text-cyan-400">.</span>
+        </h1>
+        <p className="text-gray-700 text-lg text-center py-8">
+          We offer several tickets types for your convenience.
+        </p>
+        <div className="w-full mt-10 flex gap-5">
+          <div className="bg-cyan-400 w-1/3 p-8 hover:-translate-y-7 transition-all">
+            <p className="text-[0.7rem] tracking-[0.2rem]">ONE DAY</p>
+            <h1 className="text-[1.5rem] py-4">One-Day Pass / $275</h1>
+            <p className="text-lg text-gray-700">
+              You can choose any of the two days of the SolveIt conference
+            </p>
+            <ul className="flex flex-col justify-between py-8 gap-6">
+              <li className="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.5em"
+                  height="1.5em"
+                  viewBox="0 0 2048 2048"
+                  className="opacity-50"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                  />
+                </svg>
+                <p className="text-gray-700">Admission for two days;</p>
+              </li>{" "}
+              <li className="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.5em"
+                  height="1.5em"
+                  viewBox="0 0 2048 2048"
+                  className="opacity-50"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                  />
+                </svg>
+                <p className="text-gray-700">Access to all stages;</p>
+              </li>{" "}
+              <li className="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.5em"
+                  height="1.5em"
+                  viewBox="0 0 2048 2048"
+                  className="opacity-50"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                  />
+                </svg>
+                <p className="text-gray-700">Lunch, coffee, and afterparty.</p>
+              </li>
+            </ul>
+            <button className="bg-gray-800 py-5 px-10 font-bold text-white">
+              Buy ticket now
+            </button>
+          </div>
+          <div className="bg-pink-600 w-1/3 p-8 hover:-translate-y-7 transition-all">
+            <p className="text-[0.7rem] tracking-[0.2rem]">ALL DAYS</p>
+            <h1 className="text-[1.5rem] py-4">
+              Full Pass {"("}
+              <span className="line-through">early</span>
+              {")"} / $620
+            </h1>
+            <p className="text-lg text-gray-700">
+              Enjoy two days of the conference by purchasing the full ticket.
+            </p>
+            <ul className="flex flex-col justify-between py-8 gap-6">
+              <li className="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.5em"
+                  height="1.5em"
+                  viewBox="0 0 2048 2048"
+                  className="opacity-50"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                  />
+                </svg>
+                <p className="text-gray-700">Admission for two days;</p>
+              </li>{" "}
+              <li className="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.5em"
+                  height="1.5em"
+                  viewBox="0 0 2048 2048"
+                  className="opacity-50"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                  />
+                </svg>
+                <p className="text-gray-700">Access to all stages;</p>
+              </li>{" "}
+              <li className="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.5em"
+                  height="1.5em"
+                  viewBox="0 0 2048 2048"
+                  className="opacity-50"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                  />
+                </svg>
+                <p className="text-gray-700">Lunch, coffee, and afterparty.</p>
+              </li>
+            </ul>
+            <button className="bg-gray-800 py-5 px-10 font-bold text-white">
+              Buy ticket now
+            </button>
+          </div>
+          <div className="bg-[#ffd100] w-1/3 p-8 hover:-translate-y-7 transition-all">
+            <p className="text-[0.7rem] tracking-[0.2rem]">ALL DAYS</p>
+            <h1 className="text-[1.5rem] py-4">Early-Bird Pass / $550</h1>
+            <p className="text-lg text-gray-700">
+              The price is available from the day the sale starts and 2 weeks
+              after.
+            </p>
+            <ul className="flex flex-col justify-between py-8 gap-6">
+              <li className="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.5em"
+                  height="1.5em"
+                  viewBox="0 0 2048 2048"
+                  className="opacity-50"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                  />
+                </svg>
+                <p className="text-gray-700">Admission for two days;</p>
+              </li>{" "}
+              <li className="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.5em"
+                  height="1.5em"
+                  viewBox="0 0 2048 2048"
+                  className="opacity-50"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                  />
+                </svg>
+                <p className="text-gray-700">Access to all stages;</p>
+              </li>{" "}
+              <li className="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.5em"
+                  height="1.5em"
+                  viewBox="0 0 2048 2048"
+                  className="opacity-50"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                  />
+                </svg>
+                <p className="text-gray-700">Lunch, coffee, and afterparty.</p>
+              </li>
+            </ul>
+            <button className="bg-gray-800 py-5 px-10 font-bold text-white">
+              Buy ticket now
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="px-[25rem] py-40">
+        <p className="text-[#ffd100] text-[0.7rem] tracking-[0.2rem] py-8 text-center">
+          TESTIMONIALS
+        </p>
+        <h1 className="text-white text-[3rem] leading-[3rem] font-bold text-center">
+          Our <span className="text-cyan-400">users</span> about their
+          experience
+          <span className="text-cyan-400">.</span>
+        </h1>
+        <p className="text-gray-300 text-lg text-center py-8">
+          Read the testimonials our users below.
+        </p>
+        <div className="w-full bg-white mb-12">
+          <img
+            className="w-1/2"
+            src="https://res2.weblium.site/res/648abf34bf47350010ebfd9f/64941d5122d602000f971639_optimized_1400_c1261x904-61x44.webp"
+          />
+        </div>
+        <div className="w-full flex gap-5">
+          <div className="bg-pink-600 w-2/3 py-10 px-8 flex flex-col justify-between">
+            <h1 className="text-2xl font-semibold">
+              Don{"'"}t miss this opportunity to meet your tribe!
+            </h1>
+            <p className="text-lg text-gray-800">
+              Buy your early-bird ticket for only{" "}
+              <span className="font-semibold">$550</span> right now
+            </p>
+          </div>
+          <div className="bg-cyan-400 w-1/3 py-10 px-8 flex flex-col justify-between items-center">
+            <h1 className="mb-4 text-2xl font-semibold text-center">
+              Buy three or more tickets and get{" "}
+              <span className="text-pink-600">20% off.</span>
+            </h1>
+            <p className="tracking-[0.2rem] underline text-[0.6rem]">
+              BUY TICKETS NOW
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <h1 className="text-[3rem] font-bold text-white text-center mt-48">
+            Have any feedback? We would{" "}
+            <span className="text-pink-600">love to </span> hear it
+            <span className="text-[#ffd100]">!</span>
+          </h1>
+          <p className="text-[#ffd110] underline font-bold text-center text-xl mt-8">
+            muricamar2004@gmail.com
+          </p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="2em"
+            height="2em"
+            viewBox="0 0 20 20"
+            className="opacity-50 mt-8"
+          >
+            <path
+              fill="currentColor"
+              d="m1.574 5.286l7.5 4.029c.252.135.578.199.906.199s.654-.064.906-.199l7.5-4.029c.489-.263.951-1.286.054-1.286H1.521c-.897 0-.435 1.023.053 1.286m17.039 2.203l-7.727 4.027c-.34.178-.578.199-.906.199s-.566-.021-.906-.199s-7.133-3.739-7.688-4.028C.996 7.284 1 7.523 1 7.707V15c0 .42.566 1 1 1h16c.434 0 1-.58 1-1V7.708c0-.184.004-.423-.387-.219"
+            />
+          </svg>
+        </div>
       </section>
     </div>
   );
