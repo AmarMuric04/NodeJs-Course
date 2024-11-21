@@ -14,3 +14,7 @@
   font-optical-sizing: auto;
   font-weight: 900;
 }
+
+.polygon {
+  clip-path: polygon(33% 10%, 100% 0, 100% 100%, 30% 93%, 0 100%, 0 0);
+}
