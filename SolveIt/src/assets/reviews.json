@@ -1,0 +1,29 @@
+{
+  "reviews": [
+    {
+      "text": "SolveIt is a fantastic platform for puzzle enthusiasts. The variety of puzzles keeps me engaged, and the hints are helpful without giving too much away. Highly recommended for anyone who loves a mental challenge!",
+      "name": "Emily R.",
+      "profession": "Math Teacher"
+    },
+    {
+      "text": "I’ve been using SolveIt for a few months, and it’s been a great way to unwind after work. The user interface is intuitive, and I love how it tracks my progress. It’s perfect for improving problem-solving skills.",
+      "name": "James K.",
+      "profession": "Software Engineer"
+    },
+    {
+      "text": "SolveIt has brought back my love for logic puzzles! The community feature is a bonus—I enjoy discussing strategies with other users. It’s a must-try for puzzle lovers.",
+      "name": "Sarah L.",
+      "profession": "Graphic Designer"
+    },
+    {
+      "text": "The platform is well-designed and offers a broad range of puzzles from beginner to advanced levels. The weekly challenges are my favorite. SolveIt has become a part of my daily routine.",
+      "name": "Michael T.",
+      "profession": "Data Analyst"
+    },
+    {
+      "text": "SolveIt is not just fun but also a learning experience. It’s helped me sharpen my critical thinking skills. The puzzles are diverse and well-structured. Definitely worth checking out!",
+      "name": "Priya S.",
+      "profession": "College Student"
+    }
+  ]
+}

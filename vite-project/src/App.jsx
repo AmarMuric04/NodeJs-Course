@@ -13,7 +13,7 @@ import dunp from "./assets/dunp.png";
 function App() {
   return (
     <div className="b bg-[#242234] w-full h-full relative">
-      <header className="bg-[#262432] absolute top-0 left-0 right-0 py-4 px-[25rem] flex justify-between items-center z-50 ">
+      <header className="bg-[#1b1825] absolute top-0 left-0 right-0 py-4 px-[25rem] flex justify-between items-center z-50 ">
         <section className="flex gap-3">
           <img className="h-10" src={logo} />
           <div className="flex flex-col justify-between">
@@ -25,19 +25,19 @@ function App() {
         </section>
         <section>
           <ul className="flex gap-10 text-white">
-            <li className="hover:text-[#f00f99] transition-all cursor-pointer">
+            <li className="hover:text-[#fa1c9a] transition-all cursor-pointer">
               About
             </li>
-            <li className="hover:text-[#f00f99] transition-all cursor-pointer">
+            <li className="hover:text-[#fa1c9a] transition-all cursor-pointer">
               Categories
             </li>
-            <li className="hover:text-[#f00f99] transition-all cursor-pointer">
+            <li className="hover:text-[#fa1c9a] transition-all cursor-pointer">
               Sponsors
             </li>
-            <li className="hover:text-[#f00f99] transition-all cursor-pointer">
+            <li className="hover:text-[#fa1c9a] transition-all cursor-pointer">
               Contacts
             </li>
-            <li className="hover:text-[#f00f99] transition-all cursor-pointer">
+            <li className="hover:text-[#fa1c9a] transition-all cursor-pointer">
               Credits
             </li>
           </ul>
@@ -57,7 +57,7 @@ function App() {
             Welcome to solveit
           </p>
           <h1 className="text-[5rem] text-white leading-none font-semibold tracking-wide mt-4">
-            Where <span className="text-[#f00f99] ">problems</span> <br></br>{" "}
+            Where <span className="text-[#fa1c9a] ">problems</span> <br></br>{" "}
             meet solutions<span className="text-[#75e1d9]">.</span>
           </h1>
           <p className="noto-sans font-semibold leading-7 text-white mt-12 text-lg">
@@ -182,7 +182,7 @@ function App() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 480 480"
-          fill="#f00f99"
+          fill="#fa1c9a"
           width="200"
           height="200"
           className="absolute top-48 right-[30rem] opacity-80 z-50 joyful-container"
@@ -212,7 +212,7 @@ function App() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 480 480"
-          fill="#f00f99"
+          fill="#fa1c9a"
           width="75"
           height="75"
           className="absolute top-[25rem] right-[20rem] opacity-80 z-50 joyful-container"
@@ -264,10 +264,10 @@ function App() {
       <section className="w-full px-[25rem] pb-40 flex flex-col items-center pt-32">
         <h1 className="text-[3rem] leading-[3.5rem] font-semibold text-white text-center w-2/3">
           SolveIt is a dynamic{" "}
-          <span className="text-[#f00f99]">online hub</span> dedicated to{" "}
+          <span className="text-[#fa1c9a]">online hub</span> dedicated to{" "}
           <span className="text-[#75e1d9]">puzzles</span> and{" "}
           <span className="text-[#ecd86c]">brain-teasing</span> challenges
-          <span className="text-[#f00f99]">.</span>
+          <span className="text-[#fa1c9a]">.</span>
         </h1>
         <p className="text-center mt-16 text-md text-gray-300 w-2/3">
           Bringing together enthusiasts of Sudoku, Rubik's Cube, logic puzzles,
@@ -291,7 +291,7 @@ function App() {
         </p>
         <div className="h-[0.1rem] w-64 bg-[#75e1d9] mt-10"></div>
         <div className="mt-20 m font-thin">
-          <h1 className="text-center text-[#f00f99] text-xl uppercase noto tracking-[0.1rem]">
+          <h1 className="text-center text-[#fa1c9a] text-xl uppercase noto tracking-[0.1rem]">
             Active since
           </h1>
           <div className="flex gap-2 items-end mt-8">
@@ -314,7 +314,7 @@ function App() {
         <div className="flex w-full">
           <div className="w-2/3">
             <p className="text-black text-[3rem] leading-[3rem] font-semibold">
-              Interactive <span className="text-[#f00f99]">lessons</span> on
+              Interactive <span className="text-[#fa1c9a]">lessons</span> on
               cool and
               <br></br>emerging puzzles or challenges
               <span className="text-[#75e1d9]">.</span>
@@ -462,12 +462,12 @@ function App() {
       </section>
       <section className="px-[25rem] relative">
         <div className="z-50 py-40 relative">
-          <p className="text-[0.7rem] tracking-[0.2rem] py-8 text-[#ecd86c]">
+          <p className="noto text-[0.7rem] tracking-[0.1rem] py-8 text-[#ecd86c]">
             FEATURES
           </p>
           <h1 className="text-white text-[3rem] leading-[3rem] font-bold">
             Why you <span className="text-[#ecd86c]">should visit</span> SolveIt
-            <span className="text-[#f00f99]">.</span>
+            <span className="text-[#fa1c9a]">.</span>
           </h1>
           <div className="w-full mt-14 flex gap-5 h-80">
             <div className="bg-[#ecd86c] w-1/3 p-8 hover:-translate-y-7 transition-all">
@@ -578,12 +578,12 @@ function App() {
         </svg>
       </section>
       <section className="polygon bg-purple-200 w-full px-[25rem] py-40 z-50 relative">
-        <p className="text-[0.7rem] tracking-[0.2rem] py-8 text-center">
+        <p className="text-[0.7rem] tracking-[0.1rem] py-8 text-center noto">
           SUBSCRIPTION OPTIONS
         </p>
         <h1 className="text-[3rem] leading-[3rem] font-bold text-center">
           Choose your suitable{" "}
-          <span className="text-[#f00f99]">subscription</span> package
+          <span className="text-[#fa1c9a]">subscription</span> package
           <span className="text-[#75e1d9]">.</span>
         </h1>
         <p className="text-gray-700 text-lg text-center py-8">
@@ -592,7 +592,9 @@ function App() {
         <div className="w-full mt-10 flex gap-5">
           <div className="bg-[#75e1d9] w-1/3 p-8 hover:-translate-y-2 transition-all">
             <p className="text-[0.7rem] tracking-[0.2rem]">ONE DAY</p>
-            <h1 className="text-[1.5rem] py-4">One-Day Pass / $275</h1>
+            <h1 className="text-[1.5rem] py-4 font-semibold">
+              One-Day Pass / $275
+            </h1>
             <p className="text-lg text-gray-700">
               You can choose any of the two days of the SolveIt conference
             </p>
@@ -610,7 +612,7 @@ function App() {
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                   />
                 </svg>
-                <p className="text-gray-700">Admission for two days;</p>
+                <p className="text-gray-700 italic">Admission for two days;</p>
               </li>{" "}
               <li className="flex items-center gap-5">
                 <svg
@@ -625,7 +627,7 @@ function App() {
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                   />
                 </svg>
-                <p className="text-gray-700">Access to all stages;</p>
+                <p className="text-gray-700 italic">Access to all stages;</p>
               </li>{" "}
               <li className="flex items-center gap-5">
                 <svg
@@ -640,7 +642,9 @@ function App() {
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                   />
                 </svg>
-                <p className="text-gray-700">Lunch, coffee, and afterparty.</p>
+                <p className="text-gray-700 italic">
+                  Lunch, coffee, and afterparty.
+                </p>
               </li>
             </ul>
             <button className="bg-gray-800 py-5 rounded-[2rem] hover:rounded-none transition-all px-10 font-bold text-white">
@@ -649,7 +653,7 @@ function App() {
           </div>
           <div className="bg-pink-600 w-1/3 p-8 hover:-translate-y-2 transition-all">
             <p className="text-[0.7rem] tracking-[0.2rem]">ALL DAYS</p>
-            <h1 className="text-[1.5rem] py-4">
+            <h1 className="text-[1.5rem] py-4 font-semibold">
               Full Pass {"("}
               <span className="line-through">early</span>
               {")"} / $620
@@ -671,7 +675,7 @@ function App() {
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                   />
                 </svg>
-                <p className="text-gray-700">Admission for two days;</p>
+                <p className="text-gray-700 italic">Admission for two days;</p>
               </li>{" "}
               <li className="flex items-center gap-5">
                 <svg
@@ -686,7 +690,7 @@ function App() {
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                   />
                 </svg>
-                <p className="text-gray-700">Access to all stages;</p>
+                <p className="text-gray-700 italic">Access to all stages;</p>
               </li>{" "}
               <li className="flex items-center gap-5">
                 <svg
@@ -701,7 +705,9 @@ function App() {
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                   />
                 </svg>
-                <p className="text-gray-700">Lunch, coffee, and afterparty.</p>
+                <p className="text-gray-700 italic">
+                  Lunch, coffee, and afterparty.
+                </p>
               </li>
             </ul>
             <button className="bg-gray-800 py-5 rounded-[2rem] hover:rounded-none transition-all px-10 font-bold text-white">
@@ -710,7 +716,9 @@ function App() {
           </div>
           <div className="bg-[#ecd86c] w-1/3 p-8 hover:-translate-y-2 transition-all">
             <p className="text-[0.7rem] tracking-[0.2rem]">ALL DAYS</p>
-            <h1 className="text-[1.5rem] py-4">Early-Bird Pass / $550</h1>
+            <h1 className="text-[1.5rem] py-4 font-semibold">
+              Early-Bird Pass / $550
+            </h1>
             <p className="text-lg text-gray-700">
               The price is available from the day the sale starts and 2 weeks
               after.
@@ -729,7 +737,7 @@ function App() {
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                   />
                 </svg>
-                <p className="text-gray-700">Admission for two days;</p>
+                <p className="text-gray-700 italic">Admission for two days;</p>
               </li>{" "}
               <li className="flex items-center gap-5">
                 <svg
@@ -744,7 +752,7 @@ function App() {
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                   />
                 </svg>
-                <p className="text-gray-700">Access to all stages;</p>
+                <p className="text-gray-700 italic">Access to all stages;</p>
               </li>{" "}
               <li className="flex items-center gap-5">
                 <svg
@@ -759,7 +767,9 @@ function App() {
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                   />
                 </svg>
-                <p className="text-gray-700">Lunch, coffee, and afterparty.</p>
+                <p className="text-gray-700 italic">
+                  Lunch, coffee, and afterparty.
+                </p>
               </li>
             </ul>
             <button className="bg-gray-800 py-5 rounded-[2rem] hover:rounded-none transition-all px-10 font-bold text-white">
@@ -799,7 +809,7 @@ function App() {
           <div className="bg-[#75e1d9] w-1/3 py-10 px-8 flex flex-col justify-between items-center">
             <h1 className="mb-4 text-2xl font-semibold text-center">
               Buy three or more tickets and get{" "}
-              <span className="text-[#f00f99]">20% off.</span>
+              <span className="text-[#fa1c9a]">20% off.</span>
             </h1>
             <p className="tracking-[0.2rem] underline text-[0.6rem]">
               BUY TICKETS NOW
@@ -809,7 +819,7 @@ function App() {
         <div className="flex flex-col items-center">
           <h1 className="text-[3rem] font-bold text-white text-center mt-48">
             Have any <span className="text-[#75e1d9]">feedback</span>? We would{" "}
-            <span className="text-[#f00f99]">love to </span> hear it
+            <span className="text-[#fa1c9a]">love to </span> hear it
             <span className="text-[#ecd86c]">!</span>
           </h1>
           <p className="text-[#ffd110] underline font-bold text-center text-xl mt-8">
@@ -831,16 +841,18 @@ function App() {
       </section>
       <section className="polygon bg-purple-200 w-full px-[25rem] py-40 flex gap-40">
         <div className="w-1/2">
-          <p className="text-[0.7rem] tracking-[0.2rem] py-8">OUR NEWSLETTER</p>
-          <h1 className="text-[3rem] leading-[3rem] font-bold">
-            Get the latest <span className="text-[#f00f99]">news</span>.
+          <p className="text-[0.7rem] tracking-[0.1rem] py-8 noto">
+            OUR NEWSLETTER
+          </p>
+          <h1 className="text-[2.5rem] leading-[3rem] font-bold">
+            Get the latest <span className="text-[#fa1c9a]">news</span>.
             <br></br> Right when they happen
             <span className="text-[#ecd86c]">!</span>
           </h1>
-          <p className="my-4 text-xl text-semibold">
+          <p className="my-6 text-xl text-semibold">
             Have questions? Browse the section below.
           </p>
-          <p className="text-gray-700">
+          <p className="text-gray-700 font-semibold">
             We kindly ask you to browse through this section to find answers on
             your questions about our conference, venue, tickets, etc. If you
             still have questions or inquiries, please fill out the form on the
@@ -874,14 +886,14 @@ function App() {
         </div>
       </section>
       <footer className="px-[25rem] pt-40">
-        <h1 className="text-[3rem] leading-[3rem] font-bold text-center">
+        <h1 className="text-[3rem] leading-[3rem] font-bold text-center text-white">
           A vibrant and <span className="text-[#75e1d9]">inclusive</span>{" "}
           community of <span className="text-[#ecd86c]">solvers</span> and{" "}
-          <span className="text-[#f00f99]">challengers</span>
+          <span className="text-[#fa1c9a]">challengers</span>
           <span className="text-[#75e1d9]">.</span>
         </h1>
-        <p className="text-3xl font-bold text-center my-8">
-          Learn <span className="text-[#f00f99] underline">more</span> now!
+        <p className="text-3xl font-bold text-center my-8 text-white">
+          Learn <span className="text-[#fa1c9a] underline">more</span> now!
         </p>
         <div className="w-full flex justify-between my-8">
           <img
@@ -1036,7 +1048,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="w-full flex py-20 border-y-2 border-purple-500">
+        <div className="w-full flex py-20 border-y-2 border-[#383b48]">
           <div className="w-[40%]">
             <section className="flex gap-3">
               <img className="h-10" src={logo} />

@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Ahom&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.font {
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+}
+
+.polygon {
+  clip-path: polygon(33% 10%, 100% 0, 100% 100%, 30% 93%, 0 100%, 0 0);
+}
+.joyful-container:hover {
+  animation: joyful 1.5s ease-in-out forwards;
+}
+@keyframes joyful {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1); /* Scale in a little */
+  }
+  40% {
+    transform: scale(0.9); /* Scale out a bit */
+  }
+  60% {
+    transform: rotate(10deg) scale(1); /* Spin slightly *n/
+  }
+  80% {
+    transform: rotate(-10deg) scale(1); /* Spin back */
+  }
+  100% {
+    transform: rotate(0deg) scale(1); /* Settle back */
+  }
+}
+
+.noto {
+  font-family: "Noto Serif Ahom", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-sans {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.m {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.b {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+}
+
+.r {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+.l {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+}
+
+.inactive {
+  opacity: 0;
+  height: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.active {
+  opacity: 100;
+}
+
+.reviews {
+  scroll-snap-type: x mandatory;
+}
+
+.review {
+  scroll-snap-align: end;
+}
