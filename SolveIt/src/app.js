@@ -1,3 +1,9 @@
-import { init } from "./controller.js";
+import { handleThemes } from "./controller.js";
+import { handleReviews } from "./controller.js";
+import { handleDrop } from "./controller.js";
+import { handleSignUp } from "./controller.js";
 
-init();
+handleThemes();
+handleReviews();
+handleDrop();
+handleSignUp();

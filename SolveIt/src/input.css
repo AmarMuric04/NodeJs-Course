@@ -101,6 +101,43 @@
   scroll-snap-type: x mandatory;
 }
 
+.reviews::-webkit-scrollbar {
+  display: none;
+}
+
 .review {
   scroll-snap-align: end;
+}
+
+.drop-disabled .toggle-text {
+  height: 0px;
+}
+
+.drop-enabled .toggle-text {
+  height: auto;
+}
+
+.drop-enabled .plus {
+  transition: 0.3s all;
+  transform: rotate(45deg);
+}
+
+.drop-disabled .plus {
+  transition: 0.3s all;
+  transform: rotate(0deg);
+}
+
+.signup {
+  background-color: #fa1c9a;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 0%;
+  height: 2px;
+  z-index: 50;
+  transition: 0.3s all;
+}
+
+.signup-hovered {
+  width: 100%;
 }

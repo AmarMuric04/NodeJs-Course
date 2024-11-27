@@ -3,10 +3,10 @@ export function renderReviews(reviews) {
 
   reviews.forEach((review) => {
     reviewsList.innerHTML += ` 
-           <div class="bg-white review mb-12 flex h-[30rem] min-w-[75rem]">
+           <div class="bg-white review mb-12 flex h-[30rem] min-w-[80rem] w-[80rem]">
               <img
                 class="w-1/2"
-                src="https://res2.weblium.site/res/648abf34bf47350010ebfd9f/64941d5122d602000f971639_optimized_1400_c1261x904-61x44.webp"
+                src="${review.image}"
               />
               <div class="p-16 flex flex-col justify-between">
                 <svg

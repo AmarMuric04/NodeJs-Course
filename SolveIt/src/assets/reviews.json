@@ -3,27 +3,32 @@
     {
       "text": "SolveIt is a fantastic platform for puzzle enthusiasts. The variety of puzzles keeps me engaged, and the hints are helpful without giving too much away. Highly recommended for anyone who loves a mental challenge!",
       "name": "Emily R.",
-      "profession": "Math Teacher"
+      "profession": "Math Teacher",
+      "image": "https://res2.weblium.site/res/648abf34bf47350010ebfd9f/64941d5122d602000f971639_optimized_1400_c1261x904-61x44.webp"
     },
     {
       "text": "I’ve been using SolveIt for a few months, and it’s been a great way to unwind after work. The user interface is intuitive, and I love how it tracks my progress. It’s perfect for improving problem-solving skills.",
       "name": "James K.",
-      "profession": "Software Engineer"
+      "profession": "Software Engineer",
+      "image": "https://res2.weblium.site/res/648abf34bf47350010ebfd9f/64941ddc96ec34000e3ea740_optimized_1400_c1400x933-0x0.webp"
     },
     {
       "text": "SolveIt has brought back my love for logic puzzles! The community feature is a bonus—I enjoy discussing strategies with other users. It’s a must-try for puzzle lovers.",
       "name": "Sarah L.",
-      "profession": "Graphic Designer"
+      "profession": "Graphic Designer",
+      "image": "https://res2.weblium.site/res/648abf34bf47350010ebfd9f/64941d88712595000f71fc12_optimized_1400_c1400x934-0x0.webp"
     },
     {
       "text": "The platform is well-designed and offers a broad range of puzzles from beginner to advanced levels. The weekly challenges are my favorite. SolveIt has become a part of my daily routine.",
       "name": "Michael T.",
-      "profession": "Data Analyst"
+      "profession": "Data Analyst",
+      "image": "https://t4.ftcdn.net/jpg/02/19/97/71/360_F_219977199_H4YRCfCvo90tYvHigf53ZWFpFiNexbW5.jpg"
     },
     {
       "text": "SolveIt is not just fun but also a learning experience. It’s helped me sharpen my critical thinking skills. The puzzles are diverse and well-structured. Definitely worth checking out!",
-      "name": "Priya S.",
-      "profession": "College Student"
+      "name": "Peter S.",
+      "profession": "College Student",
+      "image": "https://t4.ftcdn.net/jpg/02/19/15/15/360_F_219151547_HOPsqPpyQXH1bY4Rh9zvxYr16WP7rwaz.jpg"
     }
   ]
 }
