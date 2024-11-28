@@ -27,23 +27,37 @@
           <section>
             <ul class="flex gap-3 text-white">
               <a
-                href="../about.html"
-                class="hover:text-[#fa1c9a] transition-all cursor-pointer no-underline"
+                href="../views/about.html"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer no-underline nav-parent"
               >
                 About
+                <div class="nav"></div>
               </a>
-              <li class="hover:text-[#fa1c9a] transition-all cursor-pointer">
+              <a
+                href="../views/categories.html"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
+              >
                 Categories
-              </li>
-              <li class="hover:text-[#fa1c9a] transition-all cursor-pointer">
+                <div class="nav"></div> </a
+              ><a
+                href="../views/categories.html"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
+              >
                 Sponsors
-              </li>
-              <li class="hover:text-[#fa1c9a] transition-all cursor-pointer">
+                <div class="nav"></div> </a
+              ><a
+                href="../views/categories.html"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
+              >
                 Contacts
-              </li>
-              <li class="hover:text-[#fa1c9a] transition-all cursor-pointer">
+                <div class="nav"></div> </a
+              ><a
+                href="../views/categories.html"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
+              >
                 Credits
-              </li>
+                <div class="nav"></div>
+              </a>
             </ul>
           </section>
           <section class="flex items-center justify-between gap-4">
@@ -113,9 +127,9 @@
                 </li>
               </ul>
             </div>
-            <button class="py-2 text-white px-10 relative signup-parent">
+            <button class="py-2 text-white px-10 relative nav-parent">
               Sign Up
-              <div class="signup"></div>
+              <div class="nav"></div>
             </button>
             <button
               class="text-white bg-pink-600 py-2 px-10 rounded-[2rem] transition-all hover:rounded-none"
@@ -992,7 +1006,7 @@
               Read the testimonials from our users below.
             </p>
             <div
-              class="reviews flex items-center gap-10 overflow-x-scroll scroll-snap-x scroll-snap-mandatory"
+              class="reviews flex items-center gap-10 overflow-x-hidden scroll-snap-x scroll-snap-mandatory"
             ></div>
             <button class="absolute -left-[4rem] top-[28.5rem] prev-button">
               <svg
@@ -1546,6 +1560,6 @@
         </div>
       </footer>
     </div>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="../app.js"></script>
   </body>
 </html>

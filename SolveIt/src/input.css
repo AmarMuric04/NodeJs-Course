@@ -127,17 +127,17 @@
   transform: rotate(0deg);
 }
 
-.signup {
+.nav {
   background-color: #fa1c9a;
   position: absolute;
-  bottom: 0px;
+  bottom: -2px;
   left: 0px;
   width: 0%;
   height: 2px;
   z-index: 50;
-  transition: 0.3s all;
+  transition: 0.5s all;
 }
 
-.signup-hovered {
+.nav-hovered {
   width: 100%;
 }

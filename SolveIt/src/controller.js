@@ -1,93 +1,44 @@
-import { getReviews } from "./model.js";
-import { renderReviews } from "./view.js";
-
-export async function handleThemes() {
-  const themeBtn = document.querySelector(".theme-js");
+export function handleThemeHoverIn() {
   const themeCont = document.querySelector(".theme-container-js");
+  themeCont.classList.replace("inactive", "active");
+}
 
-  themeBtn.addEventListener("mouseover", () => {
-    themeCont.classList.replace("inactive", "active");
-  });
+export function handleThemeHoverOut() {
+  const themeCont = document.querySelector(".theme-container-js");
+  themeCont.classList.replace("active", "inactive");
+}
 
-  themeBtn.addEventListener("mouseout", () => {
-    themeCont.classList.replace("active", "inactive");
+export function handleNextReview(reviewsParent, scrollAmount) {
+  reviewsParent.append(reviewsParent.firstElementChild);
+  reviewsParent.scrollTo({
+    left: reviewsParent.scrollLeft + scrollAmount,
+    behavior: "smooth",
   });
 }
 
-export async function handleReviews() {
-  const reviews = await getReviews();
-  renderReviews(reviews);
+export function handlePrevReview(reviewsParent, scrollAmount) {
+  reviewsParent.prepend(reviewsParent.lastElementChild);
+  reviewsParent.scrollTo({
+    left: reviewsParent.scrollLeft - scrollAmount,
+    behavior: "smooth",
+  });
+}
 
-  const reviewsParent = document.querySelector(".reviews");
-
-  const prevButton = document.querySelector(".prev-button");
-  const nextButton = document.querySelector(".next-button");
-
-  const scrollAmount = reviewsParent.firstElementChild.offsetWidth;
-
-  let index = 0;
-
-  function disableButton(button) {
-    button.disabled = true;
-
-    setTimeout(() => {
-      button.disabled = false;
-    }, 600);
+export function handleDropdownClick(drop, dropdowns) {
+  if (drop.classList.contains("drop-enabled")) {
+    drop.classList.replace("drop-enabled", "drop-disabled");
+    return;
   }
-
-  nextButton.addEventListener("click", function () {
-    if (index === reviews.length - 1) {
-      reviewsParent.append(reviewsParent.firstElementChild);
-    } else {
-      index++;
-    }
-    reviewsParent.scrollTo({
-      left: reviewsParent.scrollLeft + scrollAmount,
-      behavior: "smooth",
-    });
-    disableButton(this);
-  });
-
-  prevButton.addEventListener("click", function () {
-    if (index === 0) {
-      reviewsParent.prepend(reviewsParent.lastElementChild);
-    } else {
-      index--;
-    }
-    reviewsParent.scrollTo({
-      left: reviewsParent.scrollLeft - scrollAmount,
-      behavior: "smooth",
-    });
-    disableButton(this);
-  });
+  dropdowns.forEach((d) =>
+    d.classList.replace("drop-enabled", "drop-disabled")
+  );
+  drop.classList.replace("drop-disabled", "drop-enabled");
 }
 
-export async function handleDrop() {
-  const dropdowns = document.querySelectorAll(".drop");
-
-  dropdowns.forEach((drop) => {
-    drop.addEventListener("click", function () {
-      if (this.classList.contains("drop-enabled")) {
-        this.classList.replace("drop-enabled", "drop-disabled");
-        return;
-      }
-      dropdowns.forEach((drop) => {
-        drop.classList.replace("drop-enabled", "drop-disabled");
-      });
-
-      this.classList.replace("drop-disabled", "drop-enabled");
-    });
-  });
+export function handleNavHoverIn(navParent) {
+  navParent.querySelector(".nav").classList.add("nav-hovered");
 }
 
-export async function handleSignUp() {
-  const signupParent = document.querySelector(".signup-parent");
-
-  signupParent.addEventListener("mouseenter", function () {
-    this.querySelector(".signup").classList.add("signup-hovered");
-  });
-
-  signupParent.addEventListener("mouseleave", function () {
-    this.querySelector(".signup").classList.remove("signup-hovered");
-  });
+export function handleNavHoverOut(navParent) {
+  navParent.querySelector(".nav").classList.remove("nav-hovered");
 }
