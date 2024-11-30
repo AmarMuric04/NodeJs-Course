@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="../output.css" rel="stylesheet" />
-    <link href="../input.css" rel="stylesheet" />
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link href="../styles/input.css" rel="stylesheet" />
   </head>
   <body>
     <div
@@ -14,45 +14,66 @@
       <header
         class="bg-[#1b1825] absolute top-0 left-0 right-0 py-4 w-full flex justify-center z-50"
       >
-        <nav class="flex w-[80rem] justify-between items-center">
-          <section class="flex gap-3">
-            <img class="h-10" src="../assets/images/logo.png" />
+        <nav class="flex w-[75rem] justify-between items-center">
+          <a href="./index.html" class="flex gap-2 items-center">
+            <img class="h-[3rem]" src="../assets/images/logo.png" />
             <div class="flex flex-col justify-between">
-              <h1 class="text-white font-extrabold text-xl tracking-[0.2rem]">
-                SOLVEIT
-              </h1>
-              <p class="text-gray-300 text-[0.6rem]">HELP & FEEDBACK</p>
+              <h1 class="text-white font-bold text-[1.6rem]">SolveBox</h1>
+              <div
+                class="text-gray-500 text-[0.6rem] flex justify-between items-center"
+              >
+                <p>ASSISTANCE</p>
+                <p>&</p>
+                <p>INSIGHTS</p>
+              </div>
             </div>
-          </section>
+          </a>
           <section>
-            <ul class="flex gap-3 text-white">
+            <ul class="flex gap-6 text-gray-300 font-semibold">
               <a
                 href="../views/about.html"
-                class="hover:text-[#fa1c9a] transition-all cursor-pointer no-underline"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
               >
                 About
+                <div class="nav bg-[#fa1c9a]"></div>
               </a>
-              <li class="hover:text-[#fa1c9a] transition-all cursor-pointer">
+              <a
+                href="../views/categories.html"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
+              >
                 Categories
-              </li>
-              <li class="hover:text-[#fa1c9a] transition-all cursor-pointer">
-                Sponsors
-              </li>
-              <li class="hover:text-[#fa1c9a] transition-all cursor-pointer">
+                <div class="nav bg-[#fa1c9a]"></div> </a
+              ><a
+                href="../views/subscribe.html"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
+              >
+                Subscribe
+                <div class="nav bg-[#fa1c9a]"></div> </a
+              ><a
+                href="../views/contacts.html"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
+              >
                 Contacts
-              </li>
-              <li class="hover:text-[#fa1c9a] transition-all cursor-pointer">
+                <div class="nav bg-[#fa1c9a]"></div> </a
+              ><a
+                href="../views/credits.html"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
+              >
                 Credits
-              </li>
+                <div class="nav bg-[#fa1c9a]"></div>
+              </a>
             </ul>
           </section>
           <section class="flex items-center justify-between gap-4">
-            <div class="relative w-[7rem] flex justify-center z-50 theme-js">
-              <p
-                class="hover:text-[#fa1c9a] py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-white text-center"
+            <div
+              class="relative w-[7rem] flex justify-center z-50 theme-js text-gray-300 font-semibold"
+            >
+              <div
+                class="hover:text-[#fa1c9a] py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-center nav-parent relative"
               >
                 Themes
-              </p>
+                <div class="nav bg-[#fa1c9a]"></div>
+              </div>
               <ul
                 class="bg-[#262432] absolute shadow-xl py-4 px-1 rounded-[1rem] text-gray-300 top-full theme-container-js inactive transition-all"
               >
@@ -113,18 +134,118 @@
                 </li>
               </ul>
             </div>
-            <button class="py-2 text-white px-10 relative signup-parent">
+            <a
+              href="./signup.html"
+              class="py-2 text-white px-10 relative nav-parent"
+            >
               Sign Up
-              <div class="signup"></div>
-            </button>
-            <button
+              <div class="nav bg-[#fa1c9a]"></div>
+            </a>
+            <a
+              href="./signin.html"
               class="text-white bg-pink-600 py-2 px-10 rounded-[2rem] transition-all hover:rounded-none"
             >
               Sign In
-            </button>
+            </a>
           </section>
         </nav>
       </header>
+      <section class="w-full flex justify-center relative">
+        <div class="w-[80rem]">
+          <div
+            class="relative z-40 mt-20 h-[15rem] flex justify-between items-center"
+          >
+            <div class="w-1/2">
+              <h1 class="text-[3rem] font-bold leading-[3.5rem] text-white">
+                Available <span class="text-[#fa1c9a]">Categories</span>
+              </h1>
+              <p
+                class="text-[0.5rem] tracking-[0.1rem] pt-8 pb-4 noto text-[#ecd86c]"
+              >
+                <a class="hover:underline" href="./index.html"> HOME</a>
+                <span>></span>
+                <span class="underline font-semibold">CATEGORIES</span>
+              </p>
+            </div>
+            <div class="w-1/2">
+              <p class="text-gray-400 font-semibold text-lg">
+                SolveBox is one of the largest platforms focused on solving
+                puzzles, Rubik's cubes, Sudoku, and other brain-teasers. We
+                offer a variety of challenges designed for puzzle enthusiasts at
+                all skill levels, providing a space for experts and beginners
+                alike to improve their problem-solving abilities and enjoy a
+                wide range of intellectual challenges.
+              </p>
+            </div>
+          </div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#262432"
+            width="200"
+            height="200"
+            class="absolute top-[7.5rem] left-[38rem] z-0"
+            viewBox="0 0 480 480"
+          >
+            <path
+              d="M480 120 360 0 240 120 120 0 0 120l120 120L0 360l120 120 120-120 120 120 120-120-120-120 120-120z"
+            ></path>
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 480 480"
+            fill="#383b48"
+            width="200"
+            height="200"
+            class="absolute top-20 right-80 z-0"
+          >
+            <path
+              d="M320 160a160 160 0 1 0-320 0v320h160V160h160ZM320 0v320H160a160 160 0 1 0 320 0V0H320Z"
+            ></path>
+            <
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 480 480"
+            fill="#262432"
+            width="200"
+            height="200"
+            class="absolute bottom-[1.6rem] right-[50rem] z-0"
+          >
+            <path
+              d="M120 120h120v120H120zM0 240h120v120H0zM120 360h120v120H120zM0 0h120v120H0zM360 120h120v120H360zM240 240h120v120H240zM360 360h120v120H360zM240 0h120v120H240z"
+            ></path>
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 480 480"
+            fill="#262432"
+            width="200"
+            height="200"
+            class="absolute bottom-[1.6rem] left-10"
+          >
+            <path
+              d="M480 240H240V0a240 240 0 0 1 240 240ZM240 480H0V240a240 240 0 0 1 240 240ZM480 480H240V240a240 240 0 0 1 240 240ZM240 240H0V0a240 240 0 0 1 240 240Z"
+            ></path>
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 480 480"
+            fill="#262432"
+            width="200"
+            height="200"
+            class="absolute bottom-[1.6rem] right-10"
+          >
+            <path
+              d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z"
+            ></path>
+          </svg>
+        </div>
+      </section>
       <section
         class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-center"
       >
@@ -134,7 +255,7 @@
               <img class="w-20 h-20" src="../assets/svgs/what.svg" />
               <div class="flex flex-col">
                 <h1 class="font-bold text-2xl text-black">What to expect?</h1>
-                <p class="text-gray-700">SOLVEIT brigs experts together.</p>
+                <p class="text-gray-700">SolveBox brigs experts together.</p>
               </div>
             </li>
             <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
@@ -153,24 +274,28 @@
         </div>
       </section>
       <section
-        class="polygon bg-purple-200 w-full flex justify-center py-40 z-40 relative"
+        class="w-full flex justify-center py-40 z-40 relative text-white"
       >
         <div class="w-[80rem]">
-          <p class="text-[0.7rem] tracking-[0.1rem] pt-8 pb-4 noto">
+          <p
+            class="text-[0.7rem] tracking-[0.1rem] pt-8 pb-4 noto text-[#ecd86c]"
+          >
             KEY CATEGORIES
           </p>
           <div class="flex w-full">
             <div class="w-2/3">
-              <p class="text-black text-[3rem] leading-[3rem] font-semibold">
+              <p class="text-[3rem] leading-[3rem] font-semibold">
                 Interactive <span class="text-[#fa1c9a]">lessons</span> on cool
-                and <br />emerging puzzles or challenges
-                <span class="text-[#75e1d9]">.</span>
+                and <br />emerging puzzles or challenges<span
+                  class="text-[#75e1d9]"
+                  >.</span
+                >
               </p>
             </div>
             <ul
-              class="w-1/3 flex flex-col justify-between noto-sans font-light text-[0.9rem]"
+              class="w-1/3 flex flex-col justify-between noto-sans font-light text-[0.9rem] text-gray-300"
             >
-              <li class="flex gap-2 text-gray-600">
+              <li class="flex gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.5em"
@@ -185,7 +310,7 @@
                 </svg>
                 <p>In-depth lessons to enhance your skills;</p>
               </li>
-              <li class="flex gap-2 text-gray-600">
+              <li class="flex gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.5em"
@@ -200,7 +325,7 @@
                 </svg>
                 <p>Cutting-edge demonstration & solutions;</p>
               </li>
-              <li class="flex gap-2 text-gray-600">
+              <li class="flex gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.5em"
@@ -285,7 +410,7 @@
           <ul class="flex justify-between px-20 py-16 font-light noto">
             <li class="flex flex-col items-center gap-4">
               <p class="text-[3.5rem] font-bold l">3</p>
-              <p class="text-[0.6rem] text-gray-700 tracking-[0.1rem]">
+              <p class="text-[0.6rem] text-gray-400 tracking-[0.1rem]">
                 WEEKS OF WORK
               </p>
               <div
@@ -294,7 +419,7 @@
             </li>
             <li class="flex flex-col items-center gap-4">
               <p class="text-[3.5rem] font-bold l">230k+</p>
-              <p class="text-[0.6rem] text-gray-700 tracking-[0.1rem]">
+              <p class="text-[0.6rem] text-gray-400 tracking-[0.1rem]">
                 TOTAL ATTENDANCE
               </p>
               <div
@@ -303,7 +428,7 @@
             </li>
             <li class="flex flex-col items-center gap-4">
               <p class="text-[3.5rem] font-bold l">539</p>
-              <p class="text-[0.6rem] text-gray-700 tracking-[0.1rem]">
+              <p class="text-[0.6rem] text-gray-400 tracking-[0.1rem]">
                 SUPPORTED PUZZLES
               </p>
               <div
@@ -312,7 +437,7 @@
             </li>
             <li class="flex flex-col items-center gap-4">
               <p class="text-[3.5rem] font-bold l">4k+</p>
-              <p class="text-[0.6rem] text-gray-700 tracking-[0.1rem]">
+              <p class="text-[0.6rem] text-gray-400 tracking-[0.1rem]">
                 CURRENTLY ACTIVE USERS
               </p>
               <div
@@ -518,7 +643,7 @@
                   <h1
                     class="text-white font-extrabold text-xl tracking-[0.2rem]"
                   >
-                    SOLVEIT
+                    SolveBox
                   </h1>
                   <p class="text-gray-300 text-[0.6rem]">HELP & FEEDBACK</p>
                 </div>
@@ -594,6 +719,6 @@
         </div>
       </footer>
     </div>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="../js/categories/app.js"></script>
   </body>
 </html>

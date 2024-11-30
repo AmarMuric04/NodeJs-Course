@@ -3,7 +3,7 @@ export function renderReviews(reviews) {
   reviews.forEach((review) => {
     const reviewDiv = document.createElement("div");
     reviewDiv.className =
-      "bg-white review mb-12 flex h-[30rem] min-w-[80rem] w-[80rem]";
+      "bg-white review mb-12 flex h-[30rem] min-w-[75rem] w-[75rem]";
 
     reviewDiv.innerHTML = `
       <img class="w-1/2" src="${review.image}" />

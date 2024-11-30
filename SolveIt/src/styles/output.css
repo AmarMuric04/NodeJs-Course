@@ -4,6 +4,8 @@
 
 @tailwind utilities;
 
+/* TAILWIND */
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -112,9 +114,7 @@
   --tw-contain-style:  ;
 }
 
-/*
-! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com
-*/
+/* ! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -604,6 +604,10 @@ video {
   bottom: 1rem;
 }
 
+.bottom-\[1\.6rem\]{
+  bottom: 1.6rem;
+}
+
 .bottom-\[36rem\]{
   bottom: 36rem;
 }
@@ -614,6 +618,10 @@ video {
 
 .left-10{
   left: 2.5rem;
+}
+
+.left-20{
+  left: 5rem;
 }
 
 .left-\[38rem\]{
@@ -684,6 +692,10 @@ video {
   top: 12rem;
 }
 
+.top-8{
+  top: 2rem;
+}
+
 .top-\[10rem\]{
   top: 10rem;
 }
@@ -716,24 +728,20 @@ video {
   top: 100%;
 }
 
-.bottom-9{
-  bottom: 2.25rem;
+.left-80{
+  left: 20rem;
 }
 
-.bottom-8{
-  bottom: 2rem;
+.left-\[25rem\]{
+  left: 25rem;
 }
 
-.bottom-6{
-  bottom: 1.5rem;
+.left-\[30rem\]{
+  left: 30rem;
 }
 
-.bottom-\[2rem\]{
-  bottom: 2rem;
-}
-
-.bottom-\[1\.6rem\]{
-  bottom: 1.6rem;
+.left-\[34rem\]{
+  left: 34rem;
 }
 
 .z-0{
@@ -773,6 +781,10 @@ video {
   margin-bottom: 2rem;
 }
 
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+
 .mb-12{
   margin-bottom: 3rem;
 }
@@ -781,8 +793,16 @@ video {
   margin-bottom: 1rem;
 }
 
+.mb-8{
+  margin-bottom: 2rem;
+}
+
 .ml-80{
   margin-left: 20rem;
+}
+
+.mr-2{
+  margin-right: 0.5rem;
 }
 
 .mt-10{
@@ -825,8 +845,16 @@ video {
   margin-top: 2rem;
 }
 
+.block{
+  display: block;
+}
+
 .flex{
   display: flex;
+}
+
+.grid{
+  display: grid;
 }
 
 .h-10{
@@ -873,12 +901,24 @@ video {
   height: 0.7rem;
 }
 
-.h-\[20rem\]{
-  height: 20rem;
+.h-\[15rem\]{
+  height: 15rem;
 }
 
 .h-\[30rem\]{
   height: 30rem;
+}
+
+.h-\[35rem\]{
+  height: 35rem;
+}
+
+.h-\[3rem\]{
+  height: 3rem;
+}
+
+.h-\[80rem\]{
+  height: 80rem;
 }
 
 .h-full{
@@ -887,14 +927,6 @@ video {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-\[40rem\]{
-  height: 40rem;
-}
-
-.h-\[15rem\]{
-  height: 15rem;
 }
 
 .w-1\/2{
@@ -965,6 +997,14 @@ video {
   width: 40%;
 }
 
+.w-\[48\%\]{
+  width: 48%;
+}
+
+.w-\[75rem\]{
+  width: 75rem;
+}
+
 .w-\[7rem\]{
   width: 7rem;
 }
@@ -977,8 +1017,12 @@ video {
   width: 100%;
 }
 
-.min-w-\[80rem\]{
-  min-width: 80rem;
+.w-screen{
+  width: 100vw;
+}
+
+.min-w-\[75rem\]{
+  min-width: 75rem;
 }
 
 .rotate-\[40deg\]{
@@ -987,6 +1031,11 @@ video {
 }
 
 .rotate-\[90deg\]{
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-90{
   --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1083,6 +1132,10 @@ video {
   border-radius: 0.125rem;
 }
 
+.rounded-xl{
+  border-radius: 0.75rem;
+}
+
 .border-y-2{
   border-top-width: 2px;
   border-bottom-width: 2px;
@@ -1090,6 +1143,10 @@ video {
 
 .border-b-\[0\.1rem\]{
   border-bottom-width: 0.1rem;
+}
+
+.border-b-\[1px\]{
+  border-bottom-width: 1px;
 }
 
 .border-r-2{
@@ -1113,6 +1170,11 @@ video {
 .border-\[\#75e1d9\]{
   --tw-border-opacity: 1;
   border-color: rgb(117 225 217 / var(--tw-border-opacity, 1));
+}
+
+.border-\[\#fa1c9a\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(250 28 154 / var(--tw-border-opacity, 1));
 }
 
 .bg-\[\#1b1825\]{
@@ -1160,6 +1222,11 @@ video {
   background-color: rgb(236 216 108 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#fa1c9a\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 28 154 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#ffa100\]{
   --tw-bg-opacity: 1;
   background-color: rgb(255 161 0 / var(--tw-bg-opacity, 1));
@@ -1190,33 +1257,24 @@ video {
   background-color: rgb(88 28 135 / var(--tw-bg-opacity, 1));
 }
 
-.bg-red-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity, 1));
-}
-
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-blue-400{
+.bg-pink-200{
   --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#\]{
-  background-color: #;
-}
-
-.bg-\[\#000\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+  background-color: rgb(251 207 232 / var(--tw-bg-opacity, 1));
 }
 
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-left{
+  -o-object-position: left;
+     object-position: left;
 }
 
 .object-right{
@@ -1318,6 +1376,10 @@ video {
   padding-bottom: 10rem;
 }
 
+.pb-64{
+  padding-bottom: 16rem;
+}
+
 .pr-4{
   padding-right: 1rem;
 }
@@ -1357,6 +1419,10 @@ video {
   line-height: 2.5rem;
 }
 
+.text-\[0\.5rem\]{
+  font-size: 0.5rem;
+}
+
 .text-\[0\.6rem\]{
   font-size: 0.6rem;
 }
@@ -1375,6 +1441,10 @@ video {
 
 .text-\[1\.5rem\]{
   font-size: 1.5rem;
+}
+
+.text-\[1\.6rem\]{
+  font-size: 1.6rem;
 }
 
 .text-\[2\.5rem\]{
@@ -1405,10 +1475,6 @@ video {
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[0\.5rem\]{
-  font-size: 0.5rem;
 }
 
 .font-bold{
@@ -1469,6 +1535,11 @@ video {
 
 .tracking-wide{
   letter-spacing: 0.025em;
+}
+
+.text-\[\#242234\]{
+  --tw-text-opacity: 1;
+  color: rgb(36 34 52 / var(--tw-text-opacity, 1));
 }
 
 .text-\[\#75e1d9\]{
@@ -1550,14 +1621,6 @@ video {
   text-decoration-line: underline;
 }
 
-.line-through{
-  text-decoration-line: line-through;
-}
-
-.no-underline{
-  text-decoration-line: none;
-}
-
 .opacity-0{
   opacity: 0;
 }
@@ -1568,6 +1631,12 @@ video {
 
 .opacity-80{
   opacity: 0.8;
+}
+
+.shadow-md{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-xl{
@@ -1586,6 +1655,8 @@ video {
   transition-duration: 500ms;
 }
 
+/* FONTS */
+
 .anton-regular {
   font-family: "Anton", sans-serif;
   font-weight: 400;
@@ -1596,43 +1667,6 @@ video {
   font-family: "Red Hat Display", sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
-}
-
-.polygon {
-  clip-path: polygon(33% 10%, 100% 0, 100% 100%, 30% 93%, 0 100%, 0 0);
-}
-
-.joyful-container:hover {
-  animation: joyful 1.5s ease-in-out forwards;
-}
-
-@keyframes joyful {
-  0% {
-    transform: scale(1);
-  }
-
-  20% {
-    transform: scale(1.1);
-    /* Scale in a little */
-  }
-
-  40% {
-    transform: scale(0.9);
-    /* Scale out a bit */
-  }
-
-  60% {
-    transform: rotate(10deg) scale(1);
-    /* Spin slightly *n/
-  }
-  80% {
-    transform: rotate(-10deg) scale(1); /* Spin back */
-  }
-
-  100% {
-    transform: rotate(0deg) scale(1);
-    /* Settle back */
-  }
 }
 
 .noto {
@@ -1667,6 +1701,66 @@ video {
 .l {
   font-family: "Lato", sans-serif;
   font-style: normal;
+}
+
+.polygon {
+  clip-path: polygon(33% 10%, 100% 0, 100% 100%, 30% 93%, 0 100%, 0 0);
+}
+
+.half-polygon-north {
+  clip-path: polygon(31% 0, 100% 14%, 100% 100%, 0 100%, 0 15%);
+}
+
+.half-polygon-south {
+  clip-path: polygon(100% 0, 100% 90%, 33% 100%, 0 90%, 0 0);
+}
+
+.half-polygon-west {
+  clip-path: polygon(85% 0, 100% 40%, 85% 100%, 0 100%, 0 0);
+}
+
+.joyful-container:hover {
+  animation: joyful 1.5s ease-in-out forwards;
+}
+
+@keyframes joyful {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.1);
+  }
+
+  40% {
+    transform: scale(0.9);
+  }
+
+  60% {
+    transform: rotate(10deg) scale(1);
+  }
+
+  80% {
+    transform: rotate(-10deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background: #242234;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #fa1c9a;
+  border-radius: 6px;
 }
 
 .inactive {
@@ -1711,7 +1805,6 @@ video {
 }
 
 .nav {
-  background-color: #fa1c9a;
   position: absolute;
   bottom: -2px;
   left: 0px;
@@ -1723,6 +1816,13 @@ video {
 
 .nav-hovered {
   width: 100%;
+}
+
+.header-scrolled {
+  position: fixed;
+  background-color: #1b182580;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .hover\:-translate-y-2:hover{

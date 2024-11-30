@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="../output.css" rel="stylesheet" />
-    <link href="../input.css" rel="stylesheet" />
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link href="../styles/input.css" rel="stylesheet" />
   </head>
   <body>
     <div
@@ -14,59 +14,66 @@
       <header
         class="bg-[#1b1825] absolute top-0 left-0 right-0 py-4 w-full flex justify-center z-50"
       >
-        <nav class="flex w-[80rem] justify-between items-center">
-          <section class="flex gap-3">
-            <img class="h-10" src="../assets/images/logo.png" />
+        <nav class="flex w-[75rem] justify-between items-center">
+          <a href="./index.html" class="flex gap-2 items-center">
+            <img class="h-[3rem]" src="../assets/images/logo.png" />
             <div class="flex flex-col justify-between">
-              <h1 class="text-white font-extrabold text-xl tracking-[0.2rem]">
-                SOLVEIT
-              </h1>
-              <p class="text-gray-300 text-[0.6rem]">HELP & FEEDBACK</p>
+              <h1 class="text-white font-bold text-[1.6rem]">SolveBox</h1>
+              <div
+                class="text-gray-500 text-[0.6rem] flex justify-between items-center"
+              >
+                <p>ASSISTANCE</p>
+                <p>&</p>
+                <p>INSIGHTS</p>
+              </div>
             </div>
-          </section>
+          </a>
           <section>
-            <ul class="flex gap-3 text-white">
+            <ul class="flex gap-6 text-gray-300 font-semibold">
               <a
                 href="../views/about.html"
-                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer no-underline nav-parent"
+                class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
               >
                 About
-                <div class="nav"></div>
+                <div class="nav bg-[#fa1c9a]"></div>
               </a>
               <a
                 href="../views/categories.html"
                 class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
               >
                 Categories
-                <div class="nav"></div> </a
+                <div class="nav bg-[#fa1c9a]"></div> </a
               ><a
-                href="../views/categories.html"
+                href="../views/subscribe.html"
                 class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
               >
-                Sponsors
-                <div class="nav"></div> </a
+                Subscribe
+                <div class="nav bg-[#fa1c9a]"></div> </a
               ><a
-                href="../views/categories.html"
+                href="../views/contacts.html"
                 class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
               >
                 Contacts
-                <div class="nav"></div> </a
+                <div class="nav bg-[#fa1c9a]"></div> </a
               ><a
-                href="../views/categories.html"
+                href="../views/credits.html"
                 class="hover:text-[#fa1c9a] relative transition-all cursor-pointer nav-parent"
               >
                 Credits
-                <div class="nav"></div>
+                <div class="nav bg-[#fa1c9a]"></div>
               </a>
             </ul>
           </section>
           <section class="flex items-center justify-between gap-4">
-            <div class="relative w-[7rem] flex justify-center z-50 theme-js">
-              <p
-                class="hover:text-[#fa1c9a] py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-white text-center"
+            <div
+              class="relative w-[7rem] flex justify-center z-50 theme-js text-gray-300 font-semibold"
+            >
+              <div
+                class="hover:text-[#fa1c9a] py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-center nav-parent relative"
               >
                 Themes
-              </p>
+                <div class="nav bg-[#fa1c9a]"></div>
+              </div>
               <ul
                 class="bg-[#262432] absolute shadow-xl py-4 px-1 rounded-[1rem] text-gray-300 top-full theme-container-js inactive transition-all"
               >
@@ -127,57 +134,61 @@
                 </li>
               </ul>
             </div>
-            <button class="py-2 text-white px-10 relative nav-parent">
+            <a
+              href="./signup.html"
+              class="py-2 text-white px-10 relative nav-parent"
+            >
               Sign Up
-              <div class="nav"></div>
-            </button>
-            <button
+              <div class="nav bg-[#fa1c9a]"></div>
+            </a>
+            <a
+              href="./signin.html"
               class="text-white bg-pink-600 py-2 px-10 rounded-[2rem] transition-all hover:rounded-none"
             >
               Sign In
-            </button>
+            </a>
           </section>
         </nav>
       </header>
       <main class="h-screen w-full relative flex justify-center">
-        <div class="w-[80rem]">
+        <div class="w-[75rem]">
           <div class="relative z-40 pt-48 h-full">
             <p
               class="uppercase noto text-[#ecd86c] text-[0.6rem] tracking-[0.15rem]"
             >
-              Welcome to solveit
+              Welcome to SolveBox
             </p>
             <h1
               class="text-[5rem] text-white leading-none font-semibold tracking-wide mt-4"
             >
-              Where <span class="text-[#fa1c9a]">problems</span> <br />
+              Where <span class="text-[#fa1c9a]">puzzles</span> <br />
               meet solutions<span class="text-[#75e1d9]">.</span>
             </h1>
             <p
               class="noto-sans font-semibold leading-7 text-white mt-12 text-lg"
             >
-              Join us at the NY Technology, Design & Innovation <br />
-              Conference, the premier gathering of visionaries on <br />
-              <span class="text-[#ecd86c] font-bold">
-                September 17-18, 2024.
-              </span>
+              Unlock your potential with interactive tutorials and guides for
+              <br />
+              solving Rubik's Cubes, Sudoku, and more. Master each puzzle <br />
+              at your own pace with SolveBox.
             </p>
             <p class="text-gray-300 underline cursor-pointer mt-6">
-              20+ Trusted Partners
+              20+ Puzzle Categories to Explore
             </p>
             <div class="my-10">
               <img class="h-20 object-cover" src="../assets/images/dunp.png" />
             </div>
-            <div class="flex gap-4 mt-20">
+            <div class="flex gap-4 mt-20 items-center">
               <button
-                class="py-4 px-10 bg-[#ecd86c] text-white rounded-[2rem] hover:rounded-none transition-all"
+                class="py-4 px-10 bg-[#ecd86c] text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all"
               >
-                Buy a ticket
+                Start Solving Now
               </button>
               <button
-                class="text-[#ecd86c] cursor-pointer hover:underline italic"
+                class="text-[#ecd86c] cursor-pointer italic nav-parent relative"
               >
-                Discover the schedule
+                Explore Tutorials
+                <div class="nav bg-[#ecd86c]"></div>
               </button>
             </div>
             <ul class="flex gap-3 mt-32 text-[0.8rem] text-[#ecd86c]">
@@ -203,6 +214,7 @@
               </li>
             </ul>
           </div>
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 480 480"
@@ -371,13 +383,13 @@
       <section
         class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-center"
       >
-        <div class="w-[80rem]">
+        <div class="w-[75rem]">
           <ul class="flex justify-between w-full">
             <li class="flex items-center w-1/4 font-thin text-gray-500 gap-2">
               <img class="w-20 h-20" src="../assets/svgs/what.svg" />
               <div class="flex flex-col">
                 <h1 class="font-bold text-2xl text-black">What to expect?</h1>
-                <p class="text-gray-700">SOLVEIT brigs experts together.</p>
+                <p class="text-gray-700">SolveBox brigs experts together.</p>
               </div>
             </li>
             <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
@@ -396,11 +408,11 @@
         </div>
       </section>
       <section class="w-full pb-40 flex justify-center pt-32">
-        <div class="w-[80rem] flex flex-col items-center">
+        <div class="w-[75rem] flex flex-col items-center">
           <h1
             class="text-[3rem] leading-[3.5rem] font-semibold text-white text-center w-2/3"
           >
-            SolveIt is a dynamic
+            SolveBox is a dynamic
             <span class="text-[#fa1c9a]">online hub</span> dedicated to
             <span class="text-[#75e1d9]">puzzles</span> and
             <span class="text-[#ecd86c]">brain-teasing</span> challenges
@@ -408,18 +420,18 @@
           </h1>
           <p class="text-center mt-16 text-md text-gray-300 w-2/3">
             Bringing together enthusiasts of Sudoku, Rubik's Cube, logic
-            puzzles, and more, SolveIt fosters a friendly and engaging community
-            for puzzle lovers worldwide.
+            puzzles, and more, SolveBox fosters a friendly and engaging
+            community for puzzle lovers worldwide.
             <span class="italic">
               It's all about sharpening your mind, tackling new challenges, and
               finding creative solutions
             </span>
-            . On SolveIt, you’ll discover expert tips, step-by-step tutorials,
+            . On SolveBox, you’ll discover expert tips, step-by-step tutorials,
             and a treasure trove of resources designed to help you master your
             favorite puzzles and explore new ones. Whether you're a beginner or
             a seasoned solver,
             <span class="italic">
-              SolveIt is the ultimate destination for
+              SolveBox is the ultimate destination for
               <span class="font-bold underline">
                 unlocking your problem-solving potential
               </span>
@@ -450,7 +462,7 @@
       <section
         class="polygon bg-purple-200 w-full flex justify-center py-40 z-40 relative"
       >
-        <div class="w-[80rem]">
+        <div class="w-[75rem]">
           <p class="text-[0.7rem] tracking-[0.1rem] pt-8 pb-4 noto">
             KEY CATEGORIES
           </p>
@@ -618,13 +630,13 @@
         </div>
       </section>
       <section class="w-full relative flex justify-center">
-        <div class="w-[80rem]">
+        <div class="w-[75rem]">
           <div class="z-40 py-40 relative">
             <p class="noto text-[0.7rem] tracking-[0.1rem] py-8 text-[#ecd86c]">
               FEATURES
             </p>
             <h1 class="text-white text-[3rem] leading-[3rem] font-bold">
-              Why you <span class="text-[#ecd86c]">should visit</span> SolveIt
+              Why you <span class="text-[#ecd86c]">should visit</span> SolveBox
               <span class="text-[#fa1c9a]">.</span>
             </h1>
             <div class="w-full mt-14 flex gap-5 h-80">
@@ -639,10 +651,12 @@
                 <h1 class="text-[1.5rem] py-4 font-semibold">Inspiration</h1>
                 <div class="h-[0.2rem] w-20 bg-[#ffa100] mb-4"></div>
                 <p class="text-lg text-gray-700">
-                  Our speakers will inspire you with mind-blowing ideas
-                  supported by real-world-examples and stories.
+                  Our platform will inspire you with new ways to solve puzzles,
+                  from Rubik's cubes to Sudoku, and help you discover tricks to
+                  solve them faster and more efficiently.
                 </p>
               </div>
+
               <div
                 class="bg-pink-600 w-1/3 p-8 hover:-translate-y-7 transition-all"
               >
@@ -654,10 +668,12 @@
                 <h1 class="text-[1.5rem] py-4 font-semibold">Community</h1>
                 <div class="h-[0.2rem] w-20 bg-[#cd0d83] mb-4"></div>
                 <p class="text-lg text-gray-700">
-                  Become a part of the warm, respectful and intelligent
-                  community of entrepreneurs and innovators.
+                  Join a vibrant community of puzzle enthusiasts, from beginners
+                  to experts, where you can share tips, get advice, and
+                  challenge yourself to new heights.
                 </p>
               </div>
+
               <div
                 class="bg-[#75e1d9] w-1/3 p-8 hover:-translate-y-7 transition-all"
               >
@@ -669,8 +685,9 @@
                 <h1 class="text-[1.5rem] py-4 font-semibold">Challenge</h1>
                 <div class="h-[0.2rem] w-20 bg-[#53dad0] mb-4"></div>
                 <p class="text-lg text-gray-700">
-                  Experience unexpected emotions, learn more about alternative
-                  perspectives, and discover ideas.
+                  Put your skills to the test with exciting challenges, from
+                  solving the most complex Rubik’s cubes to racing against the
+                  clock with Sudoku puzzles.
                 </p>
               </div>
             </div>
@@ -767,28 +784,29 @@
       <section
         class="polygon bg-purple-200 w-full py-40 z-40 relative flex justify-center"
       >
-        <div class="w-[80rem]">
+        <div class="w-[75rem]">
           <p class="text-[0.7rem] tracking-[0.1rem] py-8 text-center noto">
             SUBSCRIPTION OPTIONS
           </p>
           <h1 class="text-[3rem] leading-[3rem] font-bold text-center">
             Choose your suitable
-            <span class="text-[#fa1c9a]">subscription</span> package
+            <span class="text-[#fa1c9a]">monthly</span> subscription
             <span class="text-[#75e1d9]">.</span>
           </h1>
           <p class="text-gray-700 text-lg text-center py-8">
-            We offer several tickets types for your convenience.
+            Get access to exclusive algorithms, features, and more based on your
+            plan.
           </p>
           <div class="w-full mt-10 flex gap-5">
             <div
               class="bg-[#75e1d9] w-1/3 p-8 hover:-translate-y-2 transition-all"
             >
-              <p class="text-[0.7rem] tracking-[0.2rem]">ONE DAY</p>
+              <p class="text-[0.7rem] tracking-[0.2rem]">BASIC PLAN</p>
               <h1 class="text-[1.5rem] py-4 font-semibold">
-                One-Day Pass / $275
+                Basic Plan / $49 / month
               </h1>
               <p class="text-lg text-gray-700">
-                You can choose any of the two days of the SolveIt conference
+                Access to standard algorithms and core features.
               </p>
               <ul class="flex flex-col justify-between py-8 gap-6">
                 <li class="flex items-center gap-5">
@@ -804,25 +822,10 @@
                       d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                     />
                   </svg>
-                  <p class="text-gray-700 italic">Admission for two days;</p>
+                  <p class="text-gray-700 italic">
+                    Access to basic algorithms;
+                  </p>
                 </li>
-
-                <li class="flex items-center gap-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1.5em"
-                    height="1.5em"
-                    viewBox="0 0 2048 2048"
-                    class="opacity-50"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
-                    />
-                  </svg>
-                  <p class="text-gray-700 italic">Access to all stages;</p>
-                </li>
-
                 <li class="flex items-center gap-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -837,27 +840,43 @@
                     />
                   </svg>
                   <p class="text-gray-700 italic">
-                    Lunch, coffee, and afterparty.
+                    Access to core online tools;
+                  </p>
+                </li>
+                <li class="flex items-center gap-5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.5em"
+                    height="1.5em"
+                    viewBox="0 0 2048 2048"
+                    class="opacity-50"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                    />
+                  </svg>
+                  <p class="text-gray-700 italic">
+                    Monthly updates to algorithms;
                   </p>
                 </li>
               </ul>
               <button
                 class="bg-gray-800 py-5 rounded-[2rem] hover:rounded-none transition-all px-10 font-bold text-white"
               >
-                Buy subscription
+                Subscribe Now
               </button>
             </div>
             <div
               class="bg-pink-600 w-1/3 p-8 hover:-translate-y-2 transition-all"
             >
-              <p class="text-[0.7rem] tracking-[0.2rem]">ALL DAYS</p>
+              <p class="text-[0.7rem] tracking-[0.2rem]">PREMIUM PLAN</p>
               <h1 class="text-[1.5rem] py-4 font-semibold">
-                Full Pass (
-                <span class="line-through">early</span>
-                ) / $620
+                Premium Plan / $99 / month
               </h1>
               <p class="text-lg text-gray-700">
-                Enjoy two days of the conference by purchasing the full ticket.
+                Get access to premium algorithms, advanced features, and
+                priority support.
               </p>
               <ul class="flex flex-col justify-between py-8 gap-6">
                 <li class="flex items-center gap-5">
@@ -873,25 +892,10 @@
                       d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                     />
                   </svg>
-                  <p class="text-gray-700 italic">Admission for two days;</p>
+                  <p class="text-gray-700 italic">
+                    Access to premium algorithms;
+                  </p>
                 </li>
-
-                <li class="flex items-center gap-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1.5em"
-                    height="1.5em"
-                    viewBox="0 0 2048 2048"
-                    class="opacity-50"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
-                    />
-                  </svg>
-                  <p class="text-gray-700 italic">Access to all stages;</p>
-                </li>
-
                 <li class="flex items-center gap-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -906,26 +910,41 @@
                     />
                   </svg>
                   <p class="text-gray-700 italic">
-                    Lunch, coffee, and afterparty.
+                    Access to all advanced tools;
                   </p>
+                </li>
+                <li class="flex items-center gap-5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.5em"
+                    height="1.5em"
+                    viewBox="0 0 2048 2048"
+                    class="opacity-50"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                    />
+                  </svg>
+                  <p class="text-gray-700 italic">Priority customer support;</p>
                 </li>
               </ul>
               <button
                 class="bg-gray-800 py-5 rounded-[2rem] hover:rounded-none transition-all px-10 font-bold text-white"
               >
-                Buy subscription
+                Subscribe Now
               </button>
             </div>
             <div
               class="bg-[#ecd86c] w-1/3 p-8 hover:-translate-y-2 transition-all"
             >
-              <p class="text-[0.7rem] tracking-[0.2rem]">ALL DAYS</p>
+              <p class="text-[0.7rem] tracking-[0.2rem]">ULTIMATE PLAN</p>
               <h1 class="text-[1.5rem] py-4 font-semibold">
-                Early-Bird Pass / $550
+                Ultimate Plan / $199 / month
               </h1>
               <p class="text-lg text-gray-700">
-                The price is available from the day the sale starts and 2 weeks
-                after.
+                Get access to exclusive and most advanced algorithms, features,
+                and 24/7 support.
               </p>
               <ul class="flex flex-col justify-between py-8 gap-6">
                 <li class="flex items-center gap-5">
@@ -941,25 +960,8 @@
                       d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
                     />
                   </svg>
-                  <p class="text-gray-700 italic">Admission for two days;</p>
+                  <p class="text-gray-700 italic">Access to all algorithms;</p>
                 </li>
-
-                <li class="flex items-center gap-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1.5em"
-                    height="1.5em"
-                    viewBox="0 0 2048 2048"
-                    class="opacity-50"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
-                    />
-                  </svg>
-                  <p class="text-gray-700 italic">Access to all stages;</p>
-                </li>
-
                 <li class="flex items-center gap-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -974,21 +976,36 @@
                     />
                   </svg>
                   <p class="text-gray-700 italic">
-                    Lunch, coffee, and afterparty.
+                    Exclusive content and features;
                   </p>
+                </li>
+                <li class="flex items-center gap-5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.5em"
+                    height="1.5em"
+                    viewBox="0 0 2048 2048"
+                    class="opacity-50"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z"
+                    />
+                  </svg>
+                  <p class="text-gray-700 italic">24/7 VIP support;</p>
                 </li>
               </ul>
               <button
                 class="bg-gray-800 py-5 rounded-[2rem] hover:rounded-none transition-all px-10 font-bold text-white"
               >
-                Buy subscription
+                Subscribe Now
               </button>
             </div>
           </div>
         </div>
       </section>
       <section class="w-full flex justify-center relative py-40">
-        <div class="w-[80rem]">
+        <div class="w-[75rem]">
           <div class="relative z-40">
             <p
               class="text-[#ecd86c] text-[0.7rem] tracking-[0.2rem] py-8 text-center"
@@ -1046,29 +1063,31 @@
                 class="bg-pink-600 w-2/3 py-10 px-8 flex flex-col justify-between"
               >
                 <h1 class="text-2xl font-semibold">
-                  Don't miss this opportunity to meet your tribe!
+                  Don't miss this opportunity to unlock exclusive benefits!
                 </h1>
                 <p class="text-lg text-gray-800">
-                  Buy your early-bird ticket for only
-                  <span class="font-semibold">$550</span> right now
+                  Buy your premium subscription plan for only
+                  <span class="font-semibold">$99 per month</span> right now.
                 </p>
               </div>
+
               <div
                 class="bg-[#75e1d9] w-1/3 py-10 px-8 flex flex-col justify-between items-center"
               >
                 <h1 class="mb-4 text-2xl font-semibold text-center">
-                  Buy three or more tickets and get
-                  <span class="text-[#fa1c9a]">20% off.</span>
+                  Buy three or more subscription plans and get
+                  <span class="text-[#fa1c9a]">20% off</span>.
                 </h1>
                 <p class="tracking-[0.2rem] underline text-[0.6rem]">
-                  BUY TICKETS NOW
+                  SUBSCRIBE NOW
                 </p>
               </div>
             </div>
+
             <div class="flex flex-col items-center">
               <h1 class="text-[3rem] font-bold text-white text-center mt-48">
                 Have any <span class="text-[#75e1d9]">feedback</span>? We would
-                <span class="text-[#fa1c9a]">love to </span> hear it
+                <span class="text-[#fa1c9a]">love</span> to hear it
                 <span class="text-[#ecd86c]">!</span>
               </h1>
               <p
@@ -1081,7 +1100,7 @@
                 width="2em"
                 height="2em"
                 viewBox="0 0 20 20"
-                class="opacity-50 mt-8"
+                class="opacity-50 mt-8 text-white"
               >
                 <path
                   fill="currentColor"
@@ -1192,7 +1211,7 @@
         </div>
       </section>
       <section class="polygon bg-purple-200 w-full py-40 flex justify-center">
-        <div class="w-[80rem] flex gap-40">
+        <div class="w-[75rem] flex gap-40">
           <div class="w-1/2">
             <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto">
               OUR NEWSLETTER
@@ -1290,15 +1309,15 @@
         </div>
       </section>
       <footer class="w-full flex justify-center pt-40">
-        <div class="w-[80rem]">
+        <div class="w-[75rem]">
           <h1
             class="text-[3rem] leading-[3rem] font-bold text-center text-white"
           >
             A vibrant and
             <span class="text-[#75e1d9]">inclusive</span> community of
             <span class="text-[#ecd86c]">solvers</span> and
-            <span class="text-[#fa1c9a]">challengers</span>
-            <span class="text-[#75e1d9]">.</span>
+            <span class="text-[#fa1c9a]">challengers</span
+            ><span class="text-[#75e1d9]">.</span>
           </h1>
           <p class="text-3xl font-bold text-center my-8 text-white">
             Learn <span class="text-[#fa1c9a] underline">more</span> now!
@@ -1478,17 +1497,19 @@
           </div>
           <div class="w-full flex py-20 border-y-2 border-[#383b48]">
             <div class="w-[40%]">
-              <section class="flex gap-3">
-                <img class="h-10" src="../assets/images/logo.png" />
+              <div class="flex gap-2 items-center">
+                <img class="h-[3rem]" src="../assets/images/logo.png" />
                 <div class="flex flex-col justify-between">
-                  <h1
-                    class="text-white font-extrabold text-xl tracking-[0.2rem]"
+                  <h1 class="text-white font-bold text-[1.6rem]">SolveBox</h1>
+                  <div
+                    class="text-gray-500 text-[0.6rem] flex justify-between items-center"
                   >
-                    SOLVEIT
-                  </h1>
-                  <p class="text-gray-300 text-[0.6rem]">HELP & FEEDBACK</p>
+                    <p>ASSISTANCE</p>
+                    <p>&</p>
+                    <p>INSIGHTS</p>
+                  </div>
                 </div>
-              </section>
+              </div>
               <p class="my-4 text-gray-200">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
                 possimus nesciunt modi corporis magni consectetur beatae sed!
@@ -1560,6 +1581,6 @@
         </div>
       </footer>
     </div>
-    <script type="module" src="../app.js"></script>
+    <script type="module" src="../js/home/app.js"></script>
   </body>
 </html>
