@@ -1,6 +1,5 @@
 export function initializeHeader() {
   handleThemeEvents();
-  handleNavHoverEvents();
   handleDropdownEvents();
   handleShowHeader();
 }
@@ -15,19 +14,6 @@ function handleThemeEvents() {
 
   themeBtn?.addEventListener("mouseout", () => {
     themeCont?.classList.replace("active", "inactive");
-  });
-}
-
-function handleNavHoverEvents() {
-  const navBtns = document.querySelectorAll(".nav-parent");
-  navBtns.forEach((nav) => {
-    nav.addEventListener("mouseenter", () => {
-      nav.querySelector(".nav")?.classList.add("nav-hovered");
-    });
-
-    nav.addEventListener("mouseleave", () => {
-      nav.querySelector(".nav")?.classList.remove("nav-hovered");
-    });
   });
 }
 

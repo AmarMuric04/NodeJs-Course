@@ -29,33 +29,144 @@
       </a>
       <main class="h-screen w-full relative">
         <div
-          class="bg-purple-200 half-polygon-west h-full w-1/2 relative"
-        ></div>
+          class="bg-purple-200 half-polygon-west h-full w-1/2 relative p-[15rem]"
+        >
+          <div class="relative z-50 flex flex-col">
+            <h1 class="text-[3rem] font-semibold">Welcome back!</h1>
+            <p class="my-8 text-xl text-gray-700">
+              Please enter your details :)
+            </p>
+            <div class="flex flex-col gap-2">
+              <label for="email">Your Email</label>
+              <input
+                id="email"
+                class="border-2 outline-none focus:border-[#fa1c9a] py-4 px-8 text-lg rounded-lg"
+                type="email"
+                placeholder="johndoe@np.ac.s"
+              />
+              <label for="password">Your Password</label>
+              <input
+                id="password"
+                class="border-2 outline-none focus:border-[#fa1c9a] py-4 px-8 text-lg rounded-lg"
+                type="password"
+                placeholder="iLoveCats123"
+              />
+            </div>
+            <div class="flex items-center justify-between my-4">
+              <div class="flex items-center gap-4 text-lg">
+                <div class="checkbox-wrapper-30 flex">
+                  <span class="checkbox">
+                    <input type="checkbox" />
+                    <svg>
+                      <use xlink:href="#checkbox-30" class="checkbox"></use>
+                    </svg>
+                  </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+                    <symbol id="checkbox-30" viewBox="0 0 22 22">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        d="M5.5,11.3L9,14.8L20.2,3.3l0,0c-0.5-1-1.5-1.8-2.7-1.8h-13c-1.7,0-3,1.3-3,3v13c0,1.7,1.3,3,3,3h13 c1.7,0,3-1.3,3-3v-13c0-0.4-0.1-0.8-0.3-1.2"
+                      />
+                    </symbol>
+                  </svg>
+                </div>
+                <p>Remember for 30 days</p>
+              </div>
+              <a
+                class="text-[#fa1c9a] underline-parent relative cursor-pointer font-semibold"
+                >Forgot password?
+                <div class="underline-child bg-[#fa1c9a]"></div>
+              </a>
+            </div>
+            <button
+              class="bg-[#ecd86c] py-4 rounded-[2rem] hover:rounded-none transition-all cursor-pointer font-semibold mt-16 mb-8 border-2 border-black"
+            >
+              Sign in
+            </button>
+            <div class="bg-gray-700 h-[1px] relative">
+              <p
+                class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-purple-200 px-4"
+              >
+                or
+              </p>
+            </div>
+            <div class="flex gap-2 justify-center my-8">
+              If you don't have an account,
+              <a
+                href="./signup.html"
+                class="text-[#fa1c9a] underline-parent relative font-semibold"
+              >
+                create one now!
+                <div class="underline-child bg-[#fa1c9a]"></div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 480"
+              fill="#e6ceff"
+              width="300"
+              height="300"
+              class="absolute bottom-10 left-10"
+            >
+              <path
+                d="M450.9 169.7a100 100 0 0 0-13.6-11.4A99.4 99.4 0 0 0 321.6 42.7a99.3 99.3 0 0 0-163.4 0A99.4 99.4 0 0 0 42.7 158.3a99.3 99.3 0 0 0 0 163.4 99.4 99.4 0 0 0 115.6 115.6 99.3 99.3 0 0 0 163.4 0 99.4 99.4 0 0 0 115.5-115.5 99.3 99.3 0 0 0 13.7-152ZM240 300a60 60 0 1 1 0-120 60 60 0 0 1 0 120Z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 480"
+              fill="#e6ceff"
+              width="400"
+              height="400"
+              class="absolute top-28 left-10 z-0"
+            >
+              <path
+                d="m337 320 63-160h-80a160 160 0 1 0-320 0h160L80 320h80a160 160 0 1 0 320 0H337Z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#e6ceff"
+              width="300"
+              height="300"
+              class="absolute top-[7.5rem] left-[38rem] z-0"
+              viewBox="0 0 480 480"
+            >
+              <path
+                d="M240 0v240h240A240 240 0 0 0 240 0ZM240 480h240V240a240 240 0 0 0-240 240ZM0 240a240 240 0 0 0 240 240V240H0ZM0 240V0h240A240 240 0 0 1 0 240Z"
+              ></path>
+            </svg>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 480"
+              fill="#e6ceff"
+              width="300"
+              height="300"
+              class="absolute bottom-4 left-[34rem] rotate-90 z-0"
+            >
+              <path
+                d="M360.5 240V120.5H240V0H0v240h120.5v120.5H240V480h240V240H360.5z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#262432"
+              width="300"
+              height="300"
+              class="absolute top-28 left-[65rem]"
+              viewBox="0 0 480 480"
+            >
+              <path
+                d="M0 240v120a120 120 0 0 1 120 120h120A240 240 0 0 0 0 240Z"
+              ></path>
+            </svg>
+          </div>
+        </div>
         <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#e6ceff"
-            width="400"
-            height="400"
-            class="absolute top-28 left-10 z-0"
-          >
-            <path
-              d="M480 240H0a240 240 0 1 1 480 0ZM480 480H0a240 240 0 1 1 480 0Z"
-            ></path>
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#e6ceff"
-            width="300"
-            height="300"
-            class="absolute top-[7.5rem] left-[38rem] z-0"
-            viewBox="0 0 480 480"
-          >
-            <path
-              d="M480 120 360 0 240 120 120 0 0 120l120 120L0 360l120 120 120-120 120 120 120-120-120-120 120-120z"
-            ></path>
-          </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 480 480"
@@ -65,46 +176,7 @@
             class="absolute top-20 right-80 z-0"
           >
             <path
-              d="m353.1 240 56.6-56.6a80 80 0 0 0-61-136.4H131.3a79.8 79.8 0 0 0-61 136.4l56.6 56.6-56.6 56.6a80 80 0 0 0 61 136.4h217.4a79.8 79.8 0 0 0 61-136.4L353.1 240Z"
-            ></path>
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#e6ceff"
-            width="300"
-            height="300"
-            class="absolute bottom-4 left-[34rem] rotate-90 z-0"
-          >
-            <path
-              d="M360.5 240V120.5H240V0H0v240h120.5v120.5H240V480h240V240H360.5z"
-            ></path>
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#262432"
-            width="300"
-            height="300"
-            class="absolute top-28 left-[65rem]"
-            viewBox="0 0 480 480"
-          >
-            <path
-              d="M0 0v120a360 360 0 0 1 360 360h120A480 480 0 0 0 0 0Z"
-            ></path>
-            <path
-              d="M0 240v120a120 120 0 0 1 120 120h120A240 240 0 0 0 0 240Z"
-            ></path>
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#e6ceff"
-            width="300"
-            height="300"
-            class="absolute bottom-10 left-10"
-          >
-            <path
-              d="M480 240H240V0a240 240 0 0 1 240 240ZM240 480H0V240a240 240 0 0 1 240 240ZM480 480H240V240a240 240 0 0 1 240 240ZM240 240H0V0a240 240 0 0 1 240 240Z"
+              d="M320 160v160H160V160h160C320 71.63 248.37 0 160 0S0 71.63 0 160v320h320c88.37 0 160-71.63 160-160s-71.63-160-160-160Z"
             ></path>
           </svg>
           <svg
@@ -198,6 +270,6 @@
         </div>
       </main>
     </div>
-    <!-- <script type="module" src="../js/home/app.js"></script> -->
+    <script type="module" src="../js/signin/app.js"></script>
   </body>
 </html>

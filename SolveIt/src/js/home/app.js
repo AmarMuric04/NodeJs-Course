@@ -4,6 +4,7 @@ import { getReviews } from "./model.js";
 import { disableButton } from "../../utility/utility.js";
 import { renderReviews } from "./view.js";
 import { initializeHeader } from "../header_logic.js";
+import { handleUnderlineHover } from "../general_view.js";
 
 async function initializeApp() {
   const reviews = await getReviews();
@@ -29,6 +30,7 @@ async function initializeApp() {
   });
 
   initializeHeader();
+  handleUnderlineHover();
 }
 
 initializeApp();
