@@ -700,6 +700,10 @@ video {
   top: 7rem;
 }
 
+.top-32{
+  top: 8rem;
+}
+
 .top-48{
   top: 12rem;
 }
@@ -738,6 +742,18 @@ video {
 
 .top-full{
   top: 100%;
+}
+
+.top-40{
+  top: 10rem;
+}
+
+.top-12{
+  top: 3rem;
+}
+
+.top-16{
+  top: 4rem;
 }
 
 .z-0{
@@ -791,6 +807,10 @@ video {
 
 .mb-8{
   margin-bottom: 2rem;
+}
+
+.mb-\[5rem\]{
+  margin-bottom: 5rem;
 }
 
 .ml-80{
@@ -917,6 +937,18 @@ video {
   height: 3rem;
 }
 
+.h-\[42rem\]{
+  height: 42rem;
+}
+
+.h-\[4rem\]{
+  height: 4rem;
+}
+
+.h-\[5rem\]{
+  height: 5rem;
+}
+
 .h-\[80rem\]{
   height: 80rem;
 }
@@ -1021,6 +1053,26 @@ video {
   width: 100vw;
 }
 
+.w-\[2rem\]{
+  width: 2rem;
+}
+
+.w-\[8rem\]{
+  width: 8rem;
+}
+
+.w-\[5rem\]{
+  width: 5rem;
+}
+
+.w-\[4rem\]{
+  width: 4rem;
+}
+
+.w-\[6rem\]{
+  width: 6rem;
+}
+
 .min-w-\[75rem\]{
   min-width: 75rem;
 }
@@ -1050,6 +1102,10 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .cursor-pointer{
   cursor: pointer;
 }
@@ -1064,6 +1120,10 @@ video {
 
 .items-center{
   align-items: center;
+}
+
+.justify-end{
+  justify-content: flex-end;
 }
 
 .justify-center{
@@ -1124,6 +1184,12 @@ video {
 
 .overflow-x-hidden{
   overflow-x: hidden;
+}
+
+.truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rounded-\[1rem\]{
@@ -1198,11 +1264,6 @@ video {
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
-}
-
-.border-red-400{
-  --tw-border-opacity: 1;
-  border-color: rgb(248 113 113 / var(--tw-border-opacity, 1));
 }
 
 .bg-\[\#1b1825\]{
@@ -1673,16 +1734,16 @@ video {
   opacity: 0;
 }
 
+.opacity-100{
+  opacity: 1;
+}
+
 .opacity-50{
   opacity: 0.5;
 }
 
 .opacity-80{
   opacity: 0.8;
-}
-
-.opacity-100{
-  opacity: 1;
 }
 
 .shadow-md{
@@ -1957,6 +2018,30 @@ body::-webkit-scrollbar-thumb {
   display: block;
   height: 100%;
   width: 100%;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+.error-input {
+  animation: shake 0.5s ease-in-out;
+  border-color: #fa1c9a;
 }
 
 .hover\:-translate-y-2:hover{

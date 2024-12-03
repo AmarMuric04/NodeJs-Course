@@ -17,3 +17,11 @@ export function disableButton(button) {
     button.disabled = false;
   }, 600);
 }
+
+export function isUserSignedIn() {
+  return JSON.parse(localStorage.getItem("SolveBox-signed-in"));
+}
+
+export function signTheUserOut() {
+  localStorage.removeItem("SolveBox-signed-in");
+}

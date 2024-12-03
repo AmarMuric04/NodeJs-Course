@@ -1,7 +1,11 @@
+import { isUserSignedIn, signTheUserOut } from "../utility/utility.js";
+import { handleUnderlineHover } from "./general_view.js";
+
 export function initializeHeader() {
   handleThemeEvents();
   handleDropdownEvents();
   handleShowHeader();
+  handleCheckIfSignedIn();
 }
 
 function handleThemeEvents() {
@@ -45,4 +49,46 @@ function handleShowHeader() {
       header.classList.remove("shadow-md");
     }
   });
+}
+
+function handleCheckIfSignedIn() {
+  const userInfo = document.getElementById("user-information");
+  const user = isUserSignedIn();
+
+  if (user) {
+    userInfo.innerHTML = "";
+    const userEmail = document.createElement("p");
+    userEmail.classList = "text-gray-400 font-semibold truncate w-[8rem]";
+    userEmail.textContent = user.email;
+
+    const signOutBtn = document.createElement("div");
+    signOutBtn.classList =
+      "text-white bg-pink-600 py-2 px-10 rounded-[2rem] transition-all hover:rounded-none cursor-pointer";
+    signOutBtn.textContent = "Sign Out";
+    signOutBtn.addEventListener("click", () => {
+      signTheUserOut();
+      handleCheckIfSignedIn();
+    });
+    userInfo.append(userEmail);
+    userInfo.append(signOutBtn);
+  } else {
+    userInfo.innerHTML = "";
+    const signUpBtn = document.createElement("a");
+    signUpBtn.setAttribute("href", "./signup.html");
+    signUpBtn.classList = "py-2 text-white px-10 relative underline-parent";
+    signUpBtn.textContent = "Sign Up";
+    const underline = document.createElement("div");
+    underline.classList = "underline-child bg-[#fa1c9a]";
+    signUpBtn.append(underline);
+    handleUnderlineHover();
+
+    const signInBtn = document.createElement("a");
+    signInBtn.setAttribute("href", "./signin.html");
+    signInBtn.classList =
+      "text-white bg-pink-600 py-2 px-10 rounded-[2rem] transition-all hover:rounded-none";
+    signInBtn.textContent = "Sign In";
+
+    userInfo.append(signUpBtn);
+    userInfo.append(signInBtn);
+  }
 }

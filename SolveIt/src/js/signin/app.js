@@ -1,5 +1,5 @@
-import { handleUnderlineHover } from "../general_view.js";
+import { Controller } from "./controller.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  handleUnderlineHover();
+  Controller.init();
 });

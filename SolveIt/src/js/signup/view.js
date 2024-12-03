@@ -1,9 +1,20 @@
+import { loader } from "../general_view.js";
+
 export const View = {
+  invalidateInput(isValid, element) {
+    if (!isValid) {
+      element.classList.remove("error-input");
+      void element.offsetWidth;
+      element.classList.add("error-input");
+    }
+  },
+
   highlightElement(input, text, isValid) {
     isValid
       ? text.classList.replace("text-red-400", "text-lime-400")
       : text.classList.replace("text-lime-400", "text-red-400");
-    input.classList.toggle("border-red-400", !isValid);
+
+    input.classList.toggle("border-[#fa1c9a]", !isValid);
   },
 
   displayPasswordValidation({ lengthValid, specialCharValid, uppercaseValid }) {
@@ -35,7 +46,7 @@ export const View = {
     const signinElement = document.createElement("a");
 
     signinElement.classList =
-      "transition-all absolute bg-[#fa1c9a] w-full py-4 left-0 top-full";
+      "transition-all absolute bg-[#fa1c9a] w-full h-full left-0 top-full flex items-center justify-center";
     signinElement.setAttribute("href", "./signin.html");
     signinElement.setAttribute("id", "signin");
     signinElement.textContent = "Let's sign in!";
@@ -43,20 +54,27 @@ export const View = {
     const signupBtn = document.getElementById("signup");
 
     signupParent.appendChild(signinElement);
-    signupBtn.textContent = "Signing in...";
+    signupBtn.textContent = "Signing you up...";
+    signupBtn.innerHTML += loader();
+    signupBtn.classList.remove("cursor-pointer");
     signupBtn.disabled = true;
 
+    const form = document.getElementById("signup-form");
     const siginBtn = document.getElementById("signin");
     const formBody = document.getElementById("form-body");
+    const orSignin = document.getElementById("or-signin");
 
     setTimeout(() => {
       signupBtn.disabled = false;
-
       siginBtn.classList.replace("top-full", "top-0");
-
       formBody.classList.add("opacity-0");
+      orSignin.classList.add("opacity-0");
     }, 3000);
+
     setTimeout(() => {
+      form.classList.add("mb-[5rem]");
+      signupBtn.remove();
+      orSignin.remove();
       formBody.innerHTML = "";
       const title = document.createElement("h1");
       const text = document.createElement("p");

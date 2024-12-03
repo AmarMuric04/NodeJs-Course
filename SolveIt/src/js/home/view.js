@@ -1,11 +1,12 @@
-export function renderReviews(reviews) {
-  const reviewsList = document.querySelector(".reviews");
-  reviews.forEach((review) => {
-    const reviewDiv = document.createElement("div");
-    reviewDiv.className =
-      "bg-white review mb-12 flex h-[30rem] min-w-[75rem] w-[75rem]";
+export const View = {
+  renderReviews(reviews) {
+    const reviewsList = document.querySelector(".reviews");
+    reviews.forEach((review) => {
+      const reviewDiv = document.createElement("div");
+      reviewDiv.className =
+        "bg-white review mb-12 flex h-[30rem] min-w-[75rem] w-[75rem]";
 
-    reviewDiv.innerHTML = `
+      reviewDiv.innerHTML = `
       <img class="w-1/2" src="${review.image}" />
       <div class="p-16 flex flex-col justify-between">
         <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24" class="text-[#75e1d9]">
@@ -16,6 +17,11 @@ export function renderReviews(reviews) {
         <p class="noto text-[0.6rem] text-[#cd0d83] tracking-[0.1rem] uppercase">${review.profession}</p>
       </div>
     `;
-    reviewsList.appendChild(reviewDiv);
-  });
-}
+      reviewsList.appendChild(reviewDiv);
+    });
+  },
+
+  showUserInformation() {
+    
+  }
+};

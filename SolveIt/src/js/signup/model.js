@@ -16,7 +16,7 @@ export const Model = {
   },
 
   doPasswordsMatch(password, confirmPsw) {
-    return password === confirmPsw;
+    return password === confirmPsw && confirmPsw !== "";
   },
 
   isPasswordValid(password) {
@@ -37,5 +37,13 @@ export const Model = {
       data[key] = value;
     }
     return data;
+  },
+
+  removeClassOnClick(element, cl) {
+    const removeErrorClass = () => {
+      element.classList.remove(cl);
+      element.removeEventListener("click", removeErrorClass);
+    };
+    element.addEventListener("click", removeErrorClass);
   },
 };

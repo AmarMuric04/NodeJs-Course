@@ -32,7 +32,11 @@
           class="bg-purple-200 half-polygon-west h-full w-1/2 relative px-[15rem]"
         >
           <div class="relative z-50 flex flex-col justify-center w-full h-full">
-            <form action="submit" class="w-full" id="signup-form">
+            <form
+              action="submit"
+              class="w-full h-[42rem] flex flex-col justify-end"
+              id="signup-form"
+            >
               <div id="form-body" class="transition-all">
                 <h1 class="text-[2.5rem] font-semibold">Who dares to enter?</h1>
                 <p class="my-8 text-xl text-gray-700">
@@ -201,33 +205,35 @@
               </div>
               <div
                 id="signup-parent"
-                class="relative font-semibold text-center my-4 overflow-hidden rounded-[2rem] hover:rounded-none border-2 border-black transition-all"
+                class="relative font-semibold text-center my-4 overflow-hidden rounded-[2rem] hover:rounded-none border-2 border-black transition-all h-[4rem]"
               >
                 <button
                   id="signup"
-                  class="relative bg-[#75e1d9] py-4 cursor-pointer w-full"
+                  class="relative bg-[#75e1d9] h-full cursor-pointer w-full flex items-center gap-4 justify-center"
                 >
                   Sign up
                 </button>
               </div>
             </form>
 
-            <div class="bg-gray-700 h-[1px] relative">
-              <p
-                class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-purple-200 px-4"
-              >
-                or
-              </p>
-            </div>
-            <div class="flex gap-2 justify-center my-8">
-              If you already have an account,
-              <a
-                href="./signin.html"
-                class="text-[#fa1c9a] underline-parent relative font-semibold"
-              >
-                sign in now!
-                <div class="underline-child bg-[#fa1c9a]"></div>
-              </a>
+            <div id="or-signin" class="h-[5rem]">
+              <div class="bg-gray-700 h-[1px] relative">
+                <p
+                  class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-purple-200 px-4"
+                >
+                  or
+                </p>
+              </div>
+              <div class="flex gap-2 justify-center my-8">
+                If you already have an account,
+                <a
+                  href="./signin.html"
+                  class="text-[#fa1c9a] underline-parent relative font-semibold"
+                >
+                  sign in now!
+                  <div class="underline-child bg-[#fa1c9a]"></div>
+                </a>
+              </div>
             </div>
           </div>
           <div>

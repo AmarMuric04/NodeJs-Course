@@ -1,4 +1,3 @@
-import { isEmail } from "../../utility/inputs.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
 
@@ -20,20 +19,59 @@ export const Controller = {
     });
 
     const pswDoc = document.getElementById("password");
-    pswDoc.classList.toggle(
-      "border-red-400",
-      !(lengthValid && specialCharValid && uppercaseValid)
-    );
+    if (password === "") pswDoc.classList.remove("border-[#fa1c9a]");
   },
 
-  handleConfirmPasswordInput(password) {
+  handleConfirmPasswordInput(confPsw) {
     const psw = document.getElementById("password").value;
 
-    const isValid = Model.doPasswordsMatch(password, psw);
+    const isValid = Model.doPasswordsMatch(psw, confPsw);
     View.displayConfirmPasswordValidation(isValid);
+
+    const confPswDoc = document.getElementById("confirm-password");
+    if (confPsw === "") confPswDoc.classList.remove("border-[#fa1c9a]");
   },
 
-  handleSignup(email, password, confirmPsw) {},
+  handleSignup(inputs) {
+    const emailDoc = document.getElementById("email");
+    const pswDoc = document.getElementById("password");
+    const confPswDoc = document.getElementById("confirm-password");
+
+    let invalidInput = false;
+
+    if (!Model.isPasswordValid(inputs.password)) {
+      View.invalidateInput(false, pswDoc);
+      Model.removeClassOnClick(pswDoc, "error-input");
+      invalidInput = true;
+    }
+    if (!Model.doPasswordsMatch(inputs.password, inputs["confirm-password"])) {
+      View.invalidateInput(false, confPswDoc);
+      Model.removeClassOnClick(confPswDoc, "error-input");
+      invalidInput = true;
+    }
+    if (!Model.isEmailValid(inputs.email)) {
+      View.invalidateInput(false, emailDoc);
+      Model.removeClassOnClick(emailDoc, "error-input");
+      invalidInput = true;
+    }
+    if (invalidInput) return;
+
+    const solveBoxUsers =
+      JSON.parse(localStorage.getItem("SolveBox-users")) || [];
+
+    localStorage.setItem(
+      "SolveBox-users",
+      JSON.stringify([
+        ...solveBoxUsers,
+        {
+          email: inputs.email,
+          password: inputs.password,
+        },
+      ])
+    );
+
+    View.displaySigninRedirect();
+  },
 
   init() {
     const emailDoc = document.getElementById("email");
@@ -49,6 +87,9 @@ export const Controller = {
     pswDoc.addEventListener("input", () => {
       const psw = pswDoc.value;
       this.handlePasswordInput(psw);
+
+      const confPsw = confPswDoc.value;
+      this.handleConfirmPasswordInput(confPsw);
     });
 
     confPswDoc.addEventListener("input", () => {
@@ -56,22 +97,10 @@ export const Controller = {
       this.handleConfirmPasswordInput(confPsw);
     });
 
-    signupForm.addEventListener("submit", async (e) => {
+    signupForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const inputs = Model.retrieveFormData(e);
-
-      if (
-        !Model.isPasswordValid(inputs.password) ||
-        !Model.doPasswordsMatch(inputs.password, inputs["confirm-password"]) ||
-        !Model.isEmailValid(inputs.email)
-      ) {
-        console.log("Nope!");
-        return;
-      }
-
-      View.displaySigninRedirect();
-
-      console.log("submitted");
+      this.handleSignup(inputs);
     });
   },
 };
