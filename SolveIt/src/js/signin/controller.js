@@ -4,7 +4,7 @@ import { View } from "./view.js";
 export const Controller = {
   handleSignIn(inputs) {
     const emailDoc = document.getElementById("email");
-    const passDoc = document.getElementById("password");
+    const pswDoc = document.getElementById("password");
 
     if (!inputs.email || !inputs.password) {
       if (!inputs.email) {
@@ -12,7 +12,7 @@ export const Controller = {
         View.displayErrorMessage("Email field can't be empty.");
       }
       if (!inputs.password) {
-        View.invalidateInput(passDoc);
+        View.invalidateInput(pswDoc);
         View.displayErrorMessage("Password field can't be empty.");
       }
     } else {
@@ -21,6 +21,9 @@ export const Controller = {
         inputs.password
       );
       if (checkInputs.foundUser) {
+        emailDoc.classList.remove("error-input");
+        pswDoc.classList.remove("error-input");
+
         View.displaySignedIn();
 
         localStorage.setItem(
@@ -33,7 +36,7 @@ export const Controller = {
         }, 6200);
       } else {
         View.invalidateInput(emailDoc);
-        View.invalidateInput(passDoc);
+        View.invalidateInput(pswDoc);
         View.displayErrorMessage(
           "Invalid email or password. Please try again."
         );
@@ -41,7 +44,7 @@ export const Controller = {
     }
 
     Model.removeClassOnClick(emailDoc, "error-input");
-    Model.removeClassOnClick(passDoc, "error-input");
+    Model.removeClassOnClick(pswDoc, "error-input");
   },
 
   init() {

@@ -1,0 +1,15 @@
+export const Model = {
+  dark: "dark-theme",
+  light: "light-theme",
+  night: "night-theme",
+  void: "void-theme",
+  earthy: "earthy-theme",
+  ["solar-light"]: "solarized-light",
+  ["solar-dark"]: "solarized-dark",
+  twilight: "twilight-theme",
+  cyber: "cyberpunk-theme",
+  autumn: "forest-theme",
+  ocean: "ocean-breeze-theme",
+  mono: "monochrome-theme",
+  retro: "sunset-theme",
+};

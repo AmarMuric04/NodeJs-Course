@@ -63,7 +63,7 @@ function handleCheckIfSignedIn() {
 
     const signOutBtn = document.createElement("div");
     signOutBtn.classList =
-      "text-white bg-pink-600 py-2 px-10 rounded-[2rem] transition-all hover:rounded-none cursor-pointer";
+      "bg1 py-2 px-10 rounded-[2rem] transition-all hover:rounded-none cursor-pointer font-semibold";
     signOutBtn.textContent = "Sign Out";
     signOutBtn.addEventListener("click", () => {
       signTheUserOut();
@@ -75,17 +75,17 @@ function handleCheckIfSignedIn() {
     userInfo.innerHTML = "";
     const signUpBtn = document.createElement("a");
     signUpBtn.setAttribute("href", "./signup.html");
-    signUpBtn.classList = "py-2 text-white px-10 relative underline-parent";
+    signUpBtn.classList = "py-2 px-10 relative underline-parent font-semibold";
     signUpBtn.textContent = "Sign Up";
     const underline = document.createElement("div");
-    underline.classList = "underline-child bg-[#fa1c9a]";
+    underline.classList = "underline-child bg1";
     signUpBtn.append(underline);
     handleUnderlineHover();
 
     const signInBtn = document.createElement("a");
     signInBtn.setAttribute("href", "./signin.html");
     signInBtn.classList =
-      "text-white bg-pink-600 py-2 px-10 rounded-[2rem] transition-all hover:rounded-none";
+      "bg1 py-2 px-10 rounded-[2rem] transition-all hover:rounded-none font-semibold";
     signInBtn.textContent = "Sign In";
 
     userInfo.append(signUpBtn);

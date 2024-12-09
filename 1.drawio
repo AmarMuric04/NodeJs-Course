@@ -1,0 +1,43 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    
+    <!-- Entitet: Pljeskavica -->
+    <mxCell id="2" value="PLJESKAVICA" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+      <mxGeometry x="40" y="40" width="160" height="80" as="geometry" />
+    </mxCell>
+    
+    <!-- Entitet: Dodatak -->
+    <mxCell id="3" value="DODATAK" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+      <mxGeometry x="300" y="40" width="160" height="80" as="geometry" />
+    </mxCell>
+    
+    <!-- Entitet: Narudzbina -->
+    <mxCell id="4" value="NARUDŽBINA" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+      <mxGeometry x="170" y="200" width="160" height="80" as="geometry" />
+    </mxCell>
+    
+    <!-- Veza: Pljeskavica-Narudzbina -->
+    <mxCell id="5" value="SADRZI" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+      <mxGeometry x="110" y="130" width="120" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="6" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="2" target="5">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="5" target="4">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    
+    <!-- Veza: Dodatak-Narudzbina -->
+    <mxCell id="8" value="IMA" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+      <mxGeometry x="260" y="130" width="120" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="3" target="8">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="8" target="4">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+  </root>
+</mxGraphModel>
