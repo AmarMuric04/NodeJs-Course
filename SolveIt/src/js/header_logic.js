@@ -68,6 +68,7 @@ function handleCheckIfSignedIn() {
     signOutBtn.addEventListener("click", () => {
       signTheUserOut();
       handleCheckIfSignedIn();
+      handleUnderlineHover();
     });
     userInfo.append(userEmail);
     userInfo.append(signOutBtn);

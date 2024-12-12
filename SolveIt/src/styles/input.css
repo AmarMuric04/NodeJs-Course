@@ -209,6 +209,19 @@
 
   --text-color: #f0e8f8;
 }
+
+.cyberpunk-theme {
+  --background-color: #0f0e17;
+  --header-color: #2c2c54;
+  --background-accent-color: #1a1b28;
+  --background-accent-color-2: #2a2a40;
+
+  --accent-color-primary: #ff3864;
+  --accent-color-secondary: #3ae3c4;
+  --accent-color-tertiary: #ffdd57;
+
+  --text-color: #e8e8e8;
+}
 /* FONTS */
 .anton-regular {
   font-family: "Anton", sans-serif;
@@ -460,8 +473,6 @@ body::-webkit-scrollbar-thumb {
   border-color: var(--first-accent-color);
 }
 
-/* Default Theme (Fallback) */
-
 .background {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -529,4 +540,20 @@ body::-webkit-scrollbar-thumb {
 
 .navbar-text:hover {
   color: var(--first-accent-color);
+}
+
+.theme-btn {
+  border-color: var(--background-accent-color-22);
+}
+
+.theme-btn:hover {
+  background-color: var(--background-accent-color);
+}
+
+.border1 {
+  border-color: var(--first-accent-color);
+}
+
+.border2 {
+  border-color: var(--background-accent-color);
 }

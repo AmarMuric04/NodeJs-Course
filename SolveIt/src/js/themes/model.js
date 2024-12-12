@@ -12,4 +12,5 @@ export const Model = {
   ocean: "ocean-breeze-theme",
   mono: "monochrome-theme",
   retro: "sunset-theme",
+  pastel: "pastel-theme",
 };
