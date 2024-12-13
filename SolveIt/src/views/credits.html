@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="../styles/output.css" rel="stylesheet" />
+  <link href="../styles/input.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="b background w-full h-full relative flex flex-col items-center">
+    <header class="header absolute top-0 left-0 right-0 py-4 w-full flex justify-center z-50">
+      <nav class="flex w-[75rem] justify-between items-center">
+        <a href="./index.html" class="flex gap-2 items-center">
+          <img class="h-[3rem]" src="../assets/images/logo.png" />
+          <div class="flex flex-col justify-between">
+            <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
+            <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
+              <p>ASSISTANCE</p>
+              <p>&</p>
+              <p>INSIGHTS</p>
+            </div>
+          </div>
+        </a>
+        <section>
+          <ul class="flex gap-6 font-semibold">
+            <a href="../views/about.html" class="navbar-text relative transition-all cursor-pointer underline-parent">
+              About
+              <div class="underline-child bg1"></div>
+            </a>
+            <a href="../views/categories.html"
+              class="navbar-text relative transition-all cursor-pointer underline-parent">
+              Categories
+              <div class="underline-child bg1"></div>
+            </a><a href="../views/subscribe.html"
+              class="navbar-text relative transition-all cursor-pointer underline-parent">
+              Subscribe
+              <div class="underline-child bg1"></div>
+            </a><a href="../views/contactus.html"
+              class="navbar-text relative transition-all cursor-pointer underline-parent">
+              Contact Us
+              <div class="bg1 underline-child"></div>
+            </a><a href="../views/credits.html"
+              class="curr-active navbar-text relative transition-all cursor-pointer underline-parent">
+              Credits
+              <div class="underline-hovered bg1"></div>
+            </a>
+          </ul>
+        </section>
+        <section class="flex items-center justify-between gap-4">
+          <div class="relative w-[7rem] flex justify-center z-50 theme-js font-semibold">
+            <div
+              class="hover:text1 py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative">
+              Themes
+              <div class="underline-child bg1"></div>
+            </div>
+            <ul
+              class="background absolute shadow-xl py-4 px-1 rounded-[1rem] text-gray-300 top-full theme-container-js inactive transition-all">
+              <div class="bg1 right-0 top-2 rounded-full p-1 text-[0.5rem] absolute">RECOMMENDED</div>
+              <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-theme="dark">
+                Dark
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="light">
+                Light
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="night">
+                Night
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="void">
+                Void
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="earthy">
+                Earthy
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-light">
+                Solarized Light
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-dark">
+                Solarized dark
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="pastel">
+                Pastel
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="cyber">
+                Cyberpunk Glow
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="twilight">
+                Twilight
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="autumn">
+                Autumn Forest
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="ocean">
+                Ocean Breeze
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="mono">
+                Monochrome Minimal
+              </li>
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="retro">
+                Retro Sunset
+              </li>
+            </ul>
+          </div>
+          <div class="flex items-center gap-4" id="user-information"></div>
+        </section>
+      </nav>
+    </header>
+    <section class="w-full flex justify-center relative">
+      <div class="w-[75rem]">
+        <div class="relative z-40 mt-20 h-[15rem] flex justify-between items-center">
+          <div class="w-1/2">
+            <h1 class="text-[3rem] font-bold leading-[3.5rem] ">
+              Credits and <span class="text1">Acknowledgements</span>
+            </h1>
+            <p class="text-[0.5rem] tracking-[0.1rem] pt-8 pb-4 noto text3">
+              <a class="hover:underline" href="./index.html"> HOME</a>
+              <span>></span>
+              <span class="underline font-semibold">CREDITS</span>
+            </p>
+          </div>
+          <div class="w-1/2">
+            <p class="text-gray-400 font-semibold text-lg">
+              This project was made possible with the help of various resources, tools, and contributors.
+              Special thanks to the creators of the icons, fonts, images, and other assets used throughout the project.
+              Without these resources, this project wouldn't have been possible.
+              Please refer to the respective sources for further details and acknowledgements.
+            </p>
+          </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+          class="svg1 absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
+          <path d="M480 120 360 0 240 120 120 0 0 120l120 120L0 360l120 120 120-120 120 120 120-120-120-120 120-120z">
+          </path>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+          class="svg2 absolute top-20 right-80 z-0">
+          <path d="M320 160a160 160 0 1 0-320 0v320h160V160h160ZM320 0v320H160a160 160 0 1 0 320 0V0H320Z"></path>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+          class="svg1 absolute bottom-[1.6rem] right-[50rem] z-0">
+          <path
+            d="M120 120h120v120H120zM0 240h120v120H0zM120 360h120v120H120zM0 0h120v120H0zM360 120h120v120H360zM240 240h120v120H240zM360 360h120v120H360zM240 0h120v120H240z">
+          </path>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+          class="svg1 absolute bottom-[1.6rem] left-10">
+          <path
+            d="M480 240H240V0a240 240 0 0 1 240 240ZM240 480H0V240a240 240 0 0 1 240 240ZM480 480H240V240a240 240 0 0 1 240 240ZM240 240H0V0a240 240 0 0 1 240 240Z">
+          </path>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+          class="svg1 absolute bottom-[1.6rem] right-10">
+          <path
+            d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
+          </path>
+        </svg>
+      </div>
+    </section>
+    <section class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-center">
+      <div class="w-[75rem]">
+        <ul class="flex justify-between w-full">
+          <li class="flex items-center w-1/4 font-thin text-gray-500 gap-2">
+            <img class="w-20 h-20" src="../assets/svgs/what.svg" />
+            <div class="flex flex-col">
+              <h1 class="font-bold text-2xl text-black">What to expect?</h1>
+              <p class="text-gray-700">SolveBox brigs experts together.</p>
+            </div>
+          </li>
+          <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-20 h-20" src="../assets/svgs/light.svg" />
+            <p>Engaging solutions and feedback</p>
+          </li>
+          <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-20 h-20" src="../assets/svgs/time.svg" />
+            <p>Quick and simple solutions</p>
+          </li>
+          <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-20 h-20" src="../assets/svgs/stats.svg" />
+            <p>Overwhelmingly good reviews</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="text-black bg-purple-200 polygon w-full flex justify-center mt-40 py-40">
+      <div class="w-[75rem] flex flex-col py-20">
+        <div class="flex items-center justify-between gap-20 py-16 border-b-2 border-white">
+          <div class="flex flex-col w-[15%] gap-2">
+            <p class="text-lg font-semibold">Credits</p>
+            <p class="text-[0.7rem] tracking-[0.1rem] noto">FONT RESOURCES</p>
+          </div>
+          <div class="flex items-center gap-10 w-[30%] h-full">
+            <img class="h-20 w-20 rounded-full object-cover"
+              src="https://avatars.githubusercontent.com/u/6466306?s=200&v=4" />
+            <div class="flex flex-col">
+              <p class="font-bold text1">Google Fonts</p>
+              <p>Elegant typography made accessible for free.</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 w-3/5">
+            <p class="font-semibold text-lg">Special thanks to Google Fonts and WhatTheFont for making it easier to find
+              and use
+              beautiful typefaces.</p>
+            <p>Without these tools, picking the right fonts for this project would have been much harder. They truly
+              bring
+              the
+              text to life!</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between gap-20 py-16 border-b-2 border-white">
+          <div class="flex flex-col w-[15%] gap-2">
+            <p class="text-lg font-semibold">Credits</p>
+            <p class="text-[0.7rem] tracking-[0.1rem] noto">SVG RESOURCES</p>
+          </div>
+          <div class="flex items-center gap-10 w-[30%] h-full">
+            <img class="h-20 w-20 rounded-full object-cover"
+              src="https://community-openhab-org.s3.dualstack.eu-central-1.amazonaws.com/original/3X/4/4/4486dfe2681b7b51b0615dab850a1f8cdaa95ac6.png" />
+            <div class="flex flex-col">
+              <p class="font-bold text1">Iconify</p>
+              <p>A vast collection of customizable icons for every project.</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 w-3/5">
+            <p class="font-semibold text-lg">Special thanks to Iconify, Favicon.io, and other SVG resources for making
+              it easy
+              to add scalable graphics to this project.</p>
+            <p>These tools allowed me to bring life to the design while keeping the site responsive and visually
+              appealing.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-20 py-16 border-b-2 border-white">
+          <div class="flex flex-col w-[15%] gap-2">
+            <p class="text-lg font-semibold">Credits</p>
+            <p class="text-[0.7rem] tracking-[0.1rem] noto">IMAGE RESOURCES</p>
+          </div>
+          <div class="flex items-center gap-10 w-[30%] h-full">
+            <img class="h-20 w-20 rounded-full object-cover"
+              src="https://w7.pngwing.com/pngs/465/229/png-transparent-unsplash-round-logo-tech-companies.png" />
+            <div class="flex flex-col">
+              <p class="font-bold text1">Unsplash</p>
+              <p>A rich library of high-quality, royalty-free images.</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 w-3/5">
+            <p class="font-semibold text-lg">Thanks to Unsplash, Pexels, and other popular image platforms for providing
+              stunning visuals.</p>
+            <p>These images not only enhanced the design but also helped convey the essence of puzzles and challenges to
+              users.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-20 py-16 border-b-2 border-white">
+          <div class="flex flex-col w-[15%] gap-2">
+            <p class="text-lg font-semibold">Credits</p>
+            <p class="text-[0.7rem] tracking-[0.1rem] noto">MOTIVATION</p>
+          </div>
+          <div class="flex items-center gap-10 w-[30%] h-full">
+            <img class="h-20 w-20 rounded-full object-fit"
+              src="https://www.etran.rs/2022/wp-content/uploads/2021/11/LOGO-ZLATO-1.png" />
+            <div class="flex flex-col">
+              <p class="font-bold text1">My School</p>
+              <p>Encouraging creativity and fostering growth.</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 w-3/5">
+            <p class="font-semibold text-lg">A heartfelt thank you to my school for inspiring me to take on challenges
+              and grow
+              as a developer.</p>
+            <p>The lessons, encouragement, and support from teachers and peers motivated me to complete this project
+              with
+              passion and dedication.</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between gap-20 py-16 border-b-2 border-white">
+          <div class="flex flex-col w-[15%] gap-2">
+            <p class="text-lg font-semibold">Credits</p>
+            <p class="text-[0.7rem] tracking-[0.1rem] noto">DESIGN INSPIRATION</p>
+          </div>
+          <div class="flex items-center gap-10 w-[30%] h-full">
+            <img class="h-20 w-20 rounded-full object-fit"
+              src="https://www.iconpacks.net/icons/2/free-behance-icon-2161-thumb.png" />
+            <div class="flex flex-col">
+              <p class="font-bold text1">Behance</p>
+              <p>A hub for creative design inspiration.</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 w-3/5">
+            <p class="font-semibold text-lg">Thanks to Behance and Dribbble for showcasing exceptional designs that
+              sparked
+              ideas for this project.</p>
+            <p>Exploring these platforms helped me refine the layout and make it visually engaging for users.</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between gap-20 py-16 border-b-2 border-white">
+          <div class="flex flex-col w-[15%] gap-2">
+            <p class="text-lg font-semibold">Credits</p>
+            <p class="text-[0.7rem] tracking-[0.1rem] noto">DEVELOPMENT TOOLS</p>
+          </div>
+          <div class="flex items-center gap-10 w-[30%] h-full">
+            <img class="h-20 w-20 rounded-full object-fit"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiJNnjZv36ijogi3aM_xcSMy26_QeOWrVmJQ&s" />
+            <div class="flex flex-col">
+              <p class="font-bold text1">VS Code</p>
+              <p>My favorite code editor for this project.</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 w-3/5">
+            <p class="font-semibold text-lg">Special thanks to Visual Studio Code and GitHub for making development
+              seamless.
+            </p>
+            <p>The integrated tools, extensions, and version control allowed me to build and refine the site
+              efficiently.</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between gap-20 py-16">
+          <div class="flex flex-col w-[15%] gap-2">
+            <p class="text-lg font-semibold">Credits</p>
+            <p class="text-[0.7rem] tracking-[0.1rem] noto">COLOR PALETTES</p>
+          </div>
+          <div class="flex items-center gap-10 w-[30%] h-full">
+            <img class="h-20 w-20 rounded-full object-fit" src="https://colorhunt.co/img/color-hunt-icon-512.png" />
+            <div class="flex flex-col">
+              <p class="font-bold text1">Color Hunt</p>
+              <p>Curated color schemes for every mood.</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 w-3/5">
+            <p class="font-semibold text-lg">A big thank you to Color Hunt and Coolors for providing vibrant and
+              balanced
+              palettes.</p>
+            <p>The color combinations helped set the tone of the site and made it visually cohesive.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="w-full flex justify-center pt-40">
+      <div class="w-[75rem]">
+        <h1 class="text-[3rem] leading-[3rem] font-bold text-center">
+          A vibrant and
+          <span class="text3">inclusive</span> community of
+          <span class="text2">solvers</span> and
+          <span class="text1">challengers</span><span class="text3">.</span>
+        </h1>
+        <p class="text-3xl font-bold text-center my-8">
+          Learn <span class="text1 underline">more</span> now!
+        </p>
+        <div class="w-full flex justify-between my-8">
+          <img class="w-[14%] h-44 object-cover"
+            src="https://images.unsplash.com/photo-1605902394069-ff2ae2430e62?q=80&w=2531&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <img class="w-[14%] h-44 object-cover"
+            src="https://plus.unsplash.com/premium_photo-1723662084148-2cd2357705ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHV6emxlfGVufDB8fDB8fHww" />
+          <img class="w-[14%] h-44 object-cover"
+            src="https://images.unsplash.com/photo-1597400473366-371a80b251eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHV6emxlfGVufDB8fDB8fHww" />
+          <img class="w-[14%] h-44 object-cover"
+            src="https://plus.unsplash.com/premium_photo-1694822449585-a2444c288b96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHV6emxlfGVufDB8fDB8fHww" />
+          <img class="w-[14%] h-44 object-cover"
+            src="https://plus.unsplash.com/premium_photo-1700675175408-5fe0d5851e57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
+          <img class="w-[14%] h-44 object-cover object-right"
+            src="https://images.unsplash.com/photo-1515508268448-8d0d292bc49a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
+        </div>
+        <div class="w-full flex py-20 justify-between">
+          <div class="w-2/5">
+            <h1 class="font-semibold text-2xl">
+              Technology, Design & Innovation Conference
+            </h1>
+            <p class="py-4 text-gray-300 text-lg text-semibold">
+              We bring puzzle experts together.
+            </p>
+            <p class="py-4 text-gray-300 text-semibold">
+              Join us at the NY Technology, Design & Innovation Conference,
+              the premier gathering of visionaries on September 17-18, 2024.
+              Feel free to contact us in any convenient way for more details.
+            </p>
+          </div>
+          <div class="flex gap-20">
+            <div class="flex flex-col gap-10">
+              <div class="flex gap-3 h-20">
+                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
+                    <path fill="currentColor"
+                      d="M19.5 22a1.5 1.5 0 0 0 1.5-1.5V17a1.5 1.5 0 0 0-1.5-1.5c-1.17 0-2.32-.18-3.42-.55a1.51 1.51 0 0 0-1.52.37l-1.44 1.44a14.77 14.77 0 0 1-5.89-5.89l1.43-1.43c.41-.39.56-.97.38-1.53c-.36-1.09-.54-2.24-.54-3.41A1.5 1.5 0 0 0 7 3H3.5A1.5 1.5 0 0 0 2 4.5C2 14.15 9.85 22 19.5 22M3.5 4H7a.5.5 0 0 1 .5.5c0 1.28.2 2.53.59 3.72c.05.14.04.34-.12.5L6 10.68c1.65 3.23 4.07 5.65 7.31 7.32l1.95-1.97c.14-.14.33-.18.51-.13c1.2.4 2.45.6 3.73.6a.5.5 0 0 1 .5.5v3.5a.5.5 0 0 1-.5.5C10.4 21 3 13.6 3 4.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                </div>
+                <div class="flex flex-col justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                    PHONE
+                  </p>
+                  <p class="text-lg font-semibold">+381 (063) 303 309</p>
+                  <p class="text-lg font-semibold">+381 (063) 303 309</p>
+                </div>
+              </div>
+              <div class="flex gap-3 h-20">
+                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
+                    <path fill="currentColor"
+                      d="M5 5h13a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1c-.5 0-.94.17-1.28.47l7.78 5.03l7.78-5.03C18.94 6.17 18.5 6 18 6zm6.5 6.71L3.13 7.28C3.05 7.5 3 7.75 3 8v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V8c0-.25-.05-.5-.13-.72z" />
+                  </svg>
+                </div>
+                <div class="flex flex-col justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                    EMAIL
+                  </p>
+                  <p class="text-lg font-semibold">muricamar2004@gmail.com</p>
+                  <p class="text-lg font-semibold">muricamar2004@gmail.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-10">
+              <div class="flex gap-3 h-20">
+                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256" class="">
+                    <path fill="currentColor"
+                      d="M154.7 142.75a36 36 0 1 0-37.4 0a63.6 63.6 0 0 0-32.5 22.85a4 4 0 0 0 6.4 4.8a56 56 0 0 1 89.6 0a4 4 0 0 0 6.4-4.8a63.65 63.65 0 0 0-32.5-22.85M108 112a28 28 0 1 1 28 28a28 28 0 0 1-28-28m100-84H64a12 12 0 0 0-12 12v28H32a4 4 0 0 0 0 8h20v48H32a4 4 0 0 0 0 8h20v48H32a4 4 0 0 0 0 8h20v28a12 12 0 0 0 12 12h144a12 12 0 0 0 12-12V40a12 12 0 0 0-12-12m4 188a4 4 0 0 1-4 4H64a4 4 0 0 1-4-4V40a4 4 0 0 1 4-4h144a4 4 0 0 1 4 4Z" />
+                  </svg>
+                </div>
+                <div class="flex flex-col justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                    ADDRESS
+                  </p>
+                  <p class="text-lg font-semibold">Serbia,</p>
+                  <p class="text-lg font-semibold">Novi Pazar</p>
+                </div>
+              </div>
+              <div class="flex gap-3 h-20">
+                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
+                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="1.5">
+                      <path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5M7 17v-7" />
+                      <path d="M11 17v-3.25M11 10v3.75m0 0c0-3.75 6-3.75 6 0V17M7 7.01l.01-.011" />
+                    </g>
+                  </svg>
+                </div>
+                <div class="flex flex-col justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                    LINKEDIN
+                  </p>
+                  <p class="text-lg font-semibold">Amar Muric</p>
+                  <p class="text-lg font-semibold">Amar Muric</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full flex py-20 border-y-2 border-[#383b48]">
+          <div class="w-[40%]">
+            <div class="flex gap-2 items-center">
+              <img class="h-[3rem]" src="../assets/images/logo.png" />
+              <div class="flex flex-col justify-between">
+                <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
+                <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
+                  <p>ASSISTANCE</p>
+                  <p>&</p>
+                  <p>INSIGHTS</p>
+                </div>
+              </div>
+            </div>
+            <p class="my-4 text-gray-200">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
+              possimus nesciunt modi corporis magni consectetur beatae sed!
+              Cum, eos rem!
+            </p>
+          </div>
+          <div class="w-[40%] flex justify-around">
+            <div>
+              <h1 class="font-semibold text-3xl">underlineigation</h1>
+              <div class="bg1 w-8 h-[0.2rem] my-3"></div>
+              <ul class="flex flex-col gap-3 text-gray-200 font-semibold">
+                <li>About Us</li>
+                <li>Schedule</li>
+                <li>Speakers</li>
+                <li>Sponsors</li>
+              </ul>
+            </div>
+            <div>
+              <h1 class="font-semibold text-3xl">Support</h1>
+              <div class="bg1 w-8 h-[0.2rem] my-3"></div>
+              <ul class="flex flex-col gap-3 text-gray-200 font-semibold">
+                <li>Pricing</li>
+                <li>Help & Support</li>
+                <li>Privacy Policy</li>
+                <li>Contacts</li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-[20%] flex flex-col justify-between">
+            <h1 class="font-semibold text-3xl">Subscribe</h1>
+            <input class="p-6 w-full bg-black bg-opacity-20" type="email" placeholder="Email*" />
+            <button class="py-4 px-10 w-full bg1 rounded-[2rem] hover:rounded-none transition-all">
+              Subscribe
+            </button>
+          </div>
+        </div>
+        <div class="flex justify-between items-center py-8">
+          <span class="flex gap-2 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
+                <path
+                  d="M14 15.667a4.5 4.5 0 0 1-1.714.333C9.919 16 8 14.21 8 12s1.919-4 4.286-4c.61 0 1.189.119 1.714.333" />
+                <path
+                  d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
+              </g>
+            </svg>
+            <p>Created by Amar</p>
+          </span>
+          <p>All rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="../js/categories/app.js"></script>
+  <script type="module" src="../js/themes/app.js"></script>
+</body>
+
+</html>

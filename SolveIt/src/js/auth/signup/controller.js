@@ -1,7 +1,11 @@
 import { handleUnderlineHover } from "../../general_view.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
-import { displayAuthFlow, retrieveFormData } from "../auth.js";
+import {
+  displayAuthFlow,
+  displayErrorMessage,
+  retrieveFormData,
+} from "../auth.js";
 
 export const Controller = {
   handleEmailInput(email) {
@@ -54,6 +58,12 @@ export const Controller = {
     if (!Model.isEmailValid(inputs.email)) {
       View.invalidateInput(false, emailDoc);
       Model.removeClassOnClick(emailDoc, "error-input");
+      invalidInput = true;
+    }
+    if (Model.userAlreadyExists(inputs.email)) {
+      View.invalidateInput(false, emailDoc);
+      Model.removeClassOnClick(emailDoc, "error-input");
+      displayErrorMessage("Email already taken");
       invalidInput = true;
     }
     if (invalidInput) return;

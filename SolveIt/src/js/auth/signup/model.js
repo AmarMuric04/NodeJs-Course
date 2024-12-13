@@ -27,15 +27,24 @@ export const Model = {
     );
   },
 
-  retrieveFormData(event) {
-    const form = event.target;
-    const formData = new FormData(form);
+  removeClassOnClick(element, cl) {
+    const removeErrorClass = () => {
+      element.classList.remove(cl);
+      element.removeEventListener("click", removeErrorClass);
+    };
+    element.addEventListener("click", removeErrorClass);
+  },
 
-    const data = {};
+  userAlreadyExists(email) {
+    const users = JSON.parse(localStorage.getItem("SolveBox-users")) || [];
+    return users.some((user) => user.email === email);
+  },
 
-    for (const [key, value] of formData.entries()) {
-      data[key] = value;
-    }
-    return data;
+  addUser(inputs) {
+    const users = JSON.parse(localStorage.getItem("SolveBox-users")) || [];
+
+    users.push({ email: inputs.email, password: inputs.password });
+
+    localStorage.setItem("SolveBox-users", JSON.stringify(users));
   },
 };

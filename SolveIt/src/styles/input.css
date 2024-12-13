@@ -556,7 +556,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .theme-btn {
-  border-color: var(--background-accent-color-22);
+  border-color: var(--background-accent-color-2);
 }
 
 .theme-btn:hover {

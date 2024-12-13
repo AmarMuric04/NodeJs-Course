@@ -1,7 +1,12 @@
 import { handleUnderlineHover } from "../../general_view.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
-import { checkStatus, displayAuthFlow, retrieveFormData } from "../auth.js";
+import {
+  checkStatus,
+  displayAuthFlow,
+  displayErrorMessage,
+  retrieveFormData,
+} from "../auth.js";
 
 export const Controller = {
   handleSignIn(inputs) {
@@ -11,11 +16,11 @@ export const Controller = {
     if (!inputs.email || !inputs.password) {
       if (!inputs.email) {
         View.invalidateInput(emailDoc);
-        View.displayErrorMessage("Email field can't be empty.");
+        displayErrorMessage("Email field can't be empty.");
       }
       if (!inputs.password) {
         View.invalidateInput(pswDoc);
-        View.displayErrorMessage("Password field can't be empty.");
+        displayErrorMessage("Password field can't be empty.");
       }
     } else {
       const checkInputs = Model.correctCredentials(inputs);
@@ -33,9 +38,7 @@ export const Controller = {
       } else {
         View.invalidateInput(emailDoc);
         View.invalidateInput(pswDoc);
-        View.displayErrorMessage(
-          "Invalid email or password. Please try again."
-        );
+        displayErrorMessage("Invalid email or password. Please try again.");
       }
     }
 
@@ -44,7 +47,6 @@ export const Controller = {
   },
 
   init() {
-    if (checkStatus()) window.href = "./home";
     handleUnderlineHover();
 
     const signInForm = document.getElementById("signin-form");

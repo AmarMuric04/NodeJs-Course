@@ -38,20 +38,4 @@ export const View = {
     const emailDoc = document.getElementById("email");
     this.highlightElement(emailDoc, emailCheck, isValid);
   },
-
-  addUser(inputs) {
-    const solveBoxUsers =
-      JSON.parse(localStorage.getItem("SolveBox-users")) || [];
-
-    localStorage.setItem(
-      "SolveBox-users",
-      JSON.stringify([
-        ...solveBoxUsers,
-        {
-          email: inputs.email,
-          password: inputs.password,
-        },
-      ])
-    );
-  },
 };
