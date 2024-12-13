@@ -90,8 +90,8 @@
   --background-color: #fdf6e3;
   --header-color: #eee8d5;
   --header-opacitified: #eee8d580;
-  --background-accent-color: #93a1a1;
-  --background-accent-color-2: #839496;
+  --background-accent-color: #fcf2d8;
+  --background-accent-color-2: #fbedc6;
   --first-accent-color: #b58900;
   --second-accent-color: #268bd2;
   --third-accent-color: #2aa198;
@@ -104,8 +104,8 @@
   --background-color: #002b36;
   --header-color: #073642;
   --header-opacitified: #07364280;
-  --background-accent-color: #586e75;
-  --background-accent-color-2: #657b83;
+  --background-accent-color: #003644;
+  --background-accent-color-2: #004253;
   --first-accent-color: #b58900;
   --second-accent-color: #268bd2;
   --third-accent-color: #2aa198;
@@ -118,7 +118,7 @@
   --background-color: #f8f0e3;
   --header-color: #d4c4b2;
   --header-opacitified: #d4c4b280;
-  --background-accent-color: #e2d7ce;
+  --background-accent-color: #faf5ec;
   --background-accent-color-2: #f3e6d7;
   --first-accent-color: #ff9aa2;
   --second-accent-color: #ffb7b2;
@@ -132,8 +132,8 @@
   --background-color: #ffffff;
   --header-color: #eeeeee;
   --header-opacitified: #eeeeee80;
-  --background-accent-color: #cccccc;
-  --background-accent-color-2: #999999;
+  --background-accent-color: #f8f8f8;
+  --background-accent-color-2: #d1d1d1;
   --first-accent-color: #333333;
   --second-accent-color: #666666;
   --third-accent-color: #000000;
@@ -160,11 +160,11 @@
   --background-color: #ffccbc;
   --header-color: #ffab91;
   --header-opacitified: #ffab9180;
-  --background-accent-color: #ff7043;
-  --background-accent-color-2: #ff5722;
+  --background-accent-color: #ffc0ac;
+  --background-accent-color-2: #ffb198;
   --first-accent-color: #e64a19;
   --second-accent-color: #bf360c;
-  --third-accent-color: #ffcc80;
+  --third-accent-color: #ec8d00;
   --white-part: #ffffff;
   --text-color: #5d1e0b;
 }
@@ -376,6 +376,19 @@ body::-webkit-scrollbar-thumb {
 
 .underline-hovered {
   width: 100%;
+}
+
+.curr-active {
+  color: var(--first-accent-color);
+}
+
+.curr-active .underline-hovered {
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  height: 2px;
+  z-index: 50;
+  transition: 0.5s all;
 }
 
 .header-scrolled {

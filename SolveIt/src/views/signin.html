@@ -1,297 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href="../styles/output.css" rel="stylesheet" />
-    <link href="../styles/input.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div
-      class="b bg-[#242234] w-screen h-screen relative flex flex-col items-center"
-    >
-      <a
-        href="./index.html"
-        class="flex gap-2 items-center absolute top-8 left-20 z-50"
-      >
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="../styles/output.css" rel="stylesheet" />
+  <link href="../styles/input.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="b background w-screen h-screen relative flex flex-col items-center">
+    <header class="absolute top-0 left-0 right-0 px-20 py-10 z-50 flex justify-between items-center">
+      <a href="./index.html" class="text-black flex gap-2 items-center">
         <img class="h-[3rem]" src="../assets/images/logo.png" />
         <div class="flex flex-col justify-between">
           <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
-          <div
-            class="text-gray-500 text-[0.6rem] flex justify-between items-center"
-          >
+          <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
             <p>ASSISTANCE</p>
             <p>&</p>
             <p>INSIGHTS</p>
           </div>
         </div>
       </a>
-      <main class="h-screen w-full relative">
+      <div class="relative w-[7rem] flex justify-center z-50 theme-js font-semibold">
         <div
-          class="bg-purple-200 half-polygon-west h-full w-1/2 relative px-[15rem]"
-        >
-          <div class="relative z-50 flex flex-col justify-center w-full h-full">
-            <form
-              action="submit"
-              id="signin-form"
-              class="w-full h-[42rem] flex flex-col justify-end relative"
-            >
-              <div id="form-body" class="transition-all">
-                <h1 class="text-[3rem] font-semibold">Hey there, brainiac!</h1>
-                <p class="my-8 text-xl text-gray-700">
-                  Time to dive back in. Fill in your details to continue.
-                </p>
-                <div class="flex flex-col gap-2">
-                  <label for="email">Your Email</label>
-                  <input
-                    id="email"
-                    name="email"
-                    class="border-2 outline-none focus:border-[#75e1d9] py-4 px-8 text-lg rounded-lg"
-                    type="email"
-                    placeholder="johndoe@np.ac.s"
-                  />
-                  <label for="password">Your Password</label>
-                  <input
-                    id="password"
-                    name="password"
-                    class="border-2 outline-none focus:border-[#75e1d9] py-4 px-8 text-lg rounded-lg"
-                    type="password"
-                    placeholder="iLoveCats123"
-                  />
-                </div>
+          class="hover:text1 py-1 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative">
+          Themes
+          <div class="underline-child bg1"></div>
+        </div>
+        <ul
+          class="background absolute shadow-xl py-4 px-1 rounded-[1rem] text-gray-300 top-full theme-container-js inactive transition-all">
+          <div
+            class="hover:text1 py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative">
+            Themes
+            <div class="underline-child bg1"></div>
+          </div>
+          <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-theme="dark">
+            Dark
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="light">
+            Light
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="night">
+            Night
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="void">
+            Void
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="earthy">
+            Earthy
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-light">
+            Solarized Light
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-dark">
+            Solarized dark
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="pastel">
+            Pastel
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="cyber">
+            Cyberpunk Glow
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="twilight">
+            Twilight
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="autumn">
+            Autumn Forest
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="ocean">
+            Ocean Breeze
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="mono">
+            Monochrome Minimal
+          </li>
+          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="retro">
+            Retro Sunset
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main class="h-screen w-full relative">
+      <div class="bg-purple-200 text-black half-polygon-west h-full w-1/2 relative px-[15rem]">
+        <div class="relative z-50 flex flex-col justify-center w-full h-full">
+          <form action="submit" id="signin-form" class="w-full h-[42rem] flex flex-col justify-end relative">
+            <div id="form-body" class="transition-all">
+              <h1 class="text-[3rem] font-semibold">Hey there, brainiac!</h1>
+              <p class="my-8 text-xl text-gray-700">
+                Time to dive back in. Fill in your details to continue.
+              </p>
+              <div class="flex flex-col gap-2">
+                <label for="email">Your Email</label>
+                <input id="email" name="email"
+                  class="text-black border-2 outline-none focus:border-[#75e1d9] py-4 px-8 text-lg rounded-lg"
+                  type="email" placeholder="johndoe@np.ac.s" />
+                <label for="password">Your Password</label>
+                <input id="password" name="password"
+                  class="text-black border-2 outline-none focus:border-[#75e1d9] py-4 px-8 text-lg rounded-lg"
+                  type="password" placeholder="iLoveCats123" />
+              </div>
 
-                <div class="flex items-center justify-between my-4">
-                  <div class="flex items-center gap-4 text-lg">
-                    <div class="checkbox-wrapper-30 flex">
-                      <span class="checkbox">
-                        <input type="checkbox" name="remember" />
-                        <svg>
-                          <use xlink:href="#checkbox-30" class="checkbox"></use>
-                        </svg>
-                      </span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        style="display: none"
-                      >
-                        <symbol id="checkbox-30" viewBox="0 0 22 22">
-                          <path
-                            fill="none"
-                            stroke="currentColor"
-                            d="M5.5,11.3L9,14.8L20.2,3.3l0,0c-0.5-1-1.5-1.8-2.7-1.8h-13c-1.7,0-3,1.3-3,3v13c0,1.7,1.3,3,3,3h13 c1.7,0,3-1.3,3-3v-13c0-0.4-0.1-0.8-0.3-1.2"
-                          />
-                        </symbol>
+              <div class="flex items-center justify-between my-4">
+                <div class="flex items-center gap-4 text-lg">
+                  <div class="checkbox-wrapper-30 flex">
+                    <span class="checkbox">
+                      <input type="checkbox" name="remember" />
+                      <svg class="text-black">
+                        <use xlink:href="#checkbox-30" class="checkbox"></use>
                       </svg>
-                    </div>
-                    <p>Remember for 30 days</p>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+                      <symbol id="checkbox-30" viewBox="0 0 22 22">
+                        <path fill="none" stroke="currentColor"
+                          d="M5.5,11.3L9,14.8L20.2,3.3l0,0c-0.5-1-1.5-1.8-2.7-1.8h-13c-1.7,0-3,1.3-3,3v13c0,1.7,1.3,3,3,3h13 c1.7,0,3-1.3,3-3v-13c0-0.4-0.1-0.8-0.3-1.2" />
+                      </symbol>
+                    </svg>
                   </div>
-                  <a
-                    class="text-[#fa1c9a] underline-parent relative cursor-pointer font-semibold"
-                    >Forgot password?
-                    <div class="underline-child bg-[#fa1c9a]"></div>
-                  </a>
+                  <p>Remember for 30 days</p>
                 </div>
-              </div>
-              <div
-                id="signup-parent"
-                class="relative font-semibold text-center my-4 overflow-hidden rounded-[2rem] hover:rounded-none border-2 border-black transition-all h-[4rem]"
-              >
-                <button
-                  id="signin"
-                  class="relative bg-[#ecd86c] h-full cursor-pointer w-full flex items-center gap-4 justify-center"
-                >
-                  Sign in
-                </button>
-              </div>
-            </form>
-            <div id="or-signup" class="h-[5rem]">
-              <div class="bg-gray-700 h-[1px] relative">
-                <p
-                  class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-purple-200 px-4"
-                >
-                  or
-                </p>
-              </div>
-              <div class="flex gap-2 justify-center my-8">
-                If you don't have an account,
-                <a
-                  href="./signup.html"
-                  class="text-[#fa1c9a] underline-parent relative font-semibold"
-                >
-                  create one now!
+                <a class="text-[#fa1c9a] underline-parent relative cursor-pointer font-semibold">Forgot password?
                   <div class="underline-child bg-[#fa1c9a]"></div>
                 </a>
               </div>
             </div>
-          </div>
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 480 480"
-              fill="#e6ceff"
-              width="300"
-              height="300"
-              class="absolute bottom-10 left-10"
-            >
-              <path
-                d="M450.9 169.7a100 100 0 0 0-13.6-11.4A99.4 99.4 0 0 0 321.6 42.7a99.3 99.3 0 0 0-163.4 0A99.4 99.4 0 0 0 42.7 158.3a99.3 99.3 0 0 0 0 163.4 99.4 99.4 0 0 0 115.6 115.6 99.3 99.3 0 0 0 163.4 0 99.4 99.4 0 0 0 115.5-115.5 99.3 99.3 0 0 0 13.7-152ZM240 300a60 60 0 1 1 0-120 60 60 0 0 1 0 120Z"
-              ></path>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 480 480"
-              fill="#e6ceff"
-              width="400"
-              height="400"
-              class="absolute top-28 left-10 z-0"
-            >
-              <path
-                d="m337 320 63-160h-80a160 160 0 1 0-320 0h160L80 320h80a160 160 0 1 0 320 0H337Z"
-              ></path>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="#e6ceff"
-              width="300"
-              height="300"
-              class="absolute top-[7.5rem] left-[38rem] z-0"
-              viewBox="0 0 480 480"
-            >
-              <path
-                d="M240 0v240h240A240 240 0 0 0 240 0ZM240 480h240V240a240 240 0 0 0-240 240ZM0 240a240 240 0 0 0 240 240V240H0ZM0 240V0h240A240 240 0 0 1 0 240Z"
-              ></path>
-            </svg>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 480 480"
-              fill="#e6ceff"
-              width="300"
-              height="300"
-              class="absolute bottom-4 left-[34rem] rotate-90 z-0"
-            >
-              <path
-                d="M360.5 240V120.5H240V0H0v240h120.5v120.5H240V480h240V240H360.5z"
-              ></path>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="#262432"
-              width="300"
-              height="300"
-              class="absolute top-28 left-[65rem]"
-              viewBox="0 0 480 480"
-            >
-              <path
-                d="M0 240v120a120 120 0 0 1 120 120h120A240 240 0 0 0 0 240Z"
-              ></path>
-            </svg>
+            <div id="signup-parent"
+              class="relative font-semibold text-center my-4 overflow-hidden rounded-[2rem] hover:rounded-none border-2 border-black transition-all h-[4rem]">
+              <button id="signin"
+                class="relative bg-[#ecd86c] h-full cursor-pointer w-full flex items-center gap-4 justify-center">
+                Sign in
+              </button>
+            </div>
+          </form>
+          <div id="or-signup" class="h-[5rem]">
+            <div class="bg-gray-700 h-[1px] relative">
+              <p class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-purple-200 px-4">
+                or
+              </p>
+            </div>
+            <div class="flex gap-2 justify-center my-8">
+              If you don't have an account,
+              <a href="./signup.html" class="text-[#fa1c9a] underline-parent relative font-semibold">
+                create one now!
+                <div class="underline-child bg-[#fa1c9a]"></div>
+              </a>
+            </div>
           </div>
         </div>
         <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#383b48"
-            width="250"
-            height="250"
-            class="absolute top-20 right-80 z-0"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#e6ceff" width="300" height="300"
+            class="absolute bottom-10 left-10">
             <path
-              d="M320 160v160H160V160h160C320 71.63 248.37 0 160 0S0 71.63 0 160v320h320c88.37 0 160-71.63 160-160s-71.63-160-160-160Z"
-            ></path>
+              d="M450.9 169.7a100 100 0 0 0-13.6-11.4A99.4 99.4 0 0 0 321.6 42.7a99.3 99.3 0 0 0-163.4 0A99.4 99.4 0 0 0 42.7 158.3a99.3 99.3 0 0 0 0 163.4 99.4 99.4 0 0 0 115.6 115.6 99.3 99.3 0 0 0 163.4 0 99.4 99.4 0 0 0 115.5-115.5 99.3 99.3 0 0 0 13.7-152ZM240 300a60 60 0 1 1 0-120 60 60 0 0 1 0 120Z">
+            </path>
           </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#262432"
-            width="400"
-            height="400"
-            class="absolute bottom-10 right-10"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#e6ceff" width="400" height="400"
+            class="absolute top-28 left-10 z-0">
+            <path d="m337 320 63-160h-80a160 160 0 1 0-320 0h160L80 320h80a160 160 0 1 0 320 0H337Z"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#e6ceff" width="300" height="300"
+            class="absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
             <path
-              d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z"
-            ></path>
+              d="M240 0v240h240A240 240 0 0 0 240 0ZM240 480h240V240a240 240 0 0 0-240 240ZM0 240a240 240 0 0 0 240 240V240H0ZM0 240V0h240A240 240 0 0 1 0 240Z">
+            </path>
           </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#ecd86c"
-            width="300"
-            height="300"
-            class="absolute bottom-20 right-60 opacity-80 z-40 joyful-container"
-          >
-            <path
-              d="M409.7 409.7c33.2-33.2 23.8-100.2-17.9-169.7 41.7-69.6 51.1-136.5 18-169.7C376.4 37 309.4 46.5 240 88.2 170.4 46.5 103.5 37 70.3 70.2 37 103.6 46.5 170.5 88.2 240c-41.7 69.5-51.1 136.5-18 169.7 33.3 33.2 100.2 23.8 169.8-17.9 69.5 41.7 136.5 51.1 169.7 18Z"
-            ></path>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#e6ceff" width="300" height="300"
+            class="absolute bottom-4 left-[34rem] rotate-90 z-0">
+            <path d="M360.5 240V120.5H240V0H0v240h120.5v120.5H240V480h240V240H360.5z"></path>
           </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#fa1c9a"
-            width="200"
-            height="200"
-            class="absolute top-48 right-[30rem] opacity-80 z-40 joyful-container"
-          >
-            <rect width="480" height="480" rx="120" ry="120"></rect>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#262432" width="300" height="300"
+            class="absolute top-28 left-[65rem]" viewBox="0 0 480 480">
+            <path d="M0 240v120a120 120 0 0 1 120 120h120A240 240 0 0 0 0 240Z"></path>
           </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#75e1d9"
-            width="250"
-            height="250"
-            class="absolute top-[30rem] right-[50rem] opacity-80 z-40 joyful-container"
-          >
-            <path
-              d="M409 295.9a79 79 0 0 1 .7-112.5A80 80 0 0 0 296.6 70.3 79 79 0 0 1 184 71a80.7 80.7 0 0 0-113.4-1.1C39 101 39 152 70.3 183.4s30.5 82.7.7 112.5a80.7 80.7 0 0 0-1.1 113.4 80 80 0 0 0 113.5.4 79 79 0 0 1 113.2 0 80 80 0 0 0 113.5-.4c31-31.4 30-82.2-1.1-113.4Z"
-            ></path>
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#75e1d9"
-            width="75"
-            height="75"
-            class="absolute top-[10rem] right-[65rem] opacity-80 z-40 joyful-container"
-          >
-            <path
-              d="M360 289.7c43.4 0 86.9-16.6 120-49.7a169.2 169.2 0 0 0-120-49.7 169.2 169.2 0 0 0 49.7-120c-46.9 0-89.3 19-120 49.7 0-43.4-16.6-86.9-49.7-120a169.2 169.2 0 0 0-49.7 120 169.2 169.2 0 0 0-120-49.7c0 46.8 19 89.3 49.7 120-43.4 0-86.9 16.6-120 49.7a169.2 169.2 0 0 0 120 49.7 169.2 169.2 0 0 0-49.7 120c46.8 0 89.3-19 120-49.7 0 43.4 16.6 86.9 49.7 120a169.2 169.2 0 0 0 49.7-120 169.2 169.2 0 0 0 120 49.7c0-46.9-19-89.3-49.7-120Z"
-            ></path>
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#fa1c9a"
-            width="75"
-            height="75"
-            class="absolute top-[25rem] right-[20rem] opacity-80 z-40 joyful-container"
-          >
-            <path
-              d="M371.3 294.4 480 240l-108.7-54.4 38.4-115.3-115.3 38.4L240 0l-54.4 108.7L70.3 70.3l38.4 115.3L0 240l108.7 54.4-38.4 115.3 115.3-38.4L240 480l54.4-108.7 115.3 38.4-38.4-115.3z"
-            ></path>
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 480 480"
-            fill="#ecd86c"
-            width="75"
-            height="75"
-            class="absolute bottom-20 right-[45rem] opacity-80 z-40 joyful-container"
-          >
-            <circle cx="240" cy="240" r="240"></circle>
-          </svg>
-          <img
-            class="h-40 w-40 absolute top-[20rem] rotate-[90deg] right-[37rem] z-40"
-            src="https://pngimg.com/d/rubik_cube_PNG23.png"
-          />
-          <img
-            class="h-28 w-28 absolute top-[40rem] rotate-[40deg] right-[45rem] z-40"
-            src="https://www.grubiks.com/images/puzzles/17/small.png"
-          />
         </div>
-      </main>
-    </div>
-    <script type="module" src="../js/signin/app.js"></script>
-  </body>
+      </div>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="250" height="250"
+          class="svg2 absolute top-20 right-80 z-0">
+          <path
+            d="M320 160v160H160V160h160C320 71.63 248.37 0 160 0S0 71.63 0 160v320h320c88.37 0 160-71.63 160-160s-71.63-160-160-160Z">
+          </path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="400" height="400"
+          class="svg1 absolute bottom-10 right-10">
+          <path
+            d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
+          </path>
+        </svg>
+
+      </div>
+    </main>
+  </div>
+  <script type="module" src="../js/auth/signin/app.js"></script>
+  <script type="module" src="../js/themes/app.js"></script>
+</body>
+
 </html>

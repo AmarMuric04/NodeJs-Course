@@ -1,9 +1,9 @@
 const ACCOUNTS = JSON.parse(localStorage.getItem("SolveBox-users"));
 
 export const Model = {
-  correctCredentials(email, password) {
+  correctCredentials(inputs) {
     const user = ACCOUNTS.find(
-      (user) => user.email === email && user.password === password
+      (user) => user.email === inputs.email && user.password === inputs.password
     );
 
     if (user) {
@@ -19,23 +19,15 @@ export const Model = {
     };
   },
 
-  retrieveFormData(event) {
-    const form = event.target;
-    const formData = new FormData(form);
-
-    const data = {};
-
-    for (const [key, value] of formData.entries()) {
-      data[key] = value;
-    }
-    return data;
-  },
-
   removeClassOnClick(element, cl) {
     const removeErrorClass = () => {
       element.classList.remove(cl);
       element.removeEventListener("click", removeErrorClass);
     };
     element.addEventListener("click", removeErrorClass);
+  },
+
+  updateStatus(user) {
+    localStorage.setItem("SolveBox-signed-in", JSON.stringify(user));
   },
 };

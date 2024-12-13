@@ -1,5 +1,7 @@
+import { handleUnderlineHover } from "../../general_view.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
+import { displayAuthFlow, retrieveFormData } from "../auth.js";
 
 export const Controller = {
   handleEmailInput(email) {
@@ -56,24 +58,13 @@ export const Controller = {
     }
     if (invalidInput) return;
 
-    const solveBoxUsers =
-      JSON.parse(localStorage.getItem("SolveBox-users")) || [];
-
-    localStorage.setItem(
-      "SolveBox-users",
-      JSON.stringify([
-        ...solveBoxUsers,
-        {
-          email: inputs.email,
-          password: inputs.password,
-        },
-      ])
-    );
-
-    View.displaySigninRedirect();
+    Model.addUser(inputs);
+    displayAuthFlow(false);
   },
 
   init() {
+    handleUnderlineHover();
+
     const emailDoc = document.getElementById("email");
     const pswDoc = document.getElementById("password");
     const confPswDoc = document.getElementById("confirm-password");
@@ -99,7 +90,7 @@ export const Controller = {
 
     signupForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const inputs = Model.retrieveFormData(e);
+      const inputs = retrieveFormData(e);
       this.handleSignup(inputs);
     });
   },

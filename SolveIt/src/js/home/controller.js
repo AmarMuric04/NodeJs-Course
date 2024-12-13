@@ -1,6 +1,6 @@
 import { disableButton } from "../../utility/utility.js";
 import { initializeHeader } from "../header_logic.js";
-import { handleUnderlineHover } from "../general_view.js";
+import { handleNavBarHover, handleUnderlineHover } from "../general_view.js";
 
 import { Model } from "./model.js";
 import { View } from "./view.js";
@@ -27,7 +27,8 @@ export const Controller = {
   async init() {
     initializeHeader();
     handleUnderlineHover();
-
+    handleNavBarHover();
+    
     const reviews = await Model.getReviews();
     View.renderReviews(reviews);
 

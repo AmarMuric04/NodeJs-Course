@@ -38,12 +38,4 @@ export const Model = {
     }
     return data;
   },
-
-  removeClassOnClick(element, cl) {
-    const removeErrorClass = () => {
-      element.classList.remove(cl);
-      element.removeEventListener("click", removeErrorClass);
-    };
-    element.addEventListener("click", removeErrorClass);
-  },
 };

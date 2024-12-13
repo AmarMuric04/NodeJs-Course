@@ -2,23 +2,9 @@ import { isUserSignedIn, signTheUserOut } from "../utility/utility.js";
 import { handleUnderlineHover } from "./general_view.js";
 
 export function initializeHeader() {
-  handleThemeEvents();
   handleDropdownEvents();
   handleShowHeader();
   handleCheckIfSignedIn();
-}
-
-function handleThemeEvents() {
-  const themeBtn = document.querySelector(".theme-js");
-  const themeCont = document.querySelector(".theme-container-js");
-
-  themeBtn?.addEventListener("mouseover", () => {
-    themeCont?.classList.replace("inactive", "active");
-  });
-
-  themeBtn?.addEventListener("mouseout", () => {
-    themeCont?.classList.replace("active", "inactive");
-  });
 }
 
 function handleDropdownEvents() {

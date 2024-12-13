@@ -1,5 +1,7 @@
+import { handleUnderlineHover } from "../../general_view.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
+import { checkStatus, displayAuthFlow, retrieveFormData } from "../auth.js";
 
 export const Controller = {
   handleSignIn(inputs) {
@@ -16,20 +18,14 @@ export const Controller = {
         View.displayErrorMessage("Password field can't be empty.");
       }
     } else {
-      const checkInputs = Model.correctCredentials(
-        inputs.email,
-        inputs.password
-      );
+      const checkInputs = Model.correctCredentials(inputs);
+
       if (checkInputs.foundUser) {
         emailDoc.classList.remove("error-input");
         pswDoc.classList.remove("error-input");
 
-        View.displaySignedIn();
-
-        localStorage.setItem(
-          "SolveBox-signed-in",
-          JSON.stringify(checkInputs.user)
-        );
+        displayAuthFlow(true);
+        Model.updateStatus(checkInputs.user);
 
         setTimeout(() => {
           window.location.href = "./index.html";
@@ -48,11 +44,14 @@ export const Controller = {
   },
 
   init() {
+    if (checkStatus()) window.href = "./home";
+    handleUnderlineHover();
+
     const signInForm = document.getElementById("signin-form");
 
     signInForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const inputs = Model.retrieveFormData(e);
+      const inputs = retrieveFormData(e);
 
       this.handleSignIn(inputs);
     });
