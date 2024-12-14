@@ -825,19 +825,23 @@
             </div>
           </div>
         </div>
-        <div class="text-white bg-[#242234] w-1/2 p-16 flex flex-col gap-16">
+        <form id="news-form" action="submit" class="text-white bg-[#242234] w-1/2 p-16 flex flex-col gap-16">
           <p class="text-3xl font-semibold text-center">
             Don't miss your opportunity to learn more!
           </p>
           <div class="flex flex-col gap-4">
-            <input class="px-4 py-6 w-full bg-[#262432]" placeholder="Your Name*" type="text" />
-            <input class="px-4 py-6 w-full bg-[#262432]" type="number" placeholder="Your Number*" />
-            <input class="px-4 py-6 w-full bg-[#262432]" type="email" placeholder="Your Email*" />
+            <input id="name" name="name" class="rounded-lg border-2 border-[#262432] px-4 py-6 w-full bg-[#262432]"
+              placeholder="Your Name*" type="text" />
+            <input id="number" name="number" class="rounded-lg border-2 border-[#262432] px-4 py-6 w-full bg-[#262432]"
+              type="tel" placeholder="Your Number*" />
+            <input id="email" name="email" class="rounded-lg border-2 border-[#262432] px-4 py-6 w-full bg-[#262432]"
+              type="email" placeholder="Your Email*" />
           </div>
-          <button class="w-full text-center bg1 py-4 text-black rounded-[2rem] hover:rounded-none transition-all">
+          <button
+            class="flex items-center justify-center gap-4 w-full text-center bg1 py-4 text-black rounded-[2rem] hover:rounded-none transition-all">
             Subscribe
           </button>
-        </div>
+        </form>
       </div>
     </section>
     <footer class="w-full flex justify-center pt-40">
@@ -970,7 +974,7 @@
           </div>
           <div class="w-[40%] flex justify-around">
             <div>
-              <h1 class="font-semibold text-3xl">underlineigation</h1>
+              <h1 class="font-semibold text-3xl">Navigation</h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
               <ul class="flex flex-col gap-3 text-gray-200 font-semibold">
                 <li>About Us</li>

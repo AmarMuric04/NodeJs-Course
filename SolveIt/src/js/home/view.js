@@ -1,3 +1,6 @@
+import { loader } from "../general_view.js";
+import * as Utility from "../../utility/utility.js";
+
 export const View = {
   renderReviews(reviews) {
     const reviewsList = document.querySelector(".reviews");
@@ -37,5 +40,19 @@ export const View = {
       reviewDiv.append(reviewDoc);
       reviewsList.appendChild(reviewDiv);
     });
+  },
+
+  updateButtonStatus(button) {
+    button.innerHTML = "Subscribing..." + loader();
+    Utility.disableButton(button);
+
+    setTimeout(() => {
+      button.innerHTML = "Subscribed " + "😀";
+    }, 3000);
+
+    setTimeout(() => {
+      button.innerHTML = "Subscribe";
+      button.disabled = false;
+    }, 6000);
   },
 };
