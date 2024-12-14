@@ -1,17 +1,5 @@
 import { loader } from "../general_view.js";
 
-export function retrieveFormData(event) {
-  const form = event.target;
-  const formData = new FormData(form);
-
-  const data = {};
-
-  for (const [key, value] of formData.entries()) {
-    data[key] = value;
-  }
-  return data;
-}
-
 export function displayAuthFlow(isSignin) {
   const parent = document.getElementById("signup-parent");
   const authElement = document.createElement("a");
@@ -68,40 +56,4 @@ export function displayAuthFlow(isSignin) {
     formBody.prepend(title);
     formBody.classList.replace("opacity-0", "opacity-100");
   }, 3200);
-}
-
-export function checkStatus() {
-  const status = JSON.parse(localStorage.getItem("SolveBox-signed-in"));
-
-  return status !== null;
-}
-
-export function displayErrorMessage(error) {
-  const errorVisible = document.getElementById("error-parent");
-  if (errorVisible) errorVisible.remove();
-
-  const errorParent = document.createElement("div");
-  errorParent.classList =
-    "absolute w-full transition-all opacity-0 -top-16 flex flex-col text-sm my-4 bg-[#242234] rounded-xl p-4 font-semibold text-center";
-  errorParent.setAttribute("id", "error-parent");
-
-  const errorMessage = document.createElement("p");
-  errorMessage.classList = "flex items-center text-red-400";
-  errorMessage.setAttribute("id", "email-check");
-  errorMessage.textContent = error;
-
-  errorParent.appendChild(errorMessage);
-
-  const formBody = document.getElementById("form-body");
-  formBody.prepend(errorParent);
-
-  setTimeout(() => {
-    errorParent.classList.replace("opacity-0", "opacity-100");
-  }, 10);
-  setTimeout(() => {
-    errorParent.classList.replace("opacity-100", "opacity-0");
-  }, 1500);
-  setTimeout(() => {
-    errorParent.remove();
-  }, 1700);
 }

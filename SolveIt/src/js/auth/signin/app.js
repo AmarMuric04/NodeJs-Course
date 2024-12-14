@@ -1,4 +1,4 @@
-import { checkStatus } from "../auth.js";
+import { checkStatus } from "../../../utility/utility.js";
 import { Controller } from "./controller.js";
 
 (() => {

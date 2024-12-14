@@ -1,19 +1,77 @@
-export function isEmail(email) {
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+export function displayErrorMessage(error) {
+  const errorVisible = document.getElementById("error-parent");
+  if (errorVisible) errorVisible.remove();
 
-  return emailRegex.test(email);
+  const errorParent = document.createElement("div");
+  errorParent.classList =
+    "absolute w-full transition-all opacity-0 -top-16 flex flex-col text-sm my-4 bg-[#242234] rounded-xl p-4 font-semibold text-center";
+  errorParent.setAttribute("id", "error-parent");
+
+  const errorMessage = document.createElement("p");
+  errorMessage.classList = "flex items-center text-red-400";
+  errorMessage.setAttribute("id", "email-check");
+  errorMessage.textContent = error;
+
+  errorParent.appendChild(errorMessage);
+
+  const formBody = document.getElementById("form-body");
+  formBody.prepend(errorParent);
+
+  setTimeout(() => {
+    errorParent.classList.replace("opacity-0", "opacity-100");
+  }, 10);
+  setTimeout(() => {
+    errorParent.classList.replace("opacity-100", "opacity-0");
+  }, 1500);
+  setTimeout(() => {
+    errorParent.remove();
+  }, 1700);
 }
 
-export function isLongEnough(password) {
-  return password.length > 6;
+export function isEmailValid(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-export function hasSpecialChar(password) {
-  const specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
-  return specialCharPattern.test(password);
+export function isLongEnough(input) {
+  return input.length >= 6;
 }
 
-export function hasUppercase(password) {
-  const uppercasePattern = /[A-Z]/;
-  return uppercasePattern.test(password);
+export function hasSpecialChar(input) {
+  return /[!@#$%^&*(),.?":{}|<>]/.test(input);
+}
+
+export function hasUppercase(input) {
+  return /[A-Z]/.test(input);
+}
+
+export function doPasswordsMatch(password, confirmPsw) {
+  return password === confirmPsw && confirmPsw !== "";
+}
+
+export function isPasswordValid(password) {
+  return (
+    isLongEnough(password) && hasSpecialChar(password) && hasUppercase(password)
+  );
+}
+
+export function isInputEmpty(input) {
+  return input === "";
+}
+
+export function isValidPhoneNumber(phone) {
+  const pattern =
+    /^\+?[1-9]\d{0,3}[-\s.]?\(?\d{1,4}\)?[-\s.]?\d{1,4}[-\s.]?\d{1,9}$/;
+  return pattern.test(phone);
+}
+
+export function invalidateInput(element) {
+  element.classList.remove("error-input");
+  void element.offsetWidth;
+  element.classList.add("error-input");
+}
+
+export function removeInvalidations(parent) {
+  const errorFields = parent.querySelectorAll(".error-input");
+
+  errorFields.forEach((element) => element.classList.remove("error-input"));
 }

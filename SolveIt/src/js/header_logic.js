@@ -1,4 +1,4 @@
-import { isUserSignedIn, signTheUserOut } from "../utility/utility.js";
+import { checkStatus, signTheUserOut } from "../utility/utility.js";
 import { handleUnderlineHover } from "./general_view.js";
 
 export function initializeHeader() {
@@ -39,7 +39,7 @@ function handleShowHeader() {
 
 function handleCheckIfSignedIn() {
   const userInfo = document.getElementById("user-information");
-  const user = isUserSignedIn();
+  const user = checkStatus();
 
   if (user) {
     userInfo.innerHTML = "";

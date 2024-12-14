@@ -1,12 +1,8 @@
 import { handleUnderlineHover } from "../../general_view.js";
 import { Model } from "./model.js";
-import { View } from "./view.js";
-import {
-  checkStatus,
-  displayAuthFlow,
-  displayErrorMessage,
-  retrieveFormData,
-} from "../auth.js";
+import * as Validation from "../../../utility/inputs.js";
+import * as Utility from "../../../utility/utility.js";
+import { displayAuthFlow } from "../auth.js";
 
 export const Controller = {
   handleSignIn(inputs) {
@@ -15,12 +11,12 @@ export const Controller = {
 
     if (!inputs.email || !inputs.password) {
       if (!inputs.email) {
-        View.invalidateInput(emailDoc);
-        displayErrorMessage("Email field can't be empty.");
+        Validation.invalidateInput(emailDoc);
+        Validation.displayErrorMessage("Email field can't be empty.");
       }
       if (!inputs.password) {
-        View.invalidateInput(pswDoc);
-        displayErrorMessage("Password field can't be empty.");
+        Validation.invalidateInput(pswDoc);
+        Validation.displayErrorMessage("Password field can't be empty.");
       }
     } else {
       const checkInputs = Model.correctCredentials(inputs);
@@ -36,14 +32,16 @@ export const Controller = {
           window.location.href = "./index.html";
         }, 6200);
       } else {
-        View.invalidateInput(emailDoc);
-        View.invalidateInput(pswDoc);
-        displayErrorMessage("Invalid email or password. Please try again.");
+        Validation.invalidateInput(emailDoc);
+        Validation.invalidateInput(pswDoc);
+        Validation.displayErrorMessage(
+          "Invalid email or password. Please try again."
+        );
       }
     }
 
-    Model.removeClassOnClick(emailDoc, "error-input");
-    Model.removeClassOnClick(pswDoc, "error-input");
+    Utility.removeClassOnClick(emailDoc, "error-input");
+    Utility.removeClassOnClick(pswDoc, "error-input");
   },
 
   init() {
@@ -53,7 +51,7 @@ export const Controller = {
 
     signInForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const inputs = retrieveFormData(e);
+      const inputs = Utility.retrieveFormData(e);
 
       this.handleSignIn(inputs);
     });

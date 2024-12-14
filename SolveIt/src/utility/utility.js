@@ -18,10 +18,32 @@ export function disableButton(button) {
   }, 600);
 }
 
-export function isUserSignedIn() {
-  return JSON.parse(localStorage.getItem("SolveBox-signed-in"));
+export function checkStatus() {
+  const user = JSON.parse(localStorage.getItem("SolveBox-signed-in"));
+
+  return user;
 }
 
 export function signTheUserOut() {
   localStorage.removeItem("SolveBox-signed-in");
+}
+
+export function retrieveFormData(event) {
+  const form = event.target;
+  const formData = new FormData(form);
+
+  const data = {};
+
+  for (const [key, value] of formData.entries()) {
+    data[key] = value;
+  }
+  return data;
+}
+
+export function removeClassOnClick(element, cl) {
+  const removeErrorClass = () => {
+    element.classList.remove(cl);
+    element.removeEventListener("click", removeErrorClass);
+  };
+  element.addEventListener("click", removeErrorClass);
 }

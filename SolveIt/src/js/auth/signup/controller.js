@@ -1,22 +1,20 @@
 import { handleUnderlineHover } from "../../general_view.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
-import {
-  displayAuthFlow,
-  displayErrorMessage,
-  retrieveFormData,
-} from "../auth.js";
+import { displayAuthFlow } from "../auth.js";
+import * as Validation from "../../../utility/inputs.js";
+import { retrieveFormData } from "../../../utility/utility.js";
 
 export const Controller = {
   handleEmailInput(email) {
-    const isValid = Model.isEmailValid(email);
+    const isValid = Validation.isEmailValid(email);
     View.updateEmailValidation(isValid);
   },
 
   handlePasswordInput(password) {
-    const lengthValid = Model.isLongEnough(password);
-    const specialCharValid = Model.hasSpecialChar(password);
-    const uppercaseValid = Model.hasUppercase(password);
+    const lengthValid = Validation.isLongEnough(password);
+    const specialCharValid = Validation.hasSpecialChar(password);
+    const uppercaseValid = Validation.hasUppercase(password);
 
     View.displayPasswordValidation({
       lengthValid,
@@ -25,17 +23,19 @@ export const Controller = {
     });
 
     const pswDoc = document.getElementById("password");
-    if (password === "") pswDoc.classList.remove("border-[#fa1c9a]");
+    if (Validation.isInputEmpty(pswDoc))
+      pswDoc.classList.remove("border-[#fa1c9a]");
   },
 
   handleConfirmPasswordInput(confPsw) {
     const psw = document.getElementById("password").value;
 
-    const isValid = Model.doPasswordsMatch(psw, confPsw);
+    const isValid = Validation.doPasswordsMatch(psw, confPsw);
     View.displayConfirmPasswordValidation(isValid);
 
     const confPswDoc = document.getElementById("confirm-password");
-    if (confPsw === "") confPswDoc.classList.remove("border-[#fa1c9a]");
+    if (Validation.isInputEmpty(confPsw))
+      confPswDoc.classList.remove("border-[#fa1c9a]");
   },
 
   handleSignup(inputs) {
@@ -45,25 +45,27 @@ export const Controller = {
 
     let invalidInput = false;
 
-    if (!Model.isPasswordValid(inputs.password)) {
-      View.invalidateInput(false, pswDoc);
+    if (!Validation.isPasswordValid(inputs.password)) {
+      Validation.invalidateInput(pswDoc);
       Model.removeClassOnClick(pswDoc, "error-input");
       invalidInput = true;
     }
-    if (!Model.doPasswordsMatch(inputs.password, inputs["confirm-password"])) {
-      View.invalidateInput(false, confPswDoc);
+    if (
+      !Validation.doPasswordsMatch(inputs.password, inputs["confirm-password"])
+    ) {
+      Validation.invalidateInput(confPswDoc);
       Model.removeClassOnClick(confPswDoc, "error-input");
       invalidInput = true;
     }
-    if (!Model.isEmailValid(inputs.email)) {
-      View.invalidateInput(false, emailDoc);
+    if (!Validation.isEmailValid(inputs.email)) {
+      Validation.invalidateInput(emailDoc);
       Model.removeClassOnClick(emailDoc, "error-input");
       invalidInput = true;
     }
     if (Model.userAlreadyExists(inputs.email)) {
-      View.invalidateInput(false, emailDoc);
+      Validation.invalidateInput(emailDoc);
       Model.removeClassOnClick(emailDoc, "error-input");
-      displayErrorMessage("Email already taken");
+      Validation.displayErrorMessage("Email already taken");
       invalidInput = true;
     }
     if (invalidInput) return;

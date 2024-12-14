@@ -19,14 +19,6 @@ export const Model = {
     };
   },
 
-  removeClassOnClick(element, cl) {
-    const removeErrorClass = () => {
-      element.classList.remove(cl);
-      element.removeEventListener("click", removeErrorClass);
-    };
-    element.addEventListener("click", removeErrorClass);
-  },
-
   updateStatus(user) {
     localStorage.setItem("SolveBox-signed-in", JSON.stringify(user));
   },

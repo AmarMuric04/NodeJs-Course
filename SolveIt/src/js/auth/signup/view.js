@@ -1,12 +1,4 @@
 export const View = {
-  invalidateInput(isValid, element) {
-    if (!isValid) {
-      element.classList.remove("error-input");
-      void element.offsetWidth;
-      element.classList.add("error-input");
-    }
-  },
-
   highlightElement(input, text, isValid) {
     isValid
       ? text.classList.replace("text-red-400", "text-lime-400")
