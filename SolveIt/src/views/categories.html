@@ -7,6 +7,8 @@
   <title>Document</title>
   <link href="../styles/output.css" rel="stylesheet" />
   <link href="../styles/input.css" rel="stylesheet" />
+  <script defer type="module" src="../js/themes/app.js"></script>
+  <script defer type="module" src="../js/header_logic.js"></script>
 </head>
 
 <body>
@@ -31,9 +33,9 @@
               <div class="underline-child bg1"></div>
             </a>
             <a href="../views/categories.html"
-              class="curr-active navbar-text relative transition-all cursor-pointer underline-parent">
+              class="navbar-text relative transition-all cursor-pointer underline-parent">
               Categories
-              <div class="underline-hovered bg1"></div>
+              <div class="underline-child bg1"></div>
             </a><a href="../views/subscribe.html"
               class="navbar-text relative transition-all cursor-pointer underline-parent">
               Subscribe
@@ -62,7 +64,7 @@
               <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-theme="dark">
                 Dark
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="light">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] border3 cursor-pointer theme-btn" data-theme="light">
                 Light
               </li>
               <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="night">
@@ -103,7 +105,7 @@
               </li>
             </ul>
           </div>
-          <div class="flex items-center gap-4" id="user-information"></div>
+          <div class="flex items-center gap-4 min-w-[18rem] justify" id="user-information"></div>
         </section>
       </nav>
     </header>
@@ -491,7 +493,6 @@
     </footer>
   </div>
   <script type="module" src="../js/categories/app.js"></script>
-  <script type="module" src="../js/themes/app.js"></script>
 </body>
 
 </html>

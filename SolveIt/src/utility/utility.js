@@ -47,3 +47,17 @@ export function removeClassOnClick(element, cl) {
   };
   element.addEventListener("click", removeErrorClass);
 }
+
+export function updateButtonStatus(
+  button,
+  text = button.innerHTML + "ing",
+  disable = false
+) {
+  button.innerHTML = text;
+  console.log(button);
+
+  /* For enabling just call it again with disabled -> true */
+
+  if (disable) button.disabled = true;
+  else button.disabled = false;
+}

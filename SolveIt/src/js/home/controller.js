@@ -1,7 +1,7 @@
 import * as Utility from "../../utility/utility.js";
 import * as Validation from "../../utility/inputs.js";
-import { initializeHeader } from "../header_logic.js";
-import { handleNavBarHover, handleUnderlineHover } from "../general_view.js";
+import { loader } from "../general_view.js";
+import { handleUnderlineHover } from "../general_view.js";
 
 import { Model } from "./model.js";
 import { View } from "./view.js";
@@ -56,9 +56,25 @@ export const Controller = {
       Validation.removeInvalidations(form);
     }, 1000);
 
-    if (invalidInput) return;
+    setTimeout(() => {
+      Validation.removeInvalidations(form);
+    }, 1000);
 
-    View.updateButtonStatus(subBtn);
+    if (invalidInput) {
+      Utility.updateButtonStatus(subBtn, "Oops!", true);
+      setTimeout(() => {
+        Utility.updateButtonStatus(subBtn, "Subscribe");
+      }, 1000);
+      return;
+    }
+
+    Utility.updateButtonStatus(subBtn, "Subscribing... " + loader(), true);
+    setTimeout(() => {
+      Utility.updateButtonStatus(subBtn, "Subscribed 😀");
+    }, 3000);
+    setTimeout(() => {
+      Utility.updateButtonStatus(subBtn, "Subscribe");
+    }, 6000);
 
     setTimeout(() => {
       form.reset();
@@ -66,9 +82,7 @@ export const Controller = {
   },
 
   async init() {
-    initializeHeader();
     handleUnderlineHover();
-    handleNavBarHover();
 
     const newsForm = document.getElementById("news-form");
 

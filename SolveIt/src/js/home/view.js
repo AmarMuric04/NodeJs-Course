@@ -7,14 +7,15 @@ export const View = {
     reviews.forEach((review) => {
       const reviewDiv = document.createElement("div");
       reviewDiv.classList =
-        "bg-white review mb-12 flex h-[30rem] min-w-[75rem] w-[75rem]";
+        "bg-white w-screen min-w-[21rem] review mb-12 flex h-auto lg:h-[30rem] lg:min-w-[75rem] lg:w-[75rem] flex-col lg:flex-row";
 
       const reviewImage = document.createElement("img");
-      reviewImage.classList = "w-1/2";
+      reviewImage.classList =
+        "w-28 h-28 rounded-full object-cover lg:h-auto lg:rounded-none lg:w-1/2 p-4 lg:p-0";
       reviewImage.setAttribute("src", review.image);
 
       const reviewDoc = document.createElement("div");
-      reviewDoc.classList = "p-16 flex flex-col justify-between";
+      reviewDoc.classList = "p-8 pt-0 lg:p-16 flex flex-col justify-between";
 
       const svgElement = document.createElement("div");
       svgElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24" class="text-[#75e1d9]">
@@ -22,14 +23,15 @@ export const View = {
     </svg>`;
 
       const reviewTitle = document.createElement("p");
-      reviewTitle.classList = "text-gray-400 italic text-xl my-4";
+      reviewTitle.classList = "text-gray-400 italic text-sm lg:text-xl my-4";
       reviewTitle.textContent = review.text;
       const reviewName = document.createElement("p");
-      reviewName.classList = "my-4 font-semibold text-[2rem]";
+      reviewName.classList =
+        "my-4 font-semibold text-[1rem] lg:text-[2rem] text-black";
       reviewName.textContent = review.name;
       const reviewProf = document.createElement("p");
       reviewProf.classList =
-        "noto text-[0.6rem] text-[#cd0d83] tracking-[0.1rem] uppercase";
+        "noto text-[0.4rem] lg:text-[0.6rem] text-[#cd0d83] tracking-[0.1rem] uppercase";
       reviewProf.textContent = review.profession;
 
       reviewDiv.append(reviewImage);

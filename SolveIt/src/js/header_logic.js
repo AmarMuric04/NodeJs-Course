@@ -1,10 +1,11 @@
 import { checkStatus, signTheUserOut } from "../utility/utility.js";
 import { handleUnderlineHover } from "./general_view.js";
 
-export function initializeHeader() {
+export function initHeader() {
   handleDropdownEvents();
   handleShowHeader();
   handleCheckIfSignedIn();
+  handleNavBarHover();
 }
 
 function handleDropdownEvents() {
@@ -79,3 +80,34 @@ function handleCheckIfSignedIn() {
     userInfo.append(signInBtn);
   }
 }
+
+export function handleNavBarHover() {
+  const btns = document.querySelectorAll(".navbar-text");
+  const currActive = document.querySelector(".curr-active");
+  btns.forEach((b) => {
+    b.addEventListener("mouseenter", () => {
+      if (b === currActive) return;
+      btns.forEach(() => {
+        currActive?.firstElementChild.classList.replace(
+          "underline-hovered",
+          "underline-child"
+        );
+        currActive?.classList.remove("curr-active");
+      });
+      b.querySelector(".underline-child")?.classList.add("underline-hovered");
+    });
+
+    b.addEventListener("mouseleave", () => {
+      currActive?.firstElementChild.classList.replace(
+        "underline-child",
+        "underline-hovered"
+      );
+      currActive?.classList.add("curr-active");
+      b.querySelector(".underline-child")?.classList.remove(
+        "underline-hovered"
+      );
+    });
+  });
+}
+
+initHeader();

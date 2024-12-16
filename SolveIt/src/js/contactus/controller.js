@@ -1,7 +1,7 @@
-import { initializeHeader } from "../header_logic.js";
-import { handleNavBarHover, handleUnderlineHover } from "../general_view.js";
+import { handleUnderlineHover } from "../general_view.js";
 import * as Utility from "../../utility/utility.js";
 import * as Validation from "../../utility/inputs.js";
+import { loader } from "../general_view.js";
 import { View } from "./view.js";
 
 export const Controller = {
@@ -44,14 +44,25 @@ export const Controller = {
       invalidInput = true;
     }
 
-    inputInvalidations = setTimeout(() => {
+    setTimeout(() => {
       Validation.removeInvalidations(form);
     }, 1000);
 
-    if (invalidInput) return;
+    if (invalidInput) {
+      Utility.updateButtonStatus(submitBtn, "Oops!", true);
+      setTimeout(() => {
+        Utility.updateButtonStatus(submitBtn, "Submit");
+      }, 1000);
+      return;
+    }
 
-    Validation.removeInvalidations(form);
-    View.updateButtonSubmit(submitBtn);
+    Utility.updateButtonStatus(submitBtn, "Submitting... " + loader(), true);
+    setTimeout(() => {
+      Utility.updateButtonStatus(submitBtn, "Submitted 😀");
+    }, 3000);
+    setTimeout(() => {
+      Utility.updateButtonStatus(submitBtn, "Submit");
+    }, 6000);
 
     /* Send the review to the database, for now just redirect */
 
@@ -98,11 +109,28 @@ export const Controller = {
 
     inputInvalidations = setTimeout(() => {
       Validation.removeInvalidations(form);
+      subBtn.disabled = false;
     }, 1000);
 
-    if (invalidInput) return;
+    setTimeout(() => {
+      Validation.removeInvalidations(form);
+    }, 1000);
 
-    View.updateButtonStatus(subBtn);
+    if (invalidInput) {
+      Utility.updateButtonStatus(subBtn, "Oops!", true);
+      setTimeout(() => {
+        Utility.updateButtonStatus(subBtn, "Subscribe");
+      }, 1000);
+      return;
+    }
+
+    Utility.updateButtonStatus(subBtn, "Subscribing... " + loader(), true);
+    setTimeout(() => {
+      Utility.updateButtonStatus(subBtn, "Subscribed 😀");
+    }, 3000);
+    setTimeout(() => {
+      Utility.updateButtonStatus(subBtn, "Subscribe");
+    }, 6000);
 
     setTimeout(() => {
       form.reset();
@@ -129,8 +157,6 @@ export const Controller = {
       this.handleNewsletterSubscribe(inputs, newsForm);
     });
 
-    initializeHeader();
     handleUnderlineHover();
-    handleNavBarHover();
   },
 };

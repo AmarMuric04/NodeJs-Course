@@ -1,5 +1,4 @@
-import { handleNavBarHover, handleUnderlineHover } from "../general_view.js";
-import { initializeHeader } from "../header_logic.js";
+import { handleUnderlineHover } from "../general_view.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const session = JSON.parse(localStorage.getItem("SolveBox-review-session"));
@@ -10,8 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("SolveBox-review-session");
   }, 10);
 
-  initializeHeader();
-  handleNavBarHover();
   handleUnderlineHover();
 
   const nameDoc = document.getElementById("name");
