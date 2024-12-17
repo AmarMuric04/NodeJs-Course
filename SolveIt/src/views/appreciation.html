@@ -13,13 +13,14 @@
 
 <body>
   <div class="b background w-full h-full relative flex flex-col items-center">
-    <header class="header absolute top-0 left-0 right-0 py-4 w-full flex justify-center z-50">
-      <nav class="flex w-[75rem] justify-between items-center">
+    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full md:flex justify-center z-50">
+      <nav class="flex w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] justify-between items-center">
         <a href="./index.html" class="flex gap-2 items-center">
-          <img class="h-[3rem]" src="../assets/images/logo.png" />
+          <img class="h-[1.5rem] lg:h-[3rem]" src="../assets/images/logo.png" />
           <div class="flex flex-col justify-between">
-            <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
-            <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
+            <h1 class="font-bold text-[1rem] md:text-[1.2rem] xl:text-[1.6rem]">SolveBox</h1>
+            <div
+              class="text-gray-500 md:text-[0.5rem] text-[0.4rem] xl:text-[0.6rem] flex justify-between items-center">
               <p>ASSISTANCE</p>
               <p>&</p>
               <p>INSIGHTS</p>
@@ -27,7 +28,7 @@
           </div>
         </a>
         <section>
-          <ul class="flex gap-6 font-semibold">
+          <ul class="flex gap-2 lg:gap-6 font-semibold text-xs md:text-sm xl:text-[1rem]">
             <a href="../views/about.html" class="navbar-text relative transition-all cursor-pointer underline-parent">
               About
               <div class="underline-child bg1"></div>
@@ -52,9 +53,9 @@
           </ul>
         </section>
         <section class="flex items-center justify-between gap-4">
-          <div class="relative w-[7rem] flex justify-center z-50 theme-js font-semibold">
+          <div class="relative lg:w-[7rem] flex justify-center z-50 theme-js font-semibold">
             <div
-              class="hover:text1 py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative">
+              class="hover:text1 lg:py-2 lg:px-4 px-2 py-1 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative text-sm md:text-sm xl:text-[1rem]">
               Themes
               <div class="underline-child bg1"></div>
             </div>
@@ -105,14 +106,14 @@
               </li>
             </ul>
           </div>
-          <div class="flex items-center gap-4 min-w-[18rem] justify" id="user-information"></div>
+          <div class="flex items-center gap-4 min-w-[8rem] lg:min-w-[18rem] justify" id="user-information"></div>
         </section>
       </nav>
     </header>
     <section class="w-full flex justify-center relative">
-      <div class="w-[75rem]">
-        <div class="relative z-40 mt-20 h-[15rem] flex justify-between items-center">
-          <div class="w-1/2">
+      <div class="w-[90%] lg:w-[75rem] py-20 lg:py-0">
+        <div class="relative z-40 lg:mt-20 lg:h-[15rem] flex flex-col lg:flex-row justify-between items-center">
+          <div class="w-full lg:w-1/2">
             <h1 class="text-[3rem] font-bold leading-[3.5rem] ">
               Thank <span class="text1">You</span>!
             </h1>
@@ -120,86 +121,90 @@
               <a class="hover:underline" href="./index.html">GO BACK TO HOME</a>
             </p>
           </div>
-          <div class="w-1/2">
-            <p class="text-gray-400 font-semibold text-lg">
+          <div class="w-full lg:w-1/2">
+            <p class="text-gray-400 font-semibold text-sm lg:text-lg">
               Thank you for taking the time to submit a review for our site. Your feedback is invaluable and helps us
               improve. We
               truly appreciate your support and input!
             </p>
           </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"
-          class="svg1 absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
-          <path d="M480 120 360 0 240 120 120 0 0 120l120 120L0 360l120 120 120-120 120 120 120-120-120-120 120-120z">
-          </path>
-        </svg>
+        <div class="hidden lg:flex">
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+            class="svg1 absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
+            <path d="M480 120 360 0 240 120 120 0 0 120l120 120L0 360l120 120 120-120 120 120 120-120-120-120 120-120z">
+            </path>
+          </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-          class="svg2 absolute top-20 right-80 z-0">
-          <path d="M320 160a160 160 0 1 0-320 0v320h160V160h160ZM320 0v320H160a160 160 0 1 0 320 0V0H320Z"></path>
-        </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg2 absolute top-20 right-80 z-0">
+            <path d="M320 160a160 160 0 1 0-320 0v320h160V160h160ZM320 0v320H160a160 160 0 1 0 320 0V0H320Z"></path>
+          </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-          class="svg1 absolute bottom-[1.6rem] right-[50rem] z-0">
-          <path
-            d="M120 120h120v120H120zM0 240h120v120H0zM120 360h120v120H120zM0 0h120v120H0zM360 120h120v120H360zM240 240h120v120H240zM360 360h120v120H360zM240 0h120v120H240z">
-          </path>
-        </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg1 absolute bottom-[1.6rem] right-[50rem] z-0">
+            <path
+              d="M120 120h120v120H120zM0 240h120v120H0zM120 360h120v120H120zM0 0h120v120H0zM360 120h120v120H360zM240 240h120v120H240zM360 360h120v120H360zM240 0h120v120H240z">
+            </path>
+          </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-          class="svg1 absolute bottom-[1.6rem] left-10">
-          <path
-            d="M480 240H240V0a240 240 0 0 1 240 240ZM240 480H0V240a240 240 0 0 1 240 240ZM480 480H240V240a240 240 0 0 1 240 240ZM240 240H0V0a240 240 0 0 1 240 240Z">
-          </path>
-        </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg1 absolute bottom-[1.6rem] left-10">
+            <path
+              d="M480 240H240V0a240 240 0 0 1 240 240ZM240 480H0V240a240 240 0 0 1 240 240ZM480 480H240V240a240 240 0 0 1 240 240ZM240 240H0V0a240 240 0 0 1 240 240Z">
+            </path>
+          </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-          class="svg1 absolute bottom-[1.6rem] right-10">
-          <path
-            d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
-          </path>
-        </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg1 absolute bottom-[1.6rem] right-10">
+            <path
+              d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
+            </path>
+          </svg>
+        </div>
       </div>
     </section>
     <section class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-center">
-      <div class="w-[75rem]">
-        <ul class="flex justify-between w-full">
-          <li class="flex items-center w-1/4 font-thin text-gray-500 gap-2">
-            <img class="w-20 h-20" src="../assets/svgs/what.svg" />
+      <div class="w-full lg:w-[75rem]">
+        <ul
+          class="flex justify-between w-full flex-col lg:flex-row items-center lg:items-start text-sm lg:text-[1rem] gap-4 lg:gap-0">
+          <li class="flex items-center w-[90%] lg:w-1/4 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/what.svg" />
             <div class="flex flex-col">
-              <h1 class="font-bold text-2xl text-black">What to expect?</h1>
+              <h1 class="font-bold text-xl lg:text-2xl text-black">What to expect?</h1>
               <p class="text-gray-700">SolveBox brigs experts together.</p>
             </div>
           </li>
-          <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-20 h-20" src="../assets/svgs/light.svg" />
+          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/light.svg" />
             <p>Engaging solutions and feedback</p>
           </li>
-          <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-20 h-20" src="../assets/svgs/time.svg" />
+          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/time.svg" />
             <p>Quick and simple solutions</p>
           </li>
-          <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-20 h-20" src="../assets/svgs/stats.svg" />
+          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/stats.svg" />
             <p>Overwhelmingly good reviews</p>
           </li>
         </ul>
       </div>
     </section>
 
-    <section class="w-[75rem] flex justify-center items-center border-b-2 border1">
-      <div class="w-full py-40">
+    <section class="w-full flex justify-center items-center">
+      <div class="w-[90%] lg:w-[75rem] border-b-2 border1 py-40">
         <p class="text-[0.7rem] tracking-[0.1rem] pt-8 pb-4 noto text3">
           YOUR REVIEW
         </p>
-        <div class="flex w-full">
-          <div class="w-2/3">
-            <p class="text-[3rem] leading-[3rem] font-semibold">
+        <div class="flex flex-col lg:flex-row w-full">
+          <div class="w-full lg:w-2/3">
+            <p class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-semibold">
               Thank you! Your <span class="text1">valuable</span>
               feedback helps us improve our website<span class="text2">.</span>
             </p>
           </div>
-          <ul class="w-1/3 flex flex-col justify-between noto-sans font-light text-[0.9rem] text-gray-300">
+          <ul
+            class="w-full lg:w-1/3 flex flex-col justify-between noto-sans font-light text-[0.9rem] text-gray-300 my-8 lg:my-0 gap-2 lg:gap-0">
             <li class="flex gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
                 class="text3">
@@ -223,28 +228,31 @@
             </li>
           </ul>
         </div>
-        <div class="text-black bg-white review my-12 flex h-[30rem] min-w-[75rem] w-[75rem]"><img class="w-1/2"
+        <div
+          class="bg-white w-full min-w-full review mb-12 flex h-auto lg:h-[30rem] lg:min-w-[75rem] lg:w-[75rem] flex-col lg:flex-row">
+          <img class="w-28 h-28 rounded-full object-cover lg:h-auto lg:rounded-none lg:w-1/2 p-4 lg:p-0"
             src="https://res2.weblium.site/res/648abf34bf47350010ebfd9f/64941d5122d602000f971639_optimized_1400_c1261x904-61x44.webp">
-          <div class="p-16 flex flex-col justify-between">
+          <div class="p-8 pt-0 lg:p-16 flex flex-col justify-between">
             <div><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"
                 class="text-[#75e1d9]">
                 <path fill="currentColor"
                   d="M5.7 18L8 14q-1.65 0-2.825-1.175T4 10t1.175-2.825T8 6t2.825 1.175T12 10q0 .575-.137 1.063T11.45 12L8 18zm9 0l2.3-4q-1.65 0-2.825-1.175T13 10t1.175-2.825T17 6t2.825 1.175T21 10q0 .575-.137 1.063T20.45 12L17 18z">
                 </path>
               </svg></div>
-            <p id="description" class="text-gray-400 italic text-xl my-4"></p>
-            <p id="name" class="my-4 font-semibold text-[2rem]"></p>
-            <p id="profession" class="noto text-[0.6rem] text-[#cd0d83] tracking-[0.1rem] uppercase"></p>
+            <p class="text-gray-400 italic text-sm lg:text-xl my-4" id="description"></p>
+            <p class="my-4 font-semibold text-[1rem] lg:text-[2rem] text-black" id="name"></p>
+            <p class="noto text-[0.4rem] lg:text-[0.6rem] text-[#cd0d83] tracking-[0.1rem] uppercase" id="profession">
+            </p>
           </div>
         </div>
         <div class="flex flex-col items-center mt-20">
-          <h1 class="text-[3rem] font-bold text-center">
+          <h1 class="text-[1.5rem] lg:text-[3rem] font-bold text-center">
             Want to share <span class="text3">feedback</span> directly? We’d
             <span class="text1">love</span> to hear your thoughts
             <span class="text2">!</span>
           </h1>
 
-          <p class="text-[#ffd110] underline font-bold text-center text-xl mt-8">
+          <p class="text-[#ffd110] underline font-bold text-center text-[1rem] lg:text-xl mt-8">
             muricamar2004@gmail.com
           </p>
           <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 20 20" class="opacity-50 mt-8">
@@ -255,95 +263,103 @@
       </div>
     </section>
     <footer class="w-full flex justify-center pt-40">
-      <div class="w-[75rem]">
-        <h1 class="text-[3rem] leading-[3rem] font-bold text-center">
+      <div class="w-[90%] lg:w-[75rem]">
+        <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
           A vibrant and
           <span class="text3">inclusive</span> community of
           <span class="text2">solvers</span> and
           <span class="text1">challengers</span><span class="text3">.</span>
         </h1>
-        <p class="text-3xl font-bold text-center my-8">
+        <p class="text-xl lg:text-3xl font-bold text-center my-8">
           Learn <span class="text1 underline">more</span> now!
         </p>
-        <div class="w-full flex justify-between my-8">
-          <img class="w-[14%] h-44 object-cover"
-            src="https://images.unsplash.com/photo-1605902394069-ff2ae2430e62?q=80&w=2531&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-          <img class="w-[14%] h-44 object-cover"
-            src="https://plus.unsplash.com/premium_photo-1723662084148-2cd2357705ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHV6emxlfGVufDB8fDB8fHww" />
-          <img class="w-[14%] h-44 object-cover"
-            src="https://images.unsplash.com/photo-1597400473366-371a80b251eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHV6emxlfGVufDB8fDB8fHww" />
-          <img class="w-[14%] h-44 object-cover"
-            src="https://plus.unsplash.com/premium_photo-1694822449585-a2444c288b96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHV6emxlfGVufDB8fDB8fHww" />
-          <img class="w-[14%] h-44 object-cover"
-            src="https://plus.unsplash.com/premium_photo-1700675175408-5fe0d5851e57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
-          <img class="w-[14%] h-44 object-cover object-right"
-            src="https://images.unsplash.com/photo-1515508268448-8d0d292bc49a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
+        <div class="w-full flex justify-between my-8 gap-4 flex-col lg:flex-row">
+          <div class="flex justify-between">
+            <img class="w-[28%] h-44 object-cover"
+              src="https://images.unsplash.com/photo-1605902394069-ff2ae2430e62?q=80&w=2531&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <img class="w-[28%] h-44 object-cover"
+              src="https://plus.unsplash.com/premium_photo-1723662084148-2cd2357705ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHV6emxlfGVufDB8fDB8fHww" />
+            <img class="w-[28%] h-44 object-cover"
+              src="https://images.unsplash.com/photo-1597400473366-371a80b251eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHV6emxlfGVufDB8fDB8fHww" />
+          </div>
+          <div class="flex justify-between">
+            <img class="w-[28%] h-44 object-cover"
+              src="https://plus.unsplash.com/premium_photo-1694822449585-a2444c288b96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHV6emxlfGVufDB8fDB8fHww" />
+            <img class="w-[28%] h-44 object-cover"
+              src="https://plus.unsplash.com/premium_photo-1700675175408-5fe0d5851e57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
+            <img class="w-[28%] h-44 object-cover object-right"
+              src="https://images.unsplash.com/photo-1515508268448-8d0d292bc49a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
+          </div>
         </div>
-        <div class="w-full flex py-20 justify-between">
-          <div class="w-2/5">
-            <h1 class="font-semibold text-2xl">
+        <div class="w-full flex flex-col lg:flex-row py-20 justify-between">
+          <div class="w-full lg:w-2/5">
+            <h1 class="font-semibold text-lg lg:text-2xl">
               Technology, Design & Innovation Conference
             </h1>
-            <p class="py-4 text-gray-300 text-lg text-semibold">
+            <p class="py-4 text-gray-300 text-sm lg:text-lg text-semibold">
               We bring puzzle experts together.
             </p>
-            <p class="py-4 text-gray-300 text-semibold">
+            <p class="py-4 text-gray-300 text-xs lg:text-[1rem] text-semibold">
               Join us at the NY Technology, Design & Innovation Conference,
               the premier gathering of visionaries on September 17-18, 2024.
               Feel free to contact us in any convenient way for more details.
             </p>
           </div>
-          <div class="flex gap-20">
+          <div class="flex my-8 lg:my-0 gap-10 lg:gap-20 flex-col lg:flex-row">
             <div class="flex flex-col gap-10">
               <div class="flex gap-3 h-20">
-                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                <div
+                  class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
                     <path fill="currentColor"
                       d="M19.5 22a1.5 1.5 0 0 0 1.5-1.5V17a1.5 1.5 0 0 0-1.5-1.5c-1.17 0-2.32-.18-3.42-.55a1.51 1.51 0 0 0-1.52.37l-1.44 1.44a14.77 14.77 0 0 1-5.89-5.89l1.43-1.43c.41-.39.56-.97.38-1.53c-.36-1.09-.54-2.24-.54-3.41A1.5 1.5 0 0 0 7 3H3.5A1.5 1.5 0 0 0 2 4.5C2 14.15 9.85 22 19.5 22M3.5 4H7a.5.5 0 0 1 .5.5c0 1.28.2 2.53.59 3.72c.05.14.04.34-.12.5L6 10.68c1.65 3.23 4.07 5.65 7.31 7.32l1.95-1.97c.14-.14.33-.18.51-.13c1.2.4 2.45.6 3.73.6a.5.5 0 0 1 .5.5v3.5a.5.5 0 0 1-.5.5C10.4 21 3 13.6 3 4.5a.5.5 0 0 1 .5-.5" />
                   </svg>
                 </div>
-                <div class="flex flex-col justify-between">
-                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                <div class="flex flex-col justify-start lg:justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                     PHONE
                   </p>
-                  <p class="text-lg font-semibold">+381 (063) 303 309</p>
-                  <p class="text-lg font-semibold">+381 (063) 303 309</p>
+                  <p class="text-sm lg:text-lg font-semibold">+381 (063) 303 309</p>
+                  <p class="text-sm lg:text-lg font-semibold">+381 (063) 303 309</p>
                 </div>
               </div>
               <div class="flex gap-3 h-20">
-                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                <div
+                  class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
                     <path fill="currentColor"
                       d="M5 5h13a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1c-.5 0-.94.17-1.28.47l7.78 5.03l7.78-5.03C18.94 6.17 18.5 6 18 6zm6.5 6.71L3.13 7.28C3.05 7.5 3 7.75 3 8v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V8c0-.25-.05-.5-.13-.72z" />
                   </svg>
                 </div>
-                <div class="flex flex-col justify-between">
-                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                <div class="flex flex-col justify-start lg:justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                     EMAIL
                   </p>
-                  <p class="text-lg font-semibold">muricamar2004@gmail.com</p>
-                  <p class="text-lg font-semibold">muricamar2004@gmail.com</p>
+                  <p class="text-sm lg:text-lg font-semibold">muricamar2004@gmail.com</p>
+                  <p class="text-sm lg:text-lg font-semibold">muricamar2004@gmail.com</p>
                 </div>
               </div>
             </div>
-            <div class="flex flex-col gap-10">
+            <div class="flex flex-col gap-4 lg:gap-10">
               <div class="flex gap-3 h-20">
-                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                <div
+                  class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256" class="">
                     <path fill="currentColor"
                       d="M154.7 142.75a36 36 0 1 0-37.4 0a63.6 63.6 0 0 0-32.5 22.85a4 4 0 0 0 6.4 4.8a56 56 0 0 1 89.6 0a4 4 0 0 0 6.4-4.8a63.65 63.65 0 0 0-32.5-22.85M108 112a28 28 0 1 1 28 28a28 28 0 0 1-28-28m100-84H64a12 12 0 0 0-12 12v28H32a4 4 0 0 0 0 8h20v48H32a4 4 0 0 0 0 8h20v48H32a4 4 0 0 0 0 8h20v28a12 12 0 0 0 12 12h144a12 12 0 0 0 12-12V40a12 12 0 0 0-12-12m4 188a4 4 0 0 1-4 4H64a4 4 0 0 1-4-4V40a4 4 0 0 1 4-4h144a4 4 0 0 1 4 4Z" />
                   </svg>
                 </div>
-                <div class="flex flex-col justify-between">
-                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                <div class="flex flex-col justify-start lg:justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                     ADDRESS
                   </p>
-                  <p class="text-lg font-semibold">Serbia,</p>
-                  <p class="text-lg font-semibold">Novi Pazar</p>
+                  <p class="text-sm lg:text-lg font-semibold">Serbia,</p>
+                  <p class="text-sm lg:text-lg font-semibold">Novi Pazar</p>
                 </div>
               </div>
               <div class="flex gap-3 h-20">
-                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                <div
+                  class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                       stroke-width="1.5">
@@ -352,19 +368,19 @@
                     </g>
                   </svg>
                 </div>
-                <div class="flex flex-col justify-between">
-                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                <div class="flex flex-col justify-start lg:justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                     LINKEDIN
                   </p>
-                  <p class="text-lg font-semibold">Amar Muric</p>
-                  <p class="text-lg font-semibold">Amar Muric</p>
+                  <p class="text-sm lg:text-lg font-semibold">Amar Muric</p>
+                  <p class="text-sm lg:text-lg font-semibold">Amar Muric</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="w-full flex py-20 border-y-2 border-[#383b48]">
-          <div class="w-[40%]">
+        <div class="w-full flex flex-col lg:flex-row py-20 border-y-2 border-[#383b48]">
+          <div class="w-full lg:w-[40%]">
             <div class="flex gap-2 items-center">
               <img class="h-[3rem]" src="../assets/images/logo.png" />
               <div class="flex flex-col justify-between">
@@ -376,17 +392,17 @@
                 </div>
               </div>
             </div>
-            <p class="my-4 text-gray-200">
+            <p class="text-sm lg:text-[1rem] my-4 text-gray-200">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
               possimus nesciunt modi corporis magni consectetur beatae sed!
               Cum, eos rem!
             </p>
           </div>
-          <div class="w-[40%] flex justify-around">
+          <div class="w-full lg:w-[40%] flex lg:justify-around justify-between my-8 lg:my-0">
             <div>
-              <h1 class="font-semibold text-3xl">Navigation</h1>
+              <h1 class="font-semibold text-xl lg:text-3xl">Navigation</h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
-              <ul class="flex flex-col gap-3 text-gray-200 font-semibold">
+              <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
                 <li>About Us</li>
                 <li>Schedule</li>
                 <li>Speakers</li>
@@ -394,9 +410,9 @@
               </ul>
             </div>
             <div>
-              <h1 class="font-semibold text-3xl">Support</h1>
+              <h1 class="font-semibold text-xl lg:text-3xl">Support</h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
-              <ul class="flex flex-col gap-3 text-gray-200 font-semibold">
+              <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
                 <li>Pricing</li>
                 <li>Help & Support</li>
                 <li>Privacy Policy</li>
@@ -404,8 +420,8 @@
               </ul>
             </div>
           </div>
-          <div class="w-[20%] flex flex-col justify-between">
-            <h1 class="font-semibold text-3xl">Subscribe</h1>
+          <div class="w-full lg:w-[20%] flex flex-col justify-between gap-4 lg:gap-0">
+            <h1 class="font-semibold text-xl lg:text-3xl">Subscribe</h1>
             <input class="p-6 w-full bg-black bg-opacity-20" type="email" placeholder="Email*" />
             <button class="py-4 px-10 w-full bg1 rounded-[2rem] hover:rounded-none transition-all">
               Subscribe

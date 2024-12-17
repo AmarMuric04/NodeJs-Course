@@ -13,13 +13,14 @@
 
 <body>
   <div class="b background w-full h-full relative flex flex-col items-center">
-    <header class="header absolute top-0 left-0 right-0 py-4 w-full flex justify-center z-50">
-      <nav class="flex w-[75rem] justify-between items-center">
+    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full md:flex justify-center z-50">
+      <nav class="flex w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] justify-between items-center">
         <a href="./index.html" class="flex gap-2 items-center">
-          <img class="h-[3rem]" src="../assets/images/logo.png" />
+          <img class="h-[1.5rem] lg:h-[3rem]" src="../assets/images/logo.png" />
           <div class="flex flex-col justify-between">
-            <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
-            <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
+            <h1 class="font-bold text-[1rem] md:text-[1.2rem] xl:text-[1.6rem]">SolveBox</h1>
+            <div
+              class="text-gray-500 md:text-[0.5rem] text-[0.4rem] xl:text-[0.6rem] flex justify-between items-center">
               <p>ASSISTANCE</p>
               <p>&</p>
               <p>INSIGHTS</p>
@@ -27,7 +28,7 @@
           </div>
         </a>
         <section>
-          <ul class="flex gap-6 font-semibold">
+          <ul class="flex gap-2 lg:gap-6 font-semibold text-xs md:text-sm xl:text-[1rem]">
             <a href="../views/about.html" class="navbar-text relative transition-all cursor-pointer underline-parent">
               About
               <div class="underline-child bg1"></div>
@@ -52,9 +53,9 @@
           </ul>
         </section>
         <section class="flex items-center justify-between gap-4">
-          <div class="relative w-[7rem] flex justify-center z-50 theme-js font-semibold">
+          <div class="relative lg:w-[7rem] flex justify-center z-50 theme-js font-semibold">
             <div
-              class="hover:text1 py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative">
+              class="hover:text1 lg:py-2 lg:px-4 px-2 py-1 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative text-sm md:text-sm xl:text-[1rem]">
               Themes
               <div class="underline-child bg1"></div>
             </div>
@@ -105,25 +106,25 @@
               </li>
             </ul>
           </div>
-          <div class="flex items-center gap-4 min-w-[18rem] justify" id="user-information"></div>
+          <div class="flex items-center gap-4 min-w-[8rem] lg:min-w-[18rem] justify" id="user-information"></div>
         </section>
       </nav>
     </header>
     <section class="w-full flex justify-center relative">
-      <div class="w-[75rem]">
-        <div class="relative z-40 mt-20 h-[15rem] flex justify-between items-center">
-          <div class="w-1/2">
-            <h1 class="text-[3rem] font-bold leading-[3.5rem] ">
+      <div class="w-[90%] lg:w-[75rem] py-20 lg:py-0">
+        <div class="relative z-40 lg:mt-20 lg:h-[15rem] flex flex-col lg:flex-row justify-between items-center">
+          <div class="w-full lg:w-1/2">
+            <h1 class="text-[1.5rem] lg:text-[3rem] font-bold leading-normal lg:leading-[3.5rem] w-full lg:w-2/3">
               Available <span class="text1">Categories</span>
             </h1>
-            <p class="text-[0.5rem] tracking-[0.1rem] pt-8 pb-4 noto text3">
+            <p class="text-[0.5rem] tracking-[0.1rem] py-4 lg:pt-8 lg:pb-4 noto text3">
               <a class="hover:underline" href="./index.html"> HOME</a>
               <span>></span>
               <span class="underline font-semibold">CATEGORIES</span>
             </p>
           </div>
-          <div class="w-1/2">
-            <p class="text-gray-400 font-semibold text-lg">
+          <div class="w-full lg:w-1/2">
+            <p class="text-gray-400 font-semibold text-sm lg:text-lg">
               SolveBox is one of the largest platforms focused on solving
               puzzles, Rubik's cubes, Sudoku, and other brain-teasers. We
               offer a variety of challenges designed for puzzle enthusiasts at
@@ -133,107 +134,111 @@
             </p>
           </div>
         </div>
+        <div class="hidden lg:block">
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+            class="svg1 absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
+            <path d="M480 120 360 0 240 120 120 0 0 120l120 120L0 360l120 120 120-120 120 120 120-120-120-120 120-120z">
+            </path>
+          </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"
-          class="svg1 absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
-          <path d="M480 120 360 0 240 120 120 0 0 120l120 120L0 360l120 120 120-120 120 120 120-120-120-120 120-120z">
-          </path>
-        </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg2 absolute top-20 right-80 z-0">
+            <path d="M480 0H0v480h480V0ZM320 320H160V160h160v160Z"></path>
+          </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-          class="svg2 absolute top-20 right-80 z-0">
-          <path d="M320 160a160 160 0 1 0-320 0v320h160V160h160ZM320 0v320H160a160 160 0 1 0 320 0V0H320Z"></path>
-        </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg1 absolute bottom-[1.6rem] right-[50rem] z-0">
+            <path
+              d="M120 120h120v120H120zM0 240h120v120H0zM120 360h120v120H120zM0 0h120v120H0zM360 120h120v120H360zM240 240h120v120H240zM360 360h120v120H360zM240 0h120v120H240z">
+            </path>
+          </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-          class="svg1 absolute bottom-[1.6rem] right-[50rem] z-0">
-          <path
-            d="M120 120h120v120H120zM0 240h120v120H0zM120 360h120v120H120zM0 0h120v120H0zM360 120h120v120H360zM240 240h120v120H240zM360 360h120v120H360zM240 0h120v120H240z">
-          </path>
-        </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg1 absolute bottom-[1.6rem] left-10">
+            <path
+              d="M480 240H240V0a240 240 0 0 1 240 240ZM240 480H0V240a240 240 0 0 1 240 240ZM480 480H240V240a240 240 0 0 1 240 240ZM240 240H0V0a240 240 0 0 1 240 240Z">
+            </path>
+          </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-          class="svg1 absolute bottom-[1.6rem] left-10">
-          <path
-            d="M480 240H240V0a240 240 0 0 1 240 240ZM240 480H0V240a240 240 0 0 1 240 240ZM480 480H240V240a240 240 0 0 1 240 240ZM240 240H0V0a240 240 0 0 1 240 240Z">
-          </path>
-        </svg>
-
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-          class="svg1 absolute bottom-[1.6rem] right-10">
-          <path
-            d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
-          </path>
-        </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg1 absolute bottom-[1.6rem] right-10">
+            <path
+              d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
+            </path>
+          </svg>
+        </div>
       </div>
     </section>
     <section class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-center">
-      <div class="w-[75rem]">
-        <ul class="flex justify-between w-full">
-          <li class="flex items-center w-1/4 font-thin text-gray-500 gap-2">
-            <img class="w-20 h-20" src="../assets/svgs/what.svg" />
+      <div class="w-full lg:w-[75rem]">
+        <ul
+          class="flex justify-between w-full flex-col lg:flex-row items-center lg:items-start text-sm lg:text-[1rem] gap-4 lg:gap-0">
+          <li class="flex items-center w-[90%] lg:w-1/4 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/what.svg" />
             <div class="flex flex-col">
-              <h1 class="font-bold text-2xl text-black">What to expect?</h1>
+              <h1 class="font-bold text-xl lg:text-2xl text-black">What to expect?</h1>
               <p class="text-gray-700">SolveBox brigs experts together.</p>
             </div>
           </li>
-          <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-20 h-20" src="../assets/svgs/light.svg" />
+          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/light.svg" />
             <p>Engaging solutions and feedback</p>
           </li>
-          <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-20 h-20" src="../assets/svgs/time.svg" />
+          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/time.svg" />
             <p>Quick and simple solutions</p>
           </li>
-          <li class="flex items-center w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-20 h-20" src="../assets/svgs/stats.svg" />
+          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/stats.svg" />
             <p>Overwhelmingly good reviews</p>
           </li>
         </ul>
       </div>
     </section>
-    <section class="w-full flex justify-center py-40 z-40 relative ">
-      <div class="w-[75rem]">
-        <p class="text-[0.7rem] tracking-[0.1rem] pt-8 pb-4 noto text3">
+    <section class="w-full flex justify-center py-40 z-40 relative">
+      <div class="w-[90%] lg:w-[75rem]">
+        <p class="text-[0.7rem] tracking-[0.1rem] pt-8 pb-4 noto">
           KEY CATEGORIES
         </p>
-        <div class="flex w-full">
-          <div class="w-2/3">
-            <p class="text-[3rem] leading-[3rem] font-semibold">
+        <div class="flex w-full flex-col lg:flex-row">
+          <div class="w-full lg:w-2/3">
+            <p class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-semibold">
               Interactive <span class="text1">lessons</span> on cool and
-              <br />emerging puzzles or challenges<span class="text2">.</span>
+              <br class="hidden lg:block" />emerging puzzles or challenges
+              <span class="text3">.</span>
             </p>
           </div>
-          <ul class="w-1/3 flex flex-col justify-between noto-sans font-light text-[0.9rem] text-gray-300">
-            <li class="flex gap-2">
+          <ul
+            class="w-full lg:w-1/3 flex flex-col gap-2 my-2 lg:gap-0 lg:my-0 justify-between noto-sans font-light text-[0.7rem] lg:text-[0.9rem]">
+            <li class="flex gap-2 text-gray-400">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
-                class="text3">
+                class="text2">
                 <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
               </svg>
               <p>In-depth lessons to enhance your skills;</p>
             </li>
-            <li class="flex gap-2">
+            <li class="flex gap-2 text-gray-400">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
-                class="text3">
+                class="text2">
                 <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
               </svg>
               <p>Cutting-edge demonstration & solutions;</p>
             </li>
-            <li class="flex gap-2">
+            <li class="flex gap-2 text-gray-400">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
-                class="text3">
+                class="text2">
                 <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
               </svg>
               <p>Helping you in a fun way.</p>
             </li>
           </ul>
         </div>
-        <div class="flex gap-8 w-full mt-10">
-          <div class="w-1/3 h-[30rem] relative group overflow-hidden">
+        <div class="flex gap-8 w-full mt-10 flex-col lg:flex-row text-white">
+          <div class="w-full lg:w-1/3 h-[30rem] relative group overflow-hidden">
             <img class="w-full h-full transition-all duration-500 object-cover group-hover:scale-125"
               src="https://images.unsplash.com/photo-1539627831859-a911cf04d3cd?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cnViaWtzJTIwY3ViZXxlbnwwfHwwfHx8MA%3D%3D" />
             <div
-              class="absolute top-0 left-0 w-full h-full bg-purple-900 opacity-0 hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center text-center  p-4 hover-target">
+              class="absolute top-0 left-0 w-full h-full bg-purple-900 opacity-0 hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center text-center p-4 hover-target">
               <h1 class="font-bold text-2xl">Rubik's Cube</h1>
               <h1 class="font-bold text-xl">(The Ultimate Puzzle)</h1>
               <p class="mt-8">
@@ -246,11 +251,11 @@
               </p>
             </div>
           </div>
-          <div class="w-1/3 h-[30rem] relative group overflow-hidden">
+          <div class="w-full lg:w-1/3 h-[30rem] relative group overflow-hidden">
             <img class="w-full h-full transition-all duration-500 object-cover group-hover:scale-125"
               src="https://media.istockphoto.com/id/139707843/photo/sudoku.jpg?s=612x612&w=0&k=20&c=O2yRZFTcFELntjnt_1fNYS6JA5GIUxGBAhhqlWLjG6c=" />
             <div
-              class="absolute top-0 left-0 w-full h-full bg-purple-900 opacity-0 hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center text-center  p-4 hover-target">
+              class="absolute top-0 left-0 w-full h-full bg-purple-900 opacity-0 hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center text-center p-4 hover-target">
               <h1 class="font-bold text-2xl">Sudoku</h1>
               <h1 class="font-bold text-xl">
                 (The Ultimate Logic Challenge)
@@ -266,11 +271,11 @@
               </p>
             </div>
           </div>
-          <div class="w-1/3 h-[30rem] relative group overflow-hidden">
+          <div class="w-full lg:w-1/3 h-[30rem] relative group overflow-hidden">
             <img class="w-full h-full transition-all duration-500 object-cover group-hover:scale-125"
               src="https://wallpaper.forfun.com/fetch/4e/4e8539373299f8b60315f64a65a0e3d0.jpeg" />
             <div
-              class="absolute top-0 left-0 w-full h-full bg-purple-900 opacity-0 hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center text-center  p-4 hover-target">
+              class="absolute top-0 left-0 w-full h-full bg-purple-900 opacity-0 hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center text-center p-4 hover-target">
               <h1 class="font-bold text-2xl">Other Puzzles</h1>
               <h1 class="font-bold text-xl">(Unleash Your Inner Solver)</h1>
               <p class="mt-8">
@@ -284,129 +289,142 @@
             </div>
           </div>
         </div>
-        <ul class="flex justify-between px-20 py-16 font-light noto">
-          <li class="flex flex-col items-center gap-4">
-            <p class="text-[3.5rem] font-bold l">3</p>
-            <p class="text-[0.6rem] text-gray-400 tracking-[0.1rem]">
-              WEEKS OF WORK
-            </p>
-            <div class="h-[0.7rem] w-[0.7rem] rounded-full bg3 mt-4"></div>
-          </li>
-          <li class="flex flex-col items-center gap-4">
-            <p class="text-[3.5rem] font-bold l">230k+</p>
-            <p class="text-[0.6rem] text-gray-400 tracking-[0.1rem]">
-              TOTAL ATTENDANCE
-            </p>
-            <div class="h-[0.7rem] w-[0.7rem] rounded-full bg-pink-600 mt-4"></div>
-          </li>
-          <li class="flex flex-col items-center gap-4">
-            <p class="text-[3.5rem] font-bold l">539</p>
-            <p class="text-[0.6rem] text-gray-400 tracking-[0.1rem]">
-              SUPPORTED PUZZLES
-            </p>
-            <div class="h-[0.7rem] w-[0.7rem] rounded-full bg2 mt-4"></div>
-          </li>
-          <li class="flex flex-col items-center gap-4">
-            <p class="text-[3.5rem] font-bold l">4k+</p>
-            <p class="text-[0.6rem] text-gray-400 tracking-[0.1rem]">
-              CURRENTLY ACTIVE USERS
-            </p>
-            <div class="h-[0.7rem] w-[0.7rem] rounded-full bg-lime-400 mt-4"></div>
-          </li>
+        <ul class="flex justify-between lg:px-20 py-16 font-light noto flex-col gap-4 lg:gap-0 lg:flex-row">
+          <div class="flex justify-between lg:justify-around w-full lg:w-1/2">
+            <li class="flex flex-col items-center gap-4">
+              <p class="text-[1.75rem] lg:text-[3.5rem] font-bold l">3</p>
+              <p class="text-[0.4rem] lg:text-[0.6rem] text-gray-400 tracking-[0.1rem] text-center">
+                WEEKS OF WORK
+              </p>
+              <div class="h-[0.7rem] w-[0.7rem] rounded-full bg1 mt-4"></div>
+            </li>
+            <li class="flex flex-col items-center gap-4">
+              <p class="text-[1.75rem] lg:text-[3.5rem] font-bold l">230k+</p>
+              <p class="text-[0.4rem] lg:text-[0.6rem] text-gray-400 tracking-[0.1rem]">
+                TOTAL ATTENDANCE
+              </p>
+              <div class="h-[0.7rem] w-[0.7rem] rounded-full bg-pink-600 mt-4"></div>
+            </li>
+          </div>
+          <div class="flex justify-between lg:justify-around w-full lg:w-1/2">
+            <li class="flex flex-col items-center gap-4">
+              <p class="text-[1.75rem] lg:text-[3.5rem] font-bold l">539</p>
+              <p class="text-[0.4rem] lg:text-[0.6rem] text-gray-400 tracking-[0.1rem]">
+                SUPPORTED PUZZLES
+              </p>
+              <div class="h-[0.7rem] w-[0.7rem] rounded-full bg-[#75e1d9] mt-4"></div>
+            </li>
+            <li class="flex flex-col items-center gap-4">
+              <p class="text-[1.75rem] lg:text-[3.5rem] font-bold l">4k+</p>
+              <p class="text-[0.4rem] lg:text-[0.6rem] text-gray-400 tracking-[0.1rem]">
+                CURRENTLY ACTIVE USERS
+              </p>
+              <div class="h-[0.7rem] w-[0.7rem] rounded-full bg-lime-400 mt-4"></div>
+            </li>
+          </div>
+
         </ul>
       </div>
     </section>
 
     <footer class="w-full flex justify-center pt-40">
-      <div class="w-[75rem]">
-        <h1 class="text-[3rem] leading-[3rem] font-bold text-center">
+      <div class="w-[90%] lg:w-[75rem]">
+        <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
           A vibrant and
           <span class="text3">inclusive</span> community of
           <span class="text2">solvers</span> and
           <span class="text1">challengers</span><span class="text3">.</span>
         </h1>
-        <p class="text-3xl font-bold text-center my-8">
+        <p class="text-xl lg:text-3xl font-bold text-center my-8">
           Learn <span class="text1 underline">more</span> now!
         </p>
-        <div class="w-full flex justify-between my-8">
-          <img class="w-[14%] h-44 object-cover"
-            src="https://images.unsplash.com/photo-1605902394069-ff2ae2430e62?q=80&w=2531&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-          <img class="w-[14%] h-44 object-cover"
-            src="https://plus.unsplash.com/premium_photo-1723662084148-2cd2357705ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHV6emxlfGVufDB8fDB8fHww" />
-          <img class="w-[14%] h-44 object-cover"
-            src="https://images.unsplash.com/photo-1597400473366-371a80b251eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHV6emxlfGVufDB8fDB8fHww" />
-          <img class="w-[14%] h-44 object-cover"
-            src="https://plus.unsplash.com/premium_photo-1694822449585-a2444c288b96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHV6emxlfGVufDB8fDB8fHww" />
-          <img class="w-[14%] h-44 object-cover"
-            src="https://plus.unsplash.com/premium_photo-1700675175408-5fe0d5851e57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
-          <img class="w-[14%] h-44 object-cover object-right"
-            src="https://images.unsplash.com/photo-1515508268448-8d0d292bc49a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
+        <div class="w-full flex justify-between my-8 gap-4 flex-col lg:flex-row">
+          <div class="flex justify-between">
+            <img class="w-[28%] h-44 object-cover"
+              src="https://images.unsplash.com/photo-1605902394069-ff2ae2430e62?q=80&w=2531&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <img class="w-[28%] h-44 object-cover"
+              src="https://plus.unsplash.com/premium_photo-1723662084148-2cd2357705ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHV6emxlfGVufDB8fDB8fHww" />
+            <img class="w-[28%] h-44 object-cover"
+              src="https://images.unsplash.com/photo-1597400473366-371a80b251eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHV6emxlfGVufDB8fDB8fHww" />
+          </div>
+          <div class="flex justify-between">
+            <img class="w-[28%] h-44 object-cover"
+              src="https://plus.unsplash.com/premium_photo-1694822449585-a2444c288b96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHV6emxlfGVufDB8fDB8fHww" />
+            <img class="w-[28%] h-44 object-cover"
+              src="https://plus.unsplash.com/premium_photo-1700675175408-5fe0d5851e57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
+            <img class="w-[28%] h-44 object-cover object-right"
+              src="https://images.unsplash.com/photo-1515508268448-8d0d292bc49a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
+          </div>
         </div>
-        <div class="w-full flex py-20 justify-between">
-          <div class="w-2/5">
-            <h1 class="font-semibold text-2xl">
+        <div class="w-full flex flex-col lg:flex-row py-20 justify-between">
+          <div class="w-full lg:w-2/5">
+            <h1 class="font-semibold text-lg lg:text-2xl">
               Technology, Design & Innovation Conference
             </h1>
-            <p class="py-4 text-gray-300 text-lg text-semibold">
+            <p class="py-4 text-gray-300 text-sm lg:text-lg text-semibold">
               We bring puzzle experts together.
             </p>
-            <p class="py-4 text-gray-300 text-semibold">
+            <p class="py-4 text-gray-300 text-xs lg:text-[1rem] text-semibold">
               Join us at the NY Technology, Design & Innovation Conference,
               the premier gathering of visionaries on September 17-18, 2024.
               Feel free to contact us in any convenient way for more details.
             </p>
           </div>
-          <div class="flex gap-20">
+          <div class="flex my-8 lg:my-0 gap-10 lg:gap-20 flex-col lg:flex-row">
             <div class="flex flex-col gap-10">
               <div class="flex gap-3 h-20">
-                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                <div
+                  class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
                     <path fill="currentColor"
                       d="M19.5 22a1.5 1.5 0 0 0 1.5-1.5V17a1.5 1.5 0 0 0-1.5-1.5c-1.17 0-2.32-.18-3.42-.55a1.51 1.51 0 0 0-1.52.37l-1.44 1.44a14.77 14.77 0 0 1-5.89-5.89l1.43-1.43c.41-.39.56-.97.38-1.53c-.36-1.09-.54-2.24-.54-3.41A1.5 1.5 0 0 0 7 3H3.5A1.5 1.5 0 0 0 2 4.5C2 14.15 9.85 22 19.5 22M3.5 4H7a.5.5 0 0 1 .5.5c0 1.28.2 2.53.59 3.72c.05.14.04.34-.12.5L6 10.68c1.65 3.23 4.07 5.65 7.31 7.32l1.95-1.97c.14-.14.33-.18.51-.13c1.2.4 2.45.6 3.73.6a.5.5 0 0 1 .5.5v3.5a.5.5 0 0 1-.5.5C10.4 21 3 13.6 3 4.5a.5.5 0 0 1 .5-.5" />
                   </svg>
                 </div>
-                <div class="flex flex-col justify-between">
-                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                <div class="flex flex-col justify-start lg:justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                     PHONE
                   </p>
-                  <p class="text-lg font-semibold">+381 (063) 303 309</p>
-                  <p class="text-lg font-semibold">+381 (063) 303 309</p>
+                  <p class="text-sm lg:text-lg font-semibold">+381 (063) 303 309</p>
+                  <p class="text-sm lg:text-lg font-semibold">+381 (063) 303 309</p>
                 </div>
               </div>
               <div class="flex gap-3 h-20">
-                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                <div
+                  class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
                     <path fill="currentColor"
                       d="M5 5h13a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1c-.5 0-.94.17-1.28.47l7.78 5.03l7.78-5.03C18.94 6.17 18.5 6 18 6zm6.5 6.71L3.13 7.28C3.05 7.5 3 7.75 3 8v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V8c0-.25-.05-.5-.13-.72z" />
                   </svg>
                 </div>
-                <div class="flex flex-col justify-between">
-                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                <div class="flex flex-col justify-start lg:justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                     EMAIL
                   </p>
-                  <p class="text-lg font-semibold">muricamar2004@gmail.com</p>
-                  <p class="text-lg font-semibold">muricamar2004@gmail.com</p>
+                  <p class="text-sm lg:text-lg font-semibold">muricamar2004@gmail.com</p>
+                  <p class="text-sm lg:text-lg font-semibold">muricamar2004@gmail.com</p>
                 </div>
               </div>
             </div>
-            <div class="flex flex-col gap-10">
+            <div class="flex flex-col gap-4 lg:gap-10">
               <div class="flex gap-3 h-20">
-                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                <div
+                  class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256" class="">
                     <path fill="currentColor"
                       d="M154.7 142.75a36 36 0 1 0-37.4 0a63.6 63.6 0 0 0-32.5 22.85a4 4 0 0 0 6.4 4.8a56 56 0 0 1 89.6 0a4 4 0 0 0 6.4-4.8a63.65 63.65 0 0 0-32.5-22.85M108 112a28 28 0 1 1 28 28a28 28 0 0 1-28-28m100-84H64a12 12 0 0 0-12 12v28H32a4 4 0 0 0 0 8h20v48H32a4 4 0 0 0 0 8h20v48H32a4 4 0 0 0 0 8h20v28a12 12 0 0 0 12 12h144a12 12 0 0 0 12-12V40a12 12 0 0 0-12-12m4 188a4 4 0 0 1-4 4H64a4 4 0 0 1-4-4V40a4 4 0 0 1 4-4h144a4 4 0 0 1 4 4Z" />
                   </svg>
                 </div>
-                <div class="flex flex-col justify-between">
-                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                <div class="flex flex-col justify-start lg:justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                     ADDRESS
                   </p>
-                  <p class="text-lg font-semibold">Serbia,</p>
-                  <p class="text-lg font-semibold">Novi Pazar</p>
+                  <p class="text-sm lg:text-lg font-semibold">Serbia,</p>
+                  <p class="text-sm lg:text-lg font-semibold">Novi Pazar</p>
                 </div>
               </div>
               <div class="flex gap-3 h-20">
-                <div class="bg-black bg-opacity-20 rounded-full p-4 flex justify-center items-center w-20">
+                <div
+                  class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                       stroke-width="1.5">
@@ -415,19 +433,19 @@
                     </g>
                   </svg>
                 </div>
-                <div class="flex flex-col justify-between">
-                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.7rem] font-semibold">
+                <div class="flex flex-col justify-start lg:justify-between">
+                  <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                     LINKEDIN
                   </p>
-                  <p class="text-lg font-semibold">Amar Muric</p>
-                  <p class="text-lg font-semibold">Amar Muric</p>
+                  <p class="text-sm lg:text-lg font-semibold">Amar Muric</p>
+                  <p class="text-sm lg:text-lg font-semibold">Amar Muric</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="w-full flex py-20 border-y-2 border-[#383b48]">
-          <div class="w-[40%]">
+        <div class="w-full flex flex-col lg:flex-row py-20 border-y-2 border-[#383b48]">
+          <div class="w-full lg:w-[40%]">
             <div class="flex gap-2 items-center">
               <img class="h-[3rem]" src="../assets/images/logo.png" />
               <div class="flex flex-col justify-between">
@@ -439,17 +457,17 @@
                 </div>
               </div>
             </div>
-            <p class="my-4 text-gray-200">
+            <p class="text-sm lg:text-[1rem] my-4 text-gray-200">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
               possimus nesciunt modi corporis magni consectetur beatae sed!
               Cum, eos rem!
             </p>
           </div>
-          <div class="w-[40%] flex justify-around">
+          <div class="w-full lg:w-[40%] flex lg:justify-around justify-between my-8 lg:my-0">
             <div>
-              <h1 class="font-semibold text-3xl">Navigation</h1>
+              <h1 class="font-semibold text-xl lg:text-3xl">Navigation</h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
-              <ul class="flex flex-col gap-3 text-gray-200 font-semibold">
+              <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
                 <li>About Us</li>
                 <li>Schedule</li>
                 <li>Speakers</li>
@@ -457,9 +475,9 @@
               </ul>
             </div>
             <div>
-              <h1 class="font-semibold text-3xl">Support</h1>
+              <h1 class="font-semibold text-xl lg:text-3xl">Support</h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
-              <ul class="flex flex-col gap-3 text-gray-200 font-semibold">
+              <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
                 <li>Pricing</li>
                 <li>Help & Support</li>
                 <li>Privacy Policy</li>
@@ -467,8 +485,8 @@
               </ul>
             </div>
           </div>
-          <div class="w-[20%] flex flex-col justify-between">
-            <h1 class="font-semibold text-3xl">Subscribe</h1>
+          <div class="w-full lg:w-[20%] flex flex-col justify-between gap-4 lg:gap-0">
+            <h1 class="font-semibold text-xl lg:text-3xl">Subscribe</h1>
             <input class="p-6 w-full bg-black bg-opacity-20" type="email" placeholder="Email*" />
             <button class="py-4 px-10 w-full bg1 rounded-[2rem] hover:rounded-none transition-all">
               Subscribe
