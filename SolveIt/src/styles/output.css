@@ -2583,6 +2583,10 @@ body::-webkit-scrollbar-thumb {
     margin-top: 1.5rem;
   }
 
+  .lg\:mt-0{
+    margin-top: 0px;
+  }
+
   .lg\:block{
     display: block;
   }

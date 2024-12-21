@@ -43,6 +43,7 @@ function handleCheckIfSignedIn() {
   const userInfo = document.getElementById("user-information");
   const user = checkStatus();
 
+  if (!userInfo) return;
   if (user) {
     userInfo.innerHTML = "";
     const userEmail = document.createElement("p");
@@ -178,6 +179,7 @@ export function toggleMobileHeader() {
 export function handleMobileHeader() {
   const hamburger = document.getElementById("cheeseburger");
   const header = document.getElementById("mobile-header");
+  if (!header) return;
 
   hamburger.addEventListener("click", toggleMobileHeader);
 

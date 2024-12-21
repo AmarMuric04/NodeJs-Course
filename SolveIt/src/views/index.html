@@ -110,7 +110,7 @@
         </section>
       </nav>
     </header>
-    <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 relative">
+    <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 absolute top-0 left-0">
       <a href="./index.html" class="flex gap-2 items-center relative z-50">
         <img class="h-[2.3rem]" src="../assets/images/logo.png" />
         <div class="flex flex-col justify-between">
@@ -231,7 +231,7 @@
       </nav>
     </header>
     <main class="h-screen min-h-[40rem] lg:min-h-[65rem] w-full relative flex justify-center">
-      <div class="pt-20 lg:px-0 w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] text-center md:text-start">
+      <div class="pt-40 lg:px-0 w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] text-center md:text-start">
         <div class="relative z-30 lg:pt-48 h-full">
           <p class="uppercase noto text2 text-[0.6rem] tracking-[0.15rem]">
             Welcome to SolveBox
@@ -242,7 +242,7 @@
           </h1>
           <p class="noto-sans font-semibold leading-7 mt-12 text-sm lg:text-lg">
             Unlock your potential with interactive tutorials and guides for
-            <br />
+            <br class="hidden lg:block" />
             solving Rubik's Cubes, Sudoku, and more. Master each puzzle <br />
             at your own pace with SolveBox.
           </p>

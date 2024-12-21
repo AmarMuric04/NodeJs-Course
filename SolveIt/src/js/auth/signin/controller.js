@@ -5,7 +5,7 @@ import * as Utility from "../../../utility/utility.js";
 import { displayAuthFlow } from "../auth.js";
 
 export const Controller = {
-  handleSignIn(inputs) {
+  async handleSignIn(inputs) {
     const emailDoc = document.getElementById("email");
     const pswDoc = document.getElementById("password");
 
@@ -19,7 +19,7 @@ export const Controller = {
         Validation.displayErrorMessage("Password field can't be empty.");
       }
     } else {
-      const checkInputs = Model.correctCredentials(inputs);
+      const checkInputs = await Model.correctCredentials(inputs);
 
       if (checkInputs.foundUser) {
         emailDoc.classList.remove("error-input");

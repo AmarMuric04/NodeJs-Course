@@ -1,22 +1,32 @@
-const ACCOUNTS = JSON.parse(localStorage.getItem("SolveBox-users"));
+const storageAccounts = JSON.parse(localStorage.getItem("SolveBox-users"));
 
 export const Model = {
-  correctCredentials(inputs) {
-    const user = ACCOUNTS.find(
-      (user) => user.email === inputs.email && user.password === inputs.password
-    );
+  async correctCredentials(inputs) {
+    try {
+      const accountsResponse = await fetch("../assets/accounts.json");
 
-    if (user) {
+      const jsonAccounts = await accountsResponse.json();
+      const users = [...jsonAccounts, ...storageAccounts];
+
+      const user = users.find(
+        (user) =>
+          user.email === inputs.email && user.password === inputs.password
+      );
+
+      if (user) {
+        return {
+          user,
+          foundUser: true,
+        };
+      }
+
       return {
-        user,
-        foundUser: true,
+        user: null,
+        foundUser: false,
       };
+    } catch (error) {
+      console.error(error);
     }
-
-    return {
-      user: null,
-      foundUser: false,
-    };
   },
 
   updateStatus(user) {
