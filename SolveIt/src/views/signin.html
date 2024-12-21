@@ -13,8 +13,8 @@
 
 <body>
   <div class="b background w-screen h-screen relative flex flex-col items-center">
-    <header class="absolute top-0 left-0 right-0 px-20 py-10 z-50 flex justify-between items-center">
-      <a href="./index.html" class="text-black flex gap-2 items-center">
+    <header class="absolute top-0 left-0 right-0 py-4 lg:px-20 lg:py-10 z-50 flex justify-between items-center">
+      <a href="./index.html" class="text-black flex gap-2 items-center scale-75">
         <img class="h-[3rem]" src="../assets/images/logo.png" />
         <div class="flex flex-col justify-between">
           <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
@@ -25,170 +25,172 @@
           </div>
         </div>
       </a>
-      <div class="relative w-[7rem] flex justify-center z-50 theme-js font-semibold">
+      <div class="hidden relative w-[7rem] lg:flex justify-center z-50 theme-js font-semibold"">
         <div
-          class="hover:text1 py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative">
-          Themes
-          <div class="underline-child bg1"></div>
-        </div>
-        <ul
-          class="background absolute shadow-xl py-4 px-1 rounded-[1rem] text-gray-300 top-full theme-container-js inactive transition-all">
-          <div class="bg1 right-0 top-2 rounded-full p-1 text-[0.5rem] absolute">RECOMMENDED</div>
-          <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-theme="dark">
-            Dark
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="light">
-            Light
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="night">
-            Night
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="void">
-            Void
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="earthy">
-            Earthy
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-light">
-            Solarized Light
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-dark">
-            Solarized dark
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="pastel">
-            Pastel
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="cyber">
-            Cyberpunk Glow
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="twilight">
-            Twilight
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="autumn">
-            Autumn Forest
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="ocean">
-            Ocean Breeze
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="mono">
-            Monochrome Minimal
-          </li>
-          <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="retro">
-            Retro Sunset
-          </li>
-        </ul>
+          class=" hover:text1 py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-center
+        underline-parent relative">
+        Themes
+        <div class="underline-child bg1"></div>
       </div>
-    </header>
-    <main class="h-screen w-full relative">
-      <div class="bg-purple-200 text-black half-polygon-west h-full w-1/2 relative px-[15rem]">
-        <div class="relative z-50 flex flex-col justify-center w-full h-full">
-          <form action="submit" id="signin-form" class="w-full h-[42rem] flex flex-col justify-end">
-            <div id="form-body" class="transition-all relative">
-              <h1 class="text-[3rem] font-semibold">Hey there, brainiac!</h1>
-              <p class="my-8 text-xl text-gray-700">
-                Time to dive back in. Fill in your details to continue.
-              </p>
-              <div class="flex flex-col gap-2">
-                <label for="email">Your Email</label>
-                <input id="email" name="email"
-                  class="text-black border-2 outline-none focus:border-[#75e1d9] py-4 px-8 text-lg rounded-lg"
-                  type="email" placeholder="johndoe@np.ac.s" />
-                <label for="password">Your Password</label>
-                <input id="password" name="password"
-                  class="text-black border-2 outline-none focus:border-[#75e1d9] py-4 px-8 text-lg rounded-lg"
-                  type="password" placeholder="iLoveCats123" />
-              </div>
+      <ul
+        class="background absolute shadow-xl py-4 px-1 rounded-[1rem] text-gray-300 top-full theme-container-js inactive transition-all">
+        <div class="bg1 right-0 top-2 rounded-full p-1 text-[0.5rem] absolute">RECOMMENDED</div>
+        <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-theme="dark">
+          Dark
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="light">
+          Light
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="night">
+          Night
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="void">
+          Void
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="earthy">
+          Earthy
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-light">
+          Solarized Light
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-dark">
+          Solarized dark
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="pastel">
+          Pastel
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="cyber">
+          Cyberpunk Glow
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="twilight">
+          Twilight
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="autumn">
+          Autumn Forest
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="ocean">
+          Ocean Breeze
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="mono">
+          Monochrome Minimal
+        </li>
+        <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="retro">
+          Retro Sunset
+        </li>
+      </ul>
+  </div>
+  </header>
+  <main class="h-screen w-full relative">
+    <div
+      class="text-black bg-purple-200 lg:half-polygon-west h-full w-full flex justify-center lg:w-1/2 relative lg:px-[15rem]">
+      <div class="relative z-50 flex flex-col justify-center w-[90%] lg:w-full h-full">
+        <form action="submit" id="signin-form" class="w-full h-[42rem] flex flex-col justify-end">
+          <div id="form-body" class="transition-all relative">
+            <h1 class="text-[2rem] lg:text-[3rem] font-bold text-center lg:text-start">Hey there, brainiac!</h1>
+            <p class="my-4 lg:my-8 text-[1rem] lg:text-xl text-gray-700 text-center lg:text-start">
+              Time to dive back in. Fill in your details to continue.
+            </p>
+            <div class="flex flex-col gap-2">
+              <label for="email">Your Email</label>
+              <input id="email" name="email"
+                class="text-black border-2 outline-none focus:border-[#75e1d9] py-4 px-8 text-lg rounded-lg"
+                type="email" placeholder="johndoe@np.ac.s" />
+              <label for="password">Your Password</label>
+              <input id="password" name="password"
+                class="text-black border-2 outline-none focus:border-[#75e1d9] py-4 px-8 text-lg rounded-lg"
+                type="password" placeholder="iLoveCats123" />
+            </div>
 
-              <div class="flex items-center justify-between my-4">
-                <div class="flex items-center gap-4 text-lg">
-                  <div class="checkbox-wrapper-30 flex">
-                    <span class="checkbox">
-                      <input type="checkbox" name="remember" />
-                      <svg class="text-black">
-                        <use xlink:href="#checkbox-30" class="checkbox"></use>
-                      </svg>
-                    </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-                      <symbol id="checkbox-30" viewBox="0 0 22 22">
-                        <path fill="none" stroke="currentColor"
-                          d="M5.5,11.3L9,14.8L20.2,3.3l0,0c-0.5-1-1.5-1.8-2.7-1.8h-13c-1.7,0-3,1.3-3,3v13c0,1.7,1.3,3,3,3h13 c1.7,0,3-1.3,3-3v-13c0-0.4-0.1-0.8-0.3-1.2" />
-                      </symbol>
+            <div class="flex items-center justify-between my-4">
+              <div class="flex items-center gap-4 text-lg">
+                <div class="checkbox-wrapper-30 flex">
+                  <span class="checkbox">
+                    <input type="checkbox" name="remember" />
+                    <svg class="text-black">
+                      <use xlink:href="#checkbox-30" class="checkbox"></use>
                     </svg>
-                  </div>
-                  <p>Remember for 30 days</p>
+                  </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+                    <symbol id="checkbox-30" viewBox="0 0 22 22">
+                      <path fill="none" stroke="currentColor"
+                        d="M5.5,11.3L9,14.8L20.2,3.3l0,0c-0.5-1-1.5-1.8-2.7-1.8h-13c-1.7,0-3,1.3-3,3v13c0,1.7,1.3,3,3,3h13 c1.7,0,3-1.3,3-3v-13c0-0.4-0.1-0.8-0.3-1.2" />
+                    </symbol>
+                  </svg>
                 </div>
-                <a class="text-[#fa1c9a] underline-parent relative cursor-pointer font-semibold">Forgot password?
-                  <div class="underline-child bg-[#fa1c9a]"></div>
-                </a>
+                <p>Remember for 30 days</p>
               </div>
-            </div>
-            <div id="signup-parent"
-              class="relative font-semibold text-center my-4 overflow-hidden rounded-[2rem] hover:rounded-none border-2 border-black transition-all h-[4rem]">
-              <button id="signin"
-                class="relative bg-[#ecd86c] h-full cursor-pointer w-full flex items-center gap-4 justify-center">
-                Sign in
-              </button>
-            </div>
-          </form>
-          <div id="or-signup" class="h-[5rem]">
-            <div class="bg-gray-700 h-[1px] relative">
-              <p class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-purple-200 px-4">
-                or
-              </p>
-            </div>
-            <div class="flex gap-2 justify-center my-8">
-              If you don't have an account,
-              <a href="./signup.html" class="text-[#fa1c9a] underline-parent relative font-semibold">
-                create one now!
+              <a class="text-[#fa1c9a] underline-parent relative cursor-pointer font-semibold">Forgot password?
                 <div class="underline-child bg-[#fa1c9a]"></div>
               </a>
             </div>
           </div>
-        </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#e6ceff" width="300" height="300"
-            class="absolute bottom-10 left-10">
-            <path
-              d="M450.9 169.7a100 100 0 0 0-13.6-11.4A99.4 99.4 0 0 0 321.6 42.7a99.3 99.3 0 0 0-163.4 0A99.4 99.4 0 0 0 42.7 158.3a99.3 99.3 0 0 0 0 163.4 99.4 99.4 0 0 0 115.6 115.6 99.3 99.3 0 0 0 163.4 0 99.4 99.4 0 0 0 115.5-115.5 99.3 99.3 0 0 0 13.7-152ZM240 300a60 60 0 1 1 0-120 60 60 0 0 1 0 120Z">
-            </path>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#e6ceff" width="400" height="400"
-            class="absolute top-28 left-10 z-0">
-            <path d="m337 320 63-160h-80a160 160 0 1 0-320 0h160L80 320h80a160 160 0 1 0 320 0H337Z"></path>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="#e6ceff" width="300" height="300"
-            class="absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
-            <path
-              d="M240 0v240h240A240 240 0 0 0 240 0ZM240 480h240V240a240 240 0 0 0-240 240ZM0 240a240 240 0 0 0 240 240V240H0ZM0 240V0h240A240 240 0 0 1 0 240Z">
-            </path>
-          </svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#e6ceff" width="300" height="300"
-            class="absolute bottom-4 left-[34rem] rotate-90 z-0">
-            <path d="M360.5 240V120.5H240V0H0v240h120.5v120.5H240V480h240V240H360.5z"></path>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="#262432" width="300" height="300"
-            class="absolute top-28 left-[65rem]" viewBox="0 0 480 480">
-            <path d="M0 240v120a120 120 0 0 1 120 120h120A240 240 0 0 0 0 240Z"></path>
-          </svg>
+          <div id="signup-parent"
+            class="relative font-semibold text-center my-4 overflow-hidden rounded-[2rem] hover:rounded-none border-2 border-black transition-all h-[4rem]">
+            <button id="signin"
+              class="relative bg-[#ecd86c] h-full cursor-pointer w-full flex items-center gap-4 justify-center">
+              Sign in
+            </button>
+          </div>
+        </form>
+        <div id="or-signup" class="h-[5rem]">
+          <div class="bg-gray-700 h-[1px] relative">
+            <p class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-purple-200 px-4">
+              or
+            </p>
+          </div>
+          <div class="flex gap-2 justify-center my-8">
+            If you don't have an account,
+            <a href="./signup.html" class="text-[#fa1c9a] underline-parent relative font-semibold">
+              create one now!
+              <div class="underline-child bg-[#fa1c9a]"></div>
+            </a>
+          </div>
         </div>
       </div>
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="250" height="250"
-          class="svg2 absolute top-20 right-80 z-0">
+      <div class="hidden lg:block">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#e6ceff" width="300" height="300"
+          class="absolute bottom-10 left-10">
           <path
-            d="M320 160v160H160V160h160C320 71.63 248.37 0 160 0S0 71.63 0 160v320h320c88.37 0 160-71.63 160-160s-71.63-160-160-160Z">
+            d="M450.9 169.7a100 100 0 0 0-13.6-11.4A99.4 99.4 0 0 0 321.6 42.7a99.3 99.3 0 0 0-163.4 0A99.4 99.4 0 0 0 42.7 158.3a99.3 99.3 0 0 0 0 163.4 99.4 99.4 0 0 0 115.6 115.6 99.3 99.3 0 0 0 163.4 0 99.4 99.4 0 0 0 115.5-115.5 99.3 99.3 0 0 0 13.7-152ZM240 300a60 60 0 1 1 0-120 60 60 0 0 1 0 120Z">
           </path>
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="400" height="400"
-          class="svg1 absolute bottom-10 right-10">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#e6ceff" width="400" height="400"
+          class="absolute top-28 left-10 z-0">
+          <path d="m337 320 63-160h-80a160 160 0 1 0-320 0h160L80 320h80a160 160 0 1 0 320 0H337Z"></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#e6ceff" width="300" height="300"
+          class="absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
           <path
-            d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
+            d="M240 0v240h240A240 240 0 0 0 240 0ZM240 480h240V240a240 240 0 0 0-240 240ZM0 240a240 240 0 0 0 240 240V240H0ZM0 240V0h240A240 240 0 0 1 0 240Z">
           </path>
         </svg>
 
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#e6ceff" width="300" height="300"
+          class="absolute bottom-4 left-[34rem] rotate-90 z-0">
+          <path d="M360.5 240V120.5H240V0H0v240h120.5v120.5H240V480h240V240H360.5z"></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#262432" width="300" height="300"
+          class="absolute top-28 left-[65rem]" viewBox="0 0 480 480">
+          <path d="M0 240v120a120 120 0 0 1 120 120h120A240 240 0 0 0 0 240Z"></path>
+        </svg>
       </div>
-    </main>
+    </div>
+    <div class="hidden lg:block">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="250" height="250"
+        class="svg2 absolute top-20 right-80 z-0">
+        <path
+          d="M320 160v160H160V160h160C320 71.63 248.37 0 160 0S0 71.63 0 160v320h320c88.37 0 160-71.63 160-160s-71.63-160-160-160Z">
+        </path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="400" height="400"
+        class="svg1 absolute bottom-10 right-10">
+        <path
+          d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
+        </path>
+      </svg>
+
+    </div>
+  </main>
   </div>
   <script type="module" src="../js/auth/signin/app.js"></script>
 </body>

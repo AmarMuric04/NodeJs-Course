@@ -13,8 +13,8 @@
 
 <body>
   <div class="b background w-screen h-screen relative flex flex-col items-center">
-    <header class="absolute top-0 left-0 right-0 px-20 py-10 z-50 flex justify-between items-center">
-      <a href="./index.html" class="text-black flex gap-2 items-center">
+    <header class="absolute top-0 left-0 right-0 py-4 lg:px-20 lg:py-10 z-50 flex justify-between items-center">
+      <a href="./index.html" class="text-black flex gap-2 items-center scale-75">
         <img class="h-[3rem]" src="../assets/images/logo.png" />
         <div class="flex flex-col justify-between">
           <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
@@ -25,7 +25,7 @@
           </div>
         </div>
       </a>
-      <div class="relative w-[7rem] flex justify-center z-50 theme-js font-semibold">
+      <div class="hidden relative w-[7rem] lg:flex justify-center z-50 theme-js font-semibold">
         <div
           class="hover:text1 py-2 px-4 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative">
           Themes
@@ -80,12 +80,14 @@
       </div>
     </header>
     <main class="h-screen w-full relative">
-      <div class="text-black bg-purple-200 half-polygon-west h-full w-1/2 relative px-[15rem]">
-        <div class="relative z-50 flex flex-col justify-center w-full h-full">
+      <div
+        class="text-black bg-purple-200 lg:half-polygon-west h-full w-full flex justify-center lg:w-1/2 relative lg:px-[15rem]">
+        <div class="relative z-50 flex flex-col justify-center w-[90%] lg:w-full h-full">
           <form action="submit" class="w-full h-[42rem] flex flex-col justify-end" id="signup-form">
             <div id="form-body" class="transition-all relative">
-              <h1 class="text-[2.5rem] font-semibold">Who dares to enter?</h1>
-              <p class="my-8 text-xl text-gray-700">
+              <h1 class="text-[2rem] lg:text-[2.5rem] font-bold text-center lg:text-start">Who dares to enter?
+              </h1>
+              <p class="my-4 lg:my-8 text-[1rem] lg:text-xl text-gray-700 text-center lg:text-start">
                 If you seek puzzles, you've found your match.
               </p>
               <div class="flex flex-col gap-2 w-full">
@@ -173,7 +175,6 @@
               </button>
             </div>
           </form>
-
           <div id="or-signin" class="h-[5rem]">
             <div class="bg-gray-700 h-[1px] relative">
               <p class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-purple-200 px-4">
@@ -189,7 +190,7 @@
             </div>
           </div>
         </div>
-        <div>
+        <div class="hidden lg:block">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#e6ceff" width="300" height="300"
             class="absolute bottom-10 left-10">
             <path
@@ -217,7 +218,7 @@
           </svg>
         </div>
       </div>
-      <div>
+      <div class="hidden lg:block">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="250" height="250"
           class="svg2 absolute top-20 right-80 z-0">
           <path

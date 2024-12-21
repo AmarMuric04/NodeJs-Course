@@ -272,12 +272,20 @@
   clip-path: polygon(33% 10%, 100% 0, 100% 100%, 30% 93%, 0 100%, 0 0);
 }
 
+.polygon-reversed {
+  clip-path: polygon(34% 0, 100% 8%, 100% 94%, 26% 100%, 0 93%, 0 7%);
+}
+
 .half-polygon-north {
   clip-path: polygon(31% 0, 100% 14%, 100% 100%, 0 100%, 0 15%);
 }
 
 .half-polygon-south {
   clip-path: polygon(100% 0, 100% 90%, 33% 100%, 0 90%, 0 0);
+}
+
+.half-polygon-south-reversed {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 93%, 0 100%);
 }
 
 .half-polygon-west {
