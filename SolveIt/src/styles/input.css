@@ -578,3 +578,7 @@ body::-webkit-scrollbar-thumb {
 .border2 {
   border-color: var(--background-accent-color);
 }
+
+.bg4 {
+  background-color: var(--background-accent-color-2);
+}

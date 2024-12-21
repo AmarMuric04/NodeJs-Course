@@ -6,6 +6,7 @@ export function initHeader() {
   handleShowHeader();
   handleCheckIfSignedIn();
   handleNavBarHover();
+  handleMobileHeader();
 }
 
 function handleDropdownEvents() {
@@ -109,6 +110,78 @@ export function handleNavBarHover() {
       );
     });
   });
+}
+
+export function toggleMobileHeader() {
+  const hamburger = document.getElementById("cheeseburger");
+  const header = document.getElementById("mobile-header");
+  const backdrop = document.getElementById("backdrop");
+
+  backdrop.addEventListener("click", function () {
+    backdrop.classList.replace("block", "hidden");
+    header.classList.replace("left-[5%]", "left-full");
+    hamburger.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M5 5L19 19M5 19L19 5">
+            <animate fill="freeze" attributeName="d" dur="0.4s" values="M5 5L19 19M5 19L19 5;M5 5L19 5M5 19L19 19"/>
+          </path>
+          <path d="M12 12H12" opacity="0">
+            <animate fill="freeze" attributeName="d" begin="0.2s" dur="0.4s" values="M12 12H12;M5 12H19"/>
+            <set fill="freeze" attributeName="opacity" begin="0.2s" to="1"/>
+          </path>
+        </g>
+      </svg>`;
+  });
+
+  const isOpen = header.classList.contains("left-[5%]");
+
+  if (isOpen) {
+    header.classList.replace("left-[5%]", "left-full");
+    backdrop.classList.replace("block", "hidden");
+    document.body.style.overflow = "";
+
+    hamburger.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M5 5L19 19M5 19L19 5">
+            <animate fill="freeze" attributeName="d" dur="0.4s" values="M5 5L19 19M5 19L19 5;M5 5L19 5M5 19L19 19"/>
+          </path>
+          <path d="M12 12H12" opacity="0">
+            <animate fill="freeze" attributeName="d" begin="0.2s" dur="0.4s" values="M12 12H12;M5 12H19"/>
+            <set fill="freeze" attributeName="opacity" begin="0.2s" to="1"/>
+          </path>
+        </g>
+      </svg>`;
+  } else {
+    header.classList.replace("left-full", "left-[5%]");
+    backdrop.classList.replace("hidden", "block");
+    document.body.style.overflow = "hidden";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    hamburger.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M5 12H19">
+            <animate fill="freeze" attributeName="d" dur="0.4s" values="M5 12H19;M12 12H12"/>
+            <set fill="freeze" attributeName="opacity" begin="0.4s" to="0"/>
+          </path>
+          <path d="M5 5L19 5M5 19L19 19" opacity="0">
+            <animate fill="freeze" attributeName="d" begin="0.2s" dur="0.4s" values="M5 5L19 5M5 19L19 19;M5 5L19 19M5 19L19 5"/>
+            <set fill="freeze" attributeName="opacity" begin="0.2s" to="1"/>
+          </path>
+        </g>
+      </svg>`;
+  }
+}
+
+export function handleMobileHeader() {
+  const hamburger = document.getElementById("cheeseburger");
+  const header = document.getElementById("mobile-header");
+
+  hamburger.addEventListener("click", toggleMobileHeader);
+
+  header.addEventListener("click", (e) => e.stopPropagation());
 }
 
 initHeader();
