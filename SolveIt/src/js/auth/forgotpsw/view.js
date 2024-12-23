@@ -38,7 +38,9 @@ export const View = {
     const input = document.createElement("input");
     input.classList =
       "text-black border-2 outline-none w-full focus:border-[#75e1d9] py-4 px-4 text-lg rounded-lg";
+    input.setAttribute("type", "password");
     input.setAttribute("placeholder", "Amar!123");
+    input.id = "password";
 
     label = document.createElement("label");
     label.textContent = "New Password";
@@ -53,6 +55,8 @@ export const View = {
       "text-black border-2 outline-none w-full focus:border-[#75e1d9] py-4 px-4 text-lg rounded-lg";
     input2.setAttribute("placeholder", "Amar!123");
     const label2 = document.createElement("label");
+    input2.id = "conf-password";
+    input2.setAttribute("type", "password");
     label2.textContent = "Confirm New Password";
 
     input.setAttribute("name", "new-password");

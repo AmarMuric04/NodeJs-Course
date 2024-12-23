@@ -1,5 +1,5 @@
 import { loader } from "../general_view.js";
-const storageUsers = JSON.parse(localStorage.getItem("SolveBox-users"));
+const storageAccounts = JSON.parse(localStorage.getItem("SolveBox-users"));
 
 export function displayAuthFlow(isSignin) {
   const parent = document.getElementById("signup-parent");
@@ -59,7 +59,7 @@ export function displayAuthFlow(isSignin) {
   }, 3200);
 }
 
-export async function doesAccountExist(email) {
+export async function findAccount(email) {
   try {
     const jsonUsersRes = await fetch("../assets/accounts.json");
 
@@ -68,11 +68,39 @@ export async function doesAccountExist(email) {
     }
 
     const jsonUsers = await jsonUsersRes.json();
-    const users = [...jsonUsers, ...storageUsers];
+    const users = [...jsonUsers, ...storageAccounts];
 
-    return users.some((user) => user.email === email);
+    const user = users.find((user) => user.email === email);
+    return user;
   } catch (error) {
     console.error(error);
     return false;
+  }
+}
+
+export async function correctCredentials(inputs) {
+  try {
+    const accountsResponse = await fetch("../assets/accounts.json");
+
+    const jsonAccounts = await accountsResponse.json();
+    const users = [...jsonAccounts, ...storageAccounts];
+
+    const user = users.find(
+      (user) => user.email === inputs.email && user.password === inputs.password
+    );
+
+    if (user) {
+      return {
+        user,
+        foundUser: true,
+      };
+    }
+
+    return {
+      user: null,
+      foundUser: false,
+    };
+  } catch (error) {
+    console.error(error);
   }
 }

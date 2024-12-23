@@ -2,7 +2,7 @@ import { handleUnderlineHover } from "../../general_view.js";
 import { Model } from "./model.js";
 import * as Validation from "../../../utility/inputs.js";
 import * as Utility from "../../../utility/utility.js";
-import { displayAuthFlow } from "../auth.js";
+import { correctCredentials, displayAuthFlow } from "../auth.js";
 
 export const Controller = {
   async handleSignIn(inputs) {
@@ -19,7 +19,7 @@ export const Controller = {
         Validation.displayErrorMessage("Password field can't be empty.");
       }
     } else {
-      const checkInputs = await Model.correctCredentials(inputs);
+      const checkInputs = await correctCredentials(inputs);
 
       if (checkInputs.foundUser) {
         emailDoc.classList.remove("error-input");

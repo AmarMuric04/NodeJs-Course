@@ -1,13 +1,14 @@
 import * as Validation from "../../../utility/inputs.js";
-import * as Utility from "../../../utility/utility.js";
 import { retrieveFormData } from "../../../utility/utility.js";
 import { handleUnderlineHover } from "../../general_view.js";
-import { doesAccountExist } from "../auth.js";
+import { findAccount } from "../auth.js";
+import { Model } from "./model.js";
 import { View } from "./view.js";
 
 export const Controller = {
   currentStep: 0,
   code: null,
+  email: "",
 
   async handleFirstSubmition(e) {
     const inputs = retrieveFormData(e);
@@ -25,7 +26,7 @@ export const Controller = {
       );
       return;
     }
-    const accountExists = await doesAccountExist(inputs.email);
+    const accountExists = await findAccount(inputs.email);
     if (!accountExists) {
       Validation.invalidateInput(emailDoc);
       Validation.displayErrorMessage(
@@ -33,16 +34,20 @@ export const Controller = {
       );
       return;
     }
-    (this.code = String((Math.random() * (999999 - 0) + 0).toFixed(0)).padStart(
+    this.email = inputs.email;
+
+    this.code = String((Math.random() * (999999 - 0) + 0).toFixed(0)).padStart(
       6,
       "0"
-    )),
+    );
+    View.displayGetCode();
+    setTimeout(() => {
       alert(
         "Since this is just a frontend only project, this is the code: " +
           this.code +
           "           (Copy it so you don't forget)"
       );
-    View.displayGetCode();
+    }, 10);
 
     const inputFields = document.querySelectorAll("form input");
     inputFields.forEach((input, index) => {
@@ -75,8 +80,7 @@ export const Controller = {
     this.currentStep++;
   },
 
-  handleSecondSubmition(e) {
-    const inputs = retrieveFormData(e);
+  handleSecondSubmition() {
     const inputFields = document.querySelectorAll("form input");
     let usersCode = "";
 
@@ -115,9 +119,41 @@ export const Controller = {
     this.currentStep++;
   },
 
-  handleThirdSubmition(e) {
+  async handleThirdSubmition(e) {
     const inputs = retrieveFormData(e);
-    console.log(inputs);
+    const pswDoc = document.getElementById("password");
+    const confPswDoc = document.getElementById("conf-password");
+    const form = document.getElementById("forgot-password-form");
+
+    setTimeout(() => {
+      Validation.removeInvalidations(form);
+    }, 1000);
+
+    if (
+      !Validation.doPasswordsMatch(
+        inputs["new-password"],
+        inputs["conf-password"]
+      )
+    ) {
+      Validation.invalidateInput(pswDoc);
+      Validation.invalidateInput(confPswDoc);
+      Validation.displayErrorMessage("Passwords must match!");
+      return;
+    }
+
+    /* With this logic we can give the user his password, but why do that? */
+    const usersAccount = await findAccount(this.email);
+
+    if (inputs["new-password"] === usersAccount.password) {
+      Validation.invalidateInput(pswDoc);
+      Validation.invalidateInput(confPswDoc);
+      Validation.displayErrorMessage(
+        "Please don't use one of your previous passwords."
+      );
+      return;
+    }
+
+    Model.updatePassword(this.email, inputs["new-password"]);
     View.displayCongratulations();
     this.currentStep++;
   },
@@ -128,7 +164,7 @@ export const Controller = {
     if (this.currentStep === 0) {
       this.handleFirstSubmition(e);
     } else if (this.currentStep === 1) {
-      this.handleSecondSubmition(e);
+      this.handleSecondSubmition();
     } else if (this.currentStep === 2) {
       this.handleThirdSubmition(e);
     }
