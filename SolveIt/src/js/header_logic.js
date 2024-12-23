@@ -52,7 +52,7 @@ function handleCheckIfSignedIn() {
 
     const signOutBtn = document.createElement("div");
     signOutBtn.classList =
-      "bg1 py-1 xl:py-2 px-4 md:px-6 xl:px-10 text-xs md:text-sm xl:text-[1rem] rounded-[2rem] transition-all hover:rounded-none font-semibold";
+      "bg1 py-1 xl:py-2 px-4 md:px-6 xl:px-10 text-xs md:text-sm xl:text-[1rem] rounded-[2rem] transition-all hover:rounded-none font-semibold cursor-pointer";
     signOutBtn.textContent = "Sign Out";
     signOutBtn.addEventListener("click", () => {
       signTheUserOut();

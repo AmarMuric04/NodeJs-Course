@@ -4,7 +4,6 @@ import { View } from "./view.js";
 import { displayAuthFlow } from "../auth.js";
 import * as Validation from "../../../utility/inputs.js";
 import { retrieveFormData } from "../../../utility/utility.js";
-import { addUser } from "../../../utility/backend/utility.js";
 
 export const Controller = {
   handleEmailInput(email) {
@@ -71,7 +70,7 @@ export const Controller = {
     }
     if (invalidInput) return;
 
-    addUser(inputs);
+    Model.addUser(inputs);
     displayAuthFlow(false);
   },
 

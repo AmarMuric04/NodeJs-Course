@@ -1,4 +1,5 @@
 import { loader } from "../general_view.js";
+const storageUsers = JSON.parse(localStorage.getItem("SolveBox-users"));
 
 export function displayAuthFlow(isSignin) {
   const parent = document.getElementById("signup-parent");
@@ -56,4 +57,22 @@ export function displayAuthFlow(isSignin) {
     formBody.prepend(title);
     formBody.classList.replace("opacity-0", "opacity-100");
   }, 3200);
+}
+
+export async function doesAccountExist(email) {
+  try {
+    const jsonUsersRes = await fetch("../assets/accounts.json");
+
+    if (!jsonUsersRes.ok) {
+      throw new Error("Failed to fetch users.");
+    }
+
+    const jsonUsers = await jsonUsersRes.json();
+    const users = [...jsonUsers, ...storageUsers];
+
+    return users.some((user) => user.email === email);
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
 }
