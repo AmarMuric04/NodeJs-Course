@@ -1,7 +1,7 @@
 import { handleUnderlineHover } from "../../general_view.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
-import { displayAuthFlow } from "../auth.js";
+import { displayAuthFlow, findStorageUser } from "../auth.js";
 import * as Validation from "../../../utility/inputs.js";
 import { retrieveFormData } from "../../../utility/utility.js";
 
@@ -62,7 +62,7 @@ export const Controller = {
       Model.removeClassOnClick(emailDoc, "error-input");
       invalidInput = true;
     }
-    if (Model.userAlreadyExists(inputs.email)) {
+    if (findStorageUser(inputs.email)) {
       Validation.invalidateInput(emailDoc);
       Model.removeClassOnClick(emailDoc, "error-input");
       Validation.displayErrorMessage("Email already taken");

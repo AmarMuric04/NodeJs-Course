@@ -2,7 +2,6 @@ import { handleUnderlineHover } from "../general_view.js";
 import * as Utility from "../../utility/utility.js";
 import * as Validation from "../../utility/inputs.js";
 import { loader } from "../general_view.js";
-import { View } from "./view.js";
 
 export const Controller = {
   handleSubmitReview(inputs, form) {

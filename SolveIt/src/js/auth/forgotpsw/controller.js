@@ -1,7 +1,7 @@
 import * as Validation from "../../../utility/inputs.js";
 import { retrieveFormData } from "../../../utility/utility.js";
 import { handleUnderlineHover } from "../../general_view.js";
-import { findAccount } from "../auth.js";
+import { findAccount, findJSONUser, findStorageUser } from "../auth.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
 
@@ -26,7 +26,15 @@ export const Controller = {
       );
       return;
     }
-    const accountExists = await findAccount(inputs.email);
+    const accountIsJSON = await findJSONUser(inputs.email);
+    if (accountIsJSON) {
+      Validation.invalidateInput(emailDoc);
+      Validation.displayErrorMessage(
+        "Please use one of the accounts you've created!"
+      );
+      return;
+    }
+    const accountExists = findStorageUser(inputs.email);
     if (!accountExists) {
       Validation.invalidateInput(emailDoc);
       Validation.displayErrorMessage(
@@ -34,6 +42,7 @@ export const Controller = {
       );
       return;
     }
+
     this.email = inputs.email;
 
     this.code = String((Math.random() * (999999 - 0) + 0).toFixed(0)).padStart(
@@ -47,35 +56,34 @@ export const Controller = {
           this.code +
           "           (Copy it so you don't forget)"
       );
-    }, 10);
+      const inputFields = document.querySelectorAll("form input");
+      inputFields.forEach((input, index) => {
+        input.addEventListener("input", () => {
+          const value = input.value;
 
-    const inputFields = document.querySelectorAll("form input");
-    inputFields.forEach((input, index) => {
-      input.addEventListener("input", () => {
-        const value = input.value;
+          if (value.length > 1) {
+            for (let i = 0; i < value.length; i++) {
+              const targetInput = inputFields[index + i];
+              if (targetInput) {
+                targetInput.value = value[i];
+              }
+            }
 
-        if (value.length > 1) {
-          for (let i = 0; i < value.length; i++) {
-            const targetInput = inputFields[index + i];
-            if (targetInput) {
-              targetInput.value = value[i];
+            input.value = value[0];
+
+            const nextInput = inputFields[index + value.length];
+            if (nextInput) {
+              nextInput.focus();
+            }
+          } else if (value !== "") {
+            const nextInput = inputFields[index + 1];
+            if (nextInput) {
+              nextInput.focus();
             }
           }
-
-          input.value = value[0];
-
-          const nextInput = inputFields[index + value.length];
-          if (nextInput) {
-            nextInput.focus();
-          }
-        } else if (value !== "") {
-          const nextInput = inputFields[index + 1];
-          if (nextInput) {
-            nextInput.focus();
-          }
-        }
+        });
       });
-    });
+    }, 310);
 
     this.currentStep++;
   },

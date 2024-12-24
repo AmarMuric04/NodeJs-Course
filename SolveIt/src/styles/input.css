@@ -317,6 +317,21 @@
   }
 }
 
+.no-scroll::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+  height: 2px;
+}
+
+.no-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.no-scroll::-webkit-scrollbar-thumb {
+  background: var(--first-accent-color);
+  border-radius: 0px;
+}
+
 body::-webkit-scrollbar {
   width: 7px;
   background-color: transparent;
@@ -575,6 +590,13 @@ body::-webkit-scrollbar-thumb {
   border-color: var(--first-accent-color);
 }
 
+.border4 {
+  border-color: var(--second-accent-color);
+}
+
+.border5 {
+  border-color: var(--third-accent-color);
+}
 .border2 {
   border-color: var(--background-accent-color);
 }

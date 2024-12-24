@@ -59,6 +59,8 @@ export function displayAuthFlow(isSignin) {
   }, 3200);
 }
 
+/* This function would be used instead of findStorageUser, but since you can't edit the
+password of the json users this function simply wouldn't work. */
 export async function findAccount(email) {
   try {
     const jsonUsersRes = await fetch("../assets/accounts.json");
@@ -76,6 +78,29 @@ export async function findAccount(email) {
     console.error(error);
     return false;
   }
+}
+
+export async function findJSONUser(email) {
+  try {
+    const jsonUsersRes = await fetch("../assets/accounts.json");
+
+    if (!jsonUsersRes.ok) {
+      throw new Error("Failed to fetch users.");
+    }
+
+    const jsonUsers = await jsonUsersRes.json();
+
+    const user = jsonUsers.find((user) => user.email === email);
+    return user;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+}
+
+export function findStorageUser(email) {
+  const users = JSON.parse(localStorage.getItem("SolveBox-users")) || [];
+  return users.find((user) => user.email === email);
 }
 
 export async function correctCredentials(inputs) {

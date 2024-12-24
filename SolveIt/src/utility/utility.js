@@ -4,7 +4,7 @@ export const get = async (address) => {
 
     const fetched = await response.json();
 
-    return fetched.reviews;
+    return fetched;
   } catch (err) {
     console.error("An error occured whilst looking for reviews. " + err);
   }

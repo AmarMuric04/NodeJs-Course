@@ -5,18 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link href="../styles/output.css" rel="stylesheet" />
-  <link href="../styles/input.css" rel="stylesheet" />
-  <script defer type="module" src="../js/themes/app.js"></script>
-  <script defer type="module" src="../js/header_logic.js"></script>
+  <link href="../../styles/output.css" rel="stylesheet" />
+  <link href="../../styles/input.css" rel="stylesheet" />
+  <script defer type="module" src="../../js/themes/app.js"></script>
+  <script defer type="module" src="../../js/header_logic.js"></script>
 </head>
 
 <body>
   <div class="b background w-full h-full relative flex flex-col items-center">
     <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full md:flex justify-center z-50">
       <nav class="flex w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] justify-between items-center">
-        <a href="./index.html" class="flex gap-2 items-center">
-          <img class="h-[1.5rem] lg:h-[3rem]" src="../assets/images/logo.png" />
+        <a href="../index.html" class="flex gap-2 items-center">
+          <img class="h-[1.5rem] lg:h-[3rem]" src="../../assets/images/logo.png" />
           <div class="flex flex-col justify-between">
             <h1 class="font-bold text-[1rem] md:text-[1.2rem] xl:text-[1.6rem]">SolveBox</h1>
             <div
@@ -29,23 +29,24 @@
         </a>
         <section>
           <ul class="flex gap-2 lg:gap-6 font-semibold text-xs md:text-sm xl:text-[1rem]">
-            <a href="../views/about.html" class="navbar-text relative transition-all cursor-pointer underline-parent">
+            <a href="../../views/about.html"
+              class="navbar-text relative transition-all cursor-pointer underline-parent">
               About
               <div class="underline-child bg1"></div>
             </a>
-            <a href="../views/categories.html"
+            <a href="../../views/categories.html"
               class="navbar-text relative transition-all cursor-pointer underline-parent">
               Categories
               <div class="underline-child bg1"></div>
-            </a><a href="../views/subscribe.html"
+            </a><a href="../../views/subscribe.html"
               class="navbar-text relative transition-all cursor-pointer underline-parent">
               Subscribe
               <div class="underline-child bg1"></div>
-            </a><a href="../views/contactus.html"
+            </a><a href="../../views/contactus.html"
               class="navbar-text relative transition-all cursor-pointer underline-parent">
               Contact Us
               <div class="bg1 underline-child"></div>
-            </a><a href="../views/credits.html"
+            </a><a href="../../views/credits.html"
               class="navbar-text relative transition-all cursor-pointer underline-parent">
               Credits
               <div class="underline-child bg1"></div>
@@ -112,7 +113,7 @@
     </header>
     <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 relative">
       <a href="./index.html" class="flex gap-2 items-center relative z-50">
-        <img class="h-[2.3rem]" src="../assets/images/logo.png" />
+        <img class="h-[2.3rem]" src="../../assets/images/logo.png" />
         <div class="flex flex-col justify-between">
           <h1 class="font-bold text-[1.2rem]">SolveBox</h1>
           <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
@@ -230,184 +231,13 @@
         </ul>
       </nav>
     </header>
-    <section class="w-full flex justify-center my-40">
-      <div class="w-[75rem] flex flex-col gap-20">
-        <div class="h-[35rem] w-full flex element justify-between gap-20">
-          <div class="w-[45%]">
-            <img class="w-full h-full object-cover" src="../assets/images/api-rubiks.jpg" />
-          </div>
-          <div class="w-[45%] flex flex-col info relative justify-between">
-            <div>
-              <h1
-                class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title">
-              </h1>
-              <ul class="my-4 variations overflow-scroll py-2 no-scroll">
-                <div class="flex gap-4 w-auto"></div>
-              </ul>
-              <p class="description text-center lg:text-start text-sm lg:text-lg my-8">
-              </p>
-            </div>
-            <div class="flex flex-col gap-8">
-              <ul class="flex flex-col history">
-              </ul>
-              <a class="w-full" href="./api/rubiks_cube.html">
-                <button
-                  class="w-full underline px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
-                  Let's explore the guides...
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="h-[35rem] w-full flex element justify-between gap-20">
-          <div class="w-[45%] flex flex-col info relative justify-between">
-            <div>
-              <h1
-                class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title">
-              </h1>
-              <ul class="my-4 variations overflow-scroll py-2 no-scroll">
-                <div class="flex gap-4 w-auto"></div>
-              </ul>
-              <p class="description text-center lg:text-start text-sm lg:text-lg my-8">
-              </p>
-            </div>
-            <div class="flex flex-col gap-8">
-              <ul class="flex flex-col history">
-              </ul>
-              <button
-                class="underline px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
-                Let's explore the guides...
-              </button>
-            </div>
-          </div>
-          <div class="w-[45%]">
-            <img class="w-full h-full object-cover" src="../assets/images/api-sudoku.jpg" />
-          </div>
-        </div>
-        <div class="h-[35rem] w-full flex element justify-between gap-20">
-          <div class="w-[45%]">
-            <img class="w-full h-full object-cover" src="../assets/images/api-crossword.jpg" />
-          </div>
-          <div class="w-[45%] flex flex-col info relative justify-between">
-            <div>
-              <h1
-                class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title">
-              </h1>
-              <ul class="my-4 variations overflow-scroll py-2 no-scroll">
-                <div class="flex gap-4 w-auto"></div>
-              </ul>
-              <p class="description text-center lg:text-start text-sm lg:text-lg my-8">
-              </p>
-            </div>
-            <div class="flex flex-col gap-8">
-              <ul class="flex flex-col history">
-              </ul>
-              <button
-                class="underline px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
-                Let's explore the guides...
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="h-[35rem] w-full flex element justify-between gap-20">
-          <div class="w-[45%] flex flex-col info relative justify-between">
-            <div>
-              <h1
-                class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title">
-              </h1>
-              <ul class="my-4 variations overflow-scroll py-2 no-scroll">
-                <div class="flex gap-4 w-auto"></div>
-              </ul>
-              <p class="description text-center lg:text-start text-sm lg:text-lg my-8">
-              </p>
-            </div>
-            <div class="flex flex-col gap-8">
-              <ul class="flex flex-col history">
-              </ul>
-              <button
-                class="underline px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
-                Let's explore the guides...
-              </button>
-            </div>
-          </div>
-          <div class="w-[45%]">
-            <img class="w-full h-full object-cover" src="../assets/images/api-jigsaw.jpg" />
-          </div>
-        </div>
-        <div class="h-[35rem] w-full flex element justify-between gap-20">
-          <div class="w-[45%]">
-            <img class="w-full h-full object-cover" src="../assets/images/api-hanoi.png" />
-          </div>
-          <div class="w-[45%] flex flex-col info relative justify-between">
-            <div>
-              <h1
-                class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title">
-              </h1>
-              <ul class="my-4 variations overflow-scroll py-2 no-scroll">
-                <div class="flex gap-4 w-auto"></div>
-              </ul>
-              <p class="description text-center lg:text-start text-sm lg:text-lg my-8">
-              </p>
-            </div>
-            <div class="flex flex-col gap-8">
-              <ul class="flex flex-col history">
-              </ul>
-              <button
-                class="underline px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
-                Let's explore the guides...
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="h-[35rem] w-full flex element justify-between gap-20">
-          <div class="w-[45%] flex flex-col info relative justify-between">
-            <div>
-              <h1
-                class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title">
-              </h1>
-              <ul class="my-4 variations overflow-scroll py-2 no-scroll">
-                <div class="flex gap-4 w-auto"></div>
-              </ul>
-              <p class="description text-center lg:text-start text-sm lg:text-lg my-8">
-              </p>
-            </div>
-            <div class="flex flex-col gap-8">
-              <ul class="flex flex-col history">
-              </ul>
-              <button
-                class="underline px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
-                Let's explore the guides...
-              </button>
-            </div>
-          </div>
-          <div class="w-[45%]">
-            <img class="w-full h-full object-cover" src="../assets/images/api-15-puzzle.jpg" />
-          </div>
-        </div>
-        <div class="h-[35rem] w-full flex element justify-between gap-20">
-          <div class="w-[45%]">
-            <img class="w-full h-full object-cover" src="../assets/images/api-logic.jpg" />
-          </div>
-          <div class="w-[45%] flex flex-col info relative justify-between">
-            <div>
-              <h1
-                class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title">
-              </h1>
-              <ul class="my-4 variations overflow-scroll py-2 no-scroll">
-                <div class="flex gap-4 w-auto"></div>
-              </ul>
-              <p class="description text-center lg:text-start text-sm lg:text-lg my-8">
-              </p>
-            </div>
-            <div class="flex flex-col gap-8">
-              <ul class="flex flex-col history">
-              </ul>
-              <button
-                class="underline px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
-                Let's explore the guides...
-              </button>
-            </div>
-          </div>
+    <section class="w-full flex justify-center">
+      <div class="w-[75rem]">
+        <div>
+          <h1
+            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title">
+            Quick Tips</h1>
+          <ul></ul>
         </div>
       </div>
     </section>
@@ -532,7 +362,7 @@
         <div class="w-full flex flex-col lg:flex-row py-20 border-y-2 border-[#383b48]">
           <div class="w-full lg:w-[40%]">
             <div class="flex gap-2 items-center">
-              <img class="h-[3rem]" src="../assets/images/logo.png" />
+              <img class="h-[3rem]" src="../../assets/images/logo.png" />
               <div class="flex flex-col justify-between">
                 <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
                 <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
@@ -595,7 +425,7 @@
       </div>
     </footer>
   </div>
-  <script type="module" src="../js/api/main/app.js"></script>
+  <script type="module" src=""></script>
 </body>
 
 </html>

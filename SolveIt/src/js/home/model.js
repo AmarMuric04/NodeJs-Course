@@ -4,6 +4,6 @@ export const Model = {
   async getReviews() {
     const reviews = await get("../assets/reviews.json");
 
-    return reviews;
+    return reviews.reviews;
   },
 };
