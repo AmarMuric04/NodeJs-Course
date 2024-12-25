@@ -488,6 +488,11 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
+.child:nth-child(2n + 1):last-child {
+  min-width: 100%;
+  max-width: 100%;
+}
+
 @keyframes shake {
   0%,
   100% {
@@ -512,6 +517,10 @@ body::-webkit-scrollbar-thumb {
 .background {
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+.background-text {
+  color: var(--background-color);
 }
 
 .header {

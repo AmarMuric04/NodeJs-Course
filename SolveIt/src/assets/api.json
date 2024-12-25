@@ -42,6 +42,13 @@
         "original_name": "Magic Cube",
         "milestone": "Became a global phenomenon in the 1980s."
       },
+      "historical_fact": "The Rubik's Cube was invented in 1974 by Ernő Rubik, a Hungarian architect, as a teaching tool to help explain three-dimensional geometry.",
+      "advanced_strategies": [
+        "CFOP Method: Combines Cross, F2L (First Two Layers), OLL (Orientation of Last Layer), and PLL (Permutation of Last Layer).",
+        "Roux Method: Focuses on block-building and solving edges in a minimalist way.",
+        "ZZ Method: Optimizes edge orientation early in the solution for efficiency.",
+        "FMC (Fewest Moves Challenge): Solves the cube in the least number of moves."
+      ],
       "content": {
         "tutorials": [
           {
@@ -71,6 +78,12 @@
           "For larger cubes, solve the centers and edges first before combining them to form a 3x3x3 cube solution.",
           "Explore speed-solving techniques like F2L (First Two Layers), OLL (Orientation of Last Layer), and PLL (Permutation of Last Layer).",
           "Use timer apps to track your progress and improve your solving speed."
+        ],
+        "related_facts": [
+          "There are over 43 quintillion possible configurations of a standard 3x3 Rubik's Cube.",
+          "The world record for solving a 3x3 Rubik's Cube is under 4 seconds.",
+          "Rubik's Cubes have been used in therapy to improve cognitive and motor skills.",
+          "The largest functional Rubik's Cube ever made was a 17x17x17 cube."
         ],
         "resources": {
           "apps": [
@@ -129,6 +142,7 @@
           "popularity": 4.3
         }
       ],
+      "historical_fact": "Sudoku was inspired by an 18th-century mathematical concept known as Latin Squares and gained global popularity after being published in Japanese puzzle magazines in the 1980s.",
       "advanced_strategies": [
         "X-Wing: Identifies patterns that limit number placement across multiple rows and columns.",
         "Swordfish: Similar to X-Wing but involves three rows or columns.",
@@ -141,7 +155,6 @@
         "Original Name": "Number Place",
         "Milestone": "Became a worldwide phenomenon in the 2000s."
       },
-      "historical_fact": "Sudoku was inspired by an 18th-century mathematical concept known as Latin Squares and gained global popularity after being published in Japanese puzzle magazines in the 1980s.",
       "fun_fact": "The largest Sudoku puzzle ever created had 666 grids interconnected and took players months to solve!",
       "content": {
         "tutorials": [
@@ -177,6 +190,12 @@
           "In Killer Sudoku, prioritize solving cages with the smallest or largest sums.",
           "Samurai Sudoku requires solving overlapping grids systematically, treating them as interconnected puzzles.",
           "For Hyper Sudoku, identify overlapping regions early and ensure they adhere to Sudoku rules."
+        ],
+        "related_facts": [
+          "The modern Sudoku puzzle was popularized by Japanese publisher Nikoli in 1986.",
+          "The name 'Sudoku' is short for a Japanese phrase meaning 'single number.'",
+          "Sudoku puzzles are not math problems; they require logic and pattern recognition.",
+          "The largest Sudoku puzzle, consisting of 667 interconnected grids, was created in 2010."
         ],
         "resources": {
           "apps": [
@@ -241,17 +260,19 @@
           "popularity": 3.9
         }
       ],
+      "historical_fact": "The first modern crossword puzzle was created by journalist Arthur Wynne and published in the New York World on December 21, 1913.",
+      "advanced_strategies": [
+        "Pattern Recognition: Use known letters to infer words and fill intersecting spaces.",
+        "Themed Clues: Identify overarching themes in the puzzle to guide guesses.",
+        "Word Stemming: Consider common prefixes, suffixes, and roots.",
+        "Reverse Solving: Work backward from confirmed answers to deduce others."
+      ],
       "tips": [
         "Start with short or frequently intersecting words to build momentum.",
         "For cryptic clues, think laterally; they often involve puns or wordplay.",
         "Use a dictionary or thesaurus to expand your vocabulary while solving.",
         "In themed puzzles, focus on clues that align with the central theme.",
         "Crossnumber puzzles benefit from familiarity with basic arithmetic or number sequences."
-      ],
-      "related_facts": [
-        "Crosswords first appeared in a New York newspaper in 1913 and became an instant hit.",
-        "The largest crossword puzzle ever created had over 91,000 squares!",
-        "Crosswords are scientifically proven to help maintain cognitive health and delay the onset of dementia."
       ],
       "fun_fact": "The New York Times Crossword is considered the 'gold standard' of puzzles, with Monday being the easiest and Sunday the hardest.",
       "history": {
@@ -288,6 +309,11 @@
           "Consider common prefixes or suffixes when guessing words.",
           "In cryptic crosswords, look for anagrams, hidden words, or wordplay in the clues.",
           "Use themed puzzles as a fun way to expand vocabulary on specific topics."
+        ],
+        "related_facts": [
+          "Crosswords first appeared in a New York newspaper in 1913 and became an instant hit.",
+          "The largest crossword puzzle ever created had over 91,000 squares!",
+          "Crosswords are scientifically proven to help maintain cognitive health and delay the onset of dementia."
         ],
         "resources": {
           "apps": [
@@ -352,12 +378,14 @@
           "popularity": 4.8
         }
       ],
-      "fun_fact": "The largest jigsaw puzzle ever created consists of over 551,000 pieces and measures 48 feet long!",
-      "related_facts": [
-        "Jigsaw puzzles originated in the 18th century when maps were cut into pieces for educational purposes.",
-        "The term 'jigsaw' comes from the saw used to cut early puzzles.",
-        "Solving puzzles improves cognitive skills and is known to reduce stress."
+      "historical_fact": "Jigsaw puzzles were invented around 1760 by John Spilsbury, a London cartographer, who used them to teach geography.",
+      "advanced_strategies": [
+        "Edge Sorting: Assemble the border pieces first to establish the puzzle frame.",
+        "Color Sorting: Group pieces by color or pattern for faster assembly.",
+        "Pattern Recognition: Focus on recurring shapes or designs within the puzzle.",
+        "Chunk Building: Work on smaller sections and then combine them."
       ],
+      "fun_fact": "The largest jigsaw puzzle ever created consists of over 551,000 pieces and measures 48 feet long!",
       "history": {
         "Inventor": "John Spilsbury",
         "Year Invented": "1767",
@@ -387,6 +415,11 @@
           "Use sorting trays, boards, or mats to organize and move pieces efficiently.",
           "Work under good lighting to distinguish subtle color differences.",
           "For large puzzles, assemble sections separately and connect them later."
+        ],
+        "related_facts": [
+          "Jigsaw puzzles originated in the 18th century when maps were cut into pieces for educational purposes.",
+          "The term 'jigsaw' comes from the saw used to cut early puzzles.",
+          "Solving puzzles improves cognitive skills and is known to reduce stress."
         ],
         "resources": {
           "online_stores": [
@@ -445,11 +478,14 @@
           "popularity": 4.3
         }
       ],
-      "fun_fact": "The Tower of Hanoi puzzle was invented in 1883 by French mathematician Édouard Lucas and was inspired by a legend about a temple with a large version of the puzzle.",
-      "related_facts": [
-        "The puzzle is often used to teach recursion in computer science.",
-        "If a Tower of Hanoi puzzle with 64 disks were solved at one move per second, it would take 585 billion years to complete!"
+      "historical_fact": "The Tower of Hanoi puzzle was invented in 1883 by French mathematician Édouard Lucas and is based on an ancient legend involving monks moving golden discs.",
+      "advanced_strategies": [
+        "Recursive Decomposition: Solve smaller sub-problems by moving n-1 discs.",
+        "Binary Representation: Map the solution to binary numbers for efficient planning.",
+        "Iterative Solution: Use an algorithm to systematically move the discs without recursion.",
+        "Pattern Recognition: Identify repeating movement sequences across disc sizes."
       ],
+      "fun_fact": "The Tower of Hanoi puzzle was invented in 1883 by French mathematician Édouard Lucas and was inspired by a legend about a temple with a large version of the puzzle.",
       "history": {
         "Inventor": "Édouard Lucas",
         "Year Invented": "1883",
@@ -479,6 +515,10 @@
           "Break the problem into subproblems: solve for n-1 disks, then move the largest disk, and finally solve for the remaining disks.",
           "In multi-peg variations, explore algorithms like the Frame-Stewart algorithm for optimized moves.",
           "Practice visualizing moves in advance to develop a clear strategy."
+        ],
+        "related_facts": [
+          "The puzzle is often used to teach recursion in computer science.",
+          "If a Tower of Hanoi puzzle with 64 disks were solved at one move per second, it would take 585 billion years to complete!"
         ],
         "resources": {
           "online_simulators": [
@@ -533,11 +573,14 @@
           "popularity": 4.3
         }
       ],
-      "fun_fact": "The 15 Puzzle was originally sold as a toy in the late 19th century and was a popular pastime in the United States and Europe. It's also known for being a challenging puzzle that helped inspire algorithms in computer science.",
-      "related_facts": [
-        "The puzzle has been studied mathematically, and it's known that not all random tile configurations are solvable.",
-        "The 15 Puzzle was popularized by a promotional game in 1878 where players would attempt to solve the puzzle in a race against time."
+      "historical_fact": "The 15 Puzzle was invented by Noyes Chapman in 1874 and became a global craze in the late 19th century.",
+      "advanced_strategies": [
+        "Row by Row Solving: Solve the top rows first and move sequentially downward.",
+        "Corner Strategies: Position corner pieces early to reduce complexity.",
+        "Pattern Analysis: Recognize key patterns to minimize unnecessary moves.",
+        "Parity Correction: Plan moves to resolve situations with unreachable states."
       ],
+      "fun_fact": "The 15 Puzzle was originally sold as a toy in the late 19th century and was a popular pastime in the United States and Europe. It's also known for being a challenging puzzle that helped inspire algorithms in computer science.",
       "history": {
         "Inventor": "Noyes Chapman",
         "Year Invented": "1874",
@@ -567,6 +610,10 @@
           "Always focus on the first row and column before solving the middle section.",
           "In larger variations, prioritize solving the corners and edges first before tackling the inner tiles.",
           "Memorize common patterns (e.g., corner and edge configurations) to reduce trial and error when solving."
+        ],
+        "related_facts": [
+          "The puzzle has been studied mathematically, and it's known that not all random tile configurations are solvable.",
+          "The 15 Puzzle was popularized by a promotional game in 1878 where players would attempt to solve the puzzle in a race against time."
         ],
         "resources": {
           "online_simulators": [
@@ -620,11 +667,14 @@
           "popularity": 4.5
         }
       ],
-      "fun_fact": "Logic Grid Puzzles originated in the 1980s as a way to combine deductive reasoning with puzzle-solving skills. They are sometimes called 'Einstein Puzzles' due to their challenging nature.",
-      "related_facts": [
-        "It is said that Albert Einstein created one of the first logic grid puzzles in the early 20th century, and only 2% of the population could solve it.",
-        "Many modern logic grid puzzles are now available in app format, making them easier to access and solve on the go."
+      "historical_fact": "Logic grid puzzles gained prominence in the 20th century and are often associated with the works of Raymond Smullyan, a logician and puzzle creator.",
+      "advanced_strategies": [
+        "Elimination Method: Systematically rule out impossible options in the grid.",
+        "Deductive Chains: Use a series of logical deductions to fill in gaps.",
+        "Clue Integration: Cross-reference multiple clues for consistency.",
+        "Grouping Techniques: Organize similar clues together for faster solving."
       ],
+      "fun_fact": "Logic Grid Puzzles originated in the 1980s as a way to combine deductive reasoning with puzzle-solving skills. They are sometimes called 'Einstein Puzzles' due to their challenging nature.",
       "history": {
         "Inventor": "Unknown",
         "Year Invented": "Late 20th century",
@@ -654,6 +704,10 @@
           "Deduction is key—start with the most certain information and work your way through the puzzle.",
           "In themed grids, apply your knowledge of the subject to solve clues faster. For example, knowing the names of popular animals can help you with a themed puzzle.",
           "For multi-level puzzles, solve each individual grid first. Once you have answers for all levels, combine them logically to reach the final solution."
+        ],
+        "related_facts": [
+          "It is said that Albert Einstein created one of the first logic grid puzzles in the early 20th century, and only 2% of the population could solve it.",
+          "Many modern logic grid puzzles are now available in app format, making them easier to access and solve on the go."
         ],
         "resources": {
           "online_simulators": [

@@ -1,6 +1,7 @@
 import { Model } from "./model.js";
 import { handleUnderlineHover } from "../../general_view.js";
 import { getAPI } from "../api.js";
+import { transformText } from "../../../utility/utility.js";
 
 export const Controller = {
   API: null,
@@ -15,7 +16,7 @@ export const Controller = {
     });
 
     try {
-      this.API = await getAPI();
+      this.API = await getAPI("../assets/api.json");
       this.API = this.API.puzzles;
       document.querySelectorAll(".loader").forEach((e) => e.remove());
     } catch (error) {
@@ -61,16 +62,7 @@ export const Controller = {
 
           const [key, value] = H;
 
-          let key_text = key[0].toUpperCase() + key.slice(1);
-
-          key_text = key_text.replaceAll("_", " ");
-          let parts = key_text.split(" ");
-          for (let i = 1; i < parts.length; i++) {
-            parts[i] = parts[i][0].toUpperCase() + parts[i].slice(1);
-          }
-          key_text = parts.join(" ");
-
-          p1.textContent = key_text + ":";
+          p1.textContent = transformText(key) + ":";
           p2.textContent = value;
 
           li.append(p1);

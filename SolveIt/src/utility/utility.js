@@ -61,3 +61,16 @@ export function updateButtonStatus(
   if (disable) button.disabled = true;
   else button.disabled = false;
 }
+
+export function transformText(text) {
+  let transformed = text[0].toUpperCase() + text.slice(1);
+
+  transformed = transformed.replaceAll("_", " ");
+  let parts = transformed.split(" ");
+  for (let i = 1; i < parts.length; i++) {
+    parts[i] = parts[i][0].toUpperCase() + parts[i].slice(1);
+  }
+  transformed = parts.join(" ");
+
+  return transformed;
+}
