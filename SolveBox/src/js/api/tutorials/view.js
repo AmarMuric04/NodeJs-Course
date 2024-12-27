@@ -81,16 +81,16 @@ export const View = {
       const title = document.createElement("p");
       title.classList = "noto text1 uppercase";
       title.textContent = value.type;
-      title.setAttribute("data-set-english", value.type);
-      title.setAttribute("data-set-srpski", srValue.type);
+      title.setAttribute("data-english", value.type);
+      title.setAttribute("data-srpski", srValue.type);
 
       const text = document.createElement("p");
       text.classList = "ml-4 text-gray-600 my-4";
 
       if (value.type !== "text") {
         text.textContent = value.title;
-        text.setAttribute("data-set-english", value.title);
-        text.setAttribute("data-set-srpski", srValue.title);
+        text.setAttribute("data-english", value.title);
+        text.setAttribute("data-srpski", srValue.title);
 
         const link = document.createElement("a");
         link.setAttribute("href", value.link);
@@ -99,16 +99,16 @@ export const View = {
         button.classList =
           "background text-white rounded-[2rem] px-4 py-2 hover:rounded-none transition-all";
         button.textContent = "Go to Tutorial";
-        button.setAttribute("data-set-english", "Go to Tutorial");
-        button.setAttribute("data-set-srpski", "Idi do Tutoriala");
+        button.setAttribute("data-english", "Go to Tutorial");
+        button.setAttribute("data-srpski", "Idi do Tutoriala");
 
         link.append(button);
         container.prepend(link);
         container.prepend;
       } else {
         text.textContent = value.content;
-        text.setAttribute("data-set-english", value.content);
-        text.setAttribute("data-set-srpski", srValue.content);
+        text.setAttribute("data-english", value.content);
+        text.setAttribute("data-srpski", srValue.content);
       }
       container.prepend(text);
       container.prepend(title);

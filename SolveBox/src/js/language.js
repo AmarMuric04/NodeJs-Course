@@ -1,4 +1,5 @@
 let curr_lang = localStorage.getItem("SolveBox-current-language") || "english";
+let items;
 
 const originalSetItem = localStorage.setItem;
 localStorage.setItem = function (key, value) {
@@ -9,23 +10,36 @@ localStorage.setItem = function (key, value) {
   window.dispatchEvent(event);
 };
 
-export function getLang() {
-  return curr_lang;
+function changeLanguage(l) {
+  localStorage.setItem("SolveBox-current-language", l.target.value);
+  curr_lang = l.target.value;
+  items.forEach((e) => {
+    e.textContent = e.getAttribute("data-" + curr_lang);
+  });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const lang = document.getElementById("lang");
-  const items = document.querySelectorAll("[data-english], [data-srpski]");
+export function allowLangChange() {
+  items = document.querySelectorAll("[data-english], [data-srpski]");
 
   items.forEach((e) => {
     e.textContent = e.getAttribute("data-" + curr_lang);
   });
 
-  lang.addEventListener("change", (l) => {
-    localStorage.setItem("SolveBox-current-language", l.target.value);
-    curr_lang = l.target.value;
-    items.forEach((e) => {
-      e.textContent = e.getAttribute("data-" + l.target.value);
-    });
-  });
+  const lang = document.getElementById("lang");
+
+  const onLanguageChange = (event) => changeLanguage(event);
+
+  lang.removeEventListener("change", onLanguageChange);
+
+  setTimeout(() => {
+    lang.addEventListener("change", onLanguageChange);
+  }, 10);
+}
+
+export function getLang() {
+  return curr_lang;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  allowLangChange();
 });

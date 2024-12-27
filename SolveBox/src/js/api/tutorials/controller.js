@@ -1,4 +1,5 @@
 import { handleUnderlineHover } from "../../general_view.js";
+import { allowLangChange } from "../../language.js";
 import { getAPI } from "../api.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
@@ -28,6 +29,8 @@ export const Controller = {
       console.log(this.API);
       this.enAPI = api.puzzles?.english[currentPuzzle];
       this.srAPI = api.puzzles?.srpski[currentPuzzle];
+
+      console.log(api);
       document.querySelectorAll(".loader").forEach((e) => e.remove());
     } catch (error) {
       console.error("Failed to initialize API:", error);
@@ -37,11 +40,8 @@ export const Controller = {
     this.enAPI?.content?.tips?.forEach((t, index) => {
       const li = document.createElement("li");
       li.classList = "ml-8 text-lg";
-      li.setAttribute("data-set-english", "-- " + t);
-      li.setAttribute(
-        "data-set-srpski",
-        "-- " + this.srAPI?.content?.tips[index]
-      );
+      li.setAttribute("data-english", "-- " + t);
+      li.setAttribute("data-srpski", "-- " + this.srAPI?.content?.tips[index]);
       li.textContent = "-- " + t;
       tips.append(li);
     });
@@ -49,21 +49,15 @@ export const Controller = {
     const title = document.querySelector(".title");
     if (title) {
       title.textContent = this.enAPI?.name;
-      title.setAttribute("data-set-english", this.enAPI?.name);
-      title.setAttribute("data-set-srpski", this.srAPI?.name);
+      title.setAttribute("data-english", this.enAPI?.name);
+      title.setAttribute("data-srpski", this.srAPI?.name);
     }
 
     const funFact = document.querySelector(".fun-fact");
     if (funFact) {
       funFact.textContent = '"' + this.enAPI["fun_fact"] + '"';
-      funFact.setAttribute(
-        "data-set-english",
-        '"' + this.enAPI["fun_fact"] + '"'
-      );
-      funFact.setAttribute(
-        "data-set-srpski",
-        '"' + this.srAPI["fun_fact"] + '"'
-      );
+      funFact.setAttribute("data-english", '"' + this.enAPI["fun_fact"] + '"');
+      funFact.setAttribute("data-srpski", '"' + this.srAPI["fun_fact"] + '"');
     }
 
     const resources = document.querySelector(".resources");
@@ -82,16 +76,16 @@ export const Controller = {
     const video = document.querySelector(".tutorials");
     const iframe = document.createElement("iframe");
 
-    // iframe.src = this.enAPI["main_video"];
-    // iframe.className = "w-full h-[720px]";
-    // iframe.title = "How To Solve A Rubik’s Cube | INTRODUCTION PART 1";
-    // iframe.frameBorder = "0";
-    // iframe.allow =
-    //   "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    // iframe.referrerPolicy = "strict-origin-when-cross-origin";
-    // iframe.allowFullscreen = true;
+    iframe.src = this.enAPI["main_video"];
+    iframe.className = "w-full h-[720px]";
+    iframe.title = "How To Solve A Rubik’s Cube | INTRODUCTION PART 1";
+    iframe.frameBorder = "0";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
 
-    // video.prepend(iframe);
+    video.prepend(iframe);
 
     const tutorials = document.querySelector(".tutorials-list");
     const enTContent = Object.entries(this.enAPI?.content?.tutorials);
@@ -106,9 +100,9 @@ export const Controller = {
       const li = document.createElement("li");
       li.classList = "ml-8 text-lg";
       li.textContent = "-- " + t;
-      li.setAttribute("data-set-english", "-- " + t);
+      li.setAttribute("data-english", "-- " + t);
       li.setAttribute(
-        "data-set-srpski",
+        "data-srpski",
         "-- " + this.srAPI["advanced_strategies"][index]
       );
       advanced.append(li);
@@ -119,9 +113,9 @@ export const Controller = {
       const li = document.createElement("li");
       li.classList = "ml-8 text-lg";
       li.textContent = "-- " + t;
-      li.setAttribute("data-set-english", "-- " + t);
+      li.setAttribute("data-english", "-- " + t);
       li.setAttribute(
-        "data-set-srpski",
+        "data-srpski",
         "-- " + this.srAPI?.content["related_facts"][index]
       );
       facts.append(li);
@@ -133,7 +127,6 @@ export const Controller = {
     if (enVContent) {
       enVContent.forEach((e, index) => {
         const [key, value] = e;
-        console.log(enVContent);
         const container = document.createElement("div");
         container.classList = "mb-10 bg-white w-[30%] p-4 flex flex-col";
 
@@ -187,6 +180,7 @@ export const Controller = {
         if (value.video) {
           a = document.createElement("a");
           a.setAttribute("href", value.video);
+          a.setAttribute("target", "_blank");
           a.classList = "w-full";
           button = document.createElement("button");
           button.classList =
@@ -205,6 +199,8 @@ export const Controller = {
 
         variations.append(container);
       });
+
+      allowLangChange();
     }
   },
 };
