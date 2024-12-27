@@ -1,9 +1,9 @@
 import { transformText } from "../../../utility/utility.js";
 
 export const View = {
-  displayResources(object, element) {
+  displayResources(en, sr, element) {
     let iterations = 0;
-    object.forEach((a) => {
+    en.forEach((a) => {
       let [key, value] = a;
       const main = document.createElement("div");
       main.classList = "relative flex flex-col";
@@ -69,12 +69,56 @@ export const View = {
     });
   },
 
-  displayTutorials(object, element) {},
+  displayTutorials(en, sr, element) {
+    en.forEach((e, index) => {
+      const [_, value] = e;
+      const [m, srValue] = sr[index];
+
+      const container = document.createElement("div");
+      container.classList =
+        "child flex flex-col justify-between p-4 bg-white min-w-[49%] max-w-[49%]";
+
+      const title = document.createElement("p");
+      title.classList = "noto text1 uppercase";
+      title.textContent = value.type;
+      title.setAttribute("data-set-english", value.type);
+      title.setAttribute("data-set-srpski", srValue.type);
+
+      const text = document.createElement("p");
+      text.classList = "ml-4 text-gray-600 my-4";
+
+      if (value.type !== "text") {
+        text.textContent = value.title;
+        text.setAttribute("data-set-english", value.title);
+        text.setAttribute("data-set-srpski", srValue.title);
+
+        const link = document.createElement("a");
+        link.setAttribute("href", value.link);
+
+        const button = document.createElement("button");
+        button.classList =
+          "background text-white rounded-[2rem] px-4 py-2 hover:rounded-none transition-all";
+        button.textContent = "Go to Tutorial";
+        button.setAttribute("data-set-english", "Go to Tutorial");
+        button.setAttribute("data-set-srpski", "Idi do Tutoriala");
+
+        link.append(button);
+        container.prepend(link);
+        container.prepend;
+      } else {
+        text.textContent = value.content;
+        text.setAttribute("data-set-english", value.content);
+        text.setAttribute("data-set-srpski", srValue.content);
+      }
+      container.prepend(text);
+      container.prepend(title);
+      element.append(container);
+    });
+  },
 
   displayError(element) {
     const error = `<div class="w-full h-full text-center flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-red-400 bg-red-600 bg-opacity-50"><p>404 ERROR! Content not found! <br/> If the error doesn't go away, please contact us!</p></div>`;
 
     element.innerHTML += error;
-    console.log(element);
   },
 };

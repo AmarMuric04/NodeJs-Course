@@ -820,10 +820,6 @@ video {
   float: inline-end;
 }
 
-.float-right{
-  float: right;
-}
-
 .my-10{
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -1027,10 +1023,6 @@ video {
   height: 1.5rem;
 }
 
-.h-\[10rem\]{
-  height: 10rem;
-}
-
 .h-\[1px\]{
   height: 1px;
 }
@@ -1211,8 +1203,8 @@ video {
   min-width: 21rem;
 }
 
-.min-w-\[48\%\]{
-  min-width: 48%;
+.min-w-\[49\%\]{
+  min-width: 49%;
 }
 
 .min-w-\[8rem\]{
@@ -1223,24 +1215,8 @@ video {
   min-width: 100%;
 }
 
-.min-w-\[49\%\]{
-  min-width: 49%;
-}
-
-.min-w-\[50\%\]{
-  min-width: 50%;
-}
-
-.max-w-\[48\%\]{
-  max-width: 48%;
-}
-
 .max-w-\[49\%\]{
   max-width: 49%;
-}
-
-.max-w-\[50\%\]{
-  max-width: 50%;
 }
 
 .flex-shrink-0{
@@ -1548,6 +1524,11 @@ video {
   background-color: rgb(88 28 135 / var(--tw-bg-opacity, 1));
 }
 
+.bg-red-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity, 1));
+}
+
 .bg-red-600{
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
@@ -1556,6 +1537,10 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-transparent{
+  background-color: transparent;
 }
 
 .bg-opacity-20{
@@ -2683,16 +2668,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 768px){
-  .md\:relative{
-    position: relative;
-  }
-
   .md\:ml-80{
     margin-left: 20rem;
-  }
-
-  .md\:mt-32{
-    margin-top: 8rem;
   }
 
   .md\:block{

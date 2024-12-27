@@ -4,7 +4,8 @@ import { Model } from "./model.js";
 import { View } from "./view.js";
 
 export const Controller = {
-  API: null,
+  enAPI: null,
+  srAPI: null,
 
   async init() {
     handleUnderlineHover();
@@ -23,49 +24,107 @@ export const Controller = {
     const currentPuzzle = Model.domen[href];
 
     try {
-      this.API = await getAPI("../../assets/api.json");
+      const api = await getAPI("../../assets/api.json");
       console.log(this.API);
-      this.API = this.API.puzzles[currentPuzzle];
+      this.enAPI = api.puzzles?.english[currentPuzzle];
+      this.srAPI = api.puzzles?.srpski[currentPuzzle];
       document.querySelectorAll(".loader").forEach((e) => e.remove());
     } catch (error) {
       console.error("Failed to initialize API:", error);
     }
 
     const tips = document.querySelector(".tips");
-    this.API?.content?.tips?.forEach((t) => {
+    this.enAPI?.content?.tips?.forEach((t, index) => {
       const li = document.createElement("li");
       li.classList = "ml-8 text-lg";
+      li.setAttribute("data-set-english", "-- " + t);
+      li.setAttribute(
+        "data-set-srpski",
+        "-- " + this.srAPI?.content?.tips[index]
+      );
       li.textContent = "-- " + t;
       tips.append(li);
     });
 
     const title = document.querySelector(".title");
     if (title) {
-      title.textContent = this.API?.name;
+      title.textContent = this.enAPI?.name;
+      title.setAttribute("data-set-english", this.enAPI?.name);
+      title.setAttribute("data-set-srpski", this.srAPI?.name);
     }
 
     const funFact = document.querySelector(".fun-fact");
     if (funFact) {
-      funFact.textContent = '"' + this.API["fun_fact"] + '"';
+      funFact.textContent = '"' + this.enAPI["fun_fact"] + '"';
+      funFact.setAttribute(
+        "data-set-english",
+        '"' + this.enAPI["fun_fact"] + '"'
+      );
+      funFact.setAttribute(
+        "data-set-srpski",
+        '"' + this.srAPI["fun_fact"] + '"'
+      );
     }
 
     const resources = document.querySelector(".resources");
-    const rContent = Object.entries(this.API?.content?.resources);
+    const enRContent = Object.entries(this.enAPI?.content?.resources);
+    const srRContent = Object.entries(this.srAPI?.content?.resources);
 
-    if (rContent) {
-      View.displayResources(rContent, resources);
+    if (enRContent) {
+      View.displayResources(enRContent, srRContent, resources);
     } else View.displayError(resources);
 
     const historicalFact = document.querySelector(".historical-fact");
     if (funFact) {
-      historicalFact.textContent = '"' + this.API["historical_fact"] + '"';
+      historicalFact.textContent = '"' + this.enAPI["historical_fact"] + '"';
     }
 
-    const tutorials = document.querySelector(".tutorials");
-    const tContent = Object.entries(this.API?.content?.tutorials);
+    const video = document.querySelector(".tutorials");
+    const iframe = document.createElement("iframe");
 
-    if (tContent) {
-      View.displayTutorials(tContent, tutorials);
+    iframe.src = this.enAPI["main_video"];
+    iframe.className = "w-full h-[720px]";
+    iframe.title = "How To Solve A Rubik’s Cube | INTRODUCTION PART 1";
+    iframe.frameBorder = "0";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
+
+    video.prepend(iframe);
+
+    const tutorials = document.querySelector(".tutorials-list");
+    const enTContent = Object.entries(this.enAPI?.content?.tutorials);
+    const srTContent = Object.entries(this.srAPI?.content?.tutorials);
+
+    if (enTContent) {
+      View.displayTutorials(enTContent, srTContent, tutorials);
     } else View.displayError(tutorials);
+
+    const advanced = document.querySelector(".advanced");
+    this.enAPI["advanced_strategies"].forEach((t, index) => {
+      const li = document.createElement("li");
+      li.classList = "ml-8 text-lg";
+      li.textContent = "-- " + t;
+      li.setAttribute("data-set-english", "-- " + t);
+      li.setAttribute(
+        "data-set-srpski",
+        "-- " + this.srAPI["advanced_strategies"][index]
+      );
+      advanced.append(li);
+    });
+
+    const facts = document.querySelector(".facts");
+    this.enAPI?.content["related_facts"].forEach((t, index) => {
+      const li = document.createElement("li");
+      li.classList = "ml-8 text-lg";
+      li.textContent = "-- " + t;
+      li.setAttribute("data-set-english", "-- " + t);
+      li.setAttribute(
+        "data-set-srpski",
+        "-- " + this.srAPI?.content["related_facts"][index]
+      );
+      facts.append(li);
+    });
   },
 };

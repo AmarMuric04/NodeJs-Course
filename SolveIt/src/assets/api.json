@@ -1,736 +1,1486 @@
 {
-  "puzzles": [
-    {
-      "name": "Rubik's Cube",
-      "description": "A 3D combination puzzle where each face of the cube is a different color. The objective is to align the colors so that each face becomes a uniform color. Variations include different sizes and shapes, such as Pyraminx and Mirror Cube. Popular variations include 2x2x2 (Mini Cube), 4x4x4 (Rubik's Revenge), and 5x5x5 (Professor's Cube).",
-      "variations": [
-        {
-          "name": "2x2x2 (Mini Cube)",
-          "description": "Simpler version of the Rubik's Cube with no middle pieces, making it ideal for beginners.",
-          "difficulty": "Beginner",
-          "popularity": 4.5
-        },
-        {
-          "name": "4x4x4 (Rubik's Revenge)",
-          "description": "Adds more complexity with centers that can move independently and parity errors.",
-          "difficulty": "Intermediate",
-          "popularity": 4.0
-        },
-        {
-          "name": "5x5x5 (Professor's Cube)",
-          "description": "Even more challenging with additional edge and center pieces, offering a real test of patience and skill.",
-          "difficulty": "Advanced",
-          "popularity": 3.8
-        },
-        {
-          "name": "Pyraminx",
-          "description": "A pyramid-shaped version of the cube puzzle that is easier than it looks.",
-          "difficulty": "Beginner",
-          "popularity": 4.3
-        },
-        {
-          "name": "Mirror Cube",
-          "description": "A cube where pieces differ by shape instead of color, providing a visual and spatial challenge.",
-          "difficulty": "Advanced",
-          "popularity": 4.7
-        }
-      ],
-      "fun_fact": "The world record for solving a 3x3x3 Rubik's Cube is under 3.5 seconds as of 2023!",
-      "history": {
-        "inventor": "Ernő Rubik",
-        "year_invented": 1974,
-        "original_name": "Magic Cube",
-        "milestone": "Became a global phenomenon in the 1980s."
-      },
-      "historical_fact": "The Rubik's Cube was invented in 1974 by Ernő Rubik, a Hungarian architect, as a teaching tool to help explain three-dimensional geometry.",
-      "advanced_strategies": [
-        "CFOP Method: Combines Cross, F2L (First Two Layers), OLL (Orientation of Last Layer), and PLL (Permutation of Last Layer).",
-        "Roux Method: Focuses on block-building and solving edges in a minimalist way.",
-        "ZZ Method: Optimizes edge orientation early in the solution for efficiency.",
-        "FMC (Fewest Moves Challenge): Solves the cube in the least number of moves."
-      ],
-      "content": {
-        "tutorials": [
+  "puzzles": {
+    "english": [
+      {
+        "name": "Rubik's Cube",
+        "description": "A 3D combination puzzle where each face of the cube is a different color. The objective is to align the colors so that each face becomes a uniform color. Variations include different sizes and shapes, such as Pyraminx and Mirror Cube. Popular variations include 2x2x2 (Mini Cube), 4x4x4 (Rubik's Revenge), and 5x5x5 (Professor's Cube).",
+        "variations": [
           {
-            "type": "text",
-            "content": "The standard Rubik's Cube can be solved in six steps: solving the white cross, solving the white corners, solving the middle layer edges, solving the yellow cross, orienting the yellow corners, and finally permuting the last layer. Variations like the 4x4x4 require additional steps to solve centers and parity errors."
+            "name": "2x2x2 (Mini Cube)",
+            "description": "Simpler version of the Rubik's Cube with no middle pieces, making it ideal for beginners.",
+            "difficulty": "Beginner",
+            "popularity": 4.5
           },
           {
-            "type": "video",
-            "title": "How to Solve a Rubik's Cube",
-            "url": "https://www.youtube.com/watch?v=R-R0KrXvWbc"
+            "name": "4x4x4 (Rubik's Revenge)",
+            "description": "Adds more complexity with centers that can move independently and parity errors.",
+            "difficulty": "Intermediate",
+            "popularity": 4.0
           },
           {
-            "type": "link",
-            "title": "Step-by-Step Rubik's Cube Guide",
-            "url": "https://www.rubiks.com/solution-guides"
+            "name": "5x5x5 (Professor's Cube)",
+            "description": "Even more challenging with additional edge and center pieces, offering a real test of patience and skill.",
+            "difficulty": "Advanced",
+            "popularity": 3.8
           },
           {
-            "type": "article",
-            "title": "Speedcubing: Advanced Techniques and Competitions",
-            "url": "https://www.worldcubeassociation.org/"
+            "name": "Pyraminx",
+            "description": "A pyramid-shaped version of the cube puzzle that is easier than it looks.",
+            "difficulty": "Beginner",
+            "popularity": 4.3
+          },
+          {
+            "name": "Mirror Cube",
+            "description": "A cube where pieces differ by shape instead of color, providing a visual and spatial challenge.",
+            "difficulty": "Advanced",
+            "popularity": 4.7
           }
         ],
-        "tips": [
-          "Start by learning the notation: U (up), D (down), L (left), R (right), F (front), B (back).",
-          "Practice solving one face first before tackling the entire cube.",
-          "Learn the basic algorithms for common patterns like the T-perm and Y-perm.",
-          "For larger cubes, solve the centers and edges first before combining them to form a 3x3x3 cube solution.",
-          "Explore speed-solving techniques like F2L (First Two Layers), OLL (Orientation of Last Layer), and PLL (Permutation of Last Layer).",
-          "Use timer apps to track your progress and improve your solving speed."
+        "main_video": "https://www.youtube.com/embed/F-zMjsRgJws",
+        "fun_fact": "The world record for solving a 3x3x3 Rubik's Cube is under 3.5 seconds as of 2023!",
+        "history": {
+          "inventor": "Ernő Rubik",
+          "year_invented": 1974,
+          "original_name": "Magic Cube",
+          "milestone": "Became a global phenomenon in the 1980s."
+        },
+        "historical_fact": "The Rubik's Cube was invented in 1974 by Ernő Rubik, a Hungarian architect, as a teaching tool to help explain three-dimensional geometry.",
+        "advanced_strategies": [
+          "CFOP Method: Combines Cross, F2L (First Two Layers), OLL (Orientation of Last Layer), and PLL (Permutation of Last Layer).",
+          "Roux Method: Focuses on block-building and solving edges in a minimalist way.",
+          "ZZ Method: Optimizes edge orientation early in the solution for efficiency.",
+          "FMC (Fewest Moves Challenge): Solves the cube in the least number of moves."
         ],
-        "related_facts": [
-          "There are over 43 quintillion possible configurations of a standard 3x3 Rubik's Cube.",
-          "The world record for solving a 3x3 Rubik's Cube is under 4 seconds.",
-          "Rubik's Cubes have been used in therapy to improve cognitive and motor skills.",
-          "The largest functional Rubik's Cube ever made was a 17x17x17 cube."
-        ],
-        "resources": {
-          "apps": [
+        "content": {
+          "tutorials": [
             {
-              "name": "Cube Solver",
-              "url": "https://www.cube-solver.com/",
-              "description": "An interactive solver for various cube puzzles."
+              "type": "text",
+              "content": "The standard Rubik's Cube can be solved in six steps: solving the white cross, solving the white corners, solving the middle layer edges, solving the yellow cross, orienting the yellow corners, and finally permuting the last layer. Variations like the 4x4x4 require additional steps to solve centers and parity errors."
             },
             {
-              "name": "Rubik's Cube Timer",
-              "url": "https://cubetimer.com/",
-              "description": "Track your solving time and compete with friends."
+              "type": "video",
+              "title": "How to Solve a Rubik's Cube",
+              "url": "https://www.youtube.com/embed/R-R0KrXvWbc"
+            },
+            {
+              "type": "link",
+              "title": "Step-by-Step Rubik's Cube Guide",
+              "url": "https://www.rubiks.com/solution-guides"
+            },
+            {
+              "type": "article",
+              "title": "Speedcubing: Advanced Techniques and Competitions",
+              "url": "https://www.worldcubeassociation.org/"
             }
           ],
-          "communities": [
-            {
-              "name": "SpeedSolving Forum",
-              "url": "https://www.speedsolving.com/",
-              "description": "Join a global community of cubers and exchange tips and techniques."
-            },
-            {
-              "name": "Reddit Rubik's Cube",
-              "url": "https://www.reddit.com/r/Cubers/",
-              "description": "Discuss puzzles, share solves, and participate in challenges."
-            }
-          ]
+          "tips": [
+            "Start by learning the notation: U (up), D (down), L (left), R (right), F (front), B (back).",
+            "Practice solving one face first before tackling the entire cube.",
+            "Learn the basic algorithms for common patterns like the T-perm and Y-perm.",
+            "For larger cubes, solve the centers and edges first before combining them to form a 3x3x3 cube solution.",
+            "Explore speed-solving techniques like F2L (First Two Layers), OLL (Orientation of Last Layer), and PLL (Permutation of Last Layer).",
+            "Use timer apps to track your progress and improve your solving speed."
+          ],
+          "related_facts": [
+            "There are over 43 quintillion possible configurations of a standard 3x3 Rubik's Cube.",
+            "The world record for solving a 3x3 Rubik's Cube is under 4 seconds.",
+            "Rubik's Cubes have been used in therapy to improve cognitive and motor skills.",
+            "The largest functional Rubik's Cube ever made was a 17x17x17 cube."
+          ],
+          "resources": {
+            "apps": [
+              {
+                "name": "Cube Solver",
+                "url": "https://www.cube-solver.com/",
+                "description": "An interactive solver for various cube puzzles."
+              },
+              {
+                "name": "Rubik's Cube Timer",
+                "url": "https://cubetimer.com/",
+                "description": "Track your solving time and compete with friends."
+              }
+            ],
+            "communities": [
+              {
+                "name": "SpeedSolving Forum",
+                "url": "https://www.speedsolving.com/",
+                "description": "Join a global community of cubers and exchange tips and techniques."
+              },
+              {
+                "name": "Reddit Rubik's Cube",
+                "url": "https://www.reddit.com/r/Cubers/",
+                "description": "Discuss puzzles, share solves, and participate in challenges."
+              }
+            ]
+          }
         }
-      }
-    },
-    {
-      "name": "Sudoku",
-      "description": "A logic-based number-placement puzzle where you fill a 9x9 grid so that each row, column, and 3x3 sub-grid contains the digits 1 through 9. Variations include Mini Sudoku (6x6), Killer Sudoku, and Samurai Sudoku, offering unique challenges to players of all skill levels.",
-      "variations": [
-        {
-          "name": "Mini Sudoku",
-          "description": "Smaller grids like 6x6 or 4x4 for quicker challenges, ideal for beginners or a short mental workout.",
-          "difficulty": "Beginner",
-          "popularity": 4.2
-        },
-        {
-          "name": "Killer Sudoku",
-          "description": "Combines Sudoku with arithmetic cage constraints, adding a layer of math to the classic puzzle.",
-          "difficulty": "Intermediate",
-          "popularity": 4.5
-        },
-        {
-          "name": "Samurai Sudoku",
-          "description": "Interconnected Sudoku grids that require solving multiple puzzles simultaneously, offering a truly complex challenge.",
-          "difficulty": "Advanced",
-          "popularity": 3.9
-        },
-        {
-          "name": "Hyper Sudoku",
-          "description": "A twist where additional overlapping regions must also follow Sudoku rules.",
-          "difficulty": "Intermediate",
-          "popularity": 4.3
-        }
-      ],
-      "historical_fact": "Sudoku was inspired by an 18th-century mathematical concept known as Latin Squares and gained global popularity after being published in Japanese puzzle magazines in the 1980s.",
-      "advanced_strategies": [
-        "X-Wing: Identifies patterns that limit number placement across multiple rows and columns.",
-        "Swordfish: Similar to X-Wing but involves three rows or columns.",
-        "XYZ-Wing: A tactic used to eliminate possibilities based on shared candidate numbers.",
-        "Jellyfish: Extends the Swordfish technique to four rows or columns."
-      ],
-      "history": {
-        "Inventor": "Howard Garns",
-        "Year Invented": "1979",
-        "Original Name": "Number Place",
-        "Milestone": "Became a worldwide phenomenon in the 2000s."
       },
-      "fun_fact": "The largest Sudoku puzzle ever created had 666 grids interconnected and took players months to solve!",
-      "content": {
-        "tutorials": [
+      {
+        "name": "Sudoku",
+        "description": "A logic-based number-placement puzzle where you fill a 9x9 grid so that each row, column, and 3x3 sub-grid contains the digits 1 through 9. Variations include Mini Sudoku (6x6), Killer Sudoku, and Samurai Sudoku, offering unique challenges to players of all skill levels.",
+        "variations": [
           {
-            "type": "text",
-            "content": "Start with the easiest numbers, usually those that appear most frequently in the grid. Use the process of elimination to deduce where numbers go. In Killer Sudoku, use the sum of cage clues to narrow down possibilities. Samurai Sudoku requires treating each grid as part of the whole puzzle."
+            "name": "Mini Sudoku",
+            "description": "Smaller grids like 6x6 or 4x4 for quicker challenges, ideal for beginners or a short mental workout.",
+            "difficulty": "Beginner",
+            "popularity": 4.2
           },
           {
-            "type": "video",
-            "title": "Sudoku Solving Techniques for Beginners",
-            "url": "https://www.youtube.com/watch?v=0-lMea8hF9s"
+            "name": "Killer Sudoku",
+            "description": "Combines Sudoku with arithmetic cage constraints, adding a layer of math to the classic puzzle.",
+            "difficulty": "Intermediate",
+            "popularity": 4.5
           },
           {
-            "type": "video",
-            "title": "Mastering Killer Sudoku",
-            "url": "https://www.youtube.com/watch?v=G4rRUtPx7Yg"
+            "name": "Samurai Sudoku",
+            "description": "Interconnected Sudoku grids that require solving multiple puzzles simultaneously, offering a truly complex challenge.",
+            "difficulty": "Advanced",
+            "popularity": 3.9
           },
           {
-            "type": "link",
-            "title": "Online Sudoku Solver and Tips",
-            "url": "https://www.sudoku.com/how-to-play/sudoku-rules-for-complete-beginners/"
-          },
-          {
-            "type": "link",
-            "title": "Advanced Sudoku Techniques",
-            "url": "https://www.sudokuwiki.org/sudoku.htm"
+            "name": "Hyper Sudoku",
+            "description": "A twist where additional overlapping regions must also follow Sudoku rules.",
+            "difficulty": "Intermediate",
+            "popularity": 4.3
           }
         ],
-        "tips": [
-          "Focus on rows, columns, or boxes that have the most numbers filled in.",
-          "Use pencil marks to keep track of possible numbers for each cell.",
-          "Look for hidden singles, where a number can only fit in one place within a row, column, or box.",
-          "In Killer Sudoku, prioritize solving cages with the smallest or largest sums.",
-          "Samurai Sudoku requires solving overlapping grids systematically, treating them as interconnected puzzles.",
-          "For Hyper Sudoku, identify overlapping regions early and ensure they adhere to Sudoku rules."
+        "main_video": "https://www.youtube.com/embed/kvU9_MVAiE0",
+        "historical_fact": "Sudoku was inspired by an 18th-century mathematical concept known as Latin Squares and gained global popularity after being published in Japanese puzzle magazines in the 1980s.",
+        "advanced_strategies": [
+          "X-Wing: Identifies patterns that limit number placement across multiple rows and columns.",
+          "Swordfish: Similar to X-Wing but involves three rows or columns.",
+          "XYZ-Wing: A tactic used to eliminate possibilities based on shared candidate numbers.",
+          "Jellyfish: Extends the Swordfish technique to four rows or columns."
         ],
-        "related_facts": [
-          "The modern Sudoku puzzle was popularized by Japanese publisher Nikoli in 1986.",
-          "The name 'Sudoku' is short for a Japanese phrase meaning 'single number.'",
-          "Sudoku puzzles are not math problems; they require logic and pattern recognition.",
-          "The largest Sudoku puzzle, consisting of 667 interconnected grids, was created in 2010."
-        ],
-        "resources": {
-          "apps": [
+        "history": {
+          "Inventor": "Howard Garns",
+          "Year Invented": "1979",
+          "Original Name": "Number Place",
+          "Milestone": "Became a worldwide phenomenon in the 2000s."
+        },
+        "fun_fact": "The largest Sudoku puzzle ever created had 666 grids interconnected and took players months to solve!",
+        "content": {
+          "tutorials": [
             {
-              "name": "Sudoku.com",
-              "url": "https://www.sudoku.com/",
-              "description": "Play Sudoku online with difficulty levels and various challenges."
+              "type": "text",
+              "content": "Start with the easiest numbers, usually those that appear most frequently in the grid. Use the process of elimination to deduce where numbers go. In Killer Sudoku, use the sum of cage clues to narrow down possibilities. Samurai Sudoku requires treating each grid as part of the whole puzzle."
             },
             {
-              "name": "Killer Sudoku by Logic Games",
-              "url": "https://www.logicgames.com/killer-sudoku/",
-              "description": "An app dedicated to solving Killer Sudoku puzzles."
+              "type": "video",
+              "title": "Sudoku Solving Techniques for Beginners",
+              "url": "https://www.youtube.com/embed/0-lMea8hF9s"
+            },
+            {
+              "type": "video",
+              "title": "Mastering Killer Sudoku",
+              "url": "https://www.youtube.com/embed/G4rRUtPx7Yg"
+            },
+            {
+              "type": "link",
+              "title": "Online Sudoku Solver and Tips",
+              "url": "https://www.sudoku.com/how-to-play/sudoku-rules-for-complete-beginners/"
+            },
+            {
+              "type": "link",
+              "title": "Advanced Sudoku Techniques",
+              "url": "https://www.sudokuwiki.org/sudoku.htm"
             }
           ],
-          "communities": [
-            {
-              "name": "Reddit Sudoku",
-              "url": "https://www.reddit.com/r/Sudoku/",
-              "description": "Discuss Sudoku strategies, share puzzles, and get tips from a global community."
-            },
-            {
-              "name": "Sudoku Solver Forum",
-              "url": "https://forum.sudokuwiki.org/",
-              "description": "Dive deep into advanced solving techniques with other enthusiasts."
-            }
-          ]
+          "tips": [
+            "Focus on rows, columns, or boxes that have the most numbers filled in.",
+            "Use pencil marks to keep track of possible numbers for each cell.",
+            "Look for hidden singles, where a number can only fit in one place within a row, column, or box.",
+            "In Killer Sudoku, prioritize solving cages with the smallest or largest sums.",
+            "Samurai Sudoku requires solving overlapping grids systematically, treating them as interconnected puzzles.",
+            "For Hyper Sudoku, identify overlapping regions early and ensure they adhere to Sudoku rules."
+          ],
+          "related_facts": [
+            "The modern Sudoku puzzle was popularized by Japanese publisher Nikoli in 1986.",
+            "The name 'Sudoku' is short for a Japanese phrase meaning 'single number.'",
+            "Sudoku puzzles are not math problems; they require logic and pattern recognition.",
+            "The largest Sudoku puzzle, consisting of 667 interconnected grids, was created in 2010."
+          ],
+          "resources": {
+            "apps": [
+              {
+                "name": "Sudoku.com",
+                "url": "https://www.sudoku.com/",
+                "description": "Play Sudoku online with difficulty levels and various challenges."
+              },
+              {
+                "name": "Killer Sudoku by Logic Games",
+                "url": "https://www.logicgames.com/killer-sudoku/",
+                "description": "An app dedicated to solving Killer Sudoku puzzles."
+              }
+            ],
+            "communities": [
+              {
+                "name": "Reddit Sudoku",
+                "url": "https://www.reddit.com/r/Sudoku/",
+                "description": "Discuss Sudoku strategies, share puzzles, and get tips from a global community."
+              },
+              {
+                "name": "Sudoku Solver Forum",
+                "url": "https://forum.sudokuwiki.org/",
+                "description": "Dive deep into advanced solving techniques with other enthusiasts."
+              }
+            ]
+          }
         }
-      }
-    },
-    {
-      "name": "Crossword Puzzle",
-      "description": "A word puzzle where you fill in the blanks based on given clues. Variations include cryptic crosswords, themed puzzles, and crossnumber puzzles, each offering unique challenges to word enthusiasts.",
-      "variations": [
-        {
-          "name": "Cryptic Crossword",
-          "description": "Clues involve wordplay, anagrams, and double meanings that require lateral thinking.",
-          "difficulty": "Advanced",
-          "popularity": 4.5
-        },
-        {
-          "name": "Themed Crossword",
-          "description": "All clues or answers revolve around a central theme, making it perfect for fans of specific topics.",
-          "difficulty": "Intermediate",
-          "popularity": 4.3
-        },
-        {
-          "name": "Crossnumber Puzzle",
-          "description": "Uses numbers instead of words in the grid, creating a mathematical twist.",
-          "difficulty": "Intermediate",
-          "popularity": 3.8
-        },
-        {
-          "name": "Mini Crossword",
-          "description": "A smaller grid for quick and casual solving, typically with simpler clues.",
-          "difficulty": "Beginner",
-          "popularity": 4.7
-        },
-        {
-          "name": "Diagramless Crossword",
-          "description": "Players must figure out the grid layout as they solve, adding an extra layer of challenge.",
-          "difficulty": "Expert",
-          "popularity": 3.9
-        }
-      ],
-      "historical_fact": "The first modern crossword puzzle was created by journalist Arthur Wynne and published in the New York World on December 21, 1913.",
-      "advanced_strategies": [
-        "Pattern Recognition: Use known letters to infer words and fill intersecting spaces.",
-        "Themed Clues: Identify overarching themes in the puzzle to guide guesses.",
-        "Word Stemming: Consider common prefixes, suffixes, and roots.",
-        "Reverse Solving: Work backward from confirmed answers to deduce others."
-      ],
-      "tips": [
-        "Start with short or frequently intersecting words to build momentum.",
-        "For cryptic clues, think laterally; they often involve puns or wordplay.",
-        "Use a dictionary or thesaurus to expand your vocabulary while solving.",
-        "In themed puzzles, focus on clues that align with the central theme.",
-        "Crossnumber puzzles benefit from familiarity with basic arithmetic or number sequences."
-      ],
-      "fun_fact": "The New York Times Crossword is considered the 'gold standard' of puzzles, with Monday being the easiest and Sunday the hardest.",
-      "history": {
-        "Inventor": "Arthur Wynne",
-        "Year Invented": "1913",
-        "Original Name": "Word-Cross",
-        "Milestone": "Became a popular daily feature in newspapers worldwide."
       },
-      "content": {
-        "tutorials": [
+      {
+        "name": "Crossword Puzzle",
+        "description": "A word puzzle where you fill in the blanks based on given clues. Variations include cryptic crosswords, themed puzzles, and crossnumber puzzles, each offering unique challenges to word enthusiasts.",
+        "variations": [
           {
-            "type": "text",
-            "content": "Start with the shortest words and fill in the blanks based on the clues. Use intersecting letters to narrow down possibilities. Cryptic crosswords require interpreting clues with double meanings, such as anagrams or puns."
+            "name": "Cryptic Crossword",
+            "description": "Clues involve wordplay, anagrams, and double meanings that require lateral thinking.",
+            "difficulty": "Advanced",
+            "popularity": 4.5
           },
           {
-            "type": "video",
-            "title": "Crossword Solving Strategies",
-            "url": "https://www.youtube.com/watch?v=dF2HkE6NxUo"
+            "name": "Themed Crossword",
+            "description": "All clues or answers revolve around a central theme, making it perfect for fans of specific topics.",
+            "difficulty": "Intermediate",
+            "popularity": 4.3
           },
           {
-            "type": "link",
-            "title": "How to Master Cryptic Crosswords",
-            "url": "https://www.theguardian.com/lifeandstyle/series/learn-how-to-solve-cryptic-crosswords"
+            "name": "Crossnumber Puzzle",
+            "description": "Uses numbers instead of words in the grid, creating a mathematical twist.",
+            "difficulty": "Intermediate",
+            "popularity": 3.8
           },
           {
-            "type": "link",
-            "title": "Printable Crossword Puzzles for All Levels",
-            "url": "https://www.crosswordpuzzles.com/"
+            "name": "Mini Crossword",
+            "description": "A smaller grid for quick and casual solving, typically with simpler clues.",
+            "difficulty": "Beginner",
+            "popularity": 4.7
+          },
+          {
+            "name": "Diagramless Crossword",
+            "description": "Players must figure out the grid layout as they solve, adding an extra layer of challenge.",
+            "difficulty": "Expert",
+            "popularity": 3.9
           }
         ],
+        "main_video": "https://www.youtube.com/embed/edgpOYJKxfw",
+        "historical_fact": "The first modern crossword puzzle was created by journalist Arthur Wynne and published in the New York World on December 21, 1913.",
+        "advanced_strategies": [
+          "Pattern Recognition: Use known letters to infer words and fill intersecting spaces.",
+          "Themed Clues: Identify overarching themes in the puzzle to guide guesses.",
+          "Word Stemming: Consider common prefixes, suffixes, and roots.",
+          "Reverse Solving: Work backward from confirmed answers to deduce others."
+        ],
         "tips": [
-          "Look for plural clues that end in 's' and see if they match the grid.",
-          "Fill in the easiest clues first and build on them.",
-          "Consider common prefixes or suffixes when guessing words.",
-          "In cryptic crosswords, look for anagrams, hidden words, or wordplay in the clues.",
-          "Use themed puzzles as a fun way to expand vocabulary on specific topics."
+          "Start with short or frequently intersecting words to build momentum.",
+          "For cryptic clues, think laterally; they often involve puns or wordplay.",
+          "Use a dictionary or thesaurus to expand your vocabulary while solving.",
+          "In themed puzzles, focus on clues that align with the central theme.",
+          "Crossnumber puzzles benefit from familiarity with basic arithmetic or number sequences."
         ],
-        "related_facts": [
-          "Crosswords first appeared in a New York newspaper in 1913 and became an instant hit.",
-          "The largest crossword puzzle ever created had over 91,000 squares!",
-          "Crosswords are scientifically proven to help maintain cognitive health and delay the onset of dementia."
-        ],
-        "resources": {
-          "apps": [
+        "fun_fact": "The New York Times Crossword is considered the 'gold standard' of puzzles, with Monday being the easiest and Sunday the hardest.",
+        "history": {
+          "Inventor": "Arthur Wynne",
+          "Year Invented": "1913",
+          "Original Name": "Word-Cross",
+          "Milestone": "Became a popular daily feature in newspapers worldwide."
+        },
+        "content": {
+          "tutorials": [
             {
-              "name": "NYT Crossword App",
-              "url": "https://www.nytimes.com/crosswords",
-              "description": "Solve daily crosswords with difficulty levels ranging from easy to expert."
+              "type": "text",
+              "content": "Start with the shortest words and fill in the blanks based on the clues. Use intersecting letters to narrow down possibilities. Cryptic crosswords require interpreting clues with double meanings, such as anagrams or puns."
             },
             {
-              "name": "Crossword Solver by AppyNation",
-              "url": "https://apps.apple.com/crossword-solver",
-              "description": "An app to solve and create crosswords for enthusiasts."
+              "type": "video",
+              "title": "Crossword Solving Strategies",
+              "url": "https://www.youtube.com/embed/dF2HkE6NxUo"
+            },
+            {
+              "type": "link",
+              "title": "How to Master Cryptic Crosswords",
+              "url": "https://www.theguardian.com/lifeandstyle/series/learn-how-to-solve-cryptic-crosswords"
+            },
+            {
+              "type": "link",
+              "title": "Printable Crossword Puzzles for All Levels",
+              "url": "https://www.crosswordpuzzles.com/"
             }
           ],
-          "communities": [
-            {
-              "name": "Reddit Crossword",
-              "url": "https://www.reddit.com/r/crossword/",
-              "description": "Join discussions, share puzzles, and find help with tough clues."
-            },
-            {
-              "name": "Crossword Puzzle Forum",
-              "url": "https://forum.crosswordsolver.org/",
-              "description": "Discuss solving techniques, share custom grids, and explore advanced tips."
-            }
-          ]
+          "tips": [
+            "Look for plural clues that end in 's' and see if they match the grid.",
+            "Fill in the easiest clues first and build on them.",
+            "Consider common prefixes or suffixes when guessing words.",
+            "In cryptic crosswords, look for anagrams, hidden words, or wordplay in the clues.",
+            "Use themed puzzles as a fun way to expand vocabulary on specific topics."
+          ],
+          "related_facts": [
+            "Crosswords first appeared in a New York newspaper in 1913 and became an instant hit.",
+            "The largest crossword puzzle ever created had over 91,000 squares!",
+            "Crosswords are scientifically proven to help maintain cognitive health and delay the onset of dementia."
+          ],
+          "resources": {
+            "apps": [
+              {
+                "name": "NYT Crossword App",
+                "url": "https://www.nytimes.com/crosswords",
+                "description": "Solve daily crosswords with difficulty levels ranging from easy to expert."
+              },
+              {
+                "name": "Crossword Solver by AppyNation",
+                "url": "https://apps.apple.com/crossword-solver",
+                "description": "An app to solve and create crosswords for enthusiasts."
+              }
+            ],
+            "communities": [
+              {
+                "name": "Reddit Crossword",
+                "url": "https://www.reddit.com/r/crossword/",
+                "description": "Join discussions, share puzzles, and find help with tough clues."
+              },
+              {
+                "name": "Crossword Puzzle Forum",
+                "url": "https://forum.crosswordsolver.org/",
+                "description": "Discuss solving techniques, share custom grids, and explore advanced tips."
+              }
+            ]
+          }
         }
-      }
-    },
-    {
-      "name": "Jigsaw Puzzle",
-      "description": "A tiling puzzle where you assemble interlocking pieces to form a complete image. Variations include 3D puzzles, double-sided puzzles, and gradient puzzles, each offering unique challenges and experiences.",
-      "variations": [
-        {
-          "name": "3D Puzzle",
-          "description": "Pieces form three-dimensional structures like famous landmarks or sculptures.",
-          "difficulty": "Intermediate",
-          "popularity": 4.7
-        },
-        {
-          "name": "Double-Sided Puzzle",
-          "description": "Features two distinct puzzles on either side of the pieces, doubling the challenge.",
-          "difficulty": "Advanced",
-          "popularity": 4.3
-        },
-        {
-          "name": "Gradient Puzzle",
-          "description": "A puzzle with subtle color gradients, requiring keen attention to shades.",
-          "difficulty": "Expert",
-          "popularity": 4.0
-        },
-        {
-          "name": "Mystery Puzzle",
-          "description": "Solve the puzzle without knowing the final image in advance.",
-          "difficulty": "Intermediate",
-          "popularity": 4.2
-        },
-        {
-          "name": "Custom Photo Puzzle",
-          "description": "Create a puzzle using your favorite photo, adding a personal touch.",
-          "difficulty": "Varies",
-          "popularity": 4.8
-        }
-      ],
-      "historical_fact": "Jigsaw puzzles were invented around 1760 by John Spilsbury, a London cartographer, who used them to teach geography.",
-      "advanced_strategies": [
-        "Edge Sorting: Assemble the border pieces first to establish the puzzle frame.",
-        "Color Sorting: Group pieces by color or pattern for faster assembly.",
-        "Pattern Recognition: Focus on recurring shapes or designs within the puzzle.",
-        "Chunk Building: Work on smaller sections and then combine them."
-      ],
-      "fun_fact": "The largest jigsaw puzzle ever created consists of over 551,000 pieces and measures 48 feet long!",
-      "history": {
-        "Inventor": "John Spilsbury",
-        "Year Invented": "1767",
-        "Original Name": "Dissected Map",
-        "Milestone": "Became popular as a pastime in the 20th century."
       },
-      "content": {
-        "tutorials": [
+      {
+        "name": "Jigsaw Puzzle",
+        "description": "A tiling puzzle where you assemble interlocking pieces to form a complete image. Variations include 3D puzzles, double-sided puzzles, and gradient puzzles, each offering unique challenges and experiences.",
+        "variations": [
           {
-            "type": "text",
-            "content": "Sort the pieces by edge, color, or pattern. Assemble the border first to define the puzzle's structure. For 3D puzzles, build the base before adding vertical layers."
+            "name": "3D Puzzle",
+            "description": "Pieces form three-dimensional structures like famous landmarks or sculptures.",
+            "difficulty": "Intermediate",
+            "popularity": 4.7
           },
           {
-            "type": "video",
-            "title": "Jigsaw Puzzle Tips for Beginners",
-            "url": "https://www.youtube.com/watch?v=SV12puKJCQw"
+            "name": "Double-Sided Puzzle",
+            "description": "Features two distinct puzzles on either side of the pieces, doubling the challenge.",
+            "difficulty": "Advanced",
+            "popularity": 4.3
           },
           {
-            "type": "link",
-            "title": "Advanced Jigsaw Puzzle Solving Strategies",
-            "url": "https://www.jigsawjunkies.com/advanced-tips/"
+            "name": "Gradient Puzzle",
+            "description": "A puzzle with subtle color gradients, requiring keen attention to shades.",
+            "difficulty": "Expert",
+            "popularity": 4.0
+          },
+          {
+            "name": "Mystery Puzzle",
+            "description": "Solve the puzzle without knowing the final image in advance.",
+            "difficulty": "Intermediate",
+            "popularity": 4.2
+          },
+          {
+            "name": "Custom Photo Puzzle",
+            "description": "Create a puzzle using your favorite photo, adding a personal touch.",
+            "difficulty": "Varies",
+            "popularity": 4.8
           }
         ],
-        "tips": [
-          "Sort pieces into edge pieces, corner pieces, and middle pieces for better organization.",
-          "Focus on unique patterns or distinct sections of the image to make faster progress.",
-          "Use sorting trays, boards, or mats to organize and move pieces efficiently.",
-          "Work under good lighting to distinguish subtle color differences.",
-          "For large puzzles, assemble sections separately and connect them later."
+        "main_video": "https://www.youtube.com/embed/oRlCNXdcMc0",
+        "historical_fact": "Jigsaw puzzles were invented around 1760 by John Spilsbury, a London cartographer, who used them to teach geography.",
+        "advanced_strategies": [
+          "Edge Sorting: Assemble the border pieces first to establish the puzzle frame.",
+          "Color Sorting: Group pieces by color or pattern for faster assembly.",
+          "Pattern Recognition: Focus on recurring shapes or designs within the puzzle.",
+          "Chunk Building: Work on smaller sections and then combine them."
         ],
-        "related_facts": [
-          "Jigsaw puzzles originated in the 18th century when maps were cut into pieces for educational purposes.",
-          "The term 'jigsaw' comes from the saw used to cut early puzzles.",
-          "Solving puzzles improves cognitive skills and is known to reduce stress."
-        ],
-        "resources": {
-          "online_stores": [
+        "fun_fact": "The largest jigsaw puzzle ever created consists of over 551,000 pieces and measures 48 feet long!",
+        "history": {
+          "Inventor": "John Spilsbury",
+          "Year Invented": "1767",
+          "Original Name": "Dissected Map",
+          "Milestone": "Became popular as a pastime in the 20th century."
+        },
+        "content": {
+          "tutorials": [
             {
-              "name": "Puzzle Warehouse",
-              "url": "https://www.puzzlewarehouse.com/",
-              "description": "A wide selection of jigsaw puzzles for all skill levels and interests."
+              "type": "text",
+              "content": "Sort the pieces by edge, color, or pattern. Assemble the border first to define the puzzle's structure. For 3D puzzles, build the base before adding vertical layers."
             },
             {
-              "name": "Ravensburger Puzzles",
-              "url": "https://www.ravensburger.com/",
-              "description": "High-quality puzzles with beautiful designs, including 3D puzzles."
+              "type": "video",
+              "title": "Jigsaw Puzzle Tips for Beginners",
+              "url": "https://www.youtube.com/embed/SV12puKJCQw"
+            },
+            {
+              "type": "link",
+              "title": "Advanced Jigsaw Puzzle Solving Strategies",
+              "url": "https://www.jigsawjunkies.com/advanced-tips/"
             }
           ],
-          "communities": [
-            {
-              "name": "Jigsaw Puzzle Reddit Community",
-              "url": "https://www.reddit.com/r/Jigsawpuzzles/",
-              "description": "Discuss puzzles, share tips, and showcase completed works."
-            },
-            {
-              "name": "Puzzle Hobby",
-              "url": "https://puzzlehobby.com/",
-              "description": "A blog and forum dedicated to puzzle enthusiasts."
-            }
-          ]
+          "tips": [
+            "Sort pieces into edge pieces, corner pieces, and middle pieces for better organization.",
+            "Focus on unique patterns or distinct sections of the image to make faster progress.",
+            "Use sorting trays, boards, or mats to organize and move pieces efficiently.",
+            "Work under good lighting to distinguish subtle color differences.",
+            "For large puzzles, assemble sections separately and connect them later."
+          ],
+          "related_facts": [
+            "Jigsaw puzzles originated in the 18th century when maps were cut into pieces for educational purposes.",
+            "The term 'jigsaw' comes from the saw used to cut early puzzles.",
+            "Solving puzzles improves cognitive skills and is known to reduce stress."
+          ],
+          "resources": {
+            "online_stores": [
+              {
+                "name": "Puzzle Warehouse",
+                "url": "https://www.puzzlewarehouse.com/",
+                "description": "A wide selection of jigsaw puzzles for all skill levels and interests."
+              },
+              {
+                "name": "Ravensburger Puzzles",
+                "url": "https://www.ravensburger.com/",
+                "description": "High-quality puzzles with beautiful designs, including 3D puzzles."
+              }
+            ],
+            "communities": [
+              {
+                "name": "Jigsaw Puzzle Reddit Community",
+                "url": "https://www.reddit.com/r/Jigsawpuzzles/",
+                "description": "Discuss puzzles, share tips, and showcase completed works."
+              },
+              {
+                "name": "Puzzle Hobby",
+                "url": "https://puzzlehobby.com/",
+                "description": "A blog and forum dedicated to puzzle enthusiasts."
+              }
+            ]
+          }
         }
-      }
-    },
-    {
-      "name": "Tower of Hanoi",
-      "description": "A mathematical puzzle where you move a stack of disks from one rod to another, following specific rules. The objective is to transfer all disks to the target rod in the minimum number of moves. Variations include multi-peg setups, reversed rules, and time-based challenges.",
-      "variations": [
-        {
-          "name": "Classic Tower of Hanoi",
-          "description": "Standard 3-rod version with increasing disk counts.",
-          "difficulty": "Beginner to Intermediate",
-          "popularity": 4.8
-        },
-        {
-          "name": "Multi-Peg Tower",
-          "description": "Adds extra rods, increasing complexity and strategy.",
-          "difficulty": "Advanced",
-          "popularity": 4.5
-        },
-        {
-          "name": "Reversed Rules Tower",
-          "description": "Reverse the process by starting from the final configuration and planning backward.",
-          "difficulty": "Intermediate",
-          "popularity": 4.2
-        },
-        {
-          "name": "Timed Tower",
-          "description": "Solve the puzzle within a set time limit, adding urgency.",
-          "difficulty": "Variable",
-          "popularity": 4.3
-        }
-      ],
-      "historical_fact": "The Tower of Hanoi puzzle was invented in 1883 by French mathematician Édouard Lucas and is based on an ancient legend involving monks moving golden discs.",
-      "advanced_strategies": [
-        "Recursive Decomposition: Solve smaller sub-problems by moving n-1 discs.",
-        "Binary Representation: Map the solution to binary numbers for efficient planning.",
-        "Iterative Solution: Use an algorithm to systematically move the discs without recursion.",
-        "Pattern Recognition: Identify repeating movement sequences across disc sizes."
-      ],
-      "fun_fact": "The Tower of Hanoi puzzle was invented in 1883 by French mathematician Édouard Lucas and was inspired by a legend about a temple with a large version of the puzzle.",
-      "history": {
-        "Inventor": "Édouard Lucas",
-        "Year Invented": "1883",
-        "Original Name": "The Tower of Brahma",
-        "Milestone": "Became a popular mathematical puzzle and a symbol of recursive algorithms."
       },
-      "content": {
-        "tutorials": [
+      {
+        "name": "Tower of Hanoi",
+        "description": "A mathematical puzzle where you move a stack of disks from one rod to another, following specific rules. The objective is to transfer all disks to the target rod in the minimum number of moves. Variations include multi-peg setups, reversed rules, and time-based challenges.",
+        "variations": [
           {
-            "type": "text",
-            "content": "Move the disks one at a time, ensuring no larger disk is placed on top of a smaller one. Use the auxiliary rod strategically to hold disks temporarily. For multi-peg variations, plan moves carefully to optimize the use of additional rods."
+            "name": "Classic Tower of Hanoi",
+            "description": "Standard 3-rod version with increasing disk counts.",
+            "difficulty": "Beginner to Intermediate",
+            "popularity": 4.8
           },
           {
-            "type": "video",
-            "title": "How to Solve the Tower of Hanoi",
-            "url": "https://www.youtube.com/watch?v=2SUvWfNJSsM"
+            "name": "Multi-Peg Tower",
+            "description": "Adds extra rods, increasing complexity and strategy.",
+            "difficulty": "Advanced",
+            "popularity": 4.5
           },
           {
-            "type": "link",
-            "title": "Interactive Tower of Hanoi Solver",
-            "url": "https://www.mathsisfun.com/games/towerofhanoi.html"
+            "name": "Reversed Rules Tower",
+            "description": "Reverse the process by starting from the final configuration and planning backward.",
+            "difficulty": "Intermediate",
+            "popularity": 4.2
+          },
+          {
+            "name": "Timed Tower",
+            "description": "Solve the puzzle within a set time limit, adding urgency.",
+            "difficulty": "Variable",
+            "popularity": 4.3
           }
         ],
-        "tips": [
-          "Start by moving the smallest disk to the target rod and build the solution step-by-step.",
-          "The minimum number of moves required is 2^n - 1, where n is the number of disks.",
-          "Break the problem into subproblems: solve for n-1 disks, then move the largest disk, and finally solve for the remaining disks.",
-          "In multi-peg variations, explore algorithms like the Frame-Stewart algorithm for optimized moves.",
-          "Practice visualizing moves in advance to develop a clear strategy."
+        "main_video": "https://www.youtube.com/embed/_bWLwz_PquI",
+        "historical_fact": "The Tower of Hanoi puzzle was invented in 1883 by French mathematician Édouard Lucas and is based on an ancient legend involving monks moving golden discs.",
+        "advanced_strategies": [
+          "Recursive Decomposition: Solve smaller sub-problems by moving n-1 discs.",
+          "Binary Representation: Map the solution to binary numbers for efficient planning.",
+          "Iterative Solution: Use an algorithm to systematically move the discs without recursion.",
+          "Pattern Recognition: Identify repeating movement sequences across disc sizes."
         ],
-        "related_facts": [
-          "The puzzle is often used to teach recursion in computer science.",
-          "If a Tower of Hanoi puzzle with 64 disks were solved at one move per second, it would take 585 billion years to complete!"
-        ],
-        "resources": {
-          "online_simulators": [
-            {
-              "name": "Tower of Hanoi Online Solver",
-              "url": "https://www.cut-the-knot.org/recurrence/hanoi.shtml",
-              "description": "Simulate and solve the Tower of Hanoi puzzle interactively."
-            }
-          ],
-          "related_games": [
-            {
-              "name": "Hanoi Redux",
-              "url": "https://www.hanoiredux.com/",
-              "description": "A modern twist on the classic Tower of Hanoi game with additional features."
-            }
-          ]
-        }
-      }
-    },
-    {
-      "name": "15 Puzzle",
-      "description": "A sliding puzzle consisting of a 4x4 grid with 15 numbered tiles and one empty space. The goal is to rearrange the tiles into numerical order by sliding them around. Variations include 3x3, 5x5, and even larger grids for more challenging puzzles.",
-      "variations": [
-        {
-          "name": "Classic 15 Puzzle",
-          "description": "The standard 4x4 grid with 15 numbered tiles.",
-          "difficulty": "Intermediate",
-          "popularity": 4.7
+        "fun_fact": "The Tower of Hanoi puzzle was invented in 1883 by French mathematician Édouard Lucas and was inspired by a legend about a temple with a large version of the puzzle.",
+        "history": {
+          "Inventor": "Édouard Lucas",
+          "Year Invented": "1883",
+          "Original Name": "The Tower of Brahma",
+          "Milestone": "Became a popular mathematical puzzle and a symbol of recursive algorithms."
         },
-        {
-          "name": "3x3 Puzzle",
-          "description": "A smaller, 3x3 version with 8 tiles and a single empty space for faster challenges.",
-          "difficulty": "Beginner",
-          "popularity": 4.5
-        },
-        {
-          "name": "5x5 Puzzle",
-          "description": "A larger, 5x5 version with 24 tiles, offering more complexity and strategic depth.",
-          "difficulty": "Advanced",
-          "popularity": 4.8
-        },
-        {
-          "name": "Hexagonal Puzzle",
-          "description": "A variant of the 15 Puzzle with hexagonal pieces instead of square tiles.",
-          "difficulty": "Expert",
-          "popularity": 4.2
-        },
-        {
-          "name": "Non-Square Grid Puzzle",
-          "description": "The puzzle is based on irregular grids, offering a unique challenge in arranging the tiles.",
-          "difficulty": "Expert",
-          "popularity": 4.3
-        }
-      ],
-      "historical_fact": "The 15 Puzzle was invented by Noyes Chapman in 1874 and became a global craze in the late 19th century.",
-      "advanced_strategies": [
-        "Row by Row Solving: Solve the top rows first and move sequentially downward.",
-        "Corner Strategies: Position corner pieces early to reduce complexity.",
-        "Pattern Analysis: Recognize key patterns to minimize unnecessary moves.",
-        "Parity Correction: Plan moves to resolve situations with unreachable states."
-      ],
-      "fun_fact": "The 15 Puzzle was originally sold as a toy in the late 19th century and was a popular pastime in the United States and Europe. It's also known for being a challenging puzzle that helped inspire algorithms in computer science.",
-      "history": {
-        "Inventor": "Noyes Chapman",
-        "Year Invented": "1874",
-        "Original Name": "Gem Puzzle",
-        "Milestone": "Became a popular puzzle after being featured in the New York Times in the 20th century."
-      },
-      "content": {
-        "tutorials": [
-          {
-            "type": "text",
-            "content": "Start by solving the first row and first column, then work on the remaining sections. Focus on small areas like corners and edges to simplify the process. For larger grids like the 5x5 puzzle, breaking it down into smaller subgrids can help."
-          },
-          {
-            "type": "video",
-            "title": "15 Puzzle Solving Techniques",
-            "url": "https://www.youtube.com/watch?v=aZvu2aTcn5s"
-          },
-          {
-            "type": "link",
-            "title": "Interactive 15 Puzzle Solver",
-            "url": "https://www.puzzle-solver.com/15-puzzle/"
-          }
-        ],
-        "tips": [
-          "Work on positioning tiles in small sections rather than moving each tile individually.",
-          "Use the empty space strategically to shuffle tiles and create room for movement.",
-          "Always focus on the first row and column before solving the middle section.",
-          "In larger variations, prioritize solving the corners and edges first before tackling the inner tiles.",
-          "Memorize common patterns (e.g., corner and edge configurations) to reduce trial and error when solving."
-        ],
-        "related_facts": [
-          "The puzzle has been studied mathematically, and it's known that not all random tile configurations are solvable.",
-          "The 15 Puzzle was popularized by a promotional game in 1878 where players would attempt to solve the puzzle in a race against time."
-        ],
-        "resources": {
-          "online_simulators": [
+        "content": {
+          "tutorials": [
             {
-              "name": "15 Puzzle Online Solver",
-              "url": "https://www.puzzle-solver.com/15-puzzle/",
-              "description": "Solve the 15 Puzzle interactively with a customizable grid size."
-            }
-          ],
-          "related_games": [
-            {
-              "name": "Sliding Puzzle",
-              "url": "https://www.puzzle-games.com/sliding-puzzle/",
-              "description": "A similar puzzle game that uses sliding tiles to solve a picture puzzle."
+              "type": "text",
+              "content": "Move the disks one at a time, ensuring no larger disk is placed on top of a smaller one. Use the auxiliary rod strategically to hold disks temporarily. For multi-peg variations, plan moves carefully to optimize the use of additional rods."
             },
             {
-              "name": "Super Sliding Puzzle",
-              "url": "https://www.super-sliding-puzzle.com/",
-              "description": "A more challenging version with larger grids and extra obstacles."
-            }
-          ]
-        }
-      }
-    },
-    {
-      "name": "Logic Grid Puzzles",
-      "description": "Logic grid puzzles challenge you to use clues to fill in a grid and deduce relationships between different categories. Variations include themed grids, multi-level logic challenges, and puzzles with different complexity levels.",
-      "variations": [
-        {
-          "name": "Classic Logic Grid",
-          "description": "The standard version where you fill in a grid using logical deduction from a set of clues.",
-          "difficulty": "Intermediate",
-          "popularity": 4.6
-        },
-        {
-          "name": "Themed Logic Grid",
-          "description": "A variation where the grid involves a specific theme (e.g., animals, professions, countries) that provides additional clues.",
-          "difficulty": "Advanced",
-          "popularity": 4.7
-        },
-        {
-          "name": "Multi-Level Logic Puzzle",
-          "description": "Multiple interconnected logic grids that require you to solve smaller puzzles and combine their results.",
-          "difficulty": "Expert",
-          "popularity": 4.8
-        },
-        {
-          "name": "Numeric Logic Grid",
-          "description": "A variation that involves numbers instead of words, requiring mathematical reasoning to deduce relationships.",
-          "difficulty": "Advanced",
-          "popularity": 4.5
-        }
-      ],
-      "historical_fact": "Logic grid puzzles gained prominence in the 20th century and are often associated with the works of Raymond Smullyan, a logician and puzzle creator.",
-      "advanced_strategies": [
-        "Elimination Method: Systematically rule out impossible options in the grid.",
-        "Deductive Chains: Use a series of logical deductions to fill in gaps.",
-        "Clue Integration: Cross-reference multiple clues for consistency.",
-        "Grouping Techniques: Organize similar clues together for faster solving."
-      ],
-      "fun_fact": "Logic Grid Puzzles originated in the 1980s as a way to combine deductive reasoning with puzzle-solving skills. They are sometimes called 'Einstein Puzzles' due to their challenging nature.",
-      "history": {
-        "Inventor": "Unknown",
-        "Year Invented": "Late 20th century",
-        "Original Name": "Logic Puzzles",
-        "Milestone": "Became popular in newspapers and puzzle books in the 2000s."
-      },
-      "content": {
-        "tutorials": [
-          {
-            "type": "text",
-            "content": "Read all clues carefully and start filling in the grid with definitive information. Use a process of elimination to fill in the rest. In multi-level puzzles, solve smaller grids first and combine results for the final solution."
-          },
-          {
-            "type": "video",
-            "title": "How to Solve Logic Grid Puzzles",
-            "url": "https://www.youtube.com/watch?v=UDnyduf4YTM"
-          },
-          {
-            "type": "link",
-            "title": "Interactive Logic Grid Puzzle Solver",
-            "url": "https://www.logicgridpuzzles.com/solver/"
-          }
-        ],
-        "tips": [
-          "Use a grid to organize possible and impossible relationships. Mark off impossible connections to narrow down options.",
-          "Look for clues that establish direct relationships between items. These clues are often easier to process.",
-          "Deduction is key—start with the most certain information and work your way through the puzzle.",
-          "In themed grids, apply your knowledge of the subject to solve clues faster. For example, knowing the names of popular animals can help you with a themed puzzle.",
-          "For multi-level puzzles, solve each individual grid first. Once you have answers for all levels, combine them logically to reach the final solution."
-        ],
-        "related_facts": [
-          "It is said that Albert Einstein created one of the first logic grid puzzles in the early 20th century, and only 2% of the population could solve it.",
-          "Many modern logic grid puzzles are now available in app format, making them easier to access and solve on the go."
-        ],
-        "resources": {
-          "online_simulators": [
-            {
-              "name": "Logic Grid Puzzle Online",
-              "url": "https://www.logicgridpuzzles.com/",
-              "description": "A website offering interactive logic grid puzzles with varying levels of difficulty."
-            }
-          ],
-          "related_games": [
-            {
-              "name": "Einstein Puzzle",
-              "url": "https://www.einstein-puzzle.com/",
-              "description": "Solve the famous logic grid puzzle that only 2% of the population is said to be able to complete."
+              "type": "video",
+              "title": "How to Solve the Tower of Hanoi",
+              "url": "https://www.youtube.com/embed/2SUvWfNJSsM"
             },
             {
-              "name": "Mastermind",
-              "url": "https://www.mastermind-puzzle.com/",
-              "description": "A classic game that involves guessing a secret code based on clues, involving similar deductive reasoning skills."
+              "type": "link",
+              "title": "Interactive Tower of Hanoi Solver",
+              "url": "https://www.mathsisfun.com/games/towerofhanoi.html"
             }
-          ]
+          ],
+          "tips": [
+            "Start by moving the smallest disk to the target rod and build the solution step-by-step.",
+            "The minimum number of moves required is 2^n - 1, where n is the number of disks.",
+            "Break the problem into subproblems: solve for n-1 disks, then move the largest disk, and finally solve for the remaining disks.",
+            "In multi-peg variations, explore algorithms like the Frame-Stewart algorithm for optimized moves.",
+            "Practice visualizing moves in advance to develop a clear strategy."
+          ],
+          "related_facts": [
+            "The puzzle is often used to teach recursion in computer science.",
+            "If a Tower of Hanoi puzzle with 64 disks were solved at one move per second, it would take 585 billion years to complete!"
+          ],
+          "resources": {
+            "online_simulators": [
+              {
+                "name": "Tower of Hanoi Online Solver",
+                "url": "https://www.cut-the-knot.org/recurrence/hanoi.shtml",
+                "description": "Simulate and solve the Tower of Hanoi puzzle interactively."
+              }
+            ],
+            "related_games": [
+              {
+                "name": "Hanoi Redux",
+                "url": "https://www.hanoiredux.com/",
+                "description": "A modern twist on the classic Tower of Hanoi game with additional features."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "15 Puzzle",
+        "description": "A sliding puzzle consisting of a 4x4 grid with 15 numbered tiles and one empty space. The goal is to rearrange the tiles into numerical order by sliding them around. Variations include 3x3, 5x5, and even larger grids for more challenging puzzles.",
+        "variations": [
+          {
+            "name": "Classic 15 Puzzle",
+            "description": "The standard 4x4 grid with 15 numbered tiles.",
+            "difficulty": "Intermediate",
+            "popularity": 4.7
+          },
+          {
+            "name": "3x3 Puzzle",
+            "description": "A smaller, 3x3 version with 8 tiles and a single empty space for faster challenges.",
+            "difficulty": "Beginner",
+            "popularity": 4.5
+          },
+          {
+            "name": "5x5 Puzzle",
+            "description": "A larger, 5x5 version with 24 tiles, offering more complexity and strategic depth.",
+            "difficulty": "Advanced",
+            "popularity": 4.8
+          },
+          {
+            "name": "Hexagonal Puzzle",
+            "description": "A variant of the 15 Puzzle with hexagonal pieces instead of square tiles.",
+            "difficulty": "Expert",
+            "popularity": 4.2
+          },
+          {
+            "name": "Non-Square Grid Puzzle",
+            "description": "The puzzle is based on irregular grids, offering a unique challenge in arranging the tiles.",
+            "difficulty": "Expert",
+            "popularity": 4.3
+          }
+        ],
+        "main_video": "https://www.youtube.com/embed/NWt0wd8hPUE",
+        "historical_fact": "The 15 Puzzle was invented by Noyes Chapman in 1874 and became a global craze in the late 19th century.",
+        "advanced_strategies": [
+          "Row by Row Solving: Solve the top rows first and move sequentially downward.",
+          "Corner Strategies: Position corner pieces early to reduce complexity.",
+          "Pattern Analysis: Recognize key patterns to minimize unnecessary moves.",
+          "Parity Correction: Plan moves to resolve situations with unreachable states."
+        ],
+        "fun_fact": "The 15 Puzzle was originally sold as a toy in the late 19th century and was a popular pastime in the United States and Europe. It's also known for being a challenging puzzle that helped inspire algorithms in computer science.",
+        "history": {
+          "Inventor": "Noyes Chapman",
+          "Year Invented": "1874",
+          "Original Name": "Gem Puzzle",
+          "Milestone": "Became a popular puzzle after being featured in the New York Times in the 20th century."
+        },
+        "content": {
+          "tutorials": [
+            {
+              "type": "text",
+              "content": "Start by solving the first row and first column, then work on the remaining sections. Focus on small areas like corners and edges to simplify the process. For larger grids like the 5x5 puzzle, breaking it down into smaller subgrids can help."
+            },
+            {
+              "type": "video",
+              "title": "15 Puzzle Solving Techniques",
+              "url": "https://www.youtube.com/embed/aZvu2aTcn5s"
+            },
+            {
+              "type": "link",
+              "title": "Interactive 15 Puzzle Solver",
+              "url": "https://www.puzzle-solver.com/15-puzzle/"
+            }
+          ],
+          "tips": [
+            "Work on positioning tiles in small sections rather than moving each tile individually.",
+            "Use the empty space strategically to shuffle tiles and create room for movement.",
+            "Always focus on the first row and column before solving the middle section.",
+            "In larger variations, prioritize solving the corners and edges first before tackling the inner tiles.",
+            "Memorize common patterns (e.g., corner and edge configurations) to reduce trial and error when solving."
+          ],
+          "related_facts": [
+            "The puzzle has been studied mathematically, and it's known that not all random tile configurations are solvable.",
+            "The 15 Puzzle was popularized by a promotional game in 1878 where players would attempt to solve the puzzle in a race against time."
+          ],
+          "resources": {
+            "online_simulators": [
+              {
+                "name": "15 Puzzle Online Solver",
+                "url": "https://www.puzzle-solver.com/15-puzzle/",
+                "description": "Solve the 15 Puzzle interactively with a customizable grid size."
+              }
+            ],
+            "related_games": [
+              {
+                "name": "Sliding Puzzle",
+                "url": "https://www.puzzle-games.com/sliding-puzzle/",
+                "description": "A similar puzzle game that uses sliding tiles to solve a picture puzzle."
+              },
+              {
+                "name": "Super Sliding Puzzle",
+                "url": "https://www.super-sliding-puzzle.com/",
+                "description": "A more challenging version with larger grids and extra obstacles."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Logic Grid Puzzles",
+        "description": "Logic grid puzzles challenge you to use clues to fill in a grid and deduce relationships between different categories. Variations include themed grids, multi-level logic challenges, and puzzles with different complexity levels.",
+        "variations": [
+          {
+            "name": "Classic Logic Grid",
+            "description": "The standard version where you fill in a grid using logical deduction from a set of clues.",
+            "difficulty": "Intermediate",
+            "popularity": 4.6
+          },
+          {
+            "name": "Themed Logic Grid",
+            "description": "A variation where the grid involves a specific theme (e.g., animals, professions, countries) that provides additional clues.",
+            "difficulty": "Advanced",
+            "popularity": 4.7
+          },
+          {
+            "name": "Multi-Level Logic Puzzle",
+            "description": "Multiple interconnected logic grids that require you to solve smaller puzzles and combine their results.",
+            "difficulty": "Expert",
+            "popularity": 4.8
+          },
+          {
+            "name": "Numeric Logic Grid",
+            "description": "A variation that involves numbers instead of words, requiring mathematical reasoning to deduce relationships.",
+            "difficulty": "Advanced",
+            "popularity": 4.5
+          }
+        ],
+        "main_video": "https://www.youtube.com/embed/cUL9aLBeAuc",
+        "historical_fact": "Logic grid puzzles gained prominence in the 20th century and are often associated with the works of Raymond Smullyan, a logician and puzzle creator.",
+        "advanced_strategies": [
+          "Elimination Method: Systematically rule out impossible options in the grid.",
+          "Deductive Chains: Use a series of logical deductions to fill in gaps.",
+          "Clue Integration: Cross-reference multiple clues for consistency.",
+          "Grouping Techniques: Organize similar clues together for faster solving."
+        ],
+        "fun_fact": "Logic Grid Puzzles originated in the 1980s as a way to combine deductive reasoning with puzzle-solving skills. They are sometimes called 'Einstein Puzzles' due to their challenging nature.",
+        "history": {
+          "Inventor": "Unknown",
+          "Year Invented": "Late 20th century",
+          "Original Name": "Logic Puzzles",
+          "Milestone": "Became popular in newspapers and puzzle books in the 2000s."
+        },
+        "content": {
+          "tutorials": [
+            {
+              "type": "text",
+              "content": "Read all clues carefully and start filling in the grid with definitive information. Use a process of elimination to fill in the rest. In multi-level puzzles, solve smaller grids first and combine results for the final solution."
+            },
+            {
+              "type": "video",
+              "title": "How to Solve Logic Grid Puzzles",
+              "url": "https://www.youtube.com/embed/UDnyduf4YTM"
+            },
+            {
+              "type": "link",
+              "title": "Interactive Logic Grid Puzzle Solver",
+              "url": "https://www.logicgridpuzzles.com/solver/"
+            }
+          ],
+          "tips": [
+            "Use a grid to organize possible and impossible relationships. Mark off impossible connections to narrow down options.",
+            "Look for clues that establish direct relationships between items. These clues are often easier to process.",
+            "Deduction is key—start with the most certain information and work your way through the puzzle.",
+            "In themed grids, apply your knowledge of the subject to solve clues faster. For example, knowing the names of popular animals can help you with a themed puzzle.",
+            "For multi-level puzzles, solve each individual grid first. Once you have answers for all levels, combine them logically to reach the final solution."
+          ],
+          "related_facts": [
+            "It is said that Albert Einstein created one of the first logic grid puzzles in the early 20th century, and only 2% of the population could solve it.",
+            "Many modern logic grid puzzles are now available in app format, making them easier to access and solve on the go."
+          ],
+          "resources": {
+            "online_simulators": [
+              {
+                "name": "Logic Grid Puzzle Online",
+                "url": "https://www.logicgridpuzzles.com/",
+                "description": "A website offering interactive logic grid puzzles with varying levels of difficulty."
+              }
+            ],
+            "related_games": [
+              {
+                "name": "Einstein Puzzle",
+                "url": "https://www.einstein-puzzle.com/",
+                "description": "Solve the famous logic grid puzzle that only 2% of the population is said to be able to complete."
+              },
+              {
+                "name": "Mastermind",
+                "url": "https://www.mastermind-puzzle.com/",
+                "description": "A classic game that involves guessing a secret code based on clues, involving similar deductive reasoning skills."
+              }
+            ]
+          }
         }
       }
-    }
-  ]
+    ],
+    "srpski": [
+      {
+        "name": "Rubikova kocka",
+        "description": "Trodimenzionalna kombinaciona slagalica gde je svaka strana kocke različite boje. Cilj je da se boje poravnaju tako da svaka strana postane jedinstvene boje. Varijacije uključuju različite veličine i oblike, poput Pyraminksa i Mirror Cube-a. Popularne varijacije uključuju 2x2x2 (Mini Cube), 4x4x4 (Rubikova Osveta) i 5x5x5 (Profesorska kocka).",
+        "variations": [
+          {
+            "name": "2x2x2 (Mini kocka)",
+            "description": "Jednostavnija verzija Rubikove kocke bez srednjih delova, idealna za početnike.",
+            "difficulty": "Početni nivo",
+            "popularity": 4.5
+          },
+          {
+            "name": "4x4x4 (Rubikova Osveta)",
+            "description": "Dodaje veću složenost sa centrima koji se mogu nezavisno kretati i greškama u paritetu.",
+            "difficulty": "Srednji nivo",
+            "popularity": 4.0
+          },
+          {
+            "name": "5x5x5 (Profesorska kocka)",
+            "description": "Još zahtevnija sa dodatnim ivicama i centrima, pružajući pravi test strpljenja i veštine.",
+            "difficulty": "Napredni nivo",
+            "popularity": 3.8
+          },
+          {
+            "name": "Pyraminks",
+            "description": "Piramidalna verzija kockaste slagalice koja je lakša nego što izgleda.",
+            "difficulty": "Početni nivo",
+            "popularity": 4.3
+          },
+          {
+            "name": "Mirror kocka",
+            "description": "Kocka kod koje se delovi razlikuju po obliku umesto po boji, pružajući vizuelni i prostorni izazov.",
+            "difficulty": "Napredni nivo",
+            "popularity": 4.7
+          }
+        ],
+        "main_video": "https://www.youtube.com/embed/F-zMjsRgJws",
+        "fun_fact": "Svetski rekord za rešavanje 3x3x3 Rubikove kocke je ispod 3,5 sekunde (2023)!",
+        "history": {
+          "inventor": "Ernő Rubik",
+          "year_invented": 1974,
+          "original_name": "Magična kocka",
+          "milestone": "Postala globalni fenomen 1980-ih."
+        },
+        "historical_fact": "Rubikovu kocku je 1974. godine izumeo Ernő Rubik, mađarski arhitekta, kao nastavno sredstvo za objašnjavanje trodimenzionalne geometrije.",
+        "advanced_strategies": [
+          "CFOP metod: Kombinuje Cross, F2L (prva dva sloja), OLL (orijentacija poslednjeg sloja) i PLL (permutacija poslednjeg sloja).",
+          "Roux metod: Fokusira se na izgradnju blokova i rešavanje ivica minimalističkim pristupom.",
+          "ZZ metod: Optimizuje orijentaciju ivica na početku rešenja radi efikasnosti.",
+          "FMC (izazov najmanjeg broja poteza): Rešavanje kocke u najmanjem broju poteza."
+        ],
+        "content": {
+          "tutorials": [
+            {
+              "type": "text",
+              "content": "Standardna Rubikova kocka može se rešiti u šest koraka: rešavanje belog krsta, rešavanje belih uglova, rešavanje ivica srednjeg sloja, rešavanje žutog krsta, orijentisanje žutih uglova i na kraju permutacija poslednjeg sloja. Varijacije poput 4x4x4 zahtevaju dodatne korake za rešavanje centara i pariteta."
+            },
+            {
+              "type": "video",
+              "title": "Kako rešiti Rubikovu kocku",
+              "url": "https://www.youtube.com/embed/R-R0KrXvWbc"
+            },
+            {
+              "type": "link",
+              "title": "Vodič korak po korak za Rubikovu kocku",
+              "url": "https://www.rubiks.com/solution-guides"
+            },
+            {
+              "type": "article",
+              "title": "Speedcubing: Napredne tehnike i takmičenja",
+              "url": "https://www.worldcubeassociation.org/"
+            }
+          ],
+          "tips": [
+            "Prvo naučite notaciju: U (gore), D (dole), L (levo), R (desno), F (napred), B (pozadi).",
+            "Vežbajte rešavanje jedne strane pre nego što pređete na celu kocku.",
+            "Naučite osnovne algoritme za uobičajene šablone poput T-permutacije i Y-permutacije.",
+            "Za veće kocke prvo rešavajte centre i ivice pre nego što ih kombinujete u rešenje 3x3x3 kocke.",
+            "Istražite tehnike brzog rešavanja poput F2L (prva dva sloja), OLL (orijentacija poslednjeg sloja) i PLL (permutacija poslednjeg sloja).",
+            "Koristite aplikacije za merenje vremena kako biste pratili napredak i poboljšali brzinu rešavanja."
+          ],
+          "related_facts": [
+            "Postoji preko 43 kvintiliona mogućih konfiguracija standardne 3x3 Rubikove kocke.",
+            "Svetski rekord za rešavanje 3x3 Rubikove kocke je ispod 4 sekunde.",
+            "Rubikove kocke su korišćene u terapiji za poboljšanje kognitivnih i motoričkih veština.",
+            "Najveća funkcionalna Rubikova kocka ikada napravljena je 17x17x17."
+          ],
+          "resources": {
+            "apps": [
+              {
+                "name": "Cube Solver",
+                "url": "https://www.cube-solver.com/",
+                "description": "Interaktivno rešenje za različite slagalice u obliku kocke."
+              },
+              {
+                "name": "Rubik's Cube Timer",
+                "url": "https://cubetimer.com/",
+                "description": "Pratite vreme rešavanja i takmičite se sa prijateljima."
+              }
+            ],
+            "communities": [
+              {
+                "name": "SpeedSolving Forum",
+                "url": "https://www.speedsolving.com/",
+                "description": "Pridružite se globalnoj zajednici ljubitelja slagalica i razmenjujte savete i tehnike."
+              },
+              {
+                "name": "Reddit Rubik's Cube",
+                "url": "https://www.reddit.com/r/Cubers/",
+                "description": "Diskutujte o slagalicama, delite rešenja i učestvujte u izazovima."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Sudoku",
+        "description": "Logička slagalica za popunjavanje brojeva gde popunjavate mrežu 9x9 tako da svaki red, kolona i 3x3 podmreža sadrže cifre od 1 do 9. Varijacije uključuju Mini Sudoku (6x6), Killer Sudoku i Samurai Sudoku, koji nude jedinstvene izazove za igrače svih nivoa veština.",
+        "variations": [
+          {
+            "name": "Mini Sudoku",
+            "description": "Manje mreže poput 6x6 ili 4x4 za brže izazove, idealne za početnike ili kratke mentalne vežbe.",
+            "difficulty": "Početni nivo",
+            "popularity": 4.2
+          },
+          {
+            "name": "Killer Sudoku",
+            "description": "Kombinuje Sudoku sa aritmetičkim ograničenjima u 'kavezima', dodajući sloj matematike klasičnoj slagalici.",
+            "difficulty": "Srednji nivo",
+            "popularity": 4.5
+          },
+          {
+            "name": "Samurai Sudoku",
+            "description": "Međusobno povezane Sudoku mreže koje zahtevaju rešavanje više slagalica istovremeno, pružajući zaista složen izazov.",
+            "difficulty": "Napredni nivo",
+            "popularity": 3.9
+          },
+          {
+            "name": "Hyper Sudoku",
+            "description": "Varijacija gde dodatne preklapajuće regije takođe moraju da poštuju pravila Sudokua.",
+            "difficulty": "Srednji nivo",
+            "popularity": 4.3
+          }
+        ],
+        "main_video": "https://www.youtube.com/embed/kvU9_MVAiE0",
+        "historical_fact": "Sudoku je inspirisan matematičkim konceptom iz 18. veka poznatim kao Latinski kvadrati i stekao globalnu popularnost nakon što je objavljen u japanskim časopisima sa slagalicama 1980-ih.",
+        "advanced_strategies": [
+          "X-Wing: Identifikuje obrasce koji ograničavaju postavljanje brojeva kroz više redova i kolona.",
+          "Swordfish: Sličan X-Wing-u, ali uključuje tri reda ili kolone.",
+          "XYZ-Wing: Tehnika za eliminaciju mogućnosti na osnovu zajedničkih kandidata.",
+          "Jellyfish: Proširuje Swordfish tehniku na četiri reda ili kolone."
+        ],
+        "history": {
+          "Inventor": "Howard Garns",
+          "Year Invented": "1979",
+          "Original Name": "Number Place",
+          "Milestone": "Postao svetski fenomen 2000-ih godina."
+        },
+        "fun_fact": "Najveća Sudoku slagalica ikada napravljena imala je 666 mreža koje su bile međusobno povezane i igračima je trebalo mesecima da je reše!",
+        "content": {
+          "tutorials": [
+            {
+              "type": "text",
+              "content": "Počnite sa najlakšim brojevima, obično onima koji se najčešće pojavljuju u mreži. Koristite proces eliminacije da zaključite gde brojevi treba da idu. U Killer Sudoku, koristite zbir 'kaveza' kao vodič za sužavanje mogućnosti. Samurai Sudoku zahteva da svaku mrežu tretirate kao deo cele slagalice."
+            },
+            {
+              "type": "video",
+              "title": "Tehnike rešavanja Sudokua za početnike",
+              "url": "https://www.youtube.com/embed/0-lMea8hF9s"
+            },
+            {
+              "type": "video",
+              "title": "Savladavanje Killer Sudokua",
+              "url": "https://www.youtube.com/embed/G4rRUtPx7Yg"
+            },
+            {
+              "type": "link",
+              "title": "Online Sudoku rešenja i saveti",
+              "url": "https://www.sudoku.com/how-to-play/sudoku-rules-for-complete-beginners/"
+            },
+            {
+              "type": "link",
+              "title": "Napredne Sudoku tehnike",
+              "url": "https://www.sudokuwiki.org/sudoku.htm"
+            }
+          ],
+          "tips": [
+            "Fokusirajte se na redove, kolone ili kutije koje imaju najviše popunjenih brojeva.",
+            "Koristite olovku za beleženje mogućih brojeva za svaku ćeliju.",
+            "Tražite skrivene jedinice, gde broj može da se uklopi samo na jedno mesto u redu, koloni ili kutiji.",
+            "U Killer Sudoku, dajte prioritet rešavanju 'kaveza' sa najmanjim ili najvećim zbirovima.",
+            "Samurai Sudoku zahteva rešavanje preklapajućih mreža sistematski, tretirajući ih kao povezane slagalice.",
+            "Za Hyper Sudoku, rano identifikujte preklapajuće regije i osigurajte da poštuju pravila Sudokua."
+          ],
+          "related_facts": [
+            "Modernu Sudoku slagalicu popularisao je japanski izdavač Nikoli 1986. godine.",
+            "Ime 'Sudoku' je skraćenica japanske fraze koja znači 'jedan broj'.",
+            "Sudoku slagalice nisu matematički problemi; zahtevaju logiku i prepoznavanje obrazaca.",
+            "Najveća Sudoku slagalica, koja se sastoji od 667 međusobno povezanih mreža, napravljena je 2010. godine."
+          ],
+          "resources": {
+            "apps": [
+              {
+                "name": "Sudoku.com",
+                "url": "https://www.sudoku.com/",
+                "description": "Igrajte Sudoku online sa različitim nivoima težine i izazovima."
+              },
+              {
+                "name": "Killer Sudoku od Logic Games",
+                "url": "https://www.logicgames.com/killer-sudoku/",
+                "description": "Aplikacija posvećena rešavanju Killer Sudoku slagalica."
+              }
+            ],
+            "communities": [
+              {
+                "name": "Reddit Sudoku",
+                "url": "https://www.reddit.com/r/Sudoku/",
+                "description": "Diskutujte o strategijama, delite slagalice i dobijte savete od globalne zajednice."
+              },
+              {
+                "name": "Sudoku Solver Forum",
+                "url": "https://forum.sudokuwiki.org/",
+                "description": "Udubite se u napredne tehnike rešavanja sa drugim entuzijastima."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Ukrštenica",
+        "description": "Reč igra u kojoj popunjavate praznine na osnovu datih pojmova. Varijacije uključuju kriptične ukrštenice, tematske ukrštenice i ukrštene brojeve, svaka sa jedinstvenim izazovima za ljubitelje reči.",
+        "variations": [
+          {
+            "name": "Kriptična ukrštenica",
+            "description": "Pojmovi uključuju igru reči, anagrame i dvosmislene definicije koje zahtevaju lateralno razmišljanje.",
+            "difficulty": "Napredno",
+            "popularity": 4.5
+          },
+          {
+            "name": "Tematska ukrštenica",
+            "description": "Svi pojmovi ili odgovori povezani su sa centralnom temom, što je savršeno za ljubitelje određenih tema.",
+            "difficulty": "Srednje",
+            "popularity": 4.3
+          },
+          {
+            "name": "Ukršteni brojevi",
+            "description": "Koristi brojeve umesto reči u mreži, stvarajući matematički izazov.",
+            "difficulty": "Srednje",
+            "popularity": 3.8
+          },
+          {
+            "name": "Mini ukrštenica",
+            "description": "Manja mreža za brzo i neformalno rešavanje, obično sa jednostavnijim pojmovima.",
+            "difficulty": "Početni nivo",
+            "popularity": 4.7
+          },
+          {
+            "name": "Dijagramska ukrštenica",
+            "description": "Igrači moraju da otkriju izgled mreže dok rešavaju pojmove, dodajući dodatni sloj izazova.",
+            "difficulty": "Ekspert",
+            "popularity": 3.9
+          }
+        ],
+        "main_video": "https://www.youtube.com/embed/edgpOYJKxfw",
+        "historical_fact": "Prva moderna ukrštenica nastala je iz pera novinara Arthura Wynne-a i objavljena u New York World-u 21. decembra 1913.",
+        "advanced_strategies": [
+          "Prepoznavanje obrazaca: Koristite poznata slova da zaključite reči i popunite ukrštene prostore.",
+          "Tematski pojmovi: Identifikujte glavne teme ukrštenice za vođenje pretpostavki.",
+          "Rečnički koreni: Razmotrite česte prefikse, sufikse i osnove reči.",
+          "Obrnuto rešavanje: Radite unazad od potvrđenih odgovora da biste zaključili ostale."
+        ],
+        "tips": [
+          "Počnite sa kratkim ili često ukrštajućim rečima kako biste stekli zamah.",
+          "Za kriptične pojmove, razmišljajte lateralno; često uključuju igre reči ili dvosmislice.",
+          "Koristite rečnike ili tezauruse za proširenje vokabulara dok rešavate.",
+          "U tematskim ukrštenicama, fokusirajte se na pojmove koji se uklapaju u centralnu temu.",
+          "U ukrštenim brojevima, koristiće vam poznavanje osnovne aritmetike ili brojevnih nizova."
+        ],
+        "fun_fact": "New York Times ukrštenica smatra se 'zlatnim standardom' slagalica, pri čemu je ponedeljak najlakši, a nedelja najteža.",
+        "history": {
+          "Inventor": "Arthur Wynne",
+          "Year Invented": "1913",
+          "Original Name": "Word-Cross",
+          "Milestone": "Postala popularna svakodnevna rubrika u novinama širom sveta."
+        },
+        "content": {
+          "tutorials": [
+            {
+              "type": "text",
+              "content": "Počnite sa najkraćim rečima i popunjavajte praznine na osnovu pojmova. Koristite ukrštena slova da biste suzili mogućnosti. Kriptične ukrštenice zahtevaju tumačenje pojmova sa dvosmislenim značenjima, kao što su anagrami ili igre reči."
+            },
+            {
+              "type": "video",
+              "title": "Strategije za rešavanje ukrštenica",
+              "url": "https://www.youtube.com/embed/dF2HkE6NxUo"
+            },
+            {
+              "type": "link",
+              "title": "Kako savladati kriptične ukrštenice",
+              "url": "https://www.theguardian.com/lifeandstyle/series/learn-how-to-solve-cryptic-crosswords"
+            },
+            {
+              "type": "link",
+              "title": "Štampane ukrštenice za sve nivoe",
+              "url": "https://www.crosswordpuzzles.com/"
+            }
+          ],
+          "tips": [
+            "Tražite pojmove u množini koji se završavaju na 's' i proverite da li se uklapaju u mrežu.",
+            "Popunite najlakše pojmove prvo i gradite na njima.",
+            "Razmotrite uobičajene prefikse ili sufikse pri pogađanju reči.",
+            "U kriptičnim ukrštenicama, tražite anagrame, skrivene reči ili igre reči u pojmovima.",
+            "Koristite tematske ukrštenice kao zabavan način za proširenje vokabulara na određene teme."
+          ],
+          "related_facts": [
+            "Ukrštenice su se prvi put pojavile u novinama u New Yorku 1913. godine i odmah postale hit.",
+            "Najveća ukrštenica ikada napravljena imala je preko 91.000 kvadrata!",
+            "Naučno je dokazano da ukrštenice pomažu u održavanju kognitivnog zdravlja i odlažu pojavu demencije."
+          ],
+          "resources": {
+            "apps": [
+              {
+                "name": "NYT Crossword App",
+                "url": "https://www.nytimes.com/crosswords",
+                "description": "Rešavajte svakodnevne ukrštenice sa nivoima težine od lakih do ekspertskih."
+              },
+              {
+                "name": "Crossword Solver by AppyNation",
+                "url": "https://apps.apple.com/crossword-solver",
+                "description": "Aplikacija za rešavanje i kreiranje ukrštenica za entuzijaste."
+              }
+            ],
+            "communities": [
+              {
+                "name": "Reddit Crossword",
+                "url": "https://www.reddit.com/r/crossword/",
+                "description": "Pridružite se diskusijama, delite ukrštenice i pronađite pomoć sa teškim pojmovima."
+              },
+              {
+                "name": "Forum za ukrštenice",
+                "url": "https://forum.crosswordsolver.org/",
+                "description": "Diskutujte o tehnikama rešavanja, delite prilagođene mreže i istražujte napredne savete."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Slagalica",
+        "description": "Slagalica sa pločicama gde se sastavljaju delovi koji se međusobno uklapaju kako bi se formirala kompletna slika. Varijacije uključuju 3D slagalice, dvostrane slagalice i slagalice sa gradijentom, koje nude jedinstvene izazove i iskustva.",
+        "variations": [
+          {
+            "name": "3D Slagalica",
+            "description": "Delovi formiraju trodimenzionalne strukture poput poznatih znamenitosti ili skulptura.",
+            "difficulty": "Srednje",
+            "popularity": 4.7
+          },
+          {
+            "name": "Dvostrana Slagalica",
+            "description": "Ima dve različite slike sa obe strane delova, što udvostručuje izazov.",
+            "difficulty": "Napredno",
+            "popularity": 4.3
+          },
+          {
+            "name": "Slagalica sa Gradijentom",
+            "description": "Slagalica sa suptilnim prelazima boja koja zahteva oštro opažanje nijansi.",
+            "difficulty": "Ekspertski",
+            "popularity": 4.0
+          },
+          {
+            "name": "Misteriozna Slagalica",
+            "description": "Sastavljate slagalicu ne znajući unapred konačnu sliku.",
+            "difficulty": "Srednje",
+            "popularity": 4.2
+          },
+          {
+            "name": "Prilagođena Foto Slagalica",
+            "description": "Napravite slagalicu koristeći vašu omiljenu fotografiju, dodajući personalizovani dodir.",
+            "difficulty": "Različito",
+            "popularity": 4.8
+          }
+        ],
+        "main_video": "https://www.youtube.com/embed/oRlCNXdcMc0",
+        "historical_fact": "Slagalice su izumljene oko 1760. godine od strane Džona Spilsberija, kartografa iz Londona, koji ih je koristio za podučavanje geografije.",
+        "advanced_strategies": [
+          "Sortiranje ivica: Prvo sastavite delove koji čine okvir slagalice.",
+          "Sortiranje po bojama: Grupisanje delova po bojama ili uzorku za brže slaganje.",
+          "Prepoznavanje šablona: Fokusirajte se na ponavljajuće oblike ili dizajne unutar slagalice.",
+          "Sastavljanje u delovima: Radite na manjim sekcijama i zatim ih spojite."
+        ],
+        "fun_fact": "Najveća slagalica ikada napravljena sastoji se od preko 551.000 delova i dugačka je 48 stopa!",
+        "history": {
+          "Inventor": "Džon Spilsberi",
+          "Year Invented": "1767",
+          "Original Name": "Isečena Mapa",
+          "Milestone": "Postala popularna razonoda u 20. veku."
+        },
+        "content": {
+          "tutorials": [
+            {
+              "type": "text",
+              "content": "Sortirajte delove prema ivicama, bojama ili uzorcima. Prvo sastavite okvir da definišete strukturu slagalice. Kod 3D slagalica, prvo izgradite osnovu pre dodavanja vertikalnih slojeva."
+            },
+            {
+              "type": "video",
+              "title": "Saveti za Početnike u Sklapanju Slagalica",
+              "url": "https://www.youtube.com/embed/SV12puKJCQw"
+            },
+            {
+              "type": "link",
+              "title": "Napredne Strategije za Sklapanje Slagalica",
+              "url": "https://www.jigsawjunkies.com/advanced-tips/"
+            }
+          ],
+          "tips": [
+            "Sortirajte delove u kategorije: ivice, uglovi i srednji delovi za bolju organizaciju.",
+            "Fokusirajte se na jedinstvene šablone ili posebne delove slike radi bržeg napretka.",
+            "Koristite posude za sortiranje, ploče ili prostirke kako biste efikasno organizovali i pomerali delove.",
+            "Radite pod dobrim osvetljenjem kako biste razlikovali suptilne razlike u bojama.",
+            "Za velike slagalice, sastavite sekcije odvojeno, a zatim ih povežite."
+          ],
+          "related_facts": [
+            "Slagalice potiču iz 18. veka kada su mape sečene u delove za edukativne svrhe.",
+            "Izraz 'slagalica' dolazi od testere koja se koristila za sečenje ranih slagalica.",
+            "Sklapanje slagalica poboljšava kognitivne veštine i poznato je da smanjuje stres."
+          ],
+          "resources": {
+            "online_stores": [
+              {
+                "name": "Puzzle Warehouse",
+                "url": "https://www.puzzlewarehouse.com/",
+                "description": "Širok izbor slagalica za sve nivoe veština i interesovanja."
+              },
+              {
+                "name": "Ravensburger Puzzles",
+                "url": "https://www.ravensburger.com/",
+                "description": "Slagalice visokog kvaliteta sa prelepim dizajnom, uključujući 3D slagalice."
+              }
+            ],
+            "communities": [
+              {
+                "name": "Reddit Zajednica Slagalica",
+                "url": "https://www.reddit.com/r/Jigsawpuzzles/",
+                "description": "Diskutujte o slagalicama, delite savete i pokazujte kompletirane radove."
+              },
+              {
+                "name": "Hobi Slagalice",
+                "url": "https://puzzlehobby.com/",
+                "description": "Blog i forum posvećen ljubiteljima slagalica."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Kula iz Hanoja",
+        "description": "Matematička slagalica gde pomerate gomilu diskova sa jednog štapa na drugi, prateći određena pravila. Cilj je prebaciti sve diskove na ciljni štap uz minimalan broj poteza. Varijacije uključuju postavke sa više štapova, obrnuta pravila i izazove zasnovane na vremenu.",
+        "variations": [
+          {
+            "name": "Klasična Kula iz Hanoja",
+            "description": "Standardna verzija sa 3 štapa i povećavajućim brojem diskova.",
+            "difficulty": "Početnik do Srednji",
+            "popularity": 4.8
+          },
+          {
+            "name": "Kula sa Više Štapova",
+            "description": "Dodaje dodatne štapove, povećavajući složenost i strategiju.",
+            "difficulty": "Napredno",
+            "popularity": 4.5
+          },
+          {
+            "name": "Kula sa Obrnutim Pravilima",
+            "description": "Obrnite proces počevši od završne konfiguracije i planirajući unazad.",
+            "difficulty": "Srednje",
+            "popularity": 4.2
+          },
+          {
+            "name": "Vremenski Ograničena Kula",
+            "description": "Rešite slagalicu u određenom vremenskom okviru, dodajući hitnost.",
+            "difficulty": "Promenljivo",
+            "popularity": 4.3
+          }
+        ],
+        "main_video": "https://www.youtube.com/embed/_bWLwz_PquI",
+        "historical_fact": "Slagalicu Kula iz Hanoja je 1883. godine izumeo francuski matematičar Eduar Lukas, a zasnovana je na drevnoj legendi o monasima koji premeštaju zlatne diskove.",
+        "advanced_strategies": [
+          "Rekurzivna Dekonstrukcija: Rešavajte manje podprobleme pomeranjem n-1 diskova.",
+          "Binarna Reprezentacija: Mapirajte rešenje na binarne brojeve radi efikasnijeg planiranja.",
+          "Iterativno Rešenje: Koristite algoritam za sistematsko pomeranje diskova bez rekurzije.",
+          "Prepoznavanje Šablona: Identifikujte ponavljajuće sekvence pokreta među veličinama diskova."
+        ],
+        "fun_fact": "Slagalicu Kula iz Hanoja je 1883. godine izumeo Eduar Lukas, inspirisan legendom o hramu sa velikom verzijom ove slagalice.",
+        "history": {
+          "Inventor": "Eduar Lukas",
+          "Year Invented": "1883",
+          "Original Name": "Kula iz Brahme",
+          "Milestone": "Postala popularna matematička slagalica i simbol rekurzivnih algoritama."
+        },
+        "content": {
+          "tutorials": [
+            {
+              "type": "text",
+              "content": "Pomerajte diskove jedan po jedan, pazeći da nijedan veći disk ne bude postavljen na manji. Strategijski koristite pomoćni štap za privremeno držanje diskova. Kod varijacija sa više štapova, pažljivo planirajte poteze kako biste optimizovali upotrebu dodatnih štapova."
+            },
+            {
+              "type": "video",
+              "title": "Kako Rešiti Kulu iz Hanoja",
+              "url": "https://www.youtube.com/embed/2SUvWfNJSsM"
+            },
+            {
+              "type": "link",
+              "title": "Interaktivni Solver za Kulu iz Hanoja",
+              "url": "https://www.mathsisfun.com/games/towerofhanoi.html"
+            }
+          ],
+          "tips": [
+            "Počnite pomeranjem najmanjeg diska na ciljni štap i gradite rešenje korak po korak.",
+            "Minimalan broj poteza je 2^n - 1, gde je n broj diskova.",
+            "Razbijte problem na podprobleme: rešite za n-1 diskova, zatim pomerite najveći disk i na kraju rešite za preostale diskove.",
+            "Kod varijacija sa više štapova, istražite algoritme poput Frame-Stewart algoritma za optimizovane poteze.",
+            "Vežbajte vizualizaciju poteza unapred kako biste razvili jasnu strategiju."
+          ],
+          "related_facts": [
+            "Slagalica se često koristi za podučavanje rekurzije u računarskim naukama.",
+            "Ako bi se Kula iz Hanoja sa 64 diska rešavala brzinom od jednog poteza u sekundi, bilo bi potrebno 585 milijardi godina da se završi!"
+          ],
+          "resources": {
+            "online_simulators": [
+              {
+                "name": "Online Solver za Kulu iz Hanoja",
+                "url": "https://www.cut-the-knot.org/recurrence/hanoi.shtml",
+                "description": "Simulirajte i rešite slagalicu Kula iz Hanoja interaktivno."
+              }
+            ],
+            "related_games": [
+              {
+                "name": "Hanoi Redux",
+                "url": "https://www.hanoiredux.com/",
+                "description": "Moderna verzija klasične igre Kula iz Hanoja sa dodatnim funkcijama."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "15 Slagalica",
+        "description": "Klizajuća slagalica koja se sastoji od mreže 4x4 sa 15 numerisanih pločica i jednim praznim mestom. Cilj je poređati pločice po numeričkom redosledu pomeranjem. Varijacije uključuju mreže 3x3, 5x5 i još veće, za složenije izazove.",
+        "variations": [
+          {
+            "name": "Klasična 15 Slagalica",
+            "description": "Standardna mreža 4x4 sa 15 numerisanih pločica.",
+            "difficulty": "Srednje",
+            "popularity": 4.7
+          },
+          {
+            "name": "3x3 Slagalica",
+            "description": "Manja, 3x3 verzija sa 8 pločica i jednim praznim mestom za brže izazove.",
+            "difficulty": "Početni nivo",
+            "popularity": 4.5
+          },
+          {
+            "name": "5x5 Slagalica",
+            "description": "Veća verzija sa mrežom 5x5 i 24 pločice, koja nudi više složenosti i strateške dubine.",
+            "difficulty": "Napredno",
+            "popularity": 4.8
+          },
+          {
+            "name": "Heksagonalna Slagalica",
+            "description": "Varijanta 15 Slagalice sa heksagonalnim pločicama umesto kvadratnih.",
+            "difficulty": "Ekspertski nivo",
+            "popularity": 4.2
+          },
+          {
+            "name": "Slagalica na Nesimetričnoj Mreži",
+            "description": "Slagalica bazirana na nepravilnim mrežama, koja pruža jedinstveni izazov u poređivanju pločica.",
+            "difficulty": "Ekspertski nivo",
+            "popularity": 4.3
+          }
+        ],
+        "main_video": "https://www.youtube.com/embed/NWt0wd8hPUE",
+        "historical_fact": "15 Slagalicu je 1874. godine izumeo Nojes Čapman i postala je globalni hit krajem 19. veka.",
+        "advanced_strategies": [
+          "Rešavanje po Redovima: Prvo rešite gornje redove, a zatim nastavite redom prema dole.",
+          "Strategije za Uglove: Pozicionirajte uglove rano kako biste smanjili složenost.",
+          "Analiza Obrazaca: Prepoznajte ključne obrasce da biste minimizovali nepotrebne poteze.",
+          "Ispravka Pariteta: Planirajte poteze za rešavanje situacija u kojima su pločice nepristupačne."
+        ],
+        "fun_fact": "15 Slagalica je prvobitno prodavana kao igračka krajem 19. veka i bila je popularna zabava u Sjedinjenim Američkim Državama i Evropi. Poznata je i po tome što je inspirisala algoritme u računarstvu.",
+        "history": {
+          "Inventor": "Nojes Čapman",
+          "Year Invented": "1874",
+          "Original Name": "Gem Puzzle",
+          "Milestone": "Postala popularna slagalica nakon što je prikazana u New York Times-u u 20. veku."
+        },
+        "content": {
+          "tutorials": [
+            {
+              "type": "text",
+              "content": "Počnite rešavanjem prvog reda i prve kolone, zatim nastavite sa preostalim sekcijama. Fokusirajte se na male oblasti poput uglova i ivica kako biste pojednostavili proces. Kod većih mreža, kao što je slagalica 5x5, razbijanje na manje podmreže može pomoći."
+            },
+            {
+              "type": "video",
+              "title": "Tehnike za Rešavanje 15 Slagalice",
+              "url": "https://www.youtube.com/embed/aZvu2aTcn5s"
+            },
+            {
+              "type": "link",
+              "title": "Interaktivni Rešavač za 15 Slagalicu",
+              "url": "https://www.puzzle-solver.com/15-puzzle/"
+            }
+          ],
+          "tips": [
+            "Radite na pozicioniranju pločica u malim sekcijama umesto da pomerate svaku pločicu pojedinačno.",
+            "Koristite prazno mesto strateški za mešanje pločica i stvaranje prostora za pokret.",
+            "Uvek se fokusirajte na prvi red i prvu kolonu pre nego što rešite srednji deo.",
+            "Kod većih varijacija, prvo rešite uglove i ivice pre nego što pređete na unutrašnje pločice.",
+            "Memorišite uobičajene obrasce (npr. konfiguracije uglova i ivica) kako biste smanjili broj pokušaja i grešaka pri rešavanju."
+          ],
+          "related_facts": [
+            "Slagalica je matematički proučavana i poznato je da nisu sve nasumične konfiguracije pločica rešive.",
+            "15 Slagalica je popularisana promotivnom igrom 1878. godine, kada su igrači pokušavali da reše slagalicu protiv vremena."
+          ],
+          "resources": {
+            "online_simulators": [
+              {
+                "name": "Online Rešavač za 15 Slagalicu",
+                "url": "https://www.puzzle-solver.com/15-puzzle/",
+                "description": "Interaktivno rešite 15 Slagalicu sa prilagodljivim dimenzijama mreže."
+              }
+            ],
+            "related_games": [
+              {
+                "name": "Klizajuća Slagalica",
+                "url": "https://www.puzzle-games.com/sliding-puzzle/",
+                "description": "Slična igra slagalica sa klizajućim pločicama za rešavanje slike."
+              },
+              {
+                "name": "Super Klizajuća Slagalica",
+                "url": "https://www.super-sliding-puzzle.com/",
+                "description": "Izazovnija verzija sa većim mrežama i dodatnim preprekama."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Logičke mrežne zagonetke",
+        "description": "Logičke mrežne zagonetke izazivaju vas da koristite tragove za popunjavanje mreže i zaključivanje odnosa između različitih kategorija. Varijacije uključuju tematske mreže, višeslojne logičke izazove i zagonetke sa različitim nivoima složenosti.",
+        "variations": [
+          {
+            "name": "Klasična logička mreža",
+            "description": "Standardna verzija u kojoj popunjavate mrežu logičkim zaključivanjem iz skupa tragova.",
+            "difficulty": "Srednje",
+            "popularity": 4.6
+          },
+          {
+            "name": "Tematska logička mreža",
+            "description": "Varijacija gde mreža ima određenu temu (npr. životinje, profesije, zemlje) koja pruža dodatne tragove.",
+            "difficulty": "Napredno",
+            "popularity": 4.7
+          },
+          {
+            "name": "Višeslojna logička zagonetka",
+            "description": "Više međusobno povezanih logičkih mreža koje zahtevaju rešavanje manjih zagonetki i kombinovanje njihovih rezultata.",
+            "difficulty": "Ekspertski nivo",
+            "popularity": 4.8
+          },
+          {
+            "name": "Numerička logička mreža",
+            "description": "Varijacija koja uključuje brojeve umesto reči, zahtevajući matematičko razmišljanje za zaključivanje odnosa.",
+            "difficulty": "Napredno",
+            "popularity": 4.5
+          }
+        ],
+        "main_video": "https://www.youtube.com/embed/cUL9aLBeAuc",
+        "historical_fact": "Logičke mrežne zagonetke postale su popularne u 20. veku i često se povezuju sa delima Rejmonda Smaljana, logičara i tvorca zagonetki.",
+        "advanced_strategies": [
+          "Metoda eliminacije: Sistematski isključujte nemoguće opcije u mreži.",
+          "Lanac dedukcije: Koristite niz logičkih zaključaka za popunjavanje praznina.",
+          "Integracija tragova: Ukrstite više tragova kako biste proverili doslednost.",
+          "Tehnike grupisanja: Organizujte slične tragove zajedno za brže rešavanje."
+        ],
+        "fun_fact": "Logičke mrežne zagonetke nastale su 1980-ih kao način kombinovanja deduktivnog razmišljanja sa rešavanjem zagonetki. Ponekad se nazivaju 'Ajnštajnove zagonetke' zbog svoje izazovne prirode.",
+        "history": {
+          "Inventor": "Nepoznato",
+          "Year Invented": "Kraj 20. veka",
+          "Original Name": "Logičke zagonetke",
+          "Milestone": "Postale popularne u novinama i knjigama zagonetki tokom 2000-ih."
+        },
+        "content": {
+          "tutorials": [
+            {
+              "type": "text",
+              "content": "Pažljivo pročitajte sve tragove i počnite popunjavanjem mreže sigurnim informacijama. Koristite proces eliminacije za popunjavanje ostatka. U višeslojnim zagonetkama, prvo rešite manje mreže i kombinujte rezultate za konačno rešenje."
+            },
+            {
+              "type": "video",
+              "title": "Kako rešiti logičke mrežne zagonetke",
+              "url": "https://www.youtube.com/embed/UDnyduf4YTM"
+            },
+            {
+              "type": "link",
+              "title": "Interaktivni rešavač logičkih mrežnih zagonetki",
+              "url": "https://www.logicgridpuzzles.com/solver/"
+            }
+          ],
+          "tips": [
+            "Koristite mrežu za organizovanje mogućih i nemogućih odnosa. Označite nemoguće veze kako biste suzili opcije.",
+            "Tražite tragove koji uspostavljaju direktne odnose između stavki. Ovi tragovi su često lakši za obradu.",
+            "Dedukcija je ključ—počnite s najsigurnijim informacijama i nastavite kroz zagonetku.",
+            "U tematskim mrežama, primenite svoje znanje o temi kako biste brže rešili tragove. Na primer, poznavanje naziva popularnih životinja može pomoći kod tematske zagonetke.",
+            "Kod višeslojnih zagonetki, prvo rešite svaku pojedinačnu mrežu. Kada imate odgovore za sve nivoe, logički ih kombinujte za konačno rešenje."
+          ],
+          "related_facts": [
+            "Kaže se da je Albert Ajnštajn stvorio jednu od prvih logičkih mrežnih zagonetki početkom 20. veka i da samo 2% populacije može da je reši.",
+            "Mnoge moderne logičke mrežne zagonetke sada su dostupne u obliku aplikacija, što ih čini lakšim za pristup i rešavanje u pokretu."
+          ],
+          "resources": {
+            "online_simulators": [
+              {
+                "name": "Logičke mrežne zagonetke online",
+                "url": "https://www.logicgridpuzzles.com/",
+                "description": "Veb-sajt koji nudi interaktivne logičke mrežne zagonetke sa različitim nivoima težine."
+              }
+            ],
+            "related_games": [
+              {
+                "name": "Ajnštajnova zagonetka",
+                "url": "https://www.einstein-puzzle.com/",
+                "description": "Rešite poznatu logičku mrežnu zagonetku za koju se kaže da je samo 2% populacije može rešiti."
+              },
+              {
+                "name": "Mastermind",
+                "url": "https://www.mastermind-puzzle.com/",
+                "description": "Klasična igra koja uključuje pogađanje tajnog koda na osnovu tragova, koristeći slične veštine deduktivnog razmišljanja."
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
