@@ -34,7 +34,7 @@
               About
               <div class="underline-child bg1"></div>
             </a>
-            <a href="../../views/categories.html"
+            <button id="lang">LANGUAGE</button> <a href="../../views/categories.html"
               class="navbar-text relative transition-all cursor-pointer underline-parent">
               Categories
               <div class="underline-child bg1"></div>
@@ -235,10 +235,9 @@
       <div class="w-[75rem]">
         <h1
           class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold px-2 background z-40 relative">
-          <span data-english="Todays" data-set-srpski="Danasnja">Todays</span> <span class="text3"
-            data-set-english="subject" data-set-srpski="Tema">subject</span> -- <span class="title text1"></span>
+          <span data-set-english="Todays" data-set-srpski="Današnja">Todays</span> <span class="text3"
+            data-set-english="subject" data-set-srpski="tema">subject</span> -- <span class="title text1"></span>
         </h1>
-      </div>
     </section>
     <section class="w-full my-10 bg2 py-10 flex justify-center">
       <div class="w-[75rem] flex h-full flex-col justify-center">
@@ -285,8 +284,7 @@
             Tutorials</h1>
           <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
         </div>
-
-        <div class="tutorials">
+        <div class="tutorials my-8">
 
           <div class="flex relative my-8">
             <h1 class="px-2 background z-50 relative text-xl font-bold">More Tutorials</h1>
@@ -296,6 +294,30 @@
 
           </ul>
         </div>
+        <div class="relative w-full flex flex-col items-start">
+          <h1
+            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative">
+            Advanced Tips</h1>
+          <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
+        </div>
+        <ul class="advanced my-8 info relative min-h-[10rem]">
+        </ul>
+        <div class="relative w-full flex flex-col items-start">
+          <h1
+            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative">
+            Related Facts</h1>
+          <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
+        </div>
+        <ul class="facts my-8 info relative min-h-[10rem]">
+        </ul>
+        <div class="relative w-full flex flex-col items-start">
+          <h1
+            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative">
+            Variations</h1>
+          <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
+        </div>
+        <ul class="variations flex gap-[3.33%] flex-wrap my-8 info relative min-h-[10rem] text-black">
+        </ul>
     </section>
     <footer class="w-full flex justify-center pt-40">
       <div class="w-[90%] lg:w-[75rem]">
@@ -481,6 +503,7 @@
     </footer>
   </div>
   <script type="module" src="../../js/api/tutorials/app.js"></script>
+  <script type="module" src="../../js/language.js"></script>
 </body>
 
 </html>

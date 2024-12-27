@@ -3,37 +3,43 @@
     "english": [
       {
         "name": "Rubik's Cube",
+        "main_image": "https://images.pexels.com/photos/6254929/pexels-photo-6254929.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "description": "A 3D combination puzzle where each face of the cube is a different color. The objective is to align the colors so that each face becomes a uniform color. Variations include different sizes and shapes, such as Pyraminx and Mirror Cube. Popular variations include 2x2x2 (Mini Cube), 4x4x4 (Rubik's Revenge), and 5x5x5 (Professor's Cube).",
         "variations": [
           {
             "name": "2x2x2 (Mini Cube)",
             "description": "Simpler version of the Rubik's Cube with no middle pieces, making it ideal for beginners.",
             "difficulty": "Beginner",
-            "popularity": 4.5
+            "popularity": 4.5,
+            "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/65b129cad7f1ec360b69df99_659edd5970304acf99d9fd25_product__MINI_main.png"
           },
           {
             "name": "4x4x4 (Rubik's Revenge)",
             "description": "Adds more complexity with centers that can move independently and parity errors.",
             "difficulty": "Intermediate",
-            "popularity": 4.0
+            "popularity": 4.0,
+            "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/673cc25c8154cdc74cf26fae_product__MASTER_main-p-500.jpg"
           },
           {
             "name": "5x5x5 (Professor's Cube)",
             "description": "Even more challenging with additional edge and center pieces, offering a real test of patience and skill.",
             "difficulty": "Advanced",
-            "popularity": 3.8
+            "popularity": 3.8,
+            "image": "https://www.grubiks.com/images/puzzles/19/small.png"
           },
           {
             "name": "Pyraminx",
             "description": "A pyramid-shaped version of the cube puzzle that is easier than it looks.",
             "difficulty": "Beginner",
-            "popularity": 4.3
+            "popularity": 4.3,
+            "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/65b129cbd4a1a1cd96e12422_659ee0ea0a2f977cbd4f737d_product__PYRAMID_main.png"
           },
           {
             "name": "Mirror Cube",
             "description": "A cube where pieces differ by shape instead of color, providing a visual and spatial challenge.",
             "difficulty": "Advanced",
-            "popularity": 4.7
+            "popularity": 4.7,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF_HLHvxmxguBjmAtdXqKAS-JzX2vjc5suIg&s"
           }
         ],
         "main_video": "https://www.youtube.com/embed/F-zMjsRgJws",
@@ -117,31 +123,36 @@
       },
       {
         "name": "Sudoku",
+        "main_image": "https://images.pexels.com/photos/25596343/pexels-photo-25596343/free-photo-of-person-playing-sudoku-on-the-train.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "description": "A logic-based number-placement puzzle where you fill a 9x9 grid so that each row, column, and 3x3 sub-grid contains the digits 1 through 9. Variations include Mini Sudoku (6x6), Killer Sudoku, and Samurai Sudoku, offering unique challenges to players of all skill levels.",
         "variations": [
           {
             "name": "Mini Sudoku",
             "description": "Smaller grids like 6x6 or 4x4 for quicker challenges, ideal for beginners or a short mental workout.",
             "difficulty": "Beginner",
-            "popularity": 4.2
+            "popularity": 4.2,
+            "image": "https://ecdn.teacherspayteachers.com/thumbitem/480-Mini-Sudoku-Puzzles-for-Printing-4x4-and-6x6-grids-7079523-1656584443/original-7079523-4.jpg"
           },
           {
             "name": "Killer Sudoku",
             "description": "Combines Sudoku with arithmetic cage constraints, adding a layer of math to the classic puzzle.",
             "difficulty": "Intermediate",
-            "popularity": 4.5
+            "popularity": 4.5,
+            "image": "https://sarahrubinbooks.com/wp-content/uploads/2016/05/killer-sudoku-2.jpg?w=584"
           },
           {
             "name": "Samurai Sudoku",
             "description": "Interconnected Sudoku grids that require solving multiple puzzles simultaneously, offering a truly complex challenge.",
             "difficulty": "Advanced",
-            "popularity": 3.9
+            "popularity": 3.9,
+            "image": "https://www.researchgate.net/publication/264572734/figure/fig4/AS:669536953065484@1536641457567/Samurai-Sudoku-Example-135.jpg"
           },
           {
             "name": "Hyper Sudoku",
             "description": "A twist where additional overlapping regions must also follow Sudoku rules.",
             "difficulty": "Intermediate",
-            "popularity": 4.3
+            "popularity": 4.3,
+            "image": "https://d3p4ev2sxj7kns.cloudfront.net/assets/images/help/hyper1.png"
           }
         ],
         "main_video": "https://www.youtube.com/embed/kvU9_MVAiE0",
@@ -230,37 +241,43 @@
       },
       {
         "name": "Crossword Puzzle",
+        "main_image": "https://images.pexels.com/photos/6939467/pexels-photo-6939467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "description": "A word puzzle where you fill in the blanks based on given clues. Variations include cryptic crosswords, themed puzzles, and crossnumber puzzles, each offering unique challenges to word enthusiasts.",
         "variations": [
           {
             "name": "Cryptic Crossword",
             "description": "Clues involve wordplay, anagrams, and double meanings that require lateral thinking.",
             "difficulty": "Advanced",
-            "popularity": 4.5
+            "popularity": 4.5,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/British_crossword.svg/1200px-British_crossword.svg.png"
           },
           {
             "name": "Themed Crossword",
             "description": "All clues or answers revolve around a central theme, making it perfect for fans of specific topics.",
             "difficulty": "Intermediate",
-            "popularity": 4.3
+            "popularity": 4.3,
+            "image": "https://alexbajcz.wordpress.com/wp-content/uploads/2018/04/puzzle.png?w=676"
           },
           {
             "name": "Crossnumber Puzzle",
             "description": "Uses numbers instead of words in the grid, creating a mathematical twist.",
             "difficulty": "Intermediate",
-            "popularity": 3.8
+            "popularity": 3.8,
+            "image": "https://www.rfcafe.com/references/popular-electronics/images7/crossnumber-puzzle-popular-electronics-august-1958-1.jpg"
           },
           {
             "name": "Mini Crossword",
             "description": "A smaller grid for quick and casual solving, typically with simpler clues.",
             "difficulty": "Beginner",
-            "popularity": 4.7
+            "popularity": 4.7,
+            "image": "https://images.squarespace-cdn.com/content/v1/52711462e4b0932c24aa05ae/1562237345181-1JDQ1ZEA8N14MZPNFGZL/MiniCryptics1.png"
           },
           {
             "name": "Diagramless Crossword",
             "description": "Players must figure out the grid layout as they solve, adding an extra layer of challenge.",
             "difficulty": "Expert",
-            "popularity": 3.9
+            "popularity": 3.9,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/CrosswordUSA.svg/640px-CrosswordUSA.svg.png"
           }
         ],
         "main_video": "https://www.youtube.com/embed/edgpOYJKxfw",
@@ -349,37 +366,43 @@
       },
       {
         "name": "Jigsaw Puzzle",
+        "main_image": "https://images.pexels.com/photos/7417514/pexels-photo-7417514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "description": "A tiling puzzle where you assemble interlocking pieces to form a complete image. Variations include 3D puzzles, double-sided puzzles, and gradient puzzles, each offering unique challenges and experiences.",
         "variations": [
           {
             "name": "3D Puzzle",
             "description": "Pieces form three-dimensional structures like famous landmarks or sculptures.",
             "difficulty": "Intermediate",
-            "popularity": 4.7
+            "popularity": 4.7,
+            "image": "https://jokomisiada.pl/eng_pl_30-piece-3D-puzzle-London-Big-Ben-ZA3802-16991_7.jpg"
           },
           {
             "name": "Double-Sided Puzzle",
             "description": "Features two distinct puzzles on either side of the pieces, doubling the challenge.",
             "difficulty": "Advanced",
-            "popularity": 4.3
+            "popularity": 4.3,
+            "image": "https://i5.walmartimages.com/seo/Keith-Haring-2-Sided-500-Piece-Puzzle-Other_a4eadfd7-3969-40a9-a04d-cdaf3ba969e3.1b2732cbe5ce0530596d731af0fd6d00.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF"
           },
           {
             "name": "Gradient Puzzle",
             "description": "A puzzle with subtle color gradients, requiring keen attention to shades.",
             "difficulty": "Expert",
-            "popularity": 4.0
+            "popularity": 4.0,
+            "image": "https://puzzlemania-154aa.kxcdn.com/products/2024/puzzle-clementoni-2000-pieces-gradient-puzzle-2000.webp"
           },
           {
             "name": "Mystery Puzzle",
             "description": "Solve the puzzle without knowing the final image in advance.",
             "difficulty": "Intermediate",
-            "popularity": 4.2
+            "popularity": 4.2,
+            "image": "https://www.holdson.com/images/thumbs/0013738_holdson-puzzle-wasgij-retro-mystery-4-500xl-pc-live-entertainment_625.jpeg"
           },
           {
             "name": "Custom Photo Puzzle",
             "description": "Create a puzzle using your favorite photo, adding a personal touch.",
             "difficulty": "Varies",
-            "popularity": 4.8
+            "popularity": 4.8,
+            "image": "https://assets.cdn-shop.com/picanova2-com/assets/img/products/photo-gifts/puzzle/custom-puzzle-complete-view-2ad8c7cb92.webp"
           }
         ],
         "main_video": "https://www.youtube.com/embed/oRlCNXdcMc0",
@@ -456,31 +479,36 @@
       },
       {
         "name": "Tower of Hanoi",
+        "main_image": "https://media.hackerearth.com/blog/wp-content/uploads/2016/12/Cover_v2.png",
         "description": "A mathematical puzzle where you move a stack of disks from one rod to another, following specific rules. The objective is to transfer all disks to the target rod in the minimum number of moves. Variations include multi-peg setups, reversed rules, and time-based challenges.",
         "variations": [
           {
             "name": "Classic Tower of Hanoi",
             "description": "Standard 3-rod version with increasing disk counts.",
             "difficulty": "Beginner to Intermediate",
-            "popularity": 4.8
+            "popularity": 4.8,
+            "image": "https://m.media-amazon.com/images/I/71YBCoqpvLL._AC_UF1000,1000_QL80_.jpg"
           },
           {
             "name": "Multi-Peg Tower",
             "description": "Adds extra rods, increasing complexity and strategy.",
             "difficulty": "Advanced",
-            "popularity": 4.5
+            "popularity": 4.5,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSto8sfJglJzEOdXhmgw_SOO2bhr8Z-y7mDNL-AMTO0XDTYNm1UktX-BlYTvWpV9krquP4&usqp=CAU"
           },
           {
             "name": "Reversed Rules Tower",
             "description": "Reverse the process by starting from the final configuration and planning backward.",
             "difficulty": "Intermediate",
-            "popularity": 4.2
+            "popularity": 4.2,
+            "image": "https://brownliving.in/cdn/shop/products/wooden-9-rings-tower-of-hanoi-puzzle-game-handmade-036-01947-1090-learning-educational-toys-brown-living-272053.jpg?v=1682969919"
           },
           {
             "name": "Timed Tower",
             "description": "Solve the puzzle within a set time limit, adding urgency.",
             "difficulty": "Variable",
-            "popularity": 4.3
+            "popularity": 4.3,
+            "image": "https://cruxpuzzles.co.uk/cdn/shop/files/CCH-Hanoi-Tower-9R-3.jpg?v=1708610760&width=2048"
           }
         ],
         "main_video": "https://www.youtube.com/embed/_bWLwz_PquI",
@@ -546,37 +574,43 @@
       },
       {
         "name": "15 Puzzle",
+        "main_image": "https://images.pexels.com/photos/7319070/pexels-photo-7319070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "description": "A sliding puzzle consisting of a 4x4 grid with 15 numbered tiles and one empty space. The goal is to rearrange the tiles into numerical order by sliding them around. Variations include 3x3, 5x5, and even larger grids for more challenging puzzles.",
         "variations": [
           {
             "name": "Classic 15 Puzzle",
             "description": "The standard 4x4 grid with 15 numbered tiles.",
             "difficulty": "Intermediate",
-            "popularity": 4.7
+            "popularity": 4.7,
+            "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/10/b4/53/10b45351-990e-a1b4-7944-b201fb486368/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png"
           },
           {
             "name": "3x3 Puzzle",
             "description": "A smaller, 3x3 version with 8 tiles and a single empty space for faster challenges.",
             "difficulty": "Beginner",
-            "popularity": 4.5
+            "popularity": 4.5,
+            "image": "https://www.galliardgames.com/cdn/shop/products/3193774192006.GalliardGamesSlidePuzzle-6_1024x1024@2x.jpg?v=1648792434"
           },
           {
             "name": "5x5 Puzzle",
             "description": "A larger, 5x5 version with 24 tiles, offering more complexity and strategic depth.",
             "difficulty": "Advanced",
-            "popularity": 4.8
+            "popularity": 4.8,
+            "image": "https://m.media-amazon.com/images/I/91pXaae2QvL.jpg"
           },
           {
             "name": "Hexagonal Puzzle",
             "description": "A variant of the 15 Puzzle with hexagonal pieces instead of square tiles.",
             "difficulty": "Expert",
-            "popularity": 4.2
+            "popularity": 4.2,
+            "image": "https://m.media-amazon.com/images/I/713pvxAE4xL._AC_UF894,1000_QL80_.jpg"
           },
           {
             "name": "Non-Square Grid Puzzle",
             "description": "The puzzle is based on irregular grids, offering a unique challenge in arranging the tiles.",
             "difficulty": "Expert",
-            "popularity": 4.3
+            "popularity": 4.3,
+            "image": "https://m.media-amazon.com/images/I/61oiez2MMoL.jpg"
           }
         ],
         "main_video": "https://www.youtube.com/embed/NWt0wd8hPUE",
@@ -647,31 +681,36 @@
       },
       {
         "name": "Logic Grid Puzzles",
+        "main_image": "https://images.pexels.com/photos/7296627/pexels-photo-7296627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "description": "Logic grid puzzles challenge you to use clues to fill in a grid and deduce relationships between different categories. Variations include themed grids, multi-level logic challenges, and puzzles with different complexity levels.",
         "variations": [
           {
             "name": "Classic Logic Grid",
             "description": "The standard version where you fill in a grid using logical deduction from a set of clues.",
             "difficulty": "Intermediate",
-            "popularity": 4.6
+            "popularity": 4.6,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTePmfrjnletGbq5ZY0B3ykb6dgWDeDCmLibg&s"
           },
           {
             "name": "Themed Logic Grid",
             "description": "A variation where the grid involves a specific theme (e.g., animals, professions, countries) that provides additional clues.",
             "difficulty": "Advanced",
-            "popularity": 4.7
+            "popularity": 4.7,
+            "image": "https://i.etsystatic.com/17614238/r/il/32ec82/4085984585/il_570xN.4085984585_9oez.jpg"
           },
           {
             "name": "Multi-Level Logic Puzzle",
             "description": "Multiple interconnected logic grids that require you to solve smaller puzzles and combine their results.",
             "difficulty": "Expert",
-            "popularity": 4.8
+            "popularity": 4.8,
+            "ïmage": "https://logic.puzzlebaron.com/images/example.gif"
           },
           {
             "name": "Numeric Logic Grid",
             "description": "A variation that involves numbers instead of words, requiring mathematical reasoning to deduce relationships.",
             "difficulty": "Advanced",
-            "popularity": 4.5
+            "popularity": 4.5,
+            "image": "https://i.sstatic.net/ILSKM.png"
           }
         ],
         "main_video": "https://www.youtube.com/embed/cUL9aLBeAuc",

@@ -10,7 +10,6 @@ export const Model = {
   cyber: "cyberpunk-theme",
   autumn: "forest-theme",
   ocean: "ocean-breeze-theme",
-  mono: "monochrome-theme",
   retro: "sunset-theme",
   pastel: "pastel-theme",
 };

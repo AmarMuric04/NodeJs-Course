@@ -13,103 +13,126 @@
 
 <body>
   <div class="b background w-full h-full relative flex flex-col items-center">
-    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full md:flex justify-center z-50">
+    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full md:flex justify-center items-center z-50">
       <nav class="flex w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] justify-between items-center">
         <a href="./index.html" class="flex gap-2 items-center">
           <img class="h-[1.5rem] lg:h-[3rem]" src="../assets/images/logo.png" />
           <div class="flex flex-col justify-between">
-            <h1 class="font-bold text-[1rem] md:text-[1.2rem] xl:text-[1.6rem]">SolveBox</h1>
-            <div
-              class="text-gray-500 md:text-[0.5rem] text-[0.4rem] xl:text-[0.6rem] flex justify-between items-center">
-              <p>ASSISTANCE</p>
+            <h1 class="font-bold text-[1.6rem]">
+              <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
+            </h1>
+            <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
+              <p data-english="ASSISTANCE" data-srpski="ПОМОЋ">ASSISTANCE</p>
               <p>&</p>
-              <p>INSIGHTS</p>
+              <p data-english="INSIGHTS" data-srpski="УВИДИ">INSIGHTS</p>
             </div>
           </div>
         </a>
         <section>
           <ul class="flex gap-2 lg:gap-6 font-semibold text-xs md:text-sm xl:text-[1rem]">
             <a href="../views/about.html"
-              class="curr-active navbar-text relative transition-all cursor-pointer underline-parent">
-              About
+              class="curr-active navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="About" data-srpski="О нама">About</span>
               <div class="underline-hovered bg1"></div>
             </a>
             <a href="../views/categories.html"
-              class="navbar-text relative transition-all cursor-pointer underline-parent">
-              Categories
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Categories" data-srpski="Категорије">Categories</span>
               <div class="underline-child bg1"></div>
-            </a><a href="../views/subscribe.html"
-              class="navbar-text relative transition-all cursor-pointer underline-parent">
-              Subscribe
+            </a>
+            <a href="../views/subscribe.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Subscribe" data-srpski="Претплати се">Subscribe</span>
               <div class="underline-child bg1"></div>
-            </a><a href="../views/contactus.html"
-              class="navbar-text relative transition-all cursor-pointer underline-parent">
-              Contact Us
+            </a>
+            <a href="../views/contactus.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Contact Us" data-srpski="Контактирај нас">Contact Us</span>
               <div class="bg1 underline-child"></div>
-            </a><a href="../views/credits.html"
-              class="navbar-text relative transition-all cursor-pointer underline-parent">
-              Credits
+            </a>
+            <a href="../views/credits.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Credits" data-srpski="Кредити">Credits</span>
               <div class="underline-child bg1"></div>
             </a>
           </ul>
+
         </section>
         <section class="flex items-center justify-between gap-4">
           <div class="relative lg:w-[7rem] flex justify-center z-50 theme-js font-semibold">
             <div
               class="hover:text1 lg:py-2 lg:px-4 px-2 py-1 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative text-sm md:text-sm xl:text-[1rem]">
-              Themes
+              <span data-english="Themes" data-srpski="Тема">Themes</span>
               <div class="underline-child bg1"></div>
             </div>
             <ul
               class="background absolute shadow-xl py-4 px-1 rounded-[1rem] text-gray-300 top-full theme-container-js inactive transition-all">
-              <div class="bg1 right-0 top-2 rounded-full p-1 text-[0.5rem] absolute">RECOMMENDED</div>
-              <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-theme="dark">
+              <div class="bg1 right-0 top-2 rounded-full p-1 text-[0.5rem] absolute" data-english="RECOMMENDED"
+                data-srpski="ПРЕПОРУЧЕНО">
+                RECOMMENDED
+              </div>
+              <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-english="Dark"
+                data-srpski="Тамна" data-theme="dark">
                 Dark
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] border3 cursor-pointer theme-btn" data-theme="light">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] border3 cursor-pointer theme-btn" data-english="Light"
+                data-srpski="Светла" data-theme="light">
                 Light
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="night">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Night"
+                data-srpski="Ноћна" data-theme="night">
                 Night
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="void">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Void"
+                data-srpski="Празнина" data-theme="void">
                 Void
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="earthy">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Earthy"
+                data-srpski="Земљана" data-theme="earthy">
                 Earthy
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-light">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Solarized Light"
+                data-srpski="Соларна светлост" data-theme="solar-light">
                 Solarized Light
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-dark">
-                Solarized dark
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Solarized Dark"
+                data-srpski="Соларна тама" data-theme="solar-dark">
+                Solarized Dark
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="pastel">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Pastel"
+                data-srpski="Пастел" data-theme="pastel">
                 Pastel
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="cyber">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Cyberpunk Glow"
+                data-srpski="Сајберпанк сјај" data-theme="cyber">
                 Cyberpunk Glow
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="twilight">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Twilight"
+                data-srpski="Сумрак" data-theme="twilight">
                 Twilight
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="autumn">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Autumn Forest"
+                data-srpski="Јесења шума" data-theme="autumn">
                 Autumn Forest
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="ocean">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Ocean Breeze"
+                data-srpski="Океански поветарац" data-theme="ocean">
                 Ocean Breeze
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="mono">
-                Monochrome Minimal
-              </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="retro">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Retro Sunset"
+                data-srpski="Ретро залазак сунца" data-theme="retro">
                 Retro Sunset
               </li>
             </ul>
+
           </div>
           <div class="flex items-center gap-4 min-w-[8rem] lg:min-w-[18rem] justify" id="user-information"></div>
         </section>
       </nav>
+      <select id="lang" class="font-bold bg-transparent rounded-full px-2 outline-none">
+        <option value="english" class="text-black">English</option>
+        <option value="srpski" class="text-black">Srpski</option>
+      </select>
     </header>
     <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 relative">
       <a href="./index.html" class="flex gap-2 items-center relative z-50">
@@ -236,16 +259,23 @@
         <div class="relative z-30 lg:mt-20 lg:h-[15rem] flex flex-col lg:flex-row justify-between items-center">
           <div class="w-full lg:w-1/2">
             <h1 class="text-[1.5rem] lg:text-[3rem] font-bold leading-normal lg:leading-[3.5rem] w-full lg:w-2/3">
-              About <span class="text1">SolveBox</span>
+              <span data-english="About" data-srpski="О">About</span> <span class="text1" data-english="SolveBox"
+                data-srpski="СолвБоксу">SolveBox</span>
             </h1>
             <p class="text-[0.5rem] tracking-[0.1rem] py-4 lg:pt-8 lg:pb-4 noto text3">
-              <a class="hover:underline" href="./index.html"> HOME</a>
+              <a class="hover:underline uppercase" href="./index.html" data-srpski=" Почетна" data-english="HOME">
+                HOME</a>
               <span>></span>
-              <span class="underline font-semibold">ABOUT US</span>
+              <span class="underline uppercase font-semibold" data-srpski="О нама" data-english="ABOUT US">ABOUT
+                US</span>
             </p>
           </div>
           <div class="w-full lg:w-1/2">
-            <p class="text-gray-400 font-semibold text-sm lg:text-lg">
+            <p class="text-gray-400 font-semibold text-sm lg:text-lg" data-english="One of the biggest NY conferences focused on business, design,
+              marketing, and innovation. We host meaningful and
+              industry-leading events for experts in different niches." data-srpski="Једна од највећих конференција у Њујорку фокусирана на бизнис, дизајн,
+              маркетинг и иновације. Угостимо смислене и
+              водећи догађаји у индустрији за стручњаке у различитим нишама.">
               One of the biggest NY conferences focused on business, design,
               marketing, and innovation. We host meaningful and
               industry-leading events for experts in different niches.
@@ -288,70 +318,110 @@
       </div>
     </section>
     <section class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-center">
-      <div class="w-full lg:w-[75rem]">
-        <ul
-          class="flex justify-between w-full flex-col lg:flex-row items-center lg:items-start text-sm lg:text-[1rem] gap-4 lg:gap-0">
-          <li class="flex items-center w-[90%] lg:w-1/4 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/what.svg" />
-            <div class="flex flex-col">
-              <h1 class="font-bold text-xl lg:text-2xl text-black">What to expect?</h1>
-              <p class="text-gray-700">SolveBox brigs experts together.</p>
-            </div>
-          </li>
-          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/light.svg" />
-            <p>Engaging solutions and feedback</p>
-          </li>
-          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/time.svg" />
-            <p>Quick and simple solutions</p>
-          </li>
-          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/stats.svg" />
-            <p>Overwhelmingly good reviews</p>
-          </li>
+      <div class="w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem]">
+        <ul class="flex justify-between w-full flex-col lg:flex-row items-center text-sm lg:text-[1rem] gap-4 lg:gap-0">
+          <div class="flex justify-between w-full lg:w-1/2">
+            <li class="flex items-center justify-center lg:justify-normal font-thin text-gray-500 w-1/2 gap-2">
+              <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/what.svg" />
+              <div class="flex flex-col">
+                <h1 class="font-bold text-xl lg:text-2xl text-black" data-english="What to expect?"
+                  data-srpski="Шта можете очекивати?">
+                  What to expect?
+                </h1>
+                <p class="text-gray-700" data-english="SolveBox brings experts together."
+                  data-srpski="СолвБокс окупља стручњаке.">
+                  SolveBox brings experts together.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-center justify-center lg:justify-normal w-1/2 font-thin text-gray-500 gap-2">
+              <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/light.svg" />
+              <p data-english="Engaging solutions and feedback"
+                data-srpski="Интерактивна решења и повратне информације">
+                Engaging solutions and feedback
+              </p>
+            </li>
+          </div>
+          <div class="flex justify-between w-full lg:w-1/2">
+            <li class="flex items-center justify-center lg:justify-normal w-[90%] font-thin text-gray-500 gap-2">
+              <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/time.svg" />
+              <p data-english="Quick and simple solutions" data-srpski="Брза и једноставна решења">
+                Quick and simple solutions
+              </p>
+            </li>
+            <li class="flex items-center justify-center lg:justify-normal w-[90%] font-thin text-gray-500 gap-2">
+              <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/stats.svg" />
+              <p data-english="Overwhelmingly good reviews" data-srpski="Изузетно добре рецензије">
+                Overwhelmingly good reviews
+              </p>
+            </li>
+          </div>
         </ul>
       </div>
     </section>
     <section class="w-full pb-40 flex justify-center pt-20 lg:pt-32">
-      <div class="w-[90%] lg:w-[75rem] flex flex-col items-center">
+      <div class="w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] flex flex-col items-center">
         <h1
           class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3.5rem] font-semibold text-center w-full lg:w-2/3">
-          SolveBox is a dynamic
-          <span class="text1">online hub</span> dedicated to
-          <span class="text3">puzzles</span> and
-          <span class="text2">brain-teasing</span> challenges
-          <span class="text1">.</span>
+          <span data-english="SolveBox is a dynamic" data-srpski="СолвБокс је динамична">SolveBox is a
+            dynamic</span>
+          <span class="text1" data-english="online hub" data-srpski="онлајн платформа">online hub</span>
+          <span data-english="dedicated to" data-srpski="посвећена">dedicated to</span>
+          <span class="text3" data-english="puzzles" data-srpski="слагалицама">puzzles</span>
+          <span data-english="and" data-srpski="и">and</span>
+          <span class="text2" data-english="brain-teasing" data-srpski="изазовима за мозак">brain-teasing</span>
+          <span data-english="challenges" data-srpski="изазовима">challenges</span>
+          <span class="text1" data-english="." data-srpski=".">.</span>
         </h1>
         <p class="text-center mt-16 text-xs lg:text-lg text-gray-300 w-full lg:w-2/3">
-          Bringing together enthusiasts of Sudoku, Rubik's Cube, logic
-          puzzles, and more, SolveBox fosters a friendly and engaging
-          community for puzzle lovers worldwide.
-          <span class="italic">
-            It's all about sharpening your mind, tackling new challenges, and
-            finding creative solutions
+          <span
+            data-english="Bringing together enthusiasts of Sudoku, Rubik's Cube, logic puzzles, and more, SolveBox fosters a friendly and engaging community for puzzle lovers worldwide."
+            data-srpski="Окупљајући ентузијасте Судокуа, Рубикове коцке, логичких слагалица и више, СолвБокс промовише пријатељску и ангажовану заједницу за љубитеље слагалица широм света.">
+            Bringing together enthusiasts of Sudoku, Rubik's Cube, logic puzzles, and more, SolveBox fosters a friendly
+            and
+            engaging community for puzzle lovers worldwide.
           </span>
-          . On SolveBox, you’ll discover expert tips, step-by-step tutorials,
-          and a treasure trove of resources designed to help you master your
-          favorite puzzles and explore new ones. Whether you're a beginner or
-          a seasoned solver,
-          <span class="italic">
+          <span class="italic"
+            data-english="It's all about sharpening your mind, tackling new challenges, and finding creative solutions"
+            data-srpski="Циљ је изоштрити ум, решити нове изазове и пронаћи креативна решења">
+            It's all about sharpening your mind, tackling new challenges, and finding creative solutions
+          </span>
+          <span
+            data-english=". On SolveBox, you’ll discover expert tips, step-by-step tutorials, and a treasure trove of resources
+            designed
+            to
+            help you master your favorite puzzles and explore new ones. Whether you're a beginner or a seasoned solver,"
+            data-srpski=". На СолвеБок-у ћете открити стручне савете, упутства корак по корак и ризницу ресурса
+            дизајниран
+            да
+            помоћи вам да савладате своје омиљене загонетке и истражите нове. Било да сте почетник или искусан решавач,
+">
+            . On SolveBox, you’ll discover expert tips, step-by-step tutorials, and a treasure trove of resources
+            designed
+            to
+            help you master your favorite puzzles and explore new ones. Whether you're a beginner or a seasoned solver,
+          </span>
+          <span class="italic" data-english="SolveBox is the ultimate destination for"
+            data-srpski="СолвБокс је коначна дестинација за">
             SolveBox is the ultimate destination for
-            <span class="font-bold underline">
-              unlocking your problem-solving potential
-            </span>
+          </span>
+          <span class="font-bold underline" data-english="unlocking your problem-solving potential"
+            data-srpski="откључавање вашег потенцијала за решавање проблема">
+            unlocking your problem-solving potential
           </span>
           .
         </p>
         <div class="h-[0.1rem] w-64 bg-[#75e1d9] mt-10"></div>
         <div class="mt-20 m font-thin">
-          <h1 class="text-center text1 text-[1rem] lg:text-xl uppercase noto tracking-[0.1rem]">
+          <h1 class="text-center text1 text-[1rem] lg:text-xl uppercase noto tracking-[0.1rem]"
+            data-english="Active since" data-srpski="Активан од">
             Active since
           </h1>
           <div class="flex gap-2 items-end mt-8 text-sm lg:text-4xl">
-            <p class="p-2 lg:p-4 border-r-2 border-[#383b48]">21st</p>
-            <p class="p-2 lg:p-4 border-r-2 border-[#383b48]">November</p>
-            <p class="p-2 lg:p-4">2024<span class="text3">.</span></p>
+            <p class="p-2 lg:p-4 border-r-2 border-[#383b48]" data-english="21st" data-srpski="21.">21st</p>
+            <p class="p-2 lg:p-4 border-r-2 border-[#383b48]" data-english="November" data-srpski="новембар">
+              November</p>
+            <p class="p-2 lg:p-4" data-english="2024." data-srpski="2024.">2024<span class="text3">.</span></p>
           </div>
         </div>
       </div>
@@ -359,13 +429,20 @@
     <section class="w-full py-40 flex justify-center bg3 half-polygon-north">
       <div class="w-[90%] lg:w-[75rem] flex flex-col lg:flex-row gap-20">
         <div class="w-full lg:w-1/2 text-black">
-          <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto">FEATURES</p>
+          <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto">
+            <span data-english="FEATURES" data-srpski="КАРАКТЕРИСТИКЕ">FEATURES</span>
+          </p>
           <h1 class="text-[1.5rem] lg:text-[3rem] font-semibold leading-normal lg:leading-[3.5rem]">
-            Unlock the power of puzzles with SolveBox.
+            <span data-english="Unlock the power of puzzles with SolveBox."
+              data-srpski="Откључајте моћ загонетки са СолвБоксом.">
+              Unlock the power of puzzles with SolveBox.
+            </span>
           </h1>
           <p class="text-[1rem] lg:text-xl font-semibold text-gray-800 my-8">
-            SolveBox offers tools and insights to help you master and enjoy
-            puzzles.
+            <span data-english="SolveBox offers tools and insights to help you master and enjoy puzzles."
+              data-srpski="СолвБокс нуди алате и увиде који ће вам помоћи да савладате и уживате у загонеткама.">
+              SolveBox offers tools and insights to help you master and enjoy puzzles.
+            </span>
           </p>
           <ul class="flex flex-col gap-4 mt-4 mb-10">
             <li class="flex gap-2">
@@ -374,8 +451,10 @@
                 <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
               </svg>
               <p class="text-gray-800 text-sm lg:text-lg">
-                SolveBox helps puzzle enthusiasts of all skill levels tackle
-                tricky challenges.
+                <span data-english="SolveBox helps puzzle enthusiasts of all skill levels tackle tricky challenges."
+                  data-srpski="СолвБокс помаже љубитељима загонетки свих нивоа вештина да савладају тешке изазове.">
+                  SolveBox helps puzzle enthusiasts of all skill levels tackle tricky challenges.
+                </span>
               </p>
             </li>
             <li class="flex gap-2">
@@ -384,38 +463,54 @@
                 <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
               </svg>
               <p class="text-gray-800 text-sm lg:text-lg">
-                Dive deep into solutions and learn the logic behind every
-                step.
+                <span data-english="Dive deep into solutions and learn the logic behind every step."
+                  data-srpski="Уроните дубоко у решења и сазнајте логику иза сваког корака.">
+                  Dive deep into solutions and learn the logic behind every step.
+                </span>
               </p>
             </li>
           </ul>
           <a href="./api.html">
             <button
-              class="bg-gray-800 text-white lg:py-5 rounded-[2rem] hover:rounded-none transition-all py-3 px-5  lg:px-10 font-semibold lg:font-bold">
-              Start Solving
+              class="bg-gray-800 text-white lg:py-5 rounded-[2rem] hover:rounded-none transition-all py-3 px-5 lg:px-10 font-semibold lg:font-bold">
+              <span data-english="Start Solving" data-srpski="Почните да решавате">
+                Start Solving
+              </span>
             </button>
           </a>
         </div>
+
         <div class="flex gap-10 flex-col w-full h-full text-black">
           <div class="flex flex-col lg:flex-row gap-10 w-full h-full">
             <div class="bg-white p-8 w-full h-full">
               <div class="w-16 h-16 bg2 flex items-center justify-center rounded-full">
                 <img class="w-3/5 h-3/5" src="../assets/svgs/creativ.svg" />
               </div>
-              <h1 class="text-[1.5rem] py-4 font-semibold">Logic</h1>
+              <h1 class="text-[1.5rem] py-4 font-semibold">
+                <span data-english="Logic" data-srpski="Логика">Logic</span>
+              </h1>
               <div class="h-[0.2rem] w-20 bg2 mb-4"></div>
               <p class="text-lg text-gray-700">
-                Develop critical thinking by solving puzzles step by step.
+                <span data-english="Develop critical thinking by solving puzzles step by step."
+                  data-srpski="Развијте критичко размишљање решавајући загонетке корак по корак.">
+                  Develop critical thinking by solving puzzles step by step.
+                </span>
               </p>
             </div>
+
             <div class="bg-white p-8 w-full h-full">
               <div class="w-16 h-16 bg1 flex items-center justify-center rounded-full">
                 <img class="w-3/5 h-3/5" src="../assets/svgs/tup.svg" />
               </div>
-              <h1 class="text-[1.5rem] py-4 font-semibold">Community</h1>
+              <h1 class="text-[1.5rem] py-4 font-semibold">
+                <span data-english="Community" data-srpski="Заједница">Community</span>
+              </h1>
               <div class="h-[0.2rem] w-20 bg1 mb-4"></div>
               <p class="text-lg text-gray-700">
-                Join a global community of puzzle lovers and share solutions.
+                <span data-english="Join a global community of puzzle lovers and share solutions."
+                  data-srpski="Придружите се глобалној заједници љубитеља загонетки и делите решења.">
+                  Join a global community of puzzle lovers and share solutions.
+                </span>
               </p>
             </div>
           </div>
@@ -424,23 +519,35 @@
               <div class="w-16 h-16 bg3 flex items-center justify-center rounded-full">
                 <img class="w-3/5 h-3/5" src="../assets/svgs/trophy.svg" />
               </div>
-              <h1 class="text-[1.5rem] py-4 font-semibold">Inspiration</h1>
+              <h1 class="text-[1.5rem] py-4 font-semibold">
+                <span data-english="Inspiration" data-srpski="Инспирација">Inspiration</span>
+              </h1>
               <div class="h-[0.2rem] w-20 bg3 mb-4"></div>
               <p class="text-lg text-gray-700">
-                Discover new puzzles and strategies that spark creativity.
+                <span data-english="Discover new puzzles and strategies that spark creativity."
+                  data-srpski="Откријте нове загонетке и стратегије које подстичу креативност.">
+                  Discover new puzzles and strategies that spark creativity.
+                </span>
               </p>
             </div>
+
             <div class="bg-white p-8 w-full h-full">
               <div class="w-16 h-16 bg2 flex items-center justify-center rounded-full">
                 <img class="w-3/5 h-3/5" src="../assets/svgs/bank.svg" />
               </div>
-              <h1 class="text-[1.5rem] py-4 font-semibold">Challenge</h1>
+              <h1 class="text-[1.5rem] py-4 font-semibold">
+                <span data-english="Challenge" data-srpski="Изазов">Challenge</span>
+              </h1>
               <div class="h-[0.2rem] w-20 bg2 mb-4"></div>
               <p class="text-lg text-gray-700">
-                Push your boundaries with increasingly complex puzzles.
+                <span data-english="Push your boundaries with increasingly complex puzzles."
+                  data-srpski="Померите своје границе уз све сложеније загонетке.">
+                  Push your boundaries with increasingly complex puzzles.
+                </span>
               </p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -458,26 +565,34 @@
           </div>
           <div class="w-full lg:w-1/3 flex flex-col justify-center">
             <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto uppercase">
-              SolveBox
+              <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
             </p>
             <h1 class="text-[1.5rem] lg:text-[3rem] font-semibold leading-normal lg:leading-[3.5rem] mb-8">
-              Who is <span class="text2">SolveBox</span> for?
+              <span data-english="Who is" data-srpski="За кога је">Who is</span>
+              <span class="text2" data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
+              <span data-english="for?" data-srpski="намењен?">for?</span>
             </h1>
             <ul class="flex flex-col gap-4 lg:mb-8 text-sm lg:text-lg">
               <li class="text-gray-600">
-                <span class="text1 font-bold mr-2"> 01. </span>
-                Puzzle enthusiasts eager to challenge themselves and improve
-                their skills;
+                <span class="text1 font-bold mr-2">01.</span>
+                <span data-english="Puzzle enthusiasts eager to challenge themselves and improve their skills;"
+                  data-srpski="Љубитељи загонетки који желе да се изазову и унапреде своје вештине;">
+                  Puzzle enthusiasts eager to challenge themselves and improve their skills;
+                </span>
               </li>
               <li class="text-gray-600">
-                <span class="text1 font-bold mr-2"> 02. </span>
-                Learners looking to understand the logic behind solving
-                puzzles;
+                <span class="text1 font-bold mr-2">02.</span>
+                <span data-english="Learners looking to understand the logic behind solving puzzles;"
+                  data-srpski="Ученике који желе да разумеју логику иза решавања загонетки;">
+                  Learners looking to understand the logic behind solving puzzles;
+                </span>
               </li>
               <li class="text-gray-600">
-                <span class="text1 font-bold mr-2">03. </span>
-                Educators seeking a platform to teach problem-solving and
-                critical thinking;
+                <span class="text1 font-bold mr-2">03.</span>
+                <span data-english="Educators seeking a platform to teach problem-solving and critical thinking;"
+                  data-srpski="Едукаторе који траже платформу за подучавање решавања проблема и критичког размишљања;">
+                  Educators seeking a platform to teach problem-solving and critical thinking;
+                </span>
               </li>
             </ul>
           </div>
@@ -486,24 +601,32 @@
           <div class="w-full lg:w-1/3 flex flex-col justify-center">
             <ul class="flex flex-col gap-4 lg:mb-8">
               <li class="text-gray-600 text-lg">
-                <span class="text1 font-bold mr-2"> 04. </span>
-                Parents and guardians looking for engaging activities for
-                their kids;
+                <span class="text1 font-bold mr-2">04.</span>
+                <span data-english="Parents and guardians looking for engaging activities for their kids;"
+                  data-srpski="Родитељи и старатељи који траже занимљиве активности за своју децу;">
+                  Parents and guardians looking for engaging activities for their kids;
+                </span>
               </li>
               <li class="text-gray-600 text-lg">
-                <span class="text1 font-bold mr-2"> 05. </span>
-                Developers and designers exploring innovative puzzle
-                interfaces;
+                <span class="text1 font-bold mr-2">05.</span>
+                <span data-english="Developers and designers exploring innovative puzzle interfaces;"
+                  data-srpski="Програмери и дизајнери који истражују иновативне интерфејсе загонетки;">
+                  Developers and designers exploring innovative puzzle interfaces;
+                </span>
               </li>
               <li class="text-gray-600 text-lg">
-                <span class="text1 font-bold mr-2"> 06. </span>
-                Students sharpening their logical thinking and analytical
-                skills;
+                <span class="text1 font-bold mr-2">06.</span>
+                <span data-english="Students sharpening their logical thinking and analytical skills;"
+                  data-srpski="Студенти који усавршавају своје логичко размишљање и аналитичке вештине;">
+                  Students sharpening their logical thinking and analytical skills;
+                </span>
               </li>
               <li class="text-gray-600 text-lg">
-                <span class="text1 font-bold mr-2"> 07. </span>
-                Anyone passionate about unraveling complex problems and
-                learning in the process.
+                <span class="text1 font-bold mr-2">07.</span>
+                <span data-english="Anyone passionate about unraveling complex problems and learning in the process."
+                  data-srpski="Сви који су страствени у решавању сложених проблема и учењу током процеса.">
+                  Anyone passionate about unraveling complex problems and learning in the process.
+                </span>
               </li>
             </ul>
           </div>
@@ -518,57 +641,90 @@
     <section class="w-full flex flex-col lg:flex-row justify-center items-center py-40">
       <div class="w-[90%] lg:w-[75rem] border-b-[1px] border1 py-20">
         <p class="text1 text-[0.7rem] tracking-[0.2rem] py-8 text-center">
-          FEATURED PUZZLES
+          <span data-english="FEATURED PUZZLES" data-srpski="ИЗДВОЈЕНЕ ЗАГОНЕТКЕ">FEATURED PUZZLES</span>
         </p>
         <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
-          Discover our
-          <span class="text3">exciting</span> selection of puzzles<span class="text2">.</span>
+          <span data-english="Discover our" data-srpski="Откријте наш">Discover our</span>
+          <span class="text3">
+            <span data-english="exciting" data-srpski="узбудљив">exciting</span>
+          </span>
+          <span data-english="selection of puzzles" data-srpski="избор загонетки">selection of puzzles</span>
+          <span class="text2">.</span>
         </h1>
         <p class="text-gray-300 text-sm lg:text-lg text-center py-8 font-semibold">
-          Explore challenges that inspire creativity, test logic, and
-          entertain puzzle enthusiasts of all ages.
+          <span
+            data-english="Explore challenges that inspire creativity, test logic, and entertain puzzle enthusiasts of all ages."
+            data-srpski="Истражите изазове који инспиришу креативност, тестирају логику и забављају љубитеље загонетки свих узраста.">
+            Explore challenges that inspire creativity, test logic, and entertain puzzle enthusiasts of all ages.
+          </span>
         </p>
         <div class="w-full flex flex-col lg:flex-row justify-between gap-10">
           <div class="w-full lg:w-1/3 rounded-xl">
-            <img class="w-full bg3 h-[35rem]object-cover" src="../assets/images/b.png" />
-            <h1 class="text-[1.5rem] lg:text-[3rem] font-semibold my-8">Rubik's Cube</h1>
-            <p class="noto text3 tracking-[0.1rem] uppercase text-[0.6rem] mb-4">
-              The Ultimate Puzzle
-            </p>
-            <p class="text-gray-400 font-semibold text-sm lg:text-lg">
-              A world-renowned 3D combination puzzle that has fascinated
-              millions of minds for decades. Whether you’re a beginner or a
-              seasoned speedcuber, solving the Rubik's Cube improves spatial
-              reasoning, memory, and patience, making it a fun yet educational
-              challenge for everyone.
-            </p>
+            <img class="w-full bg3 h-[35rem] object-cover rounded-t-xl" src="../assets/images/b.png"
+              alt="Rubik's Cube" />
+            <div class="p-6">
+              <h1 class="text-[1.5rem] lg:text-[3rem] font-semibold my-4">
+                <span data-english="Rubik's Cube" data-srpski="Рубикова коцка">Rubik's Cube</span>
+              </h1>
+              <p class="noto text3 tracking-[0.1rem] uppercase text-[0.6rem] mb-4">
+                <span data-english="The Ultimate Puzzle" data-srpski="Најбоља загонетка">The Ultimate Puzzle</span>
+              </p>
+              <p class="text-gray-400 font-semibold text-sm lg:text-lg">
+                <span
+                  data-english="A world-renowned 3D combination puzzle that has fascinated millions of minds for decades. Whether you’re a beginner or a seasoned speedcuber, solving the Rubik's Cube improves spatial reasoning, memory, and patience, making it a fun yet educational challenge for everyone."
+                  data-srpski="Светски позната 3Д комбинациона загонетка која је деценијама фасцинирала милионе умова. Без обзира да ли сте почетник или искусан брзи слагач, решавање Рубикове коцке побољшава просторну оријентацију, меморију и стрпљење, чинећи је забавним, али и едукативним изазовом за све.">
+                  A world-renowned 3D combination puzzle that has fascinated millions of minds for decades. Whether
+                  you’re a
+                  beginner or a seasoned speedcuber, solving the Rubik's Cube improves spatial reasoning, memory, and
+                  patience,
+                  making it a fun yet educational challenge for everyone.
+                </span>
+              </p>
+            </div>
           </div>
           <div class="w-full lg:w-1/3 rounded-xl">
-            <img class="w-full bg2 h-[35rem] object-cover" src="../assets/images/a.png" />
-            <h1 class="text-[1.5rem] lg:text-[3rem] font-semibold my-8">Sudoku Puzzle</h1>
-            <p class="noto text3 tracking-[0.1rem] uppercase text-[0.6rem] mb-4">
-              A Logical Challenge
-            </p>
-            <p class="text-gray-400 font-semibold text-sm lg:text-lg">
-              The Sudoku puzzle is the perfect test of logic and patience.
-              Fill in the grid so that each row, column, and block contains
-              the digits 1 through 9. This timeless game has captivated minds
-              across generations, improving critical thinking and
-              concentration in the process.
-            </p>
+            <img class="w-full bg2 h-[35rem] object-cover rounded-t-xl" src="../assets/images/a.png"
+              alt="Sudoku Puzzle" />
+            <div class="p-6">
+              <h1 class="text-[1.5rem] lg:text-[3rem] font-semibold my-4">
+                <span data-english="Sudoku Puzzle" data-srpski="Судоку загонетка">Sudoku Puzzle</span>
+              </h1>
+
+              <p class="noto text3 tracking-[0.1rem] uppercase text-[0.6rem] mb-4">
+                <span data-english="A Logical Challenge" data-srpski="Логички изазов">A Logical Challenge</span>
+              </p>
+              <p class="text-gray-400 font-semibold text-sm lg:text-lg">
+                <span
+                  data-english="The Sudoku puzzle is the perfect test of logic and patience. Fill in the grid so that each row, column, and block contains the digits 1 through 9. This timeless game has captivated minds across generations, improving critical thinking and concentration in the process."
+                  data-srpski="Судоку загонетка је савршен тест логике и стрпљења. Попуните мрежу тако да сваки ред, колона и блок садрже цифре од 1 до 9. Ова безвременска игра је очарала умове генерација, побољшавајући критичко размишљање и концентрацију у том процесу.">
+                  The Sudoku puzzle is the perfect test of logic and patience. Fill in the grid so that each row,
+                  column, and
+                  block contains the digits 1 through 9. This timeless game has captivated minds across generations,
+                  improving
+                  critical thinking and concentration in the process.
+                </span>
+              </p>
+            </div>
           </div>
+
           <div class="w-full lg:w-1/3 rounded-xl">
             <img class="w-full bg1 h-[35rem] object-cover" src="../assets/images/c.png" />
-            <h1 class="text-[1.5rem] lg:text-[3rem] font-semibold my-8">Other Puzzles</h1>
+            <h1 class="text-[1.5rem] lg:text-[3rem] font-semibold my-8">
+              <span data-english="Other Puzzles" data-srpski="Остале загонетке">Other Puzzles</span>
+            </h1>
             <p class="noto text3 tracking-[0.1rem] uppercase text-[0.6rem] mb-4">
-              Explore More
+              <span data-english="Explore More" data-srpski="Истражите више">Explore More</span>
             </p>
             <p class="text-gray-400 font-semibold text-sm lg:text-lg">
-              Beyond Rubik’s Cube and Sudoku, the world of puzzles is vast and
-              exciting. Explore brain teasers, jigsaw puzzles, logic riddles,
-              and more to ignite your curiosity and creativity. These puzzles
-              challenge your mental agility and problem-solving skills in
-              unique and unexpected ways.
+              <span
+                data-english="Beyond Rubik’s Cube and Sudoku, the world of puzzles is vast and exciting. Explore brain teasers, jigsaw puzzles, logic riddles, and more to ignite your curiosity and creativity. These puzzles challenge your mental agility and problem-solving skills in unique and unexpected ways."
+                data-srpski="Осим Рубикове коцке и Судокуа, свет загонетки је огроман и узбудљив. Истражите мозгалице, слагалице, логичке загонетке и још много тога како бисте распламсали своју радозналост и креативност. Ове загонетке изазивају вашу менталну спретност и вештине решавања проблема на јединствене и неочекиване начине.">
+                Beyond Rubik’s Cube and Sudoku, the world of puzzles is vast and exciting. Explore brain teasers, jigsaw
+                puzzles,
+                logic riddles, and more to ignite your curiosity and creativity. These puzzles challenge your mental
+                agility and
+                problem-solving skills in unique and unexpected ways.
+              </span>
             </p>
           </div>
         </div>
@@ -576,15 +732,20 @@
     </section>
 
     <footer class="w-full flex justify-center pt-40">
-      <div class="w-[90%] lg:w-[75rem]">
+      <div class="w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem]">
         <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
-          A vibrant and
-          <span class="text3">inclusive</span> community of
-          <span class="text2">solvers</span> and
-          <span class="text1">challengers</span><span class="text3">.</span>
+          <span data-english="A vibrant and" data-srpski="Живахна и">A vibrant and</span>
+          <span class="text3" data-english="inclusive" data-srpski="инклузивна">inclusive</span>
+          <span data-english="community of" data-srpski="заједница">community of</span>
+          <span class="text2" data-english="solvers" data-srpski="решавача">solvers</span>
+          <span data-english="and" data-srpski="и">and</span>
+          <span class="text1" data-english="challengers" data-srpski="изазивача">challengers</span>
+          <span class="text3" data-english="." data-srpski=".">.</span>
         </h1>
         <p class="text-xl lg:text-3xl font-bold text-center my-8">
-          Learn <span class="text1 underline">more</span> now!
+          <span data-english="Learn" data-srpski="Сазнајте">Learn</span>
+          <span class="text1 underline" data-english="more" data-srpski="више">more</span>
+          <span data-english="now!" data-srpski="одмах!">now!</span>
         </p>
         <div class="w-full flex justify-between my-8 gap-4 flex-col lg:flex-row">
           <div class="flex justify-between">
@@ -604,23 +765,42 @@
               src="https://images.unsplash.com/photo-1515508268448-8d0d292bc49a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
           </div>
         </div>
+
         <div class="w-full flex flex-col lg:flex-row py-20 justify-between">
           <div class="w-full lg:w-2/5">
             <h1 class="font-semibold text-lg lg:text-2xl">
-              Technology, Design & Innovation Conference
+              <span data-english="Puzzle Solver's Hub" data-srpski="Кутак за решавање загонетки">Puzzle Solver's
+                Hub</span>
             </h1>
             <p class="py-4 text-gray-300 text-sm lg:text-lg text-semibold">
-              We bring puzzle experts together.
+              <span data-english="Your ultimate resource for solving puzzles of all kinds."
+                data-srpski="Ваш најбољи ресурс за решавање свих врста загонетки.">
+                Your ultimate resource for solving puzzles of all kinds.
+              </span>
             </p>
             <p class="py-4 text-gray-300 text-xs lg:text-[1rem] text-semibold">
-              Join us at the NY Technology, Design & Innovation Conference,
-              the premier gathering of visionaries on September 17-18, 2024.
-              Feel free to contact us in any convenient way for more details.
+              <span
+                data-english="Join us at the Puzzle Solver's Hub, where puzzle enthusiasts and experts come together to share tips, tricks, and solutions."
+                data-srpski="Придружите нам се у Кутку за решавање загонетки, где љубитељи и стручњаци деле савете, трикове и решења.">
+                Join us at the Puzzle Solver's Hub, where puzzle enthusiasts and experts come together to share tips,
+                tricks, and
+                solutions.
+              </span>
+              <span
+                data-english="Explore strategies, connect with a vibrant community, and enhance your problem-solving skills."
+                data-srpski="Истражите стратегије, повежите се са живописном заједницом и унапредите своје вештине решавања проблема.">
+                Explore strategies, connect with a vibrant community, and enhance your problem-solving skills.
+              </span>
+              <span data-english="Visit our site for more details and feel free to contact us anytime!"
+                data-srpski="Посетите нашу страницу за више детаља и слободно нас контактирајте у било ком тренутку!">
+                Visit our site for more details and feel free to contact us anytime!
+              </span>
             </p>
+
           </div>
           <div class="flex my-8 lg:my-0 gap-10 lg:gap-20 flex-col lg:flex-row">
-            <div class="flex flex-col gap-10">
-              <div class="flex gap-3 h-20">
+            <div class="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
@@ -630,13 +810,19 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    PHONE
+                    <span data-english="PHONE" data-srpski="ТЕЛЕФОН">PHONE</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">+381 (063) 303 309</p>
-                  <p class="text-sm lg:text-lg font-semibold">+381 (063) 303 309</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="+381 (063) 303 309" data-srpski="+381 (063) 303 309">+381 (063) 303
+                      309</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="+381 (063) 303 309" data-srpski="+381 (063) 303 309">+381 (063) 303
+                      309</span>
+                  </p>
                 </div>
               </div>
-              <div class="flex gap-3 h-20">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
@@ -646,15 +832,22 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    EMAIL
+                    <span data-english="EMAIL" data-srpski="ЕМАЈЛ">EMAIL</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">muricamar2004@gmail.com</p>
-                  <p class="text-sm lg:text-lg font-semibold">muricamar2004@gmail.com</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="muricamar2004@gmail.com"
+                      data-srpski="muricamar2004@gmail.com">muricamar2004@gmail.com</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="muricamar2004@gmail.com"
+                      data-srpski="muricamar2004@gmail.com">muricamar2004@gmail.com</span>
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="flex flex-col gap-4 lg:gap-10">
-              <div class="flex gap-3 h-20">
+
+            <div class="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256" class="">
@@ -664,13 +857,17 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    ADDRESS
+                    <span data-english="ADDRESS" data-srpski="АДРЕСА">ADDRESS</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">Serbia,</p>
-                  <p class="text-sm lg:text-lg font-semibold">Novi Pazar</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Serbia," data-srpski="Србија,">Serbia,</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Novi Pazar" data-srpski="Нови Пазар">Novi Pazar</span>
+                  </p>
                 </div>
               </div>
-              <div class="flex gap-3 h-20">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
@@ -683,13 +880,18 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    LINKEDIN
+                    <span data-english="LINKEDIN" data-srpski="ЛИНКЕДИН">LINKEDIN</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">Amar Muric</p>
-                  <p class="text-sm lg:text-lg font-semibold">Amar Muric</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Amar Muric" data-srpski="Амар Мурић">Amar Muric</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Amar Muric" data-srpski="Амар Мурић">Amar Muric</span>
+                  </p>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
         <div class="w-full flex flex-col lg:flex-row py-20 border-y-2 border-[#383b48]">
@@ -697,50 +899,63 @@
             <div class="flex gap-2 items-center">
               <img class="h-[3rem]" src="../assets/images/logo.png" />
               <div class="flex flex-col justify-between">
-                <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
+                <h1 class="font-bold text-[1.6rem]">
+                  <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
+                </h1>
                 <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
-                  <p>ASSISTANCE</p>
+                  <p data-english="ASSISTANCE" data-srpski="ПОМОЋ">ASSISTANCE</p>
                   <p>&</p>
-                  <p>INSIGHTS</p>
+                  <p data-english="INSIGHTS" data-srpski="УВИДИ">INSIGHTS</p>
                 </div>
               </div>
             </div>
             <p class="text-sm lg:text-[1rem] my-4 text-gray-200">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-              possimus nesciunt modi corporis magni consectetur beatae sed!
-              Cum, eos rem!
+              <span
+                data-english="Join us at the Puzzle Solver's Hub, the premier online community for puzzle enthusiasts. Explore new challenges, share your expertise, and connect with fellow solvers. Feel free to contact us anytime for more details!"
+                data-srpski="Придружите нам се у Кутку за решавање загонетки, водећој онлајн заједници за љубитеље загонетки. Истражите нове изазове, поделите своју стручност и повежите се са другим решавачима. Слободно нас контактирајте у било ком тренутку за више детаља!">
+                Join us at the Puzzle Solver's Hub, the premier online community for puzzle enthusiasts. Explore new
+                challenges,
+                share your expertise, and connect with fellow solvers. Feel free to contact us anytime for more details!
+              </span>
             </p>
           </div>
           <div class="w-full lg:w-[40%] flex lg:justify-around justify-between my-8 lg:my-0">
             <div>
-              <h1 class="font-semibold text-xl lg:text-3xl">Navigation</h1>
+              <h1 class="font-semibold text-xl lg:text-3xl">
+                <span data-english="Navigation" data-srpski="Навигација">Navigation</span>
+              </h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
               <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
-                <li>About Us</li>
-                <li>Schedule</li>
-                <li>Speakers</li>
-                <li>Sponsors</li>
+                <li data-english="About Us" data-srpski="О нама">About Us</li>
+                <li data-english="Schedule" data-srpski="Распоред">Schedule</li>
+                <li data-english="Speakers" data-srpski="Говорници">Speakers</li>
+                <li data-english="Sponsors" data-srpski="Спонзори">Sponsors</li>
               </ul>
             </div>
             <div>
-              <h1 class="font-semibold text-xl lg:text-3xl">Support</h1>
+              <h1 class="font-semibold text-xl lg:text-3xl">
+                <span data-english="Support" data-srpski="Подршка">Support</span>
+              </h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
               <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
-                <li>Pricing</li>
-                <li>Help & Support</li>
-                <li>Privacy Policy</li>
-                <li>Contacts</li>
+                <li data-english="Pricing" data-srpski="Цене">Pricing</li>
+                <li data-english="Help & Support" data-srpski="Помоћ и подршка">Help & Support</li>
+                <li data-english="Privacy Policy" data-srpski="Политика приватности">Privacy Policy</li>
+                <li data-english="Contacts" data-srpski="Контакти">Contacts</li>
               </ul>
             </div>
           </div>
           <div class="w-full lg:w-[20%] flex flex-col justify-between gap-4 lg:gap-0">
-            <h1 class="font-semibold text-xl lg:text-3xl">Subscribe</h1>
+            <h1 class="font-semibold text-xl lg:text-3xl">
+              <span data-english="Subscribe" data-srpski="Претплатите се">Subscribe</span>
+            </h1>
             <input class="p-6 w-full bg-black bg-opacity-20" type="email" placeholder="Email*" />
             <button class="py-4 px-10 w-full bg1 rounded-[2rem] hover:rounded-none transition-all">
-              Subscribe
+              <span data-english="Subscribe" data-srpski="Претплатите се">Subscribe</span>
             </button>
           </div>
         </div>
+
         <div class="flex justify-between items-center py-8">
           <span class="flex gap-2 items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -751,14 +966,20 @@
                   d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
               </g>
             </svg>
-            <p>Created by Amar</p>
+            <p>
+              <span data-english="Created by Amar" data-srpski="Креирао Амар">Created by Amar</span>
+            </p>
           </span>
-          <p>All rights Reserved</p>
+          <p>
+            <span data-english="All rights Reserved" data-srpski="Сва права задржана">All rights Reserved</span>
+          </p>
         </div>
+
       </div>
     </footer>
   </div>
   <script type="module" src="../js/about/app.js"></script>
+  <script type="module" src="../js/language.js"></script>
 </body>
 
 </html>

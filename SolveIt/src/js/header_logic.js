@@ -91,7 +91,7 @@ export function handleNavBarHover() {
     b.addEventListener("mouseenter", () => {
       if (b === currActive) return;
       btns.forEach(() => {
-        currActive?.firstElementChild.classList.replace(
+        currActive?.lastElementChild.classList.replace(
           "underline-hovered",
           "underline-child"
         );
@@ -101,7 +101,7 @@ export function handleNavBarHover() {
     });
 
     b.addEventListener("mouseleave", () => {
-      currActive?.firstElementChild.classList.replace(
+      currActive?.lastElementChild.classList.replace(
         "underline-child",
         "underline-hovered"
       );

@@ -4,7 +4,8 @@ import { getAPI } from "../api.js";
 import { transformText } from "../../../utility/utility.js";
 
 export const Controller = {
-  API: null,
+  enAPI: null,
+  srAPI: null,
 
   async init() {
     handleUnderlineHover();
@@ -16,17 +17,19 @@ export const Controller = {
     });
 
     try {
-      this.API = await getAPI("../assets/api.json");
-      this.API = this.API.puzzles;
+      const api = await getAPI("../assets/api.json");
+      this.enAPI = api.puzzles.english;
+      this.srAPI = api.puzzles.srpski;
       document.querySelectorAll(".loader").forEach((e) => e.remove());
     } catch (error) {
       console.error("Failed to initialize API:", error);
     }
 
     elements.forEach((e, i) => {
-      const puzzle = this.API[i];
+      const enPuzzle = this.enAPI[i];
+      const srPuzzle = this.srAPI[i];
       const variation = e.querySelector(".variations div");
-      puzzle?.variations?.forEach((V) => {
+      enPuzzle?.variations?.forEach((V) => {
         const a = document.createElement("a");
         a.setAttribute("href", "...");
         a.classList = "flex-shrink-0 ";
@@ -40,20 +43,25 @@ export const Controller = {
         variation.append(a);
       });
 
+      const image = e.querySelector(".image");
+      if (image) {
+        image.src = enPuzzle["main_image"];
+      }
+
       const title = e.querySelector(".title");
       if (title) {
-        title.textContent = puzzle?.name;
+        title.textContent = enPuzzle?.name;
       }
 
       const description = e.querySelector(".description");
       if (description) {
-        description.textContent = puzzle?.description;
+        description.textContent = enPuzzle?.description;
       }
 
       const history = e.querySelector(".history");
 
-      if (puzzle?.history) {
-        Object.entries(puzzle.history).forEach((H) => {
+      if (enPuzzle?.history) {
+        Object.entries(enPuzzle.history).forEach((H) => {
           const li = document.createElement("li");
           li.classList = "flex gap-2";
           const p1 = document.createElement("p");

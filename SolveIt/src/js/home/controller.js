@@ -6,6 +6,12 @@ import { handleUnderlineHover } from "../general_view.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
 
+let lang = localStorage.getItem("SolveBox-current-language");
+
+window.addEventListener("localStorageChange", (event) => {
+  lang = event.newValue;
+});
+
 export const Controller = {
   handleNextReview(reviewsParent, scrollAmount, scrollIndex) {
     if (scrollIndex % 5 == 0)
@@ -61,20 +67,37 @@ export const Controller = {
     }, 1000);
 
     if (invalidInput) {
-      Utility.updateButtonStatus(subBtn, "Oops!", true);
-      setTimeout(() => {
-        Utility.updateButtonStatus(subBtn, "Subscribe");
-      }, 1000);
+      if (lang === "srpski") {
+        Utility.updateButtonStatus(subBtn, "Упс!", true);
+        setTimeout(() => {
+          Utility.updateButtonStatus(subBtn, "Претплатите се");
+        }, 1000);
+      } else {
+        Utility.updateButtonStatus(subBtn, "Oops!", true);
+        setTimeout(() => {
+          Utility.updateButtonStatus(subBtn, subBtn.dataset[lang]);
+        }, 1000);
+      }
       return;
     }
 
-    Utility.updateButtonStatus(subBtn, "Subscribing... " + loader(), true);
-    setTimeout(() => {
-      Utility.updateButtonStatus(subBtn, "Subscribed 😀");
-    }, 3000);
-    setTimeout(() => {
-      Utility.updateButtonStatus(subBtn, "Subscribe");
-    }, 6000);
+    if (lang === "srpski") {
+      Utility.updateButtonStatus(subBtn, "Претплата... " + loader(), true);
+      setTimeout(() => {
+        Utility.updateButtonStatus(subBtn, "Претплаћени 😀");
+      }, 3000);
+      setTimeout(() => {
+        Utility.updateButtonStatus(subBtn, "Претплатите се");
+      }, 6000);
+    } else {
+      Utility.updateButtonStatus(subBtn, "Subscribing... " + loader(), true);
+      setTimeout(() => {
+        Utility.updateButtonStatus(subBtn, "Subscribed 😀");
+      }, 3000);
+      setTimeout(() => {
+        Utility.updateButtonStatus(subBtn, subBtn.dataset[lang]);
+      }, 6000);
+    }
 
     setTimeout(() => {
       form.reset();

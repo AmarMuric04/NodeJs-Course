@@ -82,16 +82,16 @@ export const Controller = {
     const video = document.querySelector(".tutorials");
     const iframe = document.createElement("iframe");
 
-    iframe.src = this.enAPI["main_video"];
-    iframe.className = "w-full h-[720px]";
-    iframe.title = "How To Solve A Rubik’s Cube | INTRODUCTION PART 1";
-    iframe.frameBorder = "0";
-    iframe.allow =
-      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.referrerPolicy = "strict-origin-when-cross-origin";
-    iframe.allowFullscreen = true;
+    // iframe.src = this.enAPI["main_video"];
+    // iframe.className = "w-full h-[720px]";
+    // iframe.title = "How To Solve A Rubik’s Cube | INTRODUCTION PART 1";
+    // iframe.frameBorder = "0";
+    // iframe.allow =
+    //   "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    // iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    // iframe.allowFullscreen = true;
 
-    video.prepend(iframe);
+    // video.prepend(iframe);
 
     const tutorials = document.querySelector(".tutorials-list");
     const enTContent = Object.entries(this.enAPI?.content?.tutorials);
@@ -126,5 +126,72 @@ export const Controller = {
       );
       facts.append(li);
     });
+
+    const variations = document.querySelector(".variations");
+    const enVContent = Object.entries(this.enAPI?.variations);
+
+    if (enVContent) {
+      enVContent.forEach((e, index) => {
+        const [key, value] = e;
+        console.log(enVContent);
+        const container = document.createElement("div");
+        container.classList = "mb-10 bg-white w-[30%] p-4 flex flex-col";
+
+        const title = document.createElement("h1");
+        title.classList = "text-xl font-semibold";
+        title.textContent = value.name;
+
+        const imageWrapper = document.createElement("div");
+        imageWrapper.classList =
+          "h-[20rem] w-full flex items-center justify-center";
+
+        const image = document.createElement("img");
+        image.classList = "bg-gray-200 w-full";
+        image.src = value.image;
+
+        imageWrapper.append(image);
+
+        const wrapper1 = document.createElement("div");
+        wrapper1.classList =
+          "w-full flex justify-between mt-4 border-b-[1px] border-gray-200";
+
+        const key1 = document.createElement("p");
+        key1.classList = "font-semibold text-lg";
+        key1.textContent = "Popularity:";
+
+        const value1 = document.createElement("p");
+        value1.textContent = value.popularity + "⭐";
+
+        wrapper1.append(key1);
+        wrapper1.append(value1);
+
+        const wrapper2 = document.createElement("div");
+        wrapper2.classList =
+          "w-full flex justify-between mb-4 border-b-[2px] border-gray-200";
+
+        const key2 = document.createElement("p");
+        key2.classList = "font-semibold text-lg";
+        key2.textContent = "Difficulty:";
+
+        const value2 = document.createElement("p");
+        value2.textContent = value.difficulty;
+
+        wrapper2.append(key2);
+        wrapper2.append(value2);
+
+        const text = document.createElement("p");
+        text.classList = "text-gray-600 text-sm";
+
+        text.textContent = value.description;
+
+        container.append(title);
+        container.append(imageWrapper);
+        container.append(wrapper1);
+        container.append(wrapper2);
+        container.append(text);
+
+        variations.append(container);
+      });
+    }
   },
 };
