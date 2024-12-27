@@ -143,10 +143,10 @@ export const Controller = {
 
         const imageWrapper = document.createElement("div");
         imageWrapper.classList =
-          "h-[20rem] w-full flex items-center justify-center";
+          "h-[20rem] overflow-hidden w-full flex items-center justify-center";
 
         const image = document.createElement("img");
-        image.classList = "bg-gray-200 w-full";
+        image.classList = "max-h-[20rem] object-cover bg-gray-200 w-full";
         image.src = value.image;
 
         imageWrapper.append(image);
@@ -181,14 +181,27 @@ export const Controller = {
 
         const text = document.createElement("p");
         text.classList = "text-gray-600 text-sm";
-
         text.textContent = value.description;
+
+        let button, a;
+        if (value.video) {
+          a = document.createElement("a");
+          a.setAttribute("href", value.video);
+          a.classList = "w-full";
+          button = document.createElement("button");
+          button.classList =
+            "mt-10 py-2 px-4 font-semibold rounded-[2rem] hover:rounded-none transition-all background w-full";
+          button.textContent = "How to solve?";
+          a.append(button);
+        }
 
         container.append(title);
         container.append(imageWrapper);
         container.append(wrapper1);
         container.append(wrapper2);
         container.append(text);
+
+        if (button) container.append(a);
 
         variations.append(container);
       });

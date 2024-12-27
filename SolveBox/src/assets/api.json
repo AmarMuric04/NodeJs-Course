@@ -11,35 +11,40 @@
             "description": "Simpler version of the Rubik's Cube with no middle pieces, making it ideal for beginners.",
             "difficulty": "Beginner",
             "popularity": 4.5,
-            "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/65b129cad7f1ec360b69df99_659edd5970304acf99d9fd25_product__MINI_main.png"
+            "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/65b129cad7f1ec360b69df99_659edd5970304acf99d9fd25_product__MINI_main.png",
+            "video": "https://www.youtube.com/watch?v=GANnG5a19kg&ab_channel=JPerm"
           },
           {
             "name": "4x4x4 (Rubik's Revenge)",
             "description": "Adds more complexity with centers that can move independently and parity errors.",
             "difficulty": "Intermediate",
             "popularity": 4.0,
-            "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/673cc25c8154cdc74cf26fae_product__MASTER_main-p-500.jpg"
+            "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/673cc25c8154cdc74cf26fae_product__MASTER_main-p-500.jpg",
+            "video" : "https://www.youtube.com/watch?v=KWOZHbDdOeo&ab_channel=JPerm"
           },
           {
             "name": "5x5x5 (Professor's Cube)",
             "description": "Even more challenging with additional edge and center pieces, offering a real test of patience and skill.",
             "difficulty": "Advanced",
             "popularity": 3.8,
-            "image": "https://www.grubiks.com/images/puzzles/19/small.png"
+            "image": "https://www.grubiks.com/images/puzzles/19/small.png",
+            "video": "https://www.youtube.com/watch?v=d1I-jJlVwB4&ab_channel=JPerm"
           },
           {
             "name": "Pyraminx",
             "description": "A pyramid-shaped version of the cube puzzle that is easier than it looks.",
             "difficulty": "Beginner",
             "popularity": 4.3,
-            "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/65b129cbd4a1a1cd96e12422_659ee0ea0a2f977cbd4f737d_product__PYRAMID_main.png"
+            "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/65b129cbd4a1a1cd96e12422_659ee0ea0a2f977cbd4f737d_product__PYRAMID_main.png",
+            "video":"https://www.youtube.com/watch?v=pHBj8hixTfE&ab_channel=NOBLECUBES"
           },
           {
             "name": "Mirror Cube",
             "description": "A cube where pieces differ by shape instead of color, providing a visual and spatial challenge.",
             "difficulty": "Advanced",
             "popularity": 4.7,
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF_HLHvxmxguBjmAtdXqKAS-JzX2vjc5suIg&s"
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF_HLHvxmxguBjmAtdXqKAS-JzX2vjc5suIg&s",
+            "video":"https://www.youtube.com/watch?v=asaVCDvLfRE&ab_channel=TheSimonShi"
           }
         ],
         "main_video": "https://www.youtube.com/embed/F-zMjsRgJws",
@@ -703,14 +708,14 @@
             "description": "Multiple interconnected logic grids that require you to solve smaller puzzles and combine their results.",
             "difficulty": "Expert",
             "popularity": 4.8,
-            "ïmage": "https://logic.puzzlebaron.com/images/example.gif"
+            "image": "https://logic.puzzlebaron.com/images/example.gif"
           },
           {
             "name": "Numeric Logic Grid",
             "description": "A variation that involves numbers instead of words, requiring mathematical reasoning to deduce relationships.",
             "difficulty": "Advanced",
             "popularity": 4.5,
-            "image": "https://i.sstatic.net/ILSKM.png"
+            "image": "https://images.squarespace-cdn.com/content/v1/52711462e4b0932c24aa05ae/1591610275834-4KJC93MLPRVGB1D26E8X/GCShikaku001grid.png?format=1500w"
           }
         ],
         "main_video": "https://www.youtube.com/embed/cUL9aLBeAuc",

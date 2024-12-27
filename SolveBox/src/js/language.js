@@ -1,4 +1,4 @@
-let curr_lang = localStorage.getItem("SolveBox-current-language");
+let curr_lang = localStorage.getItem("SolveBox-current-language") || "english";
 
 const originalSetItem = localStorage.setItem;
 localStorage.setItem = function (key, value) {
