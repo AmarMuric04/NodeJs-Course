@@ -54,6 +54,8 @@ function handleCheckIfSignedIn() {
     signOutBtn.classList =
       "bg1 py-1 xl:py-2 px-4 md:px-6 xl:px-10 text-xs md:text-sm xl:text-[1rem] rounded-[2rem] transition-all hover:rounded-none font-semibold cursor-pointer";
     signOutBtn.textContent = "Sign Out";
+    signOutBtn.setAttribute("data-english", "Sign Out");
+    signOutBtn.setAttribute("data-srpski", "Одјавите се");
     signOutBtn.addEventListener("click", () => {
       signTheUserOut();
       handleCheckIfSignedIn();
@@ -68,6 +70,8 @@ function handleCheckIfSignedIn() {
     signUpBtn.classList =
       "py-1 lg:py-2 px-4 lg:px-10 text-xs md:text-sm xl:text-[1rem] relative underline-parent font-semibold";
     signUpBtn.textContent = "Sign Up";
+    signUpBtn.setAttribute("data-english", "Sign Up");
+    signUpBtn.setAttribute("data-srpski", "Региструј се");
     const underline = document.createElement("div");
     underline.classList = "underline-child bg1";
     signUpBtn.append(underline);
@@ -78,6 +82,8 @@ function handleCheckIfSignedIn() {
     signInBtn.classList =
       "bg1 py-1 xl:py-2 px-4 md:px-6 xl:px-10 text-xs md:text-sm xl:text-[1rem] rounded-[2rem] transition-all hover:rounded-none font-semibold";
     signInBtn.textContent = "Sign In";
+    signInBtn.setAttribute("data-english", "Sign In");
+    signInBtn.setAttribute("data-srpski", "Пријавите се");
 
     userInfo.append(signUpBtn);
     userInfo.append(signInBtn);
