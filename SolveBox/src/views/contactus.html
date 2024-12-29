@@ -13,41 +13,46 @@
 
 <body>
   <div class="b background w-full h-full relative flex flex-col items-center">
-    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full md:flex justify-center z-50">
+    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full lg:flex justify-center items-center z-50">
       <nav class="flex w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] justify-between items-center">
         <a href="./index.html" class="flex gap-2 items-center">
           <img class="h-[1.5rem] lg:h-[3rem]" src="../assets/images/logo.png" />
           <div class="flex flex-col justify-between">
-            <h1 class="font-bold text-[1rem] md:text-[1.2rem] xl:text-[1.6rem]">SolveBox</h1>
-            <div
-              class="text-gray-500 md:text-[0.5rem] text-[0.4rem] xl:text-[0.6rem] flex justify-between items-center">
-              <p>ASSISTANCE</p>
+            <h1 class="font-bold text-[1.6rem]">
+              <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
+            </h1>
+            <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
+              <p data-english="ASSISTANCE" data-srpski="ПОМОЋ">ASSISTANCE</p>
               <p>&</p>
-              <p>INSIGHTS</p>
+              <p data-english="INSIGHTS" data-srpski="УВИДИ">INSIGHTS</p>
             </div>
           </div>
         </a>
         <section>
           <ul class="flex gap-2 lg:gap-6 font-semibold text-xs md:text-sm xl:text-[1rem]">
-            <a href="../views/about.html" class="navbar-text relative transition-all cursor-pointer underline-parent">
-              About
+            <a href="../views/about.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="About" data-srpski="О нама">About</span>
               <div class="underline-child bg1"></div>
             </a>
             <a href="../views/categories.html"
-              class="navbar-text relative transition-all cursor-pointer underline-parent">
-              Categories
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Categories" data-srpski="Категорије">Categories</span>
               <div class="underline-child bg1"></div>
-            </a><a href="../views/subscribe.html"
-              class="navbar-text relative transition-all cursor-pointer underline-parent">
-              Subscribe
+            </a>
+            <a href="../views/subscribe.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Subscribe" data-srpski="Претплати се">Subscribe</span>
               <div class="underline-child bg1"></div>
-            </a><a href="../views/contactus.html"
-              class="curr-active navbar-text relative transition-all cursor-pointer underline-parent">
-              Contact Us
-              <div class="bg1 underline-hovered"></div>
-            </a><a href="../views/credits.html"
-              class="navbar-text relative transition-all cursor-pointer underline-parent">
-              Credits
+            </a>
+            <a href="../views/contactus.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Contact Us" data-srpski="Контактирај нас">Contact Us</span>
+              <div class="bg1 underline-child"></div>
+            </a>
+            <a href="../views/credits.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Credits" data-srpski="Кредити">Credits</span>
               <div class="underline-child bg1"></div>
             </a>
           </ul>
@@ -56,52 +61,65 @@
           <div class="relative lg:w-[7rem] flex justify-center z-50 theme-js font-semibold">
             <div
               class="hover:text1 lg:py-2 lg:px-4 px-2 py-1 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative text-sm md:text-sm xl:text-[1rem]">
-              Themes
+              <span data-english="Themes" data-srpski="Тема">Themes</span>
               <div class="underline-child bg1"></div>
             </div>
             <ul
               class="background absolute shadow-xl py-4 px-1 rounded-[1rem] text-gray-300 top-full theme-container-js inactive transition-all">
-              <div class="bg1 right-0 top-2 rounded-full p-1 text-[0.5rem] absolute">RECOMMENDED</div>
-              <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-theme="dark">
+              <div class="bg1 right-0 top-2 rounded-full p-1 text-[0.5rem] absolute" data-english="RECOMMENDED"
+                data-srpski="ПРЕПОРУЧЕНО">
+                RECOMMENDED
+              </div>
+              <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-english="Dark"
+                data-srpski="Тамна" data-theme="dark">
                 Dark
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] border3 cursor-pointer theme-btn" data-theme="light">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] border3 cursor-pointer theme-btn" data-english="Light"
+                data-srpski="Светла" data-theme="light">
                 Light
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="night">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Night"
+                data-srpski="Ноћна" data-theme="night">
                 Night
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="void">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Void"
+                data-srpski="Празнина" data-theme="void">
                 Void
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="earthy">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Earthy"
+                data-srpski="Земљана" data-theme="earthy">
                 Earthy
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-light">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Solarized Light"
+                data-srpski="Соларна светлост" data-theme="solar-light">
                 Solarized Light
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-dark">
-                Solarized dark
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Solarized Dark"
+                data-srpski="Соларна тама" data-theme="solar-dark">
+                Solarized Dark
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="pastel">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Pastel"
+                data-srpski="Пастел" data-theme="pastel">
                 Pastel
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="cyber">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Cyberpunk Glow"
+                data-srpski="Сајберпанк сјај" data-theme="cyber">
                 Cyberpunk Glow
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="twilight">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Twilight"
+                data-srpski="Сумрак" data-theme="twilight">
                 Twilight
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="autumn">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Autumn Forest"
+                data-srpski="Јесења шума" data-theme="autumn">
                 Autumn Forest
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="ocean">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Ocean Breeze"
+                data-srpski="Океански поветарац" data-theme="ocean">
                 Ocean Breeze
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="mono">
-                Monochrome Minimal
-              </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="retro">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Retro Sunset"
+                data-srpski="Ретро залазак сунца" data-theme="retro">
                 Retro Sunset
               </li>
             </ul>
@@ -109,16 +127,22 @@
           <div class="flex items-center gap-4 min-w-[8rem] lg:min-w-[18rem] justify" id="user-information"></div>
         </section>
       </nav>
+      <select id="lang" class="font-bold bg-transparent rounded-full px-2 outline-none">
+        <option value="english" class="text-black focus:bg-black">English</option>
+        <option value="srpski" class="text-black">Srpski</option>
+      </select>
     </header>
-    <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 relative">
+    <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 absolute top-0 left-0">
       <a href="./index.html" class="flex gap-2 items-center relative z-50">
         <img class="h-[2.3rem]" src="../assets/images/logo.png" />
         <div class="flex flex-col justify-between">
-          <h1 class="font-bold text-[1.2rem]">SolveBox</h1>
+          <h1 class="font-bold text-[1.6rem]">
+            <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
+          </h1>
           <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
-            <p>ASSISTANCE</p>
+            <p data-english="ASSISTANCE" data-srpski="ПОМОЋ">ASSISTANCE</p>
             <p>&</p>
-            <p>INSIGHTS</p>
+            <p data-english="INSIGHTS" data-srpski="УВИДИ">INSIGHTS</p>
           </div>
         </div>
       </a>
@@ -142,7 +166,7 @@
       <nav id="mobile-header" class="w-[95%] absolute h-screen background top-0 left-full transition-all z-40">
         <ul class="flex flex-col py-40 px-10 gap-4">
           <a href="./index.html">
-            <li class="flex items-center gap-2 text-lg font-semibold">
+            <li class="flex items-center gap-2 text-lg font-semibold text3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="currentColor"
                   d="m16 8.41l-4.5-4.5L4.41 11H6v8h3v-6h5v6h3v-8h1.59L17 9.41V6h-1zM2 12l9.5-9.5L15 6V5h3v4l3 3h-3v8h-5v-6h-3v6H5v-8z" />
@@ -181,7 +205,7 @@
             </li>
           </a>
           <a href="./contactus.html">
-            <li class="flex items-center gap-2 text-lg font-semibold text3">
+            <li class="flex items-center gap-2 text-lg font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                   color="currentColor">
@@ -231,22 +255,28 @@
       </nav>
     </header>
     <section class="w-full flex justify-center relative">
-      <div class="w-[90%] lg:w-[75rem] py-20 lg:py-0">
+      <div class="w-[90%] xl:w-[75rem] py-20 lg:py-0">
         <div class="relative z-30 lg:mt-20 lg:h-[15rem] flex flex-col lg:flex-row justify-between items-center">
-          <div class="w-full lg:w-1/2">
-            <h1 class="text-[1.5rem] lg:text-[3rem] font-bold leading-normal lg:leading-[3.5rem] w-full lg:w-2/3">
-              Get in <span class="text1">Touch</span>
+          <div class="w-full xl:w-1/2">
+            <h1 class="text-[1.5rem] lg:text-[3rem] font-bold leading-normal lg:leading-[3.5rem] w-full">
+              <span data-english="Get in" data-srpski="Ступите у">Get in</span> <span class="text1" data-english="Touch"
+                data-srpski="контакт">Touch</span>
             </h1>
             <p class="text-[0.5rem] tracking-[0.1rem] py-4 lg:pt-8 lg:pb-4 noto text3">
-              <a class="hover:underline" href="./index.html"> HOME</a>
+              <a class="hover:underline" href="./index.html" data-english="HOME" data-srpski="ПОЧЕТНА">HOME</a>
               <span>></span>
-              <span class="underline font-semibold">CONTACT US</span>
+              <span class="underline font-semibold" data-english="CONTACT US" data-srpski="КОНТАКТ">CONTACT US</span>
             </p>
           </div>
-          <div class="w-full lg:w-1/2">
+          <div class="w-full xl:w-1/2">
             <p class="text-gray-400 font-semibold text-sm lg:text-lg">
-              Have questions? We're here to help! Contact us for support, feedback, or
-              inquiries. We'd love to hear from you.
+              <span
+                data-english="Have questions? We're here to help! Contact us for support, feedback, or inquiries. We'd love to hear from you."
+                data-srpski="Имате питања? Ту смо да вам помогнемо! Контактирајте нас за подршку, повратне информације или упите. Радо ћемо вас саслушати.">
+                Have questions? We're here to help! Contact us for support, feedback, or inquiries. We'd love to hear
+                from
+                you.
+              </span>
             </p>
           </div>
         </div>
@@ -286,44 +316,53 @@
       </div>
     </section>
     <section class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-center">
-      <div class="w-full lg:w-[75rem]">
+      <div class="w-full xl:w-[75rem]">
         <ul
           class="flex justify-between w-full flex-col lg:flex-row items-center lg:items-start text-sm lg:text-[1rem] gap-4 lg:gap-0">
-          <li class="flex items-center w-[90%] lg:w-1/4 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/what.svg" />
+          <li class="flex items-center w-[90%] xl:w-1/4 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="../assets/svgs/what.svg" />
             <div class="flex flex-col">
               <h1 class="font-bold text-xl lg:text-2xl text-black">What to expect?</h1>
               <p class="text-gray-700">SolveBox brigs experts together.</p>
             </div>
           </li>
-          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/light.svg" />
+          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="../assets/svgs/light.svg" />
             <p>Engaging solutions and feedback</p>
           </li>
-          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/time.svg" />
+          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="../assets/svgs/time.svg" />
             <p>Quick and simple solutions</p>
           </li>
-          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/stats.svg" />
+          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="../assets/svgs/stats.svg" />
             <p>Overwhelmingly good reviews</p>
           </li>
         </ul>
       </div>
     </section>
     <section class="w-full flex justify-center">
-      <div class="w-[90%] lg:w-[75rem] py-36">
+      <div class="w-[90%] xl:w-[75rem] py-36">
         <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
-          Places <span class="text1">where</span> you can <span class="text2">find</span> us
+          <span data-english="Places" data-srpski="Места">Places</span>
+          <span class="text1" data-english="where" data-srpski="где">where</span>
+          <span data-english="you can" data-srpski="нас можете">you can</span>
+          <span class="text2" data-english="find" data-srpski="наћи">find</span>
+          <span data-english="us">us</span>
         </h1>
         <p class="text-gray-300 text-sm lg:text-lg text-center py-8 font-semibold">
-          Feel free to pick your option and help us help you!
+          <span data-english="Feel free to pick your option and help us help you!"
+            data-srpski="Слободно изаберите опцију и помозите нам да вам помогнемо!">
+            Feel free to pick your option and help us help you!
+          </span>
         </p>
+
         <div class="w-full lg:h-[40rem] flex flex-col items-center gap-20 mt-16 text-black">
           <div class="w-full h-full flex flex-col lg:flex-row gap-20">
-            <div class="bg-white h-full w-full lg:w-1/2 p-4 relative pb-20 lg:pb-0">
+            <div class="bg-white h-full w-full xl:w-1/2 p-4 relative pb-20 lg:pb-0">
               <div class="flex gap-8 items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 2048 2048">
+                <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="64" height="64"
+                  viewBox="0 0 2048 2048">
                   <defs>
                     <clipPath id="id0">
                       <path
@@ -360,24 +399,29 @@
                       d="m464.216 761.846 277.208 114.041 103.159-103.073c26.69-26.697 29.712-70.83 2.419-98.123l-179.443-179.45c-100.43-100.428-209.07 149.222-203.343 266.603zM1191.69 1559.45c193.03 61.63 480.12-59.941 366.515-173.571l-179.371-179.456c-27.272-27.293-71.472-24.118-98.121 2.524l-103 102.967 13.977 247.536z" />
                   </g>
                 </svg>
-                <p class="uppercase leading-[0.1rem] font-bold">
+                <p class="uppercase leading-[0.1rem] font-bold text-sm lg:text-md"
+                  data-english="Get in Touch with Us by Phone" data-srpski="Ступите у контакт с нама телефоном">
                   Get in Touch with Us by Phone
                 </p>
               </div>
               <div class="background h-1 w-1/3 my-4"></div>
-              <p class="text-gray-600 text-lg ml-4">
+              <p class="text-gray-600 text-lg ml-4"
+                data-english="We're always ready to assist you! Give us a call anytime for immediate support and guidance."
+                data-srpski="Увек смо спремни да вам помогнемо! Позовите нас у било ком тренутку за брзу подршку и саветовање.">
                 We're always ready to assist you! Give us a call anytime for immediate support and guidance.
               </p>
               <a href="tel:+063303309">
                 <button
-                  class="bg-gray-800 text-white py-2 px-8 rounded-[2rem] hover:rounded-none transition-all font-semibold absolute bottom-4 right-4">
+                  class="bg-gray-800 text-white py-2 px-8 rounded-[2rem] hover:rounded-none transition-all font-semibold absolute bottom-4 right-4"
+                  data-english="Call Us Now" data-srpski="Позовите нас сада">
                   Call Us Now
                 </button>
               </a>
             </div>
-            <div class="bg-white h-full w-full lg:w-1/2 p-4 relative pb-20 lg:pb-0">
+            <div class="bg-white h-full w-full xl:w-1/2 p-4 relative pb-20 lg:pb-0">
               <div class="flex gap-8 items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 2048 2048"
+                <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="64" height="64"
+                  viewBox="0 0 2048 2048"
                   style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd">
                   <defs>
                     <clipPath id="id0">
@@ -430,26 +474,29 @@
                       d="M750.663 837.32c-44.441 0-80.673 31.317-80.673 69.685 0 38.374 36.232 69.665 80.673 69.665 44.502 0 80.71-31.234 80.71-69.665 0-38.426-36.208-69.685-80.71-69.685zM1023.98 837.32c-44.45 0-80.674 31.317-80.674 69.685 0 38.374 36.224 69.665 80.674 69.665 44.441 0 80.71-31.278 80.71-69.665 0-38.381-36.269-69.685-80.71-69.685zM1302.51 837.32c-44.441 0-80.71 31.304-80.71 69.685 0 38.387 36.269 69.665 80.71 69.665 44.486 0 80.815-31.227 80.815-69.665 0-38.432-36.329-69.685-80.815-69.685z" />
                   </g>
                 </svg>
-                <p class="uppercase leading-[0.1rem] font-bold">
+                <p class="uppercase leading-[0.1rem] font-bold text-sm lg:text-md"
+                  data-english="Connect with Us on LinkedIn" data-srpski="Повежите се са нама на LinkedIn-у">
                   Connect with Us on LinkedIn
                 </p>
               </div>
               <div class="background h-1 w-1/3 my-4"></div>
-              <p>
+              <p data-english="Stay connected and follow us on LinkedIn for the latest updates, insights, and career opportunities."
+                data-srpski="Останите у контакту и пратите нас на LinkedIn-у за најновије вести, увиде и прилике за каријеру.">
                 Stay connected and follow us on LinkedIn for the latest updates, insights, and career opportunities.
               </p>
               <a href="https://www.linkedin.com/in/amar-muri%C4%87-52564b2a2/" target="_blank">
                 <button
-                  class="bg-gray-800 text-white py-2 px-8 rounded-[2rem] hover:rounded-none transition-all font-semibold absolute bottom-4 right-4">
+                  class="bg-gray-800 text-white py-2 px-8 rounded-[2rem] hover:rounded-none transition-all font-semibold absolute bottom-4 right-4"
+                  data-english="Visit Our LinkedIn" data-srpski="Посетите наш LinkedIn">
                   Visit Our LinkedIn
                 </button>
               </a>
             </div>
           </div>
           <div class="w-full h-full flex flex-col lg:flex-row gap-20">
-            <div class="bg-white h-full w-full lg:w-1/2 p-4 relative pb-20 lg:pb-0">
-              <div class="flex gap-8 items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 2048 2048"
+            <div class="bg-white h-full w-full xl:w-1/2 p-4 relative pb-20 lg:pb-0">
+              <div class="flex gap-8 items-center"><svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg"
+                  width="64" height="64" viewBox="0 0 2048 2048"
                   style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd">
                   <defs>
                     <clipPath id="id0">
@@ -512,25 +559,29 @@
                       style="fill:#f43c3c" />
                   </g>
                 </svg>
-                <p class="uppercase leading-[0.1rem] font-bold">
+                <p class="uppercase leading-[0.1rem] font-bold text-sm lg:text-md"
+                  data-english="Find Us at Our Location" data-srpski="Пронађите нас на нашој локацији">
                   Find Us at Our Location
                 </p>
               </div>
               <div class="background h-1 w-1/3 my-4"></div>
-              <p>
+              <p data-english="Visit us in person at our office for a face-to-face consultation. We're always ready to assist you."
+                data-srpski="Посетите нас лично у нашој канцеларији за личне консултације. Увек смо спремни да вам помогнемо.">
                 Visit us in person at our office for a face-to-face consultation. We're always ready to assist you.
               </p>
               <a href="https://www.google.com/maps/@43.1382847,20.5206351,18z?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank">
                 <button
-                  class="bg-gray-800 text-white py-2 px-8 rounded-[2rem] hover:rounded-none transition-all font-semibold absolute bottom-4 right-4">
+                  class="bg-gray-800 text-white py-2 px-8 rounded-[2rem] hover:rounded-none transition-all font-semibold absolute bottom-4 right-4"
+                  data-english="Get Directions" data-srpski="Добити упутства">
                   Get Directions
                 </button>
               </a>
             </div>
-            <div class="bg-white h-full w-full lg:w-1/2 p-4 relative pb-20 lg:pb-0">
+            <div class="bg-white h-full w-full xl:w-1/2 p-4 relative pb-20 lg:pb-0">
               <div class="flex gap-8 items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 2048 2048"
+                <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="64" height="64"
+                  viewBox="0 0 2048 2048"
                   style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd">
                   <defs>
                     <clipPath id="id0">
@@ -565,51 +616,63 @@
                       d="M464 713.421v624.159h1118.18V711.29l-548.63 320.8-12.25 7.16-12.25-7.16z" />
                   </g>
                 </svg>
-                <p class="uppercase leading-[0.1rem] font-bold">
+                <p class="uppercase leading-[0.1rem] font-bold text-sm lg:text-md"
+                  data-english="Reach Out to Us by Email" data-srpski="Контактирајте нас путем е-поште">
                   Reach Out to Us by Email
                 </p>
               </div>
               <div class="background h-1 w-1/3 my-4"></div>
-              <p>
+              <p data-english="Have questions? Feel free to email us, and we’ll get back to you as soon as possible."
+                data-srpski="Имате питања? Слободно нам пошаљите е-поруку, и јавићемо вам се што је пре могуће.">
                 Have questions? Feel free to email us, and we’ll get back to you as soon as possible.
               </p>
               <a href="mailto:muricamar2004@gmail.com">
                 <button
-                  class="bg-gray-800 text-white py-2 px-8 rounded-[2rem] hover:rounded-none transition-all font-semibold absolute bottom-4 right-4">
+                  class="bg-gray-800 text-white py-2 px-8 rounded-[2rem] hover:rounded-none transition-all font-semibold absolute bottom-4 right-4"
+                  data-english="Send an Email" data-srpski="Пошаљи е-поруку">
                   Send an Email
                 </button>
               </a>
             </div>
           </div>
         </div>
+
       </div>
     </section>
     <section class="half-polygon-north bg2 w-full py-40 flex justify-center">
-      <div class="w-[90%] lg:w-[75rem] flex gap-40 flex-col lg:flex-row">
-        <div class="w-full lg:w-1/2 text-center lg:text-start">
-          <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto text1">
+      <div class="w-[90%] xl:w-[75rem] flex gap-40 flex-col lg:flex-row">
+        <div class="w-full xl:w-1/2 text-center lg:text-start">
+          <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto text1" data-english="JOIN OUR COMMUNITY"
+            data-srpski="ПРИДРУЖИТЕ СЕ НАШОЈ ЗАЈЕДНИЦИ">
             JOIN OUR COMMUNITY
           </p>
-          <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold">
-            Master Puzzles <span class="text1">with Us</span>. <br />
-            Sharpen Your Mind<span class="text2">!</span>
+          <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold"
+            data-english="Master Puzzles with Us. Sharpen Your Mind!"
+            data-srpski="Савладајте слагалице са нама. Изоштрите свој ум!">
+            Master Puzzles with Us. Sharpen Your Mind!
           </h1>
-          <p class="my-6 text-[1rem] lg:text-xl text-semibold">
+          <p class="my-6 text-[1rem] lg:text-xl text-semibold" data-english="Have questions? Explore our FAQs."
+            data-srpski="Имате питања? Истражите наша најчешћа питања.">
             Have questions? Explore our FAQs.
           </p>
-          <p class="text-gray-700 font-semibold text-xs lg:text-[1rem]">
+          <p class="text-gray-700 font-semibold text-xs lg:text-[1rem]"
+            data-english="Find answers to common questions about our puzzles, challenges, and membership. Need more help? Fill out the form to connect with us."
+            data-srpski="Пронађите одговоре на честа питања о нашим слагалицама, изазовима и чланству. Потребна вам је додатна помоћ? Попуните формулар да нас контактирате.">
             Find answers to common questions about our puzzles, challenges, and membership. Need more help? Fill out the
             form to connect with us.
           </p>
           <div class="w-full mt-8 flex flex-col">
             <div class="drop drop-disabled">
-              <div class="py-2 pr-2 lg:py-4 lg:pr-4 cursor-pointer flex justify-between text-[1rem] lg:text-xl
-                border-b-[0.1rem] border-[#75e1d9]">
-                <p>How can I start solving puzzles?</p>
+              <div
+                class="py-2 pr-2 lg:py-4 lg:pr-4 cursor-pointer flex justify-between text-[1rem] lg:text-xl border-b-[0.1rem] border-[#75e1d9]">
+                <p data-english="How can I start solving puzzles?" data-srpski="Како могу почети да решавам слагалице?">
+                  How can I start solving puzzles?</p>
                 <p class="text-[1.5rem] lg:text-[2rem] plus">+</p>
               </div>
               <div class="toggle-text overflow-hidden">
-                <p class="text-gray-700 italic py-4 text-sm lg:text-lg">
+                <p class="text-gray-700 italic py-4 text-sm lg:text-lg"
+                  data-english="Sign up to access our puzzles. Explore challenges designed for all skill levels."
+                  data-srpski="Региструјте се да бисте приступили нашим слагалицама. Истражите изазове за све нивое вештина.">
                   Sign up to access our puzzles. Explore challenges designed for all skill levels.
                 </p>
               </div>
@@ -617,23 +680,30 @@
             <div class="drop drop-disabled">
               <div
                 class="py-2 pr-2 lg:py-4 lg:pr-4 cursor-pointer flex justify-between text-[1rem] lg:text-xl border-b-[0.1rem] border-[#75e1d9]">
-                <p>Are the puzzles free?</p>
+                <p data-english="Are the puzzles free?" data-srpski="Да ли су слагалице бесплатне?">Are the puzzles
+                  free?</p>
                 <p class="text-[1.5rem] lg:text-[2rem] plus">+</p>
               </div>
               <div class="toggle-text overflow-hidden">
-                <p class="text-gray-700 italic py-4 text-sm lg:text-lg">
+                <p class="text-gray-700 italic py-4 text-sm lg:text-lg"
+                  data-english="Yes, most of our puzzles are free. Premium challenges require a membership."
+                  data-srpski="Да, већина наших слагалица је бесплатна. Премијум изазови захтевају чланство.">
                   Yes, most of our puzzles are free. Premium challenges require a membership.
                 </p>
               </div>
             </div>
-            <div class="drop drop-disabled transition-all">
+            <div class="drop drop-disabled">
               <div
                 class="py-2 pr-2 lg:py-4 lg:pr-4 cursor-pointer flex justify-between text-[1rem] lg:text-xl border-b-[0.1rem] border-[#75e1d9]">
-                <p>What types of puzzles do you offer?</p>
+                <p data-english="What types of puzzles do you offer?" data-srpski="Које врсте слагалица нудите?">What
+                  types of
+                  puzzles do you offer?</p>
                 <p class="text-[1.5rem] lg:text-[2rem] plus">+</p>
               </div>
               <div class="toggle-text overflow-hidden transition-all">
-                <p class="text-gray-700 italic py-4 text-sm lg:text-lg">
+                <p class="text-gray-700 italic py-4 text-sm lg:text-lg"
+                  data-english="We offer a variety of puzzles including Sudoku, Rubik's cube challenges, logic puzzles, and more."
+                  data-srpski="Нудимо разне слагалице укључујући Судоку, изазове са Рубиковом коцком, логичке слагалице и још много тога.">
                   We offer a variety of puzzles including Sudoku, Rubik's cube challenges, logic puzzles, and more.
                 </p>
               </div>
@@ -641,112 +711,146 @@
           </div>
         </div>
         <form id="news-form" action="submit"
-          class="text-white bg-[#242234] w-full lg:w-1/2 p-8 lg:p-16 flex flex-col gap-16">
-          <p class="text-xl lg:text-3xl font-semibold text-center">
+          class="text-white bg-[#242234] w-full xl:w-1/2 p-8 lg:p-16 flex flex-col gap-16">
+          <p class="text-xl lg:text-3xl font-semibold text-center"
+            data-english="Ready to challenge your mind? Join us today!"
+            data-srpski="Спремни да изазовете свој ум? Придружите нам се данас!">
             Ready to challenge your mind? Join us today!
           </p>
           <div class="flex flex-col gap-4">
             <input id="name" name="name"
               class="rounded-lg border-2 border-[#262432] px-4 py-4 lg:py-6 w-full bg-[#262432]"
-              placeholder="Your Name*" type="text" />
+              placeholder="Your Name*" type="text" data-english="Your Name*" data-srpski="Ваше Име*" />
             <input id="number" name="number"
               class="rounded-lg border-2 border-[#262432] px-4 py-4 lg:py-6 w-full bg-[#262432]" type="tel"
-              placeholder="Your Number*" />
+              placeholder="Your Number*" data-english="Your Number*" data-srpski="Ваш Број*" />
             <input id="email" name="email"
               class="rounded-lg border-2 border-[#262432] px-4 py-4 lg:py-6 w-full bg-[#262432]" type="email"
-              placeholder="Your Email*" />
+              placeholder="Your Email*" data-english="Your Email*" data-srpski="Ваша Емаил Адреса*" />
           </div>
           <button
-            class="flex items-center justify-center gap-4 w-full text-center bg1 py-4 text-black rounded-[2rem] hover:rounded-none transition-all">
+            class="flex items-center justify-center gap-4 w-full text-center bg1 py-4 text-black rounded-[2rem] hover:rounded-none transition-all"
+            data-english="Subscribe" data-srpski="Претплатите се">
             Subscribe
           </button>
         </form>
       </div>
     </section>
+
     <section class="bg3 half-polygon-south w-full flex justify-center py-40">
-      <div class="w-[90%] lg:w-[75rem] flex flex-col-reverse lg:flex-row gap-8 lg:gap-40">
+      <div class="w-[90%] xl:w-[75rem] flex flex-col-reverse lg:flex-row gap-8 lg:gap-40">
         <form id="review-form" action="submit"
-          class="bg-white mt-20 text-black  p-8 lg:p-16 w-full lg:w-1/2 flex flex-col justify-between">
-          <div class="flex w-full justify-between flex-col border-b-2 pb-4">
-            <p class="text-sm lg:text-[1rem] font-semibold pb-2">Name</p>
-            <div class="flex justify-between w-full gap-4 lg:gap-10">
-              <div class="flex flex-col w-full">
-                <input name="review-first-name" class="w-full py-2 px-4 outline-none border-2 rounded-lg" type=""
-                  id="review-first-name" placeholder="John" />
-                <label class="text-xs text-gray-400" for="review-first-name">First Name*</label>
+          class="bg-white mt-20 text-black p-4 sm:p-8 lg:p-16 w-full xl:w-1/2 flex flex-col justify-between">
+          <div class="flex flex-col border-b-2 pb-4">
+            <label for="review-first-name" class="text-sm lg:text-[1rem] font-semibold pb-2" data-english="Name"
+              data-srpski="Име">Name</label>
+            <div class="flex flex-col sm:flex-row gap-4 lg:gap-10">
+              <div class="w-full">
+                <input name="review-first-name" id="review-first-name"
+                  class="w-full py-2 px-4 outline-none border-2 rounded-lg" type="text" placeholder="John"
+                  data-english="John" data-srpski="Јован" aria-label="First Name" required />
+                <label class="text-xs text-gray-400" for="review-first-name" data-english="First Name*"
+                  data-srpski="Прво име*">First Name*</label>
               </div>
-              <div class="flex flex-col w-full">
-                <input name="review-last-name" class="w-full py-2 px-4 outline-none border-2 rounded-lg" type="text"
-                  id="review-last-name" placeholder="Doe" />
-                <label class="text-xs text-gray-400" for="review-last-name">Last Name*</label>
+              <div class="w-full">
+                <input name="review-last-name" id="review-last-name"
+                  class="w-full py-2 px-4 outline-none border-2 rounded-lg" type="text" placeholder="Doe"
+                  data-english="Doe" data-srpski="Дој" aria-label="Last Name" required />
+                <label class="text-xs text-gray-400" for="review-last-name" data-english="Last Name*"
+                  data-srpski="Презиме*">Last Name*</label>
               </div>
             </div>
           </div>
-          <div class="flex w-full justify-between flex-col pt-4">
-            <div class="flex justify-between w-full gap-4 lg:gap-10 border-b-2 pb-4">
-              <div class="flex flex-col w-full">
-                <p class="text-sm lg:text-[1rem] font-semibold pb-2">Email</p>
+          <div class="flex flex-col pt-4 border-b-2 pb-4">
+            <label class="text-sm lg:text-[1rem] font-semibold pb-2" data-english="Contact Information"
+              data-srpski="Контакт информације">Contact Information</label>
+            <div class="flex flex-col sm:flex-row gap-4 lg:gap-10">
+              <div class="w-full">
                 <input id="review-email" name="review-email" class="w-full py-2 px-4 outline-none border-2 rounded-lg"
-                  type="email" placeholder="iamagenius@puzzler.com" />
-                <label class="text-xs text-gray-400" for="first-name">Please enter a valid email address</label>
+                  type="email" placeholder="example@domain.com" data-english="example@domain.com"
+                  data-srpski="пример@домен.цом" aria-label="Email" required />
+                <label class="text-xs text-gray-400" for="review-email" data-english="Valid Email*"
+                  data-srpski="Важећа е-пошта*">Valid Email*</label>
               </div>
-              <div class="flex flex-col w-full">
-                <p class="text-sm lg:text-[1rem] font-semibold pb-2">Number</p>
+              <div class="w-full">
                 <input id="review-number" name="review-number" class="w-full py-2 px-4 outline-none border-2 rounded-lg"
-                  type="tel" placeholder="+381 000 000 000" />
-                <label class="text-xs text-gray-400" for="last-name">Please enter a valid number</label>
+                  type="tel" placeholder="+381 000 000 000" data-english="+381 000 000 000"
+                  data-srpski="+381 000 000 000" aria-label="Phone Number" />
+                <label class="text-xs text-gray-400" for="review-number" data-english="Valid Number"
+                  data-srpski="Важећи број">Valid Number</label>
               </div>
             </div>
           </div>
-          <div class="flex w-full justify-between flex-col pt-4 h-1/2">
-            <div class="flex w-full flex-col h-full">
-              <label for="review" class="text-sm lg:text-[1rem] font-semibold pb-2">Give us your feedback!</label>
-              <textarea name="review" id="review" placeholder="Wow! Such amazingness and professionalism!"
-                class="w-full py-2 px-4 outline-none border-2 rounded-lg max-h-28 min-h-28"></textarea>
-            </div>
+          <div class="flex flex-col pt-4">
+            <label for="review" class="text-sm lg:text-[1rem] font-semibold pb-2" data-english="Your Feedback"
+              data-srpski="Ваше повратне информације">Your Feedback</label>
+            <textarea name="review" id="review" placeholder="Share your experience here..."
+              class="w-full py-2 px-4 outline-none border-2 rounded-lg max-h-28 min-h-28"
+              data-english="Share your experience here..." data-srpski="Поделите своје искуство овде..."
+              aria-label="Feedback"></textarea>
           </div>
-          <button 6 2
-            class="flex items-center mt-10 w-full text-center bg2 py-4 text-black rounded-[2rem] hover:rounded-none transition-all gap-4 justify-center">
+          <button
+            class="flex items-center mt-10 w-full text-center bg2 py-4 text-black rounded-[2rem] hover:rounded-none transition-all gap-4 justify-center"
+            data-english="Submit" data-srpski="Поднесите">
             Submit
           </button>
         </form>
-        <div class="w-full lg:w-1/2">
-          <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto text-black">
-            SHARE YOUR EXPERIENCE
-          </p>
+        <div class="w-full xl:w-1/2 text-center lg:text-start">
+          <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto text-black" data-english="SHARE YOUR EXPERIENCE"
+            data-srpski="ПОДЕЛИТЕ СВОЈЕ ИСКУСТВО">SHARE YOUR EXPERIENCE</p>
           <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold">
-            Help Us Improve <span class="text1">Our Website</span>. <br />
-            Your Feedback <span class="text2">Matters!</span>
+            <span data-english="Help Us Improve Our Website" data-srpski="Помозите нам да побољшамо наш сајт">
+              Help Us Improve Our Website
+            </span>.
+            <br class="hidden lg:block" />
+            <span data-english="Your Feedback Matters!" data-srpski="Ваше мишљење је важно!">Your Feedback
+              Matters!</span>
           </h1>
           <p class="my-6 text-[1rem] lg:text-xl text-semibold">
-            We value your opinion. Let us know what you think!
+            <span data-english="We value your opinion. Let us know what you think!"
+              data-srpski="Вреднујемо ваше мишљење. Реците нам шта мислите!">
+              We value your opinion. Let us know what you think!
+            </span>
           </p>
-          <p class="text-gray-700 font-semibold text-xs lg:text-[1rem]">
+          <p class="text-gray-700 font-semibold text-xs lg:text-[1rem]"
+            data-english="Share your thoughts on our website, puzzles, and community. Your feedback helps us enhance your experience and provide better challenges."
+            data-srpski="Поделите своје мисли о нашем сајту, слагалицама и заједници. Ваше повратне информације нам помажу да побољшамо ваше искуство и понудимо боље изазове.">
             Share your thoughts on our website, puzzles, and community. Your feedback helps us enhance your experience
-            and
-            provide better challenges.
+            and provide
+            better challenges.
           </p>
-          <p class="mt-6 text-sm lg:text-lg text-gray-700">
+          <p class="mt-6 text-sm lg:text-lg text-gray-700"
+            data-english="Whether it’s about the design, functionality, or puzzle variety, every comment counts. Use the form below to leave your review."
+            data-srpski="Без обзира да ли је реч о дизајну, функционалности или разноврсности слагалица, сваки коментар се рачуна. Користите форму испод да оставите своје мишљење.">
             Whether it’s about the design, functionality, or puzzle variety, every comment counts. Use the form below to
             leave
             your review.
           </p>
-          <p class="mt-4 text-sm lg:text-lg text-gray-700 italic">
+          <p class="mt-4 text-sm lg:text-lg text-gray-700 italic"
+            data-english="Thank you for being a part of our puzzle community!"
+            data-srpski="Хвала вам што сте део наше заједнице љубитеља слагалица!">
             Thank you for being a part of our puzzle community!
           </p>
         </div>
       </div>
     </section>
+
+
     <footer class="w-full flex justify-center pt-40">
-      <div class="w-[90%] lg:w-[75rem]">
+      <div class="w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem]">
         <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
-          A vibrant and
-          <span class="text3">inclusive</span> community of
-          <span class="text2">solvers</span> and
-          <span class="text1">challengers</span><span class="text3">.</span>
+          <span data-english="A vibrant and" data-srpski="Живахна и">A vibrant and</span>
+          <span class="text3" data-english="inclusive" data-srpski="инклузивна">inclusive</span>
+          <span data-english="community of" data-srpski="заједница">community of</span>
+          <span class="text2" data-english="solvers" data-srpski="решавача">solvers</span>
+          <span data-english="and" data-srpski="и">and</span>
+          <span class="text1" data-english="challengers" data-srpski="изазивача">challengers</span>
+          <span class="text3" data-english="." data-srpski=".">.</span>
         </h1>
         <p class="text-xl lg:text-3xl font-bold text-center my-8">
-          Learn <span class="text1 underline">more</span> now!
+          <span data-english="Learn" data-srpski="Сазнајте">Learn</span>
+          <span class="text1 underline" data-english="more" data-srpski="више">more</span>
+          <span data-english="now!" data-srpski="одмах!">now!</span>
         </p>
         <div class="w-full flex justify-between my-8 gap-4 flex-col lg:flex-row">
           <div class="flex justify-between">
@@ -766,23 +870,43 @@
               src="https://images.unsplash.com/photo-1515508268448-8d0d292bc49a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
           </div>
         </div>
+
         <div class="w-full flex flex-col lg:flex-row py-20 justify-between">
           <div class="w-full lg:w-2/5">
             <h1 class="font-semibold text-lg lg:text-2xl">
-              Technology, Design & Innovation Conference
+              <span data-english="Puzzle Solver's Hub" data-srpski="Кутак за решавање загонетки">Puzzle Solver's
+                Hub</span>
             </h1>
             <p class="py-4 text-gray-300 text-sm lg:text-lg text-semibold">
-              We bring puzzle experts together.
+              <span data-english="Your ultimate resource for solving puzzles of all kinds."
+                data-srpski="Ваш најбољи ресурс за решавање свих врста загонетки.">
+                Your ultimate resource for solving puzzles of all kinds.
+              </span>
             </p>
             <p class="py-4 text-gray-300 text-xs lg:text-[1rem] text-semibold">
-              Join us at the NY Technology, Design & Innovation Conference,
-              the premier gathering of visionaries on September 17-18, 2024.
-              Feel free to contact us in any convenient way for more details.
+              <span
+                data-english="Join us at the Puzzle Solver's Hub, where puzzle enthusiasts and experts come together to share tips, tricks, and solutions."
+                data-srpski="Придружите нам се у Кутку за решавање загонетки, где љубитељи и стручњаци деле савете, трикове и решења.">
+                Join us at the Puzzle Solver's Hub, where puzzle enthusiasts
+                and experts come together to share tips, tricks, and
+                solutions.
+              </span>
+              <span
+                data-english="Explore strategies, connect with a vibrant community, and enhance your problem-solving skills."
+                data-srpski="Истражите стратегије, повежите се са живописном заједницом и унапредите своје вештине решавања проблема.">
+                Explore strategies, connect with a vibrant community, and
+                enhance your problem-solving skills.
+              </span>
+              <span data-english="Visit our site for more details and feel free to contact us anytime!"
+                data-srpski="Посетите нашу страницу за више детаља и слободно нас контактирајте у било ком тренутку!">
+                Visit our site for more details and feel free to contact us
+                anytime!
+              </span>
             </p>
           </div>
           <div class="flex my-8 lg:my-0 gap-10 lg:gap-20 flex-col lg:flex-row">
-            <div class="flex flex-col gap-10">
-              <div class="flex gap-3 h-20">
+            <div class="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
@@ -792,13 +916,17 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    PHONE
+                    <span data-english="PHONE" data-srpski="ТЕЛЕФОН">PHONE</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">+381 (063) 303 309</p>
-                  <p class="text-sm lg:text-lg font-semibold">+381 (063) 303 309</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="+381 (063) 303 309" data-srpski="+381 (063) 303 309">+381 (063) 303 309</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="+381 (063) 303 309" data-srpski="+381 (063) 303 309">+381 (063) 303 309</span>
+                  </p>
                 </div>
               </div>
-              <div class="flex gap-3 h-20">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
@@ -808,15 +936,22 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    EMAIL
+                    <span data-english="EMAIL" data-srpski="ЕМАЈЛ">EMAIL</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">muricamar2004@gmail.com</p>
-                  <p class="text-sm lg:text-lg font-semibold">muricamar2004@gmail.com</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="muricamar2004@gmail.com"
+                      data-srpski="muricamar2004@gmail.com">muricamar2004@gmail.com</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="muricamar2004@gmail.com"
+                      data-srpski="muricamar2004@gmail.com">muricamar2004@gmail.com</span>
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="flex flex-col gap-4 lg:gap-10">
-              <div class="flex gap-3 h-20">
+
+            <div class="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256" class="">
@@ -826,13 +961,17 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    ADDRESS
+                    <span data-english="ADDRESS" data-srpski="АДРЕСА">ADDRESS</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">Serbia,</p>
-                  <p class="text-sm lg:text-lg font-semibold">Novi Pazar</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Serbia," data-srpski="Србија,">Serbia,</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Novi Pazar" data-srpski="Нови Пазар">Novi Pazar</span>
+                  </p>
                 </div>
               </div>
-              <div class="flex gap-3 h-20">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
@@ -845,10 +984,14 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    LINKEDIN
+                    <span data-english="LINKEDIN" data-srpski="ЛИНКЕДИН">LINKEDIN</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">Amar Muric</p>
-                  <p class="text-sm lg:text-lg font-semibold">Amar Muric</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Amar Muric" data-srpski="Амар Мурић">Amar Muric</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Amar Muric" data-srpski="Амар Мурић">Amar Muric</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -859,50 +1002,64 @@
             <div class="flex gap-2 items-center">
               <img class="h-[3rem]" src="../assets/images/logo.png" />
               <div class="flex flex-col justify-between">
-                <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
+                <h1 class="font-bold text-[1.6rem]">
+                  <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
+                </h1>
                 <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
-                  <p>ASSISTANCE</p>
+                  <p data-english="ASSISTANCE" data-srpski="ПОМОЋ">ASSISTANCE</p>
                   <p>&</p>
-                  <p>INSIGHTS</p>
+                  <p data-english="INSIGHTS" data-srpski="УВИДИ">INSIGHTS</p>
                 </div>
               </div>
             </div>
             <p class="text-sm lg:text-[1rem] my-4 text-gray-200">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-              possimus nesciunt modi corporis magni consectetur beatae sed!
-              Cum, eos rem!
+              <span
+                data-english="Join us at the Puzzle Solver's Hub, the premier online community for puzzle enthusiasts. Explore new challenges, share your expertise, and connect with fellow solvers. Feel free to contact us anytime for more details!"
+                data-srpski="Придружите нам се у Кутку за решавање загонетки, водећој онлајн заједници за љубитеље загонетки. Истражите нове изазове, поделите своју стручност и повежите се са другим решавачима. Слободно нас контактирајте у било ком тренутку за више детаља!">
+                Join us at the Puzzle Solver's Hub, the premier online
+                community for puzzle enthusiasts. Explore new challenges,
+                share your expertise, and connect with fellow solvers. Feel
+                free to contact us anytime for more details!
+              </span>
             </p>
           </div>
           <div class="w-full lg:w-[40%] flex lg:justify-around justify-between my-8 lg:my-0">
             <div>
-              <h1 class="font-semibold text-xl lg:text-3xl">Navigation</h1>
+              <h1 class="font-semibold text-xl lg:text-3xl">
+                <span data-english="Navigation" data-srpski="Навигација">Navigation</span>
+              </h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
               <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
-                <li>About Us</li>
-                <li>Schedule</li>
-                <li>Speakers</li>
-                <li>Sponsors</li>
+                <li data-english="About Us" data-srpski="О нама">About Us</li>
+                <li data-english="Schedule" data-srpski="Распоред">Schedule</li>
+                <li data-english="Speakers" data-srpski="Говорници">Speakers</li>
+                <li data-english="Sponsors" data-srpski="Спонзори">Sponsors</li>
               </ul>
             </div>
             <div>
-              <h1 class="font-semibold text-xl lg:text-3xl">Support</h1>
+              <h1 class="font-semibold text-xl lg:text-3xl">
+                <span data-english="Support" data-srpski="Подршка">Support</span>
+              </h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
               <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
-                <li>Pricing</li>
-                <li>Help & Support</li>
-                <li>Privacy Policy</li>
-                <li>Contacts</li>
+                <li data-english="Pricing" data-srpski="Цене">Pricing</li>
+                <li data-english="Help & Support" data-srpski="Помоћ и подршка">Help & Support</li>
+                <li data-english="Privacy Policy" data-srpski="Политика приватности">Privacy Policy</li>
+                <li data-english="Contacts" data-srpski="Контакти">Contacts</li>
               </ul>
             </div>
           </div>
           <div class="w-full lg:w-[20%] flex flex-col justify-between gap-4 lg:gap-0">
-            <h1 class="font-semibold text-xl lg:text-3xl">Subscribe</h1>
+            <h1 class="font-semibold text-xl lg:text-3xl">
+              <span data-english="Subscribe" data-srpski="Претплатите се">Subscribe</span>
+            </h1>
             <input class="p-6 w-full bg-black bg-opacity-20" type="email" placeholder="Email*" />
             <button class="py-4 px-10 w-full bg1 rounded-[2rem] hover:rounded-none transition-all">
-              Subscribe
+              <span data-english="Subscribe" data-srpski="Претплатите се">Subscribe</span>
             </button>
           </div>
         </div>
+
         <div class="flex justify-between items-center py-8">
           <span class="flex gap-2 items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -913,14 +1070,19 @@
                   d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
               </g>
             </svg>
-            <p>Created by Amar</p>
+            <p>
+              <span data-english="Created by Amar" data-srpski="Креирао Амар">Created by Amar</span>
+            </p>
           </span>
-          <p>All rights Reserved</p>
+          <p>
+            <span data-english="All rights Reserved" data-srpski="Сва права задржана">All rights Reserved</span>
+          </p>
         </div>
       </div>
     </footer>
   </div>
   <script type="module" src="../js/contactus/app.js"></script>
+  <script type="module" src="../js/language.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@
 
 <body>
   <div class="b background w-full h-full relative flex flex-col items-center">
-    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full md:flex justify-center items-center z-50">
+    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full lg:flex justify-center items-center z-50">
       <nav class="flex w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] justify-between items-center">
         <a href="./index.html" class="flex gap-2 items-center">
           <img class="h-[1.5rem] lg:h-[3rem]" src="../assets/images/logo.png" />
@@ -31,9 +31,9 @@
         <section>
           <ul class="flex gap-2 lg:gap-6 font-semibold text-xs md:text-sm xl:text-[1rem]">
             <a href="../views/about.html"
-              class="curr-active navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
               <span data-english="About" data-srpski="О нама">About</span>
-              <div class="underline-hovered bg1"></div>
+              <div class="underline-child bg1"></div>
             </a>
             <a href="../views/categories.html"
               class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
@@ -56,7 +56,6 @@
               <div class="underline-child bg1"></div>
             </a>
           </ul>
-
         </section>
         <section class="flex items-center justify-between gap-4">
           <div class="relative lg:w-[7rem] flex justify-center z-50 theme-js font-semibold">
@@ -124,25 +123,26 @@
                 Retro Sunset
               </li>
             </ul>
-
           </div>
           <div class="flex items-center gap-4 min-w-[8rem] lg:min-w-[18rem] justify" id="user-information"></div>
         </section>
       </nav>
       <select id="lang" class="font-bold bg-transparent rounded-full px-2 outline-none">
-        <option value="english" class="text-black">English</option>
+        <option value="english" class="text-black focus:bg-black">English</option>
         <option value="srpski" class="text-black">Srpski</option>
       </select>
     </header>
-    <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 relative">
+    <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 absolute top-0 left-0">
       <a href="./index.html" class="flex gap-2 items-center relative z-50">
         <img class="h-[2.3rem]" src="../assets/images/logo.png" />
         <div class="flex flex-col justify-between">
-          <h1 class="font-bold text-[1.2rem]">SolveBox</h1>
+          <h1 class="font-bold text-[1.6rem]">
+            <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
+          </h1>
           <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
-            <p>ASSISTANCE</p>
+            <p data-english="ASSISTANCE" data-srpski="ПОМОЋ">ASSISTANCE</p>
             <p>&</p>
-            <p>INSIGHTS</p>
+            <p data-english="INSIGHTS" data-srpski="УВИДИ">INSIGHTS</p>
           </div>
         </div>
       </a>
@@ -166,7 +166,7 @@
       <nav id="mobile-header" class="w-[95%] absolute h-screen background top-0 left-full transition-all z-40">
         <ul class="flex flex-col py-40 px-10 gap-4">
           <a href="./index.html">
-            <li class="flex items-center gap-2 text-lg font-semibold">
+            <li class="flex items-center gap-2 text-lg font-semibold text3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="currentColor"
                   d="m16 8.41l-4.5-4.5L4.41 11H6v8h3v-6h5v6h3v-8h1.59L17 9.41V6h-1zM2 12l9.5-9.5L15 6V5h3v4l3 3h-3v8h-5v-6h-3v6H5v-8z" />
@@ -175,7 +175,7 @@
             </li>
           </a>
           <a href="./about.html">
-            <li class="flex items-center gap-2 text-lg font-semibold text3">
+            <li class="flex items-center gap-2 text-lg font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="currentColor"
                   d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z" />
@@ -255,7 +255,7 @@
       </nav>
     </header>
     <section class="w-full flex justify-center relative">
-      <div class="w-[90%] lg:w-[75rem] py-20 lg:py-0">
+      <div class="w-[90%] xl:w-[75rem] py-20 lg:py-0">
         <div class="relative z-30 lg:mt-20 lg:h-[15rem] flex flex-col lg:flex-row justify-between items-center">
           <div class="w-full lg:w-1/2">
             <h1 class="text-[1.5rem] lg:text-[3rem] font-bold leading-normal lg:leading-[3.5rem] w-full lg:w-2/3">
@@ -427,8 +427,8 @@
       </div>
     </section>
     <section class="w-full py-40 flex justify-center bg3 half-polygon-north">
-      <div class="w-[90%] lg:w-[75rem] flex flex-col lg:flex-row gap-20">
-        <div class="w-full lg:w-1/2 text-black">
+      <div class="w-[90%] xl:w-[75rem] flex flex-col xl:flex-row gap-20">
+        <div class="w-full xl:w-1/2 text-black">
           <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto">
             <span data-english="FEATURES" data-srpski="КАРАКТЕРИСТИКЕ">FEATURES</span>
           </p>
@@ -553,9 +553,9 @@
     </section>
 
     <section class="w-full pt-40 pb-64 flex justify-center bg-purple-200 text-black half-polygon-south">
-      <div class="w-[90%] lg:w-[75rem] flex flex-col gap-20">
-        <div class="flex flex-col-reverse lg:flex-row gap-10 lg:gap-20 lg:h-[30rem]">
-          <div class="flex w-full lg:w-2/3 justify-between">
+      <div class="w-[90%] pb-0 md:pb-[30rem] xl:pb-0 xl:w-[75rem] flex flex-col gap-20">
+        <div class="flex flex-col-reverse xl:flex-row gap-10 lg:gap-20 xl:h-[30rem]">
+          <div class="flex w-full xl:w-2/3 justify-between">
             <img class="w-[48%] object-cover"
               src="https://images.pexels.com/photos/7335373/pexels-photo-7335373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Puzzle Solving" />
@@ -563,7 +563,7 @@
               src="https://images.pexels.com/photos/8386118/pexels-photo-8386118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Understanding Puzzles" />
           </div>
-          <div class="w-full lg:w-1/3 flex flex-col justify-center">
+          <div class="w-full xl:w-1/3 flex flex-col justify-center">
             <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto uppercase">
               <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
             </p>
@@ -597,8 +597,8 @@
             </ul>
           </div>
         </div>
-        <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 h-[30rem]">
-          <div class="w-full lg:w-1/3 flex flex-col justify-center">
+        <div class="flex flex-col xl:flex-row gap-10 lg:gap-20 h-[30rem]">
+          <div class="w-full xl:w-1/3 flex flex-col justify-center">
             <ul class="flex flex-col gap-4 lg:mb-8">
               <li class="text-gray-600 text-lg">
                 <span class="text1 font-bold mr-2">04.</span>
@@ -630,7 +630,7 @@
               </li>
             </ul>
           </div>
-          <div class="flex w-full lg:w-2/3 justify-between">
+          <div class="flex w-full xl:w-2/3 justify-between">
             <img class="w-full object-cover"
               src="https://images.pexels.com/photos/8763079/pexels-photo-8763079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Exploring Solutions" />
@@ -659,7 +659,7 @@
           </span>
         </p>
         <div class="w-full flex flex-col lg:flex-row justify-between gap-10">
-          <div class="w-full lg:w-1/3 rounded-xl">
+          <div class="w-full lg:w-1/3 rounded-xl overflow-hidden">
             <img class="w-full bg3 h-[35rem] object-cover rounded-t-xl" src="../assets/images/b.png"
               alt="Rubik's Cube" />
             <div class="p-6">
@@ -682,7 +682,7 @@
               </p>
             </div>
           </div>
-          <div class="w-full lg:w-1/3 rounded-xl">
+          <div class="w-full lg:w-1/3 rounded-xl overflow-hidden">
             <img class="w-full bg2 h-[35rem] object-cover rounded-t-xl" src="../assets/images/a.png"
               alt="Sudoku Puzzle" />
             <div class="p-6">
@@ -707,7 +707,7 @@
             </div>
           </div>
 
-          <div class="w-full lg:w-1/3 rounded-xl">
+          <div class="w-full lg:w-1/3 rounded-xl overflow-hidden">
             <img class="w-full bg1 h-[35rem] object-cover" src="../assets/images/c.png" />
             <h1 class="text-[1.5rem] lg:text-[3rem] font-semibold my-8">
               <span data-english="Other Puzzles" data-srpski="Остале загонетке">Other Puzzles</span>

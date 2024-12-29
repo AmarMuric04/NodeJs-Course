@@ -3,12 +3,22 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: "360px", // Extra small
-        sm: "640px", // Small (default)
-        md: "768px", // Medium (default)
-        lg: "1024px", // Large (default)
-        xl: "1280px", // Extra large (default)
-        "2xl": "1536px", // 2x extra large (default)
+        xs: "360px",
+        sm: "480px",
+
+        md: "768px",
+        lg: "1024px",
+
+        xl: "1280px", // Laptops
+        "3xl": "1536px", // Larger monitors
+
+        // Extra-Large Screens
+        "4xl": "1600px", // Wide desktop screens
+        "5xl": "1920px", // Full HD resolution
+
+        // Ultra-Wide Screens
+        "6xl": "2560px", // Quad HD resolution
+        "7xl": "3840px", // 4K resolution
       },
     },
   },

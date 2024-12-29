@@ -12,42 +12,47 @@
 </head>
 
 <body>
-  <div class="b background w-full h-full relative flex flex-col items-center">
-    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full md:flex justify-center z-50">
+  <div class="b background w-full h-full relative flex flex-col items-center overflow-hidden">
+    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full lg:flex justify-center items-center z-50">
       <nav class="flex w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] justify-between items-center">
         <a href="./index.html" class="flex gap-2 items-center">
           <img class="h-[1.5rem] lg:h-[3rem]" src="../assets/images/logo.png" />
           <div class="flex flex-col justify-between">
-            <h1 class="font-bold text-[1rem] md:text-[1.2rem] xl:text-[1.6rem]">SolveBox</h1>
-            <div
-              class="text-gray-500 md:text-[0.5rem] text-[0.4rem] xl:text-[0.6rem] flex justify-between items-center">
-              <p>ASSISTANCE</p>
+            <h1 class="font-bold text-[1.6rem]">
+              <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
+            </h1>
+            <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
+              <p data-english="ASSISTANCE" data-srpski="ПОМОЋ">ASSISTANCE</p>
               <p>&</p>
-              <p>INSIGHTS</p>
+              <p data-english="INSIGHTS" data-srpski="УВИДИ">INSIGHTS</p>
             </div>
           </div>
         </a>
         <section>
           <ul class="flex gap-2 lg:gap-6 font-semibold text-xs md:text-sm xl:text-[1rem]">
-            <a href="../views/about.html" class="navbar-text relative transition-all cursor-pointer underline-parent">
-              About
+            <a href="../views/about.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="About" data-srpski="О нама">About</span>
               <div class="underline-child bg1"></div>
             </a>
             <a href="../views/categories.html"
-              class="navbar-text relative transition-all cursor-pointer underline-parent">
-              Categories
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Categories" data-srpski="Категорије">Categories</span>
               <div class="underline-child bg1"></div>
-            </a><a href="../views/subscribe.html"
-              class="curr-active navbar-text relative transition-all cursor-pointer underline-parent">
-              Subscribe
-              <div class="underline-hovered bg1"></div>
-            </a><a href="../views/contactus.html"
-              class="navbar-text relative transition-all cursor-pointer underline-parent">
-              Contact Us
+            </a>
+            <a href="../views/subscribe.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Subscribe" data-srpski="Претплати се">Subscribe</span>
+              <div class="underline-child bg1"></div>
+            </a>
+            <a href="../views/contactus.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Contact Us" data-srpski="Контактирај нас">Contact Us</span>
               <div class="bg1 underline-child"></div>
-            </a><a href="../views/credits.html"
-              class="navbar-text relative transition-all cursor-pointer underline-parent">
-              Credits
+            </a>
+            <a href="../views/credits.html"
+              class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
+              <span data-english="Credits" data-srpski="Кредити">Credits</span>
               <div class="underline-child bg1"></div>
             </a>
           </ul>
@@ -56,52 +61,65 @@
           <div class="relative lg:w-[7rem] flex justify-center z-50 theme-js font-semibold">
             <div
               class="hover:text1 lg:py-2 lg:px-4 px-2 py-1 rounded-[1rem] w-full transition-all cursor-pointer text-center underline-parent relative text-sm md:text-sm xl:text-[1rem]">
-              Themes
+              <span data-english="Themes" data-srpski="Тема">Themes</span>
               <div class="underline-child bg1"></div>
             </div>
             <ul
               class="background absolute shadow-xl py-4 px-1 rounded-[1rem] text-gray-300 top-full theme-container-js inactive transition-all">
-              <div class="bg1 right-0 top-2 rounded-full p-1 text-[0.5rem] absolute">RECOMMENDED</div>
-              <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-theme="dark">
+              <div class="bg1 right-0 top-2 rounded-full p-1 text-[0.5rem] absolute" data-english="RECOMMENDED"
+                data-srpski="ПРЕПОРУЧЕНО">
+                RECOMMENDED
+              </div>
+              <li class="py-2 px-4 rounded-sm hover:bg-[#1b1825] cursor-pointer theme-btn" data-english="Dark"
+                data-srpski="Тамна" data-theme="dark">
                 Dark
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] border3 cursor-pointer theme-btn" data-theme="light">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] border3 cursor-pointer theme-btn" data-english="Light"
+                data-srpski="Светла" data-theme="light">
                 Light
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="night">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Night"
+                data-srpski="Ноћна" data-theme="night">
                 Night
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="void">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Void"
+                data-srpski="Празнина" data-theme="void">
                 Void
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="earthy">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Earthy"
+                data-srpski="Земљана" data-theme="earthy">
                 Earthy
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-light">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Solarized Light"
+                data-srpski="Соларна светлост" data-theme="solar-light">
                 Solarized Light
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="solar-dark">
-                Solarized dark
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Solarized Dark"
+                data-srpski="Соларна тама" data-theme="solar-dark">
+                Solarized Dark
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="pastel">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Pastel"
+                data-srpski="Пастел" data-theme="pastel">
                 Pastel
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="cyber">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Cyberpunk Glow"
+                data-srpski="Сајберпанк сјај" data-theme="cyber">
                 Cyberpunk Glow
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="twilight">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Twilight"
+                data-srpski="Сумрак" data-theme="twilight">
                 Twilight
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="autumn">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Autumn Forest"
+                data-srpski="Јесења шума" data-theme="autumn">
                 Autumn Forest
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="ocean">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Ocean Breeze"
+                data-srpski="Океански поветарац" data-theme="ocean">
                 Ocean Breeze
               </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="mono">
-                Monochrome Minimal
-              </li>
-              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-theme="retro">
+              <li class="py-2 px-4 rounded-sm border-t-[0.1rem] cursor-pointer theme-btn" data-english="Retro Sunset"
+                data-srpski="Ретро залазак сунца" data-theme="retro">
                 Retro Sunset
               </li>
             </ul>
@@ -109,16 +127,22 @@
           <div class="flex items-center gap-4 min-w-[8rem] lg:min-w-[18rem] justify" id="user-information"></div>
         </section>
       </nav>
+      <select id="lang" class="font-bold bg-transparent rounded-full px-2 outline-none">
+        <option value="english" class="text-black focus:bg-black">English</option>
+        <option value="srpski" class="text-black">Srpski</option>
+      </select>
     </header>
-    <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 relative">
+    <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 absolute top-0 left-0">
       <a href="./index.html" class="flex gap-2 items-center relative z-50">
         <img class="h-[2.3rem]" src="../assets/images/logo.png" />
         <div class="flex flex-col justify-between">
-          <h1 class="font-bold text-[1.2rem]">SolveBox</h1>
+          <h1 class="font-bold text-[1.6rem]">
+            <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
+          </h1>
           <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
-            <p>ASSISTANCE</p>
+            <p data-english="ASSISTANCE" data-srpski="ПОМОЋ">ASSISTANCE</p>
             <p>&</p>
-            <p>INSIGHTS</p>
+            <p data-english="INSIGHTS" data-srpski="УВИДИ">INSIGHTS</p>
           </div>
         </div>
       </a>
@@ -142,7 +166,7 @@
       <nav id="mobile-header" class="w-[95%] absolute h-screen background top-0 left-full transition-all z-40">
         <ul class="flex flex-col py-40 px-10 gap-4">
           <a href="./index.html">
-            <li class="flex items-center gap-2 text-lg font-semibold">
+            <li class="flex items-center gap-2 text-lg font-semibold text3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="currentColor"
                   d="m16 8.41l-4.5-4.5L4.41 11H6v8h3v-6h5v6h3v-8h1.59L17 9.41V6h-1zM2 12l9.5-9.5L15 6V5h3v4l3 3h-3v8h-5v-6h-3v6H5v-8z" />
@@ -172,7 +196,7 @@
             </li>
           </a>
           <a href="./subscribe.html">
-            <li class="flex items-center gap-2 text-lg font-semibold text3">
+            <li class="flex items-center gap-2 text-lg font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="currentColor"
                   d="M5 2.5a.5.5 0 0 0-1 0a7.45 7.45 0 0 0 4.777 7A7.45 7.45 0 0 0 4 16.5a.5.5 0 0 0 1 0c0-3.624 2.876-6.5 6.5-6.5h.793l-1.147 1.146a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2a.5.5 0 0 0-.708.708L12.293 9H11.5A6.457 6.457 0 0 1 5 2.5M8.5 4a.5.5 0 0 0 0 1H15c.524 0 1 .476 1 1v7c0 .524-.476 1-1 1H8.5a.5.5 0 0 0 0 1H15c1.076 0 2-.924 2-2V6c0-1.076-.924-2-2-2z" />
@@ -231,113 +255,128 @@
       </nav>
     </header>
     <section class="w-full flex justify-center relative">
-      <div class="w-[90%] lg:w-[75rem] py-20 lg:py-0">
-        <div class="relative z-30 lg:mt-20 lg:h-[15rem] flex flex-col lg:flex-row justify-between items-center">
-          <div class="w-full lg:w-1/2">
-            <h1 class="text-[1.5rem] lg:text-[3rem] font-bold leading-normal lg:leading-[3.5rem] ">
-              Join the <span class="text1">Team</span>
-            </h1>
-            <p class="text-[0.5rem] tracking-[0.1rem] pt-8 pb-4 noto text3">
-              <a class="hover:underline" href="./index.html"> HOME</a>
-              <span>></span>
-              <span class="underline font-semibold">SUBSCRIBE</span>
-            </p>
+      <section class="w-full flex justify-center relative">
+        <div class="w-[90%] xl:w-[75rem] py-20 lg:py-0">
+          <div class="relative z-30 lg:mt-20 lg:h-[15rem] flex flex-col lg:flex-row justify-between items-center">
+            <div class="w-full xl:w-1/2">
+              <h1 class="text-[1.5rem] lg:text-[3rem] font-bold leading-normal lg:leading-[3.5rem]">
+                <span data-english="Join the" data-srpski="Придружите се">Join the</span>
+                <span class="text1" data-english="Team" data-srpski="Тиму">Team</span>
+              </h1>
+              <p class="text-[0.5rem] tracking-[0.1rem] pt-8 pb-4 noto text3">
+                <a class="hover:underline" href="./index.html" data-english="HOME" data-srpski="ПОЧЕТНА">HOME</a>
+                <span>></span>
+                <span class="underline font-semibold" data-english="SUBSCRIBE"
+                  data-srpski="ПРИЈАВИТЕ СЕ">SUBSCRIBE</span>
+              </p>
+            </div>
+            <div class="w-full xl:w-1/2">
+              <p class="text-gray-400 font-semibold text-sm lg:text-lg">
+                <span
+                  data-english="SolveBox is one of the largest platforms focused on solving puzzles, Rubik's cubes, Sudoku, and other brain-teasers."
+                  data-srpski="СолвБокс је једна од највећих платформи посвећених решавању слагалица, Рубикових коцки, Судокуа и других мозгалица.">
+                  SolveBox is one of the largest platforms focused on solving puzzles, Rubik's cubes, Sudoku, and other
+                  brain-teasers.
+                </span>
+              </p>
+            </div>
           </div>
-          <div class="w-full lg:w-1/2">
-            <p class="text-gray-400 font-semibold text-sm lg:text-lg">
-              SolveBox is one of the largest platforms focused on solving
-              puzzles, Rubik's cubes, Sudoku, and other brain-teasers. We
-              offer a variety of challenges designed for puzzle enthusiasts at
-              all skill levels, providing a space for experts and beginners
-              alike to improve their problem-solving abilities and enjoy a
-              wide range of intellectual challenges.
-            </p>
+          <div class="hidden lg:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+              class="svg1 absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
+              <path
+                d="M480 120 360 0 240 120 120 0 0 120l120 120L0 360l120 120 120-120 120 120 120-120-120-120 120-120z">
+              </path>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+              class="svg2 absolute top-20 right-80 z-0">
+              <path d="M320 160a160 160 0 1 0-320 0v320h160V160h160ZM320 0v320H160a160 160 0 1 0 320 0V0H320Z"></path>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+              class="svg1 absolute bottom-[1.6rem] right-[50rem] z-0">
+              <path
+                d="M120 120h120v120H120zM0 240h120v120H0zM120 360h120v120H120zM0 0h120v120H0zM360 120h120v120H360zM240 240h120v120H240zM360 360h120v120H360zM240 0h120v120H240z">
+              </path>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+              class="svg1 absolute bottom-[1.6rem] left-10">
+              <path
+                d="M480 240H240V0a240 240 0 0 1 240 240ZM240 480H0V240a240 240 0 0 1 240 240ZM480 480H240V240a240 240 0 0 1 240 240ZM240 240H0V0a240 240 0 0 1 240 240Z">
+              </path>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+              class="svg1 absolute bottom-[1.6rem] right-10">
+              <path
+                d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
+              </path>
+            </svg>
           </div>
         </div>
+      </section>
 
-        <div class="hidden lg:flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"
-            class="svg1 absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
-            <path d="M480 120 360 0 240 120 120 0 0 120l120 120L0 360l120 120 120-120 120 120 120-120-120-120 120-120z">
-            </path>
-          </svg>
 
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-            class="svg2 absolute top-20 right-80 z-0">
-            <path d="M320 160a160 160 0 1 0-320 0v320h160V160h160ZM320 0v320H160a160 160 0 1 0 320 0V0H320Z"></path>
-          </svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-            class="svg1 absolute bottom-[1.6rem] right-[50rem] z-0">
-            <path
-              d="M120 120h120v120H120zM0 240h120v120H0zM120 360h120v120H120zM0 0h120v120H0zM360 120h120v120H360zM240 240h120v120H240zM360 360h120v120H360zM240 0h120v120H240z">
-            </path>
-          </svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-            class="svg1 absolute bottom-[1.6rem] left-10">
-            <path
-              d="M480 240H240V0a240 240 0 0 1 240 240ZM240 480H0V240a240 240 0 0 1 240 240ZM480 480H240V240a240 240 0 0 1 240 240ZM240 240H0V0a240 240 0 0 1 240 240Z">
-            </path>
-          </svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
-            class="svg1 absolute bottom-[1.6rem] right-10">
-            <path
-              d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
-            </path>
-          </svg>
-        </div>
-      </div>
     </section>
     <section class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-center">
-      <div class="w-full lg:w-[75rem]">
+      <div class="w-full xl:w-[75rem]">
         <ul
           class="flex justify-between w-full flex-col lg:flex-row items-center lg:items-start text-sm lg:text-[1rem] gap-4 lg:gap-0">
-          <li class="flex items-center w-[90%] lg:w-1/4 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/what.svg" />
+          <li class="flex items-center w-[90%] xl:w-1/4 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="../assets/svgs/what.svg" />
             <div class="flex flex-col">
               <h1 class="font-bold text-xl lg:text-2xl text-black">What to expect?</h1>
               <p class="text-gray-700">SolveBox brigs experts together.</p>
             </div>
           </li>
-          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/light.svg" />
+          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="../assets/svgs/light.svg" />
             <p>Engaging solutions and feedback</p>
           </li>
-          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/time.svg" />
+          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="../assets/svgs/time.svg" />
             <p>Quick and simple solutions</p>
           </li>
-          <li class="flex items-center w-[90%] lg:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 lg:w-12 lg:h-12" src="../assets/svgs/stats.svg" />
+          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="../assets/svgs/stats.svg" />
             <p>Overwhelmingly good reviews</p>
           </li>
         </ul>
       </div>
     </section>
     <section class=" w-full py-40 z-40 relative flex justify-center">
-      <div class="w-[90%] lg:w-[75rem]">
-        <p class="text-[0.7rem] tracking-[0.1rem] py-8 text-center noto">
-          SUBSCRIPTION OPTIONS
+      <div class="w-[90%] xl:w-[75rem]">
+        <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto">
+          <span data-english="SUBSCRIPTION OPTIONS" data-srpski="ОПЦИЈЕ ПРЕТПЛАТЕ">SUBSCRIPTION OPTIONS</span>
         </p>
-        <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
-          Choose your suitable
-          <span class="text1">monthly</span> subscription
-          <span class="text3">.</span>
+        <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold">
+          <span data-english="Choose your suitable" data-srpski="Изаберите одговарајућу">Choose your suitable</span>
+          <span class="text1" data-english="monthly" data-srpski="месечну">monthly</span>
+          <span data-english="subscription" data-srpski="претплату">subscription</span>
+          <span class="text3" data-english="." data-srpski=".">.</span>
         </h1>
-        <p class="text-gray-400 text-sm lg:text-lg text-center py-8">
-          Get access to exclusive algorithms, features, and more based on your
-          plan.
+        <p class="text-gray-400 text-sm lg:text-lg py-8">
+          <span data-english="Get access to exclusive algorithms, features, and more based on your plan."
+            data-srpski="Приступите ексклузивним алгоритмима, функцијама и још много тога у складу са вашим планом.">
+            Get access to exclusive algorithms, features, and more based on your plan.
+          </span>
         </p>
         <div class="w-full mt-10 flex flex-col gap-5 lg:flex-row">
-          <div class="bg2 w-full lg:w-1/3 p-8 lg:hover:-translate-y-2 transition-all">
-            <p class="text-[0.7rem] tracking-[0.2rem]">BASIC PLAN</p>
+          <div class="bg2 w-full xl:w-1/3 p-8 lg:hover:-translate-y-2 transition-all">
+            <p class="text-[0.7rem] tracking-[0.2rem]">
+              <span data-english="BASIC PLAN" data-srpski="ОСНОВНИ ПЛАН">BASIC PLAN</span>
+            </p>
             <h1 class="text-[1.5rem] py-4 font-semibold">
-              Basic Plan / $49 / month
+              <span data-english="Basic Plan" data-srpski="Основни План">Basic Plan</span>
+              / $49 / <span data-english="month" data-srpski="месец">month</span>
             </h1>
             <p class="text-lg text-gray-700">
-              Access to standard algorithms and core features.
+              <span data-english="Access to standard algorithms and core features."
+                data-srpski="Приступ стандардним алгоритмима и основним функцијама.">
+                Access to standard algorithms and core features.
+              </span>
             </p>
             <ul class="flex flex-col justify-between py-8 gap-6">
               <li class="flex items-center gap-5">
@@ -347,7 +386,9 @@
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
                 </svg>
                 <p class="text-gray-700 italic">
-                  Access to basic algorithms;
+                  <span data-english="Access to basic algorithms;" data-srpski="Приступ основним алгоритмима;">
+                    Access to basic algorithms;
+                  </span>
                 </p>
               </li>
               <li class="flex items-center gap-5">
@@ -357,7 +398,9 @@
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
                 </svg>
                 <p class="text-gray-700 italic">
-                  Access to core online tools;
+                  <span data-english="Access to core online tools;" data-srpski="Приступ основним онлајн алатима;">
+                    Access to core online tools;
+                  </span>
                 </p>
               </li>
               <li class="flex items-center gap-5">
@@ -367,23 +410,31 @@
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
                 </svg>
                 <p class="text-gray-700 italic">
-                  Monthly updates to algorithms;
+                  <span data-english="Monthly updates to algorithms;" data-srpski="Месечна ажурирања алгоритама;">
+                    Monthly updates to algorithms;
+                  </span>
                 </p>
               </li>
             </ul>
             <button
               class="bg-gray-800 text-white py-5 rounded-[2rem] hover:rounded-none transition-all px-10 font-bold">
-              Subscribe Now
+              <span data-english="Subscribe Now" data-srpski="Претплатите се сада">Subscribe Now</span>
             </button>
           </div>
-          <div class="bg1 w-full lg:w-1/3 p-8 lg:hover:-translate-y-2 transition-all">
-            <p class="text-[0.7rem] tracking-[0.2rem]">PREMIUM PLAN</p>
+
+          <div class="bg1 w-full xl:w-1/3 p-8 lg:hover:-translate-y-2 transition-all">
+            <p class="text-[0.7rem] tracking-[0.2rem]">
+              <span data-english="PREMIUM PLAN" data-srpski="ПРЕМИУМ ПЛАН">PREMIUM PLAN</span>
+            </p>
             <h1 class="text-[1.5rem] py-4 font-semibold">
-              Premium Plan / $99 / month
+              <span data-english="Premium Plan" data-srpski="Премиум План">Premium Plan</span>
+              / $99 / <span data-english="month" data-srpski="месец">month</span>
             </h1>
             <p class="text-lg text-gray-700">
-              Get access to premium algorithms, advanced features, and
-              priority support.
+              <span data-english="Get access to premium algorithms, advanced features, and priority support."
+                data-srpski="Приступ премиум алгоритмима, напредним функцијама и приоритетној подршци.">
+                Get access to premium algorithms, advanced features, and priority support.
+              </span>
             </p>
             <ul class="flex flex-col justify-between py-8 gap-6">
               <li class="flex items-center gap-5">
@@ -393,7 +444,9 @@
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
                 </svg>
                 <p class="text-gray-700 italic">
-                  Access to premium algorithms;
+                  <span data-english="Access to premium algorithms;" data-srpski="Приступ премиум алгоритмима;">
+                    Access to premium algorithms;
+                  </span>
                 </p>
               </li>
               <li class="flex items-center gap-5">
@@ -403,7 +456,9 @@
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
                 </svg>
                 <p class="text-gray-700 italic">
-                  Access to all advanced tools;
+                  <span data-english="Access to all advanced tools;" data-srpski="Приступ свим напредним алатима;">
+                    Access to all advanced tools;
+                  </span>
                 </p>
               </li>
               <li class="flex items-center gap-5">
@@ -412,22 +467,32 @@
                   <path fill="currentColor"
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
                 </svg>
-                <p class="text-gray-700 italic">Priority customer support;</p>
+                <p class="text-gray-700 italic">
+                  <span data-english="Priority customer support;" data-srpski="Приоритетна корисничка подршка;">
+                    Priority customer support;
+                  </span>
+                </p>
               </li>
             </ul>
             <button
               class="bg-gray-800 text-white py-5 rounded-[2rem] hover:rounded-none transition-all px-10 font-bold">
-              Subscribe Now
+              <span data-english="Subscribe Now" data-srpski="Претплатите се сада">Subscribe Now</span>
             </button>
           </div>
-          <div class="bg3 w-full lg:w-1/3 p-8 lg:hover:-translate-y-2 transition-all">
-            <p class="text-[0.7rem] tracking-[0.2rem]">ULTIMATE PLAN</p>
+
+          <div class="bg3 w-full xl:w-1/3 p-8 lg:hover:-translate-y-2 transition-all">
+            <p class="text-[0.7rem] tracking-[0.2rem]">
+              <span data-english="ULTIMATE PLAN" data-srpski="УЛТИМАТИВНИ ПЛАН">ULTIMATE PLAN</span>
+            </p>
             <h1 class="text-[1.5rem] py-4 font-semibold">
-              Ultimate Plan / $199 / month
+              <span data-english="Ultimate Plan" data-srpski="Ултимативни План">Ultimate Plan</span>
+              / $199 / <span data-english="month" data-srpski="месец">month</span>
             </h1>
             <p class="text-lg text-gray-700">
-              Get access to exclusive and most advanced algorithms, features,
-              and 24/7 support.
+              <span data-english="Get access to exclusive and most advanced algorithms, features, and 24/7 support."
+                data-srpski="Приступ ексклузивним и најнапреднијим алгоритмима, функцијама и 24/7 подршци.">
+                Get access to exclusive and most advanced algorithms, features, and 24/7 support.
+              </span>
             </p>
             <ul class="flex flex-col justify-between py-8 gap-6">
               <li class="flex items-center gap-5">
@@ -436,16 +501,10 @@
                   <path fill="currentColor"
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
                 </svg>
-                <p class="text-gray-700 italic">Access to all algorithms;</p>
-              </li>
-              <li class="flex items-center gap-5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
-                  class="opacity-50">
-                  <path fill="currentColor"
-                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
-                </svg>
                 <p class="text-gray-700 italic">
-                  Exclusive content and features;
+                  <span data-english="Access to all algorithms;" data-srpski="Приступ свим алгоритмима;">
+                    Access to all algorithms;
+                  </span>
                 </p>
               </li>
               <li class="flex items-center gap-5">
@@ -454,60 +513,98 @@
                   <path fill="currentColor"
                     d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
                 </svg>
-                <p class="text-gray-700 italic">24/7 VIP support;</p>
+                <p class="text-gray-700 italic">
+                  <span data-english="Exclusive content and features;" data-srpski="Ексклузивни садржај и функције;">
+                    Exclusive content and features;
+                  </span>
+                </p>
+              </li>
+              <li class="flex items-center gap-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
+                  class="opacity-50">
+                  <path fill="currentColor"
+                    d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
+                </svg>
+                <p class="text-gray-700 italic">
+                  <span data-english="24/7 VIP support;" data-srpski="24/7 ВИП подршка;">
+                    24/7 VIP support;
+                  </span>
+                </p>
               </li>
             </ul>
             <button
               class="bg-gray-800 text-white py-5 rounded-[2rem] hover:rounded-none transition-all px-10 font-bold">
-              Subscribe Now
+              <span data-english="Subscribe Now" data-srpski="Претплатите се сада">Subscribe Now</span>
             </button>
           </div>
+
         </div>
       </div>
     </section>
     <section class="w-full py-40 flex justify-center bg3 polygon-reversed lg:h-[50rem]">
-      <div class="w-[90%] lg:w-[75rem] flex flex-col lg:flex-row gap-40">
-        <div class="w-full lg:w-1/2">
+      <div class="w-[90%] xl:w-[75rem] flex flex-col lg:flex-row gap-40">
+        <div class="w-full xl:w-1/2">
           <p class="text-[0.7rem] tracking-[0.1rem] py-8 noto text-gray-700">
-            CHECK US OUT
+            <span data-english="CHECK US OUT" data-srpski="ПОГЛЕДАЈТЕ НАС">CHECK US OUT</span>
           </p>
           <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold">
-            Unlock the world of puzzles with us.
+            <span data-english="Unlock the world of puzzles with us." data-srpski="Откључајте свет слагалица са нама.">
+              Unlock the world of puzzles with us.
+            </span>
           </h1>
           <p class="my-6 text-[1rem] lg:text-xl text-semibold text-gray-600">
-            Boost Your Brainpower!
+            <span data-english="Boost Your Brainpower!" data-srpski="Повећајте своју мождану снагу!">
+              Boost Your Brainpower!
+            </span>
           </p>
           <p class="text-gray-700 font-semibold text-xs lg:text-[1rem]">
-            Discover answers to frequently asked questions about our puzzles, challenges, and membership. Still need
-            assistance?
-            Fill out the contact form to reach us.
+            <span
+              data-english="Discover answers to frequently asked questions about our puzzles, challenges, and membership. Still need assistance? Fill out the contact form to reach us."
+              data-srpski="Откријте одговоре на често постављана питања о нашим слагалицама, изазовима и чланству. И даље вам је потребна помоћ? Попуните контакт форму да нас контактирате.">
+              Discover answers to frequently asked questions about our puzzles, challenges, and membership. Still need
+              assistance? Fill out the contact form to reach us.
+            </span>
           </p>
           <p class="mt-6 text-sm lg:text-lg text-gray-700">
-            Puzzles challenge your mind and ignite creativity. Test your logic, focus, and problem-solving skills with
-            every puzzle
-            you solve. Dive in and start the adventure!
+            <span
+              data-english="Puzzles challenge your mind and ignite creativity. Test your logic, focus, and problem-solving skills with every puzzle you solve. Dive in and start the adventure!"
+              data-srpski="Слагалице изазивају ваш ум и подстичу креативност. Тестирајте своју логику, фокус и вештине решавања проблема са сваком решеном слагалицом. Уроните и започните авантуру!">
+              Puzzles challenge your mind and ignite creativity. Test your logic, focus, and problem-solving skills with
+              every puzzle you solve. Dive in and start the adventure!
+            </span>
           </p>
           <p class="mt-4 text-sm lg:text-lg text-gray-700 italic">
-            The categories we offer are yours to explore!
+            <span data-english="The categories we offer are yours to explore!"
+              data-srpski="Категорије које нудимо су ваше за истраживање!">
+              The categories we offer are yours to explore!
+            </span>
           </p>
         </div>
-        <div class="w-full lg:w-1/2 h-full flex flex-col justify-between gap-4">
-          <img src="../assets/images/c.jpg" class="w-full h-1/3 object-cover" />
-          <img src="../assets/images/a.jpeg" class="w-full h-1/3 object-cover" />
-          <img src="../assets/images/e.jpg" class="w-full h-1/3 object-cover" />
+        <div class="w-full xl:w-1/2 h-full flex flex-col md:flex-row lg:flex-col justify-between gap-4">
+          <img src="../assets/images/c.jpg" alt="Puzzle Image 1"
+            class="w-full md:h-full md:w-1/3 h-1/3 lg:h-1/3 lg:w-full object-cover" />
+          <img src="../assets/images/a.jpeg" alt="Puzzle Image 2"
+            class="w-full md:h-full md:w-1/3 h-1/3 lg:h-1/3 lg:w-full object-cover" />
+          <img src="../assets/images/e.jpg" alt="Puzzle Image 3"
+            class="w-full md:h-full md:w-1/3 h-1/3 lg:h-1/3 lg:w-full object-cover" />
         </div>
       </div>
     </section>
     <footer class="w-full flex justify-center pt-40">
-      <div class="w-[90%] lg:w-[75rem]">
+      <div class="w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem]">
         <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
-          A vibrant and
-          <span class="text3">inclusive</span> community of
-          <span class="text2">solvers</span> and
-          <span class="text1">challengers</span><span class="text3">.</span>
+          <span data-english="A vibrant and" data-srpski="Живахна и">A vibrant and</span>
+          <span class="text3" data-english="inclusive" data-srpski="инклузивна">inclusive</span>
+          <span data-english="community of" data-srpski="заједница">community of</span>
+          <span class="text2" data-english="solvers" data-srpski="решавача">solvers</span>
+          <span data-english="and" data-srpski="и">and</span>
+          <span class="text1" data-english="challengers" data-srpski="изазивача">challengers</span>
+          <span class="text3" data-english="." data-srpski=".">.</span>
         </h1>
         <p class="text-xl lg:text-3xl font-bold text-center my-8">
-          Learn <span class="text1 underline">more</span> now!
+          <span data-english="Learn" data-srpski="Сазнајте">Learn</span>
+          <span class="text1 underline" data-english="more" data-srpski="више">more</span>
+          <span data-english="now!" data-srpski="одмах!">now!</span>
         </p>
         <div class="w-full flex justify-between my-8 gap-4 flex-col lg:flex-row">
           <div class="flex justify-between">
@@ -527,23 +624,43 @@
               src="https://images.unsplash.com/photo-1515508268448-8d0d292bc49a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHB1enpsZXxlbnwwfHwwfHx8MA%3D%3D" />
           </div>
         </div>
+
         <div class="w-full flex flex-col lg:flex-row py-20 justify-between">
           <div class="w-full lg:w-2/5">
             <h1 class="font-semibold text-lg lg:text-2xl">
-              Technology, Design & Innovation Conference
+              <span data-english="Puzzle Solver's Hub" data-srpski="Кутак за решавање загонетки">Puzzle Solver's
+                Hub</span>
             </h1>
             <p class="py-4 text-gray-300 text-sm lg:text-lg text-semibold">
-              We bring puzzle experts together.
+              <span data-english="Your ultimate resource for solving puzzles of all kinds."
+                data-srpski="Ваш најбољи ресурс за решавање свих врста загонетки.">
+                Your ultimate resource for solving puzzles of all kinds.
+              </span>
             </p>
             <p class="py-4 text-gray-300 text-xs lg:text-[1rem] text-semibold">
-              Join us at the NY Technology, Design & Innovation Conference,
-              the premier gathering of visionaries on September 17-18, 2024.
-              Feel free to contact us in any convenient way for more details.
+              <span
+                data-english="Join us at the Puzzle Solver's Hub, where puzzle enthusiasts and experts come together to share tips, tricks, and solutions."
+                data-srpski="Придружите нам се у Кутку за решавање загонетки, где љубитељи и стручњаци деле савете, трикове и решења.">
+                Join us at the Puzzle Solver's Hub, where puzzle enthusiasts
+                and experts come together to share tips, tricks, and
+                solutions.
+              </span>
+              <span
+                data-english="Explore strategies, connect with a vibrant community, and enhance your problem-solving skills."
+                data-srpski="Истражите стратегије, повежите се са живописном заједницом и унапредите своје вештине решавања проблема.">
+                Explore strategies, connect with a vibrant community, and
+                enhance your problem-solving skills.
+              </span>
+              <span data-english="Visit our site for more details and feel free to contact us anytime!"
+                data-srpski="Посетите нашу страницу за више детаља и слободно нас контактирајте у било ком тренутку!">
+                Visit our site for more details and feel free to contact us
+                anytime!
+              </span>
             </p>
           </div>
           <div class="flex my-8 lg:my-0 gap-10 lg:gap-20 flex-col lg:flex-row">
-            <div class="flex flex-col gap-10">
-              <div class="flex gap-3 h-20">
+            <div class="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
@@ -553,13 +670,17 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    PHONE
+                    <span data-english="PHONE" data-srpski="ТЕЛЕФОН">PHONE</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">+381 (063) 303 309</p>
-                  <p class="text-sm lg:text-lg font-semibold">+381 (063) 303 309</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="+381 (063) 303 309" data-srpski="+381 (063) 303 309">+381 (063) 303 309</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="+381 (063) 303 309" data-srpski="+381 (063) 303 309">+381 (063) 303 309</span>
+                  </p>
                 </div>
               </div>
-              <div class="flex gap-3 h-20">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
@@ -569,15 +690,22 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    EMAIL
+                    <span data-english="EMAIL" data-srpski="ЕМАЈЛ">EMAIL</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">muricamar2004@gmail.com</p>
-                  <p class="text-sm lg:text-lg font-semibold">muricamar2004@gmail.com</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="muricamar2004@gmail.com"
+                      data-srpski="muricamar2004@gmail.com">muricamar2004@gmail.com</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="muricamar2004@gmail.com"
+                      data-srpski="muricamar2004@gmail.com">muricamar2004@gmail.com</span>
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="flex flex-col gap-4 lg:gap-10">
-              <div class="flex gap-3 h-20">
+
+            <div class="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256" class="">
@@ -587,13 +715,17 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    ADDRESS
+                    <span data-english="ADDRESS" data-srpski="АДРЕСА">ADDRESS</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">Serbia,</p>
-                  <p class="text-sm lg:text-lg font-semibold">Novi Pazar</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Serbia," data-srpski="Србија,">Serbia,</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Novi Pazar" data-srpski="Нови Пазар">Novi Pazar</span>
+                  </p>
                 </div>
               </div>
-              <div class="flex gap-3 h-20">
+              <div class="flex w-1/2 lg:w-auto gap-3 h-20">
                 <div
                   class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" class="">
@@ -606,10 +738,14 @@
                 </div>
                 <div class="flex flex-col justify-start lg:justify-between">
                   <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
-                    LINKEDIN
+                    <span data-english="LINKEDIN" data-srpski="ЛИНКЕДИН">LINKEDIN</span>
                   </p>
-                  <p class="text-sm lg:text-lg font-semibold">Amar Muric</p>
-                  <p class="text-sm lg:text-lg font-semibold">Amar Muric</p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Amar Muric" data-srpski="Амар Мурић">Amar Muric</span>
+                  </p>
+                  <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <span data-english="Amar Muric" data-srpski="Амар Мурић">Amar Muric</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -620,50 +756,64 @@
             <div class="flex gap-2 items-center">
               <img class="h-[3rem]" src="../assets/images/logo.png" />
               <div class="flex flex-col justify-between">
-                <h1 class="font-bold text-[1.6rem]">SolveBox</h1>
+                <h1 class="font-bold text-[1.6rem]">
+                  <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
+                </h1>
                 <div class="text-gray-500 text-[0.6rem] flex justify-between items-center">
-                  <p>ASSISTANCE</p>
+                  <p data-english="ASSISTANCE" data-srpski="ПОМОЋ">ASSISTANCE</p>
                   <p>&</p>
-                  <p>INSIGHTS</p>
+                  <p data-english="INSIGHTS" data-srpski="УВИДИ">INSIGHTS</p>
                 </div>
               </div>
             </div>
             <p class="text-sm lg:text-[1rem] my-4 text-gray-200">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-              possimus nesciunt modi corporis magni consectetur beatae sed!
-              Cum, eos rem!
+              <span
+                data-english="Join us at the Puzzle Solver's Hub, the premier online community for puzzle enthusiasts. Explore new challenges, share your expertise, and connect with fellow solvers. Feel free to contact us anytime for more details!"
+                data-srpski="Придружите нам се у Кутку за решавање загонетки, водећој онлајн заједници за љубитеље загонетки. Истражите нове изазове, поделите своју стручност и повежите се са другим решавачима. Слободно нас контактирајте у било ком тренутку за више детаља!">
+                Join us at the Puzzle Solver's Hub, the premier online
+                community for puzzle enthusiasts. Explore new challenges,
+                share your expertise, and connect with fellow solvers. Feel
+                free to contact us anytime for more details!
+              </span>
             </p>
           </div>
           <div class="w-full lg:w-[40%] flex lg:justify-around justify-between my-8 lg:my-0">
             <div>
-              <h1 class="font-semibold text-xl lg:text-3xl">Navigation</h1>
+              <h1 class="font-semibold text-xl lg:text-3xl">
+                <span data-english="Navigation" data-srpski="Навигација">Navigation</span>
+              </h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
               <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
-                <li>About Us</li>
-                <li>Schedule</li>
-                <li>Speakers</li>
-                <li>Sponsors</li>
+                <li data-english="About Us" data-srpski="О нама">About Us</li>
+                <li data-english="Schedule" data-srpski="Распоред">Schedule</li>
+                <li data-english="Speakers" data-srpski="Говорници">Speakers</li>
+                <li data-english="Sponsors" data-srpski="Спонзори">Sponsors</li>
               </ul>
             </div>
             <div>
-              <h1 class="font-semibold text-xl lg:text-3xl">Support</h1>
+              <h1 class="font-semibold text-xl lg:text-3xl">
+                <span data-english="Support" data-srpski="Подршка">Support</span>
+              </h1>
               <div class="bg1 w-8 h-[0.2rem] my-3"></div>
               <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
-                <li>Pricing</li>
-                <li>Help & Support</li>
-                <li>Privacy Policy</li>
-                <li>Contacts</li>
+                <li data-english="Pricing" data-srpski="Цене">Pricing</li>
+                <li data-english="Help & Support" data-srpski="Помоћ и подршка">Help & Support</li>
+                <li data-english="Privacy Policy" data-srpski="Политика приватности">Privacy Policy</li>
+                <li data-english="Contacts" data-srpski="Контакти">Contacts</li>
               </ul>
             </div>
           </div>
           <div class="w-full lg:w-[20%] flex flex-col justify-between gap-4 lg:gap-0">
-            <h1 class="font-semibold text-xl lg:text-3xl">Subscribe</h1>
+            <h1 class="font-semibold text-xl lg:text-3xl">
+              <span data-english="Subscribe" data-srpski="Претплатите се">Subscribe</span>
+            </h1>
             <input class="p-6 w-full bg-black bg-opacity-20" type="email" placeholder="Email*" />
             <button class="py-4 px-10 w-full bg1 rounded-[2rem] hover:rounded-none transition-all">
-              Subscribe
+              <span data-english="Subscribe" data-srpski="Претплатите се">Subscribe</span>
             </button>
           </div>
         </div>
+
         <div class="flex justify-between items-center py-8">
           <span class="flex gap-2 items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -674,14 +824,19 @@
                   d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
               </g>
             </svg>
-            <p>Created by Amar</p>
+            <p>
+              <span data-english="Created by Amar" data-srpski="Креирао Амар">Created by Amar</span>
+            </p>
           </span>
-          <p>All rights Reserved</p>
+          <p>
+            <span data-english="All rights Reserved" data-srpski="Сва права задржана">All rights Reserved</span>
+          </p>
         </div>
       </div>
     </footer>
   </div>
   <script type="module" src="../js/categories/app.js"></script>
+  <script type="module" src="../js/language.js"></script>
 </body>
 
 </html>
