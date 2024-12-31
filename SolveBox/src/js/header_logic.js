@@ -71,10 +71,9 @@ function handleCheckIfSignedIn() {
       "py-1 lg:py-2 px-4 lg:px-10 text-xs md:text-sm xl:text-[1rem] relative underline-parent font-semibold flex-shrink-0";
     const text = document.createElement("span");
     text.textContent = "Sign Up";
-
     text.setAttribute("data-english", "Sign Up");
-    text.setAttribute("data-srpski", "Региструјте се");
-    signUpBtn.append(text)
+    text.setAttribute("data-srpski", "Региструј се");
+    signUpBtn.append(text);
     const underline = document.createElement("div");
     underline.classList = "underline-child bg1";
     signUpBtn.append(underline);
@@ -86,7 +85,7 @@ function handleCheckIfSignedIn() {
       "bg1 py-1 xl:py-2 px-4 md:px-6 xl:px-10 text-xs md:text-sm xl:text-[1rem] rounded-[2rem] transition-all hover:rounded-none font-semibold flex-shrink-0";
     signInBtn.textContent = "Sign In";
     signInBtn.setAttribute("data-english", "Sign In");
-    signInBtn.setAttribute("data-srpski", "Пријавите се");
+    signInBtn.setAttribute("data-srpski", "Пријави се");
 
     userInfo.append(signUpBtn);
     userInfo.append(signInBtn);

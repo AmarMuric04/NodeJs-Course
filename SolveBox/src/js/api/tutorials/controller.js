@@ -25,7 +25,7 @@ export const Controller = {
     const currentPuzzle = Model.domen[href];
 
     try {
-      const api = await getAPI("../../assets/api.json");
+      const api = await getAPI("../assets/api.json");
       console.log(this.API);
       this.enAPI = api.puzzles?.english[currentPuzzle];
       this.srAPI = api.puzzles?.srpski[currentPuzzle];
@@ -71,6 +71,14 @@ export const Controller = {
     const historicalFact = document.querySelector(".historical-fact");
     if (funFact) {
       historicalFact.textContent = '"' + this.enAPI["historical_fact"] + '"';
+      historicalFact.setAttribute(
+        "data-english",
+        '"' + this.enAPI["historical_fact"] + '"'
+      );
+      historicalFact.setAttribute(
+        "data-srpski",
+        '"' + this.srAPI["historical_fact"] + '"'
+      );
     }
 
     const video = document.querySelector(".tutorials");
@@ -127,12 +135,16 @@ export const Controller = {
     if (enVContent) {
       enVContent.forEach((e, index) => {
         const [key, value] = e;
+        const srValue = this.srAPI?.variations[index];
         const container = document.createElement("div");
-        container.classList = "mb-10 bg-white w-[30%] p-4 flex flex-col";
+        container.classList =
+          "mb-10 bg-white w-[30%] p-4 flex flex-col justify-between";
 
         const title = document.createElement("h1");
         title.classList = "text-xl font-semibold";
         title.textContent = value.name;
+        title.setAttribute("data-english", value.name);
+        title.setAttribute("data-srpski", srValue.name);
 
         const imageWrapper = document.createElement("div");
         imageWrapper.classList =
@@ -151,6 +163,8 @@ export const Controller = {
         const key1 = document.createElement("p");
         key1.classList = "font-semibold text-lg";
         key1.textContent = "Popularity:";
+        key1.setAttribute("data-english", "Popularity:");
+        key1.setAttribute("data-srpski", "Популарност:");
 
         const value1 = document.createElement("p");
         value1.textContent = value.popularity + "⭐";
@@ -165,9 +179,13 @@ export const Controller = {
         const key2 = document.createElement("p");
         key2.classList = "font-semibold text-lg";
         key2.textContent = "Difficulty:";
+        key2.setAttribute("data-english", "Difficulty:");
+        key2.setAttribute("data-srpski", "Тежина:");
 
         const value2 = document.createElement("p");
         value2.textContent = value.difficulty;
+        value2.setAttribute("data-english", value.difficulty);
+        value2.setAttribute("data-srpski", srValue.difficulty);
 
         wrapper2.append(key2);
         wrapper2.append(value2);
@@ -175,6 +193,8 @@ export const Controller = {
         const text = document.createElement("p");
         text.classList = "text-gray-600 text-sm";
         text.textContent = value.description;
+        text.setAttribute("data-english", value.description);
+        text.setAttribute("data-srpski", srValue.description);
 
         let button, a;
         if (value.video) {
@@ -186,6 +206,9 @@ export const Controller = {
           button.classList =
             "mt-10 py-2 px-4 font-semibold rounded-[2rem] hover:rounded-none transition-all background w-full";
           button.textContent = "How to solve?";
+          button.setAttribute("data-english", "How to solve?");
+          button.setAttribute("data-srpski", "Како решити?");
+
           a.append(button);
         }
 
