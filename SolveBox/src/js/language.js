@@ -29,10 +29,10 @@ export function allowLangChange() {
 
   const onLanguageChange = (event) => changeLanguage(event);
 
-  lang.removeEventListener("change", onLanguageChange);
+  lang?.removeEventListener("change", onLanguageChange);
 
   setTimeout(() => {
-    lang.addEventListener("change", onLanguageChange);
+    lang?.addEventListener("change", onLanguageChange);
   }, 10);
 }
 

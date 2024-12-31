@@ -5,6 +5,12 @@ import { displayAuthFlow, findStorageUser } from "../auth.js";
 import * as Validation from "../../../utility/inputs.js";
 import { retrieveFormData } from "../../../utility/utility.js";
 
+let lang = localStorage.getItem("SolveBox-current-language");
+
+window.addEventListener("localStorageChange", (event) => {
+  lang = event.newValue;
+});
+
 export const Controller = {
   handleEmailInput(email) {
     const isValid = Validation.isEmailValid(email);
@@ -65,7 +71,10 @@ export const Controller = {
     if (findStorageUser(inputs.email)) {
       Validation.invalidateInput(emailDoc);
       Model.removeClassOnClick(emailDoc, "error-input");
-      Validation.displayErrorMessage("Email already taken");
+      if (lang === "english")
+        Validation.displayErrorMessage("Email already taken");
+      else Validation.displayErrorMessage("Имејл већ заузет");
+
       invalidInput = true;
     }
     if (invalidInput) return;

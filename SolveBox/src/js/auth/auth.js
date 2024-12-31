@@ -32,7 +32,7 @@ export function displayAuthFlow(isSignin) {
   }, 3000);
 
   setTimeout(() => {
-    form.classList.add("mb-[5rem]");
+    form.classList += " mb-[3.5rem] sm:mb-[5.5rem] xl:mb-[7.5rem]";
     button.remove();
     orText.remove();
     formBody.innerHTML = "";
@@ -40,8 +40,10 @@ export function displayAuthFlow(isSignin) {
     const title = document.createElement("h1");
     const text = document.createElement("p");
 
-    title.classList = "text-[2rem] font-semibold";
-    text.classList = "my-8 text-xl text-gray-700";
+    title.classList =
+      "text-[1rem] sm:text-[1.5rem] 2xl:text-[2.5rem] font-bold text-center lg:text-start";
+    text.classList =
+      "my-0 mb-2 sm:my-4 2xl:my-8 text-xs sm:text-sm 2xl:text-[1rem] 3xl:text-lg text-gray-700 text-center lg:text-start";
 
     if (isSignin) {
       title.textContent = "🎉 Welcome Back, Puzzle Master!";
