@@ -13,7 +13,7 @@
 
 <body>
   <div class="b background w-full h-full relative flex flex-col items-center">
-    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full lg:flex justify-center items-center z-50">
+    <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full lg:flex justify-center items-center z-40">
       <nav class="flex w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] justify-between items-center">
         <a href="./index.html" class="flex gap-2 items-center">
           <img class="h-[1.5rem] lg:h-[3rem]" src="../assets/images/logo.png" />
@@ -128,11 +128,7 @@
           </div>
         </section>
       </nav>
-      <select id="lang"
-        class="font-bold absolute top-32 2xl:top-1/2 lg:-translate-y-1/2 py-2 right-10 bg-transparent rounded-[2rem] focus:rounded-none px-2 outline-none">
-        <option value="english" class="text-black focus:bg-black">English</option>
-        <option value="srpski" class="text-black">Srpski</option>
-      </select>
+
     </header>
     <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 absolute top-0 left-0">
       <a href="./index.html" class="flex gap-2 items-center relative z-50">
@@ -259,6 +255,11 @@
         </ul>
       </nav>
     </header>
+    <select id="lang"
+      class="font-bold absolute top-10 lg:top-32 2xl:top-10 lg:-translate-y-1/2 py-2 right-10 bg-transparent px-2 outline-none header rounded-full text-xs sm:text-sm z-20 2xl:z-50">
+      <option value="english" class="text-white">eng</option>
+      <option value="srpski" class="text-white">срп</option>
+    </select>
     <section class="w-full flex justify-center mt-40">
       <div class="w-[75rem]">
         <h1
