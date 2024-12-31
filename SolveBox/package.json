@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "build:css": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --minify",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch"
   },
