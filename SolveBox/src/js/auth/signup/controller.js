@@ -1,7 +1,7 @@
 import { handleUnderlineHover } from "../../general_view.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
-import { displayAuthFlow, findStorageUser } from "../auth.js";
+import { displayAuthFlow, findJSONUser, findStorageUser } from "../auth.js";
 import * as Validation from "../../../utility/inputs.js";
 import { retrieveFormData } from "../../../utility/utility.js";
 
@@ -44,7 +44,7 @@ export const Controller = {
       confPswDoc.classList.remove("border-[#fa1c9a]");
   },
 
-  handleSignup(inputs) {
+  async handleSignup(inputs) {
     const emailDoc = document.getElementById("email");
     const pswDoc = document.getElementById("password");
     const confPswDoc = document.getElementById("confirm-password");
@@ -75,6 +75,20 @@ export const Controller = {
         Validation.displayErrorMessage("Email already taken");
       else Validation.displayErrorMessage("Имејл већ заузет");
 
+      invalidInput = true;
+    }
+    const JSONUser = await findJSONUser(inputs.email);
+    if (JSONUser) {
+      Validation.invalidateInput(emailDoc);
+      Model.removeClassOnClick(emailDoc, "error-input");
+      if (lang === "english")
+        Validation.displayErrorMessage(
+          "JSON account. Password: " + JSONUser.password
+        );
+      else
+        Validation.displayErrorMessage(
+          "ЈСОН профил. Лозинка: " + JSONUser.password
+        );
       invalidInput = true;
     }
     if (invalidInput) return;

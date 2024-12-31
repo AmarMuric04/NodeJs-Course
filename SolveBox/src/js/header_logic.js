@@ -1,5 +1,10 @@
 import { checkStatus, signTheUserOut } from "../utility/utility.js";
 import { handleUnderlineHover } from "./general_view.js";
+let lang = localStorage.getItem("SolveBox-current-language");
+
+window.addEventListener("localStorageChange", (event) => {
+  lang = event.newValue;
+});
 
 export function initHeader() {
   handleDropdownEvents();
@@ -41,11 +46,18 @@ function handleShowHeader() {
 
 function handleCheckIfSignedIn() {
   const userInfo = document.getElementById("user-information");
+  const mobileUserInfo = document.getElementById("mobile-user-info");
   const user = checkStatus();
-
+  {
+    /* <li class="flex items-center gap-2 text-sm 2xl:text-lg font-semibold">
+ 
+  <p>Sign in</p>
+</li>; */
+  }
   if (!userInfo) return;
   if (user) {
     userInfo.innerHTML = "";
+    mobileUserInfo.innerHTML = "";
     const userEmail = document.createElement("p");
     userEmail.classList = "text-gray-400 font-semibold truncate w-[8rem]";
     userEmail.textContent = user.email;
@@ -53,18 +65,33 @@ function handleCheckIfSignedIn() {
     const signOutBtn = document.createElement("div");
     signOutBtn.classList =
       "bg1 py-1 xl:py-2 px-4 md:px-6 xl:px-10 text-xs md:text-sm xl:text-[1rem] rounded-[2rem] transition-all hover:rounded-none font-semibold cursor-pointer flex-shrink-0";
-    signOutBtn.textContent = "Sign Out";
+    if (lang === "english") signOutBtn.textContent = "Sign Out";
+    else signOutBtn.textContent = "Одјавите се";
     signOutBtn.setAttribute("data-english", "Sign Out");
     signOutBtn.setAttribute("data-srpski", "Одјавите се");
-    signOutBtn.addEventListener("click", () => {
-      signTheUserOut();
-      handleCheckIfSignedIn();
-      handleUnderlineHover();
-    });
     userInfo.append(userEmail);
     userInfo.append(signOutBtn);
+
+    const li = document.createElement("li");
+    li.classList = "flex items-center gap-2 text-sm 2xl:text-lg font-semibold";
+    li.innerHTML += `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9 20.75H6a2.64 2.64 0 0 1-2.75-2.53V5.78A2.64 2.64 0 0 1 6 3.25h3a.75.75 0 0 1 0 1.5H6a1.16 1.16 0 0 0-1.25 1v12.47a1.16 1.16 0 0 0 1.25 1h3a.75.75 0 0 1 0 1.5Zm7-4a.74.74 0 0 1-.53-.22a.75.75 0 0 1 0-1.06L18.94 12l-3.47-3.47a.75.75 0 1 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.74.74 0 0 1-.53.22"/><path fill="currentColor" d="M20 12.75H9a.75.75 0 0 1 0-1.5h11a.75.75 0 0 1 0 1.5"/></svg>`;
+    const p = document.createElement("p");
+    p.textContent = "Sign Out";
+    p.setAttribute("data-english", "Sign Out");
+    p.setAttribute("data-srpski", "Одјавите се");
+    li.append(p);
+    mobileUserInfo.append(li);
+
+    [signOutBtn, li].forEach((e) =>
+      e.addEventListener("click", () => {
+        signTheUserOut();
+        handleCheckIfSignedIn();
+        handleUnderlineHover();
+      })
+    );
   } else {
     userInfo.innerHTML = "";
+    mobileUserInfo.innerHTML = "";
     const signUpBtn = document.createElement("a");
     signUpBtn.setAttribute("href", "./signup.html");
     signUpBtn.classList =
@@ -89,6 +116,47 @@ function handleCheckIfSignedIn() {
 
     userInfo.append(signUpBtn);
     userInfo.append(signInBtn);
+
+    const a1 = document.createElement("a");
+    a1.setAttribute("href", "./signin.html");
+    const li1 = document.createElement("li");
+    li1.classList = "flex items-center gap-2 text-sm 2xl:text-lg font-semibold";
+    li1.innerHTML += ` <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path
+      fill="currentColor"
+      d="M3 3.25c0-.966.784-1.75 1.75-1.75h5.5a.75.75 0 0 1 0 1.5h-5.5a.25.25 0 0 0-.25.25v17.5c0 .138.112.25.25.25h5.5a.75.75 0 0 1 0 1.5h-5.5A1.75 1.75 0 0 1 3 20.75Zm9.994 9.5l3.3 3.484a.75.75 0 0 1-1.088 1.032l-4.5-4.75a.75.75 0 0 1 0-1.032l4.5-4.75a.75.75 0 0 1 1.088 1.032l-3.3 3.484h8.256a.75.75 0 0 1 0 1.5Z"
+    />
+  </svg>`;
+    const p1 = document.createElement("p");
+    p1.textContent = lang === "english" ? "Sign in" : "Пријавите се";
+
+    p1.setAttribute("data-english", "Sign in");
+    p1.setAttribute("data-srpski", "Пријави се");
+    li1.append(p1);
+    a1.append(li1);
+
+    const a2 = document.createElement("a");
+    a2.setAttribute("href", "./signup.html");
+    const li2 = document.createElement("li");
+    li2.classList = "flex items-center gap-2 text-sm 2xl:text-lg font-semibold";
+    li2.innerHTML += `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M15 4a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4m0 1.9a2.1 2.1 0 1 1 0 4.2A2.1 2.1 0 0 1 12.9 8A2.1 2.1 0 0 1 15 5.9M4 7v3H1v2h3v3h2v-3h3v-2H6V7zm11 6c-2.67 0-8 1.33-8 4v3h16v-3c0-2.67-5.33-4-8-4m0 1.9c2.97 0 6.1 1.46 6.1 2.1v1.1H8.9V17c0-.64 3.1-2.1 6.1-2.1" />
+                </svg>`;
+    const p2 = document.createElement("p");
+    p2.textContent = lang === "english" ? "Sign up" : "Региструј се";
+
+    p2.setAttribute("data-english", "Sign up");
+    p2.setAttribute("data-srpski", "Региструј се");
+    li2.append(p2);
+    a2.append(li2);
+    mobileUserInfo.append(a1);
+    mobileUserInfo.append(a2);
   }
 }
 

@@ -1,5 +1,6 @@
 import { loader } from "../general_view.js";
 const storageAccounts = JSON.parse(localStorage.getItem("SolveBox-users"));
+let lang = localStorage.getItem("SolveBox-current-language");
 
 export function displayAuthFlow(isSignin) {
   const parent = document.getElementById("signup-parent");
@@ -15,11 +16,20 @@ export function displayAuthFlow(isSignin) {
     "transition-all absolute bg-[#fa1c9a] w-full h-full left-0 top-full flex items-center justify-center";
   authElement.setAttribute("href", isSignin ? "./index.html" : "./signin.html");
   authElement.setAttribute("id", isSignin ? "signup" : "signin");
-  authElement.textContent = isSignin ? "Home Page" : "Let's sign in!";
+  authElement.textContent = isSignin
+    ? lang === "english"
+      ? "Home Page"
+      : "Почетна страница"
+    : lang === "english"
+    ? "Let's sign in!"
+    : "Хајде да се пријавимо!";
 
   parent.appendChild(authElement);
+  if (lang === "english")
+    button.textContent = isSignin ? "Signing you in..." : "Signing you up...";
+  else
+    button.textContent = isSignin ? "Пријављујемо те..." : "Региструјемо те...";
 
-  button.textContent = isSignin ? "Signing you in..." : "Signing you up...";
   button.innerHTML += loader();
   button.classList.remove("cursor-pointer");
   button.disabled = true;
@@ -43,16 +53,28 @@ export function displayAuthFlow(isSignin) {
     title.classList =
       "text-[1rem] sm:text-[1.5rem] 2xl:text-[2.5rem] font-bold text-center lg:text-start";
     text.classList =
-      "my-0 mb-2 sm:my-4 2xl:my-8 text-xs sm:text-sm 2xl:text-[1rem] 3xl:text-lg text-gray-700 text-center lg:text-start";
+      "my-0 mb-2 sm:my-4 2xl:my-8 text-xs sm:text-sm 2xl:text-[1rem] 3xl:text-lg text-gray-300 lg:text-gray-700 text-center lg:text-start";
 
     if (isSignin) {
-      title.textContent = "🎉 Welcome Back, Puzzle Master!";
-      text.textContent =
-        "Ready to tackle more brain-busting challenges? Let’s dive in and solve the unsolvable!";
+      if (lang === "english") {
+        title.textContent = "🎉 Welcome Back, Puzzle Master!";
+        text.textContent =
+          "Ready to tackle more brain-busting challenges? Let’s dive in and solve the unsolvable!";
+      } else {
+        title.textContent = "🎉 Добродошли назад, Мастер Загонетки!";
+        text.textContent =
+          "Спремни сте за нове изазове? Хајде да решавамо оно што је неиздрживо!";
+      }
     } else {
-      title.textContent = "🔓 Access Granted!";
-      text.textContent =
-        "Welcome to the world of logic, riddles, and solutions. Let’s solve the unsolvable!";
+      if (lang === "english") {
+        title.textContent = "🔓 Access Granted!";
+        text.textContent =
+          "Welcome to the world of logic, riddles, and solutions. Let’s solve the unsolvable!";
+      } else {
+        title.textContent = "🔓 Приступ одобрен!";
+        text.textContent =
+          "Добродошли у свет логике, загонетки и решења. Хајде да решавамо оно што је неиздрживо!";
+      }
     }
 
     formBody.prepend(text);
