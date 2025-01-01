@@ -26,6 +26,10 @@ export function allowLangChange() {
   });
 
   const lang = document.getElementById("lang");
+  const options = document.querySelectorAll("#lang option");
+  options.forEach((e) => {
+    if (e.value === curr_lang) e.selected = true;
+  });
 
   const onLanguageChange = (event) => changeLanguage(event);
 
