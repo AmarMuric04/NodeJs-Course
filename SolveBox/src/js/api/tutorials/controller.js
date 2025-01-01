@@ -25,7 +25,7 @@ export const Controller = {
     const currentPuzzle = Model.domen[href];
 
     try {
-      const api = await getAPI("../assets/api.json");
+      const api = await getAPI("./assets/api.json");
       console.log(this.API);
       this.enAPI = api.puzzles?.english[currentPuzzle];
       this.srAPI = api.puzzles?.srpski[currentPuzzle];
@@ -82,10 +82,21 @@ export const Controller = {
     }
 
     const video = document.querySelector(".tutorials");
+
+    const wrapper = document.createElement("div");
+    wrapper.style.position = "relative";
+    wrapper.style.width = "100%";
+    wrapper.style.paddingTop = "56.25%";
+
     const iframe = document.createElement("iframe");
 
     iframe.src = this.enAPI["main_video"];
-    iframe.className = "w-full h-[720px]";
+    iframe.style.position = "absolute";
+    iframe.style.top = "0";
+    iframe.style.left = "0";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.className = "w-full h-full";
     iframe.title = "How To Solve A Rubik’s Cube | INTRODUCTION PART 1";
     iframe.frameBorder = "0";
     iframe.allow =
@@ -93,7 +104,9 @@ export const Controller = {
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
     iframe.allowFullscreen = true;
 
-    video.prepend(iframe);
+    wrapper.appendChild(iframe);
+
+    video.prepend(wrapper);
 
     const tutorials = document.querySelector(".tutorials-list");
     const enTContent = Object.entries(this.enAPI?.content?.tutorials);
@@ -138,7 +151,7 @@ export const Controller = {
         const srValue = this.srAPI?.variations[index];
         const container = document.createElement("div");
         container.classList =
-          "mb-10 bg-white w-[30%] p-4 flex flex-col justify-between";
+          "mb-10 bg-white w-full lg:w-[30%] p-4 flex flex-col justify-between";
 
         const title = document.createElement("h1");
         title.classList = "text-xl font-semibold";
@@ -151,7 +164,8 @@ export const Controller = {
           "h-[20rem] overflow-hidden w-full flex items-center justify-center";
 
         const image = document.createElement("img");
-        image.classList = "max-h-[20rem] object-cover bg-gray-200 w-full";
+        image.classList =
+          "max-h-[20rem] w-[20rem] lg:w-full object-cover bg-gray-200 w-full";
         image.src = value.image;
 
         imageWrapper.append(image);

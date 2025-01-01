@@ -2,6 +2,7 @@ import { Model } from "./model.js";
 import { handleUnderlineHover } from "../../general_view.js";
 import { getAPI } from "../api.js";
 import { transformText } from "../../../utility/utility.js";
+import { allowLangChange } from "../../language.js";
 
 export const Controller = {
   enAPI: null,
@@ -17,19 +18,19 @@ export const Controller = {
     });
 
     try {
-      const api = await getAPI("../assets/api.json");
+      const api = await getAPI("./assets/api.json");
       this.enAPI = api.puzzles.english;
       this.srAPI = api.puzzles.srpski;
       document.querySelectorAll(".loader").forEach((e) => e.remove());
     } catch (error) {
-      console.error("Failed to initialize API:", error);
+      console.error("Failed to initialize API: ", error);
     }
 
     elements.forEach((e, i) => {
       const enPuzzle = this.enAPI[i];
       const srPuzzle = this.srAPI[i];
       const variation = e.querySelector(".variations div");
-      enPuzzle?.variations?.forEach((V) => {
+      enPuzzle?.variations?.forEach((V, index) => {
         const a = document.createElement("a");
         a.setAttribute("href", "...");
         a.classList = "flex-shrink-0 ";
@@ -37,7 +38,10 @@ export const Controller = {
         const li = document.createElement("li");
         li.classList =
           "cursor-pointer px-4 py-1 text-sm rounded-[2rem] hover:rounded-none transition-all border-[1px] border1";
-        li.textContent = V.name;
+        li.textContent =
+          lang === "english" ? V.name : srPuzzle?.variations[index].name;
+        li.setAttribute("data-english", V.name);
+        li.setAttribute("data-srpski", srPuzzle?.variations[index].name);
 
         a.append(li);
         variation.append(a);
@@ -45,33 +49,45 @@ export const Controller = {
 
       const image = e.querySelector(".image");
       if (image) {
-        image.src = enPuzzle["main_image"];
+        image.src =
+          lang === "english" ? enPuzzle["main_image"] : srPuzzle["main_image"];
       }
 
       const title = e.querySelector(".title");
       if (title) {
-        title.textContent = enPuzzle?.name;
+        title.textContent =
+          lang === "english" ? enPuzzle?.name : srPuzzle?.name;
+        title.setAttribute("data-english", enPuzzle?.name);
+        title.setAttribute("data-srpski", srPuzzle?.name);
       }
 
       const description = e.querySelector(".description");
       if (description) {
-        description.textContent = enPuzzle?.description;
+        description.textContent =
+          lang === "english" ? enPuzzle?.description : srPuzzle?.description;
+        description.setAttribute("data-english", enPuzzle?.description);
+        description.setAttribute("data-srpski", srPuzzle?.description);
       }
 
       const history = e.querySelector(".history");
-
       if (enPuzzle?.history) {
-        Object.entries(enPuzzle.history).forEach((H) => {
+        Object.entries(enPuzzle.history).forEach(([key, enValue]) => {
+          const srValue = srPuzzle.history[key];
           const li = document.createElement("li");
           li.classList = "flex gap-2";
           const p1 = document.createElement("p");
           p1.classList = "font-bold";
           const p2 = document.createElement("p");
 
-          const [key, value] = H;
-
-          p1.textContent = transformText(key) + ":";
-          p2.textContent = value;
+          p1.textContent =
+            lang === "english"
+              ? transformText(key) + ":"
+              : transformText(key) + ":";
+          p2.textContent = lang === "english" ? enValue : srValue;
+          p1.setAttribute("data-english", transformText(key) + ":");
+          p1.setAttribute("data-srpski", transformText(key) + ":");
+          p2.setAttribute("data-english", enValue);
+          p2.setAttribute("data-srpski", srValue);
 
           li.append(p1);
           li.append(p2);
@@ -80,5 +96,7 @@ export const Controller = {
         });
       }
     });
+
+    allowLangChange();
   },
 };

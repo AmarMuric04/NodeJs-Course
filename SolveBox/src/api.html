@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="b background overflow-hidden w-full lg:h-full relative flex flex-col items-center">
+  <div class="b background overflow-hidden w-full lg:h-full relative flex flex-col items-center overflow-x-hidden">
     <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full lg:flex justify-center items-center z-40">
       <nav class="flex w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] justify-between items-center">
         <a href="./index.html" class="flex gap-2 items-center">
@@ -280,8 +280,8 @@
             <div class="flex flex-col gap-8">
               <ul class="flex flex-col history">
               </ul>
-              <a class="w-full" href="./api/rubiks_cube.html">
-                <button
+              <a class="w-full" href="./rubiks_cube.html">
+                <button data-english="Let's explore the guides..." data-srpski="Научи како да решиш..."
                   class="w-full underline px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
                   Let's explore the guides...
                 </button>
@@ -304,7 +304,9 @@
             <div class="flex flex-col gap-8">
               <ul class="flex flex-col history">
               </ul>
-              <a class="w-full" href="./api/sudoku.html"><button
+              <a class="w-full" href="./sudoku.html">
+                <button data-english="Let's explore the guides..." data-srpski="Научи како да решиш..."
+                  data-english="Let's explore the guides..." data-srpski="Научи како да решиш..."
                   class="w-full underline px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
                   Let's explore the guides...
                 </button></a>
@@ -332,8 +334,8 @@
             <div class="flex flex-col gap-8">
               <ul class="flex flex-col history">
               </ul>
-              <a class="w-full" href="./api/crossword.html">
-                <button
+              <a class="w-full" href="./crossword.html">
+                <button data-english="Let's explore the guides..." data-srpski="Научи како да решиш..."
                   class="underline w-full px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
                   Let's explore the guides...
                 </button>
@@ -356,8 +358,8 @@
             <div class="flex flex-col gap-8">
               <ul class="flex flex-col history">
               </ul>
-              <a class="w-full" href="./api/jigsaw.html">
-                <button
+              <a class="w-full" href="./jigsaw.html">
+                <button data-english="Let's explore the guides..." data-srpski="Научи како да решиш..."
                   class="underline w-full px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
                   Let's explore the guides...
                 </button>
@@ -386,8 +388,8 @@
             <div class="flex flex-col gap-8">
               <ul class="flex flex-col history">
               </ul>
-              <a class="w-full" href="./api/hanoi.html">
-                <button
+              <a class="w-full" href="./hanoi.html">
+                <button data-english="Let's explore the guides..." data-srpski="Научи како да решиш..."
                   class="underline w-full px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
                   Let's explore the guides...
                 </button>
@@ -410,8 +412,8 @@
             <div class="flex flex-col gap-8">
               <ul class="flex flex-col history">
               </ul>
-              <a class="w-full" href="./api/puzzle.html">
-                <button
+              <a class="w-full" href="./puzzle.html">
+                <button data-english="Let's explore the guides..." data-srpski="Научи како да решиш..."
                   class="underline w-full px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
                   Let's explore the guides...
                 </button>
@@ -440,8 +442,8 @@
             <div class="flex flex-col gap-8">
               <ul class="flex flex-col history">
               </ul>
-              <a class="w-full" href="./api/logic.html">
-                <button
+              <a class="w-full" href="./logic.html">
+                <button data-english="Let's explore the guides..." data-srpski="Научи како да решиш..."
                   class="underline w-full px-5 py-2 lg:px-10 lg:py-4 bg3 text-[#242234] font-semibold rounded-[2rem] hover:rounded-none transition-all text-xs lg:text-[1rem]">
                   Let's explore the guides...
                 </button>
@@ -451,7 +453,6 @@
         </div>
       </div>
     </section>
-
     <footer class="w-full flex justify-center pt-40">
       <div class="w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem]">
         <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
@@ -503,22 +504,21 @@
               <span
                 data-english="Join us at the Puzzle Solver's Hub, where puzzle enthusiasts and experts come together to share tips, tricks, and solutions."
                 data-srpski="Придружите нам се у Кутку за решавање загонетки, где љубитељи и стручњаци деле савете, трикове и решења.">
-                Join us at the Puzzle Solver's Hub, where puzzle enthusiasts
-                and experts come together to share tips, tricks, and
+                Join us at the Puzzle Solver's Hub, where puzzle enthusiasts and experts come together to share tips,
+                tricks, and
                 solutions.
               </span>
               <span
                 data-english="Explore strategies, connect with a vibrant community, and enhance your problem-solving skills."
                 data-srpski="Истражите стратегије, повежите се са живописном заједницом и унапредите своје вештине решавања проблема.">
-                Explore strategies, connect with a vibrant community, and
-                enhance your problem-solving skills.
+                Explore strategies, connect with a vibrant community, and enhance your problem-solving skills.
               </span>
               <span data-english="Visit our site for more details and feel free to contact us anytime!"
                 data-srpski="Посетите нашу страницу за више детаља и слободно нас контактирајте у било ком тренутку!">
-                Visit our site for more details and feel free to contact us
-                anytime!
+                Visit our site for more details and feel free to contact us anytime!
               </span>
             </p>
+
           </div>
           <div class="flex my-8 lg:my-0 gap-10 lg:gap-20 flex-col lg:flex-row">
             <div class="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
@@ -535,10 +535,12 @@
                     <span data-english="PHONE" data-srpski="ТЕЛЕФОН">PHONE</span>
                   </p>
                   <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
-                    <span data-english="+381 (063) 303 309" data-srpski="+381 (063) 303 309">+381 (063) 303 309</span>
+                    <span data-english="+381 (063) 303 309" data-srpski="+381 (063) 303 309">+381 (063) 303
+                      309</span>
                   </p>
                   <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
-                    <span data-english="+381 (063) 303 309" data-srpski="+381 (063) 303 309">+381 (063) 303 309</span>
+                    <span data-english="+381 (063) 303 309" data-srpski="+381 (063) 303 309">+381 (063) 303
+                      309</span>
                   </p>
                 </div>
               </div>
@@ -611,6 +613,7 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
         <div class="w-full flex flex-col lg:flex-row py-20 border-y-2 border-[#383b48]">
@@ -632,10 +635,9 @@
               <span
                 data-english="Join us at the Puzzle Solver's Hub, the premier online community for puzzle enthusiasts. Explore new challenges, share your expertise, and connect with fellow solvers. Feel free to contact us anytime for more details!"
                 data-srpski="Придружите нам се у Кутку за решавање загонетки, водећој онлајн заједници за љубитеље загонетки. Истражите нове изазове, поделите своју стручност и повежите се са другим решавачима. Слободно нас контактирајте у било ком тренутку за више детаља!">
-                Join us at the Puzzle Solver's Hub, the premier online
-                community for puzzle enthusiasts. Explore new challenges,
-                share your expertise, and connect with fellow solvers. Feel
-                free to contact us anytime for more details!
+                Join us at the Puzzle Solver's Hub, the premier online community for puzzle enthusiasts. Explore new
+                challenges,
+                share your expertise, and connect with fellow solvers. Feel free to contact us anytime for more details!
               </span>
             </p>
           </div>
@@ -694,6 +696,7 @@
             <span data-english="All rights Reserved" data-srpski="Сва права задржана">All rights Reserved</span>
           </p>
         </div>
+
       </div>
     </footer>
   </div>

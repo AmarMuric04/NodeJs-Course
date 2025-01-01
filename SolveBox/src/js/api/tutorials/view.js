@@ -3,7 +3,7 @@ import { transformText } from "../../../utility/utility.js";
 export const View = {
   displayResources(en, sr, element) {
     let iterations = 0;
-    en.forEach((a) => {
+    en.forEach((a, index) => {
       let [key, value] = a;
       const main = document.createElement("div");
       main.classList = "relative flex flex-col";
@@ -15,6 +15,8 @@ export const View = {
       mainTitle.classList =
         "pl-16 px-2 background z-50 relative text-xl font-bold";
       mainTitle.textContent = transformText(key);
+      mainTitle.setAttribute("data-english", transformText(key));
+      mainTitle.setAttribute("data-srpski", transformText(sr[index][0]));
 
       const mainLine = document.createElement("div");
       mainLine.classList = "h-[1px] w-full absolute top-2/3 bg4";
@@ -23,25 +25,35 @@ export const View = {
       wrapper.append(mainLine);
 
       const list = document.createElement("ul");
-      list.classList = "apps ml-16 flex mb-8 gap-8 info relative min-h-[10rem]";
+      list.classList =
+        "apps md:ml-16 flex mb-8 gap-8 info relative flex-col md:flex-row min-h-[10rem]";
 
       const aboutContent = Object.entries(value);
+      const srAboutContent = Object.entries(sr[index][1]);
+
       if (aboutContent) {
-        aboutContent.forEach((a) => {
+        aboutContent.forEach((a, i) => {
           [key, value] = a;
+          const srValue = srAboutContent[i][1];
+
           const container = document.createElement("div");
-          container.classList = "bg-white w-[20rem] text-black p-4";
+          container.classList = "bg-white w-full md:w-[20rem] text-black p-4";
 
           const title = document.createElement("h1");
           title.classList = "font-bold text-xl text" + (1 + (iterations % 3));
-          title.textContent = value.name;
+          title.textContent = lang === "english" ? value.name : srValue.name;
+          title.setAttribute("data-english", value.name);
+          title.setAttribute("data-srpski", srValue.name);
 
           const line = document.createElement("div");
           line.classList = "h-[2px] w-1/2 top-2/3 bg" + (1 + (iterations % 3));
 
           const description = document.createElement("p");
           description.classList = "text-gray-600 mt-2 mb-4";
-          description.textContent = value.description;
+          description.textContent =
+            lang === "english" ? value.description : srValue.description;
+          description.setAttribute("data-english", value.description);
+          description.setAttribute("data-srpski", srValue.description);
 
           const link = document.createElement("a");
           link.setAttribute("href", value.url);
@@ -50,7 +62,10 @@ export const View = {
           button.classList =
             "px-4 py-2 font-semibold text-white rounded-[2rem] hover:rounded-none transition-all float-end bg" +
             (1 + (iterations % 3));
-          button.textContent = "Go to App >";
+          button.textContent =
+            lang === "english" ? "Go to App >" : "Idi na aplikaciju >";
+          button.setAttribute("data-english", "Go to App >");
+          button.setAttribute("data-srpski", "Иди до апликације >");
 
           container.append(title);
           container.append(line);
@@ -76,7 +91,7 @@ export const View = {
 
       const container = document.createElement("div");
       container.classList =
-        "child flex flex-col justify-between p-4 bg-white min-w-[49%] max-w-[49%]";
+        "child w-full flex flex-col justify-between p-4 bg-white min-w-[49%] md:w-[49%] md:max-w-[49%]";
 
       const title = document.createElement("p");
       title.classList = "noto text1 uppercase";
@@ -100,7 +115,7 @@ export const View = {
           "background text-white rounded-[2rem] px-4 py-2 hover:rounded-none transition-all";
         button.textContent = "Go to Tutorial";
         button.setAttribute("data-english", "Go to Tutorial");
-        button.setAttribute("data-srpski", "Idi do Tutoriala");
+        button.setAttribute("data-srpski", "Иди до Туториала");
 
         link.append(button);
         container.prepend(link);

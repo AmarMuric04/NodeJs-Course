@@ -479,6 +479,12 @@ body::-webkit-scrollbar-thumb {
   max-width: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  .child {
+    min-width: 100%;
+  }
+}
+
 @keyframes shake {
   0%,
   100% {
