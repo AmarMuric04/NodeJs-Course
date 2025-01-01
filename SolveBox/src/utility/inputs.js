@@ -4,7 +4,7 @@ export function displayErrorMessage(error) {
 
   const errorParent = document.createElement("div");
   errorParent.classList =
-    "absolute w-full transition-all opacity-0 -top-16 flex flex-col text-sm my-4 background rounded-xl p-4 font-semibold text-center mt-12 lg:mt-0";
+    "absolute w-full transition-all opacity-0 -top-16 flex flex-col text-sm my-4 background rounded-xl p-4 font-semibold text-center mt-12 lg:mt-0 z-50";
   errorParent.setAttribute("id", "error-parent");
 
   const errorMessage = document.createElement("p");

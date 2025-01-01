@@ -106,7 +106,7 @@ export async function findAccount(email) {
 
 export async function findJSONUser(email) {
   try {
-    const jsonUsersRes = await fetch("../assets/accounts.json");
+    const jsonUsersRes = await fetch("./assets/accounts.json");
 
     if (!jsonUsersRes.ok) {
       throw new Error("Failed to fetch users.");
