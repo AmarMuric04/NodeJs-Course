@@ -87,7 +87,7 @@ export function displayAuthFlow(isSignin) {
 password of the json users this function simply wouldn't work. */
 export async function findAccount(email) {
   try {
-    const jsonUsersRes = await fetch("../assets/accounts.json");
+    const jsonUsersRes = await fetch("./assets/accounts.json");
 
     if (!jsonUsersRes.ok) {
       throw new Error("Failed to fetch users.");

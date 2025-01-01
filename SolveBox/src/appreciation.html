@@ -5,19 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link href="../styles/output.css" rel="stylesheet" />
-  <link href="../styles/input.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
-  <script defer type="module" src="../js/themes/app.js"></script>
-  <script defer type="module" src="../js/header_logic.js"></script>
+  <link href="./styles/output.css" rel="stylesheet" />
+  <link href="./styles/input.css" rel="stylesheet" />
+  <script defer type="module" src="./js/themes/app.js"></script>
+  <script defer type="module" src="./js/header_logic.js"></script>
 </head>
 
 <body>
-  <div class="b background w-full h-full relative flex flex-col items-center">
+  <div class="b background overflow-hidden w-full h-full relative flex flex-col items-center">
     <header class="header hidden absolute top-0 left-0 right-0 py-4 w-full lg:flex justify-center items-center z-40">
       <nav class="flex w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] justify-between items-center">
         <a href="./index.html" class="flex gap-2 items-center">
-          <img class="h-[1.5rem] lg:h-[3rem]" src="../assets/images/logo.png" />
+          <img class="h-[1.5rem] lg:h-[3rem]" src="./assets/images/logo.png" />
           <div class="flex flex-col justify-between">
             <h1 class="font-bold text-[1.6rem]">
               <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
@@ -31,27 +30,27 @@
         </a>
         <section>
           <ul class="flex gap-2 lg:gap-6 font-semibold text-xs md:text-xs xl:text-[1rem]">
-            <a href="../views/about.html"
+            <a href="./about.html"
               class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
               <span data-english="About" data-srpski="О нама">About</span>
               <div class="underline-child bg1"></div>
             </a>
-            <a href="../views/categories.html"
+            <a href="./categories.html"
               class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
               <span data-english="Categories" data-srpski="Категорије">Categories</span>
               <div class="underline-child bg1"></div>
             </a>
-            <a href="../views/subscribe.html"
+            <a href="./subscribe.html"
               class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
               <span data-english="Subscribe" data-srpski="Претплата">Subscribe</span>
               <div class="underline-child bg1"></div>
             </a>
-            <a href="../views/contactus.html"
+            <a href="./contactus.html"
               class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
               <span data-english="Contact Us" data-srpski="Контакт">Contact Us</span>
               <div class="bg1 underline-child"></div>
             </a>
-            <a href="../views/credits.html"
+            <a href="./credits.html"
               class="navbar-text flex-shrink-0 relative transition-all cursor-pointer underline-parent">
               <span data-english="Credits" data-srpski="Кредити">Credits</span>
               <div class="underline-child bg1"></div>
@@ -133,7 +132,7 @@
     </header>
     <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 absolute top-0 left-0">
       <a href="./index.html" class="flex gap-2 items-center relative z-50">
-        <img class="h-[1.5rem] sm:h-[2.3rem]" src="../assets/images/logo.png" />
+        <img class="h-[1.5rem] sm:h-[2.3rem]" src="./assets/images/logo.png" />
         <div class="flex flex-col justify-between">
           <h1 class="font-bold text-[1rem] sm:text-[1.6rem]">
             <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
@@ -261,97 +260,156 @@
       <option value="english" class="text-white">eng</option>
       <option value="srpski" class="text-white">срп</option>
     </select>
-    <section class="w-full flex justify-center mt-40">
-      <div class="w-[75rem]">
-        <h1
-          class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold px-2 background z-40 relative">
-          <span data-english="Todays" data-srpski="Данашња">Todays</span>
-          <span class="text3" data-english="subject" data-srpski="тема">subject</span>
-          -- <span class="title text1"></span>
-        </h1>
-      </div>
-    </section>
-    <section class="w-full my-10 bg2 py-10 flex justify-center">
-      <div class="w-[75rem] flex h-full flex-col justify-center">
-        <p class="text1 font-semibold uppercase noto leading-[0.2rem] text-xl mb-8" data-english="Did you know?"
-          data-srpski="Да ли сте знали?">Did you know?</p>
-        <h1
-          class="background-text text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold z-40 relative fun-fact">
-        </h1>
-      </div>
-    </section>
-    <section class="w-full flex justify-center">
-      <div class="w-[75rem]">
-        <div class="relative w-full flex flex-col items-start">
-          <h1
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative"
-            data-english="Quick Tips" data-srpski="Брзи савети">
-            Quick Tips</h1>
-          <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
-        </div>
-        <ul class="tips my-8 info relative min-h-[10rem]"> </ul>
-        <div class="relative w-full flex flex-col items-start">
-          <h1
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative"
-            data-english="Resources" data-srpski="Ресурси">
-            Resources</h1>
-          <div class="h-[1px] w-full absolute top-2/3 bg4"> </div>
-        </div>
-        <div class="resources relative min-h-[10rem] w-full my-8"> </div>
-      </div>
-    </section>
-    <section class="w-full my-10 bg3 py-10 flex justify-center">
-      <div class="w-[75rem] flex h-full flex-col justify-center">
-        <p class="text1 font-semibold uppercase noto leading-[0.2rem] text-xl mb-8" data-english="SOME HISTORY"
-          data-srpski="МАЛО ИСТОРИЈЕ">SOME HISTORY</p>
-        <h1
-          class="background-text text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold z-40 relative historical-fact">
-        </h1>
-      </div>
-    </section>
-    <section class="w-full flex justify-center">
-      <div class="w-[75rem]">
-        <div class="relative w-full flex flex-col items-start mb-8">
-          <h1
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative"
-            data-english="Tutorials" data-srpski="Туториали">
-            Tutorials</h1>
-          <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
-        </div>
-        <div class="tutorials my-8">
-          <div class="flex relative my-8">
-            <h1 class="px-2 background z-50 relative text-xl font-bold" data-english="More Tutorials"
-              data-srpski="Још мало туториала">More Tutorials</h1>
-            <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
+    <section class="w-full flex justify-center relative">
+      <div class="w-[90%] xl:w-[75rem] py-20 lg:py-0">
+        <div class="relative z-30 lg:mt-20 lg:h-[15rem] flex flex-col lg:flex-row justify-between items-center">
+          <div class="w-full xl:w-1/2">
+            <h1 class="text-[3rem] font-bold leading-[3.5rem] ">
+              Thank <span class="text1">You</span>!
+            </h1>
+            <p class="text-[0.5rem] tracking-[0.1rem] pt-8 pb-4 noto text3">
+              <a class="hover:underline" href="./index.html">GO BACK TO HOME</a>
+            </p>
           </div>
-          <ul class="tutorials-list flex flex-wrap w-full justify-between gap-4 text-black">
+          <div class="w-full xl:w-1/2">
+            <p class="text-gray-400 font-semibold text-sm lg:text-lg">
+              Thank you for taking the time to submit a review for our site. Your feedback is invaluable and helps us
+              improve. We
+              truly appreciate your support and input!
+            </p>
+          </div>
+        </div>
+        <div class="hidden lg:flex">
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+            class="svg1 absolute top-[7.5rem] left-[38rem] z-0" viewBox="0 0 480 480">
+            <path d="M480 120 360 0 240 120 120 0 0 120l120 120L0 360l120 120 120-120 120 120 120-120-120-120 120-120z">
+            </path>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg2 absolute top-20 right-80 z-0">
+            <path d="M320 160a160 160 0 1 0-320 0v320h160V160h160ZM320 0v320H160a160 160 0 1 0 320 0V0H320Z"></path>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg1 absolute bottom-[1.6rem] right-[50rem] z-0">
+            <path
+              d="M120 120h120v120H120zM0 240h120v120H0zM120 360h120v120H120zM0 0h120v120H0zM360 120h120v120H360zM240 240h120v120H240zM360 360h120v120H360zM240 0h120v120H240z">
+            </path>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg1 absolute bottom-[1.6rem] left-10">
+            <path
+              d="M480 240H240V0a240 240 0 0 1 240 240ZM240 480H0V240a240 240 0 0 1 240 240ZM480 480H240V240a240 240 0 0 1 240 240ZM240 240H0V0a240 240 0 0 1 240 240Z">
+            </path>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="200" height="200"
+            class="svg1 absolute bottom-[1.6rem] right-10">
+            <path
+              d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z">
+            </path>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-center">
+      <div class="w-full xl:w-[75rem]">
+        <ul
+          class="flex justify-between w-full flex-col lg:flex-row items-center lg:items-start text-sm lg:text-[1rem] gap-4 lg:gap-0">
+          <li class="flex items-center w-[90%] xl:w-1/4 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="./assets/svgs/what.svg" />
+            <div class="flex flex-col">
+              <h1 class="font-bold text-xl lg:text-2xl text-black">What to expect?</h1>
+              <p class="text-gray-700">SolveBox brigs experts together.</p>
+            </div>
+          </li>
+          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="./assets/svgs/light.svg" />
+            <p>Engaging solutions and feedback</p>
+          </li>
+          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="./assets/svgs/time.svg" />
+            <p>Quick and simple solutions</p>
+          </li>
+          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
+            <img class="w-12 h-12 xl:w-12 lg:h-12" src="./assets/svgs/stats.svg" />
+            <p>Overwhelmingly good reviews</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="w-full flex justify-center items-center">
+      <div class="w-[90%] xl:w-[75rem] border-b-2 border1 py-40">
+        <p class="text-[0.7rem] tracking-[0.1rem] pt-8 pb-4 noto text3">
+          YOUR REVIEW
+        </p>
+        <div class="flex flex-col xl:flex-row w-full mb-8">
+          <div class="w-full xl:w-2/3">
+            <p class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-semibold">
+              Thank you! Your <span class="text1">valuable</span>
+              feedback helps us improve our website<span class="text2">.</span>
+            </p>
+          </div>
+          <ul
+            class="w-full xl:w-1/3 flex flex-col justify-between noto-sans font-light text-[0.9rem] text-gray-300 my-8 xl:my-0 gap-2 lg:gap-0">
+            <li class="flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
+                class="text3">
+                <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
+              </svg>
+              <p>Your feedback helps us improve content;</p>
+            </li>
+            <li class="flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
+                class="text3">
+                <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
+              </svg>
+              <p>We value your thoughts on our solutions;</p>
+            </li>
+            <li class="flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
+                class="text3">
+                <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
+              </svg>
+              <p>Thanks for helping us create a better experience.</p>
+            </li>
           </ul>
         </div>
-        <div class="relative w-full flex flex-col items-start">
-          <h1
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative"
-            data-english="Advanced Tips" data-srpski="Напредни Савети">
-            Advanced Tips</h1>
-          <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
+        <div
+          class="bg-white w-full min-w-full review mb-12 flex h-auto xl:h-[30rem] xl:min-w-[75rem] xl:w-[75rem] flex-col xl:flex-row">
+          <img class="w-28 h-28 rounded-full object-cover xl:h-auto xl:rounded-none xl:w-1/2 p-4 xl:p-0"
+            src="https://res2.weblium.site/res/648abf34bf47350010ebfd9f/64941d5122d602000f971639_optimized_1400_c1261x904-61x44.webp">
+          <div class="p-8 pt-0 xl:p-16 flex flex-col justify-between">
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"
+                class="text-[#75e1d9]">
+                <path fill="currentColor"
+                  d="M5.7 18L8 14q-1.65 0-2.825-1.175T4 10t1.175-2.825T8 6t2.825 1.175T12 10q0 .575-.137 1.063T11.45 12L8 18zm9 0l2.3-4q-1.65 0-2.825-1.175T13 10t1.175-2.825T17 6t2.825 1.175T21 10q0 .575-.137 1.063T20.45 12L17 18z">
+                </path>
+              </svg></div>
+            <p class="text-gray-400 italic text-sm xl:text-xl my-4" id="description"></p>
+            <p class="my-4 font-semibold text-[1rem] xl:text-[2rem] text-black" id="name"></p>
+            <p class="noto text-[0.4rem] xl:text-[0.6rem] text-[#cd0d83] tracking-[0.1rem] uppercase" id="profession">
+            </p>
+          </div>
         </div>
-        <ul class="advanced my-8 info relative min-h-[10rem]"> </ul>
-        <div class="relative w-full flex flex-col items-start">
-          <h1
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative"
-            data-english="Related Facts" data-srpski="Везане Чињенице">
-            Related Facts</h1>
-          <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
+        <div class="flex flex-col items-center mt-20">
+          <h1 class="text-[1.5rem] lg:text-[3rem] font-bold text-center">
+            Want to share <span class="text3">feedback</span> directly? We’d
+            <span class="text1">love</span> to hear your thoughts
+            <span class="text2">!</span>
+          </h1>
+
+          <p class="text-[#ffd110] underline font-bold text-center text-[1rem] lg:text-xl mt-8">
+            muricamar2004@gmail.com
+          </p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 20 20" class="opacity-50 mt-8">
+            <path fill="currentColor"
+              d="m1.574 5.286l7.5 4.029c.252.135.578.199.906.199s.654-.064.906-.199l7.5-4.029c.489-.263.951-1.286.054-1.286H1.521c-.897 0-.435 1.023.053 1.286m17.039 2.203l-7.727 4.027c-.34.178-.578.199-.906.199s-.566-.021-.906-.199s-7.133-3.739-7.688-4.028C.996 7.284 1 7.523 1 7.707V15c0 .42.566 1 1 1h16c.434 0 1-.58 1-1V7.708c0-.184.004-.423-.387-.219" />
+          </svg>
         </div>
-        <ul class="facts my-8 info relative min-h-[10rem]"> </ul>
-        <div class="relative w-full flex flex-col items-start">
-          <h1
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative"
-            data-english="Variations" data-srpski="Варијације">
-            Variations</h1>
-          <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
-        </div>
-        <ul class="variations flex gap-[3.33%] flex-wrap my-8 info relative min-h-[10rem] text-black">
-        </ul>
       </div>
     </section>
     <footer class="w-full flex justify-center pt-40">
@@ -518,7 +576,7 @@
         <div class="w-full flex flex-col lg:flex-row py-20 border-y-2 border-[#383b48]">
           <div class="w-full lg:w-[40%]">
             <div class="flex gap-2 items-center">
-              <img class="h-[3rem]" src="../assets/images/logo.png" />
+              <img class="h-[3rem]" src="./assets/images/logo.png" />
               <div class="flex flex-col justify-between">
                 <h1 class="font-bold text-[1.6rem]">
                   <span data-english="SolveBox" data-srpski="СолвБокс">SolveBox</span>
@@ -599,8 +657,8 @@
       </div>
     </footer>
   </div>
-  <script type="module" src="../js/api/tutorials/app.js"></script>
-  <script type="module" src="../js/language.js"></script>
+  <script type="module" src="./js/appreciation/app.js"></script>
+  <script type="module" src="./js/language.js"></script>
 </body>
 
 </html>
