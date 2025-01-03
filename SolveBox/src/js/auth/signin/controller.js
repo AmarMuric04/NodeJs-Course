@@ -38,9 +38,9 @@ export const Controller = {
         displayAuthFlow(true);
         Model.updateStatus(checkInputs.user);
 
-        // setTimeout(() => {
-        //   window.location.href = "./index.html";
-        // }, 6200);
+        setTimeout(() => {
+          window.location.href = "./index.html";
+        }, 6200);
       } else {
         Validation.invalidateInput(emailDoc);
         Validation.invalidateInput(pswDoc);
