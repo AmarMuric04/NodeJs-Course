@@ -6,6 +6,8 @@ import { logoutUser } from "../utility/util";
 
 const Header = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
+  const user = useSelector((state) => state.auth.user);
+  console.log(isAuth);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -23,18 +25,37 @@ const Header = () => {
           </div>
         </Link>
         <div className="flex gap-4">
-          <p className="font-semibold">About</p>
-          <p className="font-semibold">Contact Us</p>
-          <p className="font-semibold">Subscribe</p>
+          <p className="cursor-pointer font-semibold hover:text-orange-400 transition-all">
+            About
+          </p>
+          <p className="cursor-pointer font-semibold hover:text-orange-400 transition-all">
+            Contact Us
+          </p>
+          <p className="cursor-pointer font-semibold hover:text-orange-400 transition-all">
+            Subscribe
+          </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           {isAuth ? (
-            <button
-              onClick={handleLogout}
-              className="bg-gray-800 bg-opacity-10 py-2 px-8 rounded-[2rem] hover:rounded-none"
-            >
-              Sign Out
-            </button>
+            <>
+              <div className="flex flex-col text-end">
+                <p className="font-semibold text-sm">
+                  {user?.fname}, {user?.lname}
+                </p>
+                <p className="text-xs text-gray-500">{user?.email}</p>
+              </div>
+              <img
+                className="h-[4rem] w-[4rem] rounded-full object-cover"
+                src={"http://localhost:8080/" + user?.imageUrl}
+                alt="User's Pfp"
+              />
+              <button
+                onClick={handleLogout}
+                className="bg-gray-800 bg-opacity-10 py-2 px-8 rounded-[2rem] hover:rounded-none"
+              >
+                Sign Out
+              </button>
+            </>
           ) : (
             <>
               <Link to="/signup">

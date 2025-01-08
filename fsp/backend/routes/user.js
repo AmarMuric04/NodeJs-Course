@@ -6,7 +6,9 @@ const Controller = require("../controllers/user");
 
 const { body } = require("express-validator");
 
-router.get("/", Controller.getUsers);
+router.get("/users", Controller.getUsers);
+
+router.get("/:id", Controller.getUser);
 
 router.post(
   "/signin",

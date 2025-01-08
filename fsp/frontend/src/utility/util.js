@@ -1,11 +1,17 @@
-import { setAuthData, setAuth, clearAuthData } from "../storage/authSlice";
+import {
+  setAuthData,
+  setAuth,
+  clearAuthData,
+  setUser,
+} from "../storage/authSlice";
 
-export const loadAuthDataFromLocalStorage = (dispatch) => {
+export const loadAuthDataFromLocalStorage = async (dispatch) => {
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
   const expiryDate = localStorage.getItem("expiryDate");
 
   if (!token || !userId || !expiryDate) {
+    console.log("Missing auth data:", token, userId, expiryDate);
     dispatch(clearAuthData());
     return;
   }
@@ -13,33 +19,63 @@ export const loadAuthDataFromLocalStorage = (dispatch) => {
   const expiryTime = new Date(expiryDate).getTime();
   const currentTime = new Date().getTime();
 
-  if (currentTime >= expiryTime) {
-    setAutoLogout(dispatch, expiryDate);
-    localStorage.clear();
+  const currentUser = await getUser(userId);
+  dispatch(setUser(currentUser.user));
+
+  if (expiryTime <= currentTime) {
+    console.log("Token expired");
     dispatch(clearAuthData());
-  } else {
-    dispatch(
-      setAuthData({
-        token,
-        userId,
-        expiryDate,
-      })
-    );
-    dispatch(setAuth(true));
+    return;
   }
+  dispatch(
+    setAuthData({
+      token,
+      userId,
+      expiryDate,
+    })
+  );
+  dispatch(setAuth(true));
+
+  setAutoLogout(dispatch, expiryTime - currentTime);
 };
 
-export const setAutoLogout = (dispatch, expiryDate) => {
-  const expiryTime = new Date(expiryDate).getTime() - new Date().getTime();
+export const setAutoLogout = (dispatch, expiryTime) => {
+  console.log(`Auto-logout in ${(expiryTime / 1000 / 60).toFixed(0)} minutes`);
   setTimeout(() => {
-    localStorage.clear();
-    dispatch(clearAuthData());
-    dispatch(setAuth(false));
+    logoutUser(dispatch);
   }, expiryTime);
 };
 
 export const logoutUser = (dispatch) => {
+  console.log("Logging out user");
   localStorage.clear();
   dispatch(clearAuthData());
   dispatch(setAuth(false));
+};
+
+export const generateBase64FromImage = (imageFile) => {
+  const reader = new FileReader();
+  const promise = new Promise((resolve, reject) => {
+    reader.onload = (e) => resolve(e.target.result);
+    reader.onerror = (err) => reject(err);
+  });
+
+  reader.readAsDataURL(imageFile);
+  return promise;
+};
+
+export const getUser = async (id) => {
+  try {
+    const response = await fetch("http://localhost:8080/users/" + id);
+
+    if (!response.ok) {
+      throw new Error("Failed while fetching user.");
+    }
+
+    const user = await response.json();
+
+    return user;
+  } catch (error) {
+    console.error(error);
+  }
 };

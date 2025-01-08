@@ -14,6 +14,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  imageUrl: {
+    type: String,
+    required: true,
+  },
   lname: {
     type: String,
     required: true,
@@ -21,6 +25,10 @@ const userSchema = new Schema({
   about: {
     type: String,
     required: true,
+  },
+  status: {
+    type: String,
+    default: "member",
   },
   // posts: [
   //   {

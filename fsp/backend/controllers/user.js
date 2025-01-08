@@ -2,6 +2,7 @@ const User = require("../models/user");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
 
 require("dotenv").config();
 
@@ -18,12 +19,15 @@ exports.signup = async (req, res, next) => {
 
     const { fname, lname, email, password, about } = req.body;
 
+    const imageUrl = req.file.path.replace("\\", "/");
+
     const hashedPw = await bcrypt.hash(password, 15);
 
     const user = new User({
       fname,
       lname,
       email,
+      imageUrl,
       password: hashedPw,
       about,
     });
@@ -109,6 +113,27 @@ exports.signin = async (req, res, next) => {
       userId: user._id.toString(),
       token,
     });
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
+    next(error);
+  }
+};
+
+exports.getUser = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const user = await User.findById(new mongoose.Types.ObjectId(id));
+    if (!user) {
+      const error = new Error("User not found.");
+      error.statusCode = 404;
+
+      throw error;
+    }
+
+    res.status(200).json({ message: "User fetched successfully!", user });
   } catch (error) {
     if (!error.statusCode) {
       error.statusCode = 500;

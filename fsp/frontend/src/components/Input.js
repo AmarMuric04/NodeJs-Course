@@ -16,7 +16,9 @@ const Input = ({ input, label, error, name, ...props }) => {
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           className={`py-2 px-4 rounded-md border-2 w-full ${
-            hasError && !isFocused && "border-red-600 bg-red-400 bg-opacity-20"
+            hasError && !isFocused
+              ? "border-red-600 bg-red-400 bg-opacity-20"
+              : "bg-white"
           }`}
           {...props}
         />

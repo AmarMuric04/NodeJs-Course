@@ -92,7 +92,7 @@ class Feed extends Component {
       body: JSON.stringify({
         status: this.state.status,
       }),
-    }) 
+    })
       .then((res) => {
         if (res.status !== 200 && res.status !== 201) {
           throw new Error("Can't update status!");
