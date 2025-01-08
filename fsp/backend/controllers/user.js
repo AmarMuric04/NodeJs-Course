@@ -1,8 +1,11 @@
 const User = require("../models/user");
 const { validationResult } = require("express-validator");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-exports.postUser = async (req, res, next) => {
+require("dotenv").config();
+
+exports.signup = async (req, res, next) => {
   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -13,7 +16,7 @@ exports.postUser = async (req, res, next) => {
       throw validationError;
     }
 
-    const { fname, lname, email, password } = req.body;
+    const { fname, lname, email, password, about } = req.body;
 
     const hashedPw = await bcrypt.hash(password, 15);
 
@@ -22,6 +25,7 @@ exports.postUser = async (req, res, next) => {
       lname,
       email,
       password: hashedPw,
+      about,
     });
 
     const alreadyExists = await User.findOne({ email });
@@ -44,6 +48,72 @@ exports.postUser = async (req, res, next) => {
     if (!error.statusCode) {
       error.statusCode = 500;
     }
+    next(error);
+  }
+};
+
+exports.signin = async (req, res, next) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const validationError = new Error("Validation failed.");
+      validationError.statusCode = 422;
+      validationError.data = errors.array();
+
+      throw validationError;
+    }
+
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      const error = new Error("User with given email does not exist.");
+      error.statusCode = 404;
+      error.data = [
+        {
+          path: "email",
+        },
+      ];
+
+      throw error;
+    }
+
+    const correctPassword = await bcrypt.compare(password, user.password);
+
+    if (!correctPassword) {
+      const error = new Error("Wrong password!");
+      error.statusCode = 401;
+      error.data = [
+        {
+          path: "password",
+        },
+      ];
+
+      throw error;
+    }
+
+    const token = jwt.sign(
+      {
+        email: user.email,
+        userId: user._id.toString(),
+      },
+      process.env.JWT_TOKEN,
+      {
+        expiresIn: "1h",
+      }
+    );
+
+    res.status(200).json({
+      message: "Logged in!",
+      userId: user._id.toString(),
+      token,
+    });
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
     next(error);
   }
 };

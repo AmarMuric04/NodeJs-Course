@@ -18,10 +18,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  // status: {
-  //   type: String,
-  //   default: "I am new!",
-  // },
+  about: {
+    type: String,
+    required: true,
+  },
   // posts: [
   //   {
   //     type: Schema.Types.ObjectId,
