@@ -79,3 +79,19 @@ export const getUser = async (id) => {
     console.error(error);
   }
 };
+
+export const handlePostInput = async (value, files, cbPreview, cbImage) => {
+  try {
+    if (files && files[0]) {
+      const file = files[0];
+
+      const b64 = await generateBase64FromImage(file);
+      if (cbPreview) cbPreview(b64);
+      if (cbImage) cbImage(file);
+    } else {
+      console.error("No file selected.");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};

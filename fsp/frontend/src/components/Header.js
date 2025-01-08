@@ -7,7 +7,6 @@ import { logoutUser } from "../utility/util";
 const Header = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
   const user = useSelector((state) => state.auth.user);
-  console.log(isAuth);
   const dispatch = useDispatch();
 
   const handleLogout = () => {

@@ -14,6 +14,7 @@ import {
 import { Link } from "react-router-dom";
 import {
   generateBase64FromImage,
+  handlePostInput,
   loadAuthDataFromLocalStorage,
 } from "../utility/util";
 import { Spinner } from "../assets/icons";
@@ -119,22 +120,6 @@ const Auth = () => {
     }
   };
 
-  const handlePostInput = async (value, files) => {
-    try {
-      if (files && files[0]) {
-        const file = files[0];
-
-        const b64 = await generateBase64FromImage(file);
-        setImagePreview(b64);
-        setImage(file);
-      } else {
-        console.error("No file selected.");
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const buttonText = authOption === "signin" ? "Sign In" : "Sign Up";
 
   return (
@@ -237,7 +222,12 @@ const Auth = () => {
                 name="pfp"
                 label="Profile Picture*"
                 onChange={(e) =>
-                  handlePostInput(e.target.value, e.target.files)
+                  handlePostInput(
+                    e.target.value,
+                    e.target.files,
+                    setImagePreview,
+                    setImage
+                  )
                 }
               />
               <div>
