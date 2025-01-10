@@ -7,7 +7,6 @@ const initialState = {
   expiryDate: null,
   user: null,
   error: null,
-  success: null,
   isSubmitting: false,
   disableButton: false,
 };
@@ -25,11 +24,8 @@ const authSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
     },
-    setError: (state, action) => {
-      state.error = action.payload;
-    },
-    setSuccess: (state, action) => {
-      state.success = action.payload;
+    setAuthError: (state, action) => {
+      state.authError = action.payload;
     },
     setAuth: (state, action) => {
       state.isAuth = action.payload;
@@ -53,9 +49,8 @@ const authSlice = createSlice({
 export const {
   setAuthData,
   setAuth,
-  setError,
+  setAuthError,
   setUser,
-  setSuccess,
   setSubmitting,
   setDisableButton,
   clearAuthData,

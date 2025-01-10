@@ -11,7 +11,6 @@ export const loadAuthDataFromLocalStorage = async (dispatch) => {
   const expiryDate = localStorage.getItem("expiryDate");
 
   if (!token || !userId || !expiryDate) {
-    console.log("Missing auth data:", token, userId, expiryDate);
     dispatch(clearAuthData());
     return;
   }
@@ -23,7 +22,6 @@ export const loadAuthDataFromLocalStorage = async (dispatch) => {
   dispatch(setUser(currentUser.user));
 
   if (expiryTime <= currentTime) {
-    console.log("Token expired");
     dispatch(clearAuthData());
     return;
   }

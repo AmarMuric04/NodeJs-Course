@@ -109,7 +109,7 @@ exports.signin = async (req, res, next) => {
     );
 
     res.status(200).json({
-      message: "Logged in!",
+      message: "Signed in!",
       userId: user._id.toString(),
       token,
     });

@@ -11,9 +11,32 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
+    date: {
+      type: String,
+    },
     content: {
       type: String,
       required: true,
+    },
+    tags: {
+      type: [String],
+      default: [],
+      validate: {
+        validator: function (tags) {
+          return tags.length <= 5;
+        },
+        message: "A user can have a maximum of 10 tags.",
+      },
+    },
+    links: {
+      type: [String],
+      default: [],
+      validate: {
+        validator: function (links) {
+          return links.length <= 5;
+        },
+        message: "A user can have a maximum of 10 links.",
+      },
     },
     creator: {
       type: Schema.Types.ObjectId,

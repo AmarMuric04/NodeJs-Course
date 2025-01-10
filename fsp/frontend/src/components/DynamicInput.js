@@ -1,16 +1,17 @@
 import { useState } from "react";
 
-const DynamicInput = ({ name, deleteInput }) => {
+const DynamicInput = ({ text, className, name, deleteInput, ...props }) => {
   return (
     <div className="flex justify-between gap-2 my-2">
       <input
-        className="py-2 px-4 rounded-md border-2 w-full bg-white"
+        className={`${className && className}`}
         type="text"
-        placeholder={name}
+        placeholder={text}
         name={name}
+        {...props}
       />
       <p
-        className="bg-red-400 w-10 h-10 flex justify-center items-center text-white cursor-pointer rounded-md"
+        className="bg-purple-500 hover:bg-orange-500 transition-all w-10 h-10 flex justify-center items-center text-white cursor-pointer rounded-md"
         onClick={deleteInput}
       >
         <svg

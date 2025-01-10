@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const userRouter = require("./routes/user");
+const postRouter = require("./routes/post");
 require("dotenv").config();
 const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
@@ -47,6 +48,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/users", userRouter);
+
+app.use("/posts", postRouter);
 
 app.use((error, req, res, next) => {
   console.log(error);
