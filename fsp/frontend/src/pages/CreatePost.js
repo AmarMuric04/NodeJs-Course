@@ -1,16 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Input from "../components/Input";
 import { handlePostInput } from "../utility/util";
 import DynamicInput from "../components/DynamicInput";
 import Create from "../assets/create.png";
 import Publish from "../assets/publish.png";
 import Connect from "../assets/connect.png";
+import { setDisableButton } from "../storage/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setNotification } from "../storage/notificationSlice";
 
 const MAX_TAGS = 5;
 const MAX_LINKS = 5;
 
 export default function CreatePost() {
+  const dispatch = useDispatch();
+  const { disablebutton } = useSelector((state) => state.auth);
+
   const [error, setError] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -21,6 +29,10 @@ export default function CreatePost() {
   const [links, setLinks] = useState([]);
 
   const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (error) setTimeout(() => setError(null), 3000);
+  }, [setError, error]);
 
   const handleAddTag = () => {
     setTags((prevTags) => {
@@ -73,31 +85,42 @@ export default function CreatePost() {
   };
 
   const handleCreatePost = async () => {
-    console.log(tags, links);
+    try {
+      setTags((prevTags) => prevTags.filter((tag) => tag.value !== ""));
+      setLinks((prevLinks) => prevLinks.filter((link) => link.value !== ""));
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("location", location);
+      formData.append("date", date);
+      formData.append("content", content);
 
-    setTags((prevTags) => prevTags.filter((tag) => tag.value !== ""));
+      formData.append("image", imageUrl);
 
-    setLinks((prevLinks) => prevLinks.filter((link) => link.value !== ""));
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("location", location);
-    formData.append("date", date);
-    formData.append("content", content);
+      formData.append("tags", JSON.stringify(tags));
+      formData.append("links", JSON.stringify(links));
 
-    formData.append("image", imageUrl);
+      const response = await fetch("http://localhost:8080/posts", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
 
-    formData.append("tags", JSON.stringify(tags));
-    formData.append("links", JSON.stringify(links));
+      if (!response.ok) {
+        const error = await response.json();
+        setError(error);
+        dispatch(setDisableButton(false));
+        throw new Error("Authentication error.");
+      }
 
-    const response = await fetch("http://localhost:8080/posts", {
-      method: "POST",
-      body: formData,
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    });
+      const data = await response.json();
+      console.log(data);
 
-    const data = await response.json();
+      dispatch(setNotification(data));
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -162,24 +185,44 @@ export default function CreatePost() {
           </div>
         </div>
         <div className="w-1/2 mt-20 flex flex-col items-center">
-          <form className="w-[90%] bg-[#222] p-10 rounded-2xl shadow-md">
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+              setIsSubmitting(true);
+              await handleCreatePost();
+              setIsSubmitting(false);
+            }}
+            className="w-[90%] bg-[#222] p-10 rounded-2xl shadow-md"
+          >
+            {error && (
+              <div className="flex w-full -top-[4rem]">
+                <p className="bg-red-400 mb-10 w-full text-center bg-opacity-50 border-2 border-red-600 py-2 px-4 rounded-md">
+                  {error.message}
+                </p>
+              </div>
+            )}
             <Input
-              className="bg-[#191919] text-white w-full py-2 px-4 rounded-lg mt-1 mb-4"
+              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1"
+              normalClass="bg-[#191919] border-[#191919]"
+              onErrorClass="border-red-600 bg-[#191919]"
               error={error}
               type="title"
               input="input"
               placeholder="The title"
               name="title"
               value={title}
-              label="The title*"
+              label="Title (required*)"
               onChange={(e) => setTitle(e.target.value)}
             />
             <Input
+              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1"
+              normalClass="bg-[#191919] border-purple-500 hover:border-orange-500"
+              onErrorClass="border-red-600 bg-red-500"
               error={error}
               type="file"
               input="file"
-              name="image"
-              label="Image*"
+              name="imageUrl"
+              label="Image (required*)"
               onChange={(e) =>
                 handlePostInput(
                   e.target.value,
@@ -261,46 +304,49 @@ export default function CreatePost() {
               </div>
             )}
             <Input
-              className="bg-[#191919] text-white w-full py-2 px-4 rounded-lg mt-1 mb-4"
+              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1"
+              normalClass="bg-[#191919] border-[#191919]"
+              onErrorClass="border-red-600"
               error={error}
               type="text"
               input="input"
               placeholder="Location"
               name="location"
               value={location}
-              label="Location*"
+              label="Location (optional*)"
               onChange={(e) => setLocation(e.target.value)}
             />
             <Input
-              className="bg-[#191919] text-white w-full py-2 px-4 rounded-lg mt-1 mb-4"
+              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1"
+              normalClass="bg-[#191919] border-[#191919]"
+              onErrorClass="border-red-600"
               error={error}
               type="date"
               input="input"
               placeholder="Date"
               name="date"
               value={date}
-              label="Date*"
+              label="Date (optional*)"
               onChange={(e) => setDate(e.target.value)}
             />
             <Input
-              className="bg-[#191919] text-white w-full py-2 px-4 rounded-lg h-[10rem] min-h-[10rem] max-h-[10rem]"
+              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg h-[10rem] min-h-[10rem] max-h-[10rem]"
+              normalClass="bg-[#191919] border-[#191919]"
+              onErrorClass="border-red-600 bg-[#191919]"
               error={error}
               type="text"
               input="textarea"
               placeholder="Content..."
               name="content"
               value={content}
-              label="Content*"
+              label="Content (required*)"
               onChange={(e) => setContent(e.target.value)}
             />
             <button
-              onClick={async (e) => {
-                e.preventDefault();
-                await handleCreatePost();
-              }}
+              disabled={error || disablebutton}
               className="bg-purple-500 hover:bg-orange-500 py-4 text-white font-semibold w-full rounded-[2rem] hover:rounded-none transition-all mt-4"
             >
-              Create the post
+              {isSubmitting ? "Creating..." : "Create the post"}
             </button>
           </form>
         </div>

@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import {
   setAuthData,
   setAuth,
-  setAuthError,
   setSubmitting,
   setDisableButton,
 } from "../storage/authSlice";
@@ -21,10 +20,9 @@ const Auth = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuth);
 
-  const { authError, isSubmitting, disableButton } = useSelector(
-    (state) => state.auth
-  );
+  const { isSubmitting, disableButton } = useSelector((state) => state.auth);
 
+  const [authError, setAuthError] = useState(null);
   const [fname, setFName] = useState("");
   const [lname, setLName] = useState("");
   // const [about, setAbout] = useState("");
@@ -35,7 +33,7 @@ const Auth = () => {
 
   useEffect(() => {
     if (authError) {
-      setTimeout(() => dispatch(setAuthError(null)), 3000);
+      setTimeout(() => setAuthError(null), 3000);
     }
   }, [authError, dispatch]);
 
@@ -72,7 +70,7 @@ const Auth = () => {
 
       if (!response.ok) {
         const error = await response.json();
-        dispatch(setAuthError(error));
+        setAuthError(error);
         dispatch(setDisableButton(false));
         throw new Error("Authentication error.");
       }
