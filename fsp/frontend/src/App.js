@@ -54,9 +54,12 @@ const App = () => {
                 Create a Post
               </button>
             </Link>
-            <p className="cursor-pointer hover:underline text-purple-500 hover:text-orange-500 transition-all">
+            <Link
+              to="/feed"
+              className="cursor-pointer hover:underline text-purple-500 hover:text-orange-500 transition-all"
+            >
               Check out other posts
-            </p>
+            </Link>
           </div>
           <div className="mt-20 flex gap-8 text-purple-500">
             <a

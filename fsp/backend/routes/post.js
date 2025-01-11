@@ -18,9 +18,15 @@ router.post(
     body("content")
       .isLength({ min: 5 })
       .withMessage("Content must be at least 8 chars long."),
-      body()
+    body(),
   ],
   Controller.createPost
 );
+
+router.get("/", Controller.getPosts);
+
+router.post("/:postId/like", isAuth, Controller.toggleLike);
+
+router.post("/:postId/bookmark", isAuth, Controller.toggleBookmark);
 
 module.exports = router;

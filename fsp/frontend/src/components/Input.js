@@ -22,7 +22,7 @@ const Input = ({
 
   return (
     <div className="mb-4">
-      <label>{label}</label>
+      <label className={`${hasError && "text-red-600"}`}>{label}</label>
 
       {input === "input" && (
         <input

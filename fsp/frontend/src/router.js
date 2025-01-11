@@ -5,6 +5,7 @@ import Auth from "./pages/Auth";
 import Layout from "./components/Layout";
 import CreatePost from "./pages/CreatePost";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Feed from "./pages/Feed";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
                 <CreatePost />
               </ProtectedRoute>
             ),
+          },
+          {
+            path: "/feed",
+            element: <Feed />,
           },
         ],
       },

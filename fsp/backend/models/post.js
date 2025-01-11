@@ -14,10 +14,25 @@ const postSchema = new Schema(
     date: {
       type: String,
     },
+    location: {
+      type: String,
+    },
     content: {
       type: String,
       required: true,
     },
+    likes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    bookmarks: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
     tags: {
       type: [String],
       default: [],

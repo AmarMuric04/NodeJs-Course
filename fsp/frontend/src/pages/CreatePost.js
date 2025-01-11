@@ -8,6 +8,7 @@ import Connect from "../assets/connect.png";
 import { setDisableButton } from "../storage/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setNotification } from "../storage/notificationSlice";
+import { Link } from "react-router-dom";
 
 const MAX_TAGS = 5;
 const MAX_LINKS = 5;
@@ -124,7 +125,7 @@ export default function CreatePost() {
   };
 
   return (
-    <main className="mt-[5rem] text-white flex justify-center bg-[#191919] h-auto min-h-screen w-full pb-20">
+    <main className="mt-[5rem] text-white flex justify-center bg-[#222] h-auto min-h-screen w-full pb-20">
       <div className="w-[75rem] flex">
         <div className="w-1/2 h-[38rem] mt-20 flex flex-col justify-between">
           <div className="flex flex-col gap-8 items-start">
@@ -139,12 +140,14 @@ export default function CreatePost() {
               Please make sure to provide relevant and respectful content. We
               value your contribution!
             </p>
-            <button className="bg-purple-500 hover:bg-orange-500 mt-8 py-2 px-4 flex rounded-[2rem] hover:rounded-none hover:rounded-bg-orange-500 transition-all">
-              Check the post feed
-            </button>
+            <Link to="/feed">
+              <button className="bg-purple-500 hover:bg-orange-500 mt-8 py-2 px-4 flex rounded-[2rem] hover:rounded-none hover:rounded-bg-orange-500 transition-all">
+                Check the post feed
+              </button>
+            </Link>
           </div>
           <div className="flex justify-between gap-4">
-            <div className="bg-[#222] p-4 w-1/3 rounded-md shadow-lg">
+            <div className="bg-[#191919] p-4 w-1/3 rounded-md shadow-lg">
               <div className="flex mb-4 justify-between items-center">
                 <p className="text-sm font-bold">Create a post</p>
                 <img className="w-[2rem]" src={Create} alt="create post icon" />
@@ -154,7 +157,7 @@ export default function CreatePost() {
                 just whatever else might come to mind!
               </p>
             </div>
-            <div className="bg-[#222] p-4 w-1/3 rounded-md shadow-lg">
+            <div className="bg-[#191919] p-4 w-1/3 rounded-md shadow-lg">
               <div className="flex mb-4 justify-between items-center gap-4">
                 <p className="text-sm font-bold">Publish the post</p>
                 <img
@@ -168,7 +171,7 @@ export default function CreatePost() {
                 content!
               </p>
             </div>
-            <div className="bg-[#222] p-4 w-1/3 rounded-md shadow-lg">
+            <div className="bg-[#191919] p-4 w-1/3 rounded-md shadow-lg">
               <div className="flex mb-4 justify-between items-center">
                 <p className="text-sm font-bold">Connect w/others</p>
                 <img
@@ -192,7 +195,7 @@ export default function CreatePost() {
               await handleCreatePost();
               setIsSubmitting(false);
             }}
-            className="w-[90%] bg-[#222] p-10 rounded-2xl shadow-md"
+            className="w-[90%] bg-[#191919] p-10 rounded-2xl shadow-md"
           >
             {error && (
               <div className="flex w-full -top-[4rem]">
@@ -202,9 +205,9 @@ export default function CreatePost() {
               </div>
             )}
             <Input
-              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1"
-              normalClass="bg-[#191919] border-[#191919]"
-              onErrorClass="border-red-600 bg-[#191919]"
+              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1 mb"
+              normalClass="bg-[#222] border-[#222]"
+              onErrorClass="border-red-600 bg-[#222]"
               error={error}
               type="title"
               input="input"
@@ -215,8 +218,8 @@ export default function CreatePost() {
               onChange={(e) => setTitle(e.target.value)}
             />
             <Input
-              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1"
-              normalClass="bg-[#191919] border-purple-500 hover:border-orange-500"
+              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1 mb"
+              normalClass="bg-[#222] border-purple-500 hover:border-orange-500"
               onErrorClass="border-red-600 bg-red-500"
               error={error}
               type="file"
@@ -234,7 +237,7 @@ export default function CreatePost() {
             />
             {tags.map((tag, index) => (
               <DynamicInput
-                className="bg-[#191919] text-white w-full py-2 px-4 rounded-lg"
+                className="bg-[#222] text-white w-full py-2 px-4 rounded-lg"
                 key={tag.id}
                 name={tag.label}
                 text={`${tag.label} #${index + 1}`}
@@ -267,10 +270,10 @@ export default function CreatePost() {
                 <p>Add a Tag</p>
               </div>
             )}
-            <div className="bg-[#191919] h-[1px] w-full my-2"></div>
+            <div className="bg-[#222] h-[1px] w-full my-2"></div>
             {links.map((link, index) => (
               <DynamicInput
-                className="bg-[#191919] text-white w-full py-2 px-4 rounded-lg"
+                className="bg-[#222] text-white w-full py-2 px-4 rounded-lg"
                 key={link.id}
                 name={link.label}
                 text={`${link.label} #${index + 1}`}
@@ -304,8 +307,8 @@ export default function CreatePost() {
               </div>
             )}
             <Input
-              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1"
-              normalClass="bg-[#191919] border-[#191919]"
+              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1 mb"
+              normalClass="bg-[#222] border-[#222]"
               onErrorClass="border-red-600"
               error={error}
               type="text"
@@ -317,8 +320,8 @@ export default function CreatePost() {
               onChange={(e) => setLocation(e.target.value)}
             />
             <Input
-              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1"
-              normalClass="bg-[#191919] border-[#191919]"
+              extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1 mb"
+              normalClass="bg-[#222] border-[#222]"
               onErrorClass="border-red-600"
               error={error}
               type="date"
@@ -331,8 +334,8 @@ export default function CreatePost() {
             />
             <Input
               extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg h-[10rem] min-h-[10rem] max-h-[10rem]"
-              normalClass="bg-[#191919] border-[#191919]"
-              onErrorClass="border-red-600 bg-[#191919]"
+              normalClass="bg-[#222] border-[#222]"
+              onErrorClass="border-red-600 bg-[#222]"
               error={error}
               type="text"
               input="textarea"
