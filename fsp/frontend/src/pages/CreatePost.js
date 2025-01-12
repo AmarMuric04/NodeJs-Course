@@ -125,8 +125,8 @@ export default function CreatePost() {
   };
 
   return (
-    <main className="mt-[5rem] text-white flex justify-center bg-[#222] h-auto min-h-screen w-full pb-20">
-      <div className="w-[75rem] flex">
+    <main className=" text-white flex justify-center bg-[#222] h-auto min-h-screen w-full pb-20">
+      <div className="w-[75rem] flex mt-[5rem]">
         <div className="w-1/2 h-[38rem] mt-20 flex flex-col justify-between">
           <div className="flex flex-col gap-8 items-start">
             <h1 className="text-[3rem] font-semibold text-white">

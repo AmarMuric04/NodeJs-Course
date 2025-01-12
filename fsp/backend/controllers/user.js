@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Post = require("../models/post");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -147,4 +148,42 @@ exports.getUsers = async (req, res, next) => {
   const users = await User.find();
 
   res.status(200).json({ message: "Users fetched successfully!", users });
+};
+
+exports.getBookmarked = async (req, res, next) => {
+  try {
+    const userId = req.params.id;
+    const bookmarkedPosts = await Post.find({ bookmarks: userId }).populate(
+      "creator"
+    );
+
+    res.status(200).json({
+      message: "Fetched bookmarked posts successfully",
+      posts: bookmarkedPosts,
+    });
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
+    next(error);
+  }
+};
+
+exports.getLiked = async (req, res, next) => {
+  try {
+    const userId = req.params.id;
+    const likedPosts = await Post.find({ likes: userId }).populate("creator");
+
+    res.status(200).json({
+      message: "Fetched bookmarked posts successfully",
+      posts: likedPosts,
+    });
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
+    next(error);
+  }
 };

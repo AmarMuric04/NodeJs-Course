@@ -277,7 +277,7 @@ const Auth = () => {
           now!
         </p>
         <svg
-          className="rotate-[270deg] absolute left-[29%] w-[100vh]"
+          className="rotate-[270deg] absolute left-[28%] w-[100vh]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1000 100"
           fill="#222"

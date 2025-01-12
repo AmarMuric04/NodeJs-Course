@@ -139,3 +139,23 @@ exports.toggleBookmark = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.countView = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    const post = await Post.findById(postId);
+
+    if (!post.views.includes(req.userId)) {
+      post.views.push(req.userId);
+      await post.save();
+    }
+
+    res.status(200).send("View count updated.");
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
+    next(error);
+  }
+};

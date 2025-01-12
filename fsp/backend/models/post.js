@@ -21,6 +21,12 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
+    views: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
     likes: [
       {
         type: Schema.Types.ObjectId,

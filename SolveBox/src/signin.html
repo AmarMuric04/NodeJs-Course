@@ -132,7 +132,7 @@
       <nav id="mobile-header" class="w-[95%] absolute h-screen background top-0 left-full transition-all z-40">
         <ul class="flex flex-col justify-center h-full pt-12 pb-0 sm:py-40 px-10 gap-4">
           <a href="./index.html">
-            <li class="flex items-center gap-2 text-sm 2xl:text-lg font-semibold text3">
+            <li class="flex items-center gap-2 text-sm 2xl:text-lg font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="currentColor"
                   d="m16 8.41l-4.5-4.5L4.41 11H6v8h3v-6h5v6h3v-8h1.59L17 9.41V6h-1zM2 12l9.5-9.5L15 6V5h3v4l3 3h-3v8h-5v-6h-3v6H5v-8z" />
@@ -196,7 +196,7 @@
           <div class="h-[1px] bg4 w-full"></div>
           <div id="mobile-user-info" class="flex flex-col gap-4">
             <a href="./signin.html">
-              <li class="flex items-center gap-2 text-sm 2xl:text-lg font-semibold">
+              <li class="flex items-center gap-2 text-sm 2xl:text-lg font-semibold text3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                   <path fill="currentColor"
                     d="M3 3.25c0-.966.784-1.75 1.75-1.75h5.5a.75.75 0 0 1 0 1.5h-5.5a.25.25 0 0 0-.25.25v17.5c0 .138.112.25.25.25h5.5a.75.75 0 0 1 0 1.5h-5.5A1.75 1.75 0 0 1 3 20.75Zm9.994 9.5l3.3 3.484a.75.75 0 0 1-1.088 1.032l-4.5-4.75a.75.75 0 0 1 0-1.032l4.5-4.75a.75.75 0 0 1 1.088 1.032l-3.3 3.484h8.256a.75.75 0 0 1 0 1.5Z" />
@@ -223,8 +223,8 @@
         </ul>
       </nav>
     </header>
-      <select id="lang"
-      class="font-bold absolute hidden sm:flex top-4 right-20 lg:top-32 2xl:top-10 lg:-translate-y-1/2 py-2 lg:right-10 bg-transparent px-2 outline-none header rounded-full text-xs sm:text-sm z-20 2xl:z-50">
+    <select id="lang"
+      class="font-bold absolute hidden xs:flex top-2 sm:top-4 right-14 sm:right-20 lg:top-32 2xl:top-10 lg:-translate-y-1/2 py-2 lg:right-10 bg-transparent px-2 outline-none header rounded-full text-xs sm:text-sm z-20 2xl:z-50">
       <option value="english" class="text-white">eng</option>
       <option value="srpski" class="text-white">срп</option>
     </select>
@@ -232,7 +232,7 @@
       <div
         class="text-white lg:text-black half-polygon-west lg:bg-purple-200 lg:half-polygon-west h-full w-full flex justify-center lg:w-3/5 2xl:w-1/2 relative sm:px-[3rem] md:px-[10rem] lg:px-[5rem] xl:px-[10rem] 2xl:px-[5rem] 3xl:px-[10rem] 4xl:px-[15rem]">
         <div class="relative z-30 flex flex-col justify-center xl:justify-end w-[90%] lg:w-full h-full">
-          <form action="submit" id="signin-form" class="w-full flex flex-col justify-end mt-32 sm:mt-0">
+          <form action="submit" id="signin-form" class="w-full flex flex-col justify-end mt-32 sm:mt-10">
             <div id="form-body" class="transition-all relative">
               <h1 data-english="Hey there, brainiac!" data-srpski="Здраво, мозгало!"
                 class="mb-4 text-[1.5rem] 2xl:text-[2.5rem] font-bold text-center lg:text-start">Hey there, brainiac!

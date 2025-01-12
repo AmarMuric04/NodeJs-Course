@@ -109,7 +109,9 @@ export function formatTime(postDate, currentDate = new Date()) {
     // less than 1 day
     const hours = Math.floor(diffInSeconds / 3600);
     const minutes = Math.floor((diffInSeconds % 3600) / 60);
-    return `${hours}hr${hours > 1 ? "s" : ""} ${minutes}min`;
+    return `${hours}hr${hours > 1 ? "s" : ""} ${
+      minutes > 0 ? minutes + "min" : ""
+    }`;
   } else if (diffInSeconds < 604800) {
     // less than 1 week
     const days = Math.floor(diffInSeconds / 86400);
@@ -128,3 +130,4 @@ export function formatTime(postDate, currentDate = new Date()) {
     return `${years}year${years > 1 ? "s" : ""}`;
   }
 }
+

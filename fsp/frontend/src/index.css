@@ -61,3 +61,12 @@ input[type="file"] {
   opacity: 0;
   cursor: pointer;
 }
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

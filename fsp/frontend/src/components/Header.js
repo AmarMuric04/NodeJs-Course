@@ -4,18 +4,44 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../utility/util";
 import { setNotification } from "../storage/notificationSlice";
+import { useEffect, useRef, useState } from "react";
 
 const Header = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   const handleLogout = () => {
     logoutUser(dispatch);
   };
 
   return (
-    <header className="w-full bg-[#191919] text-white justify-center absolute left-0 top-0 h-[5rem] flex shadow-lg">
+    <header
+      ref={headerRef}
+      className="w-full bg-[#191919] text-white justify-center fixed left-0 flex shadow-lg z-50 transition-all"
+      style={{
+        top: isVisible ? 0 : `-${headerRef.current?.offsetHeight || 0}px`,
+      }}
+    >
       <nav className="w-[75rem] flex justify-between items-center">
         <div className="flex items-center gap-12">
           {" "}

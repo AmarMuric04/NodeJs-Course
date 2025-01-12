@@ -29,4 +29,6 @@ router.post("/:postId/like", isAuth, Controller.toggleLike);
 
 router.post("/:postId/bookmark", isAuth, Controller.toggleBookmark);
 
+router.post("/:postId/view", isAuth, Controller.countView);
+
 module.exports = router;

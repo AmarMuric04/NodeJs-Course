@@ -6,6 +6,8 @@ const Controller = require("../controllers/user");
 
 const { body } = require("express-validator");
 
+const isAuth = require("../middleware/is-auth");
+
 router.get("/users", Controller.getUsers);
 
 router.get("/:id", Controller.getUser);
@@ -30,5 +32,9 @@ router.post(
   ],
   Controller.signup
 );
+
+router.get("/:id/bookmarked", isAuth, Controller.getBookmarked);
+
+router.get("/:id/liked", isAuth, Controller.getLiked);
 
 module.exports = router;
