@@ -20,7 +20,9 @@ exports.signup = async (req, res, next) => {
 
     const { fname, lname, email, password, about } = req.body;
 
-    const imageUrl = req.file.path.replace("\\", "/");
+    let imageUrl;
+    if (req.file) imageUrl = req.file.path.replace("\\", "/");
+    else imageUrl = "images/default.jpg";
 
     const hashedPw = await bcrypt.hash(password, 15);
 

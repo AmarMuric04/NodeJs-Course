@@ -1,3 +1,4 @@
+import { hashPassword } from "../../utility/utility.js";
 import { loader } from "../general_view.js";
 const storageAccounts = JSON.parse(localStorage.getItem("SolveBox-users"));
 let lang = localStorage.getItem("SolveBox-current-language");
@@ -129,13 +130,15 @@ export function findStorageUser(email) {
 
 export async function correctCredentials(inputs) {
   try {
-    const accountsResponse = await fetch("../assets/accounts.json");
-
+    const accountsResponse = await fetch("./assets/accounts.json");
     const jsonAccounts = await accountsResponse.json();
     const users = [...jsonAccounts, ...storageAccounts];
 
+    const hashedPsw = await hashPassword(inputs.password);
+    console.log(hashedPsw);
+
     const user = users.find(
-      (user) => user.email === inputs.email && user.password === inputs.password
+      (user) => user.email === inputs.email && user.password === hashedPsw
     );
 
     if (user) {

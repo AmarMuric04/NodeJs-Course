@@ -1,3 +1,5 @@
+import { hashPassword } from "../../../utility/utility.js";
+
 export const Model = {
   removeClassOnClick(element, cl) {
     const removeErrorClass = () => {
@@ -7,10 +9,14 @@ export const Model = {
     element.addEventListener("click", removeErrorClass);
   },
 
-  addUser(inputs) {
+  async addUser(inputs) {
     const users = JSON.parse(localStorage.getItem("SolveBox-users")) || [];
 
-    users.push({ email: inputs.email, password: inputs.password });
+    const hashedPsw = await hashPassword(inputs.password);
+
+    console.log(hashedPsw);
+
+    users.push({ email: inputs.email, password: hashedPsw });
 
     localStorage.setItem("SolveBox-users", JSON.stringify(users));
   },

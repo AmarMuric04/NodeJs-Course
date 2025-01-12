@@ -108,7 +108,8 @@ export const View = {
         text.setAttribute("data-srpski", srValue.title);
 
         const link = document.createElement("a");
-        link.setAttribute("href", value.link);
+        link.setAttribute("href", value.url);
+        link.setAttribute("target", "_blank");
 
         const button = document.createElement("button");
         button.classList =

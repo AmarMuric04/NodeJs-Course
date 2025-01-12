@@ -736,6 +736,10 @@ video {
   right: 2.5rem;
 }
 
+.right-14{
+  right: 3.5rem;
+}
+
 .right-20{
   right: 5rem;
 }
@@ -826,14 +830,6 @@ video {
 
 .top-full{
   top: 100%;
-}
-
-.right-12{
-  right: 3rem;
-}
-
-.right-14{
-  right: 3.5rem;
 }
 
 .z-0{
@@ -1002,10 +998,6 @@ video {
 
 .mt-8{
   margin-top: 2rem;
-}
-
-.mt-3{
-  margin-top: 0.75rem;
 }
 
 .block{

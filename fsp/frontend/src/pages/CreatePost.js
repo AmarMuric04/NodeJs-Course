@@ -140,7 +140,7 @@ export default function CreatePost() {
               Please make sure to provide relevant and respectful content. We
               value your contribution!
             </p>
-            <Link to="/feed">
+            <Link to="/feed?page=1">
               <button className="bg-purple-500 hover:bg-orange-500 mt-8 py-2 px-4 flex rounded-[2rem] hover:rounded-none hover:rounded-bg-orange-500 transition-all">
                 Check the post feed
               </button>
@@ -225,7 +225,7 @@ export default function CreatePost() {
               type="file"
               input="file"
               name="imageUrl"
-              label="Image (required*)"
+              label="Image (optional*)"
               onChange={(e) =>
                 handlePostInput(
                   e.target.value,

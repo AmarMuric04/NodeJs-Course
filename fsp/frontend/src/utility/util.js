@@ -115,19 +115,30 @@ export function formatTime(postDate, currentDate = new Date()) {
   } else if (diffInSeconds < 604800) {
     // less than 1 week
     const days = Math.floor(diffInSeconds / 86400);
-    return `${days}day${days > 1 ? "s" : ""}`;
+    const hours = Math.floor((diffInSeconds % 86400) / 3600);
+    return `${days}day${days > 1 ? "s" : ""} ${
+      hours > 0 ? hours + "hr" + (hours > 1 ? "s" : "") : ""
+    }`;
   } else if (diffInSeconds < 2592000) {
     // less than 1 month
     const weeks = Math.floor(diffInSeconds / 604800);
-    return `${weeks}week${weeks > 1 ? "s" : ""}`;
+    const days = Math.floor((diffInSeconds % 604800) / 86400);
+    return `${weeks}week${weeks > 1 ? "s" : ""} ${
+      days > 0 ? days + "day" + (days > 1 ? "s" : "") : ""
+    }`;
   } else if (diffInSeconds < 31536000) {
     // less than 1 year
     const months = Math.floor(diffInSeconds / 2592000);
-    return `${months}month${months > 1 ? "s" : ""}`;
+    const days = Math.floor((diffInSeconds % 2592000) / 86400);
+    return `${months}month${months > 1 ? "s" : ""} ${
+      days > 0 ? days + "day" + (days > 1 ? "s" : "") : ""
+    }`;
   } else {
     // more than 1 year
     const years = Math.floor(diffInSeconds / 31536000);
-    return `${years}year${years > 1 ? "s" : ""}`;
+    const months = Math.floor((diffInSeconds % 31536000) / 2592000);
+    return `${years}year${years > 1 ? "s" : ""} ${
+      months > 0 ? months + "month" + (months > 1 ? "s" : "") : ""
+    }`;
   }
 }
-

@@ -7,12 +7,12 @@ exports.createPost = async (req, res, next) => {
     const errors = validationResult(req);
     const validationErrors = errors.array();
 
-    if (!req.file) {
-      validationErrors.push({
-        path: "imageUrl",
-        msg: "Image field is required!",
-      });
-    }
+    // if (!req.file) {
+    //   validationErrors.push({
+    //     path: "imageUrl",
+    //     msg: "Image field is required!",
+    //   });
+    // }
 
     if (validationErrors.length > 0) {
       const error = new Error("Validation failed.");
@@ -33,7 +33,8 @@ exports.createPost = async (req, res, next) => {
       .filter((link) => link.value !== "")
       .map((link) => link.value);
 
-    const imageUrl = req.file.path.replace("\\", "/");
+    let imageUrl;
+    if (req.file) imageUrl = req.file.path.replace("\\", "/");
 
     const post = new Post({
       title,
@@ -64,10 +65,16 @@ exports.createPost = async (req, res, next) => {
 };
 
 exports.getPosts = async (req, res, next) => {
+  const { page } = req.query;
   try {
-    const posts = await Post.find().populate("creator"); // Populate the creator field
+    const count = await Post.find().countDocuments();
+    const posts = await Post.find()
+      .populate("creator")
+      .limit(page * 5);
 
-    res.status(200).json({ message: "Posts fetched successfully!", posts });
+    res
+      .status(200)
+      .json({ message: "Posts fetched successfully!", posts, count });
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch posts.", error });
   }
@@ -86,8 +93,6 @@ exports.toggleLike = async (req, res, next) => {
 
       throw error;
     }
-
-    console.log("Liking");
 
     if (!post) return res.status(404).json({ message: "Post not found" });
 
