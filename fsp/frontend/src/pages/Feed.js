@@ -7,6 +7,9 @@ import { setNotification } from "../storage/notificationSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Feed() {
+  const dispatch = useDispatch();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [count, setCount] = useState(0);
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
@@ -26,7 +29,6 @@ export default function Feed() {
     filtering: false,
   });
 
-  const [searchParams, setSearchParams] = useSearchParams();
   const page = parseInt(searchParams.get("page")) || 1;
 
   const handlePageChange = (newPage) => {
@@ -34,14 +36,43 @@ export default function Feed() {
     updatedParams.set("page", newPage);
     setSearchParams(updatedParams);
   };
+
   const { user } = useSelector((state) => state.auth);
   const searchInput = useRef(null);
   const fnameInput = useRef(null);
   const lnameInput = useRef(null);
   const emailInput = useRef(null);
   const tagsInput = useRef(null);
+  const isFetchingRef = useRef(false);
 
-  const dispatch = useDispatch();
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isFetchingRef.current) return;
+
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      if (docHeight - (scrollTop + windowHeight) <= 50) {
+        if (count > page * 5) {
+          isFetchingRef.current = true;
+          handlePageChange(page + 1);
+          dispatch(setNotification({ message: "Loading more posts" }));
+
+          setTimeout(() => {
+            isFetchingRef.current = false;
+          }, 1000);
+        }
+      }
+    };
+
+    const throttledScroll = () => requestAnimationFrame(handleScroll);
+
+    window.addEventListener("scroll", throttledScroll);
+
+    return () => window.removeEventListener("scroll", throttledScroll);
+  }, [count, page, dispatch, handlePageChange]);
+
   const token = localStorage.getItem("token");
   const handleGetPosts = async () => {
     try {
@@ -57,6 +88,9 @@ export default function Feed() {
       console.error(error);
     }
   };
+
+  console.log("Render");
+
   useEffect(() => {
     handleGetPosts();
   }, [page]);
@@ -257,26 +291,6 @@ export default function Feed() {
                   ))}
                 </div>
               )
-            )}
-            {count > page * 5 && (
-              <div
-                disabled={page <= 1}
-                onClick={() => handlePageChange(page + 1)}
-                className="w-full flex items-center justify-center gap-2 cursor-pointer hover:bg-white hover:bg-opacity-10 transition-all py-2 text-lg rounded-md my-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    fill="currentColor"
-                    d="m16 3.594l-.719.687l-7 7L9.72 12.72L15 7.438V24h2V7.437l5.281 5.282l1.438-1.438l-7-7zM7 26v2h18v-2z"
-                  />
-                </svg>
-                <p className="text-center">Load more posts</p>
-              </div>
             )}
           </div>
 

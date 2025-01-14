@@ -1,10 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // Include all JS/TS files in the src folder
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        scrollRight: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-251%)" },
+        },
+      },
+      animation: {
+        "scroll-right": "scrollRight 10s linear infinite",
+      },
+    },
   },
   plugins: [],
 };

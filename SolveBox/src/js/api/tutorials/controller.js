@@ -1,8 +1,10 @@
 import { handleUnderlineHover } from "../../general_view.js";
-import { allowLangChange } from "../../language.js";
+import { allowLangChange, getLang } from "../../language.js";
 import { getAPI } from "../api.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
+
+const lang = getLang();
 
 export const Controller = {
   enAPI: null,
@@ -30,10 +32,11 @@ export const Controller = {
       this.enAPI = api.puzzles?.english[currentPuzzle];
       this.srAPI = api.puzzles?.srpski[currentPuzzle];
 
-      console.log(api);
+      if (lang === "srpski") document.title = this.srAPI?.name;
+      else document.title = this.enAPI?.name;
       document.querySelectorAll(".loader").forEach((e) => e.remove());
     } catch (error) {
-      console.error("Failed to initialize API:", error);
+      window.location.href = "/src/error.html";
     }
 
     const tips = document.querySelector(".tips");

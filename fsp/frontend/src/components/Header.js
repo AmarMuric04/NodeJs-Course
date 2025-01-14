@@ -44,7 +44,6 @@ const Header = () => {
     >
       <nav className="w-[75rem] flex justify-between items-center">
         <div className="flex items-center gap-12">
-          {" "}
           <Link to="/" className="h-full flex items-center">
             <img className="h-[5rem]" src={logo} alt="Logo" />
             <div>
@@ -53,15 +52,31 @@ const Header = () => {
             </div>
           </Link>
           <div className="flex gap-8">
-            <p className="cursor-pointer font-semibold hover:text-purple-400 transition-all">
+            <a
+              href="#about"
+              className="cursor-pointer font-semibold hover:text-purple-400 transition-all"
+            >
               About Us
-            </p>
-            <p className="cursor-pointer font-semibold hover:text-purple-400 transition-all">
-              Contact Us
-            </p>
-            <p className="cursor-pointer font-semibold hover:text-purple-400 transition-all">
-              Subscribe
-            </p>
+            </a>
+            <a
+              href="#reviews"
+              className="cursor-pointer font-semibold hover:text-purple-400 transition-all"
+            >
+              Reviews
+            </a>
+            <div className="h-[25px] w-[1px] bg-gray-600"></div>
+            <Link to="/feed?page=1">
+              <p className="cursor-pointer font-semibold hover:text-purple-400 transition-all">
+                Feed
+              </p>
+            </Link>
+            {isAuth && (
+              <Link to="/create-post">
+                <p className="cursor-pointer font-semibold hover:text-purple-400 transition-all">
+                  Create
+                </p>
+              </Link>
+            )}
           </div>
         </div>
 

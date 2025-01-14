@@ -77,3 +77,11 @@ input:-webkit-autofill {
   -webkit-text-fill-color: #fff !important; /* Adjust text color if needed */
   transition: background-color 5000s ease-in-out 0s;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.animate-scroll-right:hover {
+  animation-play-state: paused;
+}

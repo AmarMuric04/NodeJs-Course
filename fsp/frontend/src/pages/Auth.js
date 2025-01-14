@@ -148,6 +148,8 @@ const Auth = () => {
             <>
               <div className="flex gap-2 w-full">
                 <Input
+                  onErrorClass="border-red-600 bg-[#191919] text-white"
+                  normalClass="bg-[#191919] border-[#191919] text-white"
                   error={authError}
                   type="text"
                   input="input"
@@ -159,6 +161,8 @@ const Auth = () => {
                 />
                 <Input
                   error={authError}
+                  onErrorClass="border-red-600 bg-[#191919] text-white"
+                  normalClass="bg-[#191919] border-[#191919] text-white"
                   type="text"
                   input="input"
                   placeholder="Last Name"
@@ -179,6 +183,8 @@ const Auth = () => {
           >
             <Input
               error={authError}
+              onErrorClass="border-red-600 bg-[#191919] text-white"
+              normalClass="bg-[#191919] border-[#191919] text-white"
               type="text"
               input="input"
               placeholder="Your Email"
@@ -189,6 +195,8 @@ const Auth = () => {
             />
             <Input
               error={authError}
+              onErrorClass="border-red-600 bg-[#191919] text-white"
+              normalClass="bg-[#191919] border-[#191919] text-white"
               type="password"
               input="input"
               placeholder="Your Password"
