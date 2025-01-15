@@ -8,7 +8,6 @@ const lang = getLang();
 
 export const Controller = {
   enAPI: null,
-  srAPI: null,
 
   async init() {
     handleUnderlineHover();
@@ -24,20 +23,29 @@ export const Controller = {
     href = href.split("/").pop();
     href = href.slice(0, href.indexOf("."));
 
-    const currentPuzzle = Model.domen[href];
+    const enQuery = Model.enQuery[href];
+    const srQuery = Model.srQuery[href];
 
     try {
-      const api = await getAPI("./assets/api.json");
-      console.log(this.API);
-      this.enAPI = api.puzzles?.english[currentPuzzle];
-      this.srAPI = api.puzzles?.srpski[currentPuzzle];
+      const enAPI = await getAPI(
+        "https://solvebox.onrender.com/english?name=" + enQuery
+      );
 
-      if (lang === "srpski") document.title = this.srAPI?.name;
-      else document.title = this.enAPI?.name;
+      this.enAPI = enAPI;
+
+      const srAPI = await getAPI(
+        "https://solvebox.onrender.com/srpski?name=" + srQuery
+      );
+
+      this.srAPI = srAPI;
+
       document.querySelectorAll(".loader").forEach((e) => e.remove());
     } catch (error) {
-      window.location.href = "/src/error.html";
+      window.location.href = "/SolveBox/src/error.html";
     }
+
+    if (lang === "srpski") document.title = this.srAPI?.name;
+    else document.title = this.enAPI?.name;
 
     const tips = document.querySelector(".tips");
     this.enAPI?.content?.tips?.forEach((t, index) => {

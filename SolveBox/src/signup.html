@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <div class="b overflow-hidden background w-screen h-screen relative flex flex-col items-center">
+  <div class="b overflow-x-hidden background w-screen h-screen relative flex flex-col items-center">
     <header
       class="absolute top-0 left-0 w-full py-0 sm:py-4 sm:scale-100 lg:px-20 2xl:py-10 z-40 justify-between items-center hidden lg:flex">
       <a href="./index.html" class="flex gap-2 items-center relative z-50 text-white lg:text-black">
@@ -99,7 +99,7 @@
         </div>
       </div>
     </header>
-    <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 absolute top-0 left-0">
+    <header class="w-full flex justify-between items-center lg:hidden px-5 py-2 top-0 left-0">
       <a href="./index.html" class="flex gap-2 items-center relative z-50">
         <img class="h-[1.5rem] sm:h-[2.3rem]" src="./assets/images/logo.png" />
         <div class="flex flex-col justify-between">
@@ -129,9 +129,12 @@
           </g>
         </svg>
       </div>
-      <div id="backdrop" class="w-screen hidden h-screen absolute left-0 top-0 bg-black bg-opacity-50 z-30"></div>
-      <nav id="mobile-header" class="w-[95%] absolute h-screen background top-0 left-full transition-all z-40">
-        <ul class="flex flex-col justify-center h-full pt-12 pb-0 sm:py-40 px-10 gap-4">
+      <div id="backdrop"
+        class="w-screen hidden h-screen  min-h-[40rem] absolute left-0 top-0 bg-black bg-opacity-50 z-30">
+      </div>
+       <nav id="mobile-header"
+        class="w-[95%] absolute h-screen overflow-y-scroll background top-0 left-full transition-all z-40">
+        <ul class="flex flex-col justify-center min-h-[40rem] h-full pt-12 pb-0 sm:py-40 px-10 gap-4">
           <a href="./index.html">
             <li class="flex items-center gap-2 text-sm 2xl:text-lg font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -229,7 +232,7 @@
       <option value="english" class="text-white">eng</option>
       <option value="srpski" class="text-white">срп</option>
     </select>
-    <main class="h-screen w-full relative">
+    <main class="mt-20 lg:mt-0 h-screen w-full relative">
       <div
         class="text-white lg:text-black half-polygon-west lg:bg-purple-200 lg:half-polygon-west h-full w-full flex justify-center lg:w-3/5 2xl:w-1/2 relative sm:px-[3rem] md:px-[10rem] lg:px-[5rem] xl:px-[10rem] 2xl:px-[5rem] 3xl:px-[10rem] 4xl:px-[15rem]">
         <div class="relative z-30 flex flex-col justify-center xl:justify-end w-[90%] lg:w-full h-full">

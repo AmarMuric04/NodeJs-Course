@@ -35,7 +35,7 @@ const Root = () => {
   return (
     <>
       {showNotification && message && (
-        <div className="pop-in flex items-center fixed bottom-10 right-10 text-black">
+        <div className="pop-in flex items-center fixed bottom-10 right-10 text-black z-50">
           <div className="bg-purple-500 h-full w-[3rem] px-2 py-4 rounded-l-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"

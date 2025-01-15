@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const userRouter = require("./routes/user");
 const postRouter = require("./routes/post");
+const reviewRouter = require("./routes/review");
 require("dotenv").config();
 const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
@@ -50,6 +51,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/users", userRouter);
 
 app.use("/posts", postRouter);
+
+app.use("/reviews", reviewRouter);
 
 app.use((error, req, res, next) => {
   console.log(error);

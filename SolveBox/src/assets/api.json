@@ -20,7 +20,7 @@
             "difficulty": "Intermediate",
             "popularity": 4.0,
             "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/673cc25c8154cdc74cf26fae_product__MASTER_main-p-500.jpg",
-            "video" : "https://www.youtube.com/watch?v=KWOZHbDdOeo&ab_channel=JPerm"
+            "video": "https://www.youtube.com/watch?v=KWOZHbDdOeo&ab_channel=JPerm"
           },
           {
             "name": "5x5x5 (Professor's Cube)",
@@ -36,7 +36,7 @@
             "difficulty": "Beginner",
             "popularity": 4.3,
             "image": "https://cdn.prod.website-files.com/6595ca03bcd68f311fd41872/65b129cbd4a1a1cd96e12422_659ee0ea0a2f977cbd4f737d_product__PYRAMID_main.png",
-            "video":"https://www.youtube.com/watch?v=pHBj8hixTfE&ab_channel=NOBLECUBES"
+            "video": "https://www.youtube.com/watch?v=pHBj8hixTfE&ab_channel=NOBLECUBES"
           },
           {
             "name": "Mirror Cube",
@@ -44,7 +44,7 @@
             "difficulty": "Advanced",
             "popularity": 4.7,
             "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF_HLHvxmxguBjmAtdXqKAS-JzX2vjc5suIg&s",
-            "video":"https://www.youtube.com/watch?v=asaVCDvLfRE&ab_channel=TheSimonShi"
+            "video": "https://www.youtube.com/watch?v=asaVCDvLfRE&ab_channel=TheSimonShi"
           }
         ],
         "main_video": "https://www.youtube.com/embed/F-zMjsRgJws",
@@ -137,7 +137,8 @@
             "difficulty": "Beginner",
             "popularity": 4.2,
             "image": "https://ecdn.teacherspayteachers.com/thumbitem/480-Mini-Sudoku-Puzzles-for-Printing-4x4-and-6x6-grids-7079523-1656584443/original-7079523-4.jpg",
-            "video":"https://www.youtube.com/watch?v=qZOQHMGXaz4&ab_channel=SimpleTeachingbyHarry"          },
+            "video": "https://www.youtube.com/watch?v=qZOQHMGXaz4&ab_channel=SimpleTeachingbyHarry"
+          },
           {
             "name": "Killer Sudoku",
             "description": "Combines Sudoku with arithmetic cage constraints, adding a layer of math to the classic puzzle.",
@@ -266,7 +267,7 @@
             "difficulty": "Intermediate",
             "popularity": 4.3,
             "image": "https://alexbajcz.wordpress.com/wp-content/uploads/2018/04/puzzle.png?w=676",
-            "video":"https://www.puzzlesociety.com/the-solutionist/what-are-crossword-themes"
+            "video": "https://www.puzzlesociety.com/the-solutionist/what-are-crossword-themes"
           },
           {
             "name": "Crossnumber Puzzle",
@@ -274,8 +275,8 @@
             "difficulty": "Intermediate",
             "popularity": 3.8,
             "image": "https://www.rfcafe.com/references/popular-electronics/images7/crossnumber-puzzle-popular-electronics-august-1958-1.jpg",
-            "video":"https://www.youtube.com/watch?v=9MbYtaA76rk&pp=ygUOI3B1enpsZV9jbGFzczI%3D"
-                },
+            "video": "https://www.youtube.com/watch?v=9MbYtaA76rk&pp=ygUOI3B1enpsZV9jbGFzczI%3D"
+          },
           {
             "name": "Mini Crossword",
             "description": "A smaller grid for quick and casual solving, typically with simpler clues.",
@@ -377,123 +378,123 @@
           }
         }
       },
-        {
-          "name": "Jigsaw Puzzle",
-          "main_image": "https://images.pexels.com/photos/7417514/pexels-photo-7417514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "description": "A tiling puzzle where you assemble interlocking pieces to form a complete image. Variations include 3D puzzles, double-sided puzzles, and gradient puzzles, each offering unique challenges and experiences.",
-          "variations": [
+      {
+        "name": "Jigsaw Puzzle",
+        "main_image": "https://images.pexels.com/photos/7417514/pexels-photo-7417514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "description": "A tiling puzzle where you assemble interlocking pieces to form a complete image. Variations include 3D puzzles, double-sided puzzles, and gradient puzzles, each offering unique challenges and experiences.",
+        "variations": [
+          {
+            "name": "3D Puzzle",
+            "description": "Pieces form three-dimensional structures like famous landmarks or sculptures.",
+            "difficulty": "Intermediate",
+            "popularity": 4.7,
+            "image": "https://jokomisiada.pl/eng_pl_30-piece-3D-puzzle-London-Big-Ben-ZA3802-16991_7.jpg",
+            "video": "https://www.youtube.com/watch?v=0WYmoX6RKko"
+          },
+          {
+            "name": "Double-Sided Puzzle",
+            "description": "Features two distinct puzzles on either side of the pieces, doubling the challenge.",
+            "difficulty": "Advanced",
+            "popularity": 4.3,
+            "image": "https://i5.walmartimages.com/seo/Keith-Haring-2-Sided-500-Piece-Puzzle-Other_a4eadfd7-3969-40a9-a04d-cdaf3ba969e3.1b2732cbe5ce0530596d731af0fd6d00.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+            "video": "https://www.youtube.com/watch?v=xwzuimWUh6s&ab_channel=KarenPuzzles"
+          },
+          {
+            "name": "Gradient Puzzle",
+            "description": "A puzzle with subtle color gradients, requiring keen attention to shades.",
+            "difficulty": "Expert",
+            "popularity": 4.0,
+            "image": "https://puzzlemania-154aa.kxcdn.com/products/2024/puzzle-clementoni-2000-pieces-gradient-puzzle-2000.webp",
+            "video": "https://www.youtube.com/watch?app=desktop&v=Zay0ndBMVGU&t=0s"
+          },
+          {
+            "name": "Mystery Puzzle",
+            "description": "Solve the puzzle without knowing the final image in advance.",
+            "difficulty": "Intermediate",
+            "popularity": 4.2,
+            "image": "https://www.holdson.com/images/thumbs/0013738_holdson-puzzle-wasgij-retro-mystery-4-500xl-pc-live-entertainment_625.jpeg",
+            "video": "https://www.youtube.com/watch?v=XRHglREeX20&ab_channel=PuzzleWithEmilia"
+          },
+          {
+            "name": "Custom Photo Puzzle",
+            "description": "Create a puzzle using your favorite photo, adding a personal touch.",
+            "difficulty": "Varies",
+            "popularity": 4.8,
+            "image": "https://assets.cdn-shop.com/picanova2-com/assets/img/products/photo-gifts/puzzle/custom-puzzle-complete-view-2ad8c7cb92.webp"
+          }
+        ],
+        "main_video": "https://www.youtube.com/embed/oRlCNXdcMc0",
+        "historical_fact": "Jigsaw puzzles were invented around 1760 by John Spilsbury, a London cartographer, who used them to teach geography.",
+        "advanced_strategies": [
+          "Edge Sorting: Assemble the border pieces first to establish the puzzle frame.",
+          "Color Sorting: Group pieces by color or pattern for faster assembly.",
+          "Pattern Recognition: Focus on recurring shapes or designs within the puzzle.",
+          "Chunk Building: Work on smaller sections and then combine them."
+        ],
+        "fun_fact": "The largest jigsaw puzzle ever created consists of over 551,000 pieces and measures 48 feet long!",
+        "history": {
+          "Inventor": "John Spilsbury",
+          "Year Invented": "1767",
+          "Original Name": "Dissected Map",
+          "Milestone": "Became popular as a pastime in the 20th century."
+        },
+        "content": {
+          "tutorials": [
             {
-              "name": "3D Puzzle",
-              "description": "Pieces form three-dimensional structures like famous landmarks or sculptures.",
-              "difficulty": "Intermediate",
-              "popularity": 4.7,
-              "image": "https://jokomisiada.pl/eng_pl_30-piece-3D-puzzle-London-Big-Ben-ZA3802-16991_7.jpg",
-              "video":"https://www.youtube.com/watch?v=0WYmoX6RKko"
+              "type": "text",
+              "content": "Sort the pieces by edge, color, or pattern. Assemble the border first to define the puzzle's structure. For 3D puzzles, build the base before adding vertical layers."
             },
             {
-              "name": "Double-Sided Puzzle",
-              "description": "Features two distinct puzzles on either side of the pieces, doubling the challenge.",
-              "difficulty": "Advanced",
-              "popularity": 4.3,
-              "image": "https://i5.walmartimages.com/seo/Keith-Haring-2-Sided-500-Piece-Puzzle-Other_a4eadfd7-3969-40a9-a04d-cdaf3ba969e3.1b2732cbe5ce0530596d731af0fd6d00.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-              "video": "https://www.youtube.com/watch?v=xwzuimWUh6s&ab_channel=KarenPuzzles"
+              "type": "video",
+              "title": "Jigsaw Puzzle Tips for Beginners",
+              "url": "https://www.youtube.com/embed/SV12puKJCQw"
             },
             {
-              "name": "Gradient Puzzle",
-              "description": "A puzzle with subtle color gradients, requiring keen attention to shades.",
-              "difficulty": "Expert",
-              "popularity": 4.0,
-              "image": "https://puzzlemania-154aa.kxcdn.com/products/2024/puzzle-clementoni-2000-pieces-gradient-puzzle-2000.webp",
-              "video": "https://www.youtube.com/watch?app=desktop&v=Zay0ndBMVGU&t=0s"
-            },
-            {
-              "name": "Mystery Puzzle",
-              "description": "Solve the puzzle without knowing the final image in advance.",
-              "difficulty": "Intermediate",
-              "popularity": 4.2,
-              "image": "https://www.holdson.com/images/thumbs/0013738_holdson-puzzle-wasgij-retro-mystery-4-500xl-pc-live-entertainment_625.jpeg",
-              "video": "https://www.youtube.com/watch?v=XRHglREeX20&ab_channel=PuzzleWithEmilia"
-            },
-            {
-              "name": "Custom Photo Puzzle",
-              "description": "Create a puzzle using your favorite photo, adding a personal touch.",
-              "difficulty": "Varies",
-              "popularity": 4.8,
-              "image": "https://assets.cdn-shop.com/picanova2-com/assets/img/products/photo-gifts/puzzle/custom-puzzle-complete-view-2ad8c7cb92.webp"
+              "type": "link",
+              "title": "Advanced Jigsaw Puzzle Solving Strategies",
+              "url": "https://www.jigsawjunkies.com/advanced-tips/"
             }
           ],
-          "main_video": "https://www.youtube.com/embed/oRlCNXdcMc0",
-          "historical_fact": "Jigsaw puzzles were invented around 1760 by John Spilsbury, a London cartographer, who used them to teach geography.",
-          "advanced_strategies": [
-            "Edge Sorting: Assemble the border pieces first to establish the puzzle frame.",
-            "Color Sorting: Group pieces by color or pattern for faster assembly.",
-            "Pattern Recognition: Focus on recurring shapes or designs within the puzzle.",
-            "Chunk Building: Work on smaller sections and then combine them."
+          "tips": [
+            "Sort pieces into edge pieces, corner pieces, and middle pieces for better organization.",
+            "Focus on unique patterns or distinct sections of the image to make faster progress.",
+            "Use sorting trays, boards, or mats to organize and move pieces efficiently.",
+            "Work under good lighting to distinguish subtle color differences.",
+            "For large puzzles, assemble sections separately and connect them later."
           ],
-          "fun_fact": "The largest jigsaw puzzle ever created consists of over 551,000 pieces and measures 48 feet long!",
-          "history": {
-            "Inventor": "John Spilsbury",
-            "Year Invented": "1767",
-            "Original Name": "Dissected Map",
-            "Milestone": "Became popular as a pastime in the 20th century."
-          },
-          "content": {
-            "tutorials": [
+          "related_facts": [
+            "Jigsaw puzzles originated in the 18th century when maps were cut into pieces for educational purposes.",
+            "The term 'jigsaw' comes from the saw used to cut early puzzles.",
+            "Solving puzzles improves cognitive skills and is known to reduce stress."
+          ],
+          "resources": {
+            "online_stores": [
               {
-                "type": "text",
-                "content": "Sort the pieces by edge, color, or pattern. Assemble the border first to define the puzzle's structure. For 3D puzzles, build the base before adding vertical layers."
+                "name": "Puzzle Warehouse",
+                "url": "https://www.puzzlewarehouse.com/",
+                "description": "A wide selection of jigsaw puzzles for all skill levels and interests."
               },
               {
-                "type": "video",
-                "title": "Jigsaw Puzzle Tips for Beginners",
-                "url": "https://www.youtube.com/embed/SV12puKJCQw"
-              },
-              {
-                "type": "link",
-                "title": "Advanced Jigsaw Puzzle Solving Strategies",
-                "url": "https://www.jigsawjunkies.com/advanced-tips/"
+                "name": "Ravensburger Puzzles",
+                "url": "https://www.ravensburger.com/",
+                "description": "High-quality puzzles with beautiful designs, including 3D puzzles."
               }
             ],
-            "tips": [
-              "Sort pieces into edge pieces, corner pieces, and middle pieces for better organization.",
-              "Focus on unique patterns or distinct sections of the image to make faster progress.",
-              "Use sorting trays, boards, or mats to organize and move pieces efficiently.",
-              "Work under good lighting to distinguish subtle color differences.",
-              "For large puzzles, assemble sections separately and connect them later."
-            ],
-            "related_facts": [
-              "Jigsaw puzzles originated in the 18th century when maps were cut into pieces for educational purposes.",
-              "The term 'jigsaw' comes from the saw used to cut early puzzles.",
-              "Solving puzzles improves cognitive skills and is known to reduce stress."
-            ],
-            "resources": {
-              "online_stores": [
-                {
-                  "name": "Puzzle Warehouse",
-                  "url": "https://www.puzzlewarehouse.com/",
-                  "description": "A wide selection of jigsaw puzzles for all skill levels and interests."
-                },
-                {
-                  "name": "Ravensburger Puzzles",
-                  "url": "https://www.ravensburger.com/",
-                  "description": "High-quality puzzles with beautiful designs, including 3D puzzles."
-                }
-              ],
-              "communities": [
-                {
-                  "name": "Jigsaw Puzzle Reddit Community",
-                  "url": "https://www.reddit.com/r/Jigsawpuzzles/",
-                  "description": "Discuss puzzles, share tips, and showcase completed works."
-                },
-                {
-                  "name": "Puzzle Hobby",
-                  "url": "https://en.tripadvisor.com.hk/ShowTopic-g1-i49577-k14218347-o10-Jigsaw_puzzles-The_Layover_Lounge.html",
-                  "description": "A blog and forum dedicated to puzzle enthusiasts."
-                }
-              ]
-            }
+            "communities": [
+              {
+                "name": "Jigsaw Puzzle Reddit Community",
+                "url": "https://www.reddit.com/r/Jigsawpuzzles/",
+                "description": "Discuss puzzles, share tips, and showcase completed works."
+              },
+              {
+                "name": "Puzzle Hobby",
+                "url": "https://en.tripadvisor.com.hk/ShowTopic-g1-i49577-k14218347-o10-Jigsaw_puzzles-The_Layover_Lounge.html",
+                "description": "A blog and forum dedicated to puzzle enthusiasts."
+              }
+            ]
           }
-        },
+        }
+      },
       {
         "name": "Tower of Hanoi",
         "main_image": "https://media.hackerearth.com/blog/wp-content/uploads/2016/12/Cover_v2.png",
@@ -512,8 +513,8 @@
             "description": "Adds extra rods, increasing complexity and strategy.",
             "difficulty": "Advanced",
             "popularity": 4.5,
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSto8sfJglJzEOdXhmgw_SOO2bhr8Z-y7mDNL-AMTO0XDTYNm1UktX-BlYTvWpV9krquP4&usqp=CAU"
-            ,"video": "https://www.tandfonline.com/doi/pdf/10.4169/college.math.j.44.2.110"
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSto8sfJglJzEOdXhmgw_SOO2bhr8Z-y7mDNL-AMTO0XDTYNm1UktX-BlYTvWpV9krquP4&usqp=CAU",
+            "video": "https://www.tandfonline.com/doi/pdf/10.4169/college.math.j.44.2.110"
           },
           {
             "name": "Reversed Rules Tower",
@@ -601,31 +602,32 @@
             "description": "The standard 4x4 grid with 15 numbered tiles.",
             "difficulty": "Intermediate",
             "popularity": 4.7,
-            "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/10/b4/53/10b45351-990e-a1b4-7944-b201fb486368/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png"
-          ,"video":"https://www.google.com/search?q=how+to+solve+15+puzzle&rlz=1C1SQJL_enRS1047RS1047&oq=how+to+solve+15+puzzle&gs_lcrp=EgZjaHJvbWUqCwgAEAAYDRgTGIAEMgsIABAAGA0YExiABDILCAEQABgNGBMYgAQyCggCEAAYExgWGB4yCggDEAAYExgWGB4yCggEEAAYExgWGB4yCggFEAAYExgWGB4yCggGEAAYExgWGB4yCggHEAAYExgWGB4yCggIEAAYExgWGB4yCggJEAAYgAQYogTSAQg0NDI5ajBqOagCALACAQ&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:b298a005,vid:6uBl7WDVIic,st:0"
+            "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/10/b4/53/10b45351-990e-a1b4-7944-b201fb486368/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png",
+            "video": "https://www.google.com/search?q=how+to+solve+15+puzzle&rlz=1C1SQJL_enRS1047RS1047&oq=how+to+solve+15+puzzle&gs_lcrp=EgZjaHJvbWUqCwgAEAAYDRgTGIAEMgsIABAAGA0YExiABDILCAEQABgNGBMYgAQyCggCEAAYExgWGB4yCggDEAAYExgWGB4yCggEEAAYExgWGB4yCggFEAAYExgWGB4yCggGEAAYExgWGB4yCggHEAAYExgWGB4yCggIEAAYExgWGB4yCggJEAAYgAQYogTSAQg0NDI5ajBqOagCALACAQ&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:b298a005,vid:6uBl7WDVIic,st:0"
           },
           {
             "name": "3x3 Puzzle",
             "description": "A smaller, 3x3 version with 8 tiles and a single empty space for faster challenges.",
             "difficulty": "Beginner",
             "popularity": 4.5,
-            "image": "https://www.galliardgames.com/cdn/shop/products/3193774192006.GalliardGamesSlidePuzzle-6_1024x1024@2x.jpg?v=1648792434"
-          ,"video":"https://www.youtube.com/watch?v=kF5fT7Um5bE"
+            "image": "https://www.galliardgames.com/cdn/shop/products/3193774192006.GalliardGamesSlidePuzzle-6_1024x1024@2x.jpg?v=1648792434",
+            "video": "https://www.youtube.com/watch?v=kF5fT7Um5bE"
           },
           {
             "name": "5x5 Puzzle",
             "description": "A larger, 5x5 version with 24 tiles, offering more complexity and strategic depth.",
             "difficulty": "Advanced",
             "popularity": 4.8,
-            "image": "https://m.media-amazon.com/images/I/91pXaae2QvL.jpg"
-          ,"video": "https://www.youtube.com/watch?v=vKxenJMHurM&ab_channel=Quakelord1991"
+            "image": "https://m.media-amazon.com/images/I/91pXaae2QvL.jpg",
+            "video": "https://www.youtube.com/watch?v=vKxenJMHurM&ab_channel=Quakelord1991"
           },
           {
             "name": "Hexagonal Puzzle",
             "description": "A variant of the 15 Puzzle with hexagonal pieces instead of square tiles.",
             "difficulty": "Expert",
             "popularity": 4.2,
-            "image": "https://m.media-amazon.com/images/I/713pvxAE4xL._AC_UF894,1000_QL80_.jpg",           "video": "https://devpost.com/software/the-hexagonal-puzzle"
+            "image": "https://m.media-amazon.com/images/I/713pvxAE4xL._AC_UF894,1000_QL80_.jpg",
+            "video": "https://devpost.com/software/the-hexagonal-puzzle"
           },
           {
             "name": "Non-Square Grid Puzzle",
@@ -711,8 +713,8 @@
             "description": "The standard version where you fill in a grid using logical deduction from a set of clues.",
             "difficulty": "Intermediate",
             "popularity": 4.6,
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTePmfrjnletGbq5ZY0B3ykb6dgWDeDCmLibg&s"
-          ,"video":"https://www.google.com/search?q=how+to+solve+logic+grid+puzzles&rlz=1C1SQJL_enRS1047RS1047&oq=how+to+solve+glogic+grid+puz&gs_lcrp=EgZjaHJvbWUqCwgBEAAYDRgTGIAEMgYIABBFGDkyCwgBEAAYDRgTGIAEMgoIAhAAGBMYFhgeMgcIAxAAGO8FMgoIBBAAGIAEGKIEMgcIBRAAGO8FMgcIBhAAGO8FMgcIBxAAGO8F0gEINDg4MGowajSoAgCwAgE&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:9db97b2c,vid:CNxfZwvaQ-k,st:0"
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTePmfrjnletGbq5ZY0B3ykb6dgWDeDCmLibg&s",
+            "video": "https://www.google.com/search?q=how+to+solve+logic+grid+puzzles&rlz=1C1SQJL_enRS1047RS1047&oq=how+to+solve+glogic+grid+puz&gs_lcrp=EgZjaHJvbWUqCwgBEAAYDRgTGIAEMgYIABBFGDkyCwgBEAAYDRgTGIAEMgoIAhAAGBMYFhgeMgcIAxAAGO8FMgoIBBAAGIAEGKIEMgcIBRAAGO8FMgcIBhAAGO8FMgcIBxAAGO8F0gEINDg4MGowajSoAgCwAgE&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:9db97b2c,vid:CNxfZwvaQ-k,st:0"
           },
           {
             "name": "Themed Logic Grid",
@@ -1607,7 +1609,6 @@
           }
         }
       }
-         
     ]
   }
 }

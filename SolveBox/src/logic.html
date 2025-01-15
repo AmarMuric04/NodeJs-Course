@@ -162,9 +162,12 @@
           </g>
         </svg>
       </div>
-      <div id="backdrop" class="w-screen hidden h-screen absolute left-0 top-0 bg-black bg-opacity-50 z-30"></div>
-      <nav id="mobile-header" class="w-[95%] absolute h-screen background top-0 left-full transition-all z-40">
-        <ul class="flex flex-col justify-center h-full pt-12 pb-0 sm:py-40 px-10 gap-4">
+   <div id="backdrop"
+        class="w-screen hidden h-screen  min-h-[40rem] absolute left-0 top-0 bg-black bg-opacity-50 z-30">
+      </div>
+       <nav id="mobile-header"
+        class="w-[95%] absolute h-screen overflow-y-scroll background top-0 left-full transition-all z-40">
+        <ul class="flex flex-col justify-center min-h-[40rem] h-full pt-12 pb-0 sm:py-40 px-10 gap-4">
           <a href="./index.html">
             <li class="flex items-center gap-2 text-sm 2xl:text-lg font-semibold text3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -265,16 +268,17 @@
     <section class="w-full flex justify-center mt-40">
       <div class="w-[75rem]">
         <h1
-          class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold px-2 background z-40 relative">
+          class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold px-2 background z-30 relative">
           <span data-english="Todays" data-srpski="Данашља">Todays</span> <span class="text3" data-english="subject"
             data-srpski="тема">subject</span> -- <span class="title text1"></span>
         </h1>
     </section>
     <section class="w-full my-10 bg2 py-10 flex justify-center">
       <div class="w-[90%] xl:w-[75rem] flex h-full flex-col justify-center">
-        <p class="text1 font-semibold uppercase noto leading-[0.2rem] text-xl mb-8">Did you know?</p>
+        <p data-english="Did you know?" data-srpski="Да ли сте знали?"
+          class="text1 font-semibold uppercase noto leading-[0.2rem] text-xl mb-8">Did you know?</p>
         <h1
-          class="background-text text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold z-40 relative fun-fact">
+          class="background-text text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold z-30 relative fun-fact">
         </h1>
       </div>
     </section>
@@ -282,7 +286,7 @@
       <div class="w-[90%] xl:w-[75rem]">
         <div class="relative w-full flex flex-col items-start">
           <h1 data-srpski="Брза помоћ" data-english="Quick Tips"
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative">
+            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-30 relative">
             Quick Tips</h1>
           <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
         </div>
@@ -290,7 +294,7 @@
         </ul>
         <div class="relative w-full flex flex-col items-start">
           <h1 data-english="Resources" data-srpski="Ресурси"
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative">
+            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-30 relative">
             Resources</h1>
           <div class="h-[1px] w-full absolute top-2/3 bg4">
           </div>
@@ -304,7 +308,7 @@
         <p data-english="SOME HISTORY" data-srpski="МАЛО ИСТОРИЈЕ"
           class="text1 font-semibold uppercase noto leading-[0.2rem] text-xl mb-8">SOME HISTORY</p>
         <h1
-          class="background-text text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold z-40 relative historical-fact">
+          class="background-text text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold z-30 relative historical-fact">
         </h1>
       </div>
     </section>
@@ -312,7 +316,7 @@
       <div class="w-[90%] xl:w-[75rem]">
         <div class="relative w-full flex flex-col items-start mb-8">
           <h1 data-english="Tutorials" data-srpski="Туториали"
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative">
+            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-30 relative">
             Tutorials</h1>
           <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
         </div>
@@ -320,7 +324,7 @@
 
           <div class="flex relative my-8">
             <h1 data-english="More Tutorials" data-srpski="Још туториала"
-              class="px-2 background z-50 relative text-xl font-bold">More Tutorials
+              class="px-2 background z-30 relative text-xl font-bold">More Tutorials
             </h1>
             <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
           </div>
@@ -330,7 +334,7 @@
         </div>
         <div class="relative w-full flex flex-col items-start">
           <h1 data-english="Advanced Tips" data-srpski="Напредна Помоћ"
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative">
+            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-30 relative">
             Advanced Tips</h1>
           <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
         </div>
@@ -338,7 +342,7 @@
         </ul>
         <div class="relative w-full flex flex-col items-start">
           <h1 data-english="Related Facts" data-srpski="Везане Чињенице"
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative">
+            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-30 relative">
             Related Facts</h1>
           <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
         </div>
@@ -346,7 +350,7 @@
         </ul>
         <div class="relative w-full flex flex-col items-start">
           <h1 data-english="Variations" data-srpski="Варијације"
-            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-40 relative">
+            class="text-center lg:text-start text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold title px-2 background z-30 relative">
             Variations</h1>
           <div class="h-[1px] w-full absolute top-2/3 bg4"></div>
         </div>

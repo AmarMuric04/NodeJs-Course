@@ -116,7 +116,6 @@ export default function CreatePost() {
       }
 
       const data = await response.json();
-      console.log(data);
 
       dispatch(setNotification(data));
     } catch (error) {

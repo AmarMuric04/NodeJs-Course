@@ -5,30 +5,37 @@ import NodeImg from "./assets/nodejs.png";
 import TailWindImg from "./assets/tailwind.png";
 import { Link } from "react-router-dom";
 import { Create, Curate, Engage, Find, Illustration } from "./assets/icons";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import logo from "./assets/light-logo.png";
 import RouterDomImg from "./assets/rrdom.png";
 import ReduxImg from "./assets/redux.png";
 import MulterImg from "./assets/multer.png";
 import MongooseImg from "./assets/mongoose.png";
 import JWTImg from "./assets/jwt.png";
+import { useSelector } from "react-redux";
+import Input from "./components/Input";
+import ReviewForm from "./components/ReviewForm";
+import { setNotification } from "./storage/notificationSlice";
+import { useDispatch } from "react-redux";
+import Reviews from "./components/Reviews";
 
 const App = () => {
   const scrollRef = useRef(null);
 
   const scrollLeft = () => {
-    scrollRef.current.scrollBy({
-      left: -300,
-      behavior: "smooth",
-    });
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft();
+    }
   };
 
   const scrollRight = () => {
-    scrollRef.current.scrollBy({
-      left: 300,
-      behavior: "smooth",
-    });
+    if (scrollRef.current) {
+      scrollRef.current.scrollRight();
+    }
   };
+
+  const { user } = useSelector((state) => state.auth);
+
   return (
     <main className="bg-[#222] overflow-x-hidden text-white flex flex-col items-center justify-center h-auto min-h-screen w-full">
       <div className="absolute top-60 right-32">
@@ -225,7 +232,7 @@ const App = () => {
           </div>
         </div>
       </section>
-      <section className=" bg-[#101010] w-full flex justify-center relative">
+      <section className="bg-[#141414] w-full flex justify-center relative">
         <svg
           id="reviews"
           xmlns="http://www.w3.org/2000/svg"
@@ -357,76 +364,44 @@ const App = () => {
               </div>
             </div>
           </div>
-          <div
-            ref={scrollRef}
-            className="flex gap-8 items-start mt-20 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
-          >
-            <div className="min-w-[20rem] bg-[#191919] p-4 rounded-lg shadow-md shadow-purple-500">
-              <div className="flex justify-between text-gray-300">
-                <p className="font-semibold">Mila K.</p>
-                <p>⭐⭐⭐⭐⭐</p>
-              </div>
-              <p className="my-4 text-gray-400">
-                "Finally, a platform that feels personal! I love how easy it is
-                to share my thoughts and interact with others. The bookmarking
-                feature is a game-changer for saving posts I want to revisit!"
-              </p>
-            </div>
-            <div className="min-w-[20rem] bg-[#191919] p-4 rounded-lg shadow-md shadow-purple-500">
-              <div className="flex justify-between text-gray-300">
-                <p className="font-semibold">Mila K.</p>
-                <p>⭐⭐⭐⭐⭐</p>
-              </div>
-              <p className="my-4 text-gray-400">
-                "Finally, a platform that feels personal! I love how easy it is
-                to share my thoughts and interact with others. The bookmarking
-                feature is a game-changer for saving posts I want to revisit!"
-              </p>
-            </div>
-            <div className="min-w-[20rem] bg-[#191919] p-4 rounded-lg shadow-md shadow-purple-500">
-              <div className="flex justify-between text-gray-300">
-                <p className="font-semibold">Mila K.</p>
-                <p>⭐⭐⭐⭐⭐</p>
-              </div>
-              <p className="my-4 text-gray-400">
-                "Finally, a platform that feels personal! I love how easy it is
-                to share my thoughts and interact with others. The bookmarking
-                feature is a game-changer for saving posts I want to revisit!"
-              </p>
-            </div>
-            <div className="min-w-[20rem] bg-[#191919] p-4 rounded-lg shadow-md shadow-purple-500">
-              <div className="flex justify-between text-gray-300">
-                <p className="font-semibold">Mila K.</p>
-                <p>⭐⭐⭐⭐⭐</p>
-              </div>
-              <p className="my-4 text-gray-400">
-                "Finally, a platform that feels personal! I love how easy it is
-                to share my thoughts and interact with others. The bookmarking
-                feature is a game-changer for saving posts I want to revisit!"
-              </p>
-            </div>
-            <div className="min-w-[20rem] bg-[#191919] p-4 rounded-lg shadow-md shadow-purple-500">
-              <div className="flex justify-between text-gray-300">
-                <p className="font-semibold">Mila K.</p>
-                <p>⭐⭐⭐⭐⭐</p>
-              </div>
-              <p className="my-4 text-gray-400">
-                "Finally, a platform that feels personal! I love how easy it is
-                to share my thoughts and interact with others. The bookmarking
-                feature is a game-changer for saving posts I want to revisit!"
-              </p>
-            </div>
-            <div className="min-w-[20rem] bg-[#191919] p-4 rounded-lg shadow-md shadow-purple-500">
-              <div className="flex justify-between text-gray-300">
-                <p className="font-semibold">Mila K.</p>
-                <p>⭐⭐⭐⭐⭐</p>
-              </div>
-              <p className="my-4 text-gray-400">
-                "Finally, a platform that feels personal! I love how easy it is
-                to share my thoughts and interact with others. The bookmarking
-                feature is a game-changer for saving posts I want to revisit!"
-              </p>
-            </div>
+          <Reviews ref={scrollRef} />
+        </div>
+      </section>
+      <section className="bg-[#101010] w-full flex justify-center relative">
+        <svg
+          className="absolute top-0 left-0"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1000 100"
+          fill="#141414"
+        >
+          <path
+            d="M500 80.7C358 68 0 4 0 4V0h1000v84.7c-216 23.3-358 8.6-500-4Z"
+            opacity=".3"
+          ></path>
+          <path
+            d="M500 65.7C358 53 0 4 0 4V0h1000v62.7c-216 23.3-358 15.6-500 3Z"
+            opacity=".5"
+          ></path>
+          <path d="M500 50.7C358 38 0 4 0 4V0h1000v40.7C784 64 642 63.3 500 50.7Z"></path>
+        </svg>
+        <div className="w-[75rem] mt-80 mb-[20rem] flex justify-between">
+          <div className="w-1/3">
+            <h2 className="text-xs uppercase leading-[0.1rem] text-orange-500 font-semibold">
+              Our reviews
+            </h2>
+            <h1 className="text-[3rem] font-bold my-4 leading-[3rem]">
+              How about a review? Give us some of your feedback!
+            </h1>
+            <p className="text-gray-400 text-lg mt-20">
+              Hear what our community has to say! Users love how easy it is to
+              share their thoughts, engage with content, and connect with
+              others. From inspiring stories to thought-provoking ideas, this
+              platform is built for authentic interaction. Dive into the reviews
+              and see why so many people are enjoying the experience!
+            </p>
+          </div>
+          <div className="w-2/5 flex justify-center">
+            <ReviewForm user={user} />
           </div>
         </div>
       </section>
@@ -443,16 +418,16 @@ const App = () => {
           <path d="M0 0v24l500 76 500-76V0H0z" opacity=".5"></path>
           <path d="M0 0v4l500 96 500-96V0H0z"></path>
         </svg>
-        <div class="w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] mt-80">
-          <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
+        <div className="w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] mt-80">
+          <h1 className="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">
             A vibrant and inclusive community of solvers and challengers.
           </h1>
-          <p class="text-xl lg:text-3xl font-bold text-center my-8">
+          <p className="text-xl lg:text-3xl font-bold text-center my-8">
             Learn more now!
           </p>
-          <div class="w-full flex flex-col lg:flex-row py-20 justify-between">
-            <div class="w-full lg:w-2/5">
-              <h1 class="font-semibold text-lg lg:text-2xl">
+          <div className="w-full flex flex-col lg:flex-row py-20 justify-between">
+            <div className="w-full lg:w-2/5">
+              <h1 className="font-semibold text-lg lg:text-2xl">
                 <span
                   data-english="Puzzle Solver's Hub"
                   data-srpski="Кутак за решавање загонетки"
@@ -460,7 +435,7 @@ const App = () => {
                   Puzzle Solver's Hub
                 </span>
               </h1>
-              <p class="py-4 text-gray-300 text-sm lg:text-lg text-semibold">
+              <p className="py-4 text-gray-300 text-sm lg:text-lg text-semibold">
                 <span
                   data-english="Your ultimate resource for solving puzzles of all kinds."
                   data-srpski="Ваш најбољи ресурс за решавање свих врста загонетки."
@@ -468,7 +443,7 @@ const App = () => {
                   Your ultimate resource for solving puzzles of all kinds.
                 </span>
               </p>
-              <p class="py-4 text-gray-300 text-xs lg:text-[1rem] text-semibold">
+              <p className="py-4 text-gray-300 text-xs lg:text-[1rem] text-semibold">
                 <span
                   data-english="Join us at the Puzzle Solver's Hub, where puzzle enthusiasts and experts come together to share tips, tricks, and solutions."
                   data-srpski="Придружите нам се у Кутку за решавање загонетки, где љубитељи и стручњаци деле савете, трикове и решења."
@@ -493,16 +468,16 @@ const App = () => {
                 </span>
               </p>
             </div>
-            <div class="flex my-8 lg:my-0 gap-10 lg:gap-20 flex-col lg:flex-row">
-              <div class="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
-                <div class="flex w-1/2 lg:w-auto gap-3 h-20">
-                  <div class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
+            <div className="flex my-8 lg:my-0 gap-10 lg:gap-20 flex-col lg:flex-row">
+              <div className="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
+                <div className="flex w-1/2 lg:w-auto gap-3 h-20">
+                  <div className="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="2em"
                       height="2em"
                       viewBox="0 0 24 24"
-                      class=""
+                      className=""
                     >
                       <path
                         fill="currentColor"
@@ -510,13 +485,13 @@ const App = () => {
                       />
                     </svg>
                   </div>
-                  <div class="flex flex-col justify-start lg:justify-between">
-                    <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
+                  <div className="flex flex-col justify-start lg:justify-between">
+                    <p className="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                       <span data-english="PHONE" data-srpski="ТЕЛЕФОН">
                         PHONE
                       </span>
                     </p>
-                    <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <p className="text-sm md:text-[1rem] lg:text-lg font-semibold">
                       <span
                         data-english="+381 (063) 303 309"
                         data-srpski="+381 (063) 303 309"
@@ -524,7 +499,7 @@ const App = () => {
                         +381 (063) 303 309
                       </span>
                     </p>
-                    <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <p className="text-sm md:text-[1rem] lg:text-lg font-semibold">
                       <span
                         data-english="+381 (063) 303 309"
                         data-srpski="+381 (063) 303 309"
@@ -534,14 +509,14 @@ const App = () => {
                     </p>
                   </div>
                 </div>
-                <div class="flex w-1/2 lg:w-auto gap-3 h-20">
-                  <div class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
+                <div className="flex w-1/2 lg:w-auto gap-3 h-20">
+                  <div className="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="2em"
                       height="2em"
                       viewBox="0 0 24 24"
-                      class=""
+                      className=""
                     >
                       <path
                         fill="currentColor"
@@ -549,13 +524,13 @@ const App = () => {
                       />
                     </svg>
                   </div>
-                  <div class="flex flex-col justify-start lg:justify-between">
-                    <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
+                  <div className="flex flex-col justify-start lg:justify-between">
+                    <p className="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                       <span data-english="EMAIL" data-srpski="ЕМАЈЛ">
                         EMAIL
                       </span>
                     </p>
-                    <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <p className="text-sm md:text-[1rem] lg:text-lg font-semibold">
                       <span
                         data-english="muricamar2004@gmail.com"
                         data-srpski="muricamar2004@gmail.com"
@@ -563,7 +538,7 @@ const App = () => {
                         muricamar2004@gmail.com
                       </span>
                     </p>
-                    <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <p className="text-sm md:text-[1rem] lg:text-lg font-semibold">
                       <span
                         data-english="muricamar2004@gmail.com"
                         data-srpski="muricamar2004@gmail.com"
@@ -575,15 +550,15 @@ const App = () => {
                 </div>
               </div>
 
-              <div class="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
-                <div class="flex w-1/2 lg:w-auto gap-3 h-20">
-                  <div class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
+              <div className="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-normal gap-4 lg:gap-10">
+                <div className="flex w-1/2 lg:w-auto gap-3 h-20">
+                  <div className="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="2em"
                       height="2em"
                       viewBox="0 0 256 256"
-                      class=""
+                      className=""
                     >
                       <path
                         fill="currentColor"
@@ -591,32 +566,32 @@ const App = () => {
                       />
                     </svg>
                   </div>
-                  <div class="flex flex-col justify-start lg:justify-between">
-                    <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
+                  <div className="flex flex-col justify-start lg:justify-between">
+                    <p className="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                       <span data-english="ADDRESS" data-srpski="АДРЕСА">
                         ADDRESS
                       </span>
                     </p>
-                    <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <p className="text-sm md:text-[1rem] lg:text-lg font-semibold">
                       <span data-english="Serbia," data-srpski="Србија,">
                         Serbia,
                       </span>
                     </p>
-                    <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <p className="text-sm md:text-[1rem] lg:text-lg font-semibold">
                       <span data-english="Novi Pazar" data-srpski="Нови Пазар">
                         Novi Pazar
                       </span>
                     </p>
                   </div>
                 </div>
-                <div class="flex w-1/2 lg:w-auto gap-3 h-20">
-                  <div class="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
+                <div className="flex w-1/2 lg:w-auto gap-3 h-20">
+                  <div className="bg-black bg-opacity-20 rounded-full p-2 lg:p-4 flex justify-center items-center h-10 w-10 lg:w-20 lg:h-20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="2em"
                       height="2em"
                       viewBox="0 0 24 24"
-                      class=""
+                      className=""
                     >
                       <g
                         fill="none"
@@ -630,18 +605,18 @@ const App = () => {
                       </g>
                     </svg>
                   </div>
-                  <div class="flex flex-col justify-start lg:justify-between">
-                    <p class="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
+                  <div className="flex flex-col justify-start lg:justify-between">
+                    <p className="text-yellow-400 tracking-[0.2rem] text-[0.5rem] lg:text-[0.7rem] font-semibold">
                       <span data-english="LINKEDIN" data-srpski="ЛИНКЕДИН">
                         LINKEDIN
                       </span>
                     </p>
-                    <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <p className="text-sm md:text-[1rem] lg:text-lg font-semibold">
                       <span data-english="Amar Muric" data-srpski="Амар Мурић">
                         Amar Muric
                       </span>
                     </p>
-                    <p class="text-sm md:text-[1rem] lg:text-lg font-semibold">
+                    <p className="text-sm md:text-[1rem] lg:text-lg font-semibold">
                       <span data-english="Amar Muric" data-srpski="Амар Мурић">
                         Amar Muric
                       </span>
@@ -651,9 +626,9 @@ const App = () => {
               </div>
             </div>
           </div>
-          <div class="w-full flex flex-col lg:flex-row py-20 border-y-2 border-[#191919]">
-            <div class="w-full lg:w-[40%]">
-              <div class="flex gap-2 items-center">
+          <div className="w-full flex flex-col lg:flex-row py-20 border-y-2 border-[#191919]">
+            <div className="w-full lg:w-[40%]">
+              <div className="flex gap-2 items-center">
                 <Link to="/" className="h-full flex items-center">
                   <img className="h-[5rem]" src={logo} alt="Logo" />
                   <div>
@@ -662,7 +637,7 @@ const App = () => {
                   </div>
                 </Link>
               </div>
-              <p class="text-sm lg:text-[1rem] my-4 text-gray-200">
+              <p className="text-sm lg:text-[1rem] my-4 text-gray-200">
                 <span
                   data-english="Join us at the Puzzle Solver's Hub, the premier online community for puzzle enthusiasts. Explore new challenges, share your expertise, and connect with fellow solvers. Feel free to contact us anytime for more details!"
                   data-srpski="Придружите нам се у Кутку за решавање загонетки, водећој онлајн заједници за љубитеље загонетки. Истражите нове изазове, поделите своју стручност и повежите се са другим решавачима. Слободно нас контактирајте у било ком тренутку за више детаља!"
@@ -674,15 +649,15 @@ const App = () => {
                 </span>
               </p>
             </div>
-            <div class="w-full lg:w-[40%] flex lg:justify-around justify-between my-8 lg:my-0">
+            <div className="w-full lg:w-[40%] flex lg:justify-around justify-between my-8 lg:my-0">
               <div>
-                <h1 class="font-semibold text-xl lg:text-3xl">
+                <h1 className="font-semibold text-xl lg:text-3xl">
                   <span data-english="Navigation" data-srpski="Навигација">
                     Navigation
                   </span>
                 </h1>
-                <div class="bg1 w-8 h-[0.2rem] my-3 bg-purple-500"></div>
-                <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
+                <div className="bg1 w-8 h-[0.2rem] my-3 bg-purple-500"></div>
+                <ul className="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
                   <li data-english="About Us" data-srpski="О нама">
                     About Us
                   </li>
@@ -698,13 +673,13 @@ const App = () => {
                 </ul>
               </div>
               <div>
-                <h1 class="font-semibold text-xl lg:text-3xl">
+                <h1 className="font-semibold text-xl lg:text-3xl">
                   <span data-english="Support" data-srpski="Подршка">
                     Support
                   </span>
                 </h1>
-                <div class="bg1 w-8 h-[0.2rem] my-3 bg-orange-500"></div>
-                <ul class="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
+                <div className="bg1 w-8 h-[0.2rem] my-3 bg-orange-500"></div>
+                <ul className="flex flex-col gap-3 text-gray-200 font-semibold text-sm lg:text-[1rem]">
                   <li data-english="Pricing" data-srpski="Цене">
                     Pricing
                   </li>
@@ -726,18 +701,18 @@ const App = () => {
                 </ul>
               </div>
             </div>
-            <div class="w-full lg:w-[20%] flex flex-col justify-between gap-4 lg:gap-0">
-              <h1 class="font-semibold text-xl lg:text-3xl">
+            <div className="w-full lg:w-[20%] flex flex-col justify-between gap-4 lg:gap-0">
+              <h1 className="font-semibold text-xl lg:text-3xl">
                 <span data-english="Subscribe" data-srpski="Претплатите се">
                   Subscribe
                 </span>
               </h1>
               <input
-                class="p-6 w-full bg-black bg-opacity-20"
+                className="p-6 w-full bg-black bg-opacity-20"
                 type="email"
                 placeholder="Email*"
               />
-              <button class="bg-purple-500 hover:bg-orange-500 text-white py-4 px-10 w-full bg1 rounded-[2rem] hover:rounded-none transition-all">
+              <button className="bg-purple-500 hover:bg-orange-500 text-white py-4 px-10 w-full bg1 rounded-[2rem] hover:rounded-none transition-all">
                 <span data-english="Subscribe" data-srpski="Претплатите се">
                   Subscribe
                 </span>
@@ -745,8 +720,8 @@ const App = () => {
             </div>
           </div>
 
-          <div class="flex justify-between items-center py-8">
-            <span class="flex gap-2 items-center">
+          <div className="flex justify-between items-center py-8">
+            <span className="flex gap-2 items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1em"
