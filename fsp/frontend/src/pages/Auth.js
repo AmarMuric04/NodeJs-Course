@@ -1,18 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../assets/light-logo.png";
 import Input from "../components/Input";
 import { useNavigate } from "react-router-dom";
-import {
-  setAuthData,
-  setAuth,
-  setSubmitting,
-  setDisableButton,
-} from "../storage/authSlice";
 import { setNotification } from "../storage/notificationSlice";
 import { Link } from "react-router-dom";
 import { handlePostInput, loadAuthDataFromLocalStorage } from "../utility/util";
 import { Spinner } from "../assets/icons";
+import { useMutation } from "@tanstack/react-query";
+import { postData } from "../utility/async";
 
 const Auth = () => {
   const authOption = window.location.pathname.split("/").pop();
@@ -20,84 +16,78 @@ const Auth = () => {
   const dispatch = useDispatch();
   const { isAuth, user } = useSelector((state) => state.auth);
 
-  const { isSubmitting, disableButton } = useSelector((state) => state.auth);
+  const fnameInput = useRef();
+  const lnameInput = useRef();
+  const emailInput = useRef();
+  const passwordInput = useRef();
+  const imageInput = useRef();
 
-  const [authError, setAuthError] = useState(null);
-  const [fname, setFName] = useState("");
-  const [lname, setLName] = useState("");
-  // const [about, setAbout] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [image, setImage] = useState(null);
+  const [error, setError] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
 
-  useEffect(() => {
-    if (authError) {
-      setTimeout(() => setAuthError(null), 3000);
-    }
-  }, [authError, dispatch]);
+  const { mutate: handleAuth, isPending } = useMutation({
+    mutationFn: () => {
+      let body;
+
+      if (authOption === "signin")
+        body = {
+          password: passwordInput.current.value,
+          email: emailInput.current.value,
+        };
+      if (authOption === "signup") {
+        const formData = new FormData();
+        formData.append("fname", fnameInput.current.value);
+        formData.append("lname", lnameInput.current.value);
+        formData.append("email", emailInput.current.value);
+        formData.append("password", passwordInput.current.value);
+        formData.append(
+          "about",
+          "Hello, I am " +
+            fnameInput.current.value +
+            " " +
+            lnameInput.current.value
+        );
+        formData.append("image", imageInput.current.value);
+        body = formData;
+      }
+
+      if (authOption === "signin")
+        return postData(
+          "http://localhost:8080/users/signin",
+          JSON.stringify(body),
+          { headers: { "Content-Type": "application/json" } }
+        );
+      if (authOption === "signup")
+        return postData("http://localhost:8080/users/signup", body);
+    },
+    onError: (error) => {
+      setError(error);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    },
+    onSuccess: (data) => {
+      if (authOption === "signin") {
+        localStorage.setItem("token", data.data.token);
+        localStorage.setItem("userId", data.data.userId);
+        const remainingMilliseconds = 60 * 60 * 1000;
+        const expiryDate = new Date(
+          new Date().getTime() + remainingMilliseconds
+        );
+        localStorage.setItem("expiryDate", expiryDate.toISOString());
+        loadAuthDataFromLocalStorage(dispatch);
+        dispatch(setNotification(data));
+      }
+      if (authOption === "signup") navigate("/signin");
+    },
+    mutationKey: ["user"],
+  });
 
   useEffect(() => {
     if (isAuth && user) {
       navigate("/");
     }
   }, [isAuth, navigate, user]);
-
-  const handleAuth = async () => {
-    dispatch(setSubmitting(true));
-    dispatch(setDisableButton(true));
-    try {
-      let response;
-      if (authOption === "signup") {
-        const formData = new FormData();
-        formData.append("fname", fname);
-        formData.append("lname", lname);
-        formData.append("email", email);
-        formData.append("password", password);
-        formData.append("about", "Hello, I am " + fname + " " + lname);
-        formData.append("image", image);
-        response = await fetch("http://localhost:8080/users/signup", {
-          method: "POST",
-          body: formData,
-        });
-      } else {
-        response = await fetch("http://localhost:8080/users/signin", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ password, email }),
-        });
-      }
-
-      if (!response.ok) {
-        const error = await response.json();
-        setAuthError(error);
-        dispatch(setDisableButton(false));
-        throw new Error("Authentication error.");
-      }
-
-      const data = await response.json();
-
-      if (authOption === "signin") {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("userId", data.userId);
-        const remainingMilliseconds = 60 * 60 * 1000;
-        const expiryDate = new Date(
-          new Date().getTime() + remainingMilliseconds
-        );
-        localStorage.setItem("expiryDate", expiryDate.toISOString());
-        dispatch(setAuth(true));
-        loadAuthDataFromLocalStorage(dispatch);
-      } else navigate("/signin");
-
-      dispatch(setNotification(data));
-
-      dispatch(setDisableButton(false));
-    } catch (error) {
-      console.error(error);
-    } finally {
-      dispatch(setSubmitting(false));
-    }
-  };
 
   const buttonText = authOption === "signin" ? "Sign In" : "Sign Up";
 
@@ -115,14 +105,14 @@ const Auth = () => {
         <form
           onSubmit={async (e) => {
             e.preventDefault();
-            await handleAuth();
+            handleAuth();
           }}
           className="w-2/3 flex flex-col gap-4 relative"
         >
-          {authError && (
+          {error && (
             <div className="flex w-full absolute -top-[4rem]">
               <p className="bg-red-400 w-full text-center bg-opacity-50 border-2 border-red-600 py-2 px-4 rounded-md">
-                {authError.message}
+                {error.message}
               </p>
             </div>
           )}
@@ -137,26 +127,24 @@ const Auth = () => {
                 <Input
                   onErrorClass="border-red-600 bg-[#191919] text-white"
                   normalClass="bg-[#191919] border-[#191919] text-white"
-                  error={authError}
+                  error={error}
                   type="text"
                   input="input"
                   placeholder="First Name"
                   name="fname"
-                  value={fname}
                   label="First Name*"
-                  onChange={(e) => setFName(e.target.value)}
+                  ref={fnameInput}
                 />
                 <Input
-                  error={authError}
+                  error={error}
                   onErrorClass="border-red-600 bg-[#191919] text-white"
                   normalClass="bg-[#191919] border-[#191919] text-white"
                   type="text"
                   input="input"
                   placeholder="Last Name"
                   name="lname"
-                  value={lname}
                   label="Last Name*"
-                  onChange={(e) => setLName(e.target.value)}
+                  ref={lnameInput}
                 />
               </div>
             </>
@@ -169,34 +157,32 @@ const Auth = () => {
             }
           >
             <Input
-              error={authError}
+              error={error}
               onErrorClass="border-red-600 bg-[#191919] text-white"
               normalClass="bg-[#191919] border-[#191919] text-white"
               type="text"
               input="input"
               placeholder="Your Email"
               name="email"
-              value={email}
               label="Your Email*"
-              onChange={(e) => setEmail(e.target.value)}
+              ref={emailInput}
             />
             <Input
-              error={authError}
+              error={error}
               onErrorClass="border-red-600 bg-[#191919] text-white"
               normalClass="bg-[#191919] border-[#191919] text-white"
               type="password"
               input="input"
               placeholder="Your Password"
               name="password"
-              value={password}
               label="Your Password*"
-              onChange={(e) => setPassword(e.target.value)}
+              ref={passwordInput}
             />
           </div>
           {authOption === "signup" && (
             <>
               <Input
-                error={authError}
+                error={error}
                 type="file"
                 input="file"
                 placeholder="Profile Picture"
@@ -206,22 +192,13 @@ const Auth = () => {
                   handlePostInput(
                     e.target.value,
                     e.target.files,
-                    setImagePreview,
-                    setImage
+                    setImagePreview
                   )
                 }
+                ref={imageInput}
               />
               <div>
-                {!imagePreview && !fname && !lname && !email && (
-                  <p>This is the preview.</p>
-                )}
                 <div className="flex gap-2 w-full justify-end items-center">
-                  <div className="flex flex-col text-end">
-                    <p className="font-semibold text-sm">
-                      {fname && fname + ","} {lname && lname}
-                    </p>
-                    <p className="text-xs text-gray-500">{email && email}</p>
-                  </div>
                   {imagePreview && (
                     <img
                       className="w-[4rem] h-[4rem] rounded-full object-cover"
@@ -233,23 +210,11 @@ const Auth = () => {
               </div>
             </>
           )}
-          {/* {authOption === "signup" && (
-            <Input
-              error={error}
-              type="text"
-              input="textarea"
-              placeholder="About Yourself..."
-              name="about"
-              value={about}
-              label="About You*"
-              onChange={(e) => setAbout(e.target.value)}
-            />
-          )} */}
           <button
-            disabled={authError || disableButton}
+            disabled={error || isPending}
             className="bg-purple-500 hover:bg-orange-500 py-4 text-white font-semibold w-full rounded-[2rem] hover:rounded-none transition-all"
           >
-            {isSubmitting ? (
+            {isPending ? (
               <div className="flex justify-center items-center gap-2">
                 <p>
                   {buttonText.split(" ")[0]}ing {buttonText.split(" ")[1]}...

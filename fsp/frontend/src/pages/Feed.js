@@ -5,17 +5,17 @@ import Input from "../components/Input";
 import { Filter } from "../assets/icons";
 import { setNotification } from "../storage/notificationSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { fetchData, protectedPostData } from "../utility/async";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function Feed() {
   const dispatch = useDispatch();
+  const queryClient = useQueryClient();
+
   const [searchParams, setSearchParams] = useSearchParams();
-
-  const [count, setCount] = useState(0);
-  const [posts, setPosts] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState([]);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [fetchingInter, setFetchingInter] = useState(false);
-
+  const [filteredPosts, setFilteredPosts] = useState([]);
   const [filters, setFilters] = useState({
     search: "",
     liked: false,
@@ -31,108 +31,64 @@ export default function Feed() {
 
   const page = parseInt(searchParams.get("page")) || 1;
 
-  const handlePageChange = (newPage) => {
-    const updatedParams = new URLSearchParams(searchParams);
-    updatedParams.set("page", newPage);
-    setSearchParams(updatedParams);
-  };
-
   const { user } = useSelector((state) => state.auth);
   const searchInput = useRef(null);
   const fnameInput = useRef(null);
   const lnameInput = useRef(null);
   const emailInput = useRef(null);
   const tagsInput = useRef(null);
-  const isFetchingRef = useRef(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isFetchingRef.current) return;
-
-      const scrollTop = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const docHeight = document.documentElement.scrollHeight;
-
-      if (docHeight - (scrollTop + windowHeight) <= 50) {
-        if (count > page * 5) {
-          isFetchingRef.current = true;
-          handlePageChange(page + 1);
-          dispatch(setNotification({ message: "Loading more posts" }));
-
-          setTimeout(() => {
-            isFetchingRef.current = false;
-          }, 1000);
-        }
-      }
-    };
-
-    const throttledScroll = () => requestAnimationFrame(handleScroll);
-
-    window.addEventListener("scroll", throttledScroll);
-
-    return () => window.removeEventListener("scroll", throttledScroll);
-  }, [count, page, dispatch, handlePageChange]);
 
   const token = localStorage.getItem("token");
-  const handleGetPosts = async () => {
-    try {
-      const response = await fetch("http://localhost:8080/posts?page=" + page);
-      if (!response.ok) {
-        throw new Error("Error during fetch of posts.");
-      }
 
-      const data = await response.json();
-      setPosts(data.posts);
-      setCount(data.count);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { data: posts, isLoading } = useQuery({
+    queryFn: () => fetchData("http://localhost:8080/posts"),
+    queryKey: ["posts"],
+  });
 
-  console.log("Render");
+  const { mutate: handleInteraction } = useMutation({
+    mutationFn: ({ postId, interactionType }) => {
+      return protectedPostData(
+        `http://localhost:8080/posts/${postId}/${interactionType}`,
+        null,
+        token
+      );
+    },
+    onError: (error) => {
+      dispatch(setNotification(error));
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["posts"]);
+    },
+  });
+
+  // console.log("Render");
 
   useEffect(() => {
-    handleGetPosts();
-  }, [page]);
-
-  useEffect(() => {
-    if (posts.length === 0) return;
+    if (isLoading) return;
     const applyFilters = async () => {
       try {
-        let updatedPosts = [...posts];
+        let updatedPosts = [...posts.data];
 
         if (filters.liked || filters.bookmarked) {
           if (!user) {
-            const error = new Error("Please sign in and try again.");
             dispatch(
-              setNotification({ message: error.message, type: "error" })
+              setNotification({
+                message: "Please sign in and try again.",
+                type: "error",
+              })
             );
-            throw error;
           }
 
-          const interactionType = filters.liked ? "liked" : "bookmarked";
-          setFetchingInter(true);
-          const response = await fetch(
-            `http://localhost:8080/users/${user._id}/${interactionType}`,
-            {
-              method: "GET",
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
-
-          if (!response.ok) {
-            const errorData = await response.json();
-            dispatch(
-              setNotification({ message: errorData.message, type: "error" })
+          if (filters.liked)
+            updatedPosts = updatedPosts.filter((post) =>
+              post.likes.find((userLiked) => userLiked === user._id)
             );
-            throw new Error(errorData.message);
-          }
-
-          const data = await response.json();
-          updatedPosts = data.posts || [];
-          setFetchingInter(false);
+          if (filters.bookmarked)
+            updatedPosts = updatedPosts.filter((post) =>
+              post.bookmarks.find(
+                (userBookmarked) => userBookmarked === user._id
+              )
+            );
         }
 
         if (filters.search) {
@@ -211,29 +167,9 @@ export default function Feed() {
     };
 
     applyFilters();
-  }, [filters, dispatch, posts, token, user]);
+  }, [filters, posts, user, isLoading]);
 
-  const handleInteraction = async (postId, interactionType) => {
-    setFetchingInter(true);
-    try {
-      const response = await fetch(
-        `http://localhost:8080/posts/${postId}/${interactionType}`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      if (!response.ok) throw new Error("Please sign in and try again.");
-      await handleGetPosts();
-    } catch (error) {
-      console.error(error);
-      dispatch(setNotification({ message: error.message, type: "error" }));
-    } finally {
-      setFetchingInter(false);
-    }
-  };
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <main className="bg-[#222] text-white h-auto min-h-screen w-full flex">
@@ -255,36 +191,54 @@ export default function Feed() {
             </div>
             <div className="w-full h-[1px] bg-[#191919] my-8"></div>
             <h1 className="text-[3rem] font-semibold text-white mb-10">Feed</h1>
-            {filters.filtering &&
-              !fetchingInter &&
-              filteredPosts.length === 0 && (
-                <>
-                  <p className="font-semibold text-lg text-gray-300">
-                    No posts found under your filters.
-                  </p>
-                  <p className="mb-8 text-gray-500">
-                    Displaying other posts from users.
-                  </p>
-                </>
-              )}
+            {filters.filtering && filteredPosts.length === 0 && (
+              <>
+                <p className="font-semibold text-lg text-gray-300">
+                  No posts found under your filters.
+                </p>
+                <p className="mb-8 text-gray-500">
+                  Displaying other posts from users.
+                </p>
+              </>
+            )}
             {filteredPosts?.length > 0 ? (
               <div>
                 {filteredPosts.map((post) => (
                   <Post
-                    onLike={() => handleInteraction(post._id, "like")}
-                    onBookmark={() => handleInteraction(post._id, "bookmark")}
+                    onLike={() =>
+                      handleInteraction({
+                        postId: post._id,
+                        interactionType: "like",
+                      })
+                    }
+                    onBookmark={() =>
+                      handleInteraction({
+                        postId: post._id,
+                        interactionType: "bookmark",
+                      })
+                    }
                     key={post._id}
                     post={post}
                   />
                 ))}
               </div>
             ) : (
-              posts && (
+              posts.data && (
                 <div>
-                  {posts.map((post) => (
+                  {posts.data.map((post) => (
                     <Post
-                      onLike={() => handleInteraction(post._id, "like")}
-                      onBookmark={() => handleInteraction(post._id, "bookmark")}
+                      onLike={() =>
+                        handleInteraction({
+                          postId: post._id,
+                          interactionType: "like",
+                        })
+                      }
+                      onBookmark={() =>
+                        handleInteraction({
+                          postId: post._id,
+                          interactionType: "bookmark",
+                        })
+                      }
                       key={post._id}
                       post={post}
                     />

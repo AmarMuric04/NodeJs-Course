@@ -113,8 +113,10 @@ exports.signin = async (req, res, next) => {
 
     res.status(200).json({
       message: "Signed in!",
-      userId: user._id.toString(),
-      token,
+      data: {
+        userId: user._id.toString(),
+        token,
+      },
     });
   } catch (error) {
     if (!error.statusCode) {

@@ -387,7 +387,7 @@ export const Create = ({ h, w }) => (
     width={w}
     height={h}
     viewBox="0 0 64 64"
-    enable-background="new 0 0 64 64"
+    enableBackground="new 0 0 64 64"
   >
     <g>
       <rect
@@ -448,7 +448,7 @@ export const Engage = ({ h, w }) => (
     width={w}
     height={h}
     viewBox="0 0 64 64"
-    enable-background="new 0 0 64 64"
+    enableBackground="new 0 0 64 64"
   >
     <g>
       <path
@@ -495,7 +495,7 @@ export const Find = ({ h, w }) => (
     width={w}
     height={h}
     viewBox="0 0 64 64"
-    enable-background="new 0 0 64 64"
+    enableBackground="new 0 0 64 64"
   >
     <g>
       <g>
@@ -543,21 +543,21 @@ export const Curate = ({ h, w }) => (
     width={w}
     height={h}
     viewBox="0 0 64 64"
-    enable-background="new 0 0 64 64"
+    enableBackground="new 0 0 64 64"
   >
     <g>
       <g>
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           fill="#F9EBB2"
           d="M50,12H4c-1.105,0-2,0.895-2,2v30c0,1.105,0.895,2,2,2h8
 			c1.105,0,2,0.895,2,2c0,0,0,11,0,12c0,1.391,1.859,3.141,4,1c2-2,14-14,14-14s0.709-1,2.656-1C35.313,46,50,46,50,46
 			c1.105,0,2-0.895,2-2V14C52,12.895,51.105,12,50,12z"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           fill="#F9EBB2"
           d="M60,2H16c-1.105,0-2,0.895-2,2v6h36c2.211,0,4,1.789,4,4v20h6
 			c1.105,0,2-0.895,2-2V4C62,2.895,61.105,2,60,2z"
@@ -588,8 +588,8 @@ export const Curate = ({ h, w }) => (
       </g>
       <path
         opacity="0.15"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#231F20"
         d="M62,32c0,1.105-0.895,2-2,2h-6V14
 		c0-2.211-1.789-4-4-4H14V4c0-1.105,0.895-2,2-2h44c1.105,0,2,0.895,2,2V32z"

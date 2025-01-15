@@ -55,7 +55,7 @@ exports.createPost = async (req, res, next) => {
     user.posts.push(post);
     await user.save();
 
-    res.status(201).json({ message: "Post created successfully!", post });
+    res.status(201).json({ message: "Post created successfully!", data: post });
   } catch (error) {
     if (!error.statusCode) {
       error.statusCode = 500;
@@ -74,7 +74,7 @@ exports.getPosts = async (req, res, next) => {
 
     res
       .status(200)
-      .json({ message: "Posts fetched successfully!", posts, count });
+      .json({ message: "Posts fetched successfully!", data: posts, count });
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch posts.", error });
   }

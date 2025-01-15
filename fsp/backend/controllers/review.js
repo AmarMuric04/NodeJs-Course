@@ -65,7 +65,7 @@ exports.getReviews = async (req, res, next) => {
   try {
     const reviews = await Review.find().populate("user");
 
-    res.json({ message: "Successfully fetched reviews.", reviews });
+    res.json({ message: "Successfully fetched reviews.", data: reviews });
   } catch (error) {
     if (!error.statusCode) {
       error.statusCode = 500;

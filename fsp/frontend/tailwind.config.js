@@ -6,7 +6,7 @@ module.exports = {
       keyframes: {
         scrollRight: {
           "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-251%)" },
+          "100%": { transform: "translateX(-307%)" },
         },
       },
       animation: {

@@ -5,10 +5,12 @@ import DynamicInput from "../components/DynamicInput";
 import Create from "../assets/create.png";
 import Publish from "../assets/publish.png";
 import Connect from "../assets/connect.png";
-import { setDisableButton } from "../storage/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setNotification } from "../storage/notificationSlice";
 import { Link } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { protectedPostData } from "../utility/async";
+import { useNavigate } from "react-router-dom";
 
 const MAX_TAGS = 5;
 const MAX_LINKS = 5;
@@ -16,9 +18,9 @@ const MAX_LINKS = 5;
 export default function CreatePost() {
   const dispatch = useDispatch();
   const { disablebutton } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   const [error, setError] = useState(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -53,8 +55,6 @@ export default function CreatePost() {
     setTags((prevTags) =>
       prevTags.map((tag) => (tag.id === id ? { ...tag, value } : tag))
     );
-
-    console.log(value);
   };
 
   const deleteTag = (id) => {
@@ -85,8 +85,8 @@ export default function CreatePost() {
     setLinks((prevLinks) => prevLinks.filter((link) => link.id !== id));
   };
 
-  const handleCreatePost = async () => {
-    try {
+  const { mutate: addPost, isPending } = useMutation({
+    mutationFn: () => {
       setTags((prevTags) => prevTags.filter((tag) => tag.value !== ""));
       setLinks((prevLinks) => prevLinks.filter((link) => link.value !== ""));
       const formData = new FormData();
@@ -94,34 +94,20 @@ export default function CreatePost() {
       formData.append("location", location);
       formData.append("date", date);
       formData.append("content", content);
-
       formData.append("image", imageUrl);
-
       formData.append("tags", JSON.stringify(tags));
       formData.append("links", JSON.stringify(links));
 
-      const response = await fetch("http://localhost:8080/posts", {
-        method: "POST",
-        body: formData,
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        setError(error);
-        dispatch(setDisableButton(false));
-        throw new Error("Authentication error.");
-      }
-
-      const data = await response.json();
-
+      return protectedPostData("http://localhost:8080/posts", formData, token);
+    },
+    onError: (error) => {
+      setError(error);
+    },
+    onSuccess: (data) => {
       dispatch(setNotification(data));
-    } catch (error) {
-      console.error(error);
-    }
-  };
+      navigate("/feed?page=1");
+    },
+  });
 
   return (
     <main className=" text-white flex justify-center bg-[#222] h-auto min-h-screen w-full pb-20">
@@ -188,11 +174,9 @@ export default function CreatePost() {
         </div>
         <div className="w-1/2 mt-20 flex flex-col items-center">
           <form
-            onSubmit={async (e) => {
+            onSubmit={(e) => {
               e.preventDefault();
-              setIsSubmitting(true);
-              await handleCreatePost();
-              setIsSubmitting(false);
+              addPost();
             }}
             className="w-[90%] bg-[#191919] p-10 rounded-2xl shadow-md"
           >
@@ -345,10 +329,10 @@ export default function CreatePost() {
               onChange={(e) => setContent(e.target.value)}
             />
             <button
-              disabled={error || disablebutton}
+              disabled={error || isPending}
               className="bg-purple-500 hover:bg-orange-500 py-4 text-white font-semibold w-full rounded-[2rem] hover:rounded-none transition-all mt-4"
             >
-              {isSubmitting ? "Creating..." : "Create the post"}
+              {isPending ? "Creating..." : "Create the post"}
             </button>
           </form>
         </div>

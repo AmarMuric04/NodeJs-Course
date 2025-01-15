@@ -1,30 +1,15 @@
-import React, {
-  useImperativeHandle,
-  useRef,
-  useState,
-  forwardRef,
-  useEffect,
-} from "react";
+import React, { useImperativeHandle, useRef, forwardRef } from "react";
 import Review from "./Review";
+import { useQuery } from "@tanstack/react-query";
+import { fetchData } from "../utility/async";
 
 const Reviews = forwardRef((props, ref) => {
-  const [reviews, setReviews] = useState([]);
   const scrollRef = useRef(null);
 
-  useEffect(() => {
-    const handleGetReviews = async () => {
-      try {
-        const response = await fetch("http://localhost:8080/reviews");
-
-        const data = await response.json();
-        setReviews(data.reviews);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    handleGetReviews();
-  }, []);
+  const { data: reviews, isLoading } = useQuery({
+    queryFn: () => fetchData("http://localhost:8080/reviews"),
+    queryKey: ["reviews"],
+  });
 
   useImperativeHandle(
     ref,
@@ -45,13 +30,17 @@ const Reviews = forwardRef((props, ref) => {
     []
   );
 
+  if (isLoading) {
+    return <p>Loading reviews...</p>;
+  }
+
   return (
     <div
       ref={scrollRef}
-      className="flex gap-8 items-start mt-20 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
+      className="no-scroll flex gap-8 items-start mt-20 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
     >
-      {reviews.length > 0 &&
-        reviews.map((review) => (
+      {reviews.data.length > 0 &&
+        reviews.data.map((review) => (
           <Review review={review} key={review.createdAt} />
         ))}
     </div>

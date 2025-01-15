@@ -5,21 +5,21 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setNotification } from "../storage/notificationSlice";
 import { Spinner } from "../assets/icons";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { postData } from "../utility/async";
 
 const ReviewForm = () => {
   const dispatch = useDispatch();
   const { isAuth, user } = useSelector((state) => state.auth);
-
-  // console.log(isAuth, user);
+  const queryClient = useQueryClient();
 
   const [isActive, setIsActive] = useState("anon");
   const [rating, setRating] = useState(0);
   const [message, setMessage] = useState("");
   const [error, setError] = useState(null);
-  const [isSubmitting, setIsSubitting] = useState(false);
 
-  const handlePostReview = async () => {
-    try {
+  const { mutate: addReview, isPending } = useMutation({
+    mutationFn: () => {
       let body = { message, rating };
       if (isActive === "anon") body = { ...body, anonymous: true };
       else if (isActive === "profile")
@@ -29,40 +29,34 @@ const ReviewForm = () => {
           anonymous: false,
         };
 
-      const response = await fetch("http://localhost:8080/reviews", {
-        method: "POST",
-        body: JSON.stringify(body),
+      return postData("http://localhost:8080/reviews", JSON.stringify(body), {
         headers: {
           "Content-Type": "application/json",
         },
       });
+    },
+    onError: (error) => {
+      if (error.status === 409) dispatch(setNotification(error));
+      setError(error);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    },
+    onSuccess: () => {
+      dispatch(setNotification({ message: "Added a review!" }));
+      queryClient.invalidateQueries(["reviews"]);
 
-      if (!response.ok) {
-        const error = await response.json();
-        if (response.status === 409) dispatch(setNotification(error));
-
-        setError(error);
-        setTimeout(() => {
-          setError(false);
-        }, 3000);
-
-        throw error;
-      }
-
-      const data = await response.json();
-      dispatch(setNotification(data));
-    } catch (error) {
-      console.error(error);
-    }
-  };
+      setMessage("");
+      setRating(0);
+    },
+    mutationKey: ["review"],
+  });
 
   return (
     <form
-      onSubmit={async (e) => {
+      onSubmit={(e) => {
         e.preventDefault();
-        setIsSubitting(true);
-        await handlePostReview();
-        setIsSubitting(false);
+        addReview();
       }}
       className="bg-[#141414] w-full h-full p-8 rounded-xl shadow-md flex flex-col justify-between"
     >
@@ -132,10 +126,10 @@ const ReviewForm = () => {
         onChange={(e) => setMessage(e.target.value)}
       />
       <button
-        disabled={isSubmitting || error}
+        disabled={isPending || error}
         className="bg-purple-500 font-semibold hover:bg-orange-500 transition-all py-4 rounded-[2rem] hover:rounded-none my-4"
       >
-        {isSubmitting ? (
+        {isPending ? (
           <div className="flex items-center gap-2 justify-center">
             <p>Submitting...</p>
             <Spinner />

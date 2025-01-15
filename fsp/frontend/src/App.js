@@ -5,7 +5,7 @@ import NodeImg from "./assets/nodejs.png";
 import TailWindImg from "./assets/tailwind.png";
 import { Link } from "react-router-dom";
 import { Create, Curate, Engage, Find, Illustration } from "./assets/icons";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import logo from "./assets/light-logo.png";
 import RouterDomImg from "./assets/rrdom.png";
 import ReduxImg from "./assets/redux.png";
@@ -15,9 +15,15 @@ import JWTImg from "./assets/jwt.png";
 import { useSelector } from "react-redux";
 import ReviewForm from "./components/ReviewForm";
 import Reviews from "./components/Reviews";
+import { useQueryClient } from "@tanstack/react-query";
+import { fetchData } from "./utility/async";
+import AxiosImg from "./assets/axios.png";
+import QueryImg from "./assets/query.webp";
 
 const App = () => {
+  const { user } = useSelector((state) => state.auth);
   const scrollRef = useRef(null);
+  const queryClient = useQueryClient();
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -31,7 +37,12 @@ const App = () => {
     }
   };
 
-  const { user } = useSelector((state) => state.auth);
+  const handleHover = () => {
+    queryClient.prefetchQuery(
+      ["posts"],
+      fetchData("http://localhost:8080/posts")
+    );
+  };
 
   return (
     <main className="bg-[#222] overflow-x-hidden text-white flex flex-col items-center justify-center h-auto min-h-screen w-full">
@@ -91,6 +102,9 @@ const App = () => {
                 src={MongooseImg}
                 alt="Mongoose Logo"
               />
+              <img className="h-[5rem] py-4" src={AxiosImg} alt="Axios Logo" />
+              <img className="h-[5rem] py-2" src={QueryImg} alt="Query Logo" />
+              {/* ... */}
               <img className="h-[5rem]" src={MongoImg} alt="MongoDB Logo" />
               <img className="h-[5rem]" src={NodeImg} alt="NodeJS Logo" />
               <img className="h-[5rem]" src={ReactImg} alt="React Logo" />
@@ -100,6 +114,25 @@ const App = () => {
                 src={TailWindImg}
                 alt="TailWind Logo"
               />
+              <img className="h-[5rem] py-2" src={JWTImg} alt="JWT Logo" />{" "}
+              <img className="h-[5rem] py-2" src={ReduxImg} alt="Redux Logo" />{" "}
+              <img
+                className="h-[5rem] py-2"
+                src={RouterDomImg}
+                alt="RDom Logo"
+              />
+              <img
+                className="h-[5rem] py-2"
+                src={MulterImg}
+                alt="Multer Logo"
+              />
+              <img
+                className="h-[5rem] py-2"
+                src={MongooseImg}
+                alt="Mongoose Logo"
+              />{" "}
+              <img className="h-[5rem] py-4" src={AxiosImg} alt="Axios Logo" />
+              <img className="h-[5rem] py-2" src={QueryImg} alt="Query Logo" />
             </div>
           </div>
           <div className="flex items-center gap-4 mt-32">
@@ -109,6 +142,7 @@ const App = () => {
               </button>
             </Link>
             <Link
+              onMouseEnter={handleHover}
               to="/feed?page=1"
               className="cursor-pointer hover:underline text-purple-500 hover:text-orange-500 transition-all"
             >
@@ -277,39 +311,10 @@ const App = () => {
                       viewBox="0 0 24 24"
                       className="rotate-180"
                     >
-                      <g
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-dasharray="20"
-                          stroke-dashoffset="20"
-                          d="M3 12h17.5"
-                        >
-                          <animate
-                            fill="freeze"
-                            attributeName="stroke-dashoffset"
-                            dur="0.2s"
-                            values="20;0"
-                          />
-                        </path>
-                        <path
-                          stroke-dasharray="12"
-                          stroke-dashoffset="12"
-                          d="M21 12l-7 7M21 12l-7 -7"
-                        >
-                          <animate
-                            fill="freeze"
-                            attributeName="stroke-dashoffset"
-                            begin="0.2s"
-                            dur="0.2s"
-                            values="12;0"
-                          />
-                        </path>
-                      </g>
+                      <path
+                        fill="currentColor"
+                        d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"
+                      />
                     </svg>
                   </button>
                   <button
@@ -322,39 +327,10 @@ const App = () => {
                       height="24"
                       viewBox="0 0 24 24"
                     >
-                      <g
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-dasharray="20"
-                          stroke-dashoffset="20"
-                          d="M3 12h17.5"
-                        >
-                          <animate
-                            fill="freeze"
-                            attributeName="stroke-dashoffset"
-                            dur="0.2s"
-                            values="20;0"
-                          />
-                        </path>
-                        <path
-                          stroke-dasharray="12"
-                          stroke-dashoffset="12"
-                          d="M21 12l-7 7M21 12l-7 -7"
-                        >
-                          <animate
-                            fill="freeze"
-                            attributeName="stroke-dashoffset"
-                            begin="0.2s"
-                            dur="0.2s"
-                            values="12;0"
-                          />
-                        </path>
-                      </g>
+                      <path
+                        fill="currentColor"
+                        d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"
+                      />
                     </svg>
                   </button>
                 </div>
@@ -593,9 +569,9 @@ const App = () => {
                       <g
                         fill="none"
                         stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
                       >
                         <path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5M7 17v-7" />
                         <path d="M11 17v-3.25M11 10v3.75m0 0c0-3.75 6-3.75 6 0V17M7 7.01l.01-.011" />
@@ -728,8 +704,8 @@ const App = () => {
                 <g
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-width="1.5"
+                  strokeLinecap="round"
+                  strokeWidth="1.5"
                 >
                   <path d="M14 15.667a4.5 4.5 0 0 1-1.714.333C9.919 16 8 14.21 8 12s1.919-4 4.286-4c.61 0 1.189.119 1.714.333" />
                   <path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
