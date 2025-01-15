@@ -18,7 +18,7 @@ const Auth = () => {
   const authOption = window.location.pathname.split("/").pop();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isAuth = useSelector((state) => state.auth.isAuth);
+  const { isAuth, user } = useSelector((state) => state.auth);
 
   const { isSubmitting, disableButton } = useSelector((state) => state.auth);
 
@@ -38,10 +38,10 @@ const Auth = () => {
   }, [authError, dispatch]);
 
   useEffect(() => {
-    if (isAuth) {
+    if (isAuth && user) {
       navigate("/");
     }
-  }, [isAuth, navigate]);
+  }, [isAuth, navigate, user]);
 
   const handleAuth = async () => {
     dispatch(setSubmitting(true));
@@ -85,26 +85,13 @@ const Auth = () => {
           new Date().getTime() + remainingMilliseconds
         );
         localStorage.setItem("expiryDate", expiryDate.toISOString());
+        dispatch(setAuth(true));
+        loadAuthDataFromLocalStorage(dispatch);
+      } else navigate("/signin");
 
-        dispatch(
-          setAuthData({
-            token: data.token,
-            userId: data.userId,
-            expiryDate: expiryDate.toISOString(),
-          })
-        );
-      }
-
-      console.log("Notification");
       dispatch(setNotification(data));
 
-      setTimeout(() => {
-        if (authOption === "signin") {
-          dispatch(setAuth(true));
-          loadAuthDataFromLocalStorage(dispatch);
-        } else navigate("/signin");
-        dispatch(setDisableButton(false));
-      }, 3000);
+      dispatch(setDisableButton(false));
     } catch (error) {
       console.error(error);
     } finally {

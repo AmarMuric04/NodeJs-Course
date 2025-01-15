@@ -7,8 +7,7 @@ import { setNotification } from "../storage/notificationSlice";
 import { useEffect, useRef, useState } from "react";
 
 const Header = () => {
-  const isAuth = useSelector((state) => state.auth.isAuth);
-  const user = useSelector((state) => state.auth.user);
+  const { isAuth, user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -70,7 +69,7 @@ const Header = () => {
                 Feed
               </p>
             </Link>
-            {isAuth && (
+            {isAuth && user && (
               <Link to="/create-post">
                 <p className="cursor-pointer font-semibold hover:text-purple-400 transition-all">
                   Create
@@ -81,7 +80,7 @@ const Header = () => {
         </div>
 
         <div className="flex gap-2 items-center">
-          {isAuth ? (
+          {isAuth && user ? (
             <>
               <div className="flex flex-col text-end">
                 <p className="font-semibold text-sm">

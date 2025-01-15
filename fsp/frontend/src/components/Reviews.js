@@ -18,7 +18,6 @@ const Reviews = forwardRef((props, ref) => {
 
         const data = await response.json();
         setReviews(data.reviews);
-        console.log(data);
       } catch (error) {
         console.error(error);
       }
@@ -53,7 +52,7 @@ const Reviews = forwardRef((props, ref) => {
     >
       {reviews.length > 0 &&
         reviews.map((review) => (
-          <Review review={review} key={review.message} />
+          <Review review={review} key={review.createdAt} />
         ))}
     </div>
   );

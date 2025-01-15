@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export function Star({
   starClick,
   rating,
@@ -7,7 +5,6 @@ export function Star({
   onMouseEnter,
   onMouseLeave,
   hover,
-  setHover,
 }) {
   const fullStarValue = index + 1;
   const halfStarValue = index + 0.5;

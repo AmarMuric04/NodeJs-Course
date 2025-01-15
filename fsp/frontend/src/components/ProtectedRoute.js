@@ -7,7 +7,7 @@ import { Spinner } from "../assets/icons";
 
 const ProtectedRoute = ({ children }) => {
   const dispatch = useDispatch();
-  const isAuth = useSelector((state) => state.auth.isAuth);
+  const { isAuth, user } = useSelector((state) => state.auth);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const ProtectedRoute = ({ children }) => {
     );
   }
 
-  if (!isAuth) {
+  if (!isAuth && !user) {
     dispatch(setNotification({ message: "You're not signed in!" }));
     return <Navigate to="/signin" />;
   }

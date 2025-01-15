@@ -13,10 +13,7 @@ import MulterImg from "./assets/multer.png";
 import MongooseImg from "./assets/mongoose.png";
 import JWTImg from "./assets/jwt.png";
 import { useSelector } from "react-redux";
-import Input from "./components/Input";
 import ReviewForm from "./components/ReviewForm";
-import { setNotification } from "./storage/notificationSlice";
-import { useDispatch } from "react-redux";
 import Reviews from "./components/Reviews";
 
 const App = () => {

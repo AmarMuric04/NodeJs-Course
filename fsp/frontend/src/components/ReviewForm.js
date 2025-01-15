@@ -2,12 +2,15 @@ import Input from "./Input";
 import { Link } from "react-router-dom";
 import { StarRating } from "./StarRating";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setNotification } from "../storage/notificationSlice";
 import { Spinner } from "../assets/icons";
 
-const ReviewForm = ({ user }) => {
+const ReviewForm = () => {
   const dispatch = useDispatch();
+  const { isAuth, user } = useSelector((state) => state.auth);
+
+  // console.log(isAuth, user);
 
   const [isActive, setIsActive] = useState("anon");
   const [rating, setRating] = useState(0);
@@ -47,6 +50,7 @@ const ReviewForm = ({ user }) => {
       }
 
       const data = await response.json();
+      dispatch(setNotification(data));
     } catch (error) {
       console.error(error);
     }
@@ -72,7 +76,7 @@ const ReviewForm = ({ user }) => {
         >
           Anonymous
         </button>
-        {user ? (
+        {isAuth && user ? (
           <button
             type="button"
             onClick={() => setIsActive("profile")}

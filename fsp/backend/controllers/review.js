@@ -33,9 +33,7 @@ exports.postReview = async (req, res, next) => {
         anonymous,
       });
     } else if (!anonymous) {
-      const alreadyReviewed = await Review.findOne({ user });
-
-      console.log(user);
+      const alreadyReviewed = await Review.findOne({ user: user });
 
       if (alreadyReviewed) {
         const error = new Error("You have already reviewed.");
