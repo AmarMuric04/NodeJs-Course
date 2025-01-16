@@ -11,20 +11,19 @@ export const loadAuthDataFromLocalStorage = async (dispatch) => {
   const expiryDate = localStorage.getItem("expiryDate");
 
   if (!token || !userId || !expiryDate) {
-    dispatch(clearAuthData());
+    logoutUser(dispatch);
     return;
   }
 
   const expiryTime = new Date(expiryDate).getTime();
   const currentTime = new Date().getTime();
 
-  const currentUser = await getUser(userId);
-  dispatch(setUser(currentUser.user));
-
   if (expiryTime <= currentTime) {
-    dispatch(clearAuthData());
+    logoutUser(dispatch);
     return;
   }
+  const currentUser = await getUser(userId);
+  dispatch(setUser(currentUser.user));
   dispatch(
     setAuthData({
       token,

@@ -52,13 +52,10 @@ const Auth = () => {
       }
 
       if (authOption === "signin")
-        return postData(
-          "http://localhost:8080/users/signin",
-          JSON.stringify(body),
-          { headers: { "Content-Type": "application/json" } }
-        );
-      if (authOption === "signup")
-        return postData("http://localhost:8080/users/signup", body);
+        return postData("/users/signin", JSON.stringify(body), {
+          headers: { "Content-Type": "application/json" },
+        });
+      if (authOption === "signup") return postData("/users/signup", body);
     },
     onError: (error) => {
       setError(error);

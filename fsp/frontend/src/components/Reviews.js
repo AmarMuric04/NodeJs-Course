@@ -7,7 +7,7 @@ const Reviews = forwardRef((props, ref) => {
   const scrollRef = useRef(null);
 
   const { data: reviews, isLoading } = useQuery({
-    queryFn: () => fetchData("http://localhost:8080/reviews"),
+    queryFn: () => fetchData("/reviews"),
     queryKey: ["reviews"],
   });
 

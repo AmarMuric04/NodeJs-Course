@@ -31,7 +31,7 @@ export default function Feed() {
 
   const page = parseInt(searchParams.get("page")) || 1;
 
-  const { user } = useSelector((state) => state.auth);
+  const { user, isAuth } = useSelector((state) => state.auth);
   const searchInput = useRef(null);
   const fnameInput = useRef(null);
   const lnameInput = useRef(null);
@@ -41,14 +41,14 @@ export default function Feed() {
   const token = localStorage.getItem("token");
 
   const { data: posts, isLoading } = useQuery({
-    queryFn: () => fetchData("http://localhost:8080/posts"),
+    queryFn: () => fetchData("/posts"),
     queryKey: ["posts"],
   });
 
   const { mutate: handleInteraction } = useMutation({
     mutationFn: ({ postId, interactionType }) => {
       return protectedPostData(
-        `http://localhost:8080/posts/${postId}/${interactionType}`,
+        `/posts/${postId}/${interactionType}`,
         null,
         token
       );
@@ -70,15 +70,16 @@ export default function Feed() {
         let updatedPosts = [...posts.data];
 
         if (filters.liked || filters.bookmarked) {
-          if (!user) {
+          if (!user || !isAuth) {
             dispatch(
               setNotification({
                 message: "Please sign in and try again.",
                 type: "error",
               })
             );
+            setFilters({ ...filters, liked: false, bookmarked: false });
+            throw new Error("Please sign in and try again");
           }
-
           if (filters.liked)
             updatedPosts = updatedPosts.filter((post) =>
               post.likes.find((userLiked) => userLiked === user._id)

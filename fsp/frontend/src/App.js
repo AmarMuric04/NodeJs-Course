@@ -1,24 +1,33 @@
+// External Libraries
+import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { useSelector } from "react-redux";
+import { useQueryClient } from "@tanstack/react-query";
+
+// Components
+import ReviewForm from "./components/ReviewForm";
+import Reviews from "./components/Reviews";
+
+// Utilities
+import { fetchData } from "./utility/async";
+
+// Assets: Logos and Images
+import logo from "./assets/light-logo.png";
 import ReactImg from "./assets/react.webp";
 import MongoImg from "./assets/mongodb.png";
 import ExpressImg from "./assets/expressjs.png";
 import NodeImg from "./assets/nodejs.png";
 import TailWindImg from "./assets/tailwind.png";
-import { Link } from "react-router-dom";
-import { Create, Curate, Engage, Find, Illustration } from "./assets/icons";
-import { useRef } from "react";
-import logo from "./assets/light-logo.png";
-import RouterDomImg from "./assets/rrdom.png";
 import ReduxImg from "./assets/redux.png";
-import MulterImg from "./assets/multer.png";
-import MongooseImg from "./assets/mongoose.png";
-import JWTImg from "./assets/jwt.png";
-import { useSelector } from "react-redux";
-import ReviewForm from "./components/ReviewForm";
-import Reviews from "./components/Reviews";
-import { useQueryClient } from "@tanstack/react-query";
-import { fetchData } from "./utility/async";
 import AxiosImg from "./assets/axios.png";
 import QueryImg from "./assets/query.webp";
+import RouterDomImg from "./assets/rrdom.png";
+import JWTImg from "./assets/jwt.png";
+import MulterImg from "./assets/multer.png";
+import MongooseImg from "./assets/mongoose.png";
+
+// Assets: Icons
+import { Create, Curate, Engage, Find, Illustration } from "./assets/icons";
 
 const App = () => {
   const { user } = useSelector((state) => state.auth);

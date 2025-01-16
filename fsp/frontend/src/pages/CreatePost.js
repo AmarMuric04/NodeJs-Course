@@ -5,7 +5,7 @@ import DynamicInput from "../components/DynamicInput";
 import Create from "../assets/create.png";
 import Publish from "../assets/publish.png";
 import Connect from "../assets/connect.png";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setNotification } from "../storage/notificationSlice";
 import { Link } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
@@ -17,10 +17,19 @@ const MAX_LINKS = 5;
 
 export default function CreatePost() {
   const dispatch = useDispatch();
-  const { disablebutton } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
   const [error, setError] = useState(null);
+
+  const [post, setPost] = useState({
+    title: "",
+    content: "",
+    imageUrl: "",
+    location: "",
+    date: "",
+    tags: [],
+    links: [],
+  });
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -37,53 +46,26 @@ export default function CreatePost() {
     if (error) setTimeout(() => setError(null), 3000);
   }, [setError, error]);
 
-  const handleAddTag = () => {
-    setTags((prevTags) => {
-      if (prevTags.length === MAX_TAGS) return prevTags;
+  const handleAddLabel = (cb, label) =>
+    cb((prev) => {
+      if (prev.length === MAX_TAGS) return prev;
       return [
-        ...prevTags,
+        ...prev,
         {
           id: Date.now(),
           value: "",
-          label: "Tag",
+          label,
         },
       ];
     });
-  };
 
-  const handleTagChange = (id, value) => {
-    setTags((prevTags) =>
-      prevTags.map((tag) => (tag.id === id ? { ...tag, value } : tag))
+  const handleChangeLabel = (cb, id, value) =>
+    cb((prev) =>
+      prev.map((label) => (label.id === id ? { ...label, value } : label))
     );
-  };
 
-  const deleteTag = (id) => {
-    setTags((prevTags) => prevTags.filter((tag) => tag.id !== id));
-  };
-
-  const handleAddLink = () => {
-    setLinks((prevLinks) => {
-      if (prevLinks.length === MAX_LINKS) return prevLinks;
-      return [
-        ...prevLinks,
-        {
-          id: Date.now(),
-          value: "",
-          label: "Link",
-        },
-      ];
-    });
-  };
-
-  const handleLinkChange = (id, value) => {
-    setLinks((prevLinks) =>
-      prevLinks.map((link) => (link.id === id ? { ...link, value } : link))
-    );
-  };
-
-  const deleteLink = (id) => {
-    setLinks((prevLinks) => prevLinks.filter((link) => link.id !== id));
-  };
+  const handleDeleteLabel = (cb, id) =>
+    cb((prev) => prev.filter((label) => label.id !== id));
 
   const { mutate: addPost, isPending } = useMutation({
     mutationFn: () => {
@@ -98,7 +80,7 @@ export default function CreatePost() {
       formData.append("tags", JSON.stringify(tags));
       formData.append("links", JSON.stringify(links));
 
-      return protectedPostData("http://localhost:8080/posts", formData, token);
+      return protectedPostData("/posts", formData, token);
     },
     onError: (error) => {
       setError(error);
@@ -224,13 +206,15 @@ export default function CreatePost() {
                 key={tag.id}
                 name={tag.label}
                 text={`${tag.label} #${index + 1}`}
-                deleteInput={() => deleteTag(tag.id)}
-                onChange={(e) => handleTagChange(tag.id, e.target.value)}
+                deleteInput={() => handleDeleteLabel(setTags, tag.id)}
+                onChange={(e) =>
+                  handleChangeLabel(setTags, tag.id, e.target.value)
+                }
               />
             ))}
             {tags.length !== MAX_TAGS && (
               <div
-                onClick={handleAddTag}
+                onClick={() => handleAddLabel(setTags)}
                 className="my-2 flex items-center gap-2 bg-purple-500 bg-opacity-50 hover:bg-purple-600 transition-all cursor-pointer justify-between rounded-full pl-2 pr-4 py-1 w-fit"
               >
                 <p className="flex items-center">
@@ -260,13 +244,15 @@ export default function CreatePost() {
                 key={link.id}
                 name={link.label}
                 text={`${link.label} #${index + 1}`}
-                deleteInput={() => deleteLink(link.id)}
-                onChange={(e) => handleLinkChange(link.id, e.target.value)}
+                deleteInput={() => handleDeleteLabel(setLinks, link.id)}
+                onChange={(e) =>
+                  handleChangeLabel(setLinks, link.id, e.target.value)
+                }
               />
             ))}
             {links.length !== MAX_LINKS && (
               <div
-                onClick={handleAddLink}
+                onClick={() => handleAddLabel(setLinks)}
                 className="my-2 flex items-center gap-2 bg-orange-500 bg-opacity-50 hover:bg-orange-600 transition-all cursor-pointer justify-between rounded-full pl-2 pr-4 py-1 w-fit"
               >
                 <p className="flex items-center">
