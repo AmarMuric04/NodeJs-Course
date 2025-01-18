@@ -83,12 +83,10 @@ export const Controller = {
       Model.removeClassOnClick(emailDoc, "error-input");
       if (lang === "english")
         Validation.displayErrorMessage(
-          "JSON account. Password: " + JSONUser.password
+          "JSON account. Password: " + JSONUser.psw
         );
       else
-        Validation.displayErrorMessage(
-          "ЈСОН профил. Лозинка: " + JSONUser.password
-        );
+        Validation.displayErrorMessage("ЈСОН профил. Лозинка: " + JSONUser.psw);
       invalidInput = true;
     }
     if (invalidInput) return;

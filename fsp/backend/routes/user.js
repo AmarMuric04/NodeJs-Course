@@ -10,7 +10,7 @@ const isAuth = require("../middleware/is-auth");
 
 router.get("/users", Controller.getUsers);
 
-router.get("/:id", Controller.getUser);
+router.get("/count", Controller.getCount);
 
 router.post(
   "/signin",
@@ -32,6 +32,8 @@ router.post(
   ],
   Controller.signup
 );
+
+router.get("/:id", Controller.getUser);
 
 router.get("/:id/bookmarked", isAuth, Controller.getBookmarked);
 

@@ -191,3 +191,17 @@ exports.getLiked = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.getCount = async (req, res, next) => {
+  try {
+    const count = await User.find().countDocuments();
+
+    res.json({ message: "Successfully got user count.", data: count });
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
+    next(error);
+  }
+};

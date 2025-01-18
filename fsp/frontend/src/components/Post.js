@@ -18,6 +18,7 @@ export default function Post({ post, onBookmark, onLike }) {
   const [ref, isVisible] = useIntersectionObserver({
     threshold: 0.5,
   });
+
   const [hasCountedView, setHasCountedView] = useState(false);
 
   useEffect(() => {
@@ -50,7 +51,7 @@ export default function Post({ post, onBookmark, onLike }) {
     countView();
   }, [isVisible, hasCountedView, post._id, token]);
 
-  const handleAction = async (action, cb, toggleState) => {
+  const handleAction = async (action) => {
     if (action === "like") {
       onLike();
       setDisableL(true);
@@ -60,40 +61,19 @@ export default function Post({ post, onBookmark, onLike }) {
       setDisableB(true);
     }
 
-    // let URL = `http://localhost:8080/posts/${post._id}/${action}`;
-
-    // try {
-    //   const response = await fetch(URL, {
-    //     method: "POST",
-    //     headers: {
-    //       Authorization: "Bearer " + token,
-    //     },
-    //   });
-
     setTimeout(() => {
       if (action === "like") setDisableL(false);
       if (action === "bookmark") setDisableB(false);
     }, 750);
-
-    //   if (!response.ok) {
-    //     const error = await response.json();
-    //     dispatch(setNotification(error));
-    //   }
-
-    //   const data = await response.json();
-
-    //   cb(data[action + "s"].length);
-    //   toggleState((prev) => !prev);
-    // } catch (error) {
-    //   console.error(error);
-    // }
   };
 
   return (
     <>
       <div
         ref={ref}
-        className="flex gap-4 bg-[#191919] p-10 rounded-3xl shadow-xl my-10"
+        className={`flex gap-4 transition duration-500 bg-[#191919] p-10 rounded-3xl shadow-xl my-10 ${
+          isVisible ? "in-view" : "not-in-view"
+        }`}
       >
         <img
           className="w-[3rem] h-[3rem] rounded-full object-cover"

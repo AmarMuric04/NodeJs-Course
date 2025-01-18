@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Post from "../components/Post";
 import Input from "../components/Input";
@@ -23,13 +23,11 @@ export default function Feed() {
     fname: "",
     lname: "",
     email: "",
-    tags: null,
+    tags: [],
     select: "",
     time: "",
     filtering: false,
   });
-
-  const page = parseInt(searchParams.get("page")) || 1;
 
   const { user, isAuth } = useSelector((state) => state.auth);
   const searchInput = useRef(null);
@@ -54,123 +52,243 @@ export default function Feed() {
       );
     },
     onError: (error) => {
-      dispatch(setNotification(error));
+      dispatch(setNotification(error.data));
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["posts"]);
     },
   });
 
-  // console.log("Render");
+  console.log("Render");
+
+  const readUrlParams = useCallback(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    const time = searchParams.get("time") || "";
+    const select = time ? "" : searchParams.get("select") || "";
+
+    const activeFilters =
+      searchParams.get("search") ||
+      searchParams.get("liked") ||
+      searchParams.get("bookmarked") ||
+      searchParams.get("fname") ||
+      searchParams.get("lname") ||
+      searchParams.get("email") ||
+      searchParams.get("tags") ||
+      select ||
+      time ||
+      searchParams.get("page");
+
+    setFilters({
+      search: searchParams.get("search") || "",
+      liked: searchParams.get("liked") === "true",
+      bookmarked: searchParams.get("bookmarked") === "true",
+      fname: searchParams.get("fname") || "",
+      lname: searchParams.get("lname") || "",
+      email: searchParams.get("email") || "",
+      tags: searchParams.get("tags") ? searchParams.get("tags").split(",") : [],
+      select: select,
+      time: time,
+      page: parseInt(searchParams.get("page")) || 1,
+      filtering: activeFilters ? true : false, // Set filtering flag
+    });
+  }, []);
+
+  const handleManageSearchParams = useCallback(() => {
+    Object.entries(filters).forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        if (value.length > 0) {
+          searchParams.set(key, value.join(","));
+        } else {
+          searchParams.delete(key);
+        }
+      } else if (typeof value === "boolean") {
+        if (value) {
+          searchParams.set(key, true);
+        } else {
+          searchParams.delete(key);
+        }
+      } else if (value) {
+        searchParams.set(key, value);
+      } else {
+        searchParams.delete(key);
+      }
+    });
+
+    window.history.replaceState(null, "", `?${searchParams.toString()}`);
+  }, [filters, searchParams]);
+
+  const handleFilterByInteraction = useCallback(
+    (posts) => {
+      if (!user || !isAuth) {
+        dispatch(
+          setNotification({
+            message: "Please sign in and try again.",
+            type: "error",
+          })
+        );
+
+        setFilters({ ...filters, liked: false, bookmarked: false });
+        throw new Error("Please sign in and try again");
+      }
+
+      if (filters.liked) {
+        posts = posts.filter((post) =>
+          post.likes.some((userLiked) => userLiked === user._id)
+        );
+      }
+      if (filters.bookmarked) {
+        posts = posts.filter((post) =>
+          post.bookmarks.some((userBookmarked) => userBookmarked === user._id)
+        );
+      }
+
+      return posts;
+    },
+    [dispatch, isAuth, user, filters]
+  );
+
+  const handleFilterBySearch = useCallback(
+    (posts) => {
+      const searchTerm = filters.search.toLowerCase();
+      return posts.filter(
+        (post) =>
+          post.title.toLowerCase().includes(searchTerm) ||
+          post.content.toLowerCase().includes(searchTerm)
+      );
+    },
+    [filters.search]
+  );
+
+  const handleCustomFilter = useCallback(
+    (posts) => {
+      return posts.filter((post) => {
+        const matchesFname =
+          !filters.fname ||
+          post.creator.fname.toLowerCase() === filters.fname.toLowerCase();
+
+        const matchesLname =
+          !filters.lname ||
+          post.creator.lname.toLowerCase() === filters.lname.toLowerCase();
+
+        const matchesEmail =
+          !filters.email ||
+          post.creator.email.toLowerCase() === filters.email.toLowerCase();
+
+        const matchesTags =
+          filters.tags.length === 0 ||
+          filters.tags.every((tag) =>
+            post.tags.some(
+              (postTag) => postTag.toLowerCase() === tag.toLowerCase()
+            )
+          );
+
+        return matchesFname && matchesLname && matchesEmail && matchesTags;
+      });
+    },
+    [filters.fname, filters.lname, filters.email, filters.tags]
+  );
+
+  const handleSelectFilter = useCallback(
+    (posts) => {
+      const sortOptions = {
+        likes: (a, b) => b.likes.length - a.likes.length,
+        comments: (a, b) => b.comments.length - a.comments.length,
+        views: (a, b) => b.views - a.views,
+        bookmarks: (a, b) => b.bookmarks.length - a.bookmarks.length,
+      };
+
+      if (sortOptions[filters.select]) {
+        return [...posts].sort(sortOptions[filters.select]);
+      }
+
+      return posts;
+    },
+    [filters.select]
+  );
+
+  const handleTimeFilter = useCallback(
+    (posts) => {
+      const now = Date.now();
+      const timeOptions = {
+        latest: (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+        oldest: (a, b) => new Date(a.createdAt) - new Date(b.createdAt),
+        "24h": (post) =>
+          new Date(post.createdAt).getTime() >= now - 24 * 60 * 60 * 1000,
+        week: (post) =>
+          new Date(post.createdAt).getTime() >= now - 7 * 24 * 60 * 60 * 1000,
+      };
+
+      if (filters.time === "latest" || filters.time === "oldest") {
+        return [...posts].sort(timeOptions[filters.time]);
+      }
+
+      if (filters.time === "24h" || filters.time === "week") {
+        return posts.filter(timeOptions[filters.time]);
+      }
+
+      return posts;
+    },
+    [filters.time]
+  );
+
+  const applyFilters = useCallback(() => {
+    try {
+      let updatedPosts = [...posts.data];
+
+      if (filters.liked || filters.bookmarked) {
+        updatedPosts = handleFilterByInteraction(updatedPosts);
+      }
+      if (filters.search) {
+        updatedPosts = handleFilterBySearch(updatedPosts);
+      }
+      if (
+        filters.fname ||
+        filters.lname ||
+        filters.email ||
+        filters.tags.length
+      ) {
+        updatedPosts = handleCustomFilter(updatedPosts);
+      }
+      if (filters.select) {
+        updatedPosts = handleSelectFilter(updatedPosts);
+      }
+      if (filters.time) {
+        updatedPosts = handleTimeFilter(updatedPosts);
+      }
+
+      return updatedPosts;
+    } catch (error) {
+      console.error("Error applying filters:", error);
+      dispatch(setNotification({ message: error.message, type: "error" }));
+      return [];
+    }
+  }, [
+    filters,
+    posts,
+    handleCustomFilter,
+    handleFilterByInteraction,
+    handleFilterBySearch,
+    handleSelectFilter,
+    handleTimeFilter,
+    dispatch,
+  ]);
 
   useEffect(() => {
     if (isLoading) return;
-    const applyFilters = async () => {
-      try {
-        let updatedPosts = [...posts.data];
 
-        if (filters.liked || filters.bookmarked) {
-          if (!user || !isAuth) {
-            dispatch(
-              setNotification({
-                message: "Please sign in and try again.",
-                type: "error",
-              })
-            );
-            setFilters({ ...filters, liked: false, bookmarked: false });
-            throw new Error("Please sign in and try again");
-          }
-          if (filters.liked)
-            updatedPosts = updatedPosts.filter((post) =>
-              post.likes.find((userLiked) => userLiked === user._id)
-            );
-          if (filters.bookmarked)
-            updatedPosts = updatedPosts.filter((post) =>
-              post.bookmarks.find(
-                (userBookmarked) => userBookmarked === user._id
-              )
-            );
-        }
+    const updatedPosts = applyFilters();
+    handleManageSearchParams();
+    setFilteredPosts(updatedPosts);
+    console.log("Filtered");
+  }, [applyFilters, isLoading, handleManageSearchParams]);
 
-        if (filters.search) {
-          updatedPosts = updatedPosts.filter(
-            (post) =>
-              post.title.toLowerCase().includes(filters.search.toLowerCase()) ||
-              post.content.toLowerCase().includes(filters.search.toLowerCase())
-          );
-        }
+  useEffect(() => {
+    readUrlParams();
+  }, [readUrlParams]);
 
-        if (filters.tags || filters.fname || filters.lname || filters.email) {
-          updatedPosts = updatedPosts.filter((post) => {
-            const matchesFname =
-              !filters.fname ||
-              post.creator.fname.toLowerCase() === filters.fname.toLowerCase();
-
-            const matchesLname =
-              !filters.lname ||
-              post.creator.lname.toLowerCase() === filters.lname.toLowerCase();
-
-            const matchesEmail =
-              !filters.email ||
-              post.creator.email.toLowerCase() === filters.email.toLowerCase();
-
-            const matchesTags =
-              filters.tags.length === 0 ||
-              filters.tags
-                .map((tag) => tag.toLowerCase())
-                .sort()
-                .every((tag) =>
-                  post.tags
-                    .map((postTag) => postTag.toLowerCase())
-                    .sort()
-                    .includes(tag)
-                );
-
-            return matchesFname && matchesLname && matchesEmail && matchesTags;
-          });
-        }
-
-        if (filters.select) {
-          const sortOptions = {
-            likes: (a, b) => b.likes.length - a.likes.length,
-            comments: (a, b) => b.comments.length - a.comments.length,
-            views: (a, b) => b.views.length - a.views.length,
-            bookmarks: (a, b) => b.bookmarks.length - a.bookmarks.length,
-          };
-          if (sortOptions[filters.select]) {
-            updatedPosts.sort(sortOptions[filters.select]);
-          }
-        }
-
-        if (filters.time) {
-          const now = new Date().getTime();
-          const timeOptions = {
-            latest: (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
-            oldest: (a, b) => new Date(a.createdAt) - new Date(b.createdAt),
-            "24h": (post) =>
-              new Date(post.createdAt).getTime() >= now - 24 * 60 * 60 * 1000,
-            week: (post) =>
-              new Date(post.createdAt).getTime() >=
-              now - 7 * 24 * 60 * 60 * 1000,
-          };
-
-          if (filters.time === "latest" || filters.time === "oldest") {
-            updatedPosts.sort(timeOptions[filters.time]);
-          } else if (filters.time === "24h" || filters.time === "week") {
-            updatedPosts = updatedPosts.filter(timeOptions[filters.time]);
-          }
-        }
-
-        setFilteredPosts(updatedPosts);
-      } catch (error) {
-        console.error("Error applying filters:", error.message);
-      }
-    };
-
-    applyFilters();
-  }, [filters, posts, user, isLoading]);
-
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return <p className="w-screen h-screen bg-[#222]">Loading...</p>;
 
   return (
     <main className="bg-[#222] text-white h-auto min-h-screen w-full flex">
@@ -274,12 +392,10 @@ export default function Feed() {
             />
             <button
               onClick={() => {
-                setFilters((prevFilters) => {
-                  return {
-                    ...prevFilters,
-                    search: searchInput.current.value,
-                    filtering: true,
-                  };
+                setFilters({
+                  ...filters,
+                  search: searchInput.current.value,
+                  filtering: true,
                 });
               }}
               className="px-4 py-2 bg-purple-500 hover:bg-orange-500 w-full transition-all rounded-[2rem] hover:rounded-none font-semibold"
@@ -303,14 +419,14 @@ export default function Feed() {
             <div className="flex flex-col gap-4 mt-4">
               <select
                 value={filters.select}
-                onChange={(e) =>
+                onChange={(e) => {
                   setFilters((prevFilters) => ({
                     ...prevFilters,
                     select: e.target.value,
                     time: "",
                     filtering: true,
-                  }))
-                }
+                  }));
+                }}
                 className={`px-4 py-2 rounded-md text-white cursor-pointer appearance-none ${
                   filters.select !== "" ? "bg-purple-500" : "bg-[#222]"
                 }`}
@@ -334,14 +450,14 @@ export default function Feed() {
 
               <select
                 value={filters.time}
-                onChange={(e) =>
+                onChange={(e) => {
                   setFilters((prevFilters) => ({
                     ...prevFilters,
                     select: "",
                     time: e.target.value,
                     filtering: true,
-                  }))
-                }
+                  }));
+                }}
                 className={`px-4 py-2 rounded-md text-white cursor-pointer appearance-none ${
                   filters.time !== "" ? "bg-purple-500" : "bg-[#222]"
                 }`}
@@ -380,7 +496,7 @@ export default function Feed() {
                             message: "Please sign in and try again!",
                           })
                         );
-                      else
+                      else {
                         setFilters((prevFilters) => {
                           return {
                             ...prevFilters,
@@ -389,6 +505,7 @@ export default function Feed() {
                             filtering: true,
                           };
                         });
+                      }
                     }}
                   />
                   <p>Show liked posts</p>
@@ -406,7 +523,7 @@ export default function Feed() {
                             message: "Please sign in and try again!",
                           })
                         );
-                      else
+                      else {
                         setFilters((prevFilters) => {
                           return {
                             ...prevFilters,
@@ -415,6 +532,7 @@ export default function Feed() {
                             filtering: true,
                           };
                         });
+                      }
                     }}
                   />
                   <p>Show bookmarked posts</p>
@@ -513,18 +631,16 @@ export default function Feed() {
                 </div>
                 <button
                   onClick={() => {
-                    setFilters((prevFilters) => {
-                      return {
-                        ...prevFilters,
-                        fname: fnameInput.current.value,
-                        lname: lnameInput.current.value,
-                        email: emailInput.current.value,
-                        tags: tagsInput.current.value
-                          .split(",")
-                          .map((e) => e.trim())
-                          .filter((e) => e !== ""),
-                        filtering: true,
-                      };
+                    setFilters({
+                      ...filters,
+                      fname: fnameInput.current.value,
+                      lname: lnameInput.current.value,
+                      email: emailInput.current.value,
+                      tags: tagsInput.current.value
+                        .split(",")
+                        .map((e) => e.trim())
+                        .filter((e) => e !== ""),
+                      filtering: true,
                     });
                   }}
                   className="px-4 py-2 bg-purple-500 hover:bg-orange-500 w-full transition-all rounded-[2rem] hover:rounded-none font-semibold mt-4"

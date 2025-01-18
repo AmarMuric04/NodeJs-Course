@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="w-full bg-[#191919] text-white justify-center fixed left-0 flex shadow-lg z-50 transition-all"
+      className="w-full bg-[#191919] bg-opacity-20 text-white justify-center fixed left-0 flex shadow-lg z-50 transition-all backdrop-blur-sm"
       style={{
         top: isVisible ? 0 : `-${headerRef.current?.offsetHeight || 0}px`,
       }}
@@ -53,25 +53,25 @@ const Header = () => {
           <div className="flex gap-8">
             <a
               href="#about"
-              className="cursor-pointer font-semibold hover:text-purple-400 transition-all"
+              className="cursor-pointer font-semibold hover:text-orange-500 transition-all"
             >
               About Us
             </a>
             <a
               href="#reviews"
-              className="cursor-pointer font-semibold hover:text-purple-400 transition-all"
+              className="cursor-pointer font-semibold hover:text-orange-500 transition-all"
             >
               Reviews
             </a>
-            <div className="h-[25px] w-[1px] bg-gray-600"></div>
+            <div className="h-[25px] w-[1px] bg-orange-600"></div>
             <Link to="/feed?page=1">
-              <p className="cursor-pointer font-semibold hover:text-purple-400 transition-all">
+              <p className="cursor-pointer font-semibold hover:text-orange-500 transition-all">
                 Feed
               </p>
             </Link>
             {isAuth && user && (
               <Link to="/create-post">
-                <p className="cursor-pointer font-semibold hover:text-purple-400 transition-all">
+                <p className="cursor-pointer font-semibold hover:text-orange-500 transition-all">
                   Create
                 </p>
               </Link>
@@ -86,7 +86,7 @@ const Header = () => {
                 <p className="font-semibold text-sm">
                   {user?.fname}, {user?.lname}
                 </p>
-                <p className="text-xs text-gray-500">{user?.email}</p>
+                <p className="text-xs text-orange-500">{user?.email}</p>
               </div>
               <img
                 className="h-[4rem] w-[4rem] rounded-full object-cover"
@@ -105,14 +105,14 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link to="/signup">
+              <Link to="/signin">
                 <button className="bg-purple-500 hover:bg-orange-500 hover:bg-opacity-10 bg-opacity-10 py-2 px-8 rounded-[2rem] hover:rounded-none transition-all">
-                  Sign Up
+                  Sign In
                 </button>
               </Link>
-              <Link to="/signin">
+              <Link to="/signup">
                 <button className="bg-purple-500 hover:bg-orange-500 text-white py-2 px-8 rounded-[2rem] hover:rounded-none transition-all">
-                  Sign In
+                  Sign Up
                 </button>
               </Link>
             </>

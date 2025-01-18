@@ -29,11 +29,16 @@ const Auth = () => {
     mutationFn: () => {
       let body;
 
-      if (authOption === "signin")
+      if (authOption === "signin") {
         body = {
           password: passwordInput.current.value,
           email: emailInput.current.value,
         };
+
+        return postData("/users/signin", JSON.stringify(body), {
+          headers: { "Content-Type": "application/json" },
+        });
+      }
       if (authOption === "signup") {
         const formData = new FormData();
         formData.append("fname", fnameInput.current.value);
@@ -48,17 +53,12 @@ const Auth = () => {
             lnameInput.current.value
         );
         formData.append("image", imageInput.current.value);
-        body = formData;
-      }
 
-      if (authOption === "signin")
-        return postData("/users/signin", JSON.stringify(body), {
-          headers: { "Content-Type": "application/json" },
-        });
-      if (authOption === "signup") return postData("/users/signup", body);
+        return postData("/users/signup", formData);
+      }
     },
     onError: (error) => {
-      setError(error);
+      setError(error.data);
       setTimeout(() => {
         setError(false);
       }, 3000);

@@ -4,13 +4,18 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-        scrollRight: {
+        scrollRightHalf: {
           "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-307%)" },
+          "100%": { transform: "translateX(-291%)" },
+        },
+        scrollRightFull: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-147.5%)" },
         },
       },
       animation: {
-        "scroll-right": "scrollRight 10s linear infinite",
+        "scroll-right-half": "scrollRightHalf 10s linear infinite",
+        "scroll-right-full": "scrollRightFull 20s linear infinite",
       },
     },
   },

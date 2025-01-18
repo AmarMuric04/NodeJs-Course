@@ -6,6 +6,14 @@ const router = express.Router();
 
 const { body } = require("express-validator");
 
+router.get("/count", Controller.getCount);
+
+router.get("/average", Controller.getAverage);
+
+router.get("/most-rated", Controller.getMostRated);
+
+router.get("/anonymous-percentage", Controller.getAnonymousPercentage);
+
 router.get("/", Controller.getReviews);
 
 router.post(

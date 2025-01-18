@@ -832,10 +832,6 @@ video {
   top: 100%;
 }
 
-.top-40{
-  top: 10rem;
-}
-
 .z-0{
   z-index: 0;
 }
@@ -902,6 +898,11 @@ video {
 .my-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.mx-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mb-10{
@@ -1002,6 +1003,10 @@ video {
 
 .mt-8{
   margin-top: 2rem;
+}
+
+.ml-1{
+  margin-left: 0.25rem;
 }
 
 .block{
@@ -1423,6 +1428,10 @@ video {
 
 .overflow-x-scroll{
   overflow-x: scroll;
+}
+
+.overflow-y-scroll{
+  overflow-y: scroll;
 }
 
 .truncate{

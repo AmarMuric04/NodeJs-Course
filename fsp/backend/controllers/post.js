@@ -164,3 +164,49 @@ exports.countView = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.getCount = async (req, res, next) => {
+  try {
+    const count = await Post.find().countDocuments();
+
+    res.json({ message: "Successfully got post count.", data: count });
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
+    next(error);
+  }
+};
+
+exports.getLikes = async (req, res, next) => {
+  try {
+    const posts = await Post.find();
+
+    const count = posts.reduce((a, b) => a + b.likes.length, 0);
+
+    res.json({ message: "Successfully got post count.", data: count });
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
+    next(error);
+  }
+};
+
+exports.getBookmarks = async (req, res, next) => {
+  try {
+    const posts = await Post.find();
+
+    const count = posts.reduce((a, b) => a + b.bookmarks.length, 0);
+
+    res.json({ message: "Successfully got post count.", data: count });
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
+    next(error);
+  }
+};

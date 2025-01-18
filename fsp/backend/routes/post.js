@@ -8,6 +8,18 @@ const { body } = require("express-validator");
 
 const isAuth = require("../middleware/is-auth");
 
+router.get("/count", Controller.getCount);
+
+router.get("/likes", Controller.getLikes);
+
+router.get("/bookmarks", Controller.getBookmarks);
+
+router.post("/:postId/like", isAuth, Controller.toggleLike);
+
+router.post("/:postId/bookmark", isAuth, Controller.toggleBookmark);
+
+router.post("/:postId/view", isAuth, Controller.countView);
+
 router.post(
   "/",
   isAuth,
@@ -24,11 +36,5 @@ router.post(
 );
 
 router.get("/", Controller.getPosts);
-
-router.post("/:postId/like", isAuth, Controller.toggleLike);
-
-router.post("/:postId/bookmark", isAuth, Controller.toggleBookmark);
-
-router.post("/:postId/view", isAuth, Controller.countView);
 
 module.exports = router;

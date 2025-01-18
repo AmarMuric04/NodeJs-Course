@@ -1,6 +1,7 @@
 import { hashPassword } from "../../utility/utility.js";
 import { loader } from "../general_view.js";
-const storageAccounts = JSON.parse(localStorage.getItem("SolveBox-users"));
+const storageAccounts =
+  JSON.parse(localStorage.getItem("SolveBox-users")) || [];
 let lang = localStorage.getItem("SolveBox-current-language");
 
 export function displayAuthFlow(isSignin) {

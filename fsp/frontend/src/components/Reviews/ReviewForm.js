@@ -1,12 +1,12 @@
-import Input from "./Input";
+import Input from "../Input";
 import { Link } from "react-router-dom";
-import { StarRating } from "./StarRating";
+import { StarRating } from "../StarRating";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setNotification } from "../storage/notificationSlice";
-import { Spinner } from "../assets/icons";
+import { setNotification } from "../../storage/notificationSlice";
+import { Spinner } from "../../assets/icons";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { postData } from "../utility/async";
+import { postData } from "../../utility/async";
 
 const ReviewForm = () => {
   const dispatch = useDispatch();
@@ -36,8 +36,8 @@ const ReviewForm = () => {
       });
     },
     onError: (error) => {
-      if (error.status === 409) dispatch(setNotification(error));
-      setError(error);
+      if (error.status === 409) dispatch(setNotification(error.data));
+      setError(error.data);
       setTimeout(() => {
         setError(false);
       }, 3000);
@@ -60,6 +60,7 @@ const ReviewForm = () => {
       }}
       className="bg-[#141414] w-full h-full p-8 rounded-xl shadow-md flex flex-col justify-between"
     >
+      <h1 className="mb-8 text-center font-semibold text-3xl">Send a Review</h1>
       <div className="flex gap-4">
         <button
           type="button"
