@@ -3,6 +3,7 @@ import { Comment, Like, Bookmark, Bookmarked, Liked } from "../assets/icons";
 import { formatTime } from "../utility/util";
 import { useSelector } from "react-redux";
 import { useIntersectionObserver } from "../utility/hooks";
+import FadeIn from "./FadeIn";
 
 export default function Post({ post, onBookmark, onLike }) {
   const { user } = useSelector((state) => state.auth);
@@ -68,12 +69,10 @@ export default function Post({ post, onBookmark, onLike }) {
   };
 
   return (
-    <>
+    <FadeIn>
       <div
         ref={ref}
-        className={`flex gap-4 transition duration-500 bg-[#191919] p-10 rounded-3xl shadow-xl my-10 ${
-          isVisible ? "in-view" : "not-in-view"
-        }`}
+        className="flex overflow-y-hidden gap-4 transition duration-500 bg-[#191919] p-10 rounded-3xl shadow-xl my-10"
       >
         <img
           className="w-[3rem] h-[3rem] rounded-full object-cover"
@@ -313,6 +312,6 @@ export default function Post({ post, onBookmark, onLike }) {
           )}
         </div>
       </div>
-    </>
+    </FadeIn>
   );
 }

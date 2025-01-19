@@ -205,3 +205,46 @@ exports.getCount = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.getUserBySlug = async (req, res, next) => {
+  const { slug } = req.params;
+  try {
+    const user = await User.findOne({ slug });
+
+    if (user) {
+      res.json(user);
+    } else {
+      res.status(404).json({ message: "User not found" });
+    }
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
+    next(error);
+  }
+};
+
+exports.getPosts = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    const user = await User.findById(id);
+
+    if (!user) {
+      const error = new Error("User not found");
+      error.statusCode = 404;
+      throw error;
+    }
+
+    const posts = await Post.find({ creator: user._id }).populate("creator");
+
+    res.json({ message: "Successfully got user count.", data: posts });
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+
+    next(error);
+  }
+};

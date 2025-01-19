@@ -1,3 +1,7 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { protectedPostData } from "./async";
+import { setNotification } from "../storage/notificationSlice";
+import { useDispatch } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 
 export const useIntersectionObserver = (options) => {
@@ -17,4 +21,27 @@ export const useIntersectionObserver = (options) => {
   }, [ref, options]);
 
   return [ref, isVisible];
+};
+
+export const usePostInteraction = () => {
+  const dispatch = useDispatch();
+  const queryClient = useQueryClient();
+
+  const { mutate } = useMutation({
+    mutationFn: ({ postId, interactionType, token }) => {
+      return protectedPostData(
+        `/posts/${postId}/${interactionType}`,
+        null,
+        token
+      );
+    },
+    onError: (error) => {
+      dispatch(setNotification(error.data));
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["posts"]);
+    },
+  });
+
+  return { handleInteraction: mutate };
 };

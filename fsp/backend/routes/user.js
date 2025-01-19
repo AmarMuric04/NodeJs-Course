@@ -33,10 +33,14 @@ router.post(
   Controller.signup
 );
 
-router.get("/:id", Controller.getUser);
+router.get("/profile/:slug", Controller.getUserBySlug);
+
+router.get("/:id/posts", Controller.getPosts);
 
 router.get("/:id/bookmarked", isAuth, Controller.getBookmarked);
 
 router.get("/:id/liked", isAuth, Controller.getLiked);
+
+router.get("/:id", Controller.getUser);
 
 module.exports = router;

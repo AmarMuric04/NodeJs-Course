@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { fetchData, protectedPostData } from "../utility/async";
 import { useQueryClient } from "@tanstack/react-query";
+import { usePostInteraction } from "../utility/hooks";
 
 export default function Feed() {
   const dispatch = useDispatch();
@@ -35,28 +36,13 @@ export default function Feed() {
   const lnameInput = useRef(null);
   const emailInput = useRef(null);
   const tagsInput = useRef(null);
+  const { handleInteraction } = usePostInteraction();
 
   const token = localStorage.getItem("token");
 
   const { data: posts, isLoading } = useQuery({
     queryFn: () => fetchData("/posts"),
     queryKey: ["posts"],
-  });
-
-  const { mutate: handleInteraction } = useMutation({
-    mutationFn: ({ postId, interactionType }) => {
-      return protectedPostData(
-        `/posts/${postId}/${interactionType}`,
-        null,
-        token
-      );
-    },
-    onError: (error) => {
-      dispatch(setNotification(error.data));
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries(["posts"]);
-    },
   });
 
   console.log("Render");
@@ -76,8 +62,7 @@ export default function Feed() {
       searchParams.get("email") ||
       searchParams.get("tags") ||
       select ||
-      time ||
-      searchParams.get("page");
+      time;
 
     setFilters({
       search: searchParams.get("search") || "",
@@ -90,7 +75,7 @@ export default function Feed() {
       select: select,
       time: time,
       page: parseInt(searchParams.get("page")) || 1,
-      filtering: activeFilters ? true : false, // Set filtering flag
+      filtering: activeFilters ? true : false,
     });
   }, []);
 

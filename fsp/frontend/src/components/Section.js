@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useIntersectionObserver } from "../utility/hooks";
+import FadeIn from "./FadeIn";
 
 export default function Section({
   className,
@@ -8,19 +7,6 @@ export default function Section({
   svg,
   children,
 }) {
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const [ref, isVisible] = useIntersectionObserver({
-    root: null,
-    rootMargin: "-200px",
-    threshold: 0,
-  });
-
-  useEffect(() => {
-    if (isVisible && !hasAnimated) {
-      setHasAnimated(true);
-    }
-  }, [isVisible, hasAnimated]);
-
   return (
     <section
       className={`bg-${bg} overflow-y-hidden w-full flex justify-center relative ${
@@ -28,14 +14,15 @@ export default function Section({
       }`}
     >
       {svg}
-      <div
-        ref={ref}
-        className={`w-[75rem] transition duration-1000 ${
-          containerClass || ""
-        } ${hasAnimated ? "in-view" : "not-in-view"}`}
-      >
-        {children}
-      </div>
+      <FadeIn>
+        <div
+          className={`w-[75rem] transition duration-1000 ${
+            containerClass || ""
+          }`}
+        >
+          {children}
+        </div>
+      </FadeIn>
     </section>
   );
 }

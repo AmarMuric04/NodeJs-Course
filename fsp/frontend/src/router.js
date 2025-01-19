@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import CreatePost from "./pages/CreatePost";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Feed from "./pages/Feed";
+import { Profile } from "./pages/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
           {
             path: "/feed",
             element: <Feed />,
+          },
+          {
+            path: "/profile/:slug",
+            element: <Profile />,
           },
         ],
       },

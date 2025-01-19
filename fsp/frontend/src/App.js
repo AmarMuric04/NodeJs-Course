@@ -42,11 +42,11 @@ import Title from "./components/Title";
 import Preheading from "./components/Preheading";
 import Text from "./components/Text";
 import Button from "./components/Button";
+import FadeIn from "./components/FadeIn";
 
 const App = () => {
   const { user } = useSelector((state) => state.auth);
   const scrollRef = useRef(null);
-  const queryClient = useQueryClient();
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -58,10 +58,6 @@ const App = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollRight();
     }
-  };
-
-  const handleHover = () => {
-    queryClient.prefetchQuery(["posts"], () => fetchData("/posts"));
   };
 
   return (
@@ -103,7 +99,6 @@ const App = () => {
             </button>
           </Link>
           <Link
-            onMouseEnter={handleHover}
             to="/feed?page=1"
             className="cursor-pointer hover:underline text-purple-500 hover:text-orange-500 transition-all"
           >
@@ -224,17 +219,15 @@ const App = () => {
           </svg>
         }
       >
-        <h2 className="text-xs uppercase leading-[0.1rem] text-purple-500 font-semibold">
-          About this website
-        </h2>
-        <h1 className="text-[3rem] font-bold my-4">What is this about?</h1>
-        <p className="text-gray-400 w-2/3">
+        <Preheading>About thisds website</Preheading>
+        <Title>What is this about?</Title>
+        <Text className="text-gray-400 w-2/3">
           Welcome to our platform, where sharing your thoughts has never been
           easier! Create an account, share your ideas, and connect with others
           through posts. Engage with the community by liking and bookmarking
           content that inspires you. Whether you're here to express yourself or
           discover something new, this is the space for meaningful connections.
-        </p>
+        </Text>
         <div className="mt-8 flex flex-col gap-8">
           <div className="flex gap-8">
             <div className="bg-[#222] hover:shadow-orange-500 shadow-md transition-all justify-between items-center flex p-10 w-1/2 rounded-xl">
@@ -292,7 +285,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between mt-20 mb-40">
+        <FadeIn className="flex justify-between mt-20 mb-40">
           <Statistic
             title="No. of Users"
             icon={<User h="48px" w="48px" />}
@@ -317,7 +310,7 @@ const App = () => {
             url="/posts/bookmarks"
             bgColor="bg-orange-500"
           />
-        </div>
+        </FadeIn>
       </Section>
 
       <Section
@@ -398,7 +391,7 @@ const App = () => {
           </div>
         </div>
         <Reviews ref={scrollRef} />
-        <div className="flex justify-between mt-20 mb-40">
+        <FadeIn className="flex justify-between mt-20 mb-40">
           <Statistic
             title="No. of Reviews"
             icon={<ReviewIcon h="48px" w="48px" />}
@@ -423,7 +416,7 @@ const App = () => {
             url="/reviews/anonymous-percentage"
             bgColor="bg-orange-500"
           />
-        </div>
+        </FadeIn>
       </Section>
 
       <Section
