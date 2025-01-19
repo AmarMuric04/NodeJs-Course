@@ -141,3 +141,13 @@ export function formatTime(postDate, currentDate = new Date()) {
     }`;
   }
 }
+
+export function formatDate(isoString, options = { showDay: true }) {
+  const date = new Date(isoString);
+
+  const day = date.getDate();
+  const month = date.toLocaleString("default", { month: "long" });
+  const year = date.getFullYear();
+
+  return options.showDay ? `${day} ${month} ${year}` : `${month} ${year}`;
+}

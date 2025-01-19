@@ -279,7 +279,7 @@ export default function Feed() {
     <main className="bg-[#222] text-white h-auto min-h-screen w-full flex">
       <section className="w-full flex justify-center">
         <div className="w-[75rem] text-white flex gap-8 relative">
-          <div className="w-2/3 mt-40">
+          <div className="w-2/3 overflow-hidden mt-40">
             <h1 className="text-[3rem] font-semibold text-white">
               Create a post?
             </h1>

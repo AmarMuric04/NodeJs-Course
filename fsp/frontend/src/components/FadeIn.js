@@ -16,7 +16,7 @@ export default function FadeIn({ className, duration = 1000, children }) {
   return (
     <div
       ref={ref}
-      className={`transition overflow-hidden duration-${duration} ${
+      className={`transition duration-${duration} ${
         hasAnimated ? "in-view" : "not-in-view"
       } ${className || ""}`}
     >

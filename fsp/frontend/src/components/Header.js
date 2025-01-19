@@ -88,11 +88,18 @@ const Header = () => {
                 </p>
                 <p className="text-xs text-orange-500">{user?.email}</p>
               </div>
-              <img
-                className="h-[4rem] w-[4rem] rounded-full object-cover"
-                src={"http://localhost:8080/" + user?.imageUrl}
-                alt="User's Pfp"
-              />
+              <div className="relative">
+                <img
+                  className="h-[4rem] w-[4rem] rounded-full object-cover"
+                  src={"http://localhost:8080/" + user?.imageUrl}
+                  alt="User's Pfp"
+                />
+                <Link to={`/profile/${user.slug}`}>
+                  <button className="absolute z-50 top-0 left-0 w-full h-full opacity-0 bg-opacity-60 bg-gray-500 hover:opacity-100 transition-all text-white rounded-full">
+                    View
+                  </button>
+                </Link>
+              </div>
               <button
                 onClick={() => {
                   handleLogout();
