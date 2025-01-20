@@ -75,3 +75,20 @@ export function removeInvalidations(parent) {
 
   errorFields.forEach((element) => element.classList.remove("error-input"));
 }
+
+/* regex za formu */
+export function isFirstNameValid(str) {
+  return /^[A-Z].{0,15}$/.test(str);
+}
+
+export function isLastNameValid(str) {
+  return /^[A-Z].{0,20}$/.test(str);
+}
+
+export function isMontenegroEmail(email) {
+  return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.me$/.test(email);
+}
+
+export function isLessThanOrEqualTo255WithoutNumbers(str) {
+  return /^(?!.*\d).{0,255}$/.test(str);
+}

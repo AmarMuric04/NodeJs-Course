@@ -37,9 +37,11 @@ router.get("/profile/:slug", Controller.getUserBySlug);
 
 router.get("/:id/posts", Controller.getPosts);
 
-router.get("/:id/bookmarked", isAuth, Controller.getBookmarked);
+router.get("/:id/bookmarked", Controller.getBookmarked);
 
-router.get("/:id/liked", isAuth, Controller.getLiked);
+router.get("/:id/liked", Controller.getLiked);
+
+router.post("/:id/toggle-follow", isAuth, Controller.toggleFollow);
 
 router.get("/:id", Controller.getUser);
 

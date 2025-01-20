@@ -161,10 +161,10 @@
           </g>
         </svg>
       </div>
-   <div id="backdrop"
+      <div id="backdrop"
         class="w-screen hidden h-screen  min-h-[40rem] absolute left-0 top-0 bg-black bg-opacity-50 z-30">
       </div>
-       <nav id="mobile-header"
+      <nav id="mobile-header"
         class="w-[95%] absolute h-screen overflow-y-scroll background top-0 left-full transition-all z-40">
         <ul class="flex flex-col justify-center min-h-[40rem] h-full pt-12 pb-0 sm:py-40 px-10 gap-4">
           <a href="./index.html">
@@ -776,16 +776,66 @@
               data-srpski="Име">Name</label>
             <div class="flex flex-col sm:flex-row gap-4 lg:gap-10">
               <div class="w-full">
-                <input name="review-first-name" id="review-first-name"
-                  class="w-full py-2 px-4 outline-none border-2 rounded-lg" type="text" placeholder="John"
-                  data-english="John" data-srpski="Јован" aria-label="First Name" required />
+                <div class="relative">
+                  <input name="review-first-name" id="review-first-name"
+                    class="w-full py-2 px-4 outline-none border-2 rounded-lg" type="text" placeholder="John"
+                    data-english="John" data-srpski="Јован" aria-label="First Name" required />
+                  <div
+                    class="min-h-[5rem] error text-red-400 absolute z-10 w-[20rem] transition-opacity  pointer-events-none opacity-0 left-0 lg:left-full mt-4 lg:mt-0 lg:ml-4 p-4 bg-white rounded-md lg:top-0 shadow-xl border-[1px] duration-500 border-black pl-8 lg:pl-4">
+                    <div
+                      class="right-14 tooltip relative lg:right-8 bg-red-500 rotate-90 lg:rotate-0 h-4 w-20 rounded-r-full">
+                    </div>
+                    <span>
+                    </span>
+                  </div>
+                  <div
+                    class="absolute z-10 w-[20rem] transition-opacity opacity-0 pointer-events-none left-0 lg:left-full mt-4 lg:mt-0 lg:ml-4 bg-white text-black p-4 rounded-md lg:top-0 shadow-xl border-[1px] duration-500 border-black pl-8 lg:pl-4">
+                    <div
+                      class="right-14 tooltip relative lg:right-8 bg-red-500 rotate-90 lg:rotate-0 h-4 w-20 rounded-r-full">
+                    </div>
+                    <span
+                      data-srpski="Ово поље очекује ваше име (нпр. Јован). Мора да почне великим словом и да има највише 15 карактера."
+                      data-english="This field
+                      expects your first name
+                      (e.g. John). Must start with a capitalized letter & have 15 characters maximum.">
+                      This field
+                      expects your first name
+                      (e.g. John). Must start with a capitalized letter & have 15 characters maximum.
+                    </span>
+                  </div>
+                </div>
                 <label class="text-xs text-gray-400" for="review-first-name" data-english="First Name*"
                   data-srpski="Прво име*">First Name*</label>
               </div>
               <div class="w-full">
-                <input name="review-last-name" id="review-last-name"
-                  class="w-full py-2 px-4 outline-none border-2 rounded-lg" type="text" placeholder="Doe"
-                  data-english="Doe" data-srpski="Дој" aria-label="Last Name" required />
+                <div class="relative">
+                  <input name="review-last-name" id="review-last-name"
+                    class="w-full py-2 px-4 outline-none border-2 rounded-lg" type="text" placeholder="Doe"
+                    data-english="Doe" data-srpski="Дој" aria-label="Last Name" required />
+                  <div
+                    class="min-h-[5rem] error text-red-400 absolute z-10 w-[20rem] transition-opacity  pointer-events-none opacity-0 left-0 lg:left-full mt-4 lg:mt-0 lg:ml-4 p-4 bg-white rounded-md lg:top-0 shadow-xl border-[1px] duration-500 border-black pl-8 lg:pl-4">
+                    <div
+                      class="right-14 tooltip relative lg:right-8 bg-red-500 rotate-90 lg:rotate-0 h-4 w-20 rounded-r-full">
+                    </div>
+                    <span>
+                    </span>
+                  </div>
+                  <div
+                    class="absolute z-10 w-[20rem] transition-opacity opacity-0 pointer-events-none left-0 lg:left-full mt-4 lg:mt-0 lg:ml-4 bg-white text-black p-4 rounded-md lg:top-0 shadow-xl border-[1px] duration-500 border-black pl-8 lg:pl-4">
+                    <div
+                      class="right-14 tooltip relative lg:right-8 bg-red-500 rotate-90 lg:rotate-0 h-4 w-20 rounded-r-full">
+                    </div>
+                    <span
+                      data-srpski="Ово поље очекује ваше презиме (нпр. До). Мора да почне великим словом и да има највише 20 карактера."
+                      data-english="This field
+                                        expects your last name
+                                        (e.g. Doe). Must start with a capitalized letter & have 20 characters maximum.">
+                      This field
+                      expects your last name
+                      (e.g. Doe). Must start with a capitalized letter & have 20 characters maximum.
+                    </span>
+                  </div>
+                </div>
                 <label class="text-xs text-gray-400" for="review-last-name" data-english="Last Name*"
                   data-srpski="Презиме*">Last Name*</label>
               </div>
@@ -796,16 +846,64 @@
               data-srpski="Контакт информације">Contact Information</label>
             <div class="flex flex-col sm:flex-row gap-4 lg:gap-10">
               <div class="w-full">
-                <input id="review-email" name="review-email" class="w-full py-2 px-4 outline-none border-2 rounded-lg"
-                  type="email" placeholder="example@domain.com" data-english="example@domain.com"
-                  data-srpski="пример@домен.цом" aria-label="Email" required />
+                <div class="relative">
+                  <input id="review-email" name="review-email" class="w-full py-2 px-4 outline-none border-2 rounded-lg"
+                    type="email" placeholder="example@domain.com" data-english="example@domain.com"
+                    data-srpski="пример@домен.цом" aria-label="Email" required />
+                  <div
+                    class="min-h-[5rem] error text-red-400 absolute z-10 w-[20rem] transition-opacity  pointer-events-none opacity-0 left-0 lg:left-full mt-4 lg:mt-0 lg:ml-4 p-4 bg-white rounded-md lg:top-0 shadow-xl border-[1px] duration-500 border-black pl-8 lg:pl-4">
+                    <div
+                      class="right-14 tooltip relative lg:right-8 bg-red-500 rotate-90 lg:rotate-0 h-4 w-20 rounded-r-full">
+                    </div>
+                    <span>
+                    </span>
+                  </div>
+                  <div
+                    class="absolute z-10 w-[20rem] transition-opacity opacity-0 pointer-events-none left-0 lg:left-full mt-4 lg:mt-0 lg:ml-4 bg-white text-black p-4 rounded-md lg:top-0 shadow-xl border-[1px] duration-500 border-black pl-8 lg:pl-4">
+                    <div
+                      class="right-14 tooltip relative lg:right-8 bg-red-500 rotate-90 lg:rotate-0 h-4 w-20 rounded-r-full">
+                    </div>
+                    <span
+                      data-srpski="Ово поље очекује вашу емаил адресу (нпр. johndoe@gmail.me). Мора бити из Црне Горе. (завршава се са .me)"
+                      data-english=" This field
+                      expects your email address
+                      (e.g. johndoe@gmail.me). Must be from Montenegro. (ends in .me)">
+                      This field
+                      expects your email address
+                      (e.g. johndoe@gmail.me). Must be from Montenegro. (ends in .me)
+                    </span>
+                  </div>
+                </div>
                 <label class="text-xs text-gray-400" for="review-email" data-english="Valid Email*"
                   data-srpski="Важећа е-пошта*">Valid Email*</label>
               </div>
               <div class="w-full">
-                <input id="review-number" name="review-number" class="w-full py-2 px-4 outline-none border-2 rounded-lg"
-                  type="tel" placeholder="+381 000 000 000" data-english="+381 000 000 000"
-                  data-srpski="+381 000 000 000" aria-label="Phone Number" />
+                <div class="relative">
+                  <input id="review-number" name="review-number"
+                    class="w-full py-2 px-4 outline-none border-2 rounded-lg" type="tel" placeholder="+381 000 000 000"
+                    data-english="+381 000 000 000" data-srpski="+381 000 000 000" aria-label="Phone Number" />
+                  <div
+                    class="min-h-[5rem] error text-red-400 absolute z-10 w-[20rem] transition-opacity  pointer-events-none opacity-0 left-0 lg:left-full mt-4 lg:mt-0 lg:ml-4 p-4 bg-white rounded-md lg:top-0 shadow-xl border-[1px] duration-500 border-black pl-8 lg:pl-4">
+                    <div
+                      class="right-14 tooltip relative lg:right-8 bg-red-500 rotate-90 lg:rotate-0 h-4 w-20 rounded-r-full">
+                    </div>
+                    <span>
+                    </span>
+                  </div>
+                  <div
+                    class="absolute z-10 w-[20rem] transition-opacity opacity-0 pointer-events-none left-0 lg:left-full mt-4 lg:mt-0 lg:ml-4 bg-white text-black p-4 rounded-md lg:top-0 shadow-xl border-[1px] duration-500 border-black pl-8 lg:pl-4">
+                    <div
+                      class="right-14 tooltip relative lg:right-8 bg-red-500 rotate-90 lg:rotate-0 h-4 w-20 rounded-r-full">
+                    </div>
+                    <span data-srpski="Ово поље очекује ваш број телефона (нпр. +381 000 000 000)." data-english=" This field
+                      expects your phone number
+                      (e.g. +381 000 000 000).">
+                      This field
+                      expects your phone number
+                      (e.g. +381 000 000 000).
+                    </span>
+                  </div>
+                </div>
                 <label class="text-xs text-gray-400" for="review-number" data-english="Valid Number"
                   data-srpski="Важећи број">Valid Number</label>
               </div>
@@ -814,14 +912,39 @@
           <div class="flex flex-col pt-4">
             <label for="review" class="text-sm lg:text-[1rem] font-semibold pb-2" data-english="Your Feedback"
               data-srpski="Ваше повратне информације">Your Feedback</label>
-            <textarea name="review" id="review" placeholder="Share your experience here..."
-              class="w-full py-2 px-4 outline-none border-2 rounded-lg max-h-28 min-h-28"
-              data-english="Share your experience here..." data-srpski="Поделите своје искуство овде..."
-              aria-label="Feedback"></textarea>
+            <div class="relative">
+              <textarea name="review" id="review" placeholder="Share your experience here..."
+                class="w-full py-2 px-4 outline-none border-2 rounded-lg max-h-28 min-h-28"
+                data-english="Share your experience here..." data-srpski="Поделите своје искуство овде..."
+                aria-label="Feedback"></textarea>
+              <div
+                class="min-h-[5rem] error text-red-400 absolute z-10 w-[20rem] transition-opacity  pointer-events-none opacity-0 left-0 lg:left-full mt-4 lg:mt-0 lg:ml-4 p-4 bg-white rounded-md lg:top-0 shadow-xl border-[1px] duration-500 border-black pl-8 lg:pl-4">
+                <div
+                  class="right-14 tooltip relative lg:right-8 bg-red-500 rotate-90 lg:rotate-0 h-4 w-20 rounded-r-full">
+                </div>
+                <span>
+                </span>
+              </div>
+              <div
+                class="absolute z-10 w-[20rem] transition-opacity opacity-0 pointer-events-none left-0 lg:left-full mt-4 lg:mt-0 lg:ml-4 bg-white text-black p-4 rounded-md lg:top-0 shadow-xl border-[1px] duration-500 border-black pl-8 lg:pl-4">
+                <div
+                  class="right-14 tooltip relative lg:right-8 bg-red-500 rotate-90 lg:rotate-0 h-4 w-20 rounded-r-full">
+                </div>
+                <span
+                  data-srpski="Ово поље очекује вашу рецензију (нпр. 'Ово је одлично!'). Мора имати највише 255 карактера и без бројева."
+                  data-english=" This field
+                  expects your review
+                  (e.g. 'This is awesome!'). Must have a maximum of 255 characters & no numbers.">
+                  This field
+                  expects your review
+                  (e.g. 'This is awesome!'). Must have a maximum of 255 characters & no numbers.
+                </span>
+              </div>
+            </div>
           </div>
           <button
             class="flex items-center mt-10 w-full text-center bg2 py-4 text-black rounded-[2rem] hover:rounded-none transition-all gap-4 justify-center"
-            data-english="Submit" data-srpski="Поднесите">
+            data-english="Submit" data-srpski="Пошаљите">
             Submit
           </button>
         </form>

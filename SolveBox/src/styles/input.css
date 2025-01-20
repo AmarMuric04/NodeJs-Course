@@ -616,3 +616,7 @@ body::-webkit-scrollbar-thumb {
     clip-path: none;
   }
 }
+
+.tooltip {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0 50%);
+}

@@ -26,9 +26,10 @@ export const useIntersectionObserver = (options) => {
 export const usePostInteraction = () => {
   const dispatch = useDispatch();
   const queryClient = useQueryClient();
+  const token = localStorage.getItem("token");
 
   const { mutate } = useMutation({
-    mutationFn: ({ postId, interactionType, token }) => {
+    mutationFn: ({ postId, interactionType }) => {
       return protectedPostData(
         `/posts/${postId}/${interactionType}`,
         null,

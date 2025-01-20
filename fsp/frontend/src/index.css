@@ -147,3 +147,35 @@ input:-webkit-autofill {
 .tooltip {
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0 50%);
 }
+
+.jump {
+  animation: jump-up 1s forwards ease-in-out;
+}
+
+@keyframes jump-up {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1) translateX(0px);
+  }
+  50% {
+    transform: translateY(-30px) rotate(-30deg) scale(2) translateX(-10px);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1) translateX(0px);
+  }
+}
+
+.jump-bookmark {
+  animation: jump-up-bookmark 1s forwards ease-in-out;
+}
+
+@keyframes jump-up-bookmark {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1) translateX(0px);
+  }
+  50% {
+    transform: translateY(-30px) rotate(-30deg) scale(2) translateX(-10px);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1) translateX(0px);
+  }
+}

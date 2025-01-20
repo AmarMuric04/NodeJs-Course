@@ -4,6 +4,7 @@ import { formatTime } from "../utility/util";
 import { useSelector } from "react-redux";
 import { useIntersectionObserver } from "../utility/hooks";
 import FadeIn from "./FadeIn";
+import { Link } from "react-router-dom";
 
 export default function Post({ post, onBookmark, onLike }) {
   const { user } = useSelector((state) => state.auth);
@@ -55,17 +56,10 @@ export default function Post({ post, onBookmark, onLike }) {
   const handleAction = async (action) => {
     if (action === "like") {
       onLike();
-      setDisableL(true);
     }
     if (action === "bookmark") {
       onBookmark();
-      setDisableB(true);
     }
-
-    setTimeout(() => {
-      if (action === "like") setDisableL(false);
-      if (action === "bookmark") setDisableB(false);
-    }, 750);
   };
 
   return (
@@ -74,16 +68,26 @@ export default function Post({ post, onBookmark, onLike }) {
         ref={ref}
         className="flex overflow-y-hidden gap-4 transition duration-500 bg-[#191919] p-10 rounded-3xl shadow-xl my-10"
       >
-        <img
-          className="w-[3rem] h-[3rem] rounded-full object-cover"
-          src={`http://localhost:8080/${post.creator.imageUrl}`}
-          alt="User's pfp"
-        />
+        <Link
+          className="min-w-[3rem] max-w-[3rem] h-[3rem] rounded-full object-cover"
+          to={`/profile/${post.creator.slug}`}
+        >
+          <img
+            className="w-full h-full rounded-full object-cover"
+            src={`http://localhost:8080/${post.creator.imageUrl}`}
+            alt="User's pfp"
+          />
+        </Link>
         <div className="flex flex-col">
           <div className="flex gap-2 items-center">
-            <p className="text-sm font-bold">
-              {post.creator.fname}, {post.creator.lname}{" "}
-            </p>
+            <Link
+              className="hover:underline flex gap-2"
+              to={`/profile/${post.creator.slug}`}
+            >
+              <p className="text-sm font-bold">
+                {post.creator.fname}, {post.creator.lname}{" "}
+              </p>
+            </Link>
             <p className="text-gray-400 text-sm">{post.creator.email}</p>
             <p>·</p>
             <p className="text-gray-400 text-sm">
@@ -103,20 +107,20 @@ export default function Post({ post, onBookmark, onLike }) {
                       alt="Post"
                     />
                     <div className="flex gap-20 items-center text-gray-400 text-xs mt-4">
-                      <div className="flex items-center gap-2 cursor-pointer">
+                      <div className="flex items-center gap-2 cursor-pointer hover:scale-125 transition-all">
                         <Comment className="hover:text-orange-500 transition-all" />
                         <p>0</p>
                       </div>
                       <button
                         disabled={disableL}
                         onClick={() => handleAction("like")}
-                        className="flex items-center gap-2 cursor-pointer"
+                        className="flex items-center gap-2 cursor-pointer hover:scale-125 transition-all"
                       >
                         <div className="hover:text-orange-500 transition-all">
                           {!liked ? (
                             <Like />
                           ) : (
-                            <Liked className="text-purple-500 hover:text-orange-500 transition-all" />
+                            <Liked className="jump text-purple-500 hover:text-orange-500 transition-all" />
                           )}
                         </div>
                         <p>{post.likes.length}</p>
@@ -125,13 +129,13 @@ export default function Post({ post, onBookmark, onLike }) {
                       <button
                         disabled={disableB}
                         onClick={() => handleAction("bookmark")}
-                        className="flex items-center gap-2 cursor-pointer"
+                        className="flex items-center gap-2 cursor-pointer hover:scale-125 transition-all"
                       >
                         <div className="hover:text-orange-500 transition-all">
                           {!bookmarked ? (
                             <Bookmark />
                           ) : (
-                            <Bookmarked className="text-purple-500 hover:text-orange-500 transition-all" />
+                            <Bookmarked className="jump-bookmark text-purple-500 hover:text-orange-500 transition-all" />
                           )}
                         </div>
                         <p>{post.bookmarks.length}</p>

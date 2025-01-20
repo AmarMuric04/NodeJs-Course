@@ -161,10 +161,10 @@
           </g>
         </svg>
       </div>
-   <div id="backdrop"
+      <div id="backdrop"
         class="w-screen hidden h-screen  min-h-[40rem] absolute left-0 top-0 bg-black bg-opacity-50 z-30">
       </div>
-       <nav id="mobile-header"
+      <nav id="mobile-header"
         class="w-[95%] absolute h-screen overflow-y-scroll background top-0 left-full transition-all z-40">
         <ul class="flex flex-col justify-center min-h-[40rem] h-full pt-12 pb-0 sm:py-40 px-10 gap-4">
           <a href="./index.html">
@@ -268,18 +268,24 @@
       <div class="w-[90%] xl:w-[75rem] py-20 lg:py-0">
         <div class="relative z-30 lg:mt-20 lg:h-[15rem] flex flex-col lg:flex-row justify-between items-center">
           <div class="w-full xl:w-1/2">
-            <h1 class="text-[3rem] font-bold leading-[3.5rem] ">
-              Thank <span class="text1">You</span>!
+            <h1 class="text-[3rem] font-bold leading-[3.5rem]">
+              <span data-srpski="Хвала" data-english="Thank">Thank</span> <span data-english="You" data-srpski="Ти"
+                class="text1">You</span>!
             </h1>
             <p class="text-[0.5rem] tracking-[0.1rem] pt-8 pb-4 noto text3">
-              <a class="hover:underline" href="./index.html">GO BACK TO HOME</a>
+              <a class="hover:underline" href="./index.html" data-english="
+                GO BACK TO HOME
+              " data-srpski="ВРАТИТЕ СЕ НА ПОЧЕТНУ">
+                GO BACK TO HOME
+              </a>
             </p>
           </div>
           <div class="w-full xl:w-1/2">
-            <p class="text-gray-400 font-semibold text-sm lg:text-lg">
+            <p class="text-gray-400 font-semibold text-sm lg:text-lg" data-english=" Thank you for taking the time to submit a review for our site. Your feedback is invaluable and helps us
+              improve. We truly appreciate your support and input!"
+              data-srpski="Хвала вам што сте одвојили време да пошаљете рецензију за наш сајт. Ваш повратни одговор нам је изузетно важан и помаже нам да се побољшамо. Искрено ценимо вашу подршку и мишљење!">
               Thank you for taking the time to submit a review for our site. Your feedback is invaluable and helps us
-              improve. We
-              truly appreciate your support and input!
+              improve. We truly appreciate your support and input!
             </p>
           </div>
         </div>
@@ -318,43 +324,70 @@
         </div>
       </div>
     </section>
-    <section class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-center">
-      <div class="w-full xl:w-[75rem]">
-        <ul
-          class="flex justify-between w-full flex-col lg:flex-row items-center lg:items-start text-sm lg:text-[1rem] gap-4 lg:gap-0">
-          <li class="flex items-center w-[90%] xl:w-1/4 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 xl:w-12 lg:h-12" src="./assets/svgs/what.svg" />
-            <div class="flex flex-col">
-              <h1 class="font-bold text-xl lg:text-2xl text-black">What to expect?</h1>
-              <p class="text-gray-700">SolveBox brigs experts together.</p>
-            </div>
-          </li>
-          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 xl:w-12 lg:h-12" src="./assets/svgs/light.svg" />
-            <p>Engaging solutions and feedback</p>
-          </li>
-          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 xl:w-12 lg:h-12" src="./assets/svgs/time.svg" />
-            <p>Quick and simple solutions</p>
-          </li>
-          <li class="flex items-center w-[90%] xl:w-1/5 font-thin text-gray-500 gap-2">
-            <img class="w-12 h-12 xl:w-12 lg:h-12" src="./assets/svgs/stats.svg" />
-            <p>Overwhelmingly good reviews</p>
-          </li>
+
+    <section class="bg-[#e3ff80] w-full flex justify-center items-center py-6 text-start sm:text-center">
+      <div class="w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem]">
+        <ul class="flex justify-between w-full flex-col lg:flex-row items-center text-sm lg:text-[1rem] gap-4 lg:gap-0">
+          <div class="flex flex-col sm:flex-row justify-between w-full lg:w-1/2 gap-4 lg:gap-0">
+            <li
+              class="flex items-center justify-start sm:justify-center lg:justify-normal w-[90%] font-thin text-gray-500 gap-2">
+              <img class="w-12 h-12 lg:w-12 lg:h-12" src="./assets/svgs/what.svg" />
+              <div class="flex flex-col">
+                <h1 class="font-bold text-xl lg:text-2xl text-black" data-english="What to expect?"
+                  data-srpski="Шта можете очекивати?">
+                  What to expect?
+                </h1>
+                <p class="text-gray-700" data-english="SolveBox brings experts together."
+                  data-srpski="СолвБокс окупља стручњаке.">
+                  SolveBox brings experts together.
+                </p>
+              </div>
+            </li>
+            <li
+              class="flex items-center justify-start sm:justify-center lg:justify-normal w-[90%] font-thin text-gray-500 gap-2">
+              <img class="w-12 h-12 lg:w-12 lg:h-12" src="./assets/svgs/light.svg" />
+              <p data-english="Engaging solutions and feedback"
+                data-srpski="Интерактивна решења и повратне информације">
+                Engaging solutions and feedback
+              </p>
+            </li>
+          </div>
+          <div class="flex flex-col sm:flex-row justify-between w-full lg:w-1/2 gap-4 lg:gap-0">
+            <li
+              class="flex items-center justify-start sm:justify-center lg:justify-normal w-[90%] font-thin text-gray-500 gap-2">
+              <img class="w-12 h-12 lg:w-12 lg:h-12" src="./assets/svgs/time.svg" />
+              <p data-english="Quick and simple solutions" data-srpski="Брза и једноставна решења">
+                Quick and simple solutions
+              </p>
+            </li>
+            <li
+              class="flex items-center justify-start sm:justify-center lg:justify-normal w-[90%] font-thin text-gray-500 gap-2">
+              <img class="w-12 h-12 lg:w-12 lg:h-12" src="./assets/svgs/stats.svg" />
+              <p data-english="Overwhelmingly good reviews" data-srpski="Изузетно добре рецензије">
+                Overwhelmingly good reviews
+              </p>
+            </li>
+          </div>
         </ul>
       </div>
     </section>
 
     <section class="w-full flex justify-center items-center">
       <div class="w-[90%] xl:w-[75rem] border-b-2 border1 py-40">
-        <p class="text-[0.7rem] tracking-[0.1rem] pt-8 pb-4 noto text3">
+        <p class="text-[0.7rem] tracking-[0.1rem] pt-8 pb-4 noto text3" data-srpski="ВАШ ОТЗИВ">
           YOUR REVIEW
         </p>
         <div class="flex flex-col xl:flex-row w-full mb-8">
           <div class="w-full xl:w-2/3">
             <p class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-semibold">
-              Thank you! Your <span class="text1">valuable</span>
-              feedback helps us improve our website<span class="text2">.</span>
+              <span data-english="Thank you" data-srpski="Хвала вам! Ваш ">Thank you! Your</span> <span class="text1"
+                data-english="valuable" data-srpski="вредан">valuable</span> <span
+                data-english="feedback helps us improve our website"
+                data-srpski="повратни одговор нам помаже да побољшамо наш веб сајт">
+                feedback
+                helps us improve our website
+              </span>
+              <span class="text2">.</span>
             </p>
           </div>
           <ul
@@ -364,21 +397,28 @@
                 class="text3">
                 <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
               </svg>
-              <p>Your feedback helps us improve content;</p>
+              <p data-srpski="Ваш повратни одговор нам помаже да побољшамо садржај;">Your feedback helps us improve
+                content;
+              </p>
             </li>
             <li class="flex gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
                 class="text3">
                 <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
               </svg>
-              <p>We value your thoughts on our solutions;</p>
+              <p data-srpski="Ценимо ваше мишљење о нашим решењима;">We value your thoughts on our solutions;</p>
             </li>
             <li class="flex gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 2048 2048"
                 class="text3">
                 <path fill="currentColor" d="M1920 0v1920H0V0zm-358 621l-135-135l-659 658l-275-274l-135 135l410 411z" />
               </svg>
-              <p>Thanks for helping us create a better experience.</p>
+              <p data-english="Thanks for helping us create a
+                better
+                experience." data-srpski="Хвала вам што нам помажете да креирамо боље искуство.">Thanks for helping us
+                create a
+                better
+                experience.</p>
             </li>
           </ul>
         </div>
@@ -393,17 +433,24 @@
                   d="M5.7 18L8 14q-1.65 0-2.825-1.175T4 10t1.175-2.825T8 6t2.825 1.175T12 10q0 .575-.137 1.063T11.45 12L8 18zm9 0l2.3-4q-1.65 0-2.825-1.175T13 10t1.175-2.825T17 6t2.825 1.175T21 10q0 .575-.137 1.063T20.45 12L17 18z">
                 </path>
               </svg></div>
-            <p class="text-gray-400 italic text-sm xl:text-xl my-4" id="description"></p>
+            <p class="text-gray-400 italic text-sm xl:text-xl my-4" id="description">
+            </p>
             <p class="my-4 font-semibold text-[1rem] xl:text-[2rem] text-black" id="name"></p>
             <p class="noto text-[0.4rem] xl:text-[0.6rem] text-[#cd0d83] tracking-[0.1rem] uppercase" id="profession">
+            </p>
             </p>
           </div>
         </div>
         <div class="flex flex-col items-center mt-20">
-          <h1 class="text-[1.5rem] lg:text-[3rem] font-bold text-center">
-            Want to share <span class="text3">feedback</span> directly? We’d
-            <span class="text1">love</span> to hear your thoughts
-            <span class="text2">!</span>
+          <h1 class="text-[1.5rem] lg:text-[3rem] font-bold text-center"><span data-srpski="Да ли желите да поделите"
+              data-english="Do you want to share">
+              Do
+              you want to share
+            </span> <span class="text3" data-srpski="повратни одговор" data-english="feedback">feedback</span> <span
+              data-srpski="директно?" data-english="directly? We'd">directly? We’d</span> <span class="text1"
+              data-srpski="Волели" data-english="love">love</span>
+            <span data-english="to hear it" data-srpski="бисмо да чујемо ваше мишљење">to hear it</span> <span
+              class="text2">!</span>
           </h1>
 
           <p class="text-[#ffd110] underline font-bold text-center text-[1rem] lg:text-xl mt-8">
@@ -416,6 +463,7 @@
         </div>
       </div>
     </section>
+
     <footer class="w-full flex justify-center pt-40">
       <div class="w-[90%] md:w-[45rem] lg:w-[60rem] xl:w-[75rem]">
         <h1 class="text-[1.5rem] lg:text-[3rem] leading-normal lg:leading-[3rem] font-bold text-center">

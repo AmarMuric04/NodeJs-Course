@@ -1,13 +1,13 @@
 import { handleUnderlineHover } from "../general_view.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // const session = JSON.parse(localStorage.getItem("SolveBox-review-session"));
+  const session = JSON.parse(localStorage.getItem("SolveBox-review-session"));
 
-  // if (!session) window.location.href = "./index.html";
+  if (!session) window.location.href = "./index.html";
 
-  // setTimeout(() => {
-  //   localStorage.removeItem("SolveBox-review-session");
-  // }, 10);
+  setTimeout(() => {
+    localStorage.removeItem("SolveBox-review-session");
+  }, 10);
 
   handleUnderlineHover();
 

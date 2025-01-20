@@ -43,6 +43,22 @@ const userSchema = new Schema(
         ref: "Post",
       },
     ],
+    following: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    followers: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    bannerImage: {
+      type: String,
+      default: "default-bg.png",
+    },
   },
   { timestamps: true }
 );

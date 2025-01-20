@@ -1,47 +1,105 @@
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
-import { fetchData } from "../utility/async";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { Link, useParams } from "react-router-dom";
+import { fetchData, protectedPostData } from "../utility/async";
 import Section from "../components/Section";
-import Title from "../components/Title";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Post from "../components/Post";
 import { usePostInteraction } from "../utility/hooks";
 import { formatDate } from "../utility/util";
-import Count from "../components/SingleValues/Count";
+import { useEffect, useState } from "react";
+import { setNotification } from "../storage/notificationSlice";
+import { useQueryClient } from "@tanstack/react-query";
+import { Modal } from "../components/Modal";
 
 export function Profile() {
+  const [showCategory, setShowCategory] = useState("posts");
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [modalType, setModalType] = useState(null);
+
   const { slug } = useParams();
   const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const queryClient = useQueryClient();
 
   const { handleInteraction } = usePostInteraction();
-
-  console.log(slug);
+  const token = localStorage.getItem("token");
 
   const { data: fetchedUser, isLoading } = useQuery({
     queryFn: () => fetchData("/users/profile/" + slug),
-    queryKey: ["profile"],
+    queryKey: ["profile", slug],
+  });
+
+  const { data: currentUser } = useQuery({
+    queryFn: () => fetchData("/users/" + user._id),
+    queryKey: ["user"],
+    enabled: !!user,
   });
 
   const { data: fetchedPosts, isLoading: postsIsLoading } = useQuery({
     queryFn: () => fetchData(`/users/${fetchedUser?._id}/posts`),
-    queryKey: ["profile-posts", fetchedUser?._id],
+    queryKey: ["profile-posts", slug],
+    enabled: !!fetchedUser,
+    staleTime: Infinity,
+  });
+
+  const { data: liked, isLoading: likedIsLoading } = useQuery({
+    queryFn: () => fetchData(`/users/${fetchedUser?._id}/liked`),
+    queryKey: ["profile-liked", slug],
     enabled: !!fetchedUser,
   });
 
-  console.log(fetchedPosts);
+  const { data: bookmarked, isLoading: bookmarkedIsLoading } = useQuery({
+    queryFn: () => fetchData(`/users/${fetchedUser?._id}/bookmarked`),
+    queryKey: ["profile-bookmarked", slug],
+    enabled: !!fetchedUser,
+  });
 
-  if (isLoading || postsIsLoading) return <div>Loading...</div>;
+  const { mutate: followUser } = useMutation({
+    mutationFn: () =>
+      protectedPostData(
+        "/users/" + fetchedUser._id + "/toggle-follow",
+        null,
+        token
+      ),
+    onError: (error) => {
+      dispatch(setNotification(error.data));
+    },
+    onSuccess: () => {
+      setIsFollowing(!isFollowing);
+      queryClient.invalidateQueries("profile");
+    },
+    enabled: !!fetchedUser && !!currentUser,
+  });
+
+  useEffect(() => {
+    if (!currentUser || !fetchedUser) return;
+    if (currentUser.user?.following.includes(fetchedUser?._id))
+      setIsFollowing(true);
+    else setIsFollowing(false);
+  }, [currentUser, fetchedUser]);
+
+  if (isLoading || postsIsLoading || likedIsLoading || bookmarkedIsLoading)
+    return <div>Loading...</div>;
+
+  let posts = fetchedPosts;
+
+  if (showCategory === "liked") posts = liked;
+  if (showCategory === "bookmarked") posts = bookmarked;
 
   return (
-    <main className="bg-[#222] min-h-screen text-white pt-20">
+    <main className="bg-[#222] min-h-screen text-white pt-20 relative overflow-hidden">
+      {modalType && (
+        <Modal user={fetchedUser} type={modalType} setType={setModalType} />
+      )}
       <Section>
         <div className="relative">
           <img
-            className="w-full h-[25rem] object-cover"
-            src={`http://localhost:8080/` + fetchedUser.bannerImage}
-            alt="1243"
+            onClick={() => setModalType("banner")}
+            className="w-full h-[25rem] object-cover cursor-pointer"
+            src={`http://localhost:8080` + fetchedUser.bannerImage}
+            alt="Banner"
           />
-          {user?._id === fetchedUser._id && (
+          {currentUser.user?._id === fetchedUser._id && (
             <button className="text-black px-4 py-2 rounded-full hover:bg-purple-500 hover:text-white transition-all bottom-4 right-4 absolute flex items-center gap-2 z-10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +122,8 @@ export function Profile() {
             <div className="w-2/5">
               <div className="flex flex-col gap-4">
                 <img
-                  className="border-4 ml-4 border-[#222] w-40 h-40 rounded-full object-cover"
+                  onClick={() => setModalType("pfp")}
+                  className="cursor-pointer border-4 ml-4 border-[#222] w-40 h-40 rounded-full object-cover"
                   src={`http://localhost:8080/` + fetchedUser.imageUrl}
                   alt="Pfp"
                 />
@@ -129,11 +188,11 @@ export function Profile() {
                 </div>
                 <div className="w-full flex justify-between">
                   <div className="flex gap-2 items-end">
-                    <p className="font-bold">0</p>
+                    <p className="font-bold">{fetchedUser?.following.length}</p>
                     <p className="text-gray-500">Following</p>
                   </div>
                   <div className="flex gap-2 items-end">
-                    <p className="font-bold">0</p>
+                    <p className="font-bold">{fetchedUser?.followers.length}</p>
                     <p className="text-gray-500">Followers</p>
                   </div>
                   <div className="flex gap-2 items-end">
@@ -141,12 +200,12 @@ export function Profile() {
                     <p className="text-gray-500">Posts</p>
                   </div>
                 </div>
-                {fetchedUser._id === user?._id && (
+                {fetchedUser._id === currentUser.user?._id && (
                   <button className="bg-purple-500 px-20 py-2 rounded-[2rem] font-semibold hover:rounded-none transition-all hover:bg-orange-500">
                     Edit profile
                   </button>
                 )}
-                {fetchedUser._id === user?._id && (
+                {fetchedUser._id === currentUser.user?._id && (
                   <div className="flex items-center gap-2 text-gray-500 underline hover:text-purple-500 transition-all cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +221,7 @@ export function Profile() {
                     <p className="text-sm">See more statistics...</p>
                   </div>
                 )}
-                {fetchedUser._id !== user?._id && (
+                {fetchedUser._id !== currentUser.user?._id && (
                   <div className="flex items-center gap-2 text-gray-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -176,14 +235,61 @@ export function Profile() {
                       />
                     </svg>
                     <p className="text-sm">
-                      Not followed by anyone you follow.
+                      {currentUser.user && fetchedUser ? (
+                        currentUser.user.following.some((followedId) =>
+                          fetchedUser.followers.some(
+                            (follower) => follower._id === followedId
+                          )
+                        ) ? (
+                          <span>
+                            Followed by{" "}
+                            {currentUser.user.following
+                              .filter((followedId) =>
+                                fetchedUser.followers.some(
+                                  (follower) => follower._id === followedId
+                                )
+                              )
+                              .map((id, index) => {
+                                const matchingFollower =
+                                  fetchedUser.followers.find(
+                                    (follower) => follower._id === id
+                                  );
+                                return (
+                                  <Link
+                                    to={`/profile/${matchingFollower.slug}`}
+                                  >
+                                    <span
+                                      className="hover:text-purple-500 transition-all hover:underline"
+                                      key={id}
+                                    >
+                                      {matchingFollower?.fname}
+                                      {index !==
+                                        currentUser.user.following.filter(
+                                          (followedId) =>
+                                            fetchedUser.followers.some(
+                                              (follower) =>
+                                                follower._id === followedId
+                                            )
+                                        ).length -
+                                          1 && ", "}
+                                    </span>
+                                  </Link>
+                                );
+                              })}
+                          </span>
+                        ) : (
+                          "Not followed by anyone you follow."
+                        )
+                      ) : (
+                        "Loading..."
+                      )}
                     </p>
                   </div>
                 )}
               </div>
             </div>
-            <div className="w-3/5 flex justify-end mt-24 mr-8 items-center gap-4">
-              {user?._id !== fetchedUser._id && (
+            <div className="w-3/5 flex justify-end mt-24 items-center gap-4">
+              {currentUser.user?._id !== fetchedUser._id && (
                 <>
                   <div class="relative group w-auto">
                     <svg
@@ -203,7 +309,7 @@ export function Profile() {
                     </span>
                   </div>
 
-                  <div class="relative group w-auto">
+                  <div class="relative group w-auto mr-8">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -222,7 +328,7 @@ export function Profile() {
                   </div>
                 </>
               )}
-              {user?._id === fetchedUser._id && (
+              {currentUser.user?._id === fetchedUser._id && (
                 <>
                   <div class="relative group w-auto">
                     <svg
@@ -241,24 +347,27 @@ export function Profile() {
                       Change profile picture
                     </span>
                   </div>
-                  <div class="relative group w-auto">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      className="hover:text-orange-500 transition-all hover:scale-125 cursor-pointer"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2m5 11h-4v4h-2v-4H7v-2h4V7h2v4h4z"
-                      />
-                    </svg>
-                    <span class="tooltip absolute left-full h-full ml-2 top-1/2 -translate-y-1/2 bg-black text-white text-xs font-bold px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 pointer-events-none w-[8rem] text-center rounded-r-full">
-                      Add a post
-                    </span>
-                  </div>
-                  <div class="relative group w-auto">
+                  <Link to="/create-post">
+                    <div class="relative group w-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        className="hover:text-orange-500 transition-all hover:scale-125 cursor-pointer"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2m5 11h-4v4h-2v-4H7v-2h4V7h2v4h4z"
+                        />
+                      </svg>
+                      <span class="tooltip absolute left-full h-full ml-2 top-1/2 -translate-y-1/2 bg-black text-white text-xs font-bold px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 pointer-events-none w-[8rem] text-center rounded-r-full">
+                        Add a post
+                      </span>
+                    </div>
+                  </Link>
+
+                  <div class="relative group w-auto mr-8">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -281,16 +390,22 @@ export function Profile() {
                   </div>
                 </>
               )}
-              {user?._id !== fetchedUser._id && (
-                <button className="bg-purple-500 px-20 py-2 rounded-[2rem] font-semibold hover:rounded-none transition-all hover:bg-orange-500">
-                  Follow
+              {currentUser.user?._id !== fetchedUser._id && (
+                <button
+                  onClick={followUser}
+                  className="bg-purple-500 px-20 py-2 rounded-[2rem] font-semibold hover:rounded-none transition-all hover:bg-orange-500"
+                >
+                  {isFollowing ? "Unfollow" : "Follow"}
                 </button>
               )}
             </div>
           </div>{" "}
           <div className="flex w-full items-center my-10">
-            <div className="w-1/3 relative group cursor-pointer">
-              <button className="py-2 w-full text-center text-xl font-semibold transition-all flex items-center justify-center gap-2 group-hover:text-orange-500">
+            <button
+              onClick={() => setShowCategory("posts")}
+              className="w-1/3 relative group cursor-pointer"
+            >
+              <div className="py-2 w-full text-center text-xl font-semibold transition-all flex items-center justify-center gap-2 group-hover:text-orange-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -305,34 +420,76 @@ export function Profile() {
                   />
                 </svg>
                 <p>Posts</p>
-              </button>
-              <div className="h-2 translate-y-1/2 w-1/5 bg-purple-500 absolute left-1/2 -translate-x-1/2 rounded-full bottom-0 group-hover:bg-orange-500 transition-all"></div>
-            </div>
-            <button className="py-2 w-1/3 text-center text-xl font-semibold border-b-2 bg-white bg-opacity-0 hover:bg-opacity-5 transition-all">
-              Liked
+              </div>
+              {showCategory === "posts" && (
+                <div className="h-1 translate-y-1/2 w-1/5 bg-purple-500 absolute left-1/2 -translate-x-1/2 rounded-full bottom-0 group-hover:bg-orange-500 transition-all"></div>
+              )}
             </button>
-            <button className="py-2 w-1/3 text-center text-xl font-semibold border-b-2 bg-white bg-opacity-0 hover:bg-opacity-5 transition-all">
-              Bookmarked
+            <button
+              onClick={() => setShowCategory("liked")}
+              className="w-1/3 relative group cursor-pointer"
+            >
+              <div className="py-2 w-full text-center text-xl font-semibold transition-all flex items-center justify-center gap-2 group-hover:text-orange-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M23 10a2 2 0 0 0-2-2h-6.32l.96-4.57c.02-.1.03-.21.03-.32c0-.41-.17-.79-.44-1.06L14.17 1L7.59 7.58C7.22 7.95 7 8.45 7 9v10a2 2 0 0 0 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73zM1 21h4V9H1z"
+                  />
+                </svg>
+                <p>Liked</p>
+              </div>
+              {showCategory === "liked" && (
+                <div className="h-1 translate-y-1/2 w-1/5 bg-purple-500 absolute left-1/2 -translate-x-1/2 rounded-full bottom-0 group-hover:bg-orange-500 transition-all"></div>
+              )}
+            </button>{" "}
+            <button
+              onClick={() => setShowCategory("bookmarked")}
+              className="w-1/3 relative group cursor-pointer"
+            >
+              <div className="py-2 w-full text-center text-xl font-semibold transition-all flex items-center justify-center gap-2 group-hover:text-orange-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="m12 18l-4.2 1.8q-1 .425-1.9-.162T5 17.975V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v12.975q0 1.075-.9 1.663t-1.9.162z"
+                  />
+                </svg>
+                <p>Bookmarked</p>
+              </div>
+              {showCategory === "bookmarked" && (
+                <div className="h-1 translate-y-1/2 w-1/5 bg-purple-500 absolute left-1/2 -translate-x-1/2 rounded-full bottom-0 group-hover:bg-orange-500 transition-all"></div>
+              )}
             </button>
           </div>
-          {fetchedPosts.data.map((post) => (
-            <Post
-              onLike={() =>
-                handleInteraction({
-                  postId: post._id,
-                  interactionType: "like",
-                })
-              }
-              onBookmark={() =>
-                handleInteraction({
-                  postId: post._id,
-                  interactionType: "bookmark",
-                })
-              }
-              key={post._id}
-              post={post}
-            />
-          ))}
+          <div className="flex flex-col w-full">
+            {posts?.data?.map((post) => (
+              <Post
+                onLike={() =>
+                  handleInteraction({
+                    postId: post._id,
+                    interactionType: "like",
+                  })
+                }
+                onBookmark={() =>
+                  handleInteraction({
+                    postId: post._id,
+                    interactionType: "bookmark",
+                  })
+                }
+                key={post._id}
+                post={post}
+              />
+            ))}
+          </div>
         </div>
       </Section>
     </main>

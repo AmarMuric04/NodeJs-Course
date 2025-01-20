@@ -302,8 +302,9 @@ export const Comment = ({ className }) => (
   </svg>
 );
 
-export const Like = () => (
+export const Like = ({ className }) => (
   <svg
+    className={className}
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
@@ -331,8 +332,9 @@ export const Liked = ({ className }) => (
   </svg>
 );
 
-export const Bookmark = () => (
+export const Bookmark = ({ className }) => (
   <svg
+    className={className}
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"

@@ -163,7 +163,7 @@ exports.getBookmarked = async (req, res, next) => {
 
     res.status(200).json({
       message: "Fetched bookmarked posts successfully",
-      posts: bookmarkedPosts,
+      data: bookmarkedPosts,
     });
   } catch (error) {
     if (!error.statusCode) {
@@ -181,7 +181,7 @@ exports.getLiked = async (req, res, next) => {
 
     res.status(200).json({
       message: "Fetched bookmarked posts successfully",
-      posts: likedPosts,
+      data: likedPosts,
     });
   } catch (error) {
     if (!error.statusCode) {
@@ -209,7 +209,9 @@ exports.getCount = async (req, res, next) => {
 exports.getUserBySlug = async (req, res, next) => {
   const { slug } = req.params;
   try {
-    const user = await User.findOne({ slug });
+    const user = await User.findOne({ slug })
+      .populate("following")
+      .populate("followers");
 
     if (user) {
       res.json(user);
@@ -245,6 +247,54 @@ exports.getPosts = async (req, res, next) => {
       error.statusCode = 500;
     }
 
+    next(error);
+  }
+};
+
+exports.toggleFollow = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const currentUser = await User.findById(req.userId);
+
+    if (id === currentUser.id) {
+      const error = new Error("You can't follow yourself.");
+      error.statusCode = 400;
+      throw error;
+    }
+
+    const userToFollow = await User.findById(id);
+    if (!userToFollow) {
+      const error = new Error("User not found.");
+      error.statusCode = 404;
+      throw error;
+    }
+
+    const isFollowing = currentUser.following.includes(id);
+    if (isFollowing) {
+      userToFollow.followers = userToFollow.followers.filter(
+        (followerId) => followerId.toString() !== currentUser.id.toString()
+      );
+      currentUser.following = currentUser.following.filter(
+        (followingId) => followingId.toString() !== id.toString()
+      );
+
+      await userToFollow.save();
+      await currentUser.save();
+
+      return res.status(200).json({ message: "User unfollowed successfully." });
+    } else {
+      userToFollow.followers.push(currentUser.id);
+      currentUser.following.push(id);
+
+      await userToFollow.save();
+      await currentUser.save();
+
+      return res.status(200).json({ message: "User followed successfully." });
+    }
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
     next(error);
   }
 };
