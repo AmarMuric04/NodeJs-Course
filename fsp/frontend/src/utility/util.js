@@ -83,9 +83,11 @@ export const handlePostInput = async (value, files, cbPreview, cbImage) => {
     if (files && files[0]) {
       const file = files[0];
 
+      console.log(cbImage);
+
       const b64 = await generateBase64FromImage(file);
       if (cbPreview) cbPreview(b64);
-      if (cbImage) cbImage(file);
+      // if (cbImage) cbImage(file);
     } else {
       console.error("No file selected.");
     }

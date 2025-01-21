@@ -49,11 +49,11 @@ const Input = ({
         />
       )}
       {input === "file" && (
-        <div className="relative">
+        <div className="relative group">
           <button
             type="button"
             onClick={handleFileClick}
-            className={`py-2 px-4 rounded-md w-full bg-purple-500 hover:bg-orange-500 transition-all text-white ${
+            className={`py-2 px-4 rounded-md w-full bg-purple-500 group-hover:bg-orange-500 transition-all text-white ${
               extraClasses ? extraClasses : ""
             } ${hasError && !isFocused ? onErrorClass : normalClass}`}
           >
@@ -66,7 +66,7 @@ const Input = ({
             type="file"
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
-            className={`absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer pointer-events-none *:${
+            className={`absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer *:${
               hasError && !isFocused ? onErrorClass : normalClass
             }`}
             {...props}
