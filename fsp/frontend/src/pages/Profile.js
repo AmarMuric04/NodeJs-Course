@@ -14,7 +14,7 @@ import { Modal } from "../components/Modal";
 export function Profile() {
   const [showCategory, setShowCategory] = useState("posts");
   const [isFollowing, setIsFollowing] = useState(false);
-  const [modalType, setModalType] = useState("123");
+  const [modalType, setModalType] = useState(null);
 
   const { slug } = useParams();
   const { user } = useSelector((state) => state.auth);
@@ -96,13 +96,13 @@ export function Profile() {
           <img
             onClick={() => setModalType("banner")}
             className="w-full h-[25rem] object-cover cursor-pointer"
-            src={`http://localhost:8080` + fetchedUser.bannerImage}
+            src={`http://localhost:8080/` + fetchedUser.bannerImage}
             alt="Banner"
           />
           {currentUser?.user._id === fetchedUser._id && (
             <button
               onClick={() => setModalType("change-image")}
-              className="text-black px-4 py-2 rounded-full hover:bg-purple-500 hover:text-white transition-all bottom-4 right-4 absolute flex items-center gap-2 z-10"
+              className="bg-[#222] px-4 py-2 rounded-l-full hover:bg-purple-500 transition-all bottom-4 right-8 absolute flex items-center gap-2 z-10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -138,8 +138,8 @@ export function Profile() {
                 </div>
               </div>
               <div className="w-full flex flex-col gap-4">
-                {fetchedUser.bio ? (
-                  <p>{fetchedUser.bio}</p>
+                {fetchedUser.about ? (
+                  <p>{fetchedUser.about}</p>
                 ) : (
                   <p>No bio provided</p>
                 )}
@@ -204,7 +204,10 @@ export function Profile() {
                   </div>
                 </div>
                 {fetchedUser._id === currentUser?.user._id && (
-                  <button className="bg-purple-500 px-20 py-2 rounded-[2rem] font-semibold hover:rounded-none transition-all hover:bg-orange-500">
+                  <button
+                    onClick={() => setModalType("edit-profile")}
+                    className="bg-purple-500 px-20 py-2 rounded-[2rem] font-semibold hover:rounded-none transition-all hover:bg-orange-500"
+                  >
                     Edit profile
                   </button>
                 )}
@@ -367,7 +370,10 @@ export function Profile() {
                     </div>
                   </Link>
 
-                  <div class="relative group w-auto mr-8">
+                  <button
+                    onClick={() => setModalType("edit-profile")}
+                    class="relative group w-auto mr-8"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -387,7 +393,7 @@ export function Profile() {
                     <span class="tooltip absolute left-full h-full ml-2 top-1/2 -translate-y-1/2 bg-black text-white text-xs font-bold px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 pointer-events-none w-[8rem] text-center rounded-r-full ">
                       Edit profile
                     </span>
-                  </div>
+                  </button>
                 </>
               )}
               {currentUser?.user?._id !== fetchedUser._id && (

@@ -40,20 +40,19 @@ export const Controller = {
       const srPuzzle = this.srAPI[i];
       const variation = e.querySelector(".variations div");
       enPuzzle?.variations?.forEach((V, index) => {
-        const a = document.createElement("a");
-        a.setAttribute("href", "...");
-        a.classList = "flex-shrink-0 ";
+        const div = document.createElement("div");
+        div.classList = "flex-shrink-0 ";
 
         const li = document.createElement("li");
         li.classList =
-          "cursor-pointer px-4 py-1 text-sm rounded-[2rem] hover:rounded-none transition-all border-[1px] border1";
+          "cursor-pointer px-4 py-1 text-sm rounded-[2rem] transition-all border-[1px] border1";
         li.textContent =
           lang === "english" ? V.name : srPuzzle?.variations[index].name;
         li.setAttribute("data-english", V.name);
         li.setAttribute("data-srpski", srPuzzle?.variations[index].name);
 
-        a.append(li);
-        variation.append(a);
+        div.append(li);
+        variation.append(div);
       });
 
       const image = e.querySelector(".image");

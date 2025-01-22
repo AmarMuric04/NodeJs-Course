@@ -4,7 +4,11 @@ import { getAPI } from "../api.js";
 import { Model } from "./model.js";
 import { View } from "./view.js";
 
-const lang = getLang();
+let lang = localStorage.getItem("SolveBox-current-language");
+
+window.addEventListener("localStorageChange", (event) => {
+  lang = event.newValue;
+});
 
 export const Controller = {
   enAPI: null,

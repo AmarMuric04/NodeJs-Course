@@ -7,7 +7,7 @@ export const View = {
     reviews.forEach((review) => {
       const reviewDiv = document.createElement("div");
       reviewDiv.classList =
-        "bg-white w-screen min-w-[21rem] review mb-12 flex h-auto lg:h-[30rem] lg:min-w-[75rem] lg:w-[75rem] flex-col lg:flex-row";
+        "bg-white w-screen min-w-[100%] max-w-[90vh] md:min-w-[45rem] lg:min-w-[60rem] review mb-12 flex h-auto lg:h-[30rem] xl:min-w-[75rem] xl:w-[75rem] flex-col lg:flex-row";
 
       const reviewImage = document.createElement("img");
       reviewImage.classList =

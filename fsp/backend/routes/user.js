@@ -35,6 +35,16 @@ router.post(
 
 router.get("/profile/:slug", Controller.getUserBySlug);
 
+router.put(
+  "/:id/edit-profile",
+  [
+    body("fname").not().notEmpty().withMessage("Must provide first name."),
+    body("lname").not().notEmpty().withMessage("Must provide last name."),
+  ],
+  isAuth,
+  Controller.editProfile
+);
+
 router.get("/:id/posts", Controller.getPosts);
 
 router.get("/:id/bookmarked", Controller.getBookmarked);

@@ -22,7 +22,9 @@ const Input = ({
 
   return (
     <div className="mb-4 flex flex-col">
-      <label className={`${hasError && "text-red-600"}`}>{label}</label>
+      <label className={`${hasError && !isFocused && "text-red-600"}`}>
+        {label}
+      </label>
 
       {input === "input" && (
         <input

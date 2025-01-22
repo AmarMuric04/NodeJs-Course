@@ -38,11 +38,18 @@ const fileFilter = (req, file, cb) => {
     file.mimetype === "image/jpeg"
   ) {
     cb(null, true);
+  } else {
+    cb(new Error("Only .png, .jpg, and .jpeg formats are allowed"), false);
   }
-  cb(null, false);
 };
 
-app.use(multer({ storage, fileFilter }).single("image"));
+app.use(
+  multer({ storage, fileFilter }).fields([
+    { name: "image", maxCount: 1 },
+    { name: "banner", maxCount: 1 },
+  ])
+);
+
 app.use("/images", express.static(path.join(__dirname, "images")));
 
 app.use(express.json());

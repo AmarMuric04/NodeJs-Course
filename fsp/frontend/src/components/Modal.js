@@ -2,13 +2,65 @@ import { useEffect, useRef, useState } from "react";
 import FadeIn from "./FadeIn";
 import Input from "./Input";
 import { handlePostInput } from "../utility/util";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { protectedPutData } from "../utility/async";
+import { Spinner } from "../assets/icons";
 
 export function Modal({ type, user, setType }) {
-  const [banner, setBanner] = useState("");
-  const [pfp, setPfp] = useState("");
+  const queryClient = useQueryClient();
 
-  const pfpInput = useRef(null);
-  const bannerInput = useRef(null);
+  const [bannerPreview, setBannerPreview] = useState("");
+  const [pfpPreview, setPfpPreview] = useState("");
+
+  const [error, setError] = useState([]);
+
+  /* Edit profile modal */
+  const [profileFields, setProfileFields] = useState(user);
+  console.log(profileFields);
+
+  const token = localStorage.getItem("token");
+
+  const { mutate: updateUser, isPending } = useMutation({
+    mutationFn: ({ body, type }) => {
+      const formData = new FormData();
+
+      Object.entries(body).forEach(([key, value]) => {
+        if (type === "images")
+          if (key === "imageUrl" || key === "bannerImage") return;
+
+        if (typeof value === "object") {
+          formData.append(key, JSON.stringify(value));
+        } else {
+          formData.append(key, value);
+        }
+      });
+
+      if (type === "images") {
+        if (body.imageUrl) formData.append("image", body.imageUrl);
+        if (body.bannerImage) formData.append("banner", body.bannerImage);
+      }
+      return protectedPutData(
+        "/users/" + profileFields._id + "/edit-profile",
+        formData,
+        token
+      );
+    },
+    onError: (error) => {
+      setError(error.data || "An error occurred");
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["profile", profileFields.slug]);
+      setType(null);
+    },
+  });
+  const handleChangeImage = (img) =>
+    setProfileFields({ ...profileFields, imageUrl: img });
+
+  const handleChangeBanner = (img) =>
+    setProfileFields({ ...profileFields, bannerImage: img });
 
   useEffect(() => {
     if (type) {
@@ -57,7 +109,7 @@ export function Modal({ type, user, setType }) {
         {type === "banner" && (
           <img
             className="w-full h-[25rem] object-cover"
-            src={`http://localhost:8080` + user.bannerImage}
+            src={`http://localhost:8080/` + user.bannerImage}
             alt="Banner"
           />
         )}
@@ -94,11 +146,10 @@ export function Modal({ type, user, setType }) {
                   handlePostInput(
                     e.target.value,
                     e.target.files,
-                    setBanner,
-                    "1"
+                    setBannerPreview,
+                    handleChangeBanner
                   )
                 }
-                ref={bannerInput}
               />
               <Input
                 // error={error}
@@ -108,28 +159,32 @@ export function Modal({ type, user, setType }) {
                 name="pfp"
                 label="Change your profile picture?"
                 onChange={(e) =>
-                  handlePostInput(e.target.value, e.target.files, setPfp, "2")
+                  handlePostInput(
+                    e.target.value,
+                    e.target.files,
+                    setPfpPreview,
+                    handleChangeImage
+                  )
                 }
-                ref={pfpInput}
               />
             </div>
-            {banner ? (
+            {bannerPreview ? (
               <img
                 className="mt-20 w-full h-[10rem] object-cover"
-                src={banner}
+                src={bannerPreview}
                 alt="Banner"
               />
             ) : (
               <img
                 className="mt-20 w-full h-[10rem] object-cover"
-                src={`http://localhost:8080` + user.bannerImage}
+                src={`http://localhost:8080/` + user.bannerImage}
                 alt="Banner"
               />
             )}
-            {pfp ? (
+            {pfpPreview ? (
               <img
                 className="w-[4rem] h-[4rem] rounded-full object-cover ml-4 relative -top-8 border-2 border-[#222]"
-                src={pfp}
+                src={pfpPreview}
                 alt="Pfp"
               />
             ) : (
@@ -140,8 +195,20 @@ export function Modal({ type, user, setType }) {
               />
             )}
             <div className="flex mt-8 justify-end items-center gap-2">
-              <button className="bg-purple-400 font-semibold py-3 w-1/2 hover:bg-orange-500 transition-all rounded-[2rem] hover:rounded-none">
-                Save
+              <button
+                disabled={isPending}
+                onClick={async () =>
+                  await updateUser({ body: profileFields, type: "images" })
+                }
+                className="bg-purple-400 font-semibold py-3 w-1/2 hover:bg-orange-500 transition-all rounded-[2rem] hover:rounded-none"
+              >
+                {isPending ? (
+                  <div className="flex items-center gap-2 justify-center">
+                    <p>Saving</p> <Spinner />
+                  </div>
+                ) : (
+                  "Save"
+                )}
               </button>
               <button
                 onClick={() => setType(null)}
@@ -152,7 +219,7 @@ export function Modal({ type, user, setType }) {
             </div>
           </div>
         )}
-        {type === "123" && (
+        {type === "edit-profile" && (
           <div className="bg-[#222] px-16 py-12 rounded-xl flex gap-4 shadow-xl relative">
             <button
               onClick={() => setType(null)}
@@ -177,27 +244,42 @@ export function Modal({ type, user, setType }) {
               <h1 className="text-lg font-bold mb-4">Personal</h1>
               <div className="flex gap-2">
                 <Input
+                  error={error}
                   onErrorClass="border-red-600 bg-[#191919] text-white"
                   normalClass="bg-[#191919] border-[#191919] text-white"
                   type="text"
                   input="input"
                   placeholder="First Name"
-                  value={user.fname}
+                  value={profileFields.fname}
                   name="fname"
                   label="First Name"
+                  onChange={(e) =>
+                    setProfileFields({
+                      ...profileFields,
+                      fname: e.target.value,
+                    })
+                  }
                 />
                 <Input
+                  error={error}
                   onErrorClass="border-red-600 bg-[#191919] text-white"
                   normalClass="bg-[#191919] border-[#191919] text-white"
                   type="text"
                   input="input"
                   placeholder="Last Name"
-                  value={user.lname}
+                  value={profileFields.lname}
                   name="lname"
                   label="Last Name"
+                  onChange={(e) =>
+                    setProfileFields({
+                      ...profileFields,
+                      lname: e.target.value,
+                    })
+                  }
                 />
               </div>
               <Input
+                error={error}
                 extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg h-[10rem] min-h-[10rem] max-h-[10rem]"
                 normalClass="bg-[#191919] border-[#222]"
                 onErrorClass="border-red-600 bg-[#222]"
@@ -205,10 +287,17 @@ export function Modal({ type, user, setType }) {
                 input="textarea"
                 placeholder="About..."
                 name="about"
-                value={user.about}
+                value={profileFields.about}
                 label="About you (bio)"
+                onChange={(e) =>
+                  setProfileFields({
+                    ...profileFields,
+                    about: e.target.value,
+                  })
+                }
               />
               <Input
+                error={error}
                 extraClasses="border-2 text-white w-full py-2 px-4 rounded-lg mt-1 mb"
                 normalClass="bg-[#191919] border-[#222]"
                 onErrorClass="border-red-600"
@@ -216,16 +305,31 @@ export function Modal({ type, user, setType }) {
                 input="input"
                 placeholder="Date"
                 name="birth"
+                value={profileFields.birth}
                 label="Date of birth"
+                onChange={(e) =>
+                  setProfileFields({
+                    ...profileFields,
+                    birth: e.target.value,
+                  })
+                }
               />
               <Input
+                error={error}
                 onErrorClass="border-red-600 bg-[#191919] text-white"
                 normalClass="bg-[#191919] border-[#191919] text-white"
                 type="text"
                 input="input"
                 placeholder="Location"
                 name="location"
+                value={profileFields.location}
                 label="Location"
+                onChange={(e) =>
+                  setProfileFields({
+                    ...profileFields,
+                    location: e.target.value,
+                  })
+                }
               />
               <div className="pb-4">
                 <label htmlFor="gender">Gender</label>
@@ -233,8 +337,15 @@ export function Modal({ type, user, setType }) {
                   name="gender"
                   id="gender"
                   className="px-4 w-full bg-[#191919] py-2 rounded-md text-white cursor-pointer appearance-none"
+                  value={profileFields.gender}
+                  onChange={(e) =>
+                    setProfileFields({
+                      ...profileFields,
+                      gender: e.target.value,
+                    })
+                  }
                 >
-                  <option className="bg-[#222]" value="">
+                  <option className="bg-[#222]" value="male">
                     Male
                   </option>
                   <option className="bg-[#222]" value="female">
@@ -246,84 +357,175 @@ export function Modal({ type, user, setType }) {
                 </select>
               </div>
               <Input
+                error={error}
                 onErrorClass="border-red-600 bg-[#191919] text-white"
                 normalClass="bg-[#191919] border-[#191919] text-white"
                 type="text"
                 input="input"
                 placeholder="Phone Number"
                 name="phone"
+                value={profileFields.phone}
                 label="Phone Number"
+                onChange={(e) =>
+                  setProfileFields({
+                    ...profileFields,
+                    phone: e.target.value,
+                  })
+                }
               />
             </div>
 
             <div className="w-[25rem]">
               <h1 className="text-lg font-bold mb-4">Business</h1>
               <Input
+                error={error}
                 onErrorClass="border-red-600 bg-[#191919] text-white"
                 normalClass="bg-[#191919] border-[#191919] text-white"
                 type="text"
                 input="input"
                 placeholder="Website"
                 name="website"
+                value={profileFields.website}
                 label="Add your website"
+                onChange={(e) =>
+                  setProfileFields({
+                    ...profileFields,
+                    website: e.target.value,
+                  })
+                }
               />
               <Input
+                error={error}
                 onErrorClass="border-red-600 bg-[#191919] text-white"
                 normalClass="bg-[#191919] border-[#191919] text-white"
                 type="text"
                 input="input"
                 placeholder="Instagram"
                 name="instagram"
+                value={profileFields.instagram}
                 label="Add your Instagram"
+                onChange={(e) =>
+                  setProfileFields({
+                    ...profileFields,
+                    instagram: e.target.value,
+                  })
+                }
               />
               <Input
+                error={error}
                 onErrorClass="border-red-600 bg-[#191919] text-white"
                 normalClass="bg-[#191919] border-[#191919] text-white"
                 type="text"
                 input="input"
                 placeholder="LinkedIn"
                 name="linkedin"
+                value={profileFields.linkedin}
                 label="Add your LinkedIn"
+                onChange={(e) =>
+                  setProfileFields({
+                    ...profileFields,
+                    linkedin: e.target.value,
+                  })
+                }
               />
               <Input
+                error={error}
                 onErrorClass="border-red-600 bg-[#191919] text-white"
                 normalClass="bg-[#191919] border-[#191919] text-white"
                 type="text"
                 input="input"
                 placeholder="Twitter"
                 name="twitter"
+                value={profileFields.twitter}
                 label="Add your Twitter"
+                onChange={(e) =>
+                  setProfileFields({
+                    ...profileFields,
+                    twitter: e.target.value,
+                  })
+                }
               />
-            </div>
-
-            <div className="w-[25rem]">
-              <h1 className="text-lg font-bold mb-4">Preferences</h1>
               <Input
+                error={error}
                 onErrorClass="border-red-600 bg-[#191919] text-white"
                 normalClass="bg-[#191919] border-[#191919] text-white"
                 type="text"
                 input="input"
-                placeholder="Preferred Language"
-                name="language"
-                label="Preferred Language"
+                placeholder="Skills"
+                name="skills"
+                value={profileFields.skills}
+                label="Mention your skills"
+                onChange={(e) =>
+                  setProfileFields({ ...profileFields, skills: e.target.value })
+                }
               />
+              <h1 className="text-lg font-bold mb-4">Privacy</h1>
               <div className="pb-4">
-                <label htmlFor="notifications">Notification Preference</label>
+                <label htmlFor="profile-visisbility">Profile Visibility</label>
                 <select
-                  name="notifications"
-                  id="notifications"
+                  name="profile-visibility"
+                  id="profile-visibility"
                   className="px-4 w-full bg-[#191919] py-2 rounded-md text-white cursor-pointer appearance-none"
+                  value={profileFields.visibility}
+                  onChange={(e) =>
+                    setProfileFields({
+                      ...profileFields,
+                      visibility: e.target.value,
+                    })
+                  }
                 >
-                  <option className="bg-[#222]" value="email">
-                    Email
+                  <option className="bg-[#222]" value="public">
+                    Public
                   </option>
-                  <option className="bg-[#222]" value="sms">
-                    SMS
-                  </option>
-                  <option className="bg-[#222]" value="push">
-                    Push Notifications
+                  <option className="bg-[#222]" value="private">
+                    Private
                   </option>
                 </select>
+              </div>
+              <div className="pb-4">
+                <label htmlFor="profile-visisbility">Allow comments</label>
+                <select
+                  name="allow-comments"
+                  id="allow-comments"
+                  className="px-4 w-full bg-[#191919] py-2 rounded-md text-white cursor-pointer appearance-none"
+                  value={profileFields.comments}
+                  onChange={(e) =>
+                    setProfileFields({
+                      ...profileFields,
+                      comments: e.target.value,
+                    })
+                  }
+                >
+                  <option className="bg-[#222]" value="public">
+                    Yes
+                  </option>
+                  <option className="bg-[#222]" value="private">
+                    No
+                  </option>
+                </select>
+              </div>
+              <div className="flex mt-8 justify-end items-center gap-2">
+                <button
+                  onClick={async () =>
+                    await updateUser({ body: profileFields, type: "edit" })
+                  }
+                  disabled={isPending}
+                  className="bg-purple-400 font-semibold py-3 w-1/2 hover:bg-orange-500 transition-all rounded-[2rem] hover:rounded-none"
+                >
+                  {isPending ? (
+                    <div className="flex items-center gap-2 justify-center">
+                      <p>Saving</p> <Spinner />
+                    </div>
+                  ) : (
+                    "Save"
+                  )}
+                </button>
+                <button
+                  onClick={() => setType(null)}
+                  className="bg-white bg-opacity-10 w-1/2 py-3 hover:bg-opacity-20"
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           </div>

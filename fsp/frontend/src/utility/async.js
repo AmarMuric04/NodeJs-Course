@@ -55,3 +55,27 @@ export const protectedPostData = (URL, body, token) =>
       Authorization: "Bearer " + token,
     },
   });
+
+const basePutData = async (URL, body, options = {}) => {
+  console.log(body);
+  try {
+    const response = await axiosInstance.put(URL, body, {
+      headers: {
+        ...options.headers,
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    throw error.response;
+  }
+};
+
+export const putData = async (URL) => basePutData(URL);
+
+export const protectedPutData = async (URL, body, token) =>
+  basePutData(URL, body, {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });

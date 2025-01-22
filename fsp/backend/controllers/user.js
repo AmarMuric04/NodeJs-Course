@@ -298,3 +298,69 @@ exports.toggleFollow = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.editProfile = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const validationError = new Error("Validation failed.");
+      validationError.statusCode = 422;
+      validationError.data = errors.array();
+      throw validationError;
+    }
+
+    let imageUrl = "images/default.jpg";
+    if (req.files && req.files["image"] && req.files["image"][0]) {
+      imageUrl = req.files["image"][0].path.replace(/\\/g, "/");
+    }
+
+    let bannerImage = "images/default-bg.jpg";
+    if (req.files && req.files.banner && req.files.banner[0]) {
+      bannerImage = req.files.banner[0].path.replace(/\\/g, "/");
+    }
+
+    const user = await User.findById(id);
+    if (!user) {
+      const error = new Error("User not found.");
+      error.statusCode = 404;
+      throw error;
+    }
+
+    if (imageUrl) user.imageUrl = imageUrl;
+    if (bannerImage) user.bannerImage = bannerImage;
+
+    const updateFields = req.body;
+    console.log(updateFields);
+
+    Object.keys(updateFields).forEach((key) => {
+      const value = updateFields[key];
+      if (typeof value === "string") {
+        try {
+          const parsedValue = JSON.parse(value);
+          if (Array.isArray(parsedValue) || typeof parsedValue === "object") {
+            user[key] = parsedValue;
+          } else {
+            user[key] = value;
+          }
+        } catch {
+          user[key] = value;
+        }
+      } else {
+        user[key] = value;
+      }
+    });
+
+    await user.save();
+
+    res.status(200).json({
+      message: "Profile updated successfully.",
+      data: user,
+    });
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+  }
+};

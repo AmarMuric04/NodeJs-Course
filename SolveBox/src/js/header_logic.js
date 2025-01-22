@@ -59,7 +59,7 @@ function handleCheckIfSignedIn() {
     userInfo.innerHTML = "";
     mobileUserInfo.innerHTML = "";
     const userEmail = document.createElement("p");
-    userEmail.classList = "text-gray-400 font-semibold truncate w-[8rem]";
+    userEmail.classList = "font-semibold truncate w-[8rem]";
     userEmail.textContent = user.email;
 
     const signOutBtn = document.createElement("div");

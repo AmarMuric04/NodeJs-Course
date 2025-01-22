@@ -59,6 +59,41 @@ const userSchema = new Schema(
       type: String,
       default: "default-bg.png",
     },
+    location: {
+      type: String,
+    },
+    birth: {
+      type: String,
+    },
+    location: {
+      type: String,
+    },
+    phone: {
+      type: String,
+    },
+    website: {
+      type: String,
+    },
+    instagram: {
+      type: String,
+    },
+    linkedin: {
+      type: String,
+    },
+    twitter: {
+      type: String,
+    },
+    skills: [
+      {
+        type: String,
+      },
+    ],
+    visibility: {
+      type: String,
+    },
+    comments: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
