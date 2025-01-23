@@ -28,21 +28,41 @@ export const usePostInteraction = () => {
   const queryClient = useQueryClient();
   const token = localStorage.getItem("token");
 
+  const [isPendingLike, setIsPendingLike] = useState(false);
+  const [isPendingBookmark, setIsPendingBookmark] = useState(false);
+
   const { mutate } = useMutation({
-    mutationFn: ({ postId, interactionType }) => {
+    mutationFn: ({ postId, interactionType, isPending }) => {
       return protectedPostData(
         `/posts/${postId}/${interactionType}`,
         null,
         token
       );
     },
-    onError: (error) => {
-      dispatch(setNotification(error.data));
+    onMutate: ({ interactionType }) => {
+      if (interactionType === "like") {
+        setIsPendingLike(true);
+      } else if (interactionType === "bookmark") {
+        setIsPendingBookmark(true);
+      }
     },
-    onSuccess: () => {
+    onError: (error, { interactionType }) => {
+      dispatch(setNotification(error.data));
+      if (interactionType === "like") {
+        setIsPendingLike(false);
+      } else if (interactionType === "bookmark") {
+        setIsPendingBookmark(false);
+      }
+    },
+    onSuccess: (_, { interactionType }) => {
       queryClient.invalidateQueries(["posts"]);
+      if (interactionType === "like") {
+        setIsPendingLike(false);
+      } else if (interactionType === "bookmark") {
+        setIsPendingBookmark(false);
+      }
     },
   });
 
-  return { handleInteraction: mutate };
+  return { handleInteraction: mutate, isPendingLike, isPendingBookmark };
 };

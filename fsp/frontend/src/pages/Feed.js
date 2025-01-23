@@ -1,20 +1,18 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Post from "../components/Post";
 import Input from "../components/Input";
 import { Filter } from "../assets/icons";
 import { setNotification } from "../storage/notificationSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { fetchData, protectedPostData } from "../utility/async";
-import { useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+import { fetchData } from "../utility/async";
 import { usePostInteraction } from "../utility/hooks";
 
 export default function Feed() {
   const dispatch = useDispatch();
-  const queryClient = useQueryClient();
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [isExpanded, setIsExpanded] = useState(false);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [filters, setFilters] = useState({
@@ -36,16 +34,13 @@ export default function Feed() {
   const lnameInput = useRef(null);
   const emailInput = useRef(null);
   const tagsInput = useRef(null);
-  const { handleInteraction } = usePostInteraction();
-
-  const token = localStorage.getItem("token");
+  const { handleInteraction, isPendingBookmark, isPendingLike } =
+    usePostInteraction();
 
   const { data: posts, isLoading } = useQuery({
     queryFn: () => fetchData("/posts"),
     queryKey: ["posts"],
   });
-
-  console.log("Render");
 
   const readUrlParams = useCallback(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -265,7 +260,6 @@ export default function Feed() {
     const updatedPosts = applyFilters();
     handleManageSearchParams();
     setFilteredPosts(updatedPosts);
-    console.log("Filtered");
   }, [applyFilters, isLoading, handleManageSearchParams]);
 
   useEffect(() => {
@@ -309,6 +303,8 @@ export default function Feed() {
               <div>
                 {filteredPosts.map((post) => (
                   <Post
+                    isLikePending={isPendingLike}
+                    isBookmarkPending={isPendingBookmark}
                     onLike={() =>
                       handleInteraction({
                         postId: post._id,
@@ -331,6 +327,8 @@ export default function Feed() {
                 <div>
                   {posts.data.map((post) => (
                     <Post
+                      isLikePending={isPendingLike}
+                      isBookmarkPending={isPendingBookmark}
                       onLike={() =>
                         handleInteraction({
                           postId: post._id,

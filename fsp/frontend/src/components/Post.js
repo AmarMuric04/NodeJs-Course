@@ -6,11 +6,14 @@ import { useIntersectionObserver } from "../utility/hooks";
 import FadeIn from "./FadeIn";
 import { Link } from "react-router-dom";
 
-export default function Post({ post, onBookmark, onLike }) {
+export default function Post({
+  post,
+  onBookmark,
+  onLike,
+  isLikePending,
+  isBookmarkPending,
+}) {
   const { user } = useSelector((state) => state.auth);
-
-  const [disableB, setDisableB] = useState(false);
-  const [disableL, setDisableL] = useState(false);
 
   const [liked, setLiked] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
@@ -81,12 +84,42 @@ export default function Post({ post, onBookmark, onLike }) {
         <div className="flex flex-col">
           <div className="flex gap-2 items-center">
             <Link
-              className="hover:underline flex gap-2"
+              className="hover:underline flex gap-2 items-center"
               to={`/profile/${post.creator.slug}`}
             >
               <p className="text-sm font-bold">
                 {post.creator.fname}, {post.creator.lname}{" "}
               </p>
+              <div className="flex gap-1 items-center">
+                {post.creator.verified === "true" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    className="text-purple-500"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12z"
+                    />
+                  </svg>
+                )}
+                {post.creator.status === "admin" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    className="text-purple-500"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5Zm0 3.9a3 3 0 1 1-3 3a3 3 0 0 1 3-3m0 7.9c2 0 6 1.09 6 3.08a7.2 7.2 0 0 1-12 0c0-1.99 4-3.08 6-3.08"
+                    />
+                  </svg>
+                )}
+              </div>
             </Link>
             <p className="text-gray-400 text-sm">{post.creator.email}</p>
             <p>·</p>
@@ -112,7 +145,7 @@ export default function Post({ post, onBookmark, onLike }) {
                         <p>0</p>
                       </div>
                       <button
-                        disabled={disableL}
+                        disabled={isLikePending}
                         onClick={() => handleAction("like")}
                         className="flex items-center gap-2 cursor-pointer hover:scale-125 transition-all"
                       >
@@ -127,7 +160,7 @@ export default function Post({ post, onBookmark, onLike }) {
                       </button>
 
                       <button
-                        disabled={disableB}
+                        disabled={isBookmarkPending}
                         onClick={() => handleAction("bookmark")}
                         className="flex items-center gap-2 cursor-pointer hover:scale-125 transition-all"
                       >
@@ -264,7 +297,7 @@ export default function Post({ post, onBookmark, onLike }) {
                     <p>0</p>
                   </div>
                   <button
-                    disabled={disableL}
+                    disabled={isLikePending}
                     onClick={() => handleAction("like")}
                     className="flex items-center gap-2 cursor-pointer"
                   >
@@ -279,7 +312,7 @@ export default function Post({ post, onBookmark, onLike }) {
                   </button>
 
                   <button
-                    disabled={disableB}
+                    disabled={isBookmarkPending}
                     onClick={() => handleAction("bookmark")}
                     className="flex items-center gap-2 cursor-pointer"
                   >

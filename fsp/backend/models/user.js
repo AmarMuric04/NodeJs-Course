@@ -94,6 +94,9 @@ const userSchema = new Schema(
     comments: {
       type: String,
     },
+    gender: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
