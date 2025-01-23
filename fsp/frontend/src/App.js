@@ -141,10 +141,11 @@ const App = () => {
           <div className="flex flex-col justify-between">
             <div>
               <p className="font-semibold text-lg">Frontend Stack</p>
-              <p className="text-sm text-gray-500">6 Technologies Used</p>
+              <p className="text-sm text-gray-500">7 Technologies Used</p>
             </div>
-            <p className="text-xs text-gray-400 line-clamp-2">
-              React, Tailwind, Redux, React Query, Axios, React Router DOM
+            <p className="text-xs text-gray-400 line-clamp-4">
+              React, Tailwind, Redux, React Query, Axios, React Router DOM,
+              Socket.io Client
             </p>
           </div>
         </div>
@@ -157,10 +158,10 @@ const App = () => {
           <div className="flex flex-col justify-between">
             <div>
               <p className="font-semibold text-lg">Backend Stack</p>
-              <p className="text-sm text-gray-500">4 Technologies Used</p>
+              <p className="text-sm text-gray-500">6 Technologies Used</p>
             </div>
-            <p className="text-xs text-gray-400 line-clamp-2">
-              Node.js, Express.js, Multer, JWT
+            <p className="text-xs text-gray-400 line-clamp-4">
+              Node.js, Express.js, Multer, JWT, Socket.io, Axios
             </p>
           </div>
         </div>
@@ -291,24 +292,28 @@ const App = () => {
             icon={<User h="48px" w="48px" />}
             url="/users/count"
             bgColor="bg-purple-500"
+            id="users"
           />
           <Statistic
             title="No. of Posts"
             icon={<Post h="48px" w="48px" />}
             url="/posts/count"
             bgColor="bg-orange-500"
+            id="posts"
           />
           <Statistic
             title="No. of Likes"
             icon={<Likes h="48px" w="48px" />}
             url="/posts/likes"
             bgColor="bg-purple-500"
+            id="likes"
           />
           <Statistic
             title="No. of Bookmarks"
             icon={<Bookmarks h="48px" w="48px" />}
             url="/posts/bookmarks"
             bgColor="bg-orange-500"
+            id="bookmarks"
           />
         </FadeIn>
       </Section>
@@ -397,24 +402,28 @@ const App = () => {
             icon={<ReviewIcon h="48px" w="48px" />}
             url="/reviews/count"
             bgColor="bg-purple-500"
+            id="reviews"
           />
           <Statistic
             title="Avg. Rating"
             icon={<Chart h="48px" w="48px" />}
             url="/reviews/average"
             bgColor="bg-blue-500"
+            id="avgRating"
           />
           <Statistic
             title="Most given Rating"
             icon={<Star h="48px" w="48px" />}
             url="/reviews/most-rated"
             bgColor="bg-purple-500"
+            id="mostGivenRating"
           />
           <Statistic
             title="% of Anon. Reviews"
             icon={<Stats h="48px" w="48px" />}
             url="/reviews/anonymous-percentage"
             bgColor="bg-orange-500"
+            id="anonReviews"
           />
         </FadeIn>
       </Section>

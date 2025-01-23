@@ -101,22 +101,4 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-userSchema.pre("save", async function (next) {
-  if (this.isModified("name")) {
-    let nameSlug = slugify(this.name, { lower: true, replacement: "-" });
-
-    let slug = nameSlug;
-    let counter = 1;
-
-    while (await mongoose.models.User.findOne({ slug })) {
-      slug = `${nameSlug}-${counter}`;
-      counter++;
-    }
-
-    this.slug = slug;
-  }
-
-  next();
-});
-
 module.exports = mongoose.model("User", userSchema);

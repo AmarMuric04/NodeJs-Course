@@ -74,7 +74,12 @@ const startApp = async () => {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Connected to MongoDB!");
 
-    app.listen(8080);
+    const server = app.listen(8080);
+    const io = require("./socket").init(server);
+    io.on("connection", (socket) => {
+      console.log("Client connected");
+    });
+
     console.log("Server is running on port 8080.");
   } catch (error) {
     console.error("Failed to connect to MongoDB", error);

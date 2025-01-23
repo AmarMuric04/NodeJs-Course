@@ -10,6 +10,7 @@ import RouterDomImg from "../assets/rrdom.png";
 import JWTImg from "../assets/jwt.png";
 import MulterImg from "../assets/multer.png";
 import MongooseImg from "../assets/mongoose.png";
+import SocketIoImg from "../assets/socketio.png";
 
 export const logos = [
   { src: MongoImg, alt: "MongoDB Logo" },
@@ -24,4 +25,5 @@ export const logos = [
   { src: MongooseImg, alt: "Mongoose Logo" },
   { src: AxiosImg, alt: "Axios Logo" },
   { src: QueryImg, alt: "Query Logo" },
+  { src: SocketIoImg, alt: "SocketIo Logo" },
 ];

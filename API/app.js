@@ -65,7 +65,11 @@ mongoose
     "mongodb+srv://muricamar2004:Kolosseum123@nodejs.vbqigm9.mongodb.net/messages?retryWrites=true&w=majority"
   )
   .then((res) => {
-    app.listen(8080);
+    const server = app.listen(8080);
+    const io = require("./socket").init(server);
+    io.on("connection", (socket) => {
+      console.log("Client connected");
+    });
     console.log("Connected to mongoDB.");
   })
   .catch((error) => console.log(error));

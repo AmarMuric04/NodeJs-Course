@@ -4,6 +4,8 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
+const io = require("../socket");
+const axios = require("axios");
 
 require("dotenv").config();
 
@@ -26,6 +28,13 @@ exports.signup = async (req, res, next) => {
 
     const hashedPw = await bcrypt.hash(password, 15);
 
+    let index = 0;
+    let slug = `${fname}-${lname}-${index}`.toLowerCase();
+
+    while (await User.findOne({ slug })) {
+      slug = `${fname}-${lname}-${index++}`.toLowerCase();
+    }
+
     const user = new User({
       fname,
       lname,
@@ -33,6 +42,7 @@ exports.signup = async (req, res, next) => {
       imageUrl,
       password: hashedPw,
       about,
+      slug,
     });
 
     const alreadyExists = await User.findOne({ email });
@@ -48,6 +58,11 @@ exports.signup = async (req, res, next) => {
       throw error;
     }
     await user.save();
+
+    const response = await axios.get("http://localhost:8080/users/count");
+    const userCount = response.data.data;
+
+    io.getIO().emit("updateStats", { users: userCount });
 
     res.status(201).json({ message: "User created successfuly!", user });
     console.log("User created.");

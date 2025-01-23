@@ -83,7 +83,7 @@ export default function CreatePost() {
       return protectedPostData("/posts", formData, token);
     },
     onError: (error) => {
-      setError(error);
+      setError(error.data);
     },
     onSuccess: (data) => {
       dispatch(setNotification(data));

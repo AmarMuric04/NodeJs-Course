@@ -1,6 +1,8 @@
 const Post = require("../models/post");
 const User = require("../models/user");
 const { validationResult } = require("express-validator");
+const io = require("../socket");
+const axios = require("axios");
 
 exports.createPost = async (req, res, next) => {
   try {
@@ -51,9 +53,12 @@ exports.createPost = async (req, res, next) => {
 
     await post.save();
 
-    const user = await User.findById(req.userId);
-    user.posts.push(post);
-    await user.save();
+    const response = await axios.get("http://localhost:8080/posts/count");
+    const postsCount = response.data.data;
+
+    io.getIO().emit("updateStats", {
+      posts: postsCount,
+    });
 
     res.status(201).json({ message: "Post created successfully!", data: post });
   } catch (error) {
