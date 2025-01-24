@@ -1,4 +1,7 @@
 const Review = require("../models/review.js");
+const io = require("../socket");
+const axios = require("axios");
+const User = require("../models/user");
 
 const { validationResult } = require("express-validator");
 
@@ -51,6 +54,37 @@ exports.postReview = async (req, res, next) => {
     }
 
     await newReview.save();
+
+    const resCount = await axios.get("http://localhost:8080/reviews/count");
+    const reviewsCount = resCount.data.data;
+
+    const resAvg = await axios.get("http://localhost:8080/reviews/average");
+    const reviewsAverage = resAvg.data.data;
+
+    const resMost = await axios.get("http://localhost:8080/reviews/most-rated");
+    const reviewsMost = resMost.data.data;
+
+    const resAnon = await axios.get(
+      "http://localhost:8080/reviews/anonymous-percentage"
+    );
+    const reviewsAnon = resAnon.data.data;
+
+    io.getIO().emit("updateStats", {
+      reviews: reviewsCount,
+      avgRating: reviewsAverage,
+      mostGivenRating: reviewsMost,
+      anonReviews: reviewsAnon,
+    });
+
+    const adminUsers = await User.find({ status: "admin" });
+
+    if (adminUsers.length > 0) {
+      io.getIO().emit("adminNotification", {
+        message: "A new review was submitted",
+      });
+    }
+
+    io.getIO().emit("reviews");
 
     res.json({ message: "Successfully created a review.", review: newReview });
   } catch (error) {

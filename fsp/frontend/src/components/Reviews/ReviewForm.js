@@ -5,13 +5,12 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setNotification } from "../../storage/notificationSlice";
 import { Spinner } from "../../assets/icons";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { postData } from "../../utility/async";
 
 const ReviewForm = () => {
   const dispatch = useDispatch();
   const { isAuth, user } = useSelector((state) => state.auth);
-  const queryClient = useQueryClient();
 
   const [isActive, setIsActive] = useState("anon");
   const [rating, setRating] = useState(0);
@@ -44,7 +43,6 @@ const ReviewForm = () => {
     },
     onSuccess: () => {
       dispatch(setNotification({ message: "Added a review!" }));
-      queryClient.invalidateQueries(["reviews"]);
 
       setMessage("");
       setRating(0);

@@ -64,7 +64,7 @@ const Header = () => {
               Reviews
             </a>
             <div className="h-[25px] w-[1px] bg-orange-600"></div>
-            <Link to="/feed?page=1">
+            <Link to="/feed">
               <p className="cursor-pointer font-semibold hover:text-orange-500 transition-all">
                 Feed
               </p>

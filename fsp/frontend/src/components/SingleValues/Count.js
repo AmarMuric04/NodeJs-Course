@@ -1,11 +1,12 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "../../utility/async";
 import { Spinner } from "../../assets/icons";
 import { useIntersectionObserver } from "../../utility/hooks";
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
+import { useDispatch } from "react-redux";
 
-const socket = io("http://localhost:8080");
+const socket = io(process.env.REACT_APP_SERVER_PORT);
 
 export default function Count({ URL, id }) {
   const [ref, isVisible] = useIntersectionObserver({
@@ -14,8 +15,8 @@ export default function Count({ URL, id }) {
     threshold: 0,
   });
 
-  const queryClient = useQueryClient();
   const [realTimeValue, setRealTimeValue] = useState(null);
+  const dispatch = useDispatch();
   const { data, isLoading, isError } = useQuery({
     queryFn: () => fetchData(URL),
     queryKey: ["data", ...URL.split("/").filter(Boolean)],
@@ -25,15 +26,15 @@ export default function Count({ URL, id }) {
   useEffect(() => {
     if (!URL) return;
     socket.on("updateStats", (updates) => {
-      const key = Object.keys(updates)[0];
-      if (id !== key) return;
-      setRealTimeValue(Object.values(updates)[0]);
+      const keys = Object.keys(updates);
+      if (!keys.some((key) => key === id)) return;
+      setRealTimeValue(updates[id]);
     });
 
     return () => {
       socket.off("updateStats");
     };
-  }, [URL, queryClient, id]);
+  }, [URL, id, dispatch]);
 
   if (!URL) return <p>URL is required</p>;
   if (isLoading) return <Spinner />;

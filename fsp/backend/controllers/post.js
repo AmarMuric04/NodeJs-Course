@@ -73,9 +73,7 @@ exports.getPosts = async (req, res, next) => {
   const { page } = req.query;
   try {
     const count = await Post.find().countDocuments();
-    const posts = await Post.find()
-      .populate("creator")
-      .limit(page * 5);
+    const posts = await Post.find().sort({ createdAt: -1 }).populate("creator");
 
     res
       .status(200)
@@ -108,6 +106,14 @@ exports.toggleLike = async (req, res, next) => {
     }
 
     await post.save();
+
+    const response = await axios.get("http://localhost:8080/posts/likes");
+    const likesCount = response.data.data;
+
+    io.getIO().emit("updateStats", {
+      likes: likesCount,
+    });
+
     res.status(200).json({ message: "Like status updated", likes: post.likes });
   } catch (error) {
     if (!error.statusCode) {
@@ -139,6 +145,14 @@ exports.toggleBookmark = async (req, res, next) => {
     }
 
     await post.save();
+
+    const response = await axios.get("http://localhost:8080/posts/bookmarks");
+    const bookmarksCount = response.data.data;
+
+    io.getIO().emit("updateStats", {
+      bookmarks: bookmarksCount,
+    });
+
     res
       .status(200)
       .json({ message: "Bookmark status updated", bookmarks: post.bookmarks });

@@ -69,7 +69,6 @@ export default function Feed() {
       tags: searchParams.get("tags") ? searchParams.get("tags").split(",") : [],
       select: select,
       time: time,
-      page: parseInt(searchParams.get("page")) || 1,
       filtering: activeFilters ? true : false,
     });
   }, []);

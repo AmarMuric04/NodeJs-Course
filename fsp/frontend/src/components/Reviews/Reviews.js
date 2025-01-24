@@ -1,8 +1,11 @@
-import { useImperativeHandle, forwardRef, useRef } from "react";
+import { useImperativeHandle, forwardRef, useRef, useEffect } from "react";
 import Review from "./Review";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { fetchData } from "../../utility/async";
 import FadeIn from "../FadeIn";
+import io from "socket.io-client";
+
+const socket = io(process.env.REACT_APP_SERVER_PORT);
 
 const Reviews = forwardRef((props, ref) => {
   const scrollRef = useRef(null);
@@ -11,6 +14,20 @@ const Reviews = forwardRef((props, ref) => {
     queryFn: () => fetchData("/reviews"),
     queryKey: ["reviews"],
   });
+
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    const handleNewReview = () => {
+      queryClient.invalidateQueries(["reviews"]);
+    };
+
+    socket.on("reviews", handleNewReview);
+
+    return () => {
+      socket.off("reviews", handleNewReview);
+    };
+  }, [queryClient]);
 
   useImperativeHandle(
     ref,

@@ -5,11 +5,11 @@ import { useSelector } from "react-redux";
 import { useQueryClient } from "@tanstack/react-query";
 
 // Components
-import ReviewForm from "./components/Reviews/ReviewForm";
-import Reviews from "./components/Reviews/Reviews";
+import ReviewForm from "./fsp/frontend/src/components/Reviews/ReviewForm";
+import Reviews from "./fsp/frontend/src/components/Reviews/Reviews";
 
 // Utilities
-import { fetchData } from "./utility/async";
+import { fetchData } from "./fsp/frontend/src/utility/async";
 
 // Assets: Logos and Images
 import FrontendImg from "./assets/frontend.png";
@@ -32,17 +32,17 @@ import {
   Star,
   Stats,
   User,
-} from "./assets/icons";
-import Statistic from "./components/Statistic";
-import Section from "./components/Section";
-import ScrollingLogos from "./components/ScrollingLogos";
-import { logos } from "./components/Logos";
-import Footer from "./components/Footer";
-import Title from "./components/Title";
-import Preheading from "./components/Preheading";
-import Text from "./components/Text";
-import Button from "./components/Button";
-import FadeIn from "./components/FadeIn";
+} from "./fsp/frontend/src/assets/icons";
+import Statistic from "./fsp/frontend/src/components/Statistic";
+import Section from "./fsp/frontend/src/components/Section";
+import ScrollingLogos from "./fsp/frontend/src/components/ScrollingLogos";
+import { logos } from "./fsp/frontend/src/components/Logos";
+import Footer from "./fsp/frontend/src/components/Footer";
+import Title from "./fsp/frontend/src/components/Title";
+import Preheading from "./fsp/frontend/src/components/Preheading";
+import Text from "./fsp/frontend/src/components/Text";
+import Button from "./fsp/frontend/src/components/Button";
+import FadeIn from "./fsp/frontend/src/components/FadeIn";
 
 const App = () => {
   const { user } = useSelector((state) => state.auth);

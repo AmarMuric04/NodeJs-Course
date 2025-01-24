@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const io = require("../socket");
 const axios = require("axios");
+const redis = require("redis");
 
 require("dotenv").config();
 

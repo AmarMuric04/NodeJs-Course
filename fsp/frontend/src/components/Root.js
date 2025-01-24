@@ -1,12 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-import { loadAuthDataFromLocalStorage } from "../utility/util";
+import { loadAuthDataFromLocalStorage, logoutUser } from "../utility/util";
 import { setNotification } from "../storage/notificationSlice";
+import io from "socket.io-client";
+
+const socket = io(process.env.REACT_APP_SERVER_PORT);
 
 const Root = () => {
   const dispatch = useDispatch();
   const message = useSelector((state) => state.notification.message);
+  const { user } = useSelector((state) => state.auth);
   const notifRef = useRef(null);
   const [showNotification, setShowNotification] = useState(false);
 
@@ -31,6 +35,18 @@ const Root = () => {
   useEffect(() => {
     loadAuthDataFromLocalStorage(dispatch);
   }, [dispatch]);
+
+  useEffect(() => {
+    if (user?.status === "admin") {
+      socket.on("adminNotification", (notification) => {
+        dispatch(setNotification(notification));
+      });
+    }
+
+    return () => {
+      socket.off("adminNotification");
+    };
+  }, [user, dispatch]);
 
   return (
     <>
