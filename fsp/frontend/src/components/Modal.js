@@ -27,8 +27,7 @@ export function Modal({ type, user, setType }) {
       const formData = new FormData();
 
       Object.entries(body).forEach(([key, value]) => {
-        if (type === "images")
-          if (key === "imageUrl" || key === "bannerImage") return;
+        if (value instanceof File) return;
 
         if (typeof value === "object") {
           formData.append(key, JSON.stringify(value));
@@ -38,8 +37,14 @@ export function Modal({ type, user, setType }) {
       });
 
       if (type === "images") {
-        if (body.imageUrl) formData.append("image", body.imageUrl);
-        if (body.bannerImage) formData.append("banner", body.bannerImage);
+        if (body.imageUrl && body.imageUrl instanceof File) {
+          console.log("image");
+          formData.append("image", body.imageUrl);
+        }
+        if (body.bannerImage && body.bannerImage instanceof File) {
+          console.log("banner");
+          formData.append("banner", body.bannerImage);
+        }
       }
       return protectedPutData(
         "/users/" + profileFields._id + "/edit-profile",
@@ -118,7 +123,7 @@ export function Modal({ type, user, setType }) {
           )}
         </FadeIn>
       </div>
-      {(type === "edit-profile" || type === "change-image") && (
+      {stillLogged && (type === "edit-profile" || type === "change-image") && (
         <div className="w-screen h-screen grid place-items-center absolute z-50 bg-black bg-opacity-50 top-0 left-0 backdrop-blur-md">
           <button
             onClick={() => setType(null)}

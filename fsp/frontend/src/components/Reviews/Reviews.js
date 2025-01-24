@@ -1,45 +1,21 @@
-import { useImperativeHandle, forwardRef, useRef, useEffect } from "react";
+import { useImperativeHandle, forwardRef, useRef } from "react";
 import Review from "./Review";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { fetchData } from "../../utility/async";
 import FadeIn from "../FadeIn";
-import io from "socket.io-client";
-
-const socket = io(process.env.REACT_APP_SERVER_PORT);
 
 const Reviews = forwardRef((props, ref) => {
   const scrollRef = useRef(null);
-
-  const { data: reviews, isLoading } = useQuery({
-    queryFn: () => fetchData("/reviews"),
-    queryKey: ["reviews"],
-  });
-
-  const queryClient = useQueryClient();
-
-  useEffect(() => {
-    const handleNewReview = () => {
-      queryClient.invalidateQueries(["reviews"]);
-    };
-
-    socket.on("reviews", handleNewReview);
-
-    return () => {
-      socket.off("reviews", handleNewReview);
-    };
-  }, [queryClient]);
 
   useImperativeHandle(
     ref,
     () => ({
       scrollLeft: () => {
-        scrollRef.current.scrollBy({
+        scrollRef.current?.scrollBy({
           left: -300,
           behavior: "smooth",
         });
       },
       scrollRight: () => {
-        scrollRef.current.scrollBy({
+        scrollRef.current?.scrollBy({
           left: 300,
           behavior: "smooth",
         });
@@ -48,7 +24,7 @@ const Reviews = forwardRef((props, ref) => {
     []
   );
 
-  if (isLoading) {
+  if (props.isLoading) {
     return <p>Loading reviews...</p>;
   }
 
@@ -56,12 +32,15 @@ const Reviews = forwardRef((props, ref) => {
     <FadeIn>
       <div
         ref={scrollRef}
-        className="no-scroll flex gap-8 items-start mt-20 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
+        className="no-scroll flex gap-8 items-start overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
       >
-        {reviews.data.length > 0 &&
-          reviews.data.map((review, index) => (
+        {props.reviews?.length > 0 ? (
+          props.reviews.map((review, index) => (
             <Review index={index} review={review} key={review.createdAt} />
-          ))}
+          ))
+        ) : (
+          <p>No reviews available</p>
+        )}
       </div>
     </FadeIn>
   );

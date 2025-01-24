@@ -52,13 +52,13 @@ const Header = () => {
           </Link>
           <div className="flex gap-8">
             <a
-              href="#about"
+              href="/#about"
               className="cursor-pointer font-semibold hover:text-orange-500 transition-all"
             >
               About Us
             </a>
             <a
-              href="#reviews"
+              href="/#reviews"
               className="cursor-pointer font-semibold hover:text-orange-500 transition-all"
             >
               Reviews

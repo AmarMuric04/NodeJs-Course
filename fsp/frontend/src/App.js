@@ -1,8 +1,8 @@
 // External Libraries
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import { useQueryClient } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 // Components
 import ReviewForm from "./components/Reviews/ReviewForm";
@@ -43,6 +43,9 @@ import Preheading from "./components/Preheading";
 import Text from "./components/Text";
 import Button from "./components/Button";
 import FadeIn from "./components/FadeIn";
+import io from "socket.io-client";
+
+const socket = io(process.env.REACT_APP_SERVER_PORT);
 
 const App = () => {
   const { user } = useSelector((state) => state.auth);
@@ -59,6 +62,25 @@ const App = () => {
       scrollRef.current.scrollRight();
     }
   };
+
+  const { data: reviews, isLoading } = useQuery({
+    queryFn: () => fetchData("/reviews"),
+    queryKey: ["reviews"],
+  });
+
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    const handleNewReview = () => {
+      queryClient.invalidateQueries(["reviews"]);
+    };
+
+    socket.on("reviews", handleNewReview);
+
+    return () => {
+      socket.off("reviews", handleNewReview);
+    };
+  }, [queryClient]);
 
   return (
     <main className="bg-[#222] overflow-x-hidden text-white flex flex-col items-center justify-center h-auto min-h-screen w-full">
@@ -99,7 +121,7 @@ const App = () => {
             </button>
           </Link>
           <Link
-            to="/feed?page=1"
+            to="/feed"
             className="cursor-pointer hover:underline text-purple-500 hover:text-orange-500 transition-all"
           >
             Check out other posts
@@ -338,7 +360,7 @@ const App = () => {
         }
       >
         <Preheading>Our reviews</Preheading>
-        <div className="flex justify-between">
+        <div className="flex justify-between mb-20">
           <div className="w-1/3">
             <Title>
               Check out the reviews. From the users of this website.
@@ -354,8 +376,10 @@ const App = () => {
             </Text>
             <p className="text-gray-400 text-lg"></p>
             <div className="flex w-full justify-between">
-              <Link to="/feed">
-                <Button className="px-8 py-2">Go to Feed</Button>
+              <Link to="/reviews#top">
+                <button className="px-8 py-2 bg-white bg-opacity-5 hover:bg-opacity-10 rounded-md transition-all">
+                  View All
+                </button>
               </Link>
               <div className="flex gap-4">
                 <button
@@ -395,7 +419,11 @@ const App = () => {
             </div>
           </div>
         </div>
-        <Reviews ref={scrollRef} />
+        <Reviews
+          reviews={reviews?.data}
+          isLoading={isLoading}
+          ref={scrollRef}
+        />
         <FadeIn className="flex justify-between mt-20 mb-40">
           <Statistic
             title="No. of Reviews"

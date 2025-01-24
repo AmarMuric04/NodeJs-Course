@@ -103,7 +103,7 @@ export function Profile() {
           {currentUser?.user._id === fetchedUser._id && (
             <button
               onClick={() => setModalType("change-image")}
-              className="bg-[#222] px-4 py-2 rounded-l-full hover:bg-purple-500 transition-all bottom-4 right-8 absolute flex items-center gap-2 z-10"
+              className="bg-[#222] px-4 py-2 rounded-full hover:bg-purple-500 transition-all bottom-4 right-8 absolute flex items-center gap-2 z-10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

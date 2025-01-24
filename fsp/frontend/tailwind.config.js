@@ -6,11 +6,11 @@ module.exports = {
       keyframes: {
         scrollRightHalf: {
           "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-291%)" },
+          "100%": { transform: "translateX(-333%)" },
         },
         scrollRightFull: {
           "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-147.5%)" },
+          "100%": { transform: "translateX(-166.5%)" },
         },
       },
       animation: {

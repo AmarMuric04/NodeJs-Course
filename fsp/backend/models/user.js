@@ -97,6 +97,12 @@ const userSchema = new Schema(
     gender: {
       type: String,
     },
+    activeToken: {
+      type: String,
+    },
+    socketId: {
+      type: String,
+    },
   },
   { timestamps: true }
 );

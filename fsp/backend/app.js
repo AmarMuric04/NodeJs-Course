@@ -8,6 +8,7 @@ require("dotenv").config();
 const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
 const path = require("path");
+const User = require("./models/user");
 
 /* Dozvoli CORS */
 
@@ -77,7 +78,18 @@ const startApp = async () => {
     const server = app.listen(8080);
     const io = require("./socket").init(server);
     io.on("connection", (socket) => {
-      console.log("Client connected");
+      console.log("User connected: " + socket.id);
+
+      socket.on("register", async (userId) => {
+        await User.findByIdAndUpdate(userId, { socketId: socket.id });
+      });
+
+      socket.on("disconnect", async () => {
+        await User.findOneAndUpdate(
+          { socketId: socket.id },
+          { socketId: null }
+        );
+      });
     });
 
     console.log("Server is running on port 8080.");

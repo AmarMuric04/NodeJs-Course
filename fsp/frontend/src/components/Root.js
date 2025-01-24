@@ -43,8 +43,19 @@ const Root = () => {
       });
     }
 
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      socket.emit("register", userId);
+
+      socket.on("forceLogout", () => {
+        dispatch(setNotification({ message: "Another user signed in." }));
+        logoutUser(dispatch);
+      });
+    }
+
     return () => {
       socket.off("adminNotification");
+      socket.off("forceLogout");
     };
   }, [user, dispatch]);
 

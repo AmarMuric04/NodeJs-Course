@@ -6,7 +6,6 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const io = require("../socket");
 const axios = require("axios");
-const redis = require("redis");
 
 require("dotenv").config();
 
@@ -126,6 +125,16 @@ exports.signin = async (req, res, next) => {
         expiresIn: "1h",
       }
     );
+
+    if (user.activeToken) {
+      if (user.socketId) {
+        io.getIO().to(user.socketId).emit("forceLogout");
+      }
+    }
+
+    user.activeToken = token;
+    user.socketId = null;
+    user.save();
 
     res.status(200).json({
       message: "Signed in!",
@@ -348,7 +357,6 @@ exports.editProfile = async (req, res, next) => {
     if (bannerImage) user.bannerImage = bannerImage;
 
     const updateFields = req.body;
-    console.log(updateFields);
 
     Object.keys(updateFields).forEach((key) => {
       const value = updateFields[key];
