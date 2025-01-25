@@ -52,13 +52,17 @@ app.use((req, res, next) => {
   next();
 });
 
+const auth = require("./middleware/is-auth");
+
+app.use(auth);
+
 app.use(
   "/graphql",
   graphqlHTTP({
     schema: graphqlSchema,
     rootValue: graphqlResolver,
     graphiql: true,
-    formatError(err) {
+    customFormatErrorFn(err) {
       if (!err.originalError) {
         return err;
       }
