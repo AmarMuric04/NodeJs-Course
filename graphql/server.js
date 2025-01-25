@@ -1,5 +1,7 @@
 const express = require("express");
 const expressGraphQL = require("express-graphql").graphqlHTTP;
+const fs = require("fs");
+const path = require("path");
 
 const {
   GraphQLSchema,
@@ -12,38 +14,33 @@ const {
 
 const app = express();
 
-const authors = [
-  { id: 1, name: "J. K. Rowling" },
-  { id: 2, name: "J. R. R. Tolkien" },
-  { id: 3, name: "Brent Weeks" },
-];
+const authorsPath = "authors.json";
+const booksPath = "books.json";
 
-const books = [
-  { id: 1, name: "Harry Potter and the Chamber of Secrets", authorId: 1 },
-  { id: 2, name: "Harry Potter and the Prisoner of Azkaban", authorId: 1 },
-  { id: 3, name: "Harry Potter and the Goblet of Fire", authorId: 1 },
-  { id: 4, name: "The Fellowship of the Ring", authorId: 2 },
-  { id: 5, name: "The Two Towers", authorId: 2 },
-  { id: 6, name: "The Return of the King", authorId: 2 },
-  { id: 7, name: "The Way of Shadows", authorId: 3 },
-  { id: 8, name: "Beyond the Shadows", authorId: 3 },
-];
+function getDataFromFile(path) {
+  let jsonData = fs.readFileSync(path, "utf8");
 
-// const schema = new GraphQLSchema({
-//   query: new GraphQLObjectType({
-//     name: "HelloWorld",
-//     fields: () => ({
-//       message: {
-//         type: GraphQLString,
-//         resolve: () => "HelloWorld",
-//       },
-//       age: {
-//         type: GraphQLInt,
-//         resolve: () => 20,
-//       },
-//     }),
-//   }),
-// });
+  let dataArray = [];
+  if (jsonData.trim()) {
+    dataArray = JSON.parse(jsonData);
+  }
+
+  return dataArray;
+}
+
+function addToFile(newItem, path) {
+  try {
+    const data = getDataFromFile(path);
+
+    data.push(newItem);
+
+    fs.writeFileSync(path, JSON.stringify(data, null, 2));
+
+    console.log("Item added successfully!");
+  } catch (err) {
+    console.error("Error updating JSON:", err);
+  }
+}
 
 const AuthorType = new GraphQLObjectType({
   name: "Author",
@@ -54,7 +51,9 @@ const AuthorType = new GraphQLObjectType({
     books: {
       type: GraphQLList(BookType),
       resolve: (author) => {
-        return books.filter((book) => book.authorId === author.id);
+        return getDataFromFile(booksPath).filter(
+          (book) => book.authorId === author.id
+        );
       },
     },
   }),
@@ -70,7 +69,9 @@ const BookType = new GraphQLObjectType({
     author: {
       type: AuthorType,
       resolve: (book) => {
-        return authors.find((author) => book.authorId === author.id);
+        return getDataFromFile(authorsPath).find(
+          (author) => book.authorId === author.id
+        );
       },
     },
   }),
@@ -86,17 +87,18 @@ const RootQueryType = new GraphQLObjectType({
       args: {
         id: { type: GraphQLInt },
       },
-      resolve: (_, args) => books.find((book) => book.id === args.id),
+      resolve: (_, args) =>
+        getDataFromFile(booksPath).find((book) => book.id === args.id),
     },
     books: {
       type: new GraphQLList(BookType),
       description: "List of All books",
-      resolve: () => books,
+      resolve: () => getDataFromFile(booksPath),
     },
     authors: {
       type: new GraphQLList(AuthorType),
       description: "List of All authors",
-      resolve: () => authors,
+      resolve: () => getDataFromFile(authorsPath),
     },
     author: {
       type: AuthorType,
@@ -104,7 +106,8 @@ const RootQueryType = new GraphQLObjectType({
       args: {
         id: { type: GraphQLInt },
       },
-      resolve: (_, args) => authors.find((author) => author.id === args.id),
+      resolve: (_, args) =>
+        getDataFromFile(authorsPath).find((author) => author.id === args.id),
     },
   }),
 });
@@ -127,7 +130,7 @@ const RootMutationType = new GraphQLObjectType({
           authorId: args.authorId,
         };
 
-        books.push(book);
+        addToFile(book, booksPath);
 
         return book;
       },
@@ -144,7 +147,7 @@ const RootMutationType = new GraphQLObjectType({
           name: args.name,
         };
 
-        authors.push(author);
+        addToFile(author, authorsPath);
 
         return author;
       },

@@ -54,6 +54,22 @@ app.use(
   graphqlHTTP({
     schema: graphqlSchema,
     rootValue: graphqlResolver,
+    graphiql: true,
+    formatError(err) {
+      if (!err.originalError) {
+        return err;
+      }
+
+      const data = err.originalError.data;
+      const message = err.message || "An error occured!";
+      const code = err.originalError.code || 500;
+
+      return {
+        message,
+        data,
+        status: code, 
+      };
+    },
   })
 );
 
@@ -67,9 +83,11 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    "mongodb+srv://muricamar2004:Kolosseum123@nodejs.vbqigm9.mongodb.net/messages?retryWrites=true&w=majority"
+    "mongodb+srv://muricamar2004:Kolosseum123@nodejs.vbqigm9.mongodb.net/messages?retryWrites=true&w=majority",
+    { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .then((result) => {
     app.listen(8080);
+    console.log("Connected with mongoDB");
   })
   .catch((err) => console.log(err));

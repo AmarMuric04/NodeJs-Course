@@ -1,0 +1,7 @@
+React, Tailwind, Redux, React Query, Axios, React, Router DOM, Socket.io Client
+
+Node.js, Express.js, GraphQL, Multer, JWT, Socket.io, Axios
+
+MongoDB, Mongoose
+
+JWT, Axios, Multer, Bcrypt
