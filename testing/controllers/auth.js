@@ -1,9 +1,11 @@
-import { validationResult } from "express-validator";
+import pkg from "express-validator";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import User from "../models/user";
+import User from "../models/user.js";
 
-exports.signup = async (req, res, next) => {
+const { validationResult } = pkg;
+
+export const signup = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     const error = new Error("Validation failed.");
@@ -32,7 +34,7 @@ exports.signup = async (req, res, next) => {
   }
 };
 
-exports.login = async (req, res, next) => {
+export const login = async (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
   let loadedUser;
@@ -59,15 +61,17 @@ exports.login = async (req, res, next) => {
       { expiresIn: "1h" }
     );
     res.status(200).json({ token: token, userId: loadedUser._id.toString() });
+    return;
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
     }
     next(err);
+    return err;
   }
 };
 
-exports.getUserStatus = async (req, res, next) => {
+export const getUserStatus = async (req, res, next) => {
   try {
     const user = await User.findById(req.userId);
     if (!user) {
@@ -84,7 +88,7 @@ exports.getUserStatus = async (req, res, next) => {
   }
 };
 
-exports.updateUserStatus = async (req, res, next) => {
+export const updateUserStatus = async (req, res, next) => {
   const newStatus = req.body.status;
   try {
     const user = await User.findById(req.userId);
