@@ -84,10 +84,6 @@ class App extends Component {
         if (resData.error && resData.error.code === 422) {
           throw new Error("Validation failed.");
         }
-        if (resData.error) {
-          console.log("Error!");
-          throw new Error("Could not authenticate you!");
-        }
         console.log(resData);
         this.setState({
           isAuth: true,
