@@ -1,10 +1,10 @@
 import { expect } from "chai";
 import sinon from "sinon";
 import User from "../models/user.js";
-import * as AuthController from "../controllers/auth.js";
+import * as FeedController from "../controllers/feed.js";
 import mongoose from "mongoose";
 
-describe("Auth Controller", () => {
+describe("Feed Controller", () => {
   before(function (done) {
     mongoose
       .connect(
@@ -31,50 +31,38 @@ describe("Auth Controller", () => {
       });
   });
 
-  it("Should throw an error w/status code 500 if accessing the database fails", (done) => {
+  it("Should add a created post to the posts of the creator", (done) => {
     sinon.stub(User, "findOne");
     User.findOne.throws();
 
     const req = {
       body: {
-        email: "test@gmail.com",
-        password: "123",
+        title: "Post",
+        content: "A Test Post",
       },
+      file: {
+        path: "abc",
+      },
+      userId: "5c0f66b979af55031b34628a",
     };
 
-    AuthController.login(req, {}, () => {})
-      .then((result) => {
-        expect(result).to.be.an("error");
-        expect(result).to.have.property("statusCode", 500);
+    const res = {
+      status(status) {
+        return this;
+      },
+      json() {},
+    };
+
+    FeedController.createPost(req, res, () => {})
+      .then((savedUser) => {
+        expect(savedUser).to.have.property("posts");
+        expect(savedUser.posts).to.have.length(1);
         done();
       })
       .catch(done)
       .finally(() => {
         User.findOne.restore();
       });
-  });
-
-  it("Should send a response with a valid user status for an existing user", (done) => {
-    const req = { userId: "5c0f66b979af55031b34628a" };
-    const res = {
-      statusCode: 500,
-      userStatus: null,
-      status(code) {
-        this.statusCode = code;
-        return this;
-      },
-      json(data) {
-        this.userStatus = data.status;
-      },
-    };
-
-    AuthController.getUserStatus(req, res, () => {})
-      .then(() => {
-        expect(res.statusCode).to.be.equal(200);
-        expect(res.userStatus).to.be.equal("I am new!");
-        done();
-      })
-      .catch(done);
   });
 
   after(function (done) {
