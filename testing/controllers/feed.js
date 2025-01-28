@@ -1,5 +1,6 @@
 import pkg from "express-validator";
 import User from "../models/user.js";
+import Post from "../models/post.js";
 import fs from "fs";
 import path from "path";
 
